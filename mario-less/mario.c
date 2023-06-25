@@ -5,12 +5,14 @@
 
 int main(void)
 {
+    // Prompts user for height
+    int height;
     do
     {
-        int height = get_int("Height: ");
+        height = get_int("Height: ");
     }
     while (height < 0);
-    printf("\n");
+    
 }
 
 
