@@ -8,13 +8,16 @@
 int main(void)
 {
     // Continually prompts user for positive int height
+
+    make_pyramid(height)
+}
+
+int get_height()
+{
     int height;
     do
     {
         height = get_int("Height: ");
     }
     while (height < 0);
-    make_pyramid(height)
 }
-
-void 
