@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <cs50.h>
 
+// Continually prompts user for positive int height
+int get_height(void);
 
 
 int main(void)
@@ -22,4 +24,5 @@ int get_height(void)
         h = get_int("Height: ");
     }
     while (h < 1);
+    return h
 }
