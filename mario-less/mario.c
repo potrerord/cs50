@@ -5,14 +5,11 @@
 
 int main(void)
 {
-    do()
+    do
     {
         int height = get_int("Height: ");
     }
-    while
-    {
-        height < 0
-    }
+    while (height < 0);
     printf("\n");
 }
 
