@@ -13,9 +13,21 @@ int main(void)
     int h = get_height();
 
     // Make half-pyramid
+
+    
     // make_pyramid(height)
 }
 
+
+
+
+
+
+
+
+
+
+// Continually prompts user for positive int height
 int get_height(void)
 {
     int h;
