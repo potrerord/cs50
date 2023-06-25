@@ -12,6 +12,6 @@ int main(void)
     }
     while
     {
-        height < 0 || 
+        height < 0 || height 
     }
 }
