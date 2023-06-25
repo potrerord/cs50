@@ -1,4 +1,4 @@
-// Prompts user for an int height and creates a Mario-style half pyramid with # characters
+// Prompts user for an int height and creates a Mario-style half-pyramid with # characters
 
 #include <stdio.h>
 #include <cs50.h>
@@ -7,17 +7,19 @@
 
 int main(void)
 {
-    // Continually prompts user for positive int height
+    // Get height of half-pyramid
+    int h = get_height();
 
-    make_pyramid(height)
+    // Make half-pyramid
+    // make_pyramid(height)
 }
 
-int get_height()
+int get_height(void)
 {
-    int height;
+    int h;
     do
     {
-        height = get_int("Height: ");
+        h = get_int("Height: ");
     }
-    while (height < 0);
+    while (h < 1);
 }
