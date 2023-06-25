@@ -13,5 +13,9 @@ int main(void)
     {
         height < 0
     }
-
+    printf("\n");
 }
+
+
+// get_height()
+// make_pyramid(height)
