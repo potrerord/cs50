@@ -91,34 +91,38 @@ bool checksum(long cc)
     // If even length, get sum
     if (length % 2 == 0)
     {
-        // Sum double every other digit starting from second to last
+        // Sum twice every other digit starting from second to last
         for (int i = 0; i < k; i++)
         {
-            sum += 2 * ((int) ((double) cc / pow(10, (2 * i) + 1)) % 10);
+            sum += 2 * ((int) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+            printf("%i\n", sum);
         }
 
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
-            sum += (int) ((double) cc / pow(10, 2 * j)) % 10;
+            sum += (int) (cc / (long) pow(10, 2 * j)) % 10;
+            printf("%i\n", sum);
         }
     }
 
     // If odd length, get sum
     else
     {
-        // Sum double every other digit starting from second to last
+        // Sum twice  every other digit starting from second to last
         for (int i = 0; i < k - 1; i++)
         {
-            sum += 2 * ((int) ((double) cc / pow(10, (2 * i) + 1)) % 10);
+            sum += 2 * ((int) (cc / (long) pow(10, (2 * i) + 1)) % 10);
         }
 
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
-            sum += (int) ((double) cc / pow(10, 2 * j)) % 10;
+            sum += (int) (cc / (long) pow(10, 2 * j)) % 10;
         }
     }
+
+    printf("%i\n", sum);
 
     // Return truth value
     if (sum % 10 == 0)
