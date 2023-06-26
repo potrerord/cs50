@@ -94,16 +94,13 @@ bool checksum(long cc)
         // Sum twice every other digit starting from second to last
         for (int i = 0; i < k; i++)
         {
-            sum += 2 * ((int) (cc / (long) pow(10, (2 * i) + 1)) % 10);
-            // printf("%i\n", ((int) (cc / (long) pow(10, (2 * i) + 1)) % 10));
-            // printf("%i\n", sum);
+            sum += 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
         }
 
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
-            sum += (int) (cc / (long) pow(10, 2 * j)) % 10;
-            printf("%i\n", sum);
+            sum += (long) (cc / (long) pow(10, 2 * j)) % 10;
         }
     }
 
@@ -113,13 +110,13 @@ bool checksum(long cc)
         // Sum twice  every other digit starting from second to last
         for (int i = 0; i < k - 1; i++)
         {
-            sum += 2 * ((int) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+            sum += 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
         }
 
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
-            sum += (int) (cc / (long) pow(10, 2 * j)) % 10;
+            sum += (long) (cc / (long) pow(10, 2 * j)) % 10;
         }
     }
 
