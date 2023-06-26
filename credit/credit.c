@@ -3,7 +3,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-// Gets valid credit card number from user input
+// Gets user credit card number
 long get_long(long cc);
 
 int main(void)
@@ -24,7 +24,7 @@ int main(void)
 
 }
 
-// Gets credit card number from user input
+// Gets user credit card number
 long get_long(long cc);
 {
     long cc;
