@@ -39,7 +39,14 @@ int main(void)
         }
         else if (length == 13)
         {
-            printf("VISA\n");
+            if ((int) (cc / 1000000000000) == 4)
+            {
+                printf("VISA\n");
+            }
+            else
+            {
+                printf("INVALID\n");
+            }
         }
         else if (length == 16)
         {
