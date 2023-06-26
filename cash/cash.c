@@ -6,7 +6,7 @@
 // Continually prompts user for positive int amount of change in cents
 int get_change(void);
 
-// Lowers coin value to next highest coin
+// Lowers input coin value to next highest coin
 int lower_coin(int coin);
 
 int main(void)
