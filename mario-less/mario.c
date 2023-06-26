@@ -46,14 +46,14 @@ void print_hpyramid(int height)
     // Print input number of rows
     while (i = 0, i < height, i++)
     {
-        // In each row, print decreasing spaces
+        // In each row, print decreasing spaces starting with height - 1
         while (j = 0, j < height - 1 - i, j++)
         {
             print(" ");
         }
 
-        // Then print increasing # followed by \n
-        while (k = 0, k < height - 
+        // Then print increasing # followed by \n starting with 1
+        while (k = 0, k < height -
 
         // printf()
         // print size-1_ 1"#" "\n"
