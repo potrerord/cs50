@@ -58,11 +58,11 @@ bool checksum(long cc)
     int sum = 0;
     for (int i = 0; i < k; i++)
     {
-        sum += cc % pow(10, 2 * (i + 1));
+        sum += cc % (int) pow(10, 2 * (i + 1));
     }
     for (int j = 0; j < k; j++)
     {
-        sum += cc % pow(10, 2 * (i + 1) - 1);
+        sum += cc % (int) pow(10, 2 * (i + 1) - 1);
     }
     if sum % 10 == 0
     {
