@@ -94,8 +94,7 @@ bool checksum(long cc)
         // Sum double every other digit starting from second to last
         for (int i = 0; i < k; i++)
         {
-            sum += (cc / (int) pow(10, (2 * i) + 1)) % 10;
-            sum *= 2;
+            sum += 2 * ((cc / (int) pow(10, (2 * i) + 1)) % 10);
         }
 
         // Sum every other digit starting from last
@@ -111,8 +110,7 @@ bool checksum(long cc)
         // Sum double every other digit starting from second to last
         for (int i = 0; i < k - 1; i++)
         {
-            sum += (cc / (int) pow(10, (2 * i) + 1)) % 10;
-            sum *= 2;
+            sum += 2 * ((cc / (int) pow(10, (2 * i) + 1)) % 10);
         }
 
         // Sum every other digit starting from last
@@ -121,8 +119,6 @@ bool checksum(long cc)
             sum += (cc / (int) pow(10, 2 * j)) % 10;
         }
     }
-
-    printf("%i\n", sum);
 
     // Return truth value
     if (sum % 10 == 0)
@@ -133,11 +129,4 @@ bool checksum(long cc)
     {
         return false;
     }
-
-
-
-    // if valid return true
-
-
-    // if invalid return false
 }
