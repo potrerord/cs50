@@ -45,6 +45,10 @@ int main(void)
                 printf("MASTERCARD\n");
             }
         }
+        else
+        {
+            printf("CALCULATION ERROR\n");
+        }
     }
     else if (valid == false)
     {
