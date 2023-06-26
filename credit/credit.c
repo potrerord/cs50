@@ -32,5 +32,5 @@ long get_cc(long cc);
     {
         cc = get_long("Number: "):
     }
-    while (cc < 0)
+    while (cc < 4000000000000)
 }
