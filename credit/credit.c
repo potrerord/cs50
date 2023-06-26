@@ -62,7 +62,7 @@ bool checksum(long cc)
     // Initialize sum variable
     int sum = 0;
 
-    // If even, get sum
+    // If even length, get sum
     if (length % 2 == 0)
     {
         for (int i = 0; i < k; i++)
@@ -75,7 +75,7 @@ bool checksum(long cc)
         }
     }
 
-    // If odd, get sum
+    // If odd length, get sum
     else
     {
 
