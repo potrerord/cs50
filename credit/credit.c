@@ -66,7 +66,7 @@ bool checksum(long cc)
     if (length % 2 == 0)
     {
         // Sum double every other digit starting from second to last
-        for (int i = 0; i < k - 1; i++)
+        for (int i = 0; i < k; i++)
         {
             sum += cc % (int) pow(10, 2 * (i + 1));
             sum *= 2;
@@ -83,7 +83,7 @@ bool checksum(long cc)
     else
     {
         // Sum double every other digit starting from second to last
-        for (int i = 0; i < k; i++)
+        for (int i = 0; i < k - 1; i++)
         {
             sum += cc % (int) pow(10, 2 * (i + 1));
             sum *= 2;
