@@ -37,7 +37,7 @@ int get_height(void)
         h = get_int("Height: ");
     }
     while (h < 1);
-    return h
+    return h;
 }
 
 // Prints half-pyramid with height input
@@ -49,18 +49,16 @@ void print_hpyramid(int height)
         // In each row, print decreasing spaces starting with height - 1
         while (j = 0, j < height - 1 - i, j++)
         {
-            print(" ");
+            printf(" ");
         }
 
-        // Then print increasing # followed by \n starting with 1
-        while (k = 0, k < 
+        // Then print increasing # starting with 1
+        while (k = 0, k < i, k++)
+        {
+            printf("#");
+        }
 
-        // printf()
-        // print size-1_ 1"#" "\n"
-        // print size-2_ 2# "\n"
-        // print size-3_ 3# "\n"
-        // print size-size_ size# "\n"
+        // Print new line after each row
+        printf("\n");
     }
-
-
 }
