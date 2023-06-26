@@ -9,15 +9,21 @@ float average(int array[]);
 int main(void)
 {
     int scores[3];
+    for (int i = 0; i < 3; i++)
+    {
+        scores[i] = get_int("Score %i: ", i + 1);
+    }
     printf("Average: %f\n", average(scores));
 }
 
-// Returns the average of an array of 3 elements
+// Returns the average of an array of ints
 float average(int array[])
 {
-    for (int i = 0; i < 3; i++)
+    int sum = 0
+    for (int j = 0; j < ; j++)
     {
-        array[i] = get_int("Score %i: ", i + 1);
+        sum += array[j]
+        float average = sum / (float)k
     }
-    return 
+    return average
 }
