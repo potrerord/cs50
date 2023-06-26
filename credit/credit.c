@@ -62,15 +62,15 @@ bool checksum(long cc)
     }
     for (int j = 0; j < k; j++)
     {
-        sum += cc % (int) pow(10, 2 * (i + 1) - 1);
+        sum += cc % (int) pow(10, 2 * (j + 1) - 1);
     }
-    if sum % 10 == 0
+    if (sum % 10 == 0)
     {
-        return true
+        return true;
     }
     else
     {
-        return false
+        return false;
     }
 
 
