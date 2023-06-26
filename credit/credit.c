@@ -1,8 +1,9 @@
 // Prompts user for credit card number and reports whether it is a valid American Express, MasterCard, or Visa
 
 #include <cs50.h>
-#include <stdio.h>
+#include <math.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 // Gets user credit card number
 long get_cc(void);
@@ -21,7 +22,7 @@ int main(void)
     // If valid, check card length and starting digits
     if (valid == true)
     {
-        
+
     }
 
     // Print card type: printf(AMEX\n or MASTERCARD\n or VISA\n or INVALID\n)
