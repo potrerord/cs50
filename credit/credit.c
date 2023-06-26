@@ -2,17 +2,21 @@
 
 #include <cs50.h>
 #include <stdio.h>
+#include <bool.h>
 
 // Gets user credit card number
-long get_cc(long cc);
+long get_cc(void);
+
+// Checks credit card number input for validity and returns boolean value
+bool checksum(long cc);
 
 int main(void)
 {
     // Prompt user for cc number
-    long cc = get_cc()
+    long cc = get_cc();
 
     // Calculate checksum
-
+    bool valid = checksum()
 
     // Check card length and starting digits
 
@@ -27,11 +31,17 @@ int main(void)
 // Gets user credit card number
 long get_cc(void)
 {
+    long cc;
     do
     {
         cc = get_long("Number: ");
     }
     while (cc < 0);
-    printf("%li\n", cc);
     return cc;
+}
+
+// Checks credit card number input for validity and returns boolean value
+bool checksum(long cc)
+{
+
 }
