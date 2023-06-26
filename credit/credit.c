@@ -45,7 +45,8 @@ long get_cc(void)
 // Gets number length
 int get_length(long cc)
 {
-    length = ceil()
+    length = floor(log10(cc) + 1)
+    return length
 }
 
 
