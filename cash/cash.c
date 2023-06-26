@@ -18,6 +18,7 @@ int main(void)
     int coin = 25
     while (change > 0)
     {
+        // Compare change value to highest coin value
         if (change >= coin)
         {
             change -= coin;
@@ -25,7 +26,19 @@ int main(void)
         }
         else
         {
-            
+            // Lower coin value to next highest
+            if (coin == 25)
+            {
+                coin = 10;
+            }
+            else if (coin == 10)
+            {
+                coin = 5;
+            }
+            else if (coin == 5)
+            {
+                coin = 1;
+            }
         }
     }
 
