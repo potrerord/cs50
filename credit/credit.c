@@ -68,7 +68,7 @@ int main(void)
         }
         else
         {
-            printf("CALCULATION ERROR\n");
+            printf("INVALID\n");
         }
     }
     else if (validsum == false)
