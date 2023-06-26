@@ -40,11 +40,12 @@ int get_height(void)
     return h
 }
 
-// Prints half-pyramid with size input
-void print_hpyramid(int size)
+// Prints half-pyramid with height input
+void print_hpyramid(int height)
 {
-    // print size-1_ 1#
-    // print size-2_ 2#
-    // print size-3_ 3#
-    // print size-size_ size#
+    // While (i = 0, i < height, i++)
+        // print size-1_ 1"#" "\n"
+        // print size-2_ 2# "\n"
+        // print size-3_ 3# "\n"
+        // print size-size_ size# "\n"
 }
