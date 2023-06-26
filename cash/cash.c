@@ -6,6 +6,9 @@
 // Continually prompts user for positive int amount of change in cents
 int get_change(void);
 
+// Lowers coin value to next highest coin
+int lower_coin(int coin);
+
 int main(void)
 {
     // Get change owed
@@ -15,7 +18,7 @@ int main(void)
     int n = 0;
 
     // Subtract largest possible coin and increment n by 1, starting with quarter
-    int coin = 25
+    int coin = 25;
     while (change > 0)
     {
         // Compare change value to highest coin value and subtract/increment if possible
@@ -27,7 +30,7 @@ int main(void)
         else
         {
             // Lower coin value to next highest and loop until change is 0
-
+            change = lower_coin(change);
         }
     }
 
@@ -48,19 +51,23 @@ int get_change(void)
 }
 
 // Lowers coin value to next highest coin
-int lower_coin(coin)
+int lower_coin(int coin)
 {
     if (coin == 25)
     {
-        coin = 10;
+        int lower = 10;
     }
     else if (coin == 10)
     {
-        coin = 5;
+        int lower = 5;
     }
     else if (coin == 5)
     {
-        coin = 1;
-    return coin
+        int lower = 1;
+    else
+    {
+        printf("Error: invalid coin value\n");
+    }
+    return lower;
     }
 }
