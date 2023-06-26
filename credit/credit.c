@@ -42,6 +42,9 @@ long get_cc(void)
     return cc;
 }
 
+// Gets number length
+
+
 // Checks credit card number input for validity and returns boolean value
 bool checksum(long cc)
 {
