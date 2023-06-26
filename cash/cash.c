@@ -57,3 +57,9 @@ int get_change(void)
     while (change < 0);
     return change;
 }
+
+// Subtract largest coin possible
+void subtract_coin(total)
+{
+    
+}
