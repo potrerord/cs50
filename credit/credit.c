@@ -8,6 +8,9 @@
 // Gets user credit card number
 long get_cc(void);
 
+// Gets number length
+int get_length(long cc);
+
 // Checks credit card number input for validity and returns boolean value
 bool checksum(long cc);
 
@@ -25,14 +28,28 @@ int main(void)
         int length = get_length(cc);
         if (length == 15)
         {
-            printf(")
+            printf("AMEX\n");
+        }
+        else if (length == 13)
+        {
+            printf("VISA\n");
+        }
+        else if (length == 16)
+        {
+            if (cc / 1000000000000000 == 4)
+            {
+                printf("VISA\n");
+            }
+            else
+            {
+                printf("MASTERCARD\n");
+            }
         }
     }
-    else
+    else if (valid == false)
     {
         printf("INVALID\n");
     }
-    // Print card type: printf(AMEX\n or MASTERCARD\n or VISA\n or INVALID\n)
 }
 
 // Gets user credit card number
@@ -100,8 +117,8 @@ bool checksum(long cc)
             sum += (cc / (int) pow(10, 2 * j)) % 10;
         }
     }
-    printf("%i\n", sum);
 
+    // Return truth value
     if (sum % 10 == 0)
     {
         return true;
