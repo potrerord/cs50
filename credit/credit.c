@@ -85,9 +85,10 @@ bool checksum(long cc)
     // Cut length in half to get every other number
     int k = (length + 1) / 2;
 
-    // Initialize sum and tempsump variables
+    // Initialize sum and tempsump/tempsum length variables
     int sum = 0;
     int tempsum = 0;
+    int ts_length = 0;
 
     // If even length, get sum
     if (length % 2 == 0)
@@ -95,14 +96,27 @@ bool checksum(long cc)
         // Sum twice every other digit starting from second to last
         for (int i = 0; i < k; i++)
         {
-            sum += 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+            tempsum = 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
 
-            // If single digit, add to sum
-            
+            // Get length of tempsum
+            do
+            {
+                ts_length = get_length(tempsum);
 
-            // If not single digit, break into digits
+                // If single digit, add to sum
+                if (ts_length == 1)
+                {
+                    sum += tempsum;
+                }
 
-
+                // If not single digit, add ones digit and divide by ten, then recheck
+                else
+                {
+                    sum += tempsum % 10;
+                    tempsum /= 10;
+                }
+            }
+            while (ts_length > 1);
         }
 
         // Sum every other digit starting from last
@@ -118,7 +132,27 @@ bool checksum(long cc)
         // Sum twice  every other digit starting from second to last
         for (int i = 0; i < k - 1; i++)
         {
-            sum += 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+            tempsum = 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+
+            // Get length of tempsum
+            do
+            {
+                ts_length = get_length(tempsum);
+
+                // If single digit, add to sum
+                if (ts_length == 1)
+                {
+                    sum += tempsum;
+                }
+
+                // If not single digit, add ones digit and divide by ten, then recheck
+                else
+                {
+                    sum += tempsum % 10;
+                    tempsum /= 10;
+                }
+            }
+            while (ts_length > 1);
         }
 
         // Sum every other digit starting from last
