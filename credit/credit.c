@@ -20,10 +20,10 @@ int main(void)
     bool valid = checksum(cc);
 
     // If valid, check card length and starting digits
-    // if (valid == true)
-    // {
-
-    // }
+    if (valid == true)
+    {
+        
+    }
 
     // Print card type: printf(AMEX\n or MASTERCARD\n or VISA\n or INVALID\n)
 
