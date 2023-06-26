@@ -33,4 +33,5 @@ long get_cc(long cc)
     }
     while (cc < 0);
     return cc;
+    printf("%l\n", cc);
 }
