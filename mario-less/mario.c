@@ -53,7 +53,7 @@ void print_hpyramid(int height)
         }
 
         // Then print increasing # followed by \n starting with 1
-        while (k = 0, 
+        while (k = 0, k < 
 
         // printf()
         // print size-1_ 1"#" "\n"
