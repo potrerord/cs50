@@ -9,7 +9,7 @@ long get_cc(long cc);
 int main(void)
 {
     // Prompt user for cc number
-    long cc = get_long("Number: ");
+    long cc = get_cc()
 
     // Calculate checksum
 
@@ -25,13 +25,13 @@ int main(void)
 }
 
 // Gets user credit card number
-long get_cc(long cc)
+long get_cc(void)
 {
     do
     {
         cc = get_long("Number: ");
     }
     while (cc < 0);
+    printf("%li\n", cc);
     return cc;
-    printf("%l\n", cc);
 }
