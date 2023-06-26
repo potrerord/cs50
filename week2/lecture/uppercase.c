@@ -6,5 +6,10 @@
 
 int main(void)
 {
+    // Check if uppercase or lowercase
+    
+
+    // Convert to uppercase only
+
 
 }
