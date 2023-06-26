@@ -45,8 +45,8 @@ long get_cc(void)
 // Gets number length
 int get_length(long cc)
 {
-    length = floor(log10(cc) + 1)
-    return length
+    length = floor(log10(cc) + 1);
+    return length;
 }
 
 
@@ -54,11 +54,18 @@ int get_length(long cc)
 bool checksum(long cc)
 {
     int length = get_length(cc);
-    int j = (length + 1) / 2
-    for (i = 0; i < j; i++)
+    int k = (length + 1) / 2;
+    int sum = 0;
+    for (i = 0; i < k; i++)
     {
-        cc % 
+        sum += cc % int pow(10, 2 * (i + 1));
     }
+    sum *= 2;
+    for (j = 0; j < k; j++)
+    {
+        sum += 
+    }
+
 
 
     // if valid return true
