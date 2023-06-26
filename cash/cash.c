@@ -57,12 +57,3 @@ int get_change(void)
     while (change < 0);
     return change;
 }
-
-// Subtract coin value from total
-void subtract_coin(int total, int coin)
-{
-    if (total >= coin)
-    {
-        total -= coin
-    }
-}
