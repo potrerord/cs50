@@ -15,8 +15,19 @@ int main(void)
     int n = 0;
 
     // Subtract largest available coin and increment n by 1
-    
-    n++
+    int coin = 25
+    while (change > 0)
+    {
+        if (change >= coin)
+        {
+            change -= coin;
+            n++;
+        }
+        else
+        {
+            
+        }
+    }
 
     // Print final number of coins
     printf("%i\n", n);
