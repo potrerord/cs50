@@ -43,6 +43,10 @@ long get_cc(void)
 }
 
 // Gets number length
+int get_length(long cc)
+{
+    length = ceil()
+}
 
 
 // Checks credit card number input for validity and returns boolean value
