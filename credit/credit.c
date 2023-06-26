@@ -54,7 +54,12 @@ int get_length(long cc)
 bool checksum(long cc)
 {
     int length = get_length(cc);
-    floor((length + 1) / 2)
+    int j = (length + 1) / 2
+    for (i = 0; i < j; i++)
+    {
+        cc % 
+    }
+
 
     // if valid return true
 
