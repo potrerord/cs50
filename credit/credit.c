@@ -26,6 +26,8 @@ int main(void)
     if (validsum == true)
     {
         int length = get_length(cc);
+
+        // 15 digits is Amex if first two digits are 34 or 37
         if (length == 15)
         {
             if ((int) (cc / 10000000000000) == 34 || (int) (cc / 10000000000000) == 37)
@@ -37,6 +39,8 @@ int main(void)
                 printf("INVALID\n");
             }
         }
+
+        // 13 digits is Visa if first digit is 4
         else if (length == 13)
         {
             if ((int) (cc / 1000000000000) == 4)
@@ -48,6 +52,8 @@ int main(void)
                 printf("INVALID\n");
             }
         }
+
+        // 16 digits is Visa if first digit is 4, Mastercard if first digits are 51-55 inclusive
         else if (length == 16)
         {
             if (cc / 1000000000000000 == 4)
@@ -66,11 +72,15 @@ int main(void)
                 }
             }
         }
+
+        // Any number of digits besides 13 15 16 is invalid
         else
         {
             printf("INVALID\n");
         }
     }
+
+    // Invalid sum prints invalid
     else if (validsum == false)
     {
         printf("INVALID\n");
