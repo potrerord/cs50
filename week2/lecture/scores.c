@@ -6,7 +6,7 @@
 const int N = 3;
 
 // Returns the average of an array of 3 elements
-float average(int array[]), int length;
+float average(int array[], int length);
 
 int main(void)
 {
@@ -15,7 +15,7 @@ int main(void)
     {
         scores[i] = get_int("Score %i: ", i + 1);
     }
-    printf("Average: %f\n", average(scores));
+    printf("Average: %f\n", average(scores, N));
 }
 
 // Returns the average of an array of ints
