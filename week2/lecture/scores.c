@@ -8,13 +8,13 @@ float average(int array[]);
 
 int main(void)
 {
-    printf("Average: %f\n", average(int scores[]);
+    int scores[3];
+    printf("Average: %f\n", average(scores[3]);
 }
 
 // Returns the average of an array of 3 elements
 float average(int array[])
 {
-    int scores[3];
     for (int i = 0; i < 3; i++)
     {
         scores[i] = get_int("Score %i: ", i + 1);
