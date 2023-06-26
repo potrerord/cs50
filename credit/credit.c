@@ -18,12 +18,13 @@ int main(void)
     // Calculate checksum
     bool valid = checksum()
 
-    // Check card length and starting digits
+    // If valid, check card length and starting digits
+    if (valid == true)
+    {
+        
+    }
 
-
-    // Print card type
-
-    // printf(AMEX\n or MASTERCARD\n or VISA\n or INVALID\n)
+    // Print card type: printf(AMEX\n or MASTERCARD\n or VISA\n or INVALID\n)
 
 
 }
