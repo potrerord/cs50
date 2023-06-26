@@ -43,5 +43,8 @@ int get_height(void)
 // Prints pyramid of size h
 void print_pyramid(int size)
 {
-    
+    // print size-1_ 1#
+    // print size-2_ 2#
+    // print size-3_ 3#
+    // print size-size_ size#
 }
