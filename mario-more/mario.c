@@ -28,8 +28,8 @@ int get_height(void)
     return h;
 }
 
-// Prints half-pyramid with height input
-void print_hpyramid(int height)
+// Prints pyramid with height input
+void print_pyramid(int height)
 {
     // Print input number of rows
     for (int i = 0; i < height; i++)
@@ -41,6 +41,15 @@ void print_hpyramid(int height)
         }
 
         // Then print increasing # starting with 1
+        for (int k = 0; k < i + 1; k++)
+        {
+            printf("#");
+        }
+
+        // Then print 2 spaces
+        printf("  ");
+
+        // Then print the same amount of # as before
         for (int k = 0; k < i + 1; k++)
         {
             printf("#");
