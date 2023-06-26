@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <cs50.h>
 
-const int N = 3
+const int N = 3;
 
 // Returns the average of an array of 3 elements
 float average(int array[]);
@@ -21,11 +21,10 @@ int main(void)
 // Returns the average of an array of ints
 float average(int array[])
 {
-    int sum = 0
-    for (int j = 0; j < ; j++)
+    int sum = 0;
+    for (int i = 0; i < N; i++)
     {
-        sum += array[j]
-        float average = sum / (float)k
+        sum += array[i];
     }
-    return average
+    return sum / (float) N;
 }
