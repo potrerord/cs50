@@ -14,11 +14,11 @@ int main(void)
     // Count number of coins with n
     int n = 0;
 
-    // Subtract largest available coin and increment n by 1
+    // Subtract largest possible coin and increment n by 1, starting with quarter
     int coin = 25
     while (change > 0)
     {
-        // Compare change value to highest coin value
+        // Compare change value to highest coin value and subtract/increment if possible
         if (change >= coin)
         {
             change -= coin;
@@ -26,7 +26,7 @@ int main(void)
         }
         else
         {
-            // Lower coin value to next highest
+            // Lower coin value to next highest and loop until change is 0
             if (coin == 25)
             {
                 coin = 10;
