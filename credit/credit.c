@@ -94,13 +94,13 @@ bool checksum(long cc)
         // Sum double every other digit starting from second to last
         for (int i = 0; i < k; i++)
         {
-            sum += 2 * ((long) ((double) cc / pow(10, (2 * i) + 1)) % 10);
+            sum += 2 * ((int) ((double) cc / pow(10, (2 * i) + 1)) % 10);
         }
 
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
-            sum += (long) ((double) cc / pow(10, 2 * j)) % 10;
+            sum += (int) ((double) cc / pow(10, 2 * j)) % 10;
         }
     }
 
@@ -110,13 +110,13 @@ bool checksum(long cc)
         // Sum double every other digit starting from second to last
         for (int i = 0; i < k - 1; i++)
         {
-            sum += 2 * ((long) ((double) cc / pow(10, (2 * i) + 1)) % 10);
+            sum += 2 * ((int) ((double) cc / pow(10, (2 * i) + 1)) % 10);
         }
 
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
-            sum += (long) ((double) cc / pow(10, 2 * j)) % 10;
+            sum += (int) ((double) cc / pow(10, 2 * j)) % 10;
         }
     }
 
