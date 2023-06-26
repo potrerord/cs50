@@ -49,7 +49,12 @@ int main(void)
             }
             else
             {
-                printf("MASTERCARD\n");
+                for (int l = 51; l < 56; l++)
+                {
+                    if ((int) (cc / 10000000000000) == l)
+                    {
+                        printf("AMEX\n");
+                    }
             }
         }
         else
