@@ -53,17 +53,19 @@ int get_change(void)
 // Lowers coin value to next highest coin
 int lower_coin(int coin)
 {
+    int lower;
     if (coin == 25)
     {
-        int lower = 10;
+        lower = 10;
     }
     else if (coin == 10)
     {
-        int lower = 5;
+        lower = 5;
     }
     else if (coin == 5)
     {
-        int lower = 1;
+        lower = 1;
+    }
     else
     {
         printf("Error: invalid coin value\n");
