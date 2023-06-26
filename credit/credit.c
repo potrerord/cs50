@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 // Gets user credit card number
-long get_long(long cc);
+long get_cc(long cc);
 
 int main(void)
 {
@@ -25,12 +25,12 @@ int main(void)
 }
 
 // Gets user credit card number
-long get_long(long cc);
+long get_cc(long cc);
 {
     long cc;
     do
     {
-
+        cc = get_long("Number: "):
     }
-    while ()
+    while (cc < )
 }
