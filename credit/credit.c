@@ -111,12 +111,14 @@ bool checksum(long cc)
         for (int i = 0; i < k - 1; i++)
         {
             sum += 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+            printf("%i\n", sum);
         }
 
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
             sum += (long) (cc / (long) pow(10, 2 * j)) % 10;
+            printf("%i\n", sum);
         }
     }
 
