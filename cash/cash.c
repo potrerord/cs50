@@ -27,18 +27,7 @@ int main(void)
         else
         {
             // Lower coin value to next highest and loop until change is 0
-            if (coin == 25)
-            {
-                coin = 10;
-            }
-            else if (coin == 10)
-            {
-                coin = 5;
-            }
-            else if (coin == 5)
-            {
-                coin = 1;
-            }
+
         }
     }
 
@@ -56,4 +45,22 @@ int get_change(void)
     }
     while (change < 0);
     return change;
+}
+
+// Lowers coin value to next highest coin
+int lower_coin(coin)
+{
+    if (coin == 25)
+    {
+        coin = 10;
+    }
+    else if (coin == 10)
+    {
+        coin = 5;
+    }
+    else if (coin == 5)
+    {
+        coin = 1;
+    return coin
+    }
 }
