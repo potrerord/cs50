@@ -95,7 +95,8 @@ bool checksum(long cc)
         for (int i = 0; i < k; i++)
         {
             sum += 2 * ((int) (cc / (long) pow(10, (2 * i) + 1)) % 10);
-            printf("%i\n", sum);
+            // printf("%i\n", ((int) (cc / (long) pow(10, (2 * i) + 1)) % 10));
+            // printf("%i\n", sum);
         }
 
         // Sum every other digit starting from last
