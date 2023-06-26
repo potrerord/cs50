@@ -25,12 +25,12 @@ int main(void)
 }
 
 // Gets user credit card number
-long get_cc(long cc);
+long get_cc(long cc)
 {
-    long cc;
     do
     {
-        cc = get_long("Number: "):
+        cc = get_long("Number: ");
     }
-    while (cc < 0)
+    while (cc < 0);
+    return cc;
 }
