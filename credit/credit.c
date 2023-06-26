@@ -30,7 +30,7 @@ int main(void)
         // 15 digits is Amex if first two digits are 34 or 37
         if (length == 15)
         {
-            if ((int) (cc / 10000000000000) == 34 || (int) (cc / 10000000000000) == 37)
+            if ((int)(cc / 10000000000000) == 34 || (int)(cc / 10000000000000) == 37)
             {
                 printf("AMEX\n");
             }
@@ -43,7 +43,7 @@ int main(void)
         // 13 digits is Visa if first digit is 4
         else if (length == 13)
         {
-            if ((int) (cc / 1000000000000) == 4)
+            if ((int)(cc / 1000000000000) == 4)
             {
                 printf("VISA\n");
             }
@@ -62,7 +62,7 @@ int main(void)
             }
             else
             {
-                if ((int) (cc / 100000000000000) < 51 || (int) (cc / 100000000000000) > 55)
+                if ((int)(cc / 100000000000000) < 51 || (int)(cc / 100000000000000) > 55)
                 {
                     printf("INVALID\n");
                 }
@@ -127,7 +127,7 @@ bool checksum(long cc)
         // Sum twice every other digit starting from second to last
         for (int i = 0; i < k; i++)
         {
-            tempsum = 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+            tempsum = 2 * ((long)(cc / (long)pow(10, (2 * i) + 1)) % 10);
 
             // Get length of tempsum
             do
@@ -153,7 +153,7 @@ bool checksum(long cc)
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
-            sum += (long) (cc / (long) pow(10, 2 * j)) % 10;
+            sum += (long)(cc / (long)pow(10, 2 * j)) % 10;
         }
     }
 
@@ -163,7 +163,7 @@ bool checksum(long cc)
         // Sum twice  every other digit starting from second to last
         for (int i = 0; i < k - 1; i++)
         {
-            tempsum = 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+            tempsum = 2 * ((long)(cc / (long)pow(10, (2 * i) + 1)) % 10);
 
             // Get length of tempsum
             do
@@ -189,7 +189,7 @@ bool checksum(long cc)
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
-            sum += (long) (cc / (long) pow(10, 2 * j)) % 10;
+            sum += (long)(cc / (long)pow(10, 2 * j)) % 10;
         }
     }
 
