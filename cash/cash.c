@@ -58,11 +58,11 @@ int get_change(void)
     return change;
 }
 
-// Subtract largest coin possible
-void subtract_quarters(int total)
+// Subtract coin value from total
+void subtract_coin(int total, int coin)
 {
-    if (total >= 25)
+    if (total >= coin)
     {
-
+        total -= coin
     }
 }
