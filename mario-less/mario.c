@@ -6,8 +6,8 @@
 // Continually prompts user for int height until positive
 int get_height(void);
 
-// Prints the half-pyramid
-void print_pyramid(int size);
+// Prints half-pyramid with size input
+void print_hpyramid(int size);
 
 
 int main(void)
@@ -15,8 +15,8 @@ int main(void)
     // Get height of half-pyramid
     int h = get_height();
 
-    // Print half-pyramid of height h
-    print()
+    // Print half-pyramid
+    print_hpyramid(h);
 }
 
 
@@ -40,8 +40,8 @@ int get_height(void)
     return h
 }
 
-// Prints pyramid of size h
-void print_pyramid(int size)
+// Prints half-pyramid with size input
+void print_hpyramid(int size)
 {
     // print size-1_ 1#
     // print size-2_ 2#
