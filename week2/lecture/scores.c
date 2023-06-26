@@ -6,7 +6,7 @@
 const int N = 3;
 
 // Returns the average of an array of 3 elements
-float average(int array[]);
+float average(int array[]), int length;
 
 int main(void)
 {
@@ -19,12 +19,12 @@ int main(void)
 }
 
 // Returns the average of an array of ints
-float average(int array[])
+float average(int array[], int length)
 {
     int sum = 0;
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < length; i++)
     {
         sum += array[i];
     }
-    return sum / (float) N;
+    return sum / (float) length;
 }
