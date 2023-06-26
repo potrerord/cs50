@@ -11,12 +11,20 @@ int main(void)
     // Prompt user for cc number
     long cc = get_long("Number: ");
 
-    //
+    // Calculate checksum
+
+
+    // Check card length and starting digits
+
+
+    // Print card type
+
+    // printf(AMEX\n or MASTERCARD\n or VISA\n or INVALID\n)
 
 
 }
 
-// Gets valid credit card number from user input
+// Gets credit card number from user input
 long get_long(long cc);
 {
     long cc;
