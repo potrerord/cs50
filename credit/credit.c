@@ -17,13 +17,13 @@ int main(void)
     long cc = get_cc();
 
     // Calculate checksum
-    bool valid = checksum(cc)
+    bool valid = checksum(cc);
 
     // If valid, check card length and starting digits
-    if (valid == true)
-    {
+    // if (valid == true)
+    // {
 
-    }
+    // }
 
     // Print card type: printf(AMEX\n or MASTERCARD\n or VISA\n or INVALID\n)
 
@@ -45,7 +45,7 @@ long get_cc(void)
 // Gets number length
 int get_length(long cc)
 {
-    length = floor(log10(cc) + 1);
+    int length = floor(log10(cc) + 1);
     return length;
 }
 
@@ -56,21 +56,18 @@ bool checksum(long cc)
     int length = get_length(cc);
     int k = (length + 1) / 2;
     int sum = 0;
-    for (i = 0; i < k; i++)
+    for (int i = 0; i < k; i++)
     {
-        sum += cc % int pow(10, 2 * (i + 1));
+        sum += cc % pow(10, 2 * (i + 1));
     }
-    
-    for (j = 0; j < k; j++)
+    for (int j = 0; j < k; j++)
     {
-        sum += cc % int pow(10, 2 * (i + 1) - 1);
+        sum += cc % pow(10, 2 * (i + 1) - 1);
     }
-
     if sum % 10 == 0
     {
         return true
     }
-
     else
     {
         return false
