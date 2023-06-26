@@ -53,18 +53,34 @@ int get_length(long cc)
 // Checks credit card number input for validity and returns boolean value
 bool checksum(long cc)
 {
+    // Get length
     int length = get_length(cc);
+
+    // Cut length in half to get every other number
     int k = (length + 1) / 2;
+
+    // Initialize sum variable
     int sum = 0;
-    for (int i = 0; i < k; i++)
+
+    // If even, get sum
+    if (length % 2 == 0)
     {
-        sum += cc % (int) pow(10, 2 * (i + 1));
+        for (int i = 0; i < k; i++)
+        {
+            sum += cc % (int) pow(10, 2 * (i + 1));
+        }
+        for (int j = 0; j < k; j++)
+        {
+            sum += cc % (int) pow(10, 2 * j);
+        }
     }
-    for (int j = 0; j < k; j++)
+
+    // If odd, get sum
+    else
     {
-        sum += cc % (int) pow(10, 2 * j);
+
     }
-    printf("%i\n", sum);
+
     if (sum % 10 == 0)
     {
         return true;
