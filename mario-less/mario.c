@@ -43,8 +43,10 @@ int get_height(void)
 // Prints half-pyramid with height input
 void print_hpyramid(int height)
 {
+    // Print height rows
     while (i = 0, i < height, i++)
     {
+        
         // printf()
         // print size-1_ 1"#" "\n"
         // print size-2_ 2# "\n"
