@@ -17,7 +17,7 @@ int main(void)
     long cc = get_cc();
 
     // Calculate checksum
-    bool valid = checksum()
+    bool valid = checksum(cc)
 
     // If valid, check card length and starting digits
     if (valid == true)
@@ -53,6 +53,9 @@ int get_length(long cc)
 // Checks credit card number input for validity and returns boolean value
 bool checksum(long cc)
 {
+    int length = get_length(cc);
+    floor((length + 1) / 2)
+
     // if valid return true
 
 
