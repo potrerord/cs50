@@ -15,28 +15,28 @@ int main(void)
     int n = 0;
 
     // Subtract 25 cents until < 25 cents remaining, increment counter accordingly
-    while (change > 24)
+    while (change >= 25)
     {
         change -= 25;
         n ++;
     }
 
     // Subtract 10 cents until < 10 cents remaining, increment counter accordingly
-    while (change > 9)
+    while (change >= 10)
     {
         change -= 10;
         n ++;
     }
 
     // Subtract 5 cents until < 5 cents remaining, increment counter accordingly
-    while (change > 4)
+    while (change >= 5)
     {
         change -= 5;
         n ++;
     }
 
     // Subtract 1 cent until 0 cents remaining, increment counter accordingly
-    while (change > 0)
+    while (change >= 1)
     {
         change -= 1;
         n ++;
@@ -59,9 +59,9 @@ int get_change(void)
 }
 
 // Subtract largest coin possible
-void subtract_largest_coin(int total, int coin)
+void subtract_quarters(int total)
 {
-    while total >= coin
+    if (total >= 25)
     {
 
     }
