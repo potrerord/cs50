@@ -2,9 +2,7 @@
 
 int main(void)
 {
-    float score1 = 72;
-    float score2 = 73;
-    float score3 = 33;
+    int scores[3];
 
     printf("Average: %f\n", (score1 + score2 + score3) / 3);
 
