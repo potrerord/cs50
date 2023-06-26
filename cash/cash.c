@@ -15,7 +15,7 @@ int main(void)
     int n = 0;
 
     // Subtract largest available coin and increment n by 1
-
+    
     n++
 
     // Print final number of coins
