@@ -9,7 +9,7 @@ float average(int array[]);
 int main(void)
 {
     int scores[3];
-    printf("Average: %f\n", average(scores[3]);
+    printf("Average: %f\n", average(scores);
 }
 
 // Returns the average of an array of 3 elements
