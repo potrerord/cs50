@@ -60,9 +60,20 @@ bool checksum(long cc)
     {
         sum += cc % int pow(10, 2 * (i + 1));
     }
+    
     for (j = 0; j < k; j++)
     {
         sum += cc % int pow(10, 2 * (i + 1) - 1);
+    }
+
+    if sum % 10 == 0
+    {
+        return true
+    }
+
+    else
+    {
+        return false
     }
 
 
