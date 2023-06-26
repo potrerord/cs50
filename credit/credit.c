@@ -28,7 +28,7 @@ int main(void)
         int length = get_length(cc);
         if (length == 15)
         {
-            if ((int) (cc / 10000000000000) == 34 || (int) (cc / 10000000000000) == 37))
+            if ((int) (cc / 10000000000000) == 34 || (int) (cc / 10000000000000) == 37)
             {
                 printf("AMEX\n");
             }
@@ -56,24 +56,13 @@ int main(void)
             }
             else
             {
-                for (int l = 51; l < 57; L++)
+                if ((int) (cc / 100000000000000) < 51 || (int) (cc / 100000000000000) > 55)
                 {
-                    if l == 56
-                    {
-                        printf("INVALID\n");
-                    }
-                    else
-                    {
-                        if l
-                    }
-                }
-                if ((int) (cc / 10000000000000) == 51 || (int) (cc / 10000000000000) == 52 || (int) (cc / 10000000000000) == 53 || (int) (cc / 10000000000000) == 54 || (int) (cc / 10000000000000) == 55)
-                {
-                    printf("AMEX\n");
+                    printf("INVALID\n");
                 }
                 else
                 {
-                    printf("INVALID\n");
+                    printf("MASTERCARD\n");
                 }
             }
         }
