@@ -20,10 +20,10 @@ int main(void)
     long cc = get_cc();
 
     // Calculate checksum
-    bool valid = checksum(cc);
+    bool validsum = checksum(cc);
 
     // If valid, check card length and starting digits
-    if (valid == true)
+    if (validsum == true)
     {
         int length = get_length(cc);
         if (length == 15)
@@ -34,7 +34,7 @@ int main(void)
             }
             else
             {
-                printf("CALCULATION ERROR\n");
+                printf("INVALID\n");
             }
         }
         else if (length == 13)
@@ -49,12 +49,14 @@ int main(void)
             }
             else
             {
-                for (int l = 51; l < 56; l++)
+                if ((int) (cc / 10000000000000) == 51 || (int) (cc / 10000000000000) == 52 || (int) (cc / 10000000000000) == 53 || (int) (cc / 10000000000000) == 54 || (int) (cc / 10000000000000) == 55)
                 {
-                    if ((int) (cc / 10000000000000) == l)
-                    {
-                        printf("AMEX\n");
-                    }
+                    printf("AMEX\n");
+                }
+                else
+                {
+                    printf("INVALID\n");
+                }
             }
         }
         else
@@ -62,7 +64,7 @@ int main(void)
             printf("CALCULATION ERROR\n");
         }
     }
-    else if (valid == false)
+    else if (validsum == false)
     {
         printf("INVALID\n");
     }
