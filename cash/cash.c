@@ -3,13 +3,13 @@
 #include <stdio.h>
 #include <cs50.h>
 
-// Continually prompts user for positive int amount of change
-int get_change(void)
+// Continually prompts user for positive int amount of change in cents
+int get_change(void);
 
 int main(void)
 {
-    // Get change owed in cents
-    int change = get_int("Change owed: ");
+    // Get change owed
+    int change = get_change();
 
     // Count number of coins with n
     int n = 0;
@@ -46,7 +46,7 @@ int main(void)
     printf("%i\n", n);
 }
 
-// Continually prompts user for positive int amount of change
+// Continually prompts user for positive int amount of change in cents
 int get_change(void)
 {
     int change;
