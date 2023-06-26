@@ -30,7 +30,7 @@ int main(void)
         else
         {
             // Lower coin value to next highest and loop until change is 0
-            change = lower_coin(change);
+            coin = lower_coin(change);
         }
     }
 
