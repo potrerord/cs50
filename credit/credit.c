@@ -22,12 +22,17 @@ int main(void)
     // If valid, check card length and starting digits
     if (valid == true)
     {
-        
+        int length = get_length(cc);
+        if (length == 15)
+        {
+            printf(")
+        }
     }
-
+    else
+    {
+        printf("INVALID\n");
+    }
     // Print card type: printf(AMEX\n or MASTERCARD\n or VISA\n or INVALID\n)
-
-
 }
 
 // Gets user credit card number
