@@ -28,6 +28,7 @@ int main(void)
         int length = get_length(cc);
         if (length == 15)
         {
+            if (cc % )
             printf("AMEX\n");
         }
         else if (length == 13)
@@ -36,7 +37,7 @@ int main(void)
         }
         else if (length == 16)
         {
-            if (cc / 1000000000000000 == 4)
+            if (cc % 1000000000000000 == 4)
             {
                 printf("VISA\n");
             }
