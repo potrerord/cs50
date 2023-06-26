@@ -59,7 +59,10 @@ int get_change(void)
 }
 
 // Subtract largest coin possible
-void subtract_coin(total)
+void subtract_coin(int total, int coin)
 {
-    
+    while total >= coin
+    {
+        
+    }
 }
