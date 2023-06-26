@@ -85,8 +85,9 @@ bool checksum(long cc)
     // Cut length in half to get every other number
     int k = (length + 1) / 2;
 
-    // Initialize sum variable
+    // Initialize sum and tempsump variables
     int sum = 0;
+    int tempsum = 0;
 
     // If even length, get sum
     if (length % 2 == 0)
@@ -95,6 +96,13 @@ bool checksum(long cc)
         for (int i = 0; i < k; i++)
         {
             sum += 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
+
+            // If single digit, add to sum
+            
+
+            // If not single digit, break into digits
+
+
         }
 
         // Sum every other digit starting from last
@@ -111,18 +119,14 @@ bool checksum(long cc)
         for (int i = 0; i < k - 1; i++)
         {
             sum += 2 * ((long) (cc / (long) pow(10, (2 * i) + 1)) % 10);
-            printf("%i\n", sum);
         }
 
         // Sum every other digit starting from last
         for (int j = 0; j < k; j++)
         {
             sum += (long) (cc / (long) pow(10, 2 * j)) % 10;
-            printf("%i\n", sum);
         }
     }
-
-    printf("%i\n", sum);
 
     // Return truth value
     if (sum % 10 == 0)
