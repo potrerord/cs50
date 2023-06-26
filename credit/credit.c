@@ -63,7 +63,7 @@ bool checksum(long cc)
     sum *= 2;
     for (j = 0; j < k; j++)
     {
-        sum += 
+        sum += cc % int pow(10, 2 * (i + 1) - 1
     }
 
 
