@@ -118,6 +118,8 @@ bool checksum(long cc)
         }
     }
 
+    printf("%i\n", sum);
+
     // Return truth value
     if (sum % 10 == 0)
     {
