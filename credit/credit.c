@@ -62,8 +62,9 @@ bool checksum(long cc)
     }
     for (int j = 0; j < k; j++)
     {
-        sum += cc % (int) pow(10, (2 * j) + 1);
+        sum += cc % (int) pow(10, 2 * j);
     }
+    printf("%i\n", sum);
     if (sum % 10 == 0)
     {
         return true;
