@@ -65,10 +65,13 @@ bool checksum(long cc)
     // If even length, get sum
     if (length % 2 == 0)
     {
-        for (int i = 0; i < k; i++)
+        // Sum double every other digit starting from second to last
+        for (int i = 0; i < k - 1; i++)
         {
             sum += cc % (int) pow(10, 2 * (i + 1));
         }
+
+        // Sum double every other digit starting from last
         for (int j = 0; j < k; j++)
         {
             sum += cc % (int) pow(10, 2 * j);
@@ -78,7 +81,17 @@ bool checksum(long cc)
     // If odd length, get sum
     else
     {
+        // Sum double every other digit starting from second to last
+        for (int i = 0; i < k; i++)
+        {
+            sum += cc % (int) pow(10, 2 * (i + 1));
+        }
 
+        // Sum double every other digit starting from last
+        for (int j = 0; j < k; j++)
+        {
+            sum += cc % (int) pow(10, 2 * j);
+        }
     }
 
     if (sum % 10 == 0)
