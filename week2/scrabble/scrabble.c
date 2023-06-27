@@ -49,6 +49,7 @@ int main(void)
         {
             if (pscores[i] > winner_score)
             {
+                winner_score = pscores[i];
                 winner = i + 1;
             }
         }
