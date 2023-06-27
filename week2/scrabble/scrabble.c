@@ -13,13 +13,8 @@ int scrabble_score(string s);
 
 int main(void)
 {
-    // Create array of letter scores
-
-
-    // Prompt Player 1
+    // Prompt Player 1 and Player 22
     string p1 = get_string("Player 1: ");
-
-    // Prompt Player 2
     string p2 = get_string("Player 2: ");
 
     // Put player words in array
