@@ -18,14 +18,19 @@ int main(void)
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         c = text[i];
+
+        // if it's alpha, count it - when you reach a space, that count is the letters in that word
+        if (isalpha(c) != 0)
+        {
+            
+        }
+
+        // if it is a .?!, check the character after it
+            // if the next character is a space or \0, that's a sentence buddy count it in sentence counter
+        // if that counter is a nonzero positive integer, increment a "letters" sum with it
+            // increment a "words" sum by 1 when this happens
+
     }
-
-    // if it's not a space, period, question mark, or exclamation point, count it - when you reach a space, that count is the letters in that word
-    // if it is a .?!, check the character after it
-        // if the next character is a space or \0, that's a sentence buddy count it in sentence counter
-    // if that counter is a nonzero positive integer, increment a "letters" sum with it
-        // increment a "words" sum by 1 when this happens
-
 
     // Calculate Coleman-Liau index = (0.0588 * L) - (0.296 * S) - 15.8
     // L = average number of letters per 100 words in the text (more letters brings level up)
