@@ -90,18 +90,22 @@ int scrabble_score(string s)
 int is_tie(int scores[])
 {
     // if all are equal return 1
-    for (int i = 1, n = strlen(scores); i < n; i++)
+    int i = 1;
+    while (1 == 1)
     {
         // Return 0 if any score is different
         if (scores[i] != scores[i - 1])
         {
             return 0;
+            break;
         }
 
         // Return 1 if every score is the same
         else if (scores[i] == '\0')
         {
             return 1;
+            break;
         }
+        i++;
     }
 }
