@@ -24,11 +24,12 @@ int main(void)
     }
 
     // Create array for player scores
-    int pscores[N];
+    int pscores[N + 1];
     for (int i = 0; i < N; i++)
     {
         pscores[i] = scrabble_score(words[i]);
     }
+    pscores[N] = '\0';
 
     // Compare scores
     for (int i = 0; i < N; i++)
