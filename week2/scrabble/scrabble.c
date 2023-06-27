@@ -34,6 +34,7 @@ int main(void)
     for (int i = 0; i < N; i++)
     {
         int winner = 0;
+        while
         if (pscores[i] > winner)
         {
             winner = i + 1;
