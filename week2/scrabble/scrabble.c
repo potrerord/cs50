@@ -101,7 +101,7 @@ int is_tie(string scores)
         }
 
         // Return 1 if every score is the same
-        else
+        else if (scores[i] == '\0')
         {
             return 1;
         }
