@@ -12,7 +12,7 @@ const int SCRABVAL[26] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1,
 const int N = 2;
 
 // Returns 1 if all values are equal, 0 if any are different (requires an array input with null final value)
-int is_tie(string scores)
+int is_tie(string scores);
 
 // Gets scrabble score of input alpha characters
 int scrabble_score(string s);
@@ -34,13 +34,14 @@ int main(void)
     }
     pscores[N] = '\0';
 
-    // Check for tie
-    if (int istie(pscores) == 1)
+    // Check for tie and print if found
+    if (is_tie(pscores) == 1)
     {
         printf("Tie!");
     }
 
     // Else, find winner
+    else
     {
         for (int i = 0; i < N; i++)
         {
@@ -49,14 +50,10 @@ int main(void)
                 winner = i + 1;
             }
         }
+
+        // Print winner
+        printf("Player %i wins!\n", winner);
     }
-
-    // Print winner
-    printf("Player %i wins!\n", winner);
-
-    // Tie!
-
-
 }
 
 // Gets scrabble score of input alpha characters
