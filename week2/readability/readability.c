@@ -7,17 +7,21 @@
 int main(void)
 {
     // Prompt user for string "Text: "
-    string input_text = get_string("Text: ");
-    const int N = strlen(input_text);
-    string text[N + 1] = input_text;
-    text[N] = ' ';
-    printf("%s.", text);
+    string text = get_string("Text: ");
 
-    // add a space after the last word manually so it'll be easier for the program to distinguish sentences (!!! for example should be one sentence)
+    // a sentence is a .?! followed by a space or \0 (!!! for example should be one sentence)
 
     // the text is a string filled with useful spaces
     // for every character in the string,
+    char c;
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        c = text[i];
+    }
+
     // if it's not a space, period, question mark, or exclamation point, count it - when you reach a space, that count is the letters in that word
+    // if it is a .?!, check the character after it
+        // if the next character is a space or \0, that's a sentence buddy count it in sentence counter
     // if that counter is a nonzero positive integer, increment a "letters" sum with it
         // increment a "words" sum by 1 when this happens
 
