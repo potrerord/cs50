@@ -26,7 +26,7 @@ int main(void)
         words[i] = get_string("Player %i: ", i + 1);
     }
 
-    // Create array for player scores with null value at the end
+    // Create array for player scores with null value at the end for is_tie function
     int pscores[N + 1];
     for (int i = 0; i < N; i++)
     {
