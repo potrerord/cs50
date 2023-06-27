@@ -62,27 +62,27 @@ int main(void)
 // Gets scrabble score of input alpha characters
 int scrabble_score(string s)
 {
-    // Initialize final and letter-by-letter score variables, plus char x variable to store s[i]
+    // Initialize final and letter-by-letter score variables, plus char c variable to store s[i]
     int sum = 0;
-    int xval = 0;
-    char x;
+    int cval = 0;
+    char c;
 
     // For every character in s
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        x = s[i];
+        c = s[i];
 
-        // If x is alpha
-        if (isalpha(x) != 0)
+        // If c is alpha
+        if (isalpha(c) != 0)
         {
-            // Convert x to uppercase if necessary
-            x = toupper(s[i]);
+            // Convert c to uppercase if necessary
+            c = toupper(s[i]);
 
             // Convert uppercase alpha ASCII to SCRABVAL index
-            xval = SCRABVAL[x - 65];
+            cval = SCRABVAL[c - 65];
 
             // Add value to summed score
-            sum += xval;
+            sum += cval;
         }
     }
     return sum;
