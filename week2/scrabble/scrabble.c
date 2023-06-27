@@ -24,20 +24,30 @@ int main(void)
     }
 
     // Create array for player scores
-    int pscores[N + 1];
+    int pscores[N];
     for (int i = 0; i < N; i++)
     {
         pscores[i] = scrabble_score(words[i]);
     }
-    pscores[N] = '\0';
-
-    // Compare scores
 
     // If every score is the same, print tie
-    
+    for (int i = 1; i < N; i++)
+    {
+        // Break for loop if any score is different
+        if (scores[i] != scores[i - 1])
+        {
+            break
+        }
+
+        // Otherwise print "Tie!"
+        else
+        {
+
+        }
+    }
 
     // Else, find winner
-    else
+    // else?? figure out previous thing
     {
         for (int i = 0; i < N; i++)
         {
