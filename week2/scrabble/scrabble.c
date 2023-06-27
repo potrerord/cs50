@@ -31,20 +31,7 @@ int main(void)
     }
 
     // Check for tie
-    for (int i = 1; i < N; i++)
-    {
-        // Break for loop if any score is different
-        if (scores[i] != scores[i - 1])
-        {
-            break;
-        }
 
-        // Otherwise print "Tie!"
-        else
-        {
-            printf("Tie!");
-        }
-    }
 
     // Else, find winner
     // else?? figure out previous thing
@@ -94,3 +81,6 @@ int scrabble_score(string s)
     }
     return sum;
 }
+
+// Check if all array values are equal
+int istie(int scores[])
