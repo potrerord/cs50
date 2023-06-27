@@ -30,19 +30,19 @@ int main(void)
         pscores[i] = scrabble_score(words[i]);
     }
 
-    // If every score is the same, print tie
+    // Check for tie
     for (int i = 1; i < N; i++)
     {
         // Break for loop if any score is different
         if (scores[i] != scores[i - 1])
         {
-            break
+            break;
         }
 
         // Otherwise print "Tie!"
         else
         {
-
+            printf("Tie!");
         }
     }
 
