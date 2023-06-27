@@ -9,7 +9,7 @@
 const int SCRABVAL[26] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
 // Number of players
-const int N = 2;
+const int N = 3;
 
 // Returns 1 if all values are equal, 0 if any are different (requires an array input with null final value)
 int is_tie(int scores[]);
@@ -37,7 +37,7 @@ int main(void)
     // Check for tie and print if found
     if (is_tie(pscores) == 1)
     {
-        printf("Tie!");
+        printf("Tie!\n");
     }
 
     // Else, find winner
@@ -93,19 +93,21 @@ int is_tie(int scores[])
     int i = 1;
     while (1 == 1)
     {
-        // Return 0 if any score is different
-        if (scores[i] != scores[i - 1])
+        // Return 1 if all scores are the same
+        if (scores[i] == '\0')
+        {
+            return 1;
+            break;
+        }
+
+        // Return 0 is any score is different
+        else if (scores[i] != scores[i - 1])
         {
             return 0;
             break;
         }
 
-        // Return 1 if every score is the same
-        else if (scores[i] == '\0')
-        {
-            return 1;
-            break;
-        }
+        // Increment
         i++;
     }
 }
