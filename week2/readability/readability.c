@@ -8,7 +8,8 @@ int main(void)
 {
     // Prompt user for string "Text: "
     string input_text = get_string("Text: ");
-    string text = input_text + " "
+    const int N = strlen(input_text);
+    string text[N + 1] = strcat(input_text, " ");
     printf("%s.", text);
 
     // add a space after the last word manually so it'll be easier for the program to distinguish sentences (!!! for example should be one sentence)
