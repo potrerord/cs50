@@ -22,7 +22,7 @@ int main(void)
     // Prompt players for words and put in array
     for (i = 0; i < N; i++)
     {
-        words[i] = get_string("Player %i: ", i);
+        words[i] = get_string("Player %i: ", i + 1);
     }
 
     // Create array for player scores
@@ -34,20 +34,16 @@ int main(void)
         pscores[i] = scrabble_score(words[i]);
     }
 
-    // Print winner
-    if (p1score > p2score)
+    // Compare scores and print winner
+    for (i = 0; i < N; i++)
     {
-        printf("Player 1 wins!\n");
+        int winner = 0;
+        if (pscores[i] > winner)
+        {
+            winner = i + 1;
+        }
+        printf("Player %i wins!\n", winner);
     }
-    else if (p1score < p2score)
-    {
-        printf("Player 2 wins!\n");
-    }
-    else
-    {
-        printf("Tie!\n");
-    }
-}
 
 // Gets scrabble score of input alpha characters
 int scrabble_score(string s)
