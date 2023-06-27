@@ -17,25 +17,25 @@ int scrabble_score(string s);
 int main(void)
 {
     // Create array for player inputs of size N
-    string words[N] = NULL;
+    string words[N];
 
     // Prompt players for words and put in array
-    for (i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         words[i] = get_string("Player %i: ", i + 1);
     }
 
     // Create array for player scores
-    int pscores[N] = NULL;
+    int pscores[N];
 
     // Put player scores in array
-    for (i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         pscores[i] = scrabble_score(words[i]);
     }
 
     // Compare scores and print winner
-    for (i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
         int winner = 0;
         if (pscores[i] > winner)
