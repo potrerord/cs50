@@ -6,7 +6,7 @@
 #include <string.h>
 
 // Scrabble letter values alpha order
-const int SCRABVAL[26] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10}
+const int SCRABVAL[26] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
 // Gets scrabble score of input alpha characters
 int scrabble_score(string s);
@@ -27,7 +27,7 @@ int main(void)
 
     // Get each score
     int p1score = scrabble_score(p1);
-    int p2score = 0;
+    int p2score = scrabble_score(p2);
 
     // Print winner
     if (p1score > p2score)
@@ -63,7 +63,7 @@ int scrabble_score(string s)
             // Convert x to uppercase if necessary
             x = toupper(s[i]);
 
-            // Check against the all-uppercase score key
+            // Convert uppercase alpha ASCII to SCRABVAL index
             xval = SCRABVAL[x - 65];
 
             // Add value to summed score
