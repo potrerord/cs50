@@ -32,13 +32,19 @@ int main(void)
     pscores[N] = '\0';
 
     // Compare scores
-    for (int i = 0; i < N; i++)
+
+    // If every score is the same, print tie
+    
+
+    // Else, find winner
+    else
     {
-        int winner = 0;
-        while
-        if (pscores[i] > winner)
+        for (int i = 0; i < N; i++)
         {
-            winner = i + 1;
+            if (pscores[i] > winner)
+            {
+                winner = i + 1;
+            }
         }
     }
 
