@@ -8,21 +8,31 @@
 // Scrabble letter values alpha order
 const int SCRABVAL[26] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
+// Number of players
+const int N = 2;
+
 // Gets scrabble score of input alpha characters
 int scrabble_score(string s);
 
 int main(void)
 {
-    // Prompt Player 1 and Player 22
-    string p1 = get_string("Player 1: ");
-    string p2 = get_string("Player 2: ");
+    // Create array for player inputs of size N
+    string words[N] = NULL;
 
-    // Put player words in array
+    // Prompt players for words and put in array
+    for (i = 0; i < N; i++)
+    {
+        words[i] = get_string("Player %i: ", i);
+    }
 
+    // Create array for player scores
+    int pscores[N] = NULL;
 
-    // Get each score
-    int p1score = scrabble_score(p1);
-    int p2score = scrabble_score(p2);
+    // Put player scores in array
+    for (i = 0; i < N; i++)
+    {
+        pscores[i] = scrabble_score(words[i]);
+    }
 
     // Print winner
     if (p1score > p2score)
