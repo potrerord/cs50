@@ -43,10 +43,11 @@ int main(void)
     // Else, find winner
     else
     {
+        int winner_score = 0;
         int winner = 0;
         for (int i = 0; i < N; i++)
         {
-            if (pscores[i] > winner)
+            if (pscores[i] > winner_score)
             {
                 winner = i + 1;
             }
