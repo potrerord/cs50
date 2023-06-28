@@ -22,7 +22,7 @@ int main(int argc, string argv[])
     {
         for (int i = 0; 1 == 1; i++)
         {
-            if (isdigit(argv[i]) == 0)
+            if (isdigit(argv[0][i]) == 0)
             {
                 printf("caesar: error: enter nonnegative integer");
             }
