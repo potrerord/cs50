@@ -14,9 +14,10 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Error if argument is not nonnegative int
+    // If single argument
     else
     {
+        // Error if argument is not nonnegative int
         for (int i = 0; 1 == 1; i++)
         {
             if (argv[1][i] == '\0')
@@ -31,10 +32,9 @@ int main(int argc, string argv[])
             }
         }
 
-        // Do not assume that k will be less than or equal to 26.
-        // Your program should work for all non-negative integral values of less than 2^31 - 26.
-        // In other words, you don’t need to worry if your program eventually breaks if the user
-        // chooses a value for k that’s too big or almost too big to fit in an int.
+        // If argument is nonnegative int, continue to main function
+
+        
         // (Recall that an int can overflow.) But, even if k is greater than 26,
         // alphabetical characters in your program’s input should remain alphabetical characters
         // in your program’s output. For instance, if k is 27, A should not become \ even though \ is 27
