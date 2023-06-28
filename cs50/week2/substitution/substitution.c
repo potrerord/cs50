@@ -7,7 +7,7 @@
 #include <string.h>
 
 //// Rotates chars according to pos int key
-// char rotate(char c, int key);
+char rotate(char c, int key);
 
 int main(int argc, string argv[])
 {
@@ -22,25 +22,26 @@ int main(int argc, string argv[])
     else
     {
         // Check every character of arg until '\0' or until > 26 chars
-        for (int i = 0; 1 == 1; i++)
+        int j = 0;
+        for (j = 0; 1 == 1; j++)
         {
-            if argv[1][i] == '\0'
+            if (argv[1][j] == '\0')
             {
                 break;
             }
 
             // Error if argument is > 26 chars or contains nonalpha
-            else if (i > 25 || isalpha(argv[1][i]) == 0)
+            else if (j > 25 || isalpha(argv[1][j]) == 0)
             {
-                printf("substitution: error: argument must be 26 alpha characters");
+                printf("substitution: error: argument must be 26 alpha characters\n");
                 return 1;
             }
         }
 
-        // Error if i makes it out of the above loop without getting to 25
-        if (i < 25)
+        // Error if j makes it out of the above loop without getting to 25
+        if (j < 25)
         {
-            printf("substitution: error: argument must be 26 alpha characters");
+            printf("substitution: error: argument must be 26 alpha characters\n");
             return 1;
         }
 
@@ -57,7 +58,7 @@ int main(int argc, string argv[])
         // char3 is B so it gets checked with A B uh oh now the count variable is 1 so error
 
         char alphabet[26];
-        for (i = 0; i < 25; i++)
+        for (int i = 0; i < 26; i++)
         {
             alphabet[i] = i + 65;
             printf("%c", alphabet[i]);
