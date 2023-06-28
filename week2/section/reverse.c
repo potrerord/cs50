@@ -6,7 +6,8 @@ int main(void)
 {
     string s = get_string("Enter string: ");
 
+    
 
+    char array[strlen(s)]
 
-    char array[] = 
 }
