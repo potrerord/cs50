@@ -29,13 +29,11 @@ int main(void)
         }
 
         // if it's not alpha, check the previous one - if that one is alpha, then count a word
-        else
+        else if (isalpha(text[i - 1]) != 0)
         {
-            if (isalpha(text[i - 1]) != 0)
-            {
-                wordcount++;
-            }
+            wordcount++;
         }
+    }
         // when you reach a .?! + ' ' or '\0' it's a sentence
         // if it's whitespace or null
 
