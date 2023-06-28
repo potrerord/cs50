@@ -64,8 +64,9 @@ char rotate(char c, int key)
 
     else
     {
-        // Converts input key to alpha key 0-26 (protects upper limit of int keys)
+        // Converts input key to alpha key 0-26 (protects upper limit of int)
         int trueKey = key % 26;
+        printf("%i", trueKey)
 
         // Uppercase ascii conversion
         if (isupper(c) != 0)
