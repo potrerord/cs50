@@ -49,13 +49,13 @@ int main(int argc, string argv[])
             // Uppercase ascii conversion
             else if (isupper(argv[1][i]) != 0)
             {
-                printf("%c", plaintext[i] - 64 + atoi(argv[1])  );
+                printf("%c", (plaintext[i] - 64 + atoi(argv[1])) % 26 + 64);
             }
 
             // Lowercase ascii conversion
             else
             {
-                printf("%c", ((plaintext[i] - 96 + atoi(argv[1])) % 26) + 97);
+                printf("%c", (plaintext[i] - 96 + atoi(argv[1])) % 26 + 96);
             }
         }
         printf("\n");
