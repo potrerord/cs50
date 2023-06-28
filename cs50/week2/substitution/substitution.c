@@ -21,7 +21,7 @@ int main(int argc, string argv[])
     // If single argument
     else
     {
-        // Error if argument is not nonnegative int, otherwise continue through main
+        // Error if argument is not proper key (26 chars, all alpha, all 26 letters exactly once)
         for (int i = 0; 1 == 1; i++)
         {
             if (argv[1][i] == '\0')
