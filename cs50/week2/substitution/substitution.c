@@ -26,13 +26,13 @@ int main(int argc, string argv[])
         {
             if argv[1][i] == '\0'
             {
-                break
+                break;
             }
 
             // Error if argument is > 26 chars or contains nonalpha
             else if (i > 25 || isalpha(argv[1][i]) == 0)
             {
-                printf("substitution: error: argument must be 26 alpha characters")
+                printf("substitution: error: argument must be 26 alpha characters");
                 return 1;
             }
         }
@@ -40,8 +40,8 @@ int main(int argc, string argv[])
         // Error if i makes it out of the above loop without getting to 25
         if (i < 25)
         {
-            printf("substitution: error: argument must be 26 alpha characters")
-            return 1
+            printf("substitution: error: argument must be 26 alpha characters");
+            return 1;
         }
 
         // Getting to here means arg is 26 chars and all alpha
@@ -50,13 +50,18 @@ int main(int argc, string argv[])
 
 
         // compare letters?
-        // store each character in a reference array (intialize with all 0? null?)
+        // store each character in a reference array (intialize with
         // char0 is A so it goes in
         // char1 is B so it gets checked with A, all good
         // char2 is C so it gets checked with A B all good
         // char3 is B so it gets checked with A B uh oh now the count variable is 1 so error
 
-
+        char alphabet[26];
+        for (i = 0; i < 25; i++)
+        {
+            alphabet[i] = i + 65;
+            printf("%c", alphabet[i]);
+        }
 
         // Store argument as integer key
         int key = atoi(argv[1]);
