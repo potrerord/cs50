@@ -42,10 +42,17 @@ int main(int argc, string argv[])
 
         // Your program must output plaintext: (with two spaces but without a newline)
         // and then prompt the user for a string of plaintext (using get_string).
+        string plaintext = get_string("plaintext:  ");
 
         // Your program must output ciphertext: (with one space but without a newline) followed by
         // the plaintext’s corresponding ciphertext, with each alphabetical character in the plaintext
         // “rotated” by k positions; non-alphabetical characters should be outputted unchanged.
+        printf("ciphertext: ");
+        for (int i = 0; 1 == 1; i++)
+        {
+            printf("\c", ciphertext[i])
+        }
+        printf("\n");
 
         // Your program must preserve case: capitalized letters, though rotated, must remain
         // capitalized letters; lowercase letters, though rotated, must remain lowercase letters.
