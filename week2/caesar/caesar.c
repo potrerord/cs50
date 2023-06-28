@@ -55,7 +55,7 @@ int main(int argc, string argv[])
             // Lowercase ascii conversion
             else
             {
-                printf("%c", ((plaintext[i] - 96 + atoi(argv[1])) % 26) + 96);
+                printf("%c", ((plaintext[i] - 96 + atoi(argv[1])) % 26) + 97);
             }
         }
         printf("\n");
