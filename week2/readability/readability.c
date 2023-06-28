@@ -87,6 +87,6 @@ int main(void)
 // Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words) - 15.8
 float cole_liau(int lets, int wrds, int snts)
 {
-    float score = (0.0588 * lets / (100 * wrds)) - (0.296 * (snts / (100 * wrds))) - 15.8;
+    float score = (0058.8 * lets / wrds) - (296 * snts / wrds) - 15.8;
     return score;
 }
