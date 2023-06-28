@@ -1,2 +1,2 @@
-// Encrypts cmd-line messages using Caesar cipher
+// Encrypts messages using Caesar cipher with cmd-line key input
 
