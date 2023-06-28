@@ -62,14 +62,8 @@ int main(void)
         }
     }
 
-    // Debug
-    printf("L %i W %i S %i\n", letCount, wordCount, sentCount);
-
     // Calculate Coleman-Liau index = (0.0588 * L) - (0.296 * S) - 15.8
     float gradeLevel = cole_liau(letCount, wordCount, sentCount);
-
-    // Debug
-    printf("CL index: %f ", gradeLevel);
 
     // Print "Grade X"
     // if < 1 print "Before Grade 1"
@@ -90,6 +84,6 @@ int main(void)
 // Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words) - 15.8
 float cole_liau(int lets, int wrds, int snts)
 {
-    float score = (0.0588 * lets / wrds) - (0.296 * snts / wrds) - 15.8;
+    float score = (05.88 * lets / wrds) - (29.6 * snts / wrds) - 15.8;
     return score;
 }
