@@ -65,6 +65,9 @@ int main(void)
     // Calculate Coleman-Liau index = (0.0588 * L) - (0.296 * S) - 15.8
     float gradeLevel = cole_liau(letCount, wordCount, sentCount);
 
+    // Debug
+    printf("Grade level: %f\n", gradeLevel);
+
     // Print "Grade X"
     // if < 1 print "Before Grade 1"
     if (gradeLevel < 1)
