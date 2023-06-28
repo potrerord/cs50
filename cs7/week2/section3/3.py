@@ -1,5 +1,5 @@
 n = int(input("How many la do you want? "))
-print("Fa ")
+print("Fa", end = " ")
 for i in range(n):
-    print("la ")
+    print("la", end = " ")
 print("LA!")
