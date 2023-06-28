@@ -28,8 +28,8 @@ int main(void)
             letcount++;
         }
 
-        // if it's not alpha, check the previous one - if that one is alpha, then count a word
-        else if (isalpha(text[i - 1]) != 0)
+        // if it's not alpha (and not an apostrophe), check the previous one - if that one is alpha, then count a word
+        else if (isalpha(text[i - 1]) != 0 && text[i - 1] != ' ')
         {
             wordcount++;
         }
