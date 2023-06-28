@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include <string.h>
 
+// Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words) - 15.8
+float cole_liau(int lets, int wrds, int snts);
+
 int main(void)
 {
     // Prompt user for string "Text: "
@@ -14,9 +17,9 @@ int main(void)
 
     // the text is a string filled with useful spaces
     // count variables: letters, words, sentences
-    int letcount = 0;
-    int wordcount = 0;
-    int sentcount = 0;
+    int letCount = 0;
+    int wordCount = 0;
+    int sentCount = 0;
 
     // Scan all characters in string
     for (int i = 0, n = strlen(text); i < n; i++)
@@ -25,7 +28,7 @@ int main(void)
 
         if (isalpha(text[i]) != 0)
         {
-            letcount++;
+            letCount++;
         }
 
         // If char is not alpha
@@ -36,7 +39,7 @@ int main(void)
             {
                 if (isalpha(text[i - 1]) != 0 && isalpha(text[i + 1] == 0))
                 {
-                    wordcount++;
+                    wordCount++;
                 }
             }
 
@@ -45,14 +48,14 @@ int main(void)
             {
                 // If previous char is alpha count word
                 if (isalpha(text[i - 1]) != 0)
-                wordcount++;
+                wordCount++;
 
                 // If sentence-ending punctuation followed by space or null, count sentence
                 if (text[i] == '.' || text[i] == '?' || text[i] == '!')
                 {
                     if (isspace(text[i + 1]) != 0 || text[i + 1] == '\0')
                     {
-                        sentcount++;
+                        sentCount++;
                     }
                 }
             }
@@ -60,29 +63,27 @@ int main(void)
     }
 
     // Calculate Coleman-Liau index = (0.0588 * L) - (0.296 * S) - 15.8
-    float cole_liau = cole_liau(letcount, wordcount, sentcount)
-
-
-    // L = average number of letters per 100 words in the text (more letters brings level up)
-        // get number of letters for every 100 groups of alpha
-        // A word could be defined as connected alpha characters and apostrophes, ignoring punctuation and separated by spaces
-            // Anthony's is one word
-            // Anthony. is a word not including the period
-            // let's just ignore punct and use spaces to indicate new word
-        // float letters / float words / 100 = average letters / 100 words
-        // in each
-
-    // S = average number of sentences per 100 words in the text (more sentences brings level down)
-    // float sentences / float words / 100 = average sentences / 100 words
-
+    float gradeLevel = cole_liau(letCount, wordCount, sentCount);
 
     // Print "Grade X"
     // if < 1 print "Before Grade 1"
-    // if >= 16 print "Grade 16+"
+    if (gradeLevel < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (gradeLevel >= 16)
+    {
+        printf("Grade 16+\n");
+    }
+    else
+    {
+        printf("Grade %i\n", (int)gradeLevel);
+    }
 }
 
 // Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words) - 15.8
 float cole_liau(int lets, int wrds, int snts)
 {
-
+    float score = (0.0588 * lets / (100 * wrds)) - (0.296 * (snts / (100 * wrds))) - 15.8;
+    return score;
 }
