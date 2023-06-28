@@ -42,11 +42,11 @@ int main(int argc, string argv[])
         {
             if (isupper(argv[1][i]) != 0)
             {
-                printf("%c", (plaintext[i] - 64 + atoi(argv[1])) % 26 + 64);
+                printf("%c", ((plaintext[i] - 64 + atoi(argv[1])) % 26) + 64);
             }
             else
             {
-                printf("%c", (plaintext[i] - 96 + atoi(argv[1])) % 26 + 96);
+                printf("%c", ((plaintext[i] - 96 + atoi(argv[1])) % 26) + 96);
             }
         }
         printf("\n");
