@@ -28,11 +28,13 @@ int main(void)
             letcount++;
         }
 
-        // if it's not alpha (and not an apostrophe), check the previous one - if that one is alpha, then count a word
-        else if (isalpha(text[i - 1]) != 0 && text[i - 1] != ' ')
+        // if it's not alpha, then make sure it's not an apostrophe and check if the previous char is alpha, then count a word if so
+        else if (text[i] != '\'' && isalpha(text[i - 1]) != 0)
         {
             wordcount++;
         }
+
+        // if it is an apostrophe then move on without doing anything
     }
         // when you reach a .?! + ' ' or '\0' it's a sentence
         // if it's whitespace or null
