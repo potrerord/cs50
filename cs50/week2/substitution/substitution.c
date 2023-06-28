@@ -47,9 +47,16 @@ int main(int argc, string argv[])
         // Getting to here means arg is 26 chars and all alpha
 
         // convert lowercase to uppercase to compare values
-        
+
 
         // compare letters?
+        // store each character in a reference array (intialize with all 0? null?)
+        // char0 is A so it goes in
+        // char1 is B so it gets checked with A, all good
+        // char2 is C so it gets checked with A B all good
+        // char3 is B so it gets checked with A B uh oh now the count variable is 1 so error
+
+
 
         // Store argument as integer key
         int key = atoi(argv[1]);
