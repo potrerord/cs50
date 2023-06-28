@@ -18,19 +18,17 @@ int main(void)
     int wordcount = 0;
     int sentcount = 0;
 
-    // for every character in the string,
+    // Scan all characters in string
     char c;
     for (int i = 0, n = strlen(text); i < n; i++)
     {
-        // Count letters
-        // if it's alpha, count it - when you reach a .?! + ' ' or '\0' it's a sentence
+        // If char is alpha, count letter
         if (isalpha(text[i]) != 0)
         {
             letcount++;
         }
 
-        // Count words
-        // otherwise, make sure it's not an apostrophe or hyphen and check if the previous char is alpha, then count a word if so
+        // Ignore apostrophe/hyphen, if previous char is alpha then count word
         else if (text[i] != '\'' && text[i] != '-' && isalpha(text[i - 1]) != 0)
         {
             wordcount++;
