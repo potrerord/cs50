@@ -65,18 +65,18 @@ char rotate(char c, int key)
     else
     {
         // Converts input key to alpha key 0-26 (protects upper limit of int keys)
-        int trueKey = key % 26
+        int trueKey = key % 26;
 
         // Uppercase ascii conversion
-        else if (isupper(c) != 0)
+        if (isupper(c) != 0)
         {
-            return (c + key) % 26 + 51;
+            return (c + key + 13) % 26 + 65;
         }
 
         // Lowercase ascii conversion
         else
         {
-            return (c + key) % 26 + 78;
+            return (c + key + 19) % 26 + 97;
         }
     }
 }
