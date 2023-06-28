@@ -34,9 +34,14 @@ int main(void)
             // Apostrophe special case: only plural possessive ends word
             if (text[i] == '\'')
             {
-                
+                if (isalpha(text[i - 1]) != 0 && isalpha(text[i + 1] == 0))
+                {
+                    wordcount++;
+                }
             }
-            else if (text[i] != '\'' && text[i] != '-')
+
+            // Ignore hyphens
+            else if (text[i] != '-')
             {
                 // If previous char is alpha count word
                 if (isalpha(text[i - 1]) != 0)
