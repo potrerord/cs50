@@ -63,14 +63,14 @@ char rotate(char c, int key)
     }
 
     // Uppercase ascii conversion
-    else if (isupper(plaintext[i]) != 0)
+    else if (isupper(c) != 0)
     {
-        return (plaintext[i] - 65 + key) % 26 + 65;
+        return (c + key) % 26 + 65;
     }
 
     // Lowercase ascii conversion
     else
     {
-        return (plaintext[i] - 97 + key) % 26 + 97;
+        return (c + key) % 26 + 97;
     }
 }
