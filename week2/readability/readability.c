@@ -28,7 +28,9 @@ int main(void)
             letcount++;
         }
 
-        // Ignore apostrophe/hyphen, if previous char is alpha then count word
+        // If plural apostrophe, count word
+
+        // Ignore singular possessive apostrophe/, ignore hyphen, if prev char is alpha count word
         else if (text[i] != '\'' && text[i] != '-' && isalpha(text[i - 1]) != 0)
         {
             wordcount++;
