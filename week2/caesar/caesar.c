@@ -48,10 +48,7 @@ int main(int argc, string argv[])
         // the plaintext’s corresponding ciphertext, with each alphabetical character in the plaintext
         // “rotated” by k positions; non-alphabetical characters should be outputted unchanged.
         printf("ciphertext: ");
-        for (int i = 0; 1 == 1; i++)
-        {
-            printf("\c", ciphertext[i])
-        }
+        printf("[this is where the ciphertext goes]");
         printf("\n");
 
         // Your program must preserve case: capitalized letters, though rotated, must remain
