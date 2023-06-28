@@ -26,7 +26,7 @@ int main(int argc, string argv[])
             {
                 printf("caesar: error: enter nonnegative integer");
             }
-            else if (argv[i] == '\0')
+            else if (argv[0][i] == '\0')
             {
                 break;
             }
