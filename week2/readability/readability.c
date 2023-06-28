@@ -22,12 +22,26 @@ int main(void)
     char c;
     for (int i = 0, n = strlen(text); i < n; i++)
     {
-        c = text[i];
-
-        // if it's alpha, count it - when you reach a space, count word - when you reach a .?! + ' ' or '\0' it's a sentence
-        if (isalpha(c) != 0)
+        // if it's alpha, count it - when you reach a .?! + ' ' or '\0' it's a sentence
+        if (isalpha(text[i]) != 0)
         {
             letcount++;
+        }
+
+        // if it's not alpha, check the previous one - if that one is alpha, then count a word
+        else
+        {
+            if (isalpha(text[i - 1]) != 0)
+            {
+                wordcount++;
+            }
+        }
+        // when you reach a .?! + ' ' or '\0' it's a sentence
+        // if it's whitespace or null
+
+        if (isspace(c) != 0 || c == '\0')
+        {
+
         }
 
         // if it is a .?!, check the character after it
