@@ -21,15 +21,27 @@ int main(int argc, string argv[])
     // If single argument
     else
     {
-        // Error if argument is not proper key (26 chars, all alpha, all 26 letters exactly once)
-
+        // Check every character of arg until '\0' or until > 26 chars
         for (int i = 0; 1 == 1; i++)
         {
-            if (isdigit(argv[1][i]) == 0)
+            if argv[1][i] == '\0'
             {
-                printf("caesar: error: argument must be alpha\n");
+                break
+            }
+
+            // Error if argument is > 26 chars or contains nonalpha
+            else if (i > 25 || isalpha(argv[1][i]) == 0)
+            {
+                printf("substitution: error: argument must be 26 alpha characters")
                 return 1;
             }
+        }
+
+        // Error if i makes it out of the above loop without getting to 25
+        if (i < 25)
+        {
+            printf("substitution: error: argument must be 26 alpha characters")
+            return 1
         }
 
         // Store argument as integer key
