@@ -6,33 +6,29 @@
 #include <stdio.h>
 #include <string.h>
 
-// Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words) - 15.8
+// Calculates Coleman-Liau index given # of letters, words, and sentences
 float cole_liau(int lets, int wrds, int snts);
 
 int main(void)
 {
-    // Prompt user for string "Text: "
+    // Prompt user for text to analyze
     string text = get_string("Text: ");
 
-    // a sentence is a .?! followed by a space or \0 (!!! for example should be one sentence)
-
-    // the text is a string filled with useful spaces
-    // count variables: letters, words, sentences
+    // Declare count variables for input text: letters, words, sentences
     int letCount = 0;
     int wordCount = 0;
     int sentCount = 0;
 
-    // Scan all characters in string
+    // Scan each character in string
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         // If char is alpha, count letter
-
         if (isalpha(text[i]) != 0)
         {
             letCount++;
         }
 
-        // If char is not alpha
+        // If char is not alpha check if it ends word
         else
         {
             // Apostrophe special case: only plural possessive ends word
@@ -49,9 +45,11 @@ int main(void)
             {
                 // If previous char is alpha count word
                 if (isalpha(text[i - 1]) != 0)
-                wordCount++;
+                {
+                    wordCount++;
+                }
 
-                // If sentence-ending punctuation followed by space or null, count sentence
+                // If nonalpha char is .?! followed by space or null, count sentence
                 if (text[i] == '.' || text[i] == '?' || text[i] == '!')
                 {
                     if (isspace(text[i + 1]) != 0 || text[i + 1] == '\0')
@@ -63,11 +61,10 @@ int main(void)
         }
     }
 
-    // Calculate Coleman-Liau index = (0.0588 * L) - (0.296 * S) - 15.8
+    // Store rounded Coleman-Liau index
     int gradeLevel = round(cole_liau(letCount, wordCount, sentCount));
 
-    // Print "Grade X"
-    // if < 1 print "Before Grade 1"
+    // Print Grade X
     if (gradeLevel < 1)
     {
         printf("Before Grade 1\n");
