@@ -44,6 +44,10 @@ int main(int argc, string argv[])
             return 1
         }
 
+        // Getting to here means arg is 26 chars and all alpha
+
+        
+
         // Store argument as integer key
         int key = atoi(argv[1]);
 
