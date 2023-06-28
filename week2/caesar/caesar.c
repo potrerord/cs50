@@ -36,6 +36,9 @@ int main(int argc, string argv[])
             }
         }
 
+        // Store argument as integer key
+        int key = atoi(argv[1]);
+
         // Prompt user for plaintext string
         string plaintext = get_string("plaintext:  ");
 
@@ -43,7 +46,7 @@ int main(int argc, string argv[])
         printf("ciphertext: ");
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            printf("%c", rotate(plaintext[i], argv[1]);
+            printf("%c", rotate(plaintext[i], key));
         }
         printf("\n");
         return 0;
@@ -62,12 +65,12 @@ char rotate(char c, int key)
     // Uppercase ascii conversion
     else if (isupper(plaintext[i]) != 0)
     {
-        return (plaintext[i] - 65 + atoi(argv[1])) % 26 + 65;
+        return (plaintext[i] - 65 + key) % 26 + 65;
     }
 
     // Lowercase ascii conversion
     else
     {
-        return (plaintext[i] - 97 + atoi(argv[1])) % 26 + 97;
+        return (plaintext[i] - 97 + key) % 26 + 97;
     }
 }
