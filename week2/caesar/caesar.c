@@ -40,16 +40,20 @@ int main(int argc, string argv[])
         // A in ASCII,per asciitable.com; A should become B, since B is 27 positions away from A,
         // provided you wrap around from Z to A.
 
-        // Your program must output plaintext: (with two spaces but without a newline)
-        // and then prompt the user for a string of plaintext (using get_string).
+        // Prompt user for plaintext string
         string plaintext = get_string("plaintext:  ");
 
-        // Your program must output ciphertext: (with one space but without a newline) followed by
-        // the plaintext’s corresponding ciphertext, with each alphabetical character in the plaintext
-        // “rotated” by k positions; non-alphabetical characters should be outputted unchanged.
+        // Rotate alphabet according to key, ignoring nonalpha chars
+
+
+        // Print encrypted ciphertext
         printf("ciphertext: ");
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
+            // uppercase
+            
+
+            // lowercase
             printf('%c', ciphertext[i]);
         }
         printf("\n");
