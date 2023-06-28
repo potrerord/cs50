@@ -40,10 +40,19 @@ int main(int argc, string argv[])
         printf("ciphertext: ");
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            if (isupper(argv[1][i]) != 0)
+            // Print nonalpha symbols as-is
+            if (isalpha(plaintext[i]) == 0)
             {
-                printf("%c", ((plaintext[i] - 64 + atoi(argv[1])) % 26) + 64);
+                printf("%c", plaintext[i]);
             }
+
+            // Uppercase ascii conversion
+            else if (isupper(argv[1][i]) != 0)
+            {
+                printf("%c", ((plaintext[i] - 64 + atoi(argv[1])) % 26) + 65);
+            }
+
+            // Lowercase ascii conversion
             else
             {
                 printf("%c", ((plaintext[i] - 96 + atoi(argv[1])) % 26) + 96);
