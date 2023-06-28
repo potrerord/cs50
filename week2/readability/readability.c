@@ -62,6 +62,9 @@ int main(void)
         }
     }
 
+    // Debug
+    printf("L %i W %i S %i\n", letCount, wordCount, sentCount);
+
     // Calculate Coleman-Liau index = (0.0588 * L) - (0.296 * S) - 15.8
     float gradeLevel = cole_liau(letCount, wordCount, sentCount);
 
