@@ -38,10 +38,10 @@ int main(int argc, string argv[])
 
         // Print encrypted ciphertext
         printf("ciphertext: ");
+        char trueKey = atoi(argv[1]) % 26;
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            printf("%c", (plaintext[i] + (atoi(argv[1]) % 26)));
-            printf("\n%i: %i\n", i, atoi(argv[1]));
+            printf("%c", (plaintext[i] + trueKey));
         }
         printf("\n");
         return 0;
