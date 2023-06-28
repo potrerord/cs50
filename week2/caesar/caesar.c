@@ -40,7 +40,7 @@ int main(int argc, string argv[])
         printf("ciphertext: ");
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            printf('%c', (ciphertext[i] + atoi(argv));
+            printf("%c", (plaintext[i] + (atoi(argv[1]) % 26)));
         }
         printf("\n");
         return 0;
