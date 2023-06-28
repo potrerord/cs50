@@ -41,7 +41,7 @@ int main(int argc, string argv[])
         char trueKey = atoi(argv[1]) % 26;
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            printf("%c", ((plaintext[i] - 64 + trueKey) % 26) + 64);
+            printf("%c", );
         }
         printf("\n");
         return 0;
