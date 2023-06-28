@@ -24,18 +24,16 @@ int main(int argc, string argv[])
         {
             if (argv[1][i] == '\0')
             {
-                printf("the value of argv[1][%i] is %i\n", i, argv[1][i]);
                 break;
             }
             else if (isdigit(argv[1][i]) == 0)
             {
-                printf("the value of argv[1][%i] is %i\n", i, argv[1][i]);
-                printf("caesar: error: enter nonnegative integer\n");
+                printf("Usage: ./caesar key\n");
+                return 1
                 break;
             }
         }
     }
-
 
     // If any of the characters of the command-line argument is not a decimal digit,
     // your program should print the message Usage: ./caesar key and return from main a value of 1.
