@@ -1,1 +1,7 @@
-print ("Hello wednesday!")
+a = 1 + 2
+b = 3 - 4
+c = 5 * 6
+d = 7 ** 2
+e = 8 / 2
+f = 16 // 2
+g = 19 % 18
