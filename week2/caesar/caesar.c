@@ -1,6 +1,8 @@
 // Encrypts messages using Caesar cipher with cmd-line key input
 
 #include <cs50.h>
+#include <stdio.h>
+#include <string.h>
 
 
 // Your program must accept a single command-line argument, a non-negative integer.
@@ -10,7 +12,11 @@ int main(int argc, string argv[])
     // If your program is executed without any command-line arguments or with more than one
     // command-line argument, your program should print an error message of your choice
     // (with printf) and return from main a value of 1 (which tends to signify an error) immediately.
-
+    if (strlen(argv) == 0)
+    {
+        printf("oh nooo error lmao");
+        return 1;
+    }
 
 
     // If any of the characters of the command-line argument is not a decimal digit,
