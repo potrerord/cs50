@@ -46,7 +46,9 @@ int main(int argc, string argv[])
 
         // Getting to here means arg is 26 chars and all alpha
 
-        
+        // convert lowercase to uppercase to compare values
+
+        // compare letters?
 
         // Store argument as integer key
         int key = atoi(argv[1]);
