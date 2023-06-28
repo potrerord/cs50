@@ -31,7 +31,7 @@ int main(void)
         // If char is not alpha
         else
         {
-            // Apostrophe special case: singular does not split word, plural ends word
+            // Apostrophe special case: only plural possessive ends word
             if (text[i] == '\'')
             {
                 
