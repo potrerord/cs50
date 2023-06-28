@@ -76,7 +76,7 @@ char rotate(char c, int key)
         // Lowercase ascii conversion
         else
         {
-            return (c + trueKey + 19) % 26 + 97;
+            return (c + trueKey + 7) % 26 + 97;
         }
     }
 }
