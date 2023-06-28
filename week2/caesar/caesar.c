@@ -47,24 +47,24 @@ int main(int argc, string argv[])
     }
 }
 
-// Rotates chars
+// Rotates chars according to pos int key
 char rotate(char c, int key)
 {
     // Print nonalpha symbols as-is
     if (isalpha(c) == 0)
     {
-        return c
+        return c;
     }
 
     // Uppercase ascii conversion
     else if (isupper(plaintext[i]) != 0)
     {
-        printf("%i: %c", i,(plaintext[i] - 65 + atoi(argv[1])) % 26 + 65);
+        return (plaintext[i] - 65 + atoi(argv[1])) % 26 + 65;
     }
 
     // Lowercase ascii conversion
     else
     {
-        printf("%c", (plaintext[i] - 97 + atoi(argv[1])) % 26 + 97);
-}
+        return (plaintext[i] - 97 + atoi(argv[1])) % 26 + 97;
+    }
 }
