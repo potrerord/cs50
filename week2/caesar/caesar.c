@@ -38,17 +38,15 @@ int main(int argc, string argv[])
 
         // Print encrypted ciphertext
         printf("ciphertext: ");
-        char trueKey = atoi(argv[1]) % 26;
-        int asciiKey = 0
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            if (isupper(argv[0]))
+            if (isupper(argv[1][i]) != 0)
             {
-                printf("%c", (plaintext[i] - 96 + trueKey) % 26 + 96);
+                printf("%c", (plaintext[i] - 64 + atoi(argv[1])) % 26 + 64);
             }
             else
             {
-                printf("%c", );
+                printf("%c", (plaintext[i] - 96 + atoi(argv[1])) % 26 + 96);
             }
         }
         printf("\n");
