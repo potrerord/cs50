@@ -1,4 +1,4 @@
-// Encrypts messages using Caesar cipher with cmd-line key input
+// Encrypts messages using custom cipher with cmd-line key input
 
 #include <cs50.h>
 #include <ctype.h>
