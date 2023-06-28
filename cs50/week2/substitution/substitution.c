@@ -27,7 +27,7 @@ int main(int argc, string argv[])
         {
             if (isdigit(argv[1][i]) == 0)
             {
-                printf("Usage: ./caesar key\n");
+                printf("caesar: error: argument must be alpha\n");
                 return 1;
             }
         }
