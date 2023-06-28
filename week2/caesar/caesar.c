@@ -2,14 +2,16 @@
 
 #include <cs50.h>
 
-int main(void)
-{
-    // Your program must accept a single command-line argument, a non-negative integer.
-    // Let’s call it k for the sake of discussion.
 
+// Your program must accept a single command-line argument, a non-negative integer.
+// Let’s call it k for the sake of discussion.
+int main(int argc, string argv[])
+{
     // If your program is executed without any command-line arguments or with more than one
     // command-line argument, your program should print an error message of your choice
     // (with printf) and return from main a value of 1 (which tends to signify an error) immediately.
+
+
 
     // If any of the characters of the command-line argument is not a decimal digit,
     // your program should print the message Usage: ./caesar key and return from main a value of 1.
