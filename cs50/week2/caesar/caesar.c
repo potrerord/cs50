@@ -22,16 +22,16 @@ int main(int argc, string argv[])
     else
     {
         // Error if argument is not nonnegative int, otherwise continue through main
-        int i = 0;
-        while (argv[1][i] != '\0')
+        int j = 0;
+        while (argv[1][j] != '\0')
         {
-            if (isdigit(argv[1][i]) == 0)
+            if (isdigit(argv[1][j]) == 0)
             {
                 printf("Usage: ./caesar key\n");
                 return 1;
                 break;
             }
-            i++;
+            j++;
         }
 
         // Store argument as integer key
