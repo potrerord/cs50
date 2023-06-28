@@ -23,15 +23,13 @@ int main(int argc, string argv[])
     {
         // Error if argument is not proper key (26 chars, all alpha, all 26 letters exactly once)
 
-        int j = 0;
-        while (argv[1][j] != '\0')
+        for (int i = 0; 1 == 1; i++)
         {
             if (isdigit(argv[1][i]) == 0)
             {
                 printf("Usage: ./caesar key\n");
                 return 1;
             }
-            j++;
         }
 
         // Store argument as integer key
