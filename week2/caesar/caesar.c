@@ -9,13 +9,17 @@
 // Let’s call it k for the sake of discussion.
 int main(int argc, string argv[])
 {
-    // If your program is executed without any command-line arguments or with more than one
-    // command-line argument, your program should print an error message of your choice
-    // (with printf) and return from main a value of 1 (which tends to signify an error) immediately.
+    // Error if amount of arguments != 1
     if (argc != 2)
     {
-        printf("caesar: Enter one command-line argument.  Stop.\n");
+        printf("caesar: error: one argument required\n");
         return 1;
+    }
+
+    // non-negative int input
+    else if (isint(argv[1]) != 0 && )
+    {
+        printf("caesar: error: enter non-negative integer");
     }
 
 
