@@ -46,28 +46,23 @@ int main(void)
                 // If previous char is alpha count word
                 if (isalpha(text[i - 1]) != 0)
                 wordcount++;
+
+                // If sentence-ending punctuation followed by space or null, count sentence
+                if (text[i] == '.' || text[i] == '?' || text[i] == '!')
+                {
+                    if (isspace(text[i + 1]) != 0 || text[i + 1] == '\0')
+                    {
+                        sentcount++;
+                    }
+                }
             }
         }
-
-        // if it's an apostrophe in between two alphas then ignore, if it's an apostrophe at the end of a word then that's a word then move on without doing anything
-
-        // Count sentences
-        // when you reach a .?! + ' ' or '\0' it's a sentence
-        // if it's whitespace or null
-
-        if (isspace(c) != 0 || c == '\0')
-        {
-
-        }
-
-        // if it is a .?!, check the character after it
-            // if the next character is a space or \0, that's a sentence buddy count it in sentence counter
-        // if that counter is a nonzero positive integer, increment a "letters" sum with it
-            // increment a "words" sum by 1 when this happens
-
     }
 
     // Calculate Coleman-Liau index = (0.0588 * L) - (0.296 * S) - 15.8
+    float cole_liau = cole_liau(letcount, wordcount, sentcount)
+
+
     // L = average number of letters per 100 words in the text (more letters brings level up)
         // get number of letters for every 100 groups of alpha
         // A word could be defined as connected alpha characters and apostrophes, ignoring punctuation and separated by spaces
@@ -84,4 +79,10 @@ int main(void)
     // Print "Grade X"
     // if < 1 print "Before Grade 1"
     // if >= 16 print "Grade 16+"
+}
+
+// Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words) - 15.8
+float cole_liau(int lets, int wrds, int snts)
+{
+
 }
