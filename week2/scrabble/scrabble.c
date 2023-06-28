@@ -5,11 +5,8 @@
 #include <stdio.h>
 #include <string.h>
 
-// Number of players
+// Number of players (code would not compile unless variable array size was constant)
 const int N = 2;
-
-// Scrabble letter values alpha order
-const int SCRABVAL[26] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
 
 // Returns 1 if all values are equal, 0 if any are different (requires an array input with null final value)
 int is_tie(int scores[]);
@@ -62,7 +59,8 @@ int main(void)
 // Gets scrabble score of input alpha characters
 int scrabble_score(string s)
 {
-    // Initialize final and letter-by-letter score variables, plus char c variable to store s[i]
+    // Declare vars for scrabble values, final sum, indiv letter score, and char c variable to store s[i]
+    int scrabvalues[26] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 4, 4, 8, 4, 10};
     int sum = 0;
     int cval = 0;
     char c;
@@ -79,7 +77,7 @@ int scrabble_score(string s)
             c = toupper(s[i]);
 
             // Convert uppercase alpha ASCII to SCRABVAL index
-            cval = SCRABVAL[c - 65];
+            cval = scrabvalues[c - 65];
 
             // Add value to summed score
             sum += cval;
