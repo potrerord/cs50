@@ -29,7 +29,7 @@ int main(int argc, string argv[])
             else if (isdigit(argv[1][i]) == 0)
             {
                 printf("Usage: ./caesar key\n");
-                return 1
+                return 1;
                 break;
             }
         }
