@@ -29,7 +29,7 @@ int main(void)
         }
 
         // if it's not alpha, then make sure it's not an apostrophe and check if the previous char is alpha, then count a word if so
-        else if (text[i] != '\'' && isalpha(text[i - 1]) != 0)
+        else if (text[i] != '\'' && text[i] != '-' && isalpha(text[i - 1]) != 0)
         {
             wordcount++;
         }
