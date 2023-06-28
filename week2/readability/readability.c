@@ -28,12 +28,20 @@ int main(void)
             letcount++;
         }
 
-        // If plural apostrophe, count word
-
-        // Ignore singular possessive apostrophe/, ignore hyphen, if prev char is alpha count word
-        else if (text[i] != '\'' && text[i] != '-' && isalpha(text[i - 1]) != 0)
+        // If char is not alpha
+        else
         {
-            wordcount++;
+            // Apostrophe special case: singular does not split word, plural ends word
+            if (text[i] == '\'')
+            {
+                
+            }
+            else if (text[i] != '\'' && text[i] != '-')
+            {
+                // If previous char is alpha count word
+                if (isalpha(text[i - 1]) != 0)
+                wordcount++;
+            }
         }
 
         // if it's an apostrophe in between two alphas then ignore, if it's an apostrophe at the end of a word then that's a word then move on without doing anything
