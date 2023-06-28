@@ -5,7 +5,7 @@
 #include <string.h>
 
 
-// Your program must accept a single command-line argument, a non-negative integer.
+// Your program must accept a single command-line argument, a nonnegative integer.
 // Let’s call it k for the sake of discussion.
 int main(int argc, string argv[])
 {
@@ -16,14 +16,18 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // Error if not nonnegative
+    // Error if argument is not nonnegative int
     else
     {
-        while (int i != '\0')
+        for (int i = 0; i == i; i++)
         {
             if (isdigit(argv[i]) == 0)
             {
-                printf("caesar: error: enter non-negative integer");
+                printf("caesar: error: enter nonnegative integer");
+            }
+            else if (argv[i] == '\0')
+            {
+                break;
             }
         }
     }
