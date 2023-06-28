@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     }
 
     // non-negative int input
-    else if (isint(argv[1]) != 0 && )
+    else if ((argv[1]) != 0 && )
     {
         printf("caesar: error: enter non-negative integer");
     }
