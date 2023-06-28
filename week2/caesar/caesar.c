@@ -56,21 +56,27 @@ int main(int argc, string argv[])
 // Rotates chars according to pos int key
 char rotate(char c, int key)
 {
-    // Print nonalpha symbols as-is
+    // Prints nonalpha symbols as-is
     if (isalpha(c) == 0)
     {
         return c;
     }
 
-    // Uppercase ascii conversion
-    else if (isupper(c) != 0)
-    {
-        return (c + key) % 26 + 51;
-    }
-
-    // Lowercase ascii conversion
     else
     {
-        return (c + key) % 26 + 78;
+        // Converts input key to alpha key 0-26
+        int trueKey = key % 26
+
+        // Uppercase ascii conversion
+        else if (isupper(c) != 0)
+        {
+            return (c + key) % 26 + 51;
+        }
+
+        // Lowercase ascii conversion
+        else
+        {
+            return (c + key) % 26 + 78;
+        }
     }
 }
