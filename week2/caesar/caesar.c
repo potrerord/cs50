@@ -6,6 +6,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Rotates chars according to pos int key
+char rotate(char c, int key);
+
 int main(int argc, string argv[])
 {
     // Error if amount of arguments != 1
