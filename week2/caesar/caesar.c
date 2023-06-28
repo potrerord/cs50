@@ -36,29 +36,35 @@ int main(int argc, string argv[])
         // Prompt user for plaintext string
         string plaintext = get_string("plaintext:  ");
 
-        // Print encrypted ciphertext
+        // Rotate and print every character in plaintext input according to cmd-line key
         printf("ciphertext: ");
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            // Print nonalpha symbols as-is
-            if (isalpha(plaintext[i]) == 0)
-            {
-                printf("%c", plaintext[i]);
-            }
-
-            // Uppercase ascii conversion
-            else if (isupper(plaintext[i]) != 0)
-            {
-                printf("%i: %c", i,(plaintext[i] - 65 + atoi(argv[1])) % 26 + 65);
-            }
-
-            // Lowercase ascii conversion
-            else
-            {
-                printf("%c", (plaintext[i] - 97 + atoi(argv[1])) % 26 + 97);
-            }
+            printf("%c", rotate(plaintext[i], argv[1]);
         }
         printf("\n");
         return 0;
     }
+}
+
+// Rotates chars
+char rotate(char c, int key)
+{
+    // Print nonalpha symbols as-is
+    if (isalpha(c) == 0)
+    {
+        return c
+    }
+
+    // Uppercase ascii conversion
+    else if (isupper(plaintext[i]) != 0)
+    {
+        printf("%i: %c", i,(plaintext[i] - 65 + atoi(argv[1])) % 26 + 65);
+    }
+
+    // Lowercase ascii conversion
+    else
+    {
+        printf("%c", (plaintext[i] - 97 + atoi(argv[1])) % 26 + 97);
+}
 }
