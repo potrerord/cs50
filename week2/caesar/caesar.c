@@ -16,10 +16,16 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    // non-negative int input
-    else if ((argv[1]) != 0 && )
+    // Error if not nonnegative
+    else
     {
-        printf("caesar: error: enter non-negative integer");
+        while (int i != '\0')
+        {
+            if (isdigit(argv[i]) == 0)
+            {
+                printf("caesar: error: enter non-negative integer");
+            }
+        }
     }
 
 
