@@ -50,11 +50,7 @@ int main(int argc, string argv[])
         printf("ciphertext: ");
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            // uppercase
-            
-
-            // lowercase
-            printf('%c', ciphertext[i]);
+            printf('%c', ciphertext[i] + (int)argv);
         }
         printf("\n");
 
