@@ -13,16 +13,21 @@ int main(void)
     // a sentence is a .?! followed by a space or \0 (!!! for example should be one sentence)
 
     // the text is a string filled with useful spaces
+    // count variables: letters, words, sentences
+    int letcount = 0;
+    int wordcount = 0;
+    int sentcount = 0;
+
     // for every character in the string,
     char c;
     for (int i = 0, n = strlen(text); i < n; i++)
     {
         c = text[i];
 
-        // if it's alpha, count it - when you reach a space, that count is the letters in that word
+        // if it's alpha, count it - when you reach a space, count word - when you reach a .?! + ' ' or '\0' it's a sentence
         if (isalpha(c) != 0)
         {
-            
+            letcount++;
         }
 
         // if it is a .?!, check the character after it
