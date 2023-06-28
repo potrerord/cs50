@@ -22,13 +22,15 @@ int main(int argc, string argv[])
     {
         for (int i = 0; 1 == 1; i++)
         {
-            if (isdigit(argv[0][i]) == 0)
+            if (argv[1][i] == '\0')
             {
-                printf("caesar: error: enter nonnegative integer\n");
+                printf("the value of argv[1][%i] is %i\n", i, argv[1][i]);
                 break;
             }
-            else if (argv[0][i] == '\0')
+            else if (isdigit(argv[1][i]) == 0)
             {
+                printf("the value of argv[1][%i] is %i\n", i, argv[1][i]);
+                printf("caesar: error: enter nonnegative integer\n");
                 break;
             }
         }
