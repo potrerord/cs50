@@ -38,7 +38,7 @@ int main(int argc, string argv[])
         // should remain alphabetical characters in your program’s output.
         // For instance, if k is 27, A should not become \ even though \ is 27 positions away from
         // A in ASCII,per asciitable.com; A should become B, since B is 27 positions away from A,
-        //  provided you wrap around from Z to A.
+        // provided you wrap around from Z to A.
 
         // Your program must output plaintext: (with two spaces but without a newline)
         // and then prompt the user for a string of plaintext (using get_string).
