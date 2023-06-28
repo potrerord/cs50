@@ -5,3 +5,11 @@ d = 7 ** 2
 e = 8 / 2
 f = 16 // 2
 g = 19 % 18
+
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+print(f)
+print(g)
