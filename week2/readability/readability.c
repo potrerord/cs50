@@ -37,7 +37,8 @@ int main(void)
         }
 
         // if it's an apostrophe in between two alphas then ignore, if it's an apostrophe at the end of a word then that's a word then move on without doing anything
-    }
+
+        // Count sentences
         // when you reach a .?! + ' ' or '\0' it's a sentence
         // if it's whitespace or null
 
