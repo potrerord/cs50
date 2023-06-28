@@ -12,9 +12,9 @@ int main(int argc, string argv[])
     // If your program is executed without any command-line arguments or with more than one
     // command-line argument, your program should print an error message of your choice
     // (with printf) and return from main a value of 1 (which tends to signify an error) immediately.
-    if (argv[] != 1)
+    if (argc != 2)
     {
-        printf("oh nooo error lmao");
+        printf("caesar: Enter one command-line argument.  Stop.\n");
         return 1;
     }
 
