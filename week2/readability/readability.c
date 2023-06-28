@@ -14,10 +14,19 @@ int main(void)
 
     // the text is a string filled with useful spaces
     // count variables: letters, words, sentences
-    int letcount = count_let(text);
-    int wordcount = count_words(text);
-    int sentcount = count_sent(text);
+    int letcount = 0;
+    int wordcount = 0;
+    int sentcount = 0;
 
+    // Scan all characters in string
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        // If char is alpha, count letter
+
+        if (isalpha(text[i]) != 0)
+        {
+            letcount++;
+        }
 
         // Ignore apostrophe/hyphen, if previous char is alpha then count word
         else if (text[i] != '\'' && text[i] != '-' && isalpha(text[i - 1]) != 0)
@@ -60,17 +69,4 @@ int main(void)
     // Print "Grade X"
     // if < 1 print "Before Grade 1"
     // if >= 16 print "Grade 16+"
-}
-
-int count_let(string s)
-{
-    // Scan all characters in string
-    for (int i = 0, n = strlen(s); i < n; i++)
-    {
-        // If char is alpha, count letter
-        if (isalpha(text[i]) != 0)
-        {
-            letcount++;
-        }
-    }
 }
