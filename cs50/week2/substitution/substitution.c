@@ -22,18 +22,16 @@ int main(int argc, string argv[])
     else
     {
         // Error if argument is not proper key (26 chars, all alpha, all 26 letters exactly once)
-        for (int i = 0; 1 == 1; i++)
+        int j = 0;
+        while (argv[1][j] != '\0')
         {
-            if (argv[1][i] == '\0')
-            {
-                break;
-            }
-            else if (isdigit(argv[1][i]) == 0)
+            if (isdigit(argv[1][j]) == 0)
             {
                 printf("Usage: ./caesar key\n");
                 return 1;
                 break;
             }
+            j++;
         }
 
         // Store argument as integer key
