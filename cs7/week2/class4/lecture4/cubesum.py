@@ -1,5 +1,3 @@
-# 12345678901234567890123456789012345678901234567890123456789012345678901234567
-
 """
 I have been told that there are a few 3-digit integers that are equal to the
 sum of the cube of their individual digits. Find all of them, and print them
