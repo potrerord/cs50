@@ -17,4 +17,5 @@ r = (2 * e + 2 * j - k - h + m + 32) % 7
 n = (h - m + r + 90) // 25
 p = (h - m + r + n + 19) % 32
 
+# Print month/day
 print(f"{n}/{p}")
