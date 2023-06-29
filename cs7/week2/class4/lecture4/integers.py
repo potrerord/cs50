@@ -4,6 +4,6 @@ n = 0
 while (n < 100 or n >999):
     n = int(input("Enter a 3-digit integer: "))
 
-a = n % 100
-b = n % 10
-c = n % 
+a = (n // 100) % 100
+b = n % 100
+c = n % 10
