@@ -110,14 +110,14 @@ char substitute(char c, string key)
          // Uppercase ascii conversion
         if (isupper(c) != 0)
         {
-            cSub = key[c - 65];
+            cSub = key[c - 65] + 65;
             return cSub;
         }
 
         // Lowercase ascii conversion
         else
         {
-            cSub = key[c - 97];
+            cSub = key[c - 97] + 97;
             return cSub;
         }
     }
