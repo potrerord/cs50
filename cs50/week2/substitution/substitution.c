@@ -96,28 +96,29 @@ int main(int argc, string argv[])
 // Substitutes chars according to key alphabet
 char substitute(char c, string key)
 {
+    char cSub;
+
     // Prints nonalpha symbols as-is
     if (isalpha(c) == 0)
     {
         return c;
     }
 
-    // Not complete, but do something like convert the ascii code to 1-26 regardless of lower/uppercase and then use that 1-26 code to locate the key[i] that it should be instead
+    // If alpha, convert to 0-25 and replace with corresponding key char
     else
     {
          // Uppercase ascii conversion
         if (isupper(c) != 0)
         {
-            // Upper means subtract 65 to find out 0-25 code
-            c 
-
-            // return (c + trueKey + 13) % 26 + 65;
+            cSub = key[c - 65];
+            return cSub;
         }
 
         // Lowercase ascii conversion
         else
         {
-            return c;
+            cSub = key[c - 97];
+            return cSub;
         }
     }
 }
