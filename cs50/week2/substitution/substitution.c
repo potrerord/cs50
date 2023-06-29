@@ -21,14 +21,17 @@ int main(int argc, string argv[])
     // If single argument
     else
     {
-        // Check every character of arg until '\0' or until > 26 chars, error if nonalpha or > 26 chars
+        // Store key in string variable
+        string key = argv[1];
+
+        // Check every character of key until '\0' or until > 26 chars, error if nonalpha or > 26 chars
         int j = 0;
 
-        while (argv[1][j] != '\0')
+        while (key[j] != '\0')
         {
-            if (j > 26 || isalpha(argv[1][j]) == 0)
+            if (j > 26 || isalpha(key[j]) == 0)
             {
-                printf("substitution: error: argument must be 26 alpha characters\n");
+                printf("substitution: error: key must be 26 alpha characters\n");
                 return 1;
             }
             j++;
@@ -37,7 +40,7 @@ int main(int argc, string argv[])
         // Error if j makes it out of the above loop without getting to 26
         if (j < 26)
         {
-            printf("substitution: error: argument must be 26 alpha characters\n");
+            printf("substitution: error: key must be 26 alpha characters\n");
             return 1;
         }
 
@@ -53,17 +56,21 @@ int main(int argc, string argv[])
         // char2 is C so it gets checked with A B all good
         // char3 is B so it gets checked with A B uh oh now the count variable is 1 so error
 
-        // make uppercase alphabet array
-        char alphabet[26];
+        // Initialize reference array to check key against itself for duplicates
+        char reference[26];
         for (int i = 0; i < 26; i++)
         {
-            alphabet[i] = i + 65;
+            reference[i] = 0;
         }
 
-        // Check all 26 alpha chars in argv 
+        // Check all 26 alpha chars in key for duplicates, increment k if
         for (int i = 0; i < 26; i++)
         {
-
+            reference[i] = key[i]
+            for (int k = 0; k < i; k++)
+            {
+                if reference[k] == key[]
+            }
         }
 
         // Store argument as integer key
