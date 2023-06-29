@@ -6,8 +6,8 @@ def second():
     print ("Inside second function!")
 
 def third():
-    print ("Inside third function!")
     first()
+    print ("Inside third function!")
     second()
 
 def main():
