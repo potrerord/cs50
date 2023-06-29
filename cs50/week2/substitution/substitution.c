@@ -107,7 +107,7 @@ char substitute(char c, string key)
     // If alpha, convert to 0-25 and replace with corresponding key char
     else
     {
-         // Uppercase ascii conversion
+        // Uppercase ascii conversion
         if (isupper(c) != 0)
         {
             cSub = toupper(key[c - 65]);
