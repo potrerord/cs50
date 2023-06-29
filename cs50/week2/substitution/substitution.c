@@ -37,24 +37,12 @@ int main(int argc, string argv[])
             j++;
         }
 
-        // Error if j makes it out of the above loop without getting to 26
+        // Error if count variable j makes it out of the above loop without getting to 26
         if (j < 26)
         {
             printf("substitution: error: key must be 26 alpha characters\n");
             return 1;
         }
-
-        // Getting to here means arg is 26 chars and all alpha
-
-        // convert lowercase to uppercase to compare values
-
-
-        // compare letters?
-        // store each character in a reference array (intialize with
-        // char0 is A so it goes in
-        // char1 is B so it gets checked with A, all good
-        // char2 is C so it gets checked with A B all good
-        // char3 is B so it gets checked with A B uh oh now the count variable is 1 so error
 
         // Initialize reference array to check key against itself for duplicates
         char reference[26];
