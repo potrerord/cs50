@@ -3,14 +3,14 @@
 ## Prompt user for size of half pyramid
 n = int(input("Enter size: "))
 
-## Print n rows, i = 1 because it's used for counting spaces and # symbols
-for i in range (1, n + 1):
+## Print n rows, start with row 1 to simiplify calculations
+for row in range (1, n + 1):
 
     ## Print decreasing spaces
-    print(' ' * (n - i), end = '')
+    print(' ' * (n - row), end = '')
 
-    ## Print increasing # - number matches row number
-    print('#' * i, end = '')
+    ## Print increasing #; number matches row number
+    print('#' * row, end = '')
 
     ## Single newline at end of each row
     print()
