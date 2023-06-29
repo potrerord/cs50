@@ -4,8 +4,12 @@
 n = int(input("Enter size: "))
 
 # Print n rows; counter variable is 1 for usage in calculations
-for row in range (1, n + 1):
-    for column in range()
+for r in range (1, n + 1):
+    for c in range(1, n + 1):
+            if (r % 2 = 1 and c % 2 = 1):
+                  print(., end = "")
+            elif ((r % 2 = 1 and c % 2 = 1)
+    print()
 
     # Even: *, Odd: .
 
