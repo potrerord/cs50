@@ -63,7 +63,7 @@ int main(int argc, string argv[])
             reference[i] = 0;
         }
 
-        // Check all 26 alpha chars in key for duplicates, increment k if
+        // Check all 26 alpha chars in key for duplicates
         for (int i = 0; i < 26; i++)
         {
             reference[i] = toupper(key[i]);
