@@ -78,6 +78,20 @@ int main(int argc, string argv[])
                 }
             }
         }
+
+        // Prompt user for plaintext string
+        string plaintext = get_string("plaintext:  ");
+
+        // Encrypt
+        printf("ciphertext: ");
+        for (int i = 0, n = strlen(plaintext); i < n; i++)
+        {
+            printf("%c", rotate(plaintext[i], key));
+        }
+        printf("\n");
+        return 0;
+
+
     }
 }
 
