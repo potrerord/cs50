@@ -7,7 +7,7 @@
 #include <string.h>
 
 //// Rotates chars according to pos int key
-char rotate(char c, int key);
+char substitute(char c, string key);
 
 int main(int argc, string argv[])
 {
@@ -86,17 +86,15 @@ int main(int argc, string argv[])
         printf("ciphertext: ");
         for (int i = 0, n = strlen(plaintext); i < n; i++)
         {
-            printf("%c", rotate(plaintext[i], key));
+            printf("%c", substitute(plaintext[i], key));
         }
         printf("\n");
         return 0;
-
-
     }
 }
 
-// Rotates chars according to pos int key
-char rotate(char c, int key)
+// Substitutes chars according to key alphabet
+char substitute(char c, string key)
 {
     // Prints nonalpha symbols as-is
     if (isalpha(c) == 0)
@@ -104,21 +102,22 @@ char rotate(char c, int key)
         return c;
     }
 
+    // Not complete, but do something like convert the ascii code to 1-26 regardless of lower/uppercase and then use that 1-26 code to locate the key[i] that it should be instead
     else
     {
-        // Converts input key to alpha key 0-26 (protects upper limit of int)
-        int trueKey = key % 26;
-
-        // Uppercase ascii conversion
+         // Uppercase ascii conversion
         if (isupper(c) != 0)
         {
-            return (c + trueKey + 13) % 26 + 65;
+            // Upper means subtract 65 to find out 0-25 code
+            c 
+
+            // return (c + trueKey + 13) % 26 + 65;
         }
 
         // Lowercase ascii conversion
         else
         {
-            return (c + trueKey + 7) % 26 + 97;
+            return c;
         }
     }
 }
