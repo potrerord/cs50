@@ -8,14 +8,15 @@ out!
 
 # Prints all 3-digit integers equal to the sum of the cube of their digits
 
+# Start at 100, go to 999
 for n in range(100, 1000):
     a = n // 100 % 10
     b = n // 10 % 10
     c = n % 10
 
-    cubesum = a**3 + b**3 + c**3
+    # Print if sum of digits' cubes equals n
+    if n == a**3 + b**3 + c**3:
+        print(n)
 
-    if cubesum == n:
-        print(cubesum)
-
+    # Increment to next 3 digit integer
     n += 1
