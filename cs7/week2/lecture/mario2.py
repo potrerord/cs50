@@ -8,5 +8,9 @@ for i in range (1, n + 1):
 
     ## Print n spaces
     print(' ' * n)
+
+    ## Print # - number matches row number
     print('#' * i)
+
+    ## Single newline at end of each row
     print()
