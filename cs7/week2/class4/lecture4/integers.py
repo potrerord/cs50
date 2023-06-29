@@ -4,6 +4,8 @@ n = 0
 while (n < 100 or n >999):
     n = int(input("Enter a 3-digit integer: "))
 
-a = (n // 100) % 10
-b = n //
-c = n 
+a = n // 100 % 10
+b = n // 10 % 10
+c = n % 10
+
+cubesum = a ** 3 + b ** 3 
