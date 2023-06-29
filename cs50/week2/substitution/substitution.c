@@ -66,27 +66,18 @@ int main(int argc, string argv[])
         // Check all 26 alpha chars in key for duplicates, increment k if
         for (int i = 0; i < 26; i++)
         {
-            reference[i] = key[i]
+            reference[i] = key[i];
+
+            // In each iteration, check to make sure the previous elements in reference[26] did not have the same letter
             for (int k = 0; k < i; k++)
             {
-                if reference[k] == key[]
+                if (reference[k] == key[i])
+                {
+                    printf("substitution: error: key must have no duplicates\n");
+                    return 1;
+                }
             }
         }
-
-        // Store argument as integer key
-        int key = atoi(argv[1]);
-
-        // Prompt user for plaintext string
-        string plaintext = get_string("plaintext:  ");
-
-        // Rotate and print every character in plaintext input according to cmd-line key
-        printf("ciphertext: ");
-        for (int i = 0, n = strlen(plaintext); i < n; i++)
-        {
-            printf("%c", rotate(plaintext[i], key));
-        }
-        printf("\n");
-        return 0;
     }
 }
 
