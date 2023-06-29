@@ -53,10 +53,17 @@ int main(int argc, string argv[])
         // char2 is C so it gets checked with A B all good
         // char3 is B so it gets checked with A B uh oh now the count variable is 1 so error
 
+        // make uppercase alphabet array
         char alphabet[26];
         for (int i = 0; i < 26; i++)
         {
             alphabet[i] = i + 65;
+        }
+
+        // Check all 26 alpha chars in argv 
+        for (int i = 0; i < 26; i++)
+        {
+
         }
 
         // Store argument as integer key
