@@ -66,12 +66,12 @@ int main(int argc, string argv[])
         // Check all 26 alpha chars in key for duplicates, increment k if
         for (int i = 0; i < 26; i++)
         {
-            reference[i] = key[i];
+            reference[i] = toupper(key[i]);
 
             // In each iteration, check to make sure the previous elements in reference[26] did not have the same letter
             for (int k = 0; k < i; k++)
             {
-                if (reference[k] == key[i])
+                if (reference[k] == toupper(key[i]))
                 {
                     printf("substitution: error: key must have no duplicates\n");
                     return 1;
