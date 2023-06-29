@@ -7,15 +7,15 @@ out!
 # Prints all 3-digit integers equal to the sum of the cube of their digits
 
 # Start at 100, go to 999
-for i in range(100, 1000):
-    n = 
+for num in range(100, 1000):
+    numstr = str(num)
 
     # Print if sum of digits' cubes equals n
-    if n == n[0]**3 + n[1]**3 + n[2]**3:
-        print(n)
+    if num == int(numstr[0])**3 +int(numstr[1])**3 + int(numstr[2])**3:
+        print(num)
 
     # Increment to next 3 digit integer
-    i += 1
+    num += 1
 
 """
 # Attempt 1
