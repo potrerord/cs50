@@ -7,9 +7,9 @@ for i in range (n):
 
     ## Print decreasing spaces
     for j in range (n - i):
-        print(' ', end = "")
+        print(' ', end = '')
 
     ## Print increasing #
     for j in range (i + 1):
-        print('#', end = "")
+        print('#', end = '')
     print()
