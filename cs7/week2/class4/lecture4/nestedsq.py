@@ -5,7 +5,7 @@ n = int(input("Enter size: "))
 
 # Print n rows; counter variable is 1 for usage in calculations
 for row in range (1, n + 1):
-    # Every row is the same
+    for column in range()
 
     # Even: *, Odd: .
 
