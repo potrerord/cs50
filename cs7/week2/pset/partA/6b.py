@@ -1,2 +1,2 @@
-for j in range (-2, 1, 4, 7, 10) :
+for j in range (-2, 11, 3) :
     print (j)
