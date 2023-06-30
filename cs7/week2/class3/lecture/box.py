@@ -22,6 +22,12 @@ def main():
         # Asks user if they would like to run program again.
         user_redo = get_redo()
 
+        
+        if user_redo == False:
+            return
+        else:
+            pass
+
 
 def get_size() -> int:
     """Continually reprompts user for size if input is not pos int."""
