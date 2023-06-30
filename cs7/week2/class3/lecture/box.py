@@ -10,43 +10,38 @@ def main():
     """Prompts user for positive int and runs draw_box function."""
 
     # Setup for end-of-program "again?" prompt.
-    user_redo = "y"
-    while user_redo == "y":
+    while True:
 
-        # Continually reprompts user if input is not positive int.
-        while True:
-            user_size = input("\nEnter a size: ")
-            if user_size.isdigit() and int(user_size) > 0:
-                break
-            print("Size must be a positive integer.")
+        # Gets positive integer size from user.
+        user_size = get_size()
 
-
-        # Draws box after new line.
+        # Draws box after a new line.
         print()
-        draw_box(int(user_size))
-
+        draw_box(user_size)
 
         # Asks user if they would like to run program again.
+        
+
         while True:
             user_redo = input("\nWould you like to print another "
                               "box? (y/n): ")
-
-
-        if user_redo.lower() == "n":
-            print()
-            return
-        elif user_redo.lower() != "y":
-            print("Sorry, didn't get that - please respond with "
-                  "'y' or 'n'.")
-        else:
-            pass
+            if user_redo.lower() == "n":
+                print()
+                return
+            elif user_redo.lower() != "y":
+                print("Sorry, didn't get that - please respond with "
+                    "'y' or 'n'.")
+            else:
+                pass
 
 
 def get_size() -> int:
+    """Continually reprompts user for size if input is not pos int."""
+
     while True:
         user_input = input("\nEnter a size: ")
         if user_input.isdigit() and int(user_input) > 0:
-            return user_input
+            return int(user_input)
         print("Size must be a positive integer.")
 
 
