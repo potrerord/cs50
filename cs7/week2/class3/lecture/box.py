@@ -19,12 +19,12 @@ def main():
                 break
             print("Size must be a positive integer.")
 
-        draw_box(int(user_size))
         print()
+        draw_box(int(user_size))
 
         # Ask user if they would like to run program again.
         while True:
-            user_redo = input("Would you like to print another "
+            user_redo = input("\nWould you like to print another "
                               "box? (y/n): ")
             if user_redo.lower() == "n":
                 return
