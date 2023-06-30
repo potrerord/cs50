@@ -24,6 +24,7 @@ def main():
 
         # Loops or ends program according to user response.
         if user_redo == False:
+            print()
             return
         else:
             pass
