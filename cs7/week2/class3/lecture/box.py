@@ -22,7 +22,7 @@ def main():
         # Asks user if they would like to run program again.
         user_redo = get_redo()
 
-        
+        # Loops or ends program according to user response.
         if user_redo == False:
             return
         else:
