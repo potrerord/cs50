@@ -1,6 +1,7 @@
 """Prints a box with user-input size."""
 
 size = int(input("Enter a size: "))
+draw_box(size)
 
 # Range starts at 1 to use row number in calculations.
 
