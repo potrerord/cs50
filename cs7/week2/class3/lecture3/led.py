@@ -4,8 +4,10 @@ def main():
 
 
 
-def print_led(digit):
-    """Print the LED version of 
+def print_led(digit: int):
+    """Print the LED version of the digit provided as an argument."""
+
+    
 
 
 main()
