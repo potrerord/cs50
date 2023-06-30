@@ -62,12 +62,17 @@ def draw_box(size: int):
                 end_char = "|"
                 mid_char = "  "
 
-            # Prints end, middle, end for each row. Middle is reduced by 2
-            # to account for end characters.
+            # Print end+middle+end for each row.
+            # Middle is reduced by 2 to account for 2 end characters.
             print(end_char + mid_char * (size - 2) + end_char)
 
 
 def get_redo() -> bool:
+    """Prompt user to loop program if they wish, with y/n input.
+    
+    Reprompt user if input is not 'y' or 'n' (case agnostic).
+    Return boolean value.
+    """
     while True:
         user_response = input("\nWould you like to print another "
                             "box? (y/n): ")
