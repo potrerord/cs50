@@ -1,27 +1,12 @@
 """Prints an LED-style display of the digits 1-9."""
 
 def main():
-    top = 1
-    topleft = 1
-    topright = 1
-    middle = 1
-    bottomleft = 1
-    bottomright = 1
-    bottom = 1
-    print_led()
+    print_led(1, 1, 1, 1, 1, 1, 1,)
 
 
-def print_led():
+def print_led(top, topleft, topright, middle, bottomleft,
+              bottomright, bottom):
     """Print the LED version of the digit provided as an argument."""
-
-    top = 1
-    topleft = 1
-    topright = 1
-    middle = 1
-    bottomleft = 1
-    bottomright = 1
-    bottom = 1
-
 
     # Top:
     if top == 1:
@@ -46,11 +31,11 @@ def print_led():
 
     # Bottom left/right:
     for i in range(2):
-        if topleft == 1:
+        if bottomleft == 1:
             print("|", end="")
         else:
             print(" ", end="")
-        if topright == 1:
+        if bottomright == 1:
             print("    |")
         else:
             print()
