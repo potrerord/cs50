@@ -28,13 +28,13 @@ def get_range() -> int:
         print("Size must be a positive integer greater than 2.")
 
 
-def sum_evens(lower: int, upper: int) -> int:
+def sum_evens(start: int, stop: int) -> int:
     """Calculate and return the integer sum of all positive even
     integers in a range.
 
     Keyword arguments:
-    lower -- inclusive lower bound
-    upper -- exclusive upper bound, a la range()
+    start -- inclusive lower bound
+    stop -- exclusive upper bound, a la range()
     """
 
     sum = 0
