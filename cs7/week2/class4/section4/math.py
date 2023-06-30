@@ -16,7 +16,7 @@ def quad_formula_pos(a, b, c) -> float:
     c -- constant term
     """
 
-    x = -b +
+    x = -b + math.sqrt(b)
 
 def quad_formula_neg(a, b, c) -> float:
     """Solves a quadratic equation with constants a, b, and c, then
