@@ -16,7 +16,7 @@ def main():
             break
         print("Size must be a positive integer.")
 
-    draw_box(user_size)
+    draw_box(int(user_size))
 
 
 def draw_box(size: int):
