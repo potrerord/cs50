@@ -17,11 +17,10 @@ def main():
         print("Size must be a positive integer.")
 
     draw_box(int(user_size))
-
-    # Print new line for terminal window readability.
     print()
 
-    #
+    # Ask user if they would like to run program again.
+    
 
 
 def draw_box(size: int):
