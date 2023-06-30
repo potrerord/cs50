@@ -11,6 +11,7 @@ def main():
     """
     while True:
         user_size = input("Enter a size: ")
+        
         if isinstance(user_size, int) and (user_size > 0):
             break
         print("Size must be a positive integer.")
