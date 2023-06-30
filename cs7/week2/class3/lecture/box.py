@@ -6,11 +6,14 @@ Example of size 3: +--+
 """
 
 def main():
-    """Takes user input int and runs draw_box function directly."""
+    """Takes user input int and runs draw_box function directly.
+    Reprompts user if input is not a positive int.
+    """
     while True:
         user_size = input("Enter a size: ")
-        if user_size is int:
+        if isinstance(user_size, int) and (user_size > 0):
             break
+        print("Size must be a positive integer.")
 
     draw_box(int(input("Enter a size: ")))
 
