@@ -20,12 +20,18 @@ def main():
                 break
             print("Size must be a positive integer.")
 
+
+        # Draws box after new line.
         print()
         draw_box(int(user_size))
 
-        # Ask user if they would like to run program again.
-        user_redo = input("\nWould you like to print another "
-                          "box? (y/n): ")
+
+        # Asks user if they would like to run program again.
+        while True:
+            user_redo = input("\nWould you like to print another "
+                              "box? (y/n): ")
+
+
         if user_redo.lower() == "n":
             print()
             return
@@ -34,6 +40,14 @@ def main():
                   "'y' or 'n'.")
         else:
             pass
+
+
+def get_size() -> int:
+    while True:
+        user_input = input("\nEnter a size: ")
+        if user_input.isdigit() and int(user_input) > 0:
+            return user_input
+        print("Size must be a positive integer.")
 
 
 def draw_box(size: int):
