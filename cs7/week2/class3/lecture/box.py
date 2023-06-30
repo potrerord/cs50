@@ -23,8 +23,15 @@ def main():
         print()
 
         # Ask user if they would like to run program again.
-        if input("Would you like to print another box? (y/n): ").lower()
-           
+        while True:
+            user_redo = input("Would you like to print another
+                              box? (y/n): ")
+            if user_redo.lower() == "n":
+                return
+            elif user_redo.lower() == "y":
+                pass
+            else:
+
 
 
 def draw_box(size: int):
