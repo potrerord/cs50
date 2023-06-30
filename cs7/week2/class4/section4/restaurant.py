@@ -6,7 +6,14 @@ NAME = "Devon"
 def main():
     print(f"Hi, {NAME}!")
 
-    # Get order until customer stops.
+    # Ask user if they would like to run program again, then loop
+        # accordingly.
+        user_redo = get_redo()
+        if user_redo == False:
+            print()
+            return
+        else:
+            pass
     while True:
         order = get_size("What would you like to order? ")
         "Would you like to add another item? (y/n)"
