@@ -3,12 +3,12 @@
 NAME = "Devon"
 
 def main():
-    print("Hello, {NAME
-    order = get_order("What would you like to order? ")
+    print(f"Hello, {NAME}!")
+    order = get_alpha("What would you like to order? ")
 
 
 
-def get_order(prompt: str) -> str:
+def get_alpha(prompt: str) -> str:
     """Prompt user and continually reprompt if input is not alpha.
     Return string user input.
 
@@ -20,7 +20,7 @@ def get_order(prompt: str) -> str:
         user_input = input("\n" + prompt)
         if user_input.isdigit():
             return float(user_input)
-        print("error: temperature must be numeric")
+        print("I'm sorry, I didn't quite get that.")
 
 
 def get_name(prompt: str) -> float:
@@ -35,7 +35,7 @@ def get_name(prompt: str) -> float:
         user_input = input("\n" + prompt)
         if user_input.isdigit():
             return float(user_input)
-        print("error: temperature must be numeric")
+        print("I'm sorry, I didn't quite get that.")
 
 
 main()
