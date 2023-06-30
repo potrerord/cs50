@@ -1,5 +1,6 @@
 """
 Prints a box with user-input size.
+
 Example of size 3: +--+
                    |  |
                    +--+
@@ -7,24 +8,19 @@ Example of size 3: +--+
 
 
 def main():
-    """Prompt user for box size, print box, and ask if user wants to
-    draw another.
+    """Execute program, call all other functions and loop program
+    if user desires.
     """
 
-    # Setup for end-of-program "again?" prompt.
     while True:
-
-        # Gets positive integer size from user.
+        # Prompt user for size and draw box.
         user_size = get_size()
-
-        # Draws box after a new line.
         print()
         draw_box(user_size)
 
-        # Asks user if they would like to run program again.
+        # Ask user if they would like to run program again, then loop
+        # accordingly.
         user_redo = get_redo()
-
-        # Loops or ends program according to user response.
         if user_redo == False:
             print()
             return
@@ -33,7 +29,9 @@ def main():
 
 
 def get_size() -> int:
-    """Continually reprompts user for size if input is not pos int."""
+    """Prompt user for size and continually reprompt if input is not a
+    positive integer. Return positive integer.
+    """
 
     while True:
         user_input = input("\nEnter a size: ")
@@ -43,13 +41,14 @@ def get_size() -> int:
 
 
 def draw_box(size: int):
-    """Takes integer argument and draws argument-sized box."""
+    """Take integer argument for size and draw box according to size."""
 
-    # Size of 1 is special case, just prints a +.
+    # Print a + character to represent a size 1 box.
     if size == 1:
         print("+")
 
     else:
+
         # Range starts at 1 to use row number in calculations.
         for row in range(1, size + 1):
 
