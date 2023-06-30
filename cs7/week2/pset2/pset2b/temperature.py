@@ -21,7 +21,7 @@ def main():
         k_plural = "s"
 
     print(f"{fahrenheit} degree{f_plural} Fahrenheit equals {kelvin} "
-           "Kelvin{k_plural}.")
+          f"Kelvin{k_plural}.")
     print()
 
 
