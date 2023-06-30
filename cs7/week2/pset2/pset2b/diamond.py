@@ -1,4 +1,6 @@
-# Prints an ASCII art diamond out of the characters in the word "diamond".
+"""Prints an ASCII art diamond out of the letters in the word
+"diamond".
+"""
 
 print("   D")
 print("  I I")
