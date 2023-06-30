@@ -13,12 +13,12 @@ def main():
     kelvin = convert_temp_ftok(fahrenheit)
 
     if int(fahrenheit) == 1.0:
-        f_plural == ""
+        f_plural = ""
     elif int(kelvin) == 1.0:
-        k_plural == ""
+        k_plural = ""
     else:
-        f_plural == "s"
-        k_plural == "s"
+        f_plural = "s"
+        k_plural = "s"
 
     print(f"{fahrenheit} degree{f_plural} Fahrenheit equals {kelvin} "
            "Kelvin{k_plural}.")
