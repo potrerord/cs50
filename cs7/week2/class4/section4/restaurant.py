@@ -5,7 +5,7 @@ NAME = "Devon"
 
 def main():
     print(f"Hi, {NAME}!")
-    order = get_alpha("What would you like to order? ")
+    order = get_size("What would you like to order? ")
 
 
 def get_alpha(prompt: str) -> str:
