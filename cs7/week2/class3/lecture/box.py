@@ -1,4 +1,3 @@
-12345678901234567890123456789012345678901234567890123456789012
 # Prints a box with user-input size.
 
 size = int(input("Enter a size: "))
