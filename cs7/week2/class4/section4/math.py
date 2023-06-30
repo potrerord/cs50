@@ -6,7 +6,7 @@ def main():
 
 
 
-def quad_formula_pos(a, b, c) -> float:
+def quad_formula_pos(a, b, c, ) -> float:
     """Solves a quadratic equation with constants a, b, and c, then
     returns the output.
 
@@ -17,6 +17,23 @@ def quad_formula_pos(a, b, c) -> float:
     """
 
     x = -b + math.sqrt(b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def quad_formula_neg(a, b, c) -> float:
     """Solves a quadratic equation with constants a, b, and c, then
