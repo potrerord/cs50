@@ -10,7 +10,8 @@ def main():
     """Prompts user for positive int and runs draw_box function."""
 
     # Setup for end-of-program reprompt "Again?".
-    while True:
+    user_redo = "y"
+    while user_redo == "y":
 
         # Continually reprompts user if input is not positive int.
         while True:
