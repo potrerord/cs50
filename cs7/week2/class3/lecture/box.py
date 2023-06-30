@@ -7,9 +7,9 @@ Example of size 3: +--+
 
 
 def main():
-    """Takes user input int and runs draw_box function directly.
-    Reprompts user if input is not a positive int.
-    """
+    """Prompts user for positive int and runs draw_box function."""
+
+    # Continually reprompts user if input is not positive int.
     while True:
         user_size = input("Enter a size: ")
         if user_size.isdigit() and user_size > 0:
