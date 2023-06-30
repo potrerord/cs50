@@ -3,6 +3,7 @@ Outputs the sum of all even integers from 2 up to and including an
 integer provided by the user.
 """
 
+
 def main():
     """Take user input for upper inclusive limit of even integer
     sequence and print sum.
