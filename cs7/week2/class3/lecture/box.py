@@ -1,6 +1,7 @@
 """Prints a box with user-input size."""
 
-draw_box(int(input("Enter a size: ")))
+def main():
+    draw_box(int(input("Enter a size: ")))
 
 # Range starts at 1 to use row number in calculations.
 
@@ -20,3 +21,5 @@ def draw_box(size: int):
         # Prints end, middle, end for each row. Middle is reduced by 2
         # to account for end characters.
         print(end_char + mid_char * (size - 2) + end_char)
+
+main()
