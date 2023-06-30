@@ -12,7 +12,7 @@ def main():
     # Continually reprompts user if input is not positive int.
     while True:
         user_size = input("\nEnter a size: ")
-        if user_size.isdigit() and user_size > 0:
+        if user_size.isdigit() and int(user_size) > 0:
             break
         print("Size must be a positive integer.")
 
