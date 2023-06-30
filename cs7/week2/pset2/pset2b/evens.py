@@ -9,8 +9,9 @@ def main():
     """
 
     n = get_range()
-    sum = sum_evens(2, n)
-    print("The sum is", sum)
+    sum = sum_evens(2, n + 1)
+    print("The sum is " + str(sum) + ".")
+    print()
 
 
 def get_range() -> int:
