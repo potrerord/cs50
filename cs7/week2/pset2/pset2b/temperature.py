@@ -23,7 +23,7 @@ def get_temp(prompt: str) -> float:
 
     while True:
         user_input = input("\n" + prompt)
-        if user_input.isdigit() and int(user_input) > 1:
+        if user_input.isdigit():
             return float(user_input)
         print("error: temperature must be numeric")
 
