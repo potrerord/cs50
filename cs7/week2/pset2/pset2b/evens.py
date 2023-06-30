@@ -1,9 +1,18 @@
-# Outputs the sum of all even integers from 2 through user input int.
+"""
+Outputs the sum of all even integers from 2 up to and including an
+integer provided by the user.
+"""
 
-n = int(input("I will compute the sum of even integers from 2 through? "))
-sum = 0
+def main():
+    """Take user input for upper inclusive limit of even integer
+    sequence and print sum.
+    """
 
-for even in range(2, n + 1, 2):
-    sum += even
+    n = int(input("I will compute the sum of even integers from "
+                  "2 through? "))
+    sum = 0
 
-print("The sum is", sum)
+    for even in range(2, n + 1, 2):
+        sum += even
+
+    print("The sum is", sum)
