@@ -1,4 +1,5 @@
-"""Prints a box with user-input size.
+"""
+Prints a box with user-input size.
 Example of size 3: +--+
                    |  |
                    +--+
@@ -9,14 +10,14 @@ def main():
     draw_box(int(input("Enter a size: ")))
 
 def draw_box(size: int):
-    """Takes integer argument and draws arg-sized box."""
+    """Takes integer argument and draws argument-sized box."""
 
-    # Size of 1 is special case, just prints +.
+    # Size of 1 is special case, just prints a +.
     if size == 1:
         print("+")
 
-    # Range starts at 1 to use row number in calculations.
     else:
+        # Range starts at 1 to use row number in calculations.
         for row in range(1, size + 1):
 
             # Defines end/middle "characters" depending on row. mid_char
