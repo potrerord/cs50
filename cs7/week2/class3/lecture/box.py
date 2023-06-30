@@ -9,7 +9,7 @@ Example of size 3: +--+
 def main():
     """Prompts user for positive int and runs draw_box function."""
 
-    # Setup for end-of-program reprompt "Again?".
+    # Setup for end-of-program "again?" prompt.
     user_redo = "y"
     while user_redo == "y":
 
@@ -24,17 +24,16 @@ def main():
         draw_box(int(user_size))
 
         # Ask user if they would like to run program again.
-        while True:
-            user_redo = input("\nWould you like to print another "
-                              "box? (y/n): ")
-            if user_redo.lower() == "n":
-                print()
-                return
-            elif user_redo.lower() != "y":
-                print("Sorry, didn't get that - please respond with "
-                      "'y' or 'n'.")
-            else:
-                break
+        user_redo = input("\nWould you like to print another "
+                          "box? (y/n): ")
+        if user_redo.lower() == "n":
+            print()
+            return
+        elif user_redo.lower() != "y":
+            print("Sorry, didn't get that - please respond with "
+                  "'y' or 'n'.")
+        else:
+            pass
 
 
 def draw_box(size: int):
