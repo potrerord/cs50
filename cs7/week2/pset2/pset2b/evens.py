@@ -10,9 +10,7 @@ def main():
 
     n = get_range()
 
-    sum = 0
-    for even in range(2, n + 1, 2):
-        sum += even
+
 
     print("The sum is", sum)
 
@@ -28,3 +26,18 @@ def get_range() -> int:
         if user_input.isdigit() and int(user_input) > 0:
             return int(user_input)
         print("Size must be a positive integer greater than 2.")
+
+
+def sum_evens(lower: int, upper: int) -> int:
+    """Calculate and return the integer sum of all positive even
+    integers in a range.
+
+    Keyword arguments:
+    lower -- inclusive lower bound
+    upper -- exclusive upper bound, a la range()
+    """
+
+    sum = 0
+    for even in range(lower, upper, 2):
+        sum += even
+    return sum
