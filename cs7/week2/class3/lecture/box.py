@@ -26,6 +26,7 @@ def main():
             return
         else:
             pass
+    print()
 
 
 def get_size() -> int:
