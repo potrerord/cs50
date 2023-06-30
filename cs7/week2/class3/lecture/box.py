@@ -41,7 +41,11 @@ def get_size() -> int:
 
 
 def draw_box(size: int):
-    """Take integer argument for size and draw box according to size."""
+    """Take integer argument for size and draw box according to size.
+
+    Keyword argument:
+    size -- The number of rows and columns for the box.
+    """
 
     # Print a + character to represent a size 1 box.
     if size == 1:
@@ -69,7 +73,7 @@ def draw_box(size: int):
 
 def get_redo() -> bool:
     """Prompt user to loop program if they wish, with y/n input.
-    
+
     Reprompt user if input is not 'y' or 'n' (case agnostic).
     Return boolean value.
     """
