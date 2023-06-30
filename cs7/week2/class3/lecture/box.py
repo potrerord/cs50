@@ -20,19 +20,7 @@ def main():
         draw_box(user_size)
 
         # Asks user if they would like to run program again.
-        
-
-        while True:
-            user_redo = input("\nWould you like to print another "
-                              "box? (y/n): ")
-            if user_redo.lower() == "n":
-                print()
-                return
-            elif user_redo.lower() != "y":
-                print("Sorry, didn't get that - please respond with "
-                    "'y' or 'n'.")
-            else:
-                pass
+        user_redo = get_redo()
 
 
 def get_size() -> int:
@@ -69,6 +57,19 @@ def draw_box(size: int):
             # Prints end, middle, end for each row. Middle is reduced by 2
             # to account for end characters.
             print(end_char + mid_char * (size - 2) + end_char)
+
+
+def get_redo() -> bool:
+    while True:
+        user_response = input("\nWould you like to print another "
+                            "box? (y/n): ")
+        if user_response.lower() == "n":
+            return False
+        elif user_response.lower() != "y":
+            print("Sorry, didn't get that - please respond with "
+                "'y' or 'n'.")
+        else:
+            return True
 
 
 main()
