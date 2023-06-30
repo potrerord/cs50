@@ -1,7 +1,6 @@
 """Prints a box with user-input size."""
 
-user_size = int(input("Enter a size: "))
-draw_box(user_size)
+draw_box(int(input("Enter a size: ")))
 
 # Range starts at 1 to use row number in calculations.
 
