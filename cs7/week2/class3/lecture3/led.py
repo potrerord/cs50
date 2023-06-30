@@ -1,4 +1,11 @@
-"""Prints an LED-style display of the digits 1-9."""
+"""
+Prints an LED-style display of the digits 1-9.
+
+Potential future edits:
+- Argument variables to change characters for lines
+- horiz_line() function and such
+-
+"""
 
 def main():
     """Print digits according to manually-coded on/off codes.
