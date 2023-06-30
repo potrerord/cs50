@@ -12,13 +12,15 @@ def main():
                          "converted to Kelvins: ")
     kelvin = convert_temp_ftok(fahrenheit)
 
+    # Formattng an "s" for a plural amount of units. If either
+    # temperature's float value is 1.0, it will be referred to as
+    # singular.
+    f_plural = "s"
+    k_plural = "s"
     if int(fahrenheit) == 1.0:
         f_plural = ""
-    elif int(kelvin) == 1.0:
+    if int(kelvin) == 1.0:
         k_plural = ""
-    else:
-        f_plural = "s"
-        k_plural = "s"
 
     print(f"{fahrenheit} degree{f_plural} Fahrenheit equals {kelvin} "
           f"Kelvin{k_plural}.")
