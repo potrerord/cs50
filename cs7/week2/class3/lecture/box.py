@@ -1,16 +1,23 @@
-"""Prints a box with user-input size."""
+"""Prints a box with user-input size.
+Example of size 3: +--+
+                   |  |
+                   +--+
+"""
 
 def main():
+    """Takes user input int and runs draw_box function directly.
+    """
     draw_box(int(input("Enter a size: ")))
 
-# Range starts at 1 to use row number in calculations.
-
 def draw_box(size: int):
+    """Takes integer argument and draws box."""
+
+    # Range starts at 1 to use row number in calculations.
     for row in range(1, size + 1):
 
-        # Define end/middle "characters" depending on row. mid_char uses
-        # two of each character to more closely approximate the height
-        # of a line of text.
+        # Defines end/middle "characters" depending on row. mid_char
+        # uses two of each character to more closely approximate the
+        # height of a line of text.
         if(row == 1 or row == size):
             end_char = "+"
             mid_char = "--"
