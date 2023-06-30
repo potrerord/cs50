@@ -89,4 +89,4 @@ def get_redo() -> bool:
             return True
 
 
-main()
+help(get_redo)
