@@ -8,6 +8,12 @@ Fun fact: "Kelvins" are an absolute unit of temperature, so the term
 
 
 def main():
+    """Request temperature from user and print results in simple
+    English.
+    """
+
+    # Request and convert temperature, provide prompt for get_temp
+    # function.
     fahrenheit = get_temp("Input a temperature in degrees Fahrenheit to be "
                          "converted to Kelvins: ")
     kelvin = convert_temp_ftok(fahrenheit)
@@ -22,15 +28,18 @@ def main():
     if int(kelvin) == 1.0:
         k_plural = ""
 
-    print(f"{fahrenheit} degree{f_plural} Fahrenheit equals {kelvin} "
-          f"Kelvin{k_plural}.")
+    # Print results.
+    print(f"{fahrenheit} degree{f_plural} Fahrenheit equals "
+          f"{kelvin:.2f} Kelvin{k_plural}.")
     print()
 
 
 def get_temp(prompt: str) -> float:
     """Prompt user and continually reprompt if input is nonnumeric.
-
     Return float user input.
+
+    Keyword argument:
+    prompt -- The string prompt that will accept user input.
     """
 
     while True:

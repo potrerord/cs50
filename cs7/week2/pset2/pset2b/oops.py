@@ -1,4 +1,6 @@
-# Outputs number of TAs necessary for input students (1 TA per 15 students).
+"""
+Calculates and prints the number of teaching fellows s necessary for input students (1 TA per 15 students).
+"""
 
 def main():
     studs = int(input("How many students are enrolled? "))
