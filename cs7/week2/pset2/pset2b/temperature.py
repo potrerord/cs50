@@ -1,17 +1,27 @@
 """
 Prints the Kelvin equivalent of any temperature in degrees Fahrenheit as
 provided by user input.
+
+Fun fact: "Kelvins" are an absolute unit of temperature, so the term
+"degrees" is not appropriate when referring to them.
 """
 
 
 def main():
-    fahrenheit =get_temp("Input a temperature in degrees Fahrenheit to be "
+    fahrenheit = get_temp("Input a temperature in degrees Fahrenheit to be "
                          "converted to Kelvins: ")
     kelvin = convert_temp_ftok(fahrenheit)
 
-    # Fun fact: "Kelvins" are an absolute unit of temperature, so the
-    # term "degrees" is not appropriate.
-    print(f"{fahrenheit} degrees Fahrenheit equals {kelvin} Kelvins.")
+    if int(fahrenheit) == 1.0:
+        f_plural == ""
+    elif int(kelvin) == 1.0:
+        k_plural == ""
+    else:
+        f_plural == "s"
+        k_plural == "s"
+
+    print(f"{fahrenheit} degree{f_plural} Fahrenheit equals {kelvin} "
+           "Kelvin{k_plural}.")
     print()
 
 
