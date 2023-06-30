@@ -18,6 +18,11 @@ def main():
 
     draw_box(int(user_size))
 
+    # Print new line for terminal window readability.
+    print()
+
+    #
+
 
 def draw_box(size: int):
     """Takes integer argument and draws argument-sized box."""
@@ -43,5 +48,6 @@ def draw_box(size: int):
             # Prints end, middle, end for each row. Middle is reduced by 2
             # to account for end characters.
             print(end_char + mid_char * (size - 2) + end_char)
+
 
 main()
