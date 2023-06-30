@@ -4,7 +4,7 @@ size = int(input("Enter a size: "))
 
 # Range starts at 1 to use row number in calculations.
 
-def draw_box(size):
+def draw_box(size: int):
     for row in range(1, size + 1):
 
         # Define end/middle "characters" depending on row. mid_char uses
