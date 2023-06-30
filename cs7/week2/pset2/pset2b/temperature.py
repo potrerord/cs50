@@ -5,7 +5,8 @@ provided by user input.
 
 
 def main():
-    fahrenheit =
+    fahrenheit =get_temp("Input a temperature in degrees Fahrenheit to be "
+                         "converted to Kelvins: ")
     kelvin = convert_temp_ftok(fahrenheit)
 
     # Fun fact: "Kelvins" are an absolute unit of temperature, so the
@@ -14,15 +15,14 @@ def main():
     print()
 
 
-def get_temp() -> float:
+def get_temp(prompt: str) -> float:
     """Prompt user and continually reprompt if input is nonnumeric.
 
     Return float user input.
     """
 
     while True:
-        user_input = input("\nInput a temperature in degrees Fahrenheit to be "
-                           "converted to Kelvins: ")
+        user_input = input("\n" + prompt)
         if user_input.isdigit() and int(user_input) > 1:
             return float(user_input)
         print("error: temperature must be numeric")
