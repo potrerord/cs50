@@ -24,14 +24,13 @@ def main():
 
         # Ask user if they would like to run program again.
         while True:
-            user_redo = input("Would you like to print another
-                              box? (y/n): ")
+            user_redo = input("Would you like to print another "
+                              "box? (y/n): ")
             if user_redo.lower() == "n":
                 return
-            elif user_redo.lower() == "y":
-                pass
-            else:
-
+            elif user_redo.lower() != "y":
+                print("Sorry, didn't get that - please respond with "
+                      "'y' or 'n'.")
 
 
 def draw_box(size: int):
