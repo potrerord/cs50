@@ -7,7 +7,9 @@ Example of size 3: +--+
 
 
 def main():
-    """Prompts user for positive int and runs draw_box function."""
+    """Prompt user for box size, print box, and ask if user wants to
+    draw another.
+    """
 
     # Setup for end-of-program "again?" prompt.
     while True:
