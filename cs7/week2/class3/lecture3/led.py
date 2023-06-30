@@ -30,46 +30,30 @@ def print_led():
         print()
 
     # Top left/right:
-    if topleft == 1:
-        print("|", end="")
-    else:
-        print(" ", end="")
-    if topright == 1:
-        print("    |")
-    else:
-        print()
-
-    if topleft == 1:
-        print("|", end="")
-    else:
-        print(" ", end="")
-    if topright == 1:
-        print("    |")
-    else:
-        print()
+    for i in range(2):
+        if topleft == 1:
+            print("|", end="")
+        else:
+            print(" ", end="")
+        if topright == 1:
+            print("    |")
+        else:
+            print()
 
     # Middle: "----" or "    "
     if middle == 1:
         print(" ----")
 
     # Bottom left/right:
-    if bottomleft == 1:
-        print("|", end="")
-    else:
-        print(" ", end="")
-    if bottomright == 1:
-        print("    |")
-    else:
-        print()
-
-    if bottomleft == 1:
-        print("|", end="")
-    else:
-        print(" ", end="")
-    if bottomright == 1:
-        print("    |")
-    else:
-        print()
+    for i in range(2):
+        if topleft == 1:
+            print("|", end="")
+        else:
+            print(" ", end="")
+        if topright == 1:
+            print("    |")
+        else:
+            print()
 
     # Bottom: "----" or "    "
     if bottom == 1:
