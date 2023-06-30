@@ -6,6 +6,7 @@ without using any loops or conditional statements.
 
 def main():
     """ Print the diamond."""
+    
     print("   D")
     print("  I I")
     print(" A   A")

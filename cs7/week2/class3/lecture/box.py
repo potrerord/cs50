@@ -38,7 +38,7 @@ def get_size() -> int:
         user_input = input("\nEnter a size: ")
         if user_input.isdigit() and int(user_input) > 0:
             return int(user_input)
-        print("Size must be a positive integer.")
+        print("error: size must be a positive integer")
 
 
 def draw_box(size: int):

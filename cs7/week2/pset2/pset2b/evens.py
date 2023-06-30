@@ -17,7 +17,9 @@ def main():
 
 def get_range() -> int:
     """Prompt user and continually reprompt if input is not a positive
-    integer greater than 2. Return integer input.
+    integer greater than 2.
+
+    Return integer user input.
     """
 
     while True:
@@ -25,7 +27,7 @@ def get_range() -> int:
                            "from 2 through? ")
         if user_input.isdigit() and int(user_input) > 1:
             return int(user_input)
-        print("error: size must be a positive integer greater than 2.")
+        print("error: size must be a positive integer greater than 2")
 
 
 def sum_evens(start: int, stop: int) -> int:
