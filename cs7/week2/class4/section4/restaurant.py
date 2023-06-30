@@ -4,7 +4,7 @@ NAME = "Devon"
 
 
 def main():
-    print(f"Hello, {NAME}!")
+    print(f"Hi, {NAME}!")
     order = get_alpha("What would you like to order? ")
 
 
@@ -18,22 +18,7 @@ def get_alpha(prompt: str) -> str:
 
     while True:
         user_input = input("\n" + prompt)
-        if user_input.isdigit():
-            return float(user_input)
-        print("I'm sorry, I didn't quite get that.")
-
-
-def get_name(prompt: str) -> float:
-    """Prompt user and continually reprompt if input is alpha.
-    Return float user input.
-
-    Keyword argument:
-    prompt -- The string prompt that will accept user input.
-    """
-
-    while True:
-        user_input = input("\n" + prompt)
-        if user_input.isdigit():
+        if user_input.isalpha():
             return float(user_input)
         print("I'm sorry, I didn't quite get that.")
 
