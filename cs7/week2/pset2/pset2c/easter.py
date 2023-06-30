@@ -11,7 +11,7 @@ def main():
 
     # The variables correspond with the Gauss Easter date calculation
     # formula - Easter falls on day p of month n.
-    y = int(input("Enter a year: "))
+    y = int(input("\nEnter a year: "))
 
     a = y % 19
     b = y // 100
@@ -29,6 +29,7 @@ def main():
 
     # Print date in month/day format.
     print(f"{n}/{p}")
+    print()
 
 
 main()
