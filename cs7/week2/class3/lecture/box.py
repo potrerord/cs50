@@ -27,10 +27,13 @@ def main():
             user_redo = input("\nWould you like to print another "
                               "box? (y/n): ")
             if user_redo.lower() == "n":
+                print()
                 return
             elif user_redo.lower() != "y":
                 print("Sorry, didn't get that - please respond with "
                       "'y' or 'n'.")
+            else:
+                break
 
 
 def draw_box(size: int):
