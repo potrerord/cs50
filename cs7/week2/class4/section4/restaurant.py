@@ -2,10 +2,10 @@
 
 NAME = "Devon"
 
+
 def main():
     print(f"Hello, {NAME}!")
     order = get_alpha("What would you like to order? ")
-
 
 
 def get_alpha(prompt: str) -> str:
