@@ -6,17 +6,9 @@ NAME = "Devon"
 def main():
     print(f"Hi, {NAME}!")
 
-    # Ask user if they would like to run program again, then loop
-        # accordingly.
-        user_redo = get_redo()
-        if user_redo == False:
-            print()
-            return
-        else:
-            pass
+    # Get order until customer stops.
     while True:
-        order = get_size("What would you like to order? ")
-        "Would you like to add another item? (y/n)"
+        order = get_alpha("What would you like to order? ")
 
     # Did you mean _________?
 
@@ -34,24 +26,6 @@ def get_alpha(prompt: str) -> str:
         if user_input.isalpha():
             return float(user_input)
         print("I'm sorry, I didn't quite get that.")
-
-
-def get_redo() -> bool:
-    """Prompt user to loop program if they wish, with y/n input.
-
-    Reprompt user if input is not 'y' or 'n' (case agnostic).
-    Return boolean value.
-    """
-    while True:
-        user_response = input("\nWould you like to print another "
-                            "box? (y/n): ")
-        if user_response.lower() == "n":
-            return False
-        elif user_response.lower() != "y":
-            print("Sorry, didn't get that - please respond with "
-                "'y' or 'n'.")
-        else:
-            return True
 
 
 main()
