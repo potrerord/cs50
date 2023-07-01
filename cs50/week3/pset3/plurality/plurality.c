@@ -87,22 +87,20 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    string winner;
+    string winners[MAX];
     int win_votes = -1;
-
-    string tie_winners[MAX];
-    int tie_count = 0;
+    int win_count = 0;
 
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > win_votes)
         {
             win_votes = candidates[i].votes;
-            winner = candidates[i].name;
+            winners[i] = candidates[i].name;
         }
         else if (candidates[i].votes == win_votes)
         {
-            
+
         }
     }
     return;
