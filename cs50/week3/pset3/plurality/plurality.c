@@ -67,12 +67,17 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // TODO
-    if (strcmp(name, ))
-
-
-
-        return true;
+    // Iterate over every candidate.
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(name, candidates[i].name) == 0)
+        {
+            // Increment candidate's vote count and return true to
+            // indicate successful vote.
+            candidates[i].votes++;
+            return true;
+        }
+    }
 
     // Return false to indicate vote that does not match candidate.
     return false;
@@ -82,7 +87,7 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-
+    for 
 
     // END TODO
     return;
