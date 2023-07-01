@@ -130,7 +130,6 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    // Invalid vote means name isn't right
     
     // Iterate over every candidate and check for match between vote/
     // candidate name. Ignores case.
