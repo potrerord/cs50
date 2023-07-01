@@ -1,4 +1,5 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -70,7 +71,7 @@ bool vote(string name)
     // Iterate over every candidate.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(name, candidates[i].name) == 0)
+        if (strcmp(tolower(name), tolower(candidates[i].name)) == 0)
         {
             // Increment candidate's vote count and return true to
             // indicate successful vote.
@@ -87,10 +88,9 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    string winners[MAX] = {NULL};
+    string tie_winners[MAX] = {NULL};
     string current_winner = {NULL};
-    int win_votes = -1;
-    int win_count = 0;
+    int current_win_votes = -1;
 
     for (int i = 0; i < candidate_count; i++)
     {
