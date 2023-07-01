@@ -126,12 +126,17 @@ int main(int argc, string argv[])
     return 0;
 }
 
+
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    // TODO
+    // Validate vote
+
+
+
     return false;
 }
+
 
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
@@ -140,12 +145,14 @@ void tabulate(void)
     return;
 }
 
+
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
     // TODO
     return false;
 }
+
 
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
@@ -154,12 +161,14 @@ int find_min(void)
     return 0;
 }
 
+
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
     // TODO
     return false;
 }
+
 
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
