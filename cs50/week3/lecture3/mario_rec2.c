@@ -1,4 +1,4 @@
-// Recursively prints a mario pyramid.
+// Recursively prints a mario pyramid (upside down though :/).
 
 #include <cs50.h>
 #include <stdio.h>
@@ -15,26 +15,20 @@ int main(void)
 }
 
 
-// Recursively print n rows with base case n = #.
-int draw_row(int n)
+// Recursively print n rows with base case n = space.
+int print_pyr(int n)
 {
-
-    // Base case: print n blocks.
-    if (int frame == n)
+    // Base case: Print one space.
+    if (n == 1)
     {
-        // Print n blocks with no spaces for the bottom row.
-        for (int i = 0; i < n; i++)
-        {
-            printf("#");
-        }
-        printf("\n");
+        printf("-\n");
+        return 1;
     }
 
-    // Recursive case: Print previous row with 1 less block and 1 more
-    // space.
+    // Recursive case: Print n spaces with a new line.
     for (int i = 0; i < n; i++)
     {
-        printf("#");
+        printf("-");
     }
     printf("\n");
     return print_pyr(n - 1);
