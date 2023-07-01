@@ -68,6 +68,13 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
+    if (strcmp(name, ))
+
+
+
+        return true;
+
+    // Return false to indicate vote that does not match candidate.
     return false;
 }
 
@@ -75,5 +82,8 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
+
+
+    // END TODO
     return;
 }
