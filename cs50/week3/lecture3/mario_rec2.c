@@ -16,20 +16,21 @@ int main(void)
 
 
 // Recursively print n rows with base case n = space.
+// Ideally, figure out a way for default spaces to be 0.
 int draw(int blocks, int spaces)
 {
     // Base case: Print n - 1 blocks.
-    if (n <= 0)
+    if (blocks <= 1)
     {
-        for (int i = spaces; i < blocks; i++)
+        for (int i = 0; i < spaces; i++)
         {
-
+            printf(" ");
         }
-        printf("\n");
+        printf("#\n");
         return;
     }
 
-    draw(n - 1, i + 1);
+    draw(blocks - 1, spaces + 1);
 
     // Recursive case: Print n - 1 spaces.
     for (int i = 0; i < n - 1; i++)
