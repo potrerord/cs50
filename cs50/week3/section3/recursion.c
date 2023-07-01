@@ -18,10 +18,12 @@ int main(void)
 // Recursively calculate the factorial until n == 0.
 int factorial(int n)
 {
-    // Base case:
+    // Base case: 0! == 1.
     if (n == 0)
     {
         return 1;
+
+    // Recursive case: any int above 0.
     return n * factorial(n - 1);
     }
 }
