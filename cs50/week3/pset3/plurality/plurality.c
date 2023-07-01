@@ -98,11 +98,10 @@ void print_winner(void)
         {
             current_winner = candidates[i].name;
             win_votes = candidates[i].votes;
-            win_count++;
         }
         else if (candidates[i].votes == win_votes)
         {
-
+            
         }
     }
     return;
