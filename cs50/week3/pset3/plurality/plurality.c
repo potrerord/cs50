@@ -88,16 +88,23 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    string winners[MAX] = {NULL};
+    string winners[MAX + 1] = {NULL};
     string current_winner = {NULL};
     int current_win_votes = -1;
 
     for (int i = 0; i < candidate_count; i++)
     {
+        // Fill "winners[]" array with names of winner(s_ to account for
+        // unlikely maximum tie between all candidates. winners[] begins
+        // assigning at winners[1] to avoid breaking the "erase previous
+        // winner's name" rule for the first candidate.
         if (candidates[i].votes > win_votes)
         {
-            winners[i] = candidates[i].name;
-            winners[i - 1] = {NULL};
+            // Add current lead to winners[].
+            winners[i + 1] = candidates[i].name;
+
+            // Erase previous winner's name.
+            winners[i] = {NULL};
             current_winner = candidates[i].name;
             win_votes = candidates[i].votes;
         }
