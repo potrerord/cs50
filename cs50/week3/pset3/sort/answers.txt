@@ -1,14 +1,22 @@
-sort1 uses: bubble sort
+sort1 uses:
+    bubble sort
 
-How do you know?: TODO
+How do you know?:
+    Bubble sort works most efficiently on sorted data out
+    of the 3 options
 
-sort2 uses: merge sort
+sort2 uses:
+    merge sort
 
-How do you know?: TODO
+How do you know?:
+    It vastly outperformed the other 2 sorting algorithms on the random
+    data, especially as the size of the problem increased.
 
-sort3 uses: selection sort
+sort3 uses:
+    selection sort
 
-How do you know?: TODO
+How do you know?:
+    TODO
 
 -------
 
@@ -39,4 +47,5 @@ sorted
 
         Looks like sort3 took longer than necessary on the sorted data,
         which would point to it being selection. Bubble is optimized for
-        sorted data.
+        sorted data - looks like it even beat out/tied with merge for
+        the larger sets.
