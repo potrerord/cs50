@@ -11,8 +11,7 @@ int triangular(int n);
 int main(int argc, string argv[])
 {
     int user_n = atoi(argv[1]);
-    int user_triangular = triangular(user_n);
-    printf("%i", user_triangular);
+    printf("The %ith triangular number is %i.\n", user_n, triangular(user_n));
 }
 
 
@@ -26,5 +25,5 @@ int triangular(int n)
     }
 
     // Recursive case: Add n to the previous triangular number.
-    return n + triangular(n);
+    return n + triangular(n - 1);
 }
