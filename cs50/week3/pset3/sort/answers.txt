@@ -2,21 +2,26 @@ sort1 uses:
     bubble sort
 
 How do you know?:
-    Bubble sort works most efficiently on sorted data out
-    of the 3 options
+    Bubble sort works most efficiently on sorted data than on random or
+    reversed data. It seemed to have the hardest time on the reversed
+    data, which means it's probably not selection because selection
+    would be done with the reversed data by the halfway point.
 
 sort2 uses:
     merge sort
 
 How do you know?:
-    It vastly outperformed the other 2 sorting algorithms on the random
-    data, especially as the size of the problem increased.
+    sort2 vastly outperformed the other 2 sorting algorithms on the
+    random data (and in general), especially as the size of the data set
+    increased.
 
 sort3 uses:
     selection sort
 
 How do you know?:
-    TODO
+    It had pretty consistent and predictable (linear) growth in runtime
+    as the data got larger. It did not seem to perform better or worse
+    with the different contexts of random/reversed/sorted.
 
 -------
 
