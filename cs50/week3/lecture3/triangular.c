@@ -1,4 +1,6 @@
-// Recursively calcuates the nth triangular number.
+// Recursively calcuates the nth triangular number by recursively adding
+// n to the previous triangular number, with a base case of 1 when n is
+// 1.
 
 #include <cs50.h>
 #include <stdio.h>
