@@ -22,8 +22,7 @@ int factorial(int n)
     if (n == 0)
     {
         return 1;
-
+    }
     // Recursive case: any int above 0.
     return n * factorial(n - 1);
-    }
 }
