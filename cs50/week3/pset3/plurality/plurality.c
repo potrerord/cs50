@@ -101,8 +101,11 @@ void print_winner(void)
         }
         else if (candidates[i].votes == win_votes)
         {
-            
+
         }
     }
+
+    // If a tie, print all tied names
+
     return;
 }
