@@ -87,42 +87,25 @@ bool vote(string name)
 // Print the winner (or winners) of the election
 void print_winner(void)
 {
+    int win_votes = -1;
 
-    // Initiate variables with non-garbage values.
-    string winners[MAX + 1] = {NULL};
-    string current_winner = {NULL};
-    int current_win_votes = -1;
-
+    // Find highest number of votes.
     for (int i = 0; i < candidate_count; i++)
     {
-
-        // Fill "winners[]" array with names of winner(s_ to account for
-        // unlikely maximum tie between all candidates. winners[] begins
-        // assigning at winners[1] to avoid breaking the "erase previous
-        // winner's name" rule for the first candidate.
         if (candidates[i].votes > win_votes)
         {
-
-            // Add current lead to winners[].
-            winners[i + 1] = candidates[i].name;
-
-            // Erase previous winner's name.
-            winners[i] = {NULL};
-            current_winner = candidates[i].name;
-
-            // Track winner's vote count for comparison.
             win_votes = candidates[i].votes;
-        }
-
-        // If there is a tie, do not erase previous winner.
-        else if (candidates[i].votes == win_votes)
-        {
-            winners[i + 1] = candidates[i].name;
-            current_winner = candidates[i].name;
         }
     }
 
-    // If a tie, print all tied names
+    // Find and print names of candidates with winning vote count.
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if candidates[i].votes == win_votes
+        {
+            printf("%s\n", candidates[i].name);
+        }
+    }
 
     return;
 }
