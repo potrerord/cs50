@@ -4,32 +4,33 @@
 #include <stdio.h>
 
 // Prototypes:
-int print_pyr(int n);
+int draw(int n);
 
 
 // Call the recursive print_pyr function.
 int main(void)
 {
     int height = get_int("Enter height: ");
-    print_pyr(height);
+    draw(height);
 }
 
 
 // Recursively print n rows with base case n = space.
-int print_pyr(int n)
+int draw(int n)
 {
-    // Base case: Print one space.
-    if (n == 1)
+    // Base case: Print 0 spaces.
+    if (n <= 0)
     {
-        printf("-\n");
-        return 1;
+        printf("\n");
+        return;
     }
 
-    // Recursive case: Print n spaces with a new line.
-    for (int i = 0; i < n; i++)
+    draw(n - 1);
+
+    // Recursive case: Print n - 1 spaces.
+    for (int i = 0; i < n - 1; i++)
     {
         printf("-");
     }
     printf("\n");
-    return print_pyr(n - 1);
 }
