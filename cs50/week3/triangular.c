@@ -9,6 +9,7 @@ int triangular(int n);
 int main(void)
 {
     int user_n = get_int("Enter positive int: ");
+    int user_triangular = triangular(user_n);
     printf("%i", triangular(user_n));
 }
 
