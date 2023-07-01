@@ -88,7 +88,7 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    string tie_winners[MAX] = {NULL};
+    string winners[MAX] = {NULL};
     string current_winner = {NULL};
     int current_win_votes = -1;
 
@@ -96,6 +96,8 @@ void print_winner(void)
     {
         if (candidates[i].votes > win_votes)
         {
+            winners[i] = candidates[i].name;
+            winners[i - 1] = {NULL};
             current_winner = candidates[i].name;
             win_votes = candidates[i].votes;
         }
