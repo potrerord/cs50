@@ -1,4 +1,4 @@
-// Recursively prints a mario pyramid (upside down though :/).
+// Recursively prints a mario pyramid.
 
 #include <cs50.h>
 #include <stdio.h>
