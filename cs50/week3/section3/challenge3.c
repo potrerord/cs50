@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <string.h>
 
+int N = 3;
+
 typedef struct
 {
     string name;
@@ -17,5 +19,8 @@ student;
 
 int main(void)
 {
-    
+    for (int i = 0; i < N; i++)
+    {
+        
+    }
 }
