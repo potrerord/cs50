@@ -18,14 +18,15 @@ int main(void)
 // Recursively print n rows with base case n = #.
 int print_pyr(int n)
 {
-    // Base case: Print one block.
+    // Base case: Print one block with a new line.
     if (n == 1)
     {
         printf("#\n");
         return 1;
     }
 
-    // Recursive case: Print n blocks with a new line.
+    // Recursive case: Print n blocks with a space in front of it, then
+    // print a new line.
     for (int i = 0; i < n; i++)
     {
         printf("#");
