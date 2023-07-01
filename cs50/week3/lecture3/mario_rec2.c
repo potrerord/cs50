@@ -16,17 +16,22 @@ int main(void)
 
 
 // Recursively print n rows with base case n = #.
-int print_pyr(int n)
+int draw_row(int n)
 {
-    // Base case: Print one block with n - 1 spaces in front.
-    if (n == 1)
+
+    // Base case: print n blocks.
+    if (int frame == n)
     {
-        printf("#\n");
-        return 1;
+        // Print n blocks with no spaces for the bottom row.
+        for (int i = 0; i < n; i++)
+        {
+            printf("#");
+        }
+        printf("\n");
     }
 
-    // Recursive case: Print previous row with 1 less space and one more
-    // block. End if no more spaces / all blocks.
+    // Recursive case: Print previous row with 1 less block and 1 more
+    // space.
     for (int i = 0; i < n; i++)
     {
         printf("#");
