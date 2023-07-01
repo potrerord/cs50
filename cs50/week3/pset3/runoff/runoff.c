@@ -130,8 +130,19 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-    // Validate vote
-
+    // Invalid vote means name isn't right
+    
+    // Iterate over every candidate and check for match between vote/
+    // candidate name. Ignores case.
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcasecmp(name, candidates[i].name) == 0)
+        {
+            // Increment candidate's vote count and return true to
+            // indicate successful vote.
+            candidates[i].votes++;
+            return true;
+        }
 
 
     return false;
