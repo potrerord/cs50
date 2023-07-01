@@ -88,6 +88,7 @@ void print_winner(void)
 {
     // TODO
     string winners[MAX] = {NULL};
+    string current_winner = {NULL};
     int win_votes = -1;
     int win_count = 0;
 
@@ -95,12 +96,13 @@ void print_winner(void)
     {
         if (candidates[i].votes > win_votes)
         {
+            current_winner = candidates[i].name;
             win_votes = candidates[i].votes;
-            winners[i] = candidates[i].name;
+            win_count++;
         }
         else if (candidates[i].votes == win_votes)
         {
-            
+
         }
     }
     return;
