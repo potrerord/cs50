@@ -15,9 +15,9 @@ How do you know?: TODO
 Notes:          sort1        sort2       sort3
 
 random
-    5000
-    10000
-    50000
+    5000        0m0.108s    0m0.046s    0m0.078s
+    10000       0m0.542s    0m0.075s    0m0.192s
+    50000       
 
 reversed
     5000
