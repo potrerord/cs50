@@ -25,8 +25,7 @@ int print_pyr(int n)
         return 1;
     }
 
-    // Recursive case: Print n blocks with a space in front of it, then
-    // print a new line.
+    // Recursive case: Print the previous amount of blocks
     for (int i = 0; i < n; i++)
     {
         printf("#");
