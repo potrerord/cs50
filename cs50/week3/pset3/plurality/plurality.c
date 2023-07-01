@@ -1,13 +1,11 @@
-// Runs a plurality election.
-
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 
-// Max number of candidates.
+// Max number of candidates
 #define MAX 9
 
-// Candidates have name and vote count.
+// Candidates have name and vote count
 typedef struct
 {
     string name;
@@ -42,7 +40,6 @@ int main(int argc, string argv[])
         return 2;
     }
 
-    // Initialize vote count, name every candidate.
     for (int i = 0; i < candidate_count; i++)
     {
         candidates[i].name = argv[i + 1];
