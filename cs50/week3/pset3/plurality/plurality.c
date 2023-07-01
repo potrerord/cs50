@@ -68,7 +68,8 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // Iterate over every candidate.
+    // Iterate over every candidate and check for match between vote/
+    // candidate name. Ignores case.
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcasecmp(name, candidates[i].name) == 0)
