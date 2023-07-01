@@ -91,7 +91,7 @@ void print_winner(void)
     int win_votes = -1;
 
     string tie_winners[MAX];
-    int tie_count = 1;
+    int tie_count = 0;
 
     for (int i = 0; i < candidate_count; i++)
     {
@@ -102,7 +102,7 @@ void print_winner(void)
         }
         else if (candidates[i].votes == win_votes)
         {
-
+            
         }
     }
     return;
