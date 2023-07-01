@@ -10,5 +10,8 @@ int main(void)
 // Recursively print n rows with base case n = #.
 void print_pyr(int n)
 {
-    
+    if (n == 1)
+    {
+        
+    }
 }
