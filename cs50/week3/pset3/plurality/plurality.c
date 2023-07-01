@@ -41,6 +41,8 @@ int main(int argc, string argv[])
         printf("Maximum number of candidates is %i\n", MAX);
         return 2;
     }
+
+    // Initialize vote count, name every candidate.
     for (int i = 0; i < candidate_count; i++)
     {
         candidates[i].name = argv[i + 1];
