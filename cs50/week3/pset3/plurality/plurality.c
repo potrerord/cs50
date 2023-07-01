@@ -1,7 +1,7 @@
 #include <cs50.h>
-#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 
 // Max number of candidates
 #define MAX 9
@@ -71,7 +71,7 @@ bool vote(string name)
     // Iterate over every candidate.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(tolower(name), tolower(candidates[i].name)) == 0)
+        if (strcasecmp(name, candidates[i].name) == 0)
         {
             // Increment candidate's vote count and return true to
             // indicate successful vote.
@@ -101,7 +101,7 @@ void print_winner(void)
     // Find and print names of candidates with winning vote count.
     for (int i = 0; i < candidate_count; i++)
     {
-        if candidates[i].votes == win_votes
+        if (candidates[i].votes == win_votes)
         {
             printf("%s\n", candidates[i].name);
         }
