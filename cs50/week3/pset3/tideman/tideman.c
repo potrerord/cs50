@@ -207,9 +207,9 @@ void add_pairs(void)
         for (int j = 0; j < candidate_count; j++)
         {
             // Make sure you add a pair data type
-            if ()
+            if (preferences[i][j] > 0)
             {
-
+                
             }
         }
     }
