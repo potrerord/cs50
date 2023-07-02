@@ -192,16 +192,6 @@ void tabulate(void)
                 break;
             }
         }
-        preferences[i]
-    }
-
-    // Iterate through every non-eliminated candidate
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (!candidate[i].eliminated)
-        {
-
-        }
     }
     return;
 }
