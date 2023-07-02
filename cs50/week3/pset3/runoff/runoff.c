@@ -200,9 +200,10 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
+    // Initiate count variable for the highest number of votes.
     int win_votes = -1;
 
-    // Find highest number of votes.
+    // Find the highest number of votes.
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > win_votes)
@@ -211,39 +212,32 @@ bool print_winner(void)
         }
     }
 
-    // Find and print names of candidates with winning vote count.
+    // Initiate count variable for the number of winners.
+    int winner_count == 0;
+
+    // If there is a tie, return false.
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == win_votes)
+        {
+            int winner_count++;
+        }
+    }
+    if (winner_count != 1)
+    {
+        return false;
+    }
+
+    // If there is one winner, print winner name and return true to
+    // indicate success.
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == win_votes)
         {
             printf("%s\n", candidates[i].name);
-            return
+            return true;
         }
     }
-
-    return;
-
-
-
-
-
-
-    // Initiate
-
-    // Iterate through vote counts to find winner.
-    for (int i = 0; i < candidate_count; i++)
-    {
-
-    }
-
-
-    // Print them
-
-    // Return true to indicate successful print of winner.
-    return true;
-
-    // Return false to indicate failure to print winner.
-    return false;
 }
 
 
