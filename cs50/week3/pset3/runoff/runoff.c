@@ -141,7 +141,7 @@ bool vote(int voter, int rank, string name)
             preferences[voter][rank] = i;
             return true;
         }
-
+    }
     // Return false to indicate vote that does not match candidate.
     return false;
 }
@@ -173,7 +173,7 @@ void tabulate(void)
                 // voter preference, then increment candidate's vote
                 // count. Break after first non-eliminated preference
                 // per voter.
-                if (preferences[i][j] == candidates[k] == 0 &&
+                if (preferences[i][j] == k &&
                     !candidates[k].eliminated)
                 {
                     candidates[k].votes++;
@@ -212,7 +212,7 @@ bool print_winner(void)
     // Initiate count variable for the number of winners and a variable
     // to keep track of winner index if there is no tie.
     int winner_count = 0;
-    int winner_index = -1:
+    int winner_index = -1;
 
     // Check for a single winner or a tie.
     for (int i = 0; i < candidate_count; i++)
