@@ -265,7 +265,8 @@ void sort_pairs(void)
         largest_index = i
 
         // Scan through every element after pairs[i] to identify index
-        // of largest value, and update largest_index accordingly.
+        // of largest value after pairs[i], and update largest_index
+        // accordingly.
         for (int j = i + 1; j < pair_count; j++)
         {
             if pairs[j] > pairs[largest_index]
@@ -276,11 +277,7 @@ void sort_pairs(void)
 
         // If largest value after pairs[i] is greater than pairs[i],
         // then switch the values and restart after increment.
-        if (pairs[largest_index] > pairs[i])
-        {
-
-        }
-
+        
     }
 
 
