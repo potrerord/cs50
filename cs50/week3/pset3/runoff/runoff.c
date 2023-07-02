@@ -177,6 +177,7 @@ void tabulate(void)
                     break
                 }
             }
+        
         }
         preferences[i]
     }
