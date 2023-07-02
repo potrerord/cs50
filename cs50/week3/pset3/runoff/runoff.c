@@ -130,7 +130,6 @@ int main(int argc, string argv[])
 // Record preference if vote is valid
 bool vote(int voter, int rank, string name)
 {
-
     // Iterate over every candidate and check for match between vote/
     // candidate name. Ignores case.
     for (int i = 0; i < candidate_count; i++)
@@ -243,8 +242,19 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
-    // TODO
-    return 0;
+    // Initiate count variable for the maximum number of votes.
+    int lose_votes = voter_count + 1;
+
+    // Find the lowest number of votes and return.
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes < lose_votes)
+        {
+            lose_votes = candidates[i].votes;
+        }
+    }
+
+    return lose_votes;
 }
 
 
