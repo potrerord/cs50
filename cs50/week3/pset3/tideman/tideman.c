@@ -200,25 +200,22 @@ void add_pairs(void)
     // "candidate_count choose 2", as calculated in the formula below.
     pair_count = candidate_count * (candidate_count - 1) / 2;
 
-    // The function should add all pairs of candidates where one
-    // candidate is preferred to the pairs array.
-
-    // Every preferences[i][j] is fully updated at this point, so scan
-    // each nonzero element and add to pairs[] array.
+    // Every vote count in preferences array is fully updated at this
+    // point, so scan all pairs and add to pairs[] array.
 
     // Iterate for each possible pair.
     for (int i = 0; i < pair_count; i++)
     {
 
-        // Iterate through every match-up in preferences array with i
-        // and j. Previous pairs and self-pairs are skipped naturally
-        // with j initiating at i + 1.
-        for (int i = 0; i < candidate_count; i++)
+        // Iterate through every match-up in preferences array with j
+        // and k. Previous pairs and self-pairs are skipped naturally
+        // with k initiating at j + 1.
+        for (int j = 0; j < candidate_count; j++)
         {
-            for (int kj= i + 1; j < candidate_count; j++)
+            for (int k = j + 1; k < candidate_count; k ++)
             {
                 // Skip ties.
-                if (preferences[i][j] == preferences[i][j])
+                if (preferences[j][k] == preferences[k][j])
                 {
                     continue;
                 }
