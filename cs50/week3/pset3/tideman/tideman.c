@@ -263,7 +263,7 @@ void sort_pairs(void)
     // Begin each scan at pairs[i].
     for (int i = 0; i < pair_count; i++)
     {
-        largest_index = i
+        largest_index = i;
 
         // Scan through every element after pairs[i] to identify index
         // of largest value after pairs[i], and update largest_index
@@ -287,13 +287,15 @@ void sort_pairs(void)
 }
 
 
-// Lock pairs into the candidate graph in order, without creating cycles
+// Lock pairs into the candidate graph in order, without creating
+// cycles.
 void lock_pairs(void)
 {
     // The function should create the locked graph, adding all edges in
     // decreasing order of victory strength so long as the edge would
     // not create a cycle.
 
+    // Scan every element 
 
 
     return;
