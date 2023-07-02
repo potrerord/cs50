@@ -196,6 +196,8 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
+    pair_count = 
+
     // The function should add all pairs of candidates where one
     // candidate is preferred to the pairs array.
 
@@ -209,7 +211,7 @@ void add_pairs(void)
             // Make sure you add a pair data type
             if (preferences[i][j] > 0)
             {
-                
+
             }
         }
     }
