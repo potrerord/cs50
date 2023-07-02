@@ -245,10 +245,11 @@ int find_min(void)
     // Initiate count variable for the maximum number of votes.
     int lose_votes = voter_count + 1;
 
-    // Find the lowest number of votes and return.
+    // Find the lowest number of votes from a non-eliminated candidate
+    // and return.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes < lose_votes)
+        if (!candidate[i].eliminated && candidates[i].votes < lose_votes)
         {
             lose_votes = candidates[i].votes;
         }
@@ -261,8 +262,18 @@ int find_min(void)
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
-    // TODO
-    return false;
+    // Iterate through all candidates to check if their vote count is
+    // greater than the minimum. If so, return false to indicate that
+    // the election is not a tie.
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes > min)
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 
