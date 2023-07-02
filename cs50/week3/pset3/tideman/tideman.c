@@ -160,10 +160,12 @@ void record_preferences(int ranks[])
                 continue;
             }
 
+            // Avoid match-ups between a higher-ranked candidate.
+            
 
 
-
-            preferences[i][j]++;
+            // Increment all other match-ups by 1 for this rank.
+            preferences[rank[i]][j]++;
         }
 
         // Second rank is alice, so give alice +1 vote against all match-ups except for charlie
