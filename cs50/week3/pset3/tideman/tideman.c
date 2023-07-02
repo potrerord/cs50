@@ -256,7 +256,7 @@ void sort_pairs(void)
     // the number of voters who prefer the preferred candidate.
 
     // The number of candidates in a given election will never be large
-    // enough to require a more complex sorting algorithm, and 
+    // enough to require the speed/memory space of merge sort, and
 
     // If multiple pairs have the same strength of victory, you may
     // assume that the order does not matter.
