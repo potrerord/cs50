@@ -97,7 +97,7 @@ int main(int argc, string argv[])
     return 0;
 }
 
-// Update ranks given a new vote
+// Update ranks given a new vote.
 bool vote(int rank, string name, int ranks[])
 {
     // Check for match between vote name (argument) and candidate name
@@ -119,11 +119,11 @@ bool vote(int rank, string name, int ranks[])
     return false;
 }
 
-// Update preferences given one voter's ranks
+// Update preferences given one voter's ranks.
 void record_preferences(int ranks[])
 {
     // The function is called once for each voter, and takes as argument
-    // the ranks array, (recall that ranks[i] is the voter’s ith
+    // the ranks array. (recall that ranks[i] is the voter’s ith
     // preference, where ranks[0] is the first preference).
 
 
@@ -133,7 +133,12 @@ void record_preferences(int ranks[])
     // should represent the number of voters who prefer candidate i over
     // candidate j.
 
+    // For rank i, compare candidate to all other candidates. add one vote count to
+    // their cell in the global preference array if they're preferred.
 
+    // Then keep doing that but lose the previous candidate that you just compared to everyone.
+
+    preferences[i][j]++;
 
     // You may assume that every voter will rank each of the candidates.
 
