@@ -139,7 +139,12 @@ void record_preferences(int ranks[])
 
         // For rank i, compare candidate to all other candidates. add one vote count to
         // their cell in the global preference array if they're preferred.
+
+        // i is the rank
+        // ranks[i] is the candidate that is ranked at i
+
         
+
         // Then keep doing that but lose the previous candidate that you just compared to everyone.
 
     }
