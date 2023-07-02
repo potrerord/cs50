@@ -270,7 +270,7 @@ void sort_pairs(void)
         // accordingly.
         for (int j = i + 1; j < pair_count; j++)
         {
-            if pairs[j] > pairs[largest_index]
+            if pairs[j].winner > pairs[largest_index].winner
             {
                 largest_index = j;
             }
@@ -282,13 +282,6 @@ void sort_pairs(void)
         pairs[i] = pairs[largest_index];
         pairs[largest_index] = temp_storage;
     }
-
-
-
-    // If multiple pairs have the same strength of victory, you may
-    // assume that the order does not matter.
-
-
 
     return;
 }
