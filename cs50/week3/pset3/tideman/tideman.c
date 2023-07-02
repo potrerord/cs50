@@ -146,7 +146,7 @@ void record_preferences(int ranks[])
         // First rank is charlie, so give charlie +1 vote against all available match-ups.
 
         // Scan through second dimension of preferences[] to mark that
-        // candidate i is a higher rank than candidate j.
+        // candidate rank[i] is a higher rank than candidate j.
         for (int j = 0; j < candidate_count; j++)
         {
 
