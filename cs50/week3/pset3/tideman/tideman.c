@@ -204,12 +204,11 @@ void add_pairs(void)
     // point, so scan all pairs and add to pairs[] array.
 
     // Iterate for each possible pair.
-    for (int i = 0; i < pair_count; i++)
-    {
-
+    int i = 0;
         // Iterate through every match-up in preferences array with j
         // and k. Previous pairs and self-pairs are skipped naturally
-        // with k initiating at j + 1.
+        // with k initiating at j + 1, and total will naturally not
+        // exceed pair_count.
         for (int j = 0; j < candidate_count; j++)
         {
             for (int k = j + 1; k < candidate_count; k ++)
@@ -217,6 +216,7 @@ void add_pairs(void)
                 // Skip ties.
                 if (preferences[j][k] == preferences[k][j])
                 {
+                    i++;
                     continue;
                 }
 
@@ -232,6 +232,8 @@ void add_pairs(void)
                     pairs[i].winner = k;
                     pairs[i].loser = j;
                 }
+
+                i++;
             }
         }
     }
