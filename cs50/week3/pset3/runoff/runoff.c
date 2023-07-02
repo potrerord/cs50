@@ -224,15 +224,15 @@ bool print_winner(void)
         }
     }
 
-    // If there is one winner, print winner name and return true to
-    // indicate success.
-    if (winner_count == 1)
+    // If there is one winner with a >50% majority, print winner name
+    // and return true to indicate success.
+    if (winner_count == 1 && ((float) win_votes / (float) voter_count) > 0.5)
     {
         printf("%s\n", candidates[winner_index].name);
         return true;
     }
 
-    // Return false if there is a tie and a winner was not printed.
+    // Return false if no majority winner could be printed.
     return false;
 }
 
