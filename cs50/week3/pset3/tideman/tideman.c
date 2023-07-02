@@ -196,7 +196,8 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // The number of pairs will equal nCr of 
+    // The number of pairs will equal n_C_r (combinatorics), or
+    // "candidate_count choose 2", as calculated in the formula below.
     pair_count = candidate_count * (candidate_count - 1) / 2;
 
     // The function should add all pairs of candidates where one
