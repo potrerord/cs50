@@ -316,6 +316,9 @@ void lock_pairs(void)
     // valid target. Base case is that x has no trues in their column.
 
 
+    // Call function to scan pairs[i - 1] or whatever
+
+
 
     return;
 }
