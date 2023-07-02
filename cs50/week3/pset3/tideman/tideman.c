@@ -311,6 +311,11 @@ void lock_pairs(void)
     // out.
 
 
+    // To see if x is a valid target, scan x's column to see if they
+    // already have any trues. If they do, stop there and see if x is a
+    // valid target. Base case is that x has no trues in their column.
+
+
 
     return;
 }
