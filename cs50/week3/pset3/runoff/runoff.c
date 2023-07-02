@@ -141,7 +141,7 @@ bool vote(int voter, int rank, string name)
             // indicate successful vote. Note: logs candidate with no
             // case changes after case-insensitively checking for valid
             // vote, so future checks will also need to ignore case.
-            preferences[voter][rank] = name
+            preferences[voter][rank] = name;
             return true;
         }
 
@@ -172,7 +172,8 @@ void tabulate(void)
                 if (!candidates[k].eliminated &&
                     strcasecmp(preferences[i][j], candidates[k]) == 0)
                 {
-                    
+                    candidates[k].votes++;
+                    break
                 }
             }
         }
