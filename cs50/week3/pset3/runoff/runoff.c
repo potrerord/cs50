@@ -200,7 +200,15 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
-    // TODO
+    // Find winner
+
+
+    // Print them
+
+    // Return true to indicate successful print of winner.
+    return true;
+
+    // Return false to indicate failure to print winner.
     return false;
 }
 
