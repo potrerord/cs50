@@ -198,7 +198,7 @@ void add_pairs(void)
 {
     // The number of pairs will equal the sum of all positive integers
     // less than the number of candidates.
-    pair_count = candidate_count * (candidate_count - 1) / 2
+    pair_count = candidate_count * (candidate_count - 1) / 2;
 
     // The function should add all pairs of candidates where one
     // candidate is preferred to the pairs array.
@@ -216,8 +216,18 @@ void add_pairs(void)
         {
             for (int k = 0; k < candidate_count; k++)
             {
-                pairs[i].winner = j
-                pairs[j].loser = k
+
+                // Record winner and loser in pairs array.
+                if (preferences[j][k] > preferences[k][j]
+                {
+                    pairs[i].winner = j;
+                    pairs[i].loser = k;
+                }
+                else if (preferences[j][k] < preferences[k][j])
+                {
+                    pairs[i].winner = k;
+                    pairs[i].loser = j;
+                }
             }
         }
     }
