@@ -217,14 +217,17 @@ void add_pairs(void)
             for (int k = 0; k < candidate_count; k++)
             {
 
-                // Ignore ties.
+                // Skip ties.
                 if (preferences[j][k] == preferences[k][j])
                 {
                     continue
                 }
 
+                // Skip already-recorded pairs.
+                
+
                 // Add winners and losers to pairs array.
-                else if (preferences[j][k] > preferences[k][j])
+                if (preferences[j][k] > preferences[k][j])
                 {
                     pairs[i].winner = j;
                     pairs[i].loser = k;
