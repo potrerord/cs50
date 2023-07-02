@@ -256,8 +256,9 @@ void sort_pairs(void)
     // Create tracker variable for largest winner vote count per pair.
     int largest_index;
 
-    // Create temporary storage variable to switch data points.
-    int temp_storage;
+    // Create temporary storage variable of type pair to switch data
+    // points.
+    pair temp_storage;
 
     // Begin each scan at pairs[i].
     for (int i = 0; i < pair_count; i++)
@@ -275,9 +276,11 @@ void sort_pairs(void)
             }
         }
 
-        // If largest value after pairs[i] is greater than pairs[i],
-        // then switch the values and restart after increment.
-        
+        // Switch pairs[i] with value at largest_index (even if equal,
+        // for simplicity).
+        temp_storage = pairs[i];
+        pairs[i] = pairs[largest_index];
+        pairs[largest_index] = temp_storage;
     }
 
 
