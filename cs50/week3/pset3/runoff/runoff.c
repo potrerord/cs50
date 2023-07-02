@@ -181,7 +181,7 @@ void tabulate(void)
                 {
                     candidates[k].votes++;
                     vote_counted = true;
-                    break
+                    break;
                 }
             }
 
@@ -189,7 +189,7 @@ void tabulate(void)
             // counted, otherwise check next preference.
             if (vote_counted == true)
             {
-                break
+                break;
             }
         }
         preferences[i]
