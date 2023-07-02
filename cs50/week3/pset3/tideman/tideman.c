@@ -199,6 +199,14 @@ void add_pairs(void)
     // Every preferences[i][j] is fully updated at this point, so scan
     // each nonzero element and add to pairs[] array.
 
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if 
+        }
+    }
+
     // A pair of candidates who are tied (one is not preferred over the
     // other) should not be added to the array.
 
