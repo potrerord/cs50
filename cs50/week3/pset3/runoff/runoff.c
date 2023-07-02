@@ -212,32 +212,31 @@ bool print_winner(void)
         }
     }
 
-    // Initiate count variable for the number of winners.
-    int winner_count == 0;
+    // Initiate count variable for the number of winners and a variable
+    // to keep track of winner index if there is no tie.
+    int winner_count = 0;
+    int winner_index = -1:
 
-    // If there is a tie, return false.
+    // Check for a single winner or a tie.
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == win_votes)
         {
-            int winner_count++;
+            winner_count++;
+            winner_index = i;
         }
-    }
-    if (winner_count != 1)
-    {
-        return false;
     }
 
     // If there is one winner, print winner name and return true to
     // indicate success.
-    for (int i = 0; i < candidate_count; i++)
+    if (winner_count == 1)
     {
-        if (candidates[i].votes == win_votes)
-        {
-            printf("%s\n", candidates[i].name);
-            return true;
-        }
+        printf("%s\n", candidates[winner_index].name);
+        return true;
     }
+
+    // Return false if there is a tie and a winner was not printed.
+    return false;
 }
 
 
