@@ -142,6 +142,7 @@ bool vote(int voter, int rank, string name)
             return true;
         }
     }
+
     // Return false to indicate vote that does not match valid
     // candidate.
     return false;
@@ -191,6 +192,7 @@ void tabulate(void)
             }
         }
     }
+
     return;
 }
 
@@ -238,7 +240,7 @@ bool print_winner(void)
 }
 
 
-// Return the minimum number of votes any remaining candidate has
+// Return the minimum number of votes any remaining candidate has.
 int find_min(void)
 {
     // Initiate count variable for the maximum number of votes.
@@ -258,7 +260,7 @@ int find_min(void)
 }
 
 
-// Return true if the election is tied between all candidates, false otherwise
+// Return true if the election is tied between all candidates, false otherwise.
 bool is_tie(int min)
 {
     // Iterate through all non-eliminated candidates to check if any
@@ -277,7 +279,7 @@ bool is_tie(int min)
 }
 
 
-// Eliminate the candidate (or candidates) in last place
+// Eliminate the candidate (or candidates) in last place.
 void eliminate(int min)
 {
     // Update candidate eliminated status to true if their vote count
