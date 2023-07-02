@@ -142,7 +142,8 @@ bool vote(int voter, int rank, string name)
             return true;
         }
     }
-    // Return false to indicate vote that does not match candidate.
+    // Return false to indicate vote that does not match valid
+    // candidate.
     return false;
 }
 
@@ -150,7 +151,7 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates.
 void tabulate(void)
 {
-    // Initiate variable to track if top valid preference was
+    // Initiate variable to track if voter's top valid preference was
     // successfully counted, like a function return value.
     bool vote_counted = false;
 
