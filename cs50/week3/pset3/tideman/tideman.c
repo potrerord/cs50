@@ -127,18 +127,23 @@ void record_preferences(int ranks[])
     // preference, where ranks[0] is the first preference).
 
 
-
     // The function should update the global preferences array to add
     // the current voter’s preferences. Recall that preferences[i][j]
     // should represent the number of voters who prefer candidate i over
     // candidate j.
 
-    // For rank i, compare candidate to all other candidates. add one vote count to
-    // their cell in the global preference array if they're preferred.
+    for (int i = 0; i < candidate_count; i++)
+    {
 
-    // Then keep doing that but lose the previous candidate that you just compared to everyone.
+        // For rank i, compare candidate to all other candidates. add one vote count to
+        // their cell in the global preference array if they're preferred.
 
-    preferences[i][j]++;
+        // Then keep doing that but lose the previous candidate that you just compared to everyone.
+
+        preferences[i][j]++;
+
+    }
+
 
     // You may assume that every voter will rank each of the candidates.
 
