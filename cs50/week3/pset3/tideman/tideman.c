@@ -132,15 +132,15 @@ void record_preferences(int ranks[])
     // should represent the number of voters who prefer candidate i over
     // candidate j.
 
+
+    // Iterate through each of the voter's ranks.
     for (int i = 0; i < candidate_count; i++)
     {
 
         // For rank i, compare candidate to all other candidates. add one vote count to
         // their cell in the global preference array if they're preferred.
-
+        
         // Then keep doing that but lose the previous candidate that you just compared to everyone.
-
-        preferences[i][j]++;
 
     }
 
