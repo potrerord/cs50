@@ -214,7 +214,7 @@ void add_pairs(void)
         // and k.
         for (int j = 0; j < candidate_count; j++)
         {
-            for (int k = 0; k < candidate_count; k++)
+            for (int k = 0; k < candidate_count - j - 1; k++)
             {
 
                 // Skip ties.
