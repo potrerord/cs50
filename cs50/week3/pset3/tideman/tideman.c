@@ -123,36 +123,26 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
 
-    // Initiate variables to keep track of array cells.
+    // Initiate variables to keep track of array cells by name.
+
+    // Candidate in i loop at the currently-indexed rank:
     int rank_candidate;
+
+    // Candidate in j loop that rank_candidate is being compared to:
     int challenger;
+
+    // Used in k loop to check if challenger has already been a higher-
+    // ranked candidate.
     int prev_rank_candidate;
+
+    // Boolean value to indicate match-ups that have already occurred.
     bool already_matched;
 
-    // The function is called once for each voter, and takes as argument
-    // the ranks array. (recall that ranks[i] is the voter’s ith
-    // preference, where ranks[0] is the first preference).
-
-
-    // The function should update the global preferences array to add
-    // the current voter’s preferences. Recall that preferences[i][j]
-    // should represent the number of voters who prefer candidate i over
-    // candidate j.
-
-
     // Iterate through each of the voter's ranks, i (starting from 0) to
-    // find their i'th ranked candidate, rank[i].
+    // find their i'th ranked candidate, ranks[i].
     for (int i = 0; i < candidate_count; i++)
     {
         rank_candidate = ranks[i];
-
-        // For rank i, compare candidate to all other candidates. add one vote count to
-        // their cell in the global preference array if they're preferred.
-
-        // i is the rank
-        // ranks[i] is the candidate that is ranked at i
-
-        // First rank is charlie, so give charlie +1 vote against all available match-ups.
 
         // Scan through second dimension of preferences[rank[i]] to log
         // all of candidate's incremental one-on-one victories against
@@ -174,6 +164,7 @@ void record_preferences(int ranks[])
             // current rank, exit loop and set already_matched to true
             // to indicate to outer loop that this match-up is skipped.
             already_matched = false;
+
             for (int k = 0; k < i; k++)
             {
                 prev_rank_candidate = rank[k];
@@ -182,6 +173,7 @@ void record_preferences(int ranks[])
                     already_matched = true;
                 }
             }
+
             if (already_matched)
             {
                 continue;
@@ -190,11 +182,6 @@ void record_preferences(int ranks[])
             // Increment all other match-ups by 1 for this rank.
             preferences[rank_candidate][challenger]++;
         }
-
-        // Second rank is alice, so give alice +1 vote against all match-ups except for charlie
-
-        // Then keep doing that but lose the previous candidate that you just compared to everyone.
-
     }
 
 
