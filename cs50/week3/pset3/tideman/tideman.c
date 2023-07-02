@@ -217,10 +217,10 @@ void add_pairs(void)
             for (int k = 0; k < candidate_count; k++)
             {
 
-                // Skip ties and data that has been rewritten to 0.
+                // Skip ties.
                 if (preferences[j][k] == preferences[k][j])
                 {
-                    continue
+                    continue;
                 }
 
                 // Add winners and losers to pairs array.
@@ -235,11 +235,6 @@ void add_pairs(void)
                     pairs[i].winner = k;
                     pairs[i].loser = j;
                 }
-
-                // Rewrite compared data as 0 to trigger tie exit for
-                // next iteration.
-                preferences[j][k] = 0;
-                preferences[k][j] = 0;
             }
         }
     }
@@ -251,12 +246,17 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // The function should sort the pairs array in decreasing order of
-    // strength of victory, where strength of victory is defined to be
-    // the number of voters who prefer the preferred candidate.
-
     // The number of candidates in a given election will never be large
-    // enough to require the speed/memory space of merge sort, and
+    // enough to require the speed/memory space of merge sort, and it is
+    // not particularly likely that the data will arrive in the pairs
+    // array sorted in any particular way other than arbitrary candidate
+    // numbering order, so selection sort is a good algorithm choice
+    // over bubble sort.
+
+    for (int i = 0; i < pair_count; i++)
+    {
+
+    }
 
     // If multiple pairs have the same strength of victory, you may
     // assume that the order does not matter.
