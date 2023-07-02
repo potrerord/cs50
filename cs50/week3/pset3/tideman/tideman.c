@@ -295,7 +295,11 @@ void lock_pairs(void)
     // decreasing order of victory strength so long as the edge would
     // not create a cycle.
 
-    // Scan every element 
+    // Iterate over every element in pairs[], in order.
+
+
+    // 
+
 
 
     return;
