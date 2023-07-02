@@ -155,14 +155,16 @@ void record_preferences(int ranks[])
         {
 
             // Avoid match-ups between self.
-            if (rank[i] == preferences[rank[i]][j])
+            if (preferences[rank[i]][j] == rank[i])
             {
                 continue;
             }
 
             // Avoid match-ups between a higher-ranked candidate.
-            
-
+            if (preferences[rank[i]][j] )
+            {
+                
+            }
 
             // Increment all other match-ups by 1 for this rank.
             preferences[rank[i]][j]++;
