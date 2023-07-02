@@ -153,10 +153,17 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates.
 void tabulate(void)
 {
+            // Initiate variable to track if top valid preference was
+        // successfully counted, like a function return value.
+    bool vote_counted = false;
 
     // Iterate through each voter.
     for (int i = 0; i < voter_count; i++)
     {
+
+        // Initiate variable to track if top valid preference was
+        // successfully counted, like a function return value.
+        vote_counted = false;
 
         // Iterate through voter preferences.
         for (int j = 0; j < candidate_count; j++)
@@ -174,10 +181,17 @@ void tabulate(void)
                     !candidates[k].eliminated)
                 {
                     candidates[k].votes++;
+                    vote_counted = true;
                     break
                 }
             }
-            
+
+            // Move onto next voter if top preference was successfully
+            // counted, otherwise check next preference.
+            if (vote_counted == true)
+            {
+                break
+            }
         }
         preferences[i]
     }
