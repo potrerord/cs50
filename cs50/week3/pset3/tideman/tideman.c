@@ -153,7 +153,7 @@ void record_preferences(int ranks[])
             // Avoid match-ups between self.
             if (i == j)
             {
-                break;
+                continue;
             }
 
             
