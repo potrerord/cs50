@@ -149,9 +149,11 @@ void record_preferences(int ranks[])
         // candidate rank[i] is a higher rank than candidate j.
         for (int j = 0; j < candidate_count; j++)
         {
+            //
+
 
             // Avoid match-ups between self.
-            if (rank[i] == )
+            if (rank[i] == preferences[rank[i]][j])
             {
                 continue;
             }
