@@ -196,43 +196,44 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // The number of pairs will equal n_C_r (combinatorics), or
+    // Update global pair count using n_C_r (combinatorics), aka
     // "candidate_count choose 2", as calculated in the formula below.
     pair_count = candidate_count * (candidate_count - 1) / 2;
 
     // Every vote count in preferences array is fully updated at this
-    // point, so scan all pairs and add to pairs[] array.
-
-    // Initiate variable to track index of pairs[] array.
+    // point, so scan all pairs and add to pairs[] array. Initiate
+    // pairs_index counter variable to track index of pairs[] array.
     int pairs_index = 0;
 
-    // Iterate through every match-up in preferences array with j
-    // and k. Previous pairs and self-pairs are skipped naturally
-    // with k initiating at j + 1, and total will naturally not
+    // Iterate through every match-up in preferences array with i
+    // and j. Previous pairs and self-pairs are skipped naturally
+    // with j initiating at i + 1, and total will naturally not
     // exceed pair_count.
-    for (int j = 0; j < candidate_count; j++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for (int k = j + 1; k < candidate_count; k++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
-            // Skip ties.
-            if (preferences[j][k] == preferences[k][j])
+            // Skip ties, no need to increment pairs_index.
+            if (preferences[i][j] == preferences[j][i])
             {
                 continue;
             }
 
-            // Add winners and losers to pairs array.
-            if (preferences[j][k] > preferences[k][j])
+            // Add winners and losers to pairs[] array.
+            if (preferences[i][j] > preferences[j][i])
             {
-                pairs[i].winner = j;
-                pairs[i].loser = k;
+                pairs[pairs_index].winner = i;
+                pairs[pairs_index].loser = j;
             }
 
-            else (preferences[j][k] < preferences[k][j])
+            else (preferences[i][j] < preferences[j][i])
             {
-                pairs[i].winner = k;
-                pairs[i].loser = j;
+                pairs[pairs_index].winner = j;
+                pairs[pairs_index].loser = i;
             }
 
+            // Increment pairs_index inside i/j loop to maintain
+            // progress while scanning preferences[] array.
             pairs_index++;
         }
     }
