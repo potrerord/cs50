@@ -122,6 +122,11 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks.
 void record_preferences(int ranks[])
 {
+
+    // Initiate variables to keep track of rows and colums
+    int rank_candidate;
+    int challenger;
+
     // The function is called once for each voter, and takes as argument
     // the ranks array. (recall that ranks[i] is the voter’s ith
     // preference, where ranks[0] is the first preference).
@@ -137,6 +142,7 @@ void record_preferences(int ranks[])
     // find their i'th ranked candidate, rank[i].
     for (int i = 0; i < candidate_count; i++)
     {
+        rank_candidate = rank[i];
 
         // For rank i, compare candidate to all other candidates. add one vote count to
         // their cell in the global preference array if they're preferred.
@@ -153,17 +159,19 @@ void record_preferences(int ranks[])
         // decreased by 1 from candidate_count.
         for (int j = 0; j < candidate_count - 1; j++)
         {
+            challenger = preferences[rank_candidate][j];
 
             // Avoid match-ups between self.
-            if (preferences[rank[i]][j] == rank[i])
+            if (challenger == rank_candidate)
             {
                 continue;
             }
 
             // Avoid match-ups between a higher-ranked candidate.
-            if (preferences[rank[i]][j] )
+            // If challenger was a rank_candidate already,
+            if (challenger )
             {
-                
+
             }
 
             // Increment all other match-ups by 1 for this rank.
