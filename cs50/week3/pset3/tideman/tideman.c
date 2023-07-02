@@ -173,6 +173,7 @@ void record_preferences(int ranks[])
             for (int k = 0; k < i; k++)
             {
                 prev_rank_candidate = rank[k];
+
                 if (challenger == prev_rank_candidate)
                 {
                     already_matched = true;
@@ -246,7 +247,8 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // The number of candidates in a given election will never be large
-    // enough to require the speed/memory space of merge sort, and it is
+    // enough to require the speed/memory space of merge sort - the
+    // number of pairs will be even less. and it is
     // not particularly likely that the data will arrive in the pairs
     // array sorted in any particular way other than arbitrary candidate
     // numbering order, so selection sort is a good algorithm choice
