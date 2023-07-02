@@ -211,12 +211,11 @@ void add_pairs(void)
         // exceed pair_count.
         for (int j = 0; j < candidate_count; j++)
         {
-            for (int k = j + 1; k < candidate_count; k ++)
+            for (int k = j + 1; k < candidate_count; k++)
             {
                 // Skip ties.
                 if (preferences[j][k] == preferences[k][j])
                 {
-                    i++;
                     continue;
                 }
 
