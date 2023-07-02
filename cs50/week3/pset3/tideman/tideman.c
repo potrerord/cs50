@@ -253,12 +253,16 @@ void sort_pairs(void)
     // way other than arbitrary candidate numbering order, so selection
     // sort is a good algorithm choice over bubble sort.
 
-    // Initiate tracker variable for largest winner vote count per pair.
-    int largest_index = 0;
+    // Create tracker variable for largest winner vote count per pair.
+    int largest_index;
+
+    // Create temporary storage variable to switch data points.
+    int temp_storage;
 
     // Begin each scan at pairs[i].
     for (int i = 0; i < pair_count; i++)
     {
+        largest_index = i
 
         // Scan through every element after pairs[i] to identify index
         // of largest value, and update largest_index accordingly.
@@ -272,7 +276,7 @@ void sort_pairs(void)
 
         // If largest value after pairs[i] is greater than pairs[i],
         // then switch the values and restart after increment.
-        if (largest > pairs[i])
+        if (pairs[largest_index] > pairs[i])
         {
 
         }
