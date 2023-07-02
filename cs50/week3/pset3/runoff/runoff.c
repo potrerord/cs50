@@ -150,28 +150,29 @@ bool vote(int voter, int rank, string name)
 }
 
 
-// Tabulate votes for non-eliminated candidates
+// Tabulate votes for non-eliminated candidates.
 void tabulate(void)
 {
 
-    // Iterate through voters
+    // Iterate through all voters.
     for (int i = 0; i < voter_count; i++)
     {
 
-        // Iterate through rankings
+        // Iterate through voter's preference, starting from highest.
         for (int j = 0; j < candidate_count; j++)
         {
 
-            // Iterate through candidates
+            // Iterate through candidate list.
             for (int k = 0; k < candidate_count; k++)
             {
 
-                // If not eliminated and candidate matches top
-                // preference then increment candidate's vote count.
+                // If candidate is not eliminated and a case-insensitive
+                // match then increment candidate's vote count. Break
+                // after first valid preference per voter.
                 if (!candidates[k].eliminated &&
                     strcasecmp(preferences[i][j], candidates[k]) == 0)
                 {
-
+                    
                 }
             }
         }
