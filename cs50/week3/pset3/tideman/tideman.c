@@ -139,17 +139,17 @@ void record_preferences(int ranks[])
     bool already_matched;
 
     // Iterate through each of the voter's ranks, i (starting from 0) to
-    // find their i'th ranked candidate, ranks[i].
-    for (int i = 0; i < candidate_count; i++)
+    // find their i'th ranked candidate, ranks[i]. Last candidate will
+    // have no one-on-one victories, so amount of iterations can be
+    // decreased by 1 from candidate_count.
+    for (int i = 0; i < candidate_count - 1; i++)
     {
         rank_candidate = ranks[i];
 
         // Scan through second dimension of preferences[rank[i]] to log
         // all of candidate's incremental one-on-one victories against
-        // candidate in preference[rank[i]][j]. Last candidate will have
-        // no one-on-one victories, so amount of iterations can be
-        // decreased by 1 from candidate_count.
-        for (int j = 0; j < candidate_count - 1; j++)
+        // candidate in preference[rank[i]][j], aka challenger.
+        for (int j = 0; j < candidate_count; j++)
         {
             challenger = preferences[rank_candidate][j];
 
