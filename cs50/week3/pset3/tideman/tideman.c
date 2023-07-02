@@ -100,46 +100,22 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // The function takes arguments rank, name, and ranks.
-    // If name is a match for the name of a valid candidate,
+    // Check for match between vote name (argument) and candidate name
+    // from candidates[]. Assume no two candidates have the same name.
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcasecmp(name, candidates[i].name) == 0)
         {
 
-        // then you should update the ranks array to indicate that the voter
-        // has the candidate as their rank preference (where 0 is the first
-        // preference, 1 is the second preference, etc.)
-        // Recall that ranks[i] here represents the user’s ith preference.
-            ranks[i] = i;
+        // If match is found, update the ranks array to indicate that
+        // the voter has the ith candidate as their [rank] preference.
+        // Return true if successfully recorded.
+            ranks[rank] = i;
             return true;
         }
     }
 
-    // Return false to indicate vote that does not match valid
-    // candidate.
-    return false;
-
-
-
-
-
-
-
-
-
-
-
-    // The function should return true if the rank was successfully
-    // recorded, and false otherwise (if, for instance, name is not the
-    // name of one of the candidates).
-
-
-
-    // You may assume that no two candidates will have the same name.
-
-
-
+    // Return false to indicate vote that was not successfully recorded.
     return false;
 }
 
