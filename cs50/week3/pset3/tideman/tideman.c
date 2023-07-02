@@ -127,6 +127,7 @@ void record_preferences(int ranks[])
     int rank_candidate;
     int challenger;
     int prev_rank_candidate;
+    bool already_matched;
 
     // The function is called once for each voter, and takes as argument
     // the ranks array. (recall that ranks[i] is the voter’s ith
@@ -169,20 +170,20 @@ void record_preferences(int ranks[])
             }
 
             // Avoid match-ups between a higher-ranked candidate.
-            // If challenger was a rank_candidate already, aka
-            // If challenger matches a rank that is less than the current rank,
+            // If challenger matches a rank that is less than the
+            // current rank, exit loop with variable
+            already_matched = false;
             for (int k = 0; k < i; k++)
             {
                 prev_rank_candidate = rank[k];
                 if (challenger == prev_rank_candidate)
                 {
-                    
+                    already_matched = true;
                 }
             }
-
-
+            if (already_matched)
             {
-
+                continue;
             }
 
             // Increment all other match-ups by 1 for this rank.
