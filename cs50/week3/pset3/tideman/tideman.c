@@ -217,13 +217,19 @@ void add_pairs(void)
             for (int k = 0; k < candidate_count; k++)
             {
 
-                // Record winner and loser in pairs array.
-                if (preferences[j][k] > preferences[k][j]
+                // Ignore ties.
+                if (preferences[j][k] == preferences[k][j])
+                {
+                    continue
+                }
+
+                // Add winners and losers to pairs array.
+                else if (preferences[j][k] > preferences[k][j])
                 {
                     pairs[i].winner = j;
                     pairs[i].loser = k;
                 }
-                else if (preferences[j][k] < preferences[k][j])
+                else (preferences[j][k] < preferences[k][j])
                 {
                     pairs[i].winner = k;
                     pairs[i].loser = j;
@@ -231,17 +237,6 @@ void add_pairs(void)
             }
         }
     }
-
-    // A pair of candidates who are tied (one is not preferred over the
-    // other) should not be added to the array.
-
-
-
-    // The function should update the global variable pair_count to be
-    // the number of pairs of candidates. (The pairs should thus all be
-    // stored between pairs[0] and pairs[pair_count - 1], inclusive).
-
-
 
     return;
 }
