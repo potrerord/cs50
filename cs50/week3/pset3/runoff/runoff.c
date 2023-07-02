@@ -202,10 +202,10 @@ bool print_winner(void)
     // Initiate count variable for the highest number of votes.
     int win_votes = -1;
 
-    // Find the highest number of votes.
+    // Find the highest number of votes from non-eliminated candidates.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes > win_votes)
+        if (!candidates[i].eliminated && candidates[i].votes > win_votes)
         {
             win_votes = candidates[i].votes;
         }
