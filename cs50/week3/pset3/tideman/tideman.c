@@ -161,8 +161,8 @@ void record_preferences(int ranks[])
 
             // Avoid match-ups between a higher-ranked candidate.
             // If challenger matches a rank that is less than the
-            // current rank, exit loop and set already_matched to true
-            // to indicate to outer loop that this match-up is skipped.
+            // current rank, exit k loop and set already_matched to true
+            // to indicate to j loop that this match-up is skipped.
             already_matched = false;
 
             for (int k = 0; k < i; k++)
