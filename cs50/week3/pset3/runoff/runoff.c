@@ -158,11 +158,11 @@ void tabulate(void)
     for (int i = 0; i < voter_count; i++)
     {
 
-        // Iterate through candidate list.
+        // Iterate through voter preferences.
         for (int j = 0; j < candidate_count; j++)
         {
 
-            // Iterate through voter preferences.
+            // Iterate through candidate list.
             for (int k = 0; k < candidate_count; k++)
             {
 
@@ -170,8 +170,8 @@ void tabulate(void)
                 // match with voter preference then increment
                 // candidate's vote count. Break after first non-
                 // eliminated preference per voter.
-                if (!candidates[j].eliminated &&
-                    strcasecmp(preferences[i][k], candidates[j]) == 0)
+                if (strcasecmp(preferences[i][k], candidates[j]) == 0 &&
+                    !candidates[k].eliminated)
                 {
                     candidates[k].votes++;
                     break
