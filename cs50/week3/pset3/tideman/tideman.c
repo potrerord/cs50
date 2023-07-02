@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <strings.h>
 
 // Max number of candidates
 #define MAX 9
@@ -99,6 +100,29 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
+    // Iterate over every candidate and check for match between vote/
+    // candidate name. Ignores case.
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcasecmp(name, candidates[i].name) == 0)
+        {
+            // Log candidate index with voter and ranking, then return
+            // true to indicate successful vote.
+            preferences[voter][rank] = i;
+            return true;
+        }
+    }
+
+    // Return false to indicate vote that does not match valid
+    // candidate.
+    return false;
+
+
+
+
+
+
+
     // The function takes arguments rank, name, and ranks.
 
 
@@ -208,7 +232,7 @@ void print_winner(void)
     // the source of the graph. You may assume there will not be more
     // than one source.
 
-    
+
 
     return;
 }
