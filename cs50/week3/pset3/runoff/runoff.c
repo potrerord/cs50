@@ -139,7 +139,7 @@ bool vote(int voter, int rank, string name)
         {
             // Log candidate with voter and ranking, then return true to
             // indicate successful vote. Note: logs candidate with no
-            // case change after case-insensitively checking for valid
+            // case changes after case-insensitively checking for valid
             // vote, so future checks will also need to ignore case.
             preferences[voter][rank] = name
             return true;
