@@ -217,14 +217,11 @@ void add_pairs(void)
             for (int k = 0; k < candidate_count; k++)
             {
 
-                // Skip ties.
+                // Skip ties and data that has been rewritten to 0.
                 if (preferences[j][k] == preferences[k][j])
                 {
                     continue
                 }
-
-                // Skip already-recorded pairs.
-
 
                 // Add winners and losers to pairs array.
                 if (preferences[j][k] > preferences[k][j])
@@ -232,11 +229,17 @@ void add_pairs(void)
                     pairs[i].winner = j;
                     pairs[i].loser = k;
                 }
+
                 else (preferences[j][k] < preferences[k][j])
                 {
                     pairs[i].winner = k;
                     pairs[i].loser = j;
                 }
+
+                // Rewrite compared data as 0 to trigger tie exit for
+                // next iteration.
+                preferences[j][k] = 0;
+                preferences[k][j] = 0;
             }
         }
     }
