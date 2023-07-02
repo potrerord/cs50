@@ -210,15 +210,15 @@ void add_pairs(void)
     for (int i = 0; i < pair_count; i++)
     {
 
-        // Iterate through every match-up in preferences array with j
-        // and k. Previous pairs and self-pairs are skipped naturally
-        // with k initiating at j + 1.
-        for (int j = 0; j < candidate_count; j++)
+        // Iterate through every match-up in preferences array with i
+        // and j. Previous pairs and self-pairs are skipped naturally
+        // with j initiating at i + 1.
+        for (int i = 0; i < candidate_count; i++)
         {
-            for (int k = j + 1; k < candidate_count; k ++)
+            for (int kj= i + 1; j < candidate_count; j++)
             {
                 // Skip ties.
-                if (preferences[j][k] == preferences[k][j])
+                if (preferences[i][j] == preferences[i][j])
                 {
                     continue;
                 }
