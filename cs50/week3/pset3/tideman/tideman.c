@@ -133,7 +133,8 @@ void record_preferences(int ranks[])
     // candidate j.
 
 
-    // Iterate through each of the voter's ranks.
+    // Iterate through each of the voter's ranks, i (starting from 0) to
+    // find their i'th ranked candidate, rank[i].
     for (int i = 0; i < candidate_count; i++)
     {
 
@@ -145,18 +146,19 @@ void record_preferences(int ranks[])
 
         // First rank is charlie, so give charlie +1 vote against all available match-ups.
 
-        // Scan through second dimension of preferences[] to mark that
-        // candidate rank[i] is a higher rank than candidate j.
+        // Scan through second dimension of preferences[rank[i]] to log
+        // all of candidate's incremental one-on-one victories against
+        // candidate in preference[rank[i]][j].
         for (int j = 0; j < candidate_count; j++)
         {
-            //
-
 
             // Avoid match-ups between self.
             if (rank[i] == preferences[rank[i]][j])
             {
                 continue;
             }
+
+            
 
 
             preferences[i][j]++;
