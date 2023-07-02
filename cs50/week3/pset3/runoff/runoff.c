@@ -281,11 +281,11 @@ bool is_tie(int min)
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
 {
-    // Change candidate eliminated status to true if their vote count
+    // Update candidate eliminated status to true if their vote count
     // matches the current lowest number of votes.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (!candidates[i].eliminated && candidates[i].votes == min)
+        if (candidates[i].votes == min)
         {
             candidates[i].eliminated == true;
         }
