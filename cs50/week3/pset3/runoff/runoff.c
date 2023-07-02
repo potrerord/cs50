@@ -145,7 +145,7 @@ bool vote(int voter, int rank, string name)
             return true;
         }
 
-
+    // Return false to indicate vote that does not match candidate.
     return false;
 }
 
@@ -153,7 +153,7 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates
 void tabulate(void)
 {
-    // TODO
+
     return;
 }
 
