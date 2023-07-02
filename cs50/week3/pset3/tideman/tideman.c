@@ -108,7 +108,7 @@ bool vote(int rank, string name, int ranks[])
         {
             // Log candidate index with voter and ranking, then return
             // true to indicate successful vote.
-            preferences[voter][rank] = i;
+            ranks[voter][rank] = i;
             return true;
         }
     }
