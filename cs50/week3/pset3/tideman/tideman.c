@@ -143,7 +143,16 @@ void record_preferences(int ranks[])
         // i is the rank
         // ranks[i] is the candidate that is ranked at i
 
-        // First rank is charlie, so give charlie +1 vote against all other match-ups
+        // First rank is charlie, so give charlie +1 vote against all available match-ups.
+
+        // Scan through second dimension of preferences[] to mark that
+        // candidate i is a higher rank than candidate j.
+        for (int j = 0; j < candidate_count; j++)
+        {
+            
+            preferences[i][j]++;
+        }
+
         // Second rank is alice, so give alice +1 vote against all match-ups except for charlie
 
         // Then keep doing that but lose the previous candidate that you just compared to everyone.
