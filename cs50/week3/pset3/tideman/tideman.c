@@ -196,7 +196,9 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    pair_count = 
+    // The number of pairs will equal the sum of all positive integers
+    // less than the number of candidates.
+    pair_count = candidate_count * (candidate_count - 1) / 2
 
     // The function should add all pairs of candidates where one
     // candidate is preferred to the pairs array.
@@ -204,14 +206,20 @@ void add_pairs(void)
     // Every preferences[i][j] is fully updated at this point, so scan
     // each nonzero element and add to pairs[] array.
 
-    for (int i = 0; i < candidate_count; i++)
+    // Iterate for each possible pair.
+    for (int i = 0; i < pair_count; i++)
     {
+
+        // Iterate through every match-up in preferences array with j
+        // and k.
         for (int j = 0; j < candidate_count; j++)
         {
-            // Make sure you add a pair data type
-            if (preferences[i][j] > 0)
+            for (int k = 0; k < candidate_count; k++)
             {
+                if (preferences[j][k] > 0)
+                {
 
+                }
             }
         }
     }
