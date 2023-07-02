@@ -119,7 +119,9 @@ bool vote(int rank, string name, int ranks[])
     return false;
 }
 
-// Update preferences given one voter's ranks.
+// Update preferences given one voter's ranks. Assume that every voter
+// will rank each of the candidates.
+
 void record_preferences(int ranks[])
 {
 
