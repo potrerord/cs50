@@ -298,7 +298,17 @@ void lock_pairs(void)
     // Iterate over every element in pairs[], in order.
 
 
-    // 
+    // Use pairs[i].winner to find row, use pairs[i].loser to find
+    // column.
+
+
+    // Assign true to locked[pairs[i].winner][pairs[i].loser] as long as
+    // it wouldn't create a cycle
+
+
+    // How to check cycle: look at who the loser has already beaten
+    // (recursively) and if it's you, cancel the whole operation you're
+    // out.
 
 
 
