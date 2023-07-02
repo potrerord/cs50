@@ -247,17 +247,25 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // The number of candidates in a given election will never be large
-    // enough to require the speed/memory space of merge sort - the
-    // number of pairs will be even less. and it is
-    // not particularly likely that the data will arrive in the pairs
-    // array sorted in any particular way other than arbitrary candidate
-    // numbering order, so selection sort is a good algorithm choice
-    // over bubble sort.
+    // enough to require the speed/memory allocation of merge sort - the
+    // number of pairs will be even less. It is also not particularly
+    // likely that the pairs[] data will arrive sorted in any particular
+    // way other than arbitrary candidate numbering order, so selection
+    // sort is a good algorithm choice over bubble sort.
 
+    // Initiate tracker variable for largest winner vote count per pair.
+    int largest = -1;
+
+    // Iterate over every pair in pairs[].
     for (int i = 0; i < pair_count; i++)
     {
-
+        if pairs[i] > largest
+        {
+            largest = pairs[i];
+        }
     }
+
+    
 
     // If multiple pairs have the same strength of victory, you may
     // assume that the order does not matter.
