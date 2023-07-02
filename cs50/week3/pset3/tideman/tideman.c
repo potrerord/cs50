@@ -150,21 +150,22 @@ void record_preferences(int ranks[])
 
         // Scan through second dimension of preferences[rank[i]] to log
         // all of candidate's incremental one-on-one victories against
-        // candidate in preference[rank[i]][j], aka challenger.
+        // challenging candidate in preference[rank[i]][j], aka
+        // challenger.
         for (int j = 0; j < candidate_count; j++)
         {
             challenger = preferences[rank_candidate][j];
 
-            // Avoid match-ups between self.
+            // Skip match-ups between self.
             if (challenger == rank_candidate)
             {
                 continue;
             }
 
-            // Avoid match-ups between a higher-ranked candidate.
-            // If challenger matches a rank that is less than the
-            // current rank, exit k loop and set already_matched to true
-            // to indicate to j loop that this match-up is skipped.
+            // Skip match-ups between a higher-ranked candidate. If
+            // challenger matches a rank that is less than the current
+            // rank, exit k loop and set already_matched to true to
+            // indicate to j loop that this match-up is skipped.
             already_matched = false;
 
             for (int k = 0; k < i; k++)
@@ -186,11 +187,6 @@ void record_preferences(int ranks[])
         }
     }
 
-
-    // You may assume that every voter will rank each of the candidates.
-
-
-
     return;
 }
 
@@ -200,7 +196,8 @@ void add_pairs(void)
     // The function should add all pairs of candidates where one
     // candidate is preferred to the pairs array.
 
-
+    // Every preferences[i][j] is fully updated at this point, so scan
+    // each nonzero element and add to pairs[] array.
 
     // A pair of candidates who are tied (one is not preferred over the
     // other) should not be added to the array.
