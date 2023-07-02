@@ -100,15 +100,18 @@ int main(int argc, string argv[])
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // Iterate over every candidate and check for match between vote/
-    // candidate name. Ignores case.
+    // The function takes arguments rank, name, and ranks.
+    // If name is a match for the name of a valid candidate,
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcasecmp(name, candidates[i].name) == 0)
         {
-            // Log candidate index with voter and ranking, then return
-            // true to indicate successful vote.
-            ranks[voter][rank] = i;
+
+        // then you should update the ranks array to indicate that the voter
+        // has the candidate as their rank preference (where 0 is the first
+        // preference, 1 is the second preference, etc.)
+        // Recall that ranks[i] here represents the user’s ith preference.
+            ranks[i] = i;
             return true;
         }
     }
@@ -123,18 +126,7 @@ bool vote(int rank, string name, int ranks[])
 
 
 
-    // The function takes arguments rank, name, and ranks.
 
-
-
-    // If name is a match for the name of a valid candidate,
-    // then you should update the ranks array to indicate that the voter
-    // has the candidate as their rank preference (where 0 is the first
-    // preference, 1 is the second preference, etc.)
-
-
-
-    // Recall that ranks[i] here represents the user’s ith preference.
 
 
 
