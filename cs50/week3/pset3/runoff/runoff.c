@@ -162,10 +162,17 @@ void tabulate(void)
         for (int j = 0; j < candidate_count; j++)
         {
 
-            // Iterate through non-eliminated candidates
+            // Iterate through candidates
             for (int k = 0; k < candidate_count; k++)
             {
-                if (!candidates[k].eliminated && strcasecmp(preferences[i][j], candidates[k])
+
+                // If not eliminated and candidate matches top
+                // preference then increment candidate's vote count.
+                if (!candidates[k].eliminated &&
+                    strcasecmp(preferences[i][j], candidates[k]) == 0)
+                {
+
+                }
             }
         }
         preferences[i]
