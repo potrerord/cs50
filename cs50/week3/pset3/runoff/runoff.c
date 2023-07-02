@@ -169,11 +169,11 @@ void tabulate(void)
             for (int k = 0; k < candidate_count; k++)
             {
 
-                // If candidate is not eliminated and is a case-
-                // insensitive match with voter preference, then
-                // increment candidate's vote count. Break after first
-                // non-eliminated preference per voter.
-                if (strcasecmp(preferences[i][k], candidates[j]) == 0 &&
+                // If candidate is not eliminated and is a match with
+                // voter preference, then increment candidate's vote
+                // count. Break after first non-eliminated preference
+                // per voter.
+                if (preferences[i][j] == candidates[k] == 0 &&
                     !candidates[k].eliminated)
                 {
                     candidates[k].votes++;
