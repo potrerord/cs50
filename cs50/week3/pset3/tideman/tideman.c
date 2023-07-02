@@ -142,7 +142,7 @@ void record_preferences(int ranks[])
     // find their i'th ranked candidate, rank[i].
     for (int i = 0; i < candidate_count; i++)
     {
-        rank_candidate = rank[i];
+        rank_candidate = ranks[i];
 
         // For rank i, compare candidate to all other candidates. add one vote count to
         // their cell in the global preference array if they're preferred.
@@ -168,14 +168,20 @@ void record_preferences(int ranks[])
             }
 
             // Avoid match-ups between a higher-ranked candidate.
-            // If challenger was a rank_candidate already,
-            if (challenger )
+            // If challenger was a rank_candidate already, aka
+            // If challenger matches a rank that is less than the current rank,
+            for (int k = 0; k < i - 1; k++)
+            {
+                if (challenger == rank[k])
+            }
+
+
             {
 
             }
 
             // Increment all other match-ups by 1 for this rank.
-            preferences[rank[i]][j]++;
+            preferences[rank_candidate][challenger]++;
         }
 
         // Second rank is alice, so give alice +1 vote against all match-ups except for charlie
