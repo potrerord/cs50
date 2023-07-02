@@ -151,12 +151,12 @@ void record_preferences(int ranks[])
         {
 
             // Avoid match-ups between self.
-            if (i == j)
+            if (rank[i] == )
             {
                 continue;
             }
 
-            
+
             preferences[i][j]++;
         }
 
