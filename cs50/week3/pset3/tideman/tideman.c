@@ -203,37 +203,37 @@ void add_pairs(void)
     // Every vote count in preferences array is fully updated at this
     // point, so scan all pairs and add to pairs[] array.
 
-    // Iterate for each possible pair.
-    int i = 0;
-        // Iterate through every match-up in preferences array with j
-        // and k. Previous pairs and self-pairs are skipped naturally
-        // with k initiating at j + 1, and total will naturally not
-        // exceed pair_count.
-        for (int j = 0; j < candidate_count; j++)
+    // Initiate variable to track index of pairs[] array.
+    int pairs_index = 0;
+
+    // Iterate through every match-up in preferences array with j
+    // and k. Previous pairs and self-pairs are skipped naturally
+    // with k initiating at j + 1, and total will naturally not
+    // exceed pair_count.
+    for (int j = 0; j < candidate_count; j++)
+    {
+        for (int k = j + 1; k < candidate_count; k++)
         {
-            for (int k = j + 1; k < candidate_count; k++)
+            // Skip ties.
+            if (preferences[j][k] == preferences[k][j])
             {
-                // Skip ties.
-                if (preferences[j][k] == preferences[k][j])
-                {
-                    continue;
-                }
-
-                // Add winners and losers to pairs array.
-                if (preferences[j][k] > preferences[k][j])
-                {
-                    pairs[i].winner = j;
-                    pairs[i].loser = k;
-                }
-
-                else (preferences[j][k] < preferences[k][j])
-                {
-                    pairs[i].winner = k;
-                    pairs[i].loser = j;
-                }
-
-                i++;
+                continue;
             }
+
+            // Add winners and losers to pairs array.
+            if (preferences[j][k] > preferences[k][j])
+            {
+                pairs[i].winner = j;
+                pairs[i].loser = k;
+            }
+
+            else (preferences[j][k] < preferences[k][j])
+            {
+                pairs[i].winner = k;
+                pairs[i].loser = j;
+            }
+
+            pairs_index++;
         }
     }
 
