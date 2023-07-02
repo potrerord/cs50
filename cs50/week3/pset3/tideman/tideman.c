@@ -196,8 +196,7 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // The number of pairs will equal the sum of all positive integers
-    // less than the number of candidates.
+    // The number of pairs will equal nCr of 
     pair_count = candidate_count * (candidate_count - 1) / 2;
 
     // The function should add all pairs of candidates where one
@@ -224,7 +223,7 @@ void add_pairs(void)
                 }
 
                 // Skip already-recorded pairs.
-                
+
 
                 // Add winners and losers to pairs array.
                 if (preferences[j][k] > preferences[k][j])
