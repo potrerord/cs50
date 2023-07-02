@@ -217,6 +217,7 @@ bool print_winner(void)
         if (candidates[i].votes == win_votes)
         {
             printf("%s\n", candidates[i].name);
+            return
         }
     }
 
