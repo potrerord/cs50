@@ -148,8 +148,10 @@ void record_preferences(int ranks[])
 
         // Scan through second dimension of preferences[rank[i]] to log
         // all of candidate's incremental one-on-one victories against
-        // candidate in preference[rank[i]][j].
-        for (int j = 0; j < candidate_count; j++)
+        // candidate in preference[rank[i]][j]. Last candidate will have
+        // no one-on-one victories, so amount of iterations can be
+        // decreased by 1 from candidate_count.
+        for (int j = 0; j < candidate_count - 1; j++)
         {
 
             // Avoid match-ups between self.
@@ -158,7 +160,7 @@ void record_preferences(int ranks[])
                 continue;
             }
 
-            
+
 
 
             preferences[i][j]++;
