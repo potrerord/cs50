@@ -255,7 +255,8 @@ void sort_pairs(void)
     // strength of victory, where strength of victory is defined to be
     // the number of voters who prefer the preferred candidate.
 
-
+    // The number of candidates in a given election will never be large
+    // enough to require a more complex sorting algorithm, and 
 
     // If multiple pairs have the same strength of victory, you may
     // assume that the order does not matter.
