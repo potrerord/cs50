@@ -247,12 +247,12 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // The number of candidates in a given election will never be large
-    // enough to require the speed/memory allocation of merge sort - the
-    // number of pairs will be even less. It is also not particularly
-    // likely that the pairs[] data will arrive sorted in any particular
-    // way other than arbitrary candidate numbering order, so selection
-    // sort is a good algorithm choice over bubble sort.
+    /* Note: The number of candidates in a given election will never be
+    large enough to require the speed/memory allocation of merge sort -
+    the number of pairs will be even less. It is also not likely that
+    the pairs[] data will arrive sorted in any particular way other than
+    arbitrary candidate numbering order, so selection sort is a good
+    algorithm choice. */
 
     // Create tracker variable for largest winner vote count per pair.
     int largest_index;
@@ -322,39 +322,17 @@ bool valid_target(int original,int target)
 // cycles.
 void lock_pairs(void)
 {
-    // The function should create the locked graph, adding all edges in
-    // decreasing order of victory strength so long as the edge would
-    // not create a cycle.
-
-    // Iterate over every element in pairs[], in order.
-    for (int i = 0; i < candidate_count; i++)
+    // Iterate over every element in pairs[].
+    for (int i = 0; i < pair_count; i++)
     {
-        
-        if (valid_target()
+
+        // If the winner of this pair is allowed to lock the loser of
+        // this pair, mark the relationship as locked.
+        if (valid_target(pairs[i].winner, pairs[i].loser))
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
     }
-
-    // Use pairs[i].winner to find row, use pairs[i].loser to find
-    // column.
-
-
-    // Assign true to locked[pairs[i].winner][pairs[i].loser] as long as
-    // it wouldn't create a cycle
-
-
-    // How to check cycle: look at who the loser has already beaten
-    // (recursively) and if it's you, cancel the whole operation you're
-    // out.
-
-
-    // To see if x is a valid target, scan x's column to see if they
-    // already have any trues. If they do, stop there and see if x is a
-    // valid target. Base case is that x has no trues in their column.
-
-
-    // Call function to scan pairs[i - 1] or whatever
-
-
-
     return;
 }
 
