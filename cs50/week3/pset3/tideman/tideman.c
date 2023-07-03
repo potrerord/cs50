@@ -297,7 +297,7 @@ bool valid_target(int original,int target)
     // and validate that target.
     for (int i = 0; i < candidate_count; i++)
     {
-        
+
         // If the target has already locked the i'th candidate,
         if locked[target][i]
         {
@@ -306,6 +306,9 @@ bool valid_target(int original,int target)
                 return false;
             }
         }
+
+        // Base case: 
+        return true;
     }
 
 
