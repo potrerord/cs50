@@ -160,15 +160,13 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // Update global pair count using n_C_r (combinatorics), aka
-    // "candidate_count choose 2", as calculated in the formula below.
-    // Subtract number of ties.
-    pair_count = candidate_count * (candidate_count - 1) / 2;
-
     // Every vote count in preferences array is fully updated at this
     // point, so scan all pairs and add to pairs[] array. Initiate
     // pairs_index counter variable to track index of pairs[] array.
     int pairs_index = 0;
+
+    // Initiate ties counter variable to track ties for pair_count.
+    int ties = 0;
 
     // Iterate through every match-up in preferences array with i
     // and j. Previous pairs and self-pairs are skipped naturally
@@ -181,6 +179,7 @@ void add_pairs(void)
             // Skip ties, no need to increment pairs_index.
             if (preferences[i][j] == preferences[j][i])
             {
+                ties++;
                 continue;
             }
 
@@ -202,6 +201,11 @@ void add_pairs(void)
             pairs_index++;
         }
     }
+
+    // Update global pair count using n_C_r (combinatorics), aka
+    // "candidate_count choose 2", as calculated in the formula below.
+    // Subtract number of ties.
+    pair_count = candidate_count * (candidate_count - 1) / 2 - ties;
 
     return;
 }
