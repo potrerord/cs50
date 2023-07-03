@@ -110,9 +110,9 @@ bool vote(int rank, string name, int ranks[])
         if (strcasecmp(name, candidates[i]) == 0)
         {
 
-        // If match is found, update the ranks array to indicate that
-        // the voter has the ith candidate as their [rank] preference.
-        // Return true if successfully recorded.
+            // If match is found, update the ranks array to indicate
+            // that the voter has the ith candidate as their [rank]
+            // preference. Return true if successfully recorded.
             ranks[rank] = i;
             return true;
         }
@@ -216,7 +216,7 @@ void sort_pairs(void)
     arbitrary candidate numbering order, so selection sort is a good
     algorithm choice. */
 
-    // Create tracker variable for greatest winner vote count per pair.
+    // Create tracker variable for the index of the greatest winner vote count per pair.
     int winnest;
 
     // Create temporary storage variable of type pair to switch data
@@ -256,7 +256,7 @@ void sort_pairs(void)
 
 // Validate target of "arrow" in Tideman voting method graph by
 // recursively calling self to scan target's targets.
-bool valid_target(int original,int target)
+bool valid_target(int original, int target)
 {
     // Base case: If target matches original caller, return false.
     if (target == original)
