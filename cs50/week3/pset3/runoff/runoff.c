@@ -169,13 +169,17 @@ void tabulate(void)
             // Iterate through candidate list.
             for (int k = 0; k < candidate_count; k++)
             {
+                // Skip eliminated candidates.
+                if (candidates[k].eliminated)
+                {
+                    continue
+                }
 
                 // If candidate is not eliminated and is a match with
                 // voter preference, then increment candidate's vote
                 // count. Break after first non-eliminated preference
                 // per voter.
-                if (preferences[i][j] == k &&
-                    !candidates[k].eliminated)
+                if (preferences[i][j] == k)
                 {
                     candidates[k].votes++;
                     vote_counted = true;
