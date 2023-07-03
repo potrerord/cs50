@@ -241,7 +241,7 @@ int find_min(void)
         }
     }
 
-    // Return the lowest nu
+    // Return the lowest number of votes found.
     return lose_votes;
 }
 
