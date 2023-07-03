@@ -327,7 +327,11 @@ void lock_pairs(void)
     // not create a cycle.
 
     // Iterate over every element in pairs[], in order.
-
+    for (int i = 0; i < candidate_count; i++)
+    {
+        
+        if (valid_target()
+    }
 
     // Use pairs[i].winner to find row, use pairs[i].loser to find
     // column.
