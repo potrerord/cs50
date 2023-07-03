@@ -244,8 +244,7 @@ void sort_pairs(void)
             }
         }
 
-        // Switch pairs[i] with value at largest_index (even if equal,
-        // for simplicity).
+        // Switch pairs[i] with value at largest_index.
         temp_storage = pairs[i];
         pairs[i] = pairs[winnest];
         pairs[winnest] = temp_storage;
