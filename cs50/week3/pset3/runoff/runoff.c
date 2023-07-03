@@ -233,7 +233,7 @@ bool print_winner(void)
         // name and return true.
         if (candidates[i].votes > half_voter_count)
         {
-            printf("%s\n", candidates[winner_index].name);
+            printf("%s\n", candidates[i].name);
             return true;
         }
     }
