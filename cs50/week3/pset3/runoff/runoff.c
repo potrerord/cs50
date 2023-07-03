@@ -155,6 +155,9 @@ void tabulate(void)
     // successfully counted, like a function return value.
     bool vote_counted = false;
 
+    // Create variable to track current voter preference.
+    int current_preference;
+
     // Iterate through each voter.
     for (int i = 0; i < voter_count; i++)
     {
@@ -165,6 +168,8 @@ void tabulate(void)
         // Iterate through voter preferences.
         for (int j = 0; j < candidate_count; j++)
         {
+            // Update current_preference to match iteration.
+            current_preference = preference[i][j];
 
             // Iterate through candidate list.
             for (int k = 0; k < candidate_count; k++)
@@ -175,11 +180,10 @@ void tabulate(void)
                     continue
                 }
 
-                // If candidate is not eliminated and is a match with
-                // voter preference, then increment candidate's vote
-                // count. Break after first non-eliminated preference
-                // per voter.
-                if (preferences[i][j] == k)
+                // If non-eliminated candidate is a match with voter
+                // preference, increment candidate's vote count. Break
+                // after first recorded preference per voter.
+                if (current_preference == k)
                 {
                     candidates[k].votes++;
                     vote_counted = true;
