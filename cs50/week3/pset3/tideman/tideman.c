@@ -292,8 +292,10 @@ void sort_pairs(void)
 // recursively calling self to scan target's targets.
 bool validate_target(int self, int target)
 {
+    // Reestablish identity from perspective of target.
+    int targeter = self;
+    int self = target;
     
-    self = target;
     // Base case: target has no targets.
 
     // Check every potential candidate relationship under locked[target]
