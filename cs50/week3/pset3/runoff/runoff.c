@@ -205,6 +205,7 @@ void tabulate(void)
         }
     }
 
+    // Return after every vote has been logged.
     return;
 }
 
