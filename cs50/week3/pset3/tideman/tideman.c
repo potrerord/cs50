@@ -216,7 +216,8 @@ void sort_pairs(void)
     arbitrary candidate numbering order, so selection sort is a good
     algorithm choice. */
 
-    // Create tracker variable for the index of the greatest winner vote count per pair.
+    // Create tracker variable for the index of the pair with the
+    // greatest winner vote count.
     int winnest;
 
     // Create temporary storage variable of type pair to switch data
