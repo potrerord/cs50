@@ -230,7 +230,7 @@ bool print_winner(void)
     // and return true to indicate success.
     float half_voter_count = (float) voter_count / 2
 
-    if (winner_count == 1 && ((float) win_votes / (float) voter_count) > 0.5)
+    if (winner_count == 1 && win_votes > half_voter_count)
     {
         printf("%s\n", candidates[winner_index].name);
         return true;
