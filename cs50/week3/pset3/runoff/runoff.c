@@ -202,7 +202,8 @@ bool print_winner(void)
     // Store half the voter count to compare for >50% majority rule.
     float half_voter_count = (float) voter_count / 2
 
-    // Initiate count variable for the highest number of votes.
+    // Initiate count variable for the highest number of votes, starting
+    // at one lower than the lowest possible number.
     int most_votes = -1;
 
     // Find the highest number of votes from non-eliminated candidates.
@@ -226,7 +227,8 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has.
 int find_min(void)
 {
-    // Initiate count variable for the maximum number of votes.
+    // Initiate count variable for the lowest number of votes, starting
+    // at 1 higher than the highest possible number.
     int lose_votes = voter_count + 1;
 
     // Find the lowest number of votes from a non-eliminated candidate
@@ -239,6 +241,7 @@ int find_min(void)
         }
     }
 
+    // Return the lowest nu
     return lose_votes;
 }
 
