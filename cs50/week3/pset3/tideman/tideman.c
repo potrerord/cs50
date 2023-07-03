@@ -151,13 +151,11 @@ void record_preferences(int ranks[])
     {
         rank_candidate = ranks[i];
 
-        // Scan through second dimension of preferences[rank[i]] to log
-        // all of candidate's incremental one-on-one victories against
-        // challenging candidate in preference[rank[i]][j], aka
-        // challenger.
+        // Scan through candidate list to compare rank_candidate against
+        // challenging candidate.
         for (int j = 0; j < candidate_count; j++)
         {
-            challenger = preferences[rank_candidate][j];
+            challenger = candidates[j];
 
             // Skip match-ups between self.
             if (challenger == rank_candidate)
