@@ -140,9 +140,6 @@ void record_preferences(int ranks[])
     // ranked candidate.
     int prev_rank_candidate;
 
-    // Boolean value to indicate match-ups that have already occurred.
-    bool already_matched;
-
     // Iterate through each of the voter's ranks, i (starting from 0) to
     // find their i'th ranked candidate, ranks[i]. Last candidate will
     // have no one-on-one victories, so amount of iterations can be
@@ -153,37 +150,10 @@ void record_preferences(int ranks[])
 
         // Scan through candidate list to compare rank_candidate against
         // challenging candidate.
-        for (int j = 0; j < candidate_count; j++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
-            challenger = candidates[j];
-
-            // Skip match-ups between self.
-            if (challenger == rank_candidate)
-            {
-                continue;
-            }
-
-            // Skip match-ups between a higher-ranked candidate. If
-            // challenger matches a rank that is less than the current
-            // rank, exit k loop and set already_matched to true to
-            // indicate to j loop that this match-up is skipped.
-            already_matched = false;
-
-            for (int k = 0; k < i; k++)
-            {
-                prev_rank_candidate = ranks[k];
-
-                if (challenger == prev_rank_candidate)
-                {
-                    already_matched = true;
-                }
-            }
-
-            if (already_matched)
-            {
-                continue;
-            }
-
+            challenger = ranks[j];
+            
             // Increment all other match-ups by 1 for this rank.
             preferences[rank_candidate][challenger]++;
         }
