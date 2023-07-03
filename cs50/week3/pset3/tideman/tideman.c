@@ -31,7 +31,7 @@ bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
-bool valid_target(int);
+bool valid_target(int original, int target);
 void lock_pairs(void);
 void print_winner(void);
 
@@ -228,7 +228,7 @@ void add_pairs(void)
                 pairs[pairs_index].loser = j;
             }
 
-            else (preferences[i][j] < preferences[j][i]);
+            else
             {
                 pairs[pairs_index].winner = j;
                 pairs[pairs_index].loser = i;
@@ -271,7 +271,7 @@ void sort_pairs(void)
         // accordingly.
         for (int j = i + 1; j < pair_count; j++)
         {
-            if pairs[j].winner > pairs[largest_index].winner
+            if (pairs[j].winner > pairs[largest_index].winner)
             {
                 largest_index = j;
             }
@@ -305,16 +305,16 @@ bool valid_target(int original,int target)
     {
         if (locked[target][i])
         {
-            if !valid_target(original, i)
+            if (!valid_target(original, i))
             {
                 return false;
             }
         }
+    }
 
     // If function has checked every potential target and not found the
     // original, then return true.
     return true;
-    }
 }
 
 
@@ -365,7 +365,7 @@ void print_winner(void)
             unlocked_count++;
         }
 
-        if unlocked_count == candidate_count
+        if (unlocked_count == candidate_count)
         {
             printf("%s", candidates[i]);
         }
