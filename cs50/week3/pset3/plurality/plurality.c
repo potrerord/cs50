@@ -99,7 +99,7 @@ void print_winner(void)
         }
     }
 
-    // Find and print names of candidates with winning vote count.
+    // Find and print names of candidates(s) with winning vote count.
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes == win_votes)
