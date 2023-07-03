@@ -233,7 +233,7 @@ void sort_pairs(void)
         // accordingly.
         for (int j = i + 1; j < pair_count; j++)
         {
-            if (pairs[j].winner > pairs[largest_index].winner)
+            if (preferences[j] > pairs[largest_index].winner)
             {
                 largest_index = j;
             }
