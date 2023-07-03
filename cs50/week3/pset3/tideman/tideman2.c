@@ -211,6 +211,10 @@ void add_pairs(void)
 }
 
 
+// Merge sort
+bool merge_sort(int )
+
+
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
