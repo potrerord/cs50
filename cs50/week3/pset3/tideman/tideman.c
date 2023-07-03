@@ -295,7 +295,7 @@ bool valid_target(int original,int target)
     // Base case: If target matches original caller, return false.
     if (target == original)
     {
-        return false.
+        return false;
     }
 
     // Check all candidates to see if target has locked them. If the
@@ -305,14 +305,13 @@ bool valid_target(int original,int target)
     {
         if (locked[target][i])
         {
-            if !valid_target(int original, int candidates[i])
+            if valid_target(int original, int candidates[i])
             {
-                return false;
+                return true;
             }
         }
 
-        // Base case: Target has no targets.
-        return true;
+    return true;
     }
 
 
