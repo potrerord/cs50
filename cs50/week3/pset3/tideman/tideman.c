@@ -292,14 +292,15 @@ void sort_pairs(void)
 // recursively calling self to scan target's targets.
 bool validate_target(int self, int target)
 {
-
+    
+    self = target;
     // Base case: target has no targets.
 
     // Check every potential candidate relationship under locked[target]
     // and validate that target.
     for (int i = 0; i < candidate_count; i++)
     {
-        
+        if validate_target(int target)
     }
 
 
