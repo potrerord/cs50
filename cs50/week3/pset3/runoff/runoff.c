@@ -174,7 +174,7 @@ void tabulate(void)
         for (int j = 0; j < candidate_count; j++)
         {
             // Update current_preference to match iteration.
-            current_preference = preference[voter_number][j];
+            current_preference = preferences[voter_number][j];
 
             // Iterate through candidate list.
             for (int k = 0; k < candidate_count; k++)
@@ -214,7 +214,7 @@ void tabulate(void)
 bool print_winner(void)
 {
     // Store half the voter count to compare for >50% majority rule.
-    float half_voter_count = (float) voter_count / 2
+    float half_voter_count = (float) voter_count / 2;
 
     // Initiate count variable for the highest number of votes, starting
     // at one lower than the lowest possible number.
@@ -276,8 +276,7 @@ int find_min(void)
 bool is_tie(int min)
 {
     // Iterate through all non-eliminated candidates to check if any
-    // vote count is greater than the minimum. If so, return false to
-    // indicate that the election is not a tie.
+    // vote count is greater than the minimum.
     for (int i = 0; i < candidate_count; i++)
     {
         // Skip eliminated candidates.
@@ -286,9 +285,9 @@ bool is_tie(int min)
             continue;
         }
 
-        // Short circuit and return false if any candidates has more
-        // votes than the lowest.
-        if (!candidates[i].eliminated && candidates[i].votes > min)
+        // Short circuit and return false if any candidate has more than
+        // the minimum number of votes.
+        if (candidates[i].votes > min)
         {
             return false;
         }
@@ -306,11 +305,19 @@ void eliminate(int min)
     // matches the current lowest number of votes.
     for (int i = 0; i < candidate_count; i++)
     {
+        // Skip candidates already eliminated.
+        if (candidates[i].eliminated)
+        {
+            continue;
+        }
+
+        // Eliminate candidates.
         if (candidates[i].votes == min)
         {
             candidates[i].eliminated = true;
         }
     }
 
+    // Return once all minimum-vote candidates have been eliminated.
     return;
 }
