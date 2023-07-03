@@ -153,7 +153,7 @@ void record_preferences(int ranks[])
         for (int j = i + 1; j < candidate_count; j++)
         {
             challenger = ranks[j];
-            
+
             // Increment all other match-ups by 1 for this rank.
             preferences[rank_candidate][challenger]++;
         }
