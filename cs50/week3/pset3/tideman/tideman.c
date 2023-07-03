@@ -305,7 +305,7 @@ bool valid_target(int original,int target)
     {
         if (locked[target][i])
         {
-            if !valid_target(int original, int candidates[i])
+            if !valid_target(original, i)
             {
                 return false;
             }
@@ -344,6 +344,21 @@ void print_winner(void)
     // the source of the graph. You may assume there will not be more
     // than one source.
 
+    // Scan each row by doing [j][i] and if you get to the end without
+    // finding a true, that's the winner print it
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (locked[j][i])
+            {
+                break;
+            }
+        }
+
+        printf("%s", )
+    }
 
 
     return;
