@@ -182,7 +182,7 @@ void tabulate(void)
                 // Skip eliminated candidates.
                 if (candidates[k].eliminated)
                 {
-                    continue
+                    continue;
                 }
 
                 // If non-eliminated candidate is a match with voter
@@ -223,15 +223,20 @@ bool print_winner(void)
     // Find the highest number of votes from non-eliminated candidates.
     for (int i = 0; i < candidate_count; i++)
     {
+        // Skip eliminated candidates.
+        if (candidates[i].eliminated)
+        {
+            continue;
+        }
 
         // If any noneliminated candidate has >50% of the votes, print
         // name and return true.
-        if (!candidates[i].eliminated &&
-            candidates[i].votes > half_voter_count)
+        if (candidates[i].votes > half_voter_count)
         {
             printf("%s\n", candidates[winner_index].name);
             return true;
         }
+    }
 
     // Return false if no majority winner could be printed.
     return false;
