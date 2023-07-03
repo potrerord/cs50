@@ -208,34 +208,15 @@ bool print_winner(void)
     // Find the highest number of votes from non-eliminated candidates.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (!candidates[i].eliminated && candidates[i].votes > most_votes)
+
+        // If any noneliminated candidate has >50% of the votes, print
+        // name and return true.
+        if (!candidates[i].eliminated &&
+            candidates[i].votes > half_voter_count)
         {
-            most_votes = candidates[i].votes;
+            printf("%s\n", candidates[winner_index].name);
+            return true;
         }
-    }
-
-    // Initiate count variable for the number of winners and a variable
-    // to keep track of winner index if there is no tie.
-    int winner_count = 0;
-    int winner_index = -1;
-
-    // Check for a single winner or a tie.
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (candidates[i].votes == most_votes)
-        {
-            winner_count++;
-            winner_index = i;
-        }
-    }
-
-    // If there is one winner with a >50% majority, print winner name
-    // and return true to indicate success.
-    if (winner_count == 1 && most_votes > half_voter_count)
-    {
-        printf("%s\n", candidates[winner_index].name);
-        return true;
-    }
 
     // Return false if no majority winner could be printed.
     return false;
