@@ -31,6 +31,7 @@ bool vote(int rank, string name, int ranks[]);
 void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
+bool validate_target(int);
 void lock_pairs(void);
 void print_winner(void);
 
@@ -284,6 +285,32 @@ void sort_pairs(void)
     }
 
     return;
+}
+
+
+// Validate target of "arrow" in Tideman voting method graph by
+// recursively calling self to scan target's targets.
+bool validate_target(int self, int target)
+{
+
+    // Base case: target has no targets.
+
+    // Check every potential candidate relationship under locked[target]
+    // and validate that target.
+    for (int i = 0; i < candidate_count; i++)
+    {
+        
+    }
+
+
+
+    // Return true if target is valid.
+
+
+
+
+    // If self is found in target's targets, return false to indicate
+    // invalid target.
 }
 
 
