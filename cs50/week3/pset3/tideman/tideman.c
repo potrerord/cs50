@@ -290,22 +290,21 @@ void sort_pairs(void)
 
 // Validate target of "arrow" in Tideman voting method graph by
 // recursively calling self to scan target's targets.
-bool valid_target(int original, int self, int target)
+bool valid_target(int original,int target)
 {
-    // Reestablish identity from perspective of target. Now the "self"
-    // that called the function is called "threat", and the "target" of
-    // the original call is called "self". The "original" identity never
-    // changes so the base case can check for a match to the original.
-    int threat = self;
-    self = target;
 
     // Check every potential candidate relationship under locked[target]
     // and validate that target.
     for (int i = 0; i < candidate_count; i++)
     {
-        if locked[self][i]
+        
+        // If the target has already locked the i'th candidate,
+        if locked[target][i]
         {
-            if valid_target(int self, int )
+            if !valid_target(int original, int candidates[i])
+            {
+                return false;
+            }
         }
     }
 
