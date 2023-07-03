@@ -216,8 +216,8 @@ void sort_pairs(void)
     arbitrary candidate numbering order, so selection sort is a good
     algorithm choice. */
 
-    // Create tracker variable for largest winner vote count per pair.
-    int largest_index;
+    // Create tracker variable for greatest winner vote count per pair.
+    int winnest;
 
     // Create temporary storage variable of type pair to switch data
     // points.
@@ -226,25 +226,28 @@ void sort_pairs(void)
     // Begin each scan at pairs[i].
     for (int i = 0; i < pair_count; i++)
     {
-        largest_index = i;
+        winnest = i;
 
         // Scan through every element after pairs[i] to identify index
-        // of largest value after pairs[i], and update largest_index
-        // accordingly.
+        // of greatest winner after pairs[i].
         for (int j = i + 1; j < pair_count; j++)
         {
-            if (preferences[pairs[j].winner][pairs[largest_index].winner] >
-                preferences[pairs[largest_index].winner][pairs[j].winner])
+
+            // If the winner of pairs[j] beats their loser harder than
+            // the winner of pairs[winnest] beats theirs, update winnest
+            // to indicate the new top dog.
+            if (preferences[pairs[j].winner][pairs[j].loser] >
+                preferences[pairs[winnest].winner][pairs[winnest].loser])
             {
-                largest_index = j;
+                winnest = j;
             }
         }
 
         // Switch pairs[i] with value at largest_index (even if equal,
         // for simplicity).
         temp_storage = pairs[i];
-        pairs[i] = pairs[largest_index];
-        pairs[largest_index] = temp_storage;
+        pairs[i] = pairs[winnest];
+        pairs[winnest] = temp_storage;
     }
 
     return;
