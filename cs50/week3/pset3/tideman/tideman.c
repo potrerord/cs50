@@ -162,6 +162,7 @@ void add_pairs(void)
 {
     // Update global pair count using n_C_r (combinatorics), aka
     // "candidate_count choose 2", as calculated in the formula below.
+    // Subtract number of ties.
     pair_count = candidate_count * (candidate_count - 1) / 2;
 
     // Every vote count in preferences array is fully updated at this
