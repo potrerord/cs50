@@ -292,14 +292,18 @@ void sort_pairs(void)
 // recursively calling self to scan target's targets.
 bool valid_target(int original,int target)
 {
+    // Base case: If target matches original caller, return false.
+    if (target == original)
+    {
+        return false.
+    }
 
-    // Check every potential candidate relationship under locked[target]
-    // and validate that target.
+    // Check all candidates to see if target has locked them. If the
+    // target has locked a candidate, check to see if that candidate is
+    // a valid target.
     for (int i = 0; i < candidate_count; i++)
     {
-
-        // If the target has already locked the i'th candidate,
-        if locked[target][i]
+        if (locked[target][i])
         {
             if !valid_target(int original, int candidates[i])
             {
