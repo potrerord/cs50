@@ -210,6 +210,7 @@ void add_pairs(void)
     return;
 }
 
+///////////////////////////////////////////////////////////////////////////////// Try merge sort if you have time
 
 // Merge sort
 bool merge_sort(int )
@@ -218,7 +219,7 @@ bool merge_sort(int )
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // If single element
+    if
         // return
 
     // Sort left half
