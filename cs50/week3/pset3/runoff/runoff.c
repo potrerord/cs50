@@ -126,24 +126,22 @@ int main(int argc, string argv[])
 }
 
 
-// Record preference if vote is valid
+// Record preference if vote is valid.
 bool vote(int voter, int rank, string name)
 {
-    // Iterate over every candidate and check for match between vote/
-    // candidate name. Ignores case.
+    // Check every candidate name for match with vote. Ignores case.
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcasecmp(name, candidates[i].name) == 0)
         {
-            // Log candidate index with voter and ranking, then return
-            // true to indicate successful vote.
+            // Log candidate number with appropriate voter and rank,
+            // then return true to indicate successful vote.
             preferences[voter][rank] = i;
             return true;
         }
     }
 
-    // Return false to indicate vote that does not match valid
-    // candidate.
+    // Return false to indicate invalid vote.
     return false;
 }
 
@@ -151,20 +149,18 @@ bool vote(int voter, int rank, string name)
 // Tabulate votes for non-eliminated candidates.
 void tabulate(void)
 {
-    // Initiate variable to track if voter's top valid preference was
-    // successfully counted, like a function return value.
-    bool vote_counted = false;
+    // Create variable to track voter number in i loop.
+    int voter_number;
 
-    // Create variable to track current voter preference.
+    // Create variable to track current voter preference in j loop.
     int current_preference;
 
-    // Create variable to track voter number.
-    int voter_number;
+    // Initiate variable to track successful vote count.
+    bool vote_counted = false;
 
     // Iterate through each voter.
     for (int i = 0; i < voter_count; i++)
     {
-        // Update voter to match iteration.
         voter_number = i;
 
         // Reset vote_counted status.
@@ -173,7 +169,6 @@ void tabulate(void)
         // Iterate through voter preferences.
         for (int j = 0; j < candidate_count; j++)
         {
-            // Update current_preference to match iteration.
             current_preference = preferences[voter_number][j];
 
             // Iterate through candidate list.
@@ -185,19 +180,19 @@ void tabulate(void)
                     continue;
                 }
 
-                // If non-eliminated candidate is a match with voter
-                // preference, increment candidate's vote count. Break
-                // after first recorded preference per voter.
+                // If candidate matches voter's current preference,
+                // increment candidate's vote count.
                 if (current_preference == k)
                 {
                     candidates[k].votes++;
                     vote_counted = true;
+
+                    // Exit candidate list after first successful match.
                     break;
                 }
             }
 
-            // Move onto next voter if top preference was successfully
-            // counted, otherwise check next preference.
+            // Move onto next voter if top preference was counted.
             if (vote_counted == true)
             {
                 break;
@@ -210,14 +205,14 @@ void tabulate(void)
 }
 
 
-// Print the winner of the election, if there is one
+// Print the winner of the election, if there is one.
 bool print_winner(void)
 {
-    // Store half the voter count to compare for >50% majority rule.
+    // Store 50% vote_count to check majority win.
     float half_voter_count = (float) voter_count / 2;
 
     // Initiate count variable for the highest number of votes, starting
-    // at one lower than the lowest possible number.
+    // at 1 lower than the lowest possible number.
     int most_votes = -1;
 
     // Find the highest number of votes from non-eliminated candidates.
@@ -229,8 +224,8 @@ bool print_winner(void)
             continue;
         }
 
-        // If any noneliminated candidate has >50% of the votes, print
-        // name and return true.
+        // If any noneliminated candidate has majority, print name and
+        // return true.
         if (candidates[i].votes > half_voter_count)
         {
             printf("%s\n", candidates[i].name);
