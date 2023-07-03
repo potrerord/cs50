@@ -199,15 +199,18 @@ void tabulate(void)
 // Print the winner of the election, if there is one
 bool print_winner(void)
 {
+    // Store half the voter count to compare for >50% majority rule.
+    float half_voter_count = (float) voter_count / 2
+
     // Initiate count variable for the highest number of votes.
-    int win_votes = -1;
+    int most_votes = -1;
 
     // Find the highest number of votes from non-eliminated candidates.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (!candidates[i].eliminated && candidates[i].votes > win_votes)
+        if (!candidates[i].eliminated && candidates[i].votes > most_votes)
         {
-            win_votes = candidates[i].votes;
+            most_votes = candidates[i].votes;
         }
     }
 
@@ -219,7 +222,7 @@ bool print_winner(void)
     // Check for a single winner or a tie.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes == win_votes)
+        if (candidates[i].votes == most_votes)
         {
             winner_count++;
             winner_index = i;
@@ -228,9 +231,7 @@ bool print_winner(void)
 
     // If there is one winner with a >50% majority, print winner name
     // and return true to indicate success.
-    float half_voter_count = (float) voter_count / 2
-
-    if (winner_count == 1 && win_votes > half_voter_count)
+    if (winner_count == 1 && most_votes > half_voter_count)
     {
         printf("%s\n", candidates[winner_index].name);
         return true;
