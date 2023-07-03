@@ -307,7 +307,7 @@ bool valid_target(int original,int target)
             }
         }
 
-        // Base case: 
+        // Base case: Target has no targets.
         return true;
     }
 
