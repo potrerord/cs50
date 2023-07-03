@@ -333,6 +333,7 @@ void lock_pairs(void)
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
     }
+
     return;
 }
 
@@ -340,26 +341,35 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // The function should print out the name of the candidate who is
-    // the source of the graph. You may assume there will not be more
-    // than one source.
+    // Create unlocked_count variable to trigger printf statement at the
+    // end of the function.
+    int unlocked_count;
 
-    // Scan each row by doing [j][i] and if you get to the end without
-    // finding a true, that's the winner print it
-
+    // Iterate over every potential winner.
     for (int i = 0; i < candidate_count; i++)
     {
+        // Reset unlocked_count for new candidate.
+        unlocked_count = 0;
+
+        // Use j to scan threats to this candidate for "true" locks. If
+        // candidate has not been locked by any other candidates,
+        // unlocked_count will make it to candidate_count and trigger
+        // printf statement announcing winner.
         for (int j = 0; j < candidate_count; j++)
         {
             if (locked[j][i])
             {
                 break;
             }
+
+            unlocked_count++;
         }
 
-        printf("%s", )
+        if unlocked_count == candidate_count
+        {
+            printf("%s", candidates[i]);
+        }
     }
-
 
     return;
 }
