@@ -158,9 +158,14 @@ void tabulate(void)
     // Create variable to track current voter preference.
     int current_preference;
 
+    // Create variable to track voter number.
+    int voter_number;
+
     // Iterate through each voter.
     for (int i = 0; i < voter_count; i++)
     {
+        // Update voter to match iteration.
+        voter_number = i;
 
         // Reset vote_counted status.
         vote_counted = false;
@@ -169,7 +174,7 @@ void tabulate(void)
         for (int j = 0; j < candidate_count; j++)
         {
             // Update current_preference to match iteration.
-            current_preference = preference[i][j];
+            current_preference = preference[voter_number][j];
 
             // Iterate through candidate list.
             for (int k = 0; k < candidate_count; k++)
