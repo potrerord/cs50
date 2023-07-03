@@ -305,24 +305,16 @@ bool valid_target(int original,int target)
     {
         if (locked[target][i])
         {
-            if valid_target(int original, int candidates[i])
+            if !valid_target(int original, int candidates[i])
             {
-                return true;
+                return false;
             }
         }
 
+    // If function has checked every potential target and not found the
+    // original, then return true.
     return true;
     }
-
-
-
-    // Return true if target is valid.
-
-
-
-
-    // If self is found in target's targets, return false to indicate
-    // invalid target.
 }
 
 
