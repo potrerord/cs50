@@ -107,7 +107,7 @@ bool vote(int rank, string name, int ranks[])
     // from candidates[]. Assume no two candidates have the same name.
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcasecmp(name, candidates[i].name) == 0)
+        if (strcasecmp(name, candidates[i]) == 0)
         {
 
         // If match is found, update the ranks array to indicate that
@@ -173,7 +173,7 @@ void record_preferences(int ranks[])
 
             for (int k = 0; k < i; k++)
             {
-                prev_rank_candidate = rank[k];
+                prev_rank_candidate = ranks[k];
 
                 if (challenger == prev_rank_candidate)
                 {
@@ -228,7 +228,7 @@ void add_pairs(void)
                 pairs[pairs_index].loser = j;
             }
 
-            else (preferences[i][j] < preferences[j][i])
+            else (preferences[i][j] < preferences[j][i]);
             {
                 pairs[pairs_index].winner = j;
                 pairs[pairs_index].loser = i;
