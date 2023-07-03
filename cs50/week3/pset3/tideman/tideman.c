@@ -136,14 +136,10 @@ void record_preferences(int ranks[])
     // Candidate in j loop that rank_candidate is being compared to:
     int challenger;
 
-    // Used in k loop to check if challenger has already been a higher-
-    // ranked candidate.
-    int prev_rank_candidate;
-
-    // Iterate through each of the voter's ranks, i (starting from 0) to
-    // find their i'th ranked candidate, ranks[i]. Last candidate will
-    // have no one-on-one victories, so amount of iterations can be
-    // decreased by 1 from candidate_count.
+    // Iterate through rank list and assign a vote for every candidate
+    // against every candidate below them in the ranking. Initiating j
+    // at i + 1 will avoid self-match-ups and previous match-ups
+    // automatically.
     for (int i = 0; i < candidate_count - 1; i++)
     {
         rank_candidate = ranks[i];
@@ -153,8 +149,6 @@ void record_preferences(int ranks[])
         for (int j = i + 1; j < candidate_count; j++)
         {
             challenger = ranks[j];
-
-            // Increment all other match-ups by 1 for this rank.
             preferences[rank_candidate][challenger]++;
         }
     }
