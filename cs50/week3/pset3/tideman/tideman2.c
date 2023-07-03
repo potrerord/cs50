@@ -214,53 +214,17 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // If sorted
+    // If single element
         // return
 
-    // If not sorted
-
-    // If left half is unsorted
-        // Split in two and sort left half
+    // Sort left half
 
 
-    //
+    // Sort right half
 
 
-    // Merge left and right halves
+    // Merge halves
 
-    // Create tracker variable for the index of the pair with the
-    // greatest winner vote count.
-    int winnest;
-
-    // Create temporary storage variable of type pair to switch data
-    // points.
-    pair temp_storage;
-
-    // Begin each scan at pairs[i].
-    for (int i = 0; i < pair_count; i++)
-    {
-        winnest = i;
-
-        // Scan through every element after pairs[i] to identify index
-        // of greatest winner after pairs[i].
-        for (int j = i + 1; j < pair_count; j++)
-        {
-
-            // If the winner of pairs[j] beats their loser harder than
-            // the winner of pairs[winnest] beats theirs, update winnest
-            // to indicate the new top dog.
-            if (preferences[pairs[j].winner][pairs[j].loser] >
-                preferences[pairs[winnest].winner][pairs[winnest].loser])
-            {
-                winnest = j;
-            }
-        }
-
-        // Switch pairs[i] with value at largest_index.
-        temp_storage = pairs[i];
-        pairs[i] = pairs[winnest];
-        pairs[winnest] = temp_storage;
-    }
 
     return;
 }
