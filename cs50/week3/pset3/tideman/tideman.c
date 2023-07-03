@@ -367,7 +367,7 @@ void print_winner(void)
 
         if (unlocked_count == candidate_count)
         {
-            printf("%s", candidates[i]);
+            printf("%s\n", candidates[i]);
         }
     }
 
