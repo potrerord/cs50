@@ -19,6 +19,10 @@ def is_perfect_number(test_int) -> bool:
     except itself.
     """
 
+    # Special case: 1 is not a perfect number, and skipping it makes
+    # later code more efficient.
+    if test_int == 1:
+        return false
 
     # Store the square root of test_int (the square root of an integer
     # is the upper limit for where you'll stop finding new factor
@@ -30,21 +34,21 @@ def is_perfect_number(test_int) -> bool:
     sum = 1
 
     # If user_int is divisible by a number <= its square root,
-    for checked_divisor in range(2, sqrt_user_int + 1):
+    for checked_divisor in range(2, sqrt + 1):
         if num % checked_divisor == 0:
             sum += checked_divisor
 
-            # Avoid adding sqrt twice, avoid adding self at all.
-            if
-
-            if checked_divisor < sqrt_user_int:
+            # Avoid adding square root twice.
+            if checked_divisor < sqrt:
 
                 # Add the other member of the divisor's factor pair.
                 sum += user_int / checked_divisor
 
-    if
+    # Return true if test_int is a perfect number.
+    if test_int == sum:
+        return true
 
-
-
+    # Return false if not.
+    return false
 
 main()
