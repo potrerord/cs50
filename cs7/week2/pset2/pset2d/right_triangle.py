@@ -8,8 +8,8 @@ def main():
 
 
 def draw(stars: int, spaces: int):
-    """Recursively print n rows with base case of no spaces and one
-    star.
+    """Recursively print n rows with base case of no spaces and all
+    stars.
 
     Default "stars" value should be 0.
     """
