@@ -3,8 +3,6 @@ Prompts the user for an integer and prints all perfect numbers up to
 and including that integer.
 """
 
-import math
-
 
 def main():
     user_int = int(input("Enter an integer: "))
