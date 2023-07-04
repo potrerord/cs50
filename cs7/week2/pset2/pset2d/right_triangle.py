@@ -21,15 +21,14 @@ def draw(stars: int, spaces: int):
         print("*")
         return
 
-
     draw(stars - 1, spaces + 1)
 
-    # Recursive case: Print previous row with one more star and one
-    # fewer space.
+    # Recursive case: Print previous row with one more space and one
+    # fewer star.
     for i in range(spaces):
         print(" ", end="")
     for i in range(stars):
-        print("#", end="")
+        print("*", end="")
     print()
     return
 
