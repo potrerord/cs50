@@ -9,12 +9,12 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            // Declare variables to store R/G/B values for the pixel.
             int red = image[i][j].rgbtRed;
             int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
 
-            // Calculate average of R, G, and B values, rounded to the
-            // nearest int.
+            // Take average of R/G/B values, rounded to the nearest int.
             int gray_average = (int) round(((red + green + blue) / 3.0));
 
             // Update pixel values in array.
@@ -23,11 +23,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = gray_average;
         }
     }
-
-
-
-
-
 
     return;
 }
