@@ -64,7 +64,8 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int rgb_col = 0; rgb_col < RGB_VALUES; rgb_col++)
                 {
-                    // Compute sepia values by adding respective products.
+                    // Compute sepia values by adding respective
+                    // conversion products.
                     sepia[rgb_row] += (conv_factors[rgb_row][rgb_col] *
                                        orig[rgb_col]);
                 }
@@ -86,7 +87,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-// Reflect image horizontally
+// Reflect image horizontally.
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
 
