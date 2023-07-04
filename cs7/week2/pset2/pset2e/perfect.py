@@ -1,6 +1,6 @@
 """
 Prompts the user for an integer and prints all perfect numbers up to
-that integer.
+and including that integer.
 """
 
 import math
