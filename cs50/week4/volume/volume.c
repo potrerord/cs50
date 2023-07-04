@@ -35,8 +35,11 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
 
-    // Create an array of size HEADER_SIZE 
+    // Create an array of size HEADER_SIZE containing unsigned 8-bit
+    // integers.
     uint8_t header[HEADER_SIZE];
+
+    
 
 
 
