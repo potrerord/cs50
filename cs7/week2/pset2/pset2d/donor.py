@@ -24,6 +24,7 @@ def donor() -> str:
     if donation < 0:
         return "error: contribution must be nonnegative"
 
+    # Return appropriate string for donation amount.
     if donation >= benefactor_floor:
         return "Benefactor"
     elif donation >= patron_floor:
