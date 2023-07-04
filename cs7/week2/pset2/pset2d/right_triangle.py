@@ -3,7 +3,7 @@ Prints a right triangle with base on top and point in bottom right.
 """
 
 def main():
-    height = int(input("Enter height: "))
+    height = int(input("Enter height: ")) - 1
     draw(0, height)
 
 
