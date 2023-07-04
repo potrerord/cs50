@@ -22,9 +22,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
                                         (float) RGB_VALUES));
 
             // Update pixel values in array.
-            image[i][j].rgbtRed = gray_avg;
-            image[i][j].rgbtGreen = gray_avg;
-            image[i][j].rgbtBlue = gray_avg;
+            image[px_row][px_col].rgbtRed = gray_avg;
+            image[px_row][px_col].rgbtGreen = gray_avg;
+            image[px_row][px_col].rgbtBlue = gray_avg;
         }
     }
 
@@ -89,6 +89,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    /*
     // Iterate over all pixels in row i and column j.
     for (int i = 0; i < height; i++)
     {
@@ -108,7 +109,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = ;
         }
     }
-
+    */
     return;
 }
 
