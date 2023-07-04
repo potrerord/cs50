@@ -11,7 +11,8 @@ def draw(spaces: int, stars=0):
     """Recursively print n rows with base case of no spaces and all
     stars.
 
-    Keyword 
+    Keyword arguments:
+    spaces -- This is the only necessary argument 
     """
 
     # Base case: Print a row of all stars.
