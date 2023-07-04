@@ -48,32 +48,26 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             float b_factors[3] = {0.272, 0.534, 0.131};
 
             // Convert R/G/B values to sepia, rounded to nearest int.
-            int r_sepia = (int) round(((r_orig * r_factors[0]) +
+            int r_sep = (int) round(((r_orig * r_factors[0]) +
                                        (g_orig * r_factors[1]) +
-                                       (b_orig * r_factors[2])))
+                                       (b_orig * r_factors[2])));
 
-            int g_sepia = (int) round(((r_orig * g_factors[0]) +
+            int g_sep = (int) round(((r_orig * g_factors[0]) +
                                        (g_orig * g_factors[1]) +
-                                       (b_orig * g_factors[2])))
+                                       (b_orig * g_factors[2])));
 
-            int b_sepia = (int) round(((r_orig * b_factors[0]) +
+            int b_sep = (int) round(((r_orig * b_factors[0]) +
                                        (g_orig * b_factors[1]) +
-                                       (b_orig * b_factors[2])))
+                                       (b_orig * b_factors[2])));
 
             // Cap each converted sepia value at 255.
-            if (r_sepia > 255)
+            int rgb_sep[3] = {r_sep, g_sep, b_sep};
+            for (int k = 0; k < 3; k++)
             {
-                r_sepia = 255;
-            }
-
-            if (g_sepia > 255)
-            {
-                g_sepia = 255;
-            }
-
-            if (b_sepia > 255)
-            {
-                b_sepia = 255;
+                if rgb_sep[k] > 255
+                {
+                    rgb_sep[k] = 255;
+                }
             }
 
             // Update pixel values in array.
