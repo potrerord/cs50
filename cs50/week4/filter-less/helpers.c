@@ -43,7 +43,8 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 
             // Store sepia conversion factors for red, green and blue.
             // Each factor is listed in R, G, B order.
-            float r_factors[3] = {0.393, 0.769, 0.189};
+            float r_factors[3][3];
+            r_factors[0] = {0.393, 0.769, 0.189};
             float g_factors[3] = {0.349, 0.686, 0.168};
             float b_factors[3] = {0.272, 0.534, 0.131};
 
