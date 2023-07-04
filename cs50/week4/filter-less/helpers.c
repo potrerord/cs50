@@ -106,7 +106,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
             // Make a buffer variable for the entire pixel's
 
-            // original x location
+            // original row is the same
+            // original column was px_col, now it's width - px_col - 1 bc of zero index
 
 /*
             // Store sepia conversion factors. Multiply each original
