@@ -18,18 +18,17 @@ def draw(stars: int, spaces: int):
     if spaces < 1:
         for i in range(stars):
             print("*", end="")
-        print()
         return
 
     draw(stars + 1, spaces - 1)
 
     # Recursive case: Print previous row with one more space and one
     # fewer star.
+    print()
     for i in range(spaces):
         print(" ", end="")
     for i in range(stars):
         print("*", end="")
-    print()
     return
 
 main()
