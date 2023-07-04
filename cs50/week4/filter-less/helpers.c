@@ -31,15 +31,15 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
 
-    // Iterate over all pixels in row i and column j.
-    for (int i = 0; i < height; i++)
+    // Iterate over all pixels in row px_row and column px_col.
+    for (int px_row = 0; px_row < height; px_row++)
     {
-        for (int j = 0; j < width; j++)
+        for (int px_col = 0; px_col < width; px_col++)
         {
             // Store R/G/B values for the pixel.
-            int rgb_orig[3] = {image[i][j].rgbtRed,
-                               image[i][j].rgbtGreen,
-                               image[i][j].rgbtBlue}
+            int rgb_orig[3] = {image[px_row][px_col].rgbtRed,
+                               image[px_row][px_col].rgbtGreen,
+                               image[px_row][px_col].rgbtBlue}
 
             // Store sepia conversion factors for red, green and blue.
             // Multiply each original R/G/B value by the factors in each
