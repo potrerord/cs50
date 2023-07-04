@@ -101,9 +101,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     int buffer;
     int reflected_col;
 
-    // Iterate over all pixels in row px_row and column px_col.
+    // Iterate over all pixels in row px_row.
     for (int px_row = 0; px_row < height; px_row++)
     {
+
+        // Stop iteration in each row at halfway point.
         for (int px_col = 0, int half_width = width / 2;
              px_col < half_width; px_col++)
         {
