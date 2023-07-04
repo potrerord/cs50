@@ -50,6 +50,8 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             // Convert R/G/B values to sepia, rounded to nearest int.
             int rgb_sep[3];
 
+            for (int k = 0; k < 3; )
+
             int rgb_sep[0] = (int) round(((r_orig * r_factors[0]) +
                                           (g_orig * r_factors[1]) +
                                           (b_orig * r_factors[2])));
