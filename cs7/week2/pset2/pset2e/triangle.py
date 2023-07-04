@@ -28,10 +28,11 @@ def print_grid(size):
         # Format print to have 6 characters in each column.
         print("{:<6d}".format(first_in_row), end="")
 
-
+        #
         for column in range(size):
 
-            # Short circuit if 
+            # Short circuit before the number of columns equals the
+            # number of rows. There 
             if row == column:
                 break
             j_element = first_in_row + (2 * (column + 1) * (row))
