@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     uint8_t header[HEADER_SIZE];
     for (int i = 0; i < HEADER_SIZE; i++)
     {
-        
+        fread(input, HEADER_SIZE, )
     }
 
 
