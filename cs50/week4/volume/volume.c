@@ -36,14 +36,14 @@ int main(int argc, char *argv[])
     // Create buffer array for header.
     uint8_t header[HEADER_SIZE];
 
-    // Copy header from input to buffer to output.
+    // Copy entire header from input to buffer to output.
     fread(header, HEADER_SIZE, 1, input);
     fwrite(header, HEADER_SIZE, 1, output);
 
-    // Create buffer int to store each sample.
+    // Create a single buffer int to store each sample.
     int16_t buffer;
 
-    // 
+    // Start reading samples from input file pointer's current position.
     while (fread(&buffer, sizeof(int16_t), 1, input))
     {
         // Update each sample volume multiplied by factor.
