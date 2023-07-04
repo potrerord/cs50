@@ -5,26 +5,32 @@ Friends, or Cheapskates based on different donation tiers.
 
 
 def main():
-    """Get user input"""
+    """Print result of donor function."""
 
-    user_donation = float(input("\nEnter the amount of a contribution: "))
     print(donor(user_donation) + "!\n")
 
 
-def donor(donation: float) -> str:
-    """Return donor designation based on size of donation.
+def donor() -> str:
+    """Return donor designation based on size of user-input donation."""
 
-    Keyword argument:
-    donation -- Float value representing size of donation.
-    """
+    # Define lower-limit thresholds for each donation tier.
+    benefactor_floor = 10000
+    patron_floor = 1000
+    supporter_floor = 200
+    friend_floor = 15
 
-    if donation >= 10000:
+    # Get donation from user. Print error if negative input.
+    donation = float(input("\nEnter the amount of a contribution: "))
+    if donation < 0:
+        return "error: contribution must be nonnegative"
+
+    if donation >= benefactor_floor:
         return "Benefactor"
-    elif donation >= 1000:
+    elif donation >= patron_floor:
         return "Patron"
-    elif donation >= 200:
+    elif donation >= supporter_floor:
         return "Supporter"
-    elif donation >= 15:
+    elif donation >= friend_floor:
         return "Friend"
     else:
         return "Cheapskate"
