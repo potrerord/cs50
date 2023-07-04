@@ -21,12 +21,14 @@ def print_grid(size):
     for i in range(1, size):
 
         # Start with multiple of one hundred
-        hundred_i = i * 100
+        element = i * 100
 
-        print("{:<6d}".format(i * 100))
+        print("{:<6d}".format(element))
 
         for j in range(i - 1, size):
-            
+
+            element = element + (2 * j)
+            print("{:<6d}".format(element))
 
 
 
