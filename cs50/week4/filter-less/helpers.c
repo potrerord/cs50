@@ -41,7 +41,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         for (int px_col = 0; px_col < width; px_col++)
         {
             // Store R/G/B values for the pixel.
-            int rgb_orig[RGB_VALUES] = {
+            int orig[RGB_VALUES] = {
                 image[px_row][px_col].rgbtRed,
                 image[px_row][px_col].rgbtGreen,
                 image[px_row][px_col].rgbtBlue
@@ -57,29 +57,25 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             };
 
             // Convert R/G/B values to sepia, rounded to nearest int.
-            float rgb_sep[RGB_VALUES] = {0.0};
 
-            for (int sep_index = 0; sep_index < RGB_VALUES; sep_index++)
+            // Initialize all sepia values to 0.0 for conversion sum.
+            float sepia[RGB_VALUES] = {0.0};
+
+            for (int rgb = 0; rgb < RGB_VALUES; rgb++)
             {
-                for (int conv_index = 0; conv_index < RGB_VALUES; conv_index++)
+                for (int conv = 0; conv < RGB_VALUES; conv++)
                 {
-                    rgb_sep[sep_index] += (rgb_orig[conv_index] *
-                                           conv_factors[conv_index]);
+                    // Calculate sepia values by adding respective
+                    // converted original values.
+                    sepia[rgb] += (orig[conv] * conv_factors[conv]);
 
+                    // Cap each converted sepia value at 255.
+                    if (sepia[rgb] > 255)
+                    {
+                        sepia[rgb] = 255;
+                    }
                 }
             }
-
-            int rgb_sep[0] = (int) round(((r_orig * r_factors[0]) +
-                                          (g_orig * r_factors[1]) +
-                                          (b_orig * r_factors[2])));
-
-            int rgb_sep[1] = (int) round(((r_orig * g_factors[0]) +
-                                          (g_orig * g_factors[1]) +
-                                          (b_orig * g_factors[2])));
-
-            int rgb_sep[2] = (int) round(((r_orig * b_factors[0]) +
-                                          (g_orig * b_factors[1]) +
-                                          (b_orig * b_factors[2])));
 
             // Cap each converted sepia value at 255.
             int rgb_sep[RGB_VALUES] = {r_sep, g_sep, b_sep};
