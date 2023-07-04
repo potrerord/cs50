@@ -9,7 +9,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // Declare variables to store R/G/B values for the pixel.
+            // Store R/G/B values for the pixel.
             int red = image[i][j].rgbtRed;
             int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
@@ -36,13 +36,13 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            // Declare variables to store R/G/B values for the pixel.
+            // Store R/G/B values for the pixel.
             int red = image[i][j].rgbtRed;
             int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
 
-            // Declare arrays to store sepia conversion factors for red,
-            // green and blue. Each factor is listed in R, G, B order.
+            // Store sepia conversion factors for red, green and blue.
+            // Each factor is listed in R, G, B order.
             float red_sepia_factors[3] = {0.393, 0.769, 0.189};
             float green_sepia_factors[3] = {0.349, 0.686, 0.168};
             float blue_sepia_factors[3] = {0.272, 0.534, 0.131};
