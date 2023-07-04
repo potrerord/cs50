@@ -4,7 +4,6 @@ Prints a right triangle with base on top and point in bottom right.
 
 def main():
     height = int(input("Enter height: "))
-    print()
     draw(0, height)
 
 
@@ -22,10 +21,14 @@ def draw(stars: int, spaces: int):
         print()
         return
 
+    # Draw previous row.
     draw(stars + 1, spaces - 1)
 
     # Recursive case: Print previous row with one more space and one
-    # fewer star.
+    # fewer star, stop if no stars left to print.
+    if stars < 1:
+        return
+
     for i in range(spaces):
         print(" ", end="")
     for i in range(stars):
