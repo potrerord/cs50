@@ -38,8 +38,11 @@ int main(int argc, char *argv[])
     // Create an array of size HEADER_SIZE containing unsigned 8-bit
     // integers.
     uint8_t header[HEADER_SIZE];
+    for (int i = 0; i < HEADER_SIZE; i++)
+    {
+        
+    }
 
-    
 
 
 
