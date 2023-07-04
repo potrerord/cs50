@@ -62,12 +62,12 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             // Convert the sepia value for R/G/B by summing the product
             // of the original values with their respective conversion
             // factors for the color in question.
-            for (int rgb = 0; rgb < RGB_VALUES; rgb++)
+            for (int color = 0; color < RGB_VALUES; color++)
             {
                 for (int conv = 0; conv < RGB_VALUES; conv++)
                 {
                     // Calculate sepia values by adding respective products.
-                    sepia[rgb] += (conv_factors[rgb][conv] * orig[conv]);
+                    sepia[color] += (conv_factors[color][conv] * orig[conv]);
 
                     // Cap each converted sepia value at 255.
                     if (sepia[rgb] > 255)
