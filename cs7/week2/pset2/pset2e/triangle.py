@@ -13,22 +13,28 @@ N = 9
 
 
 def main():
+    """Call print_grid with constant N."""
     print_grid(N)
 
 def print_grid(size):
+    """Print grid of numbers."""
 
-    # For each column
-    for i in range(1, size + 1):
 
-        # Start with multiple of one hundred
-        i_element = i * 100
+    for row in range(size):
 
-        print("{:<6d}".format(i_element), end="")
+        # First element in each row is multiple of 100, starting at 100.
+        first_in_row = (row + 1) * 100
 
-        for j in range(1, size + 1):
-            if i == j:
+        # Format print to have 6 characters in each column.
+        print("{:<6d}".format(first_in_row), end="")
+
+
+        for column in range(size):
+
+            # Short circuit if 
+            if row == column:
                 break
-            j_element = i_element + (2 * j * i)
+            j_element = first_in_row + (2 * (column + 1) * (row))
             print("{:<6d}".format(j_element), end="")
         print()
 
