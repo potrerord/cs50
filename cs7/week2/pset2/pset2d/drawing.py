@@ -4,6 +4,18 @@ Recreates drawing specified in #16 of Pset2 Part D.
 
 
 def main():
+    hexagon()
+    print()
+    chain()
+    hexagon()
+    print()
+    print()
+    chain()
+    bottom()
+    print()
+    top()
+    chain()
+    bottom()
 
 
 def top():
@@ -19,6 +31,10 @@ def bottom():
 
 def chain():
     print("-\"-'-\"-'-\"-")
+
+def hexagon():
+    top()
+    bottom()
 
 
 main()
