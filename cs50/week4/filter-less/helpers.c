@@ -7,18 +7,24 @@ const int RGB_VALUES = 3;
 // Convert image to grayscale.
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
+    // Create variables for color values.
+    int r_orig;
+    int g_orig;
+    int b_orig;
+    int gray_avg;
+
     // Iterate over all pixels in row px_row and column px_col.
     for (int px_row = 0; px_row < height; px_row++)
     {
         for (int px_col = 0; px_col < width; px_col++)
         {
             // Store R/G/B values for the pixel.
-            int r_orig = image[px_row][px_col].rgbtRed;
-            int g_orig = image[px_row][px_col].rgbtGreen;
-            int b_orig = image[px_row][px_col].rgbtBlue;
+            r_orig = image[px_row][px_col].rgbtRed;
+            g_orig = image[px_row][px_col].rgbtGreen;
+            b_orig = image[px_row][px_col].rgbtBlue;
 
             // Take average of R/G/B values, rounded to the nearest int.
-            int gray_avg = (int) round(((r_orig + g_orig + b_orig) /
+            gray_avg = (int) round(((r_orig + g_orig + b_orig) /
                                         (float) RGB_VALUES));
 
             // Update pixel values in array.
@@ -34,7 +40,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia.
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Store sepia conversion factors. Multiply each original
+    // Store constant sepia conversion factors. Multiply each original
     // R/G/B value by the factors in each row, respectively, to
     // get that row's sepia value.
     float CONV_FACTORS[RGB_VALUES][RGB_VALUES] = {
@@ -43,6 +49,8 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         {0.272, 0.534, 0.131}   // Row 2: B; Columns: R, G, B
     };
 
+    // Create variables to store color values
+    int orig[RGB_VALUES];
 
     // Iterate over all pixels in row px_row and column px_col.
     for (int px_row = 0; px_row < height; px_row++)
@@ -50,19 +58,10 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         for (int px_col = 0; px_col < width; px_col++)
         {
             // Store R/G/B values for the pixel in orig[].
-            int orig[RGB_VALUES] = {
+            orig[RGB_VALUES] = {
                 image[px_row][px_col].rgbtRed,
                 image[px_row][px_col].rgbtGreen,
                 image[px_row][px_col].rgbtBlue
-            };
-
-            // Store sepia conversion factors. Multiply each original
-            // R/G/B value by the factors in each row, respectively, to
-            // get that row's sepia value.
-            float conv_factors[RGB_VALUES][RGB_VALUES] = {
-                {0.393, 0.769, 0.189},  // Row 0: R; Columns: R, G, B
-                {0.349, 0.686, 0.168},  // Row 1: G; Columns: R, G, B
-                {0.272, 0.534, 0.131}   // Row 2: B; Columns: R, G, B
             };
 
             // Initialize all sepia values to 0.0 for conversion sum.
@@ -75,7 +74,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 {
                     // Compute sepia values by adding respective
                     // conversion products.
-                    sepia[rgb_row] += (conv_factors[rgb_row][rgb_col] *
+                    sepia[rgb_row] += (CONV_FACTORS[rgb_row][rgb_col] *
                                        orig[rgb_col]);
                 }
 
