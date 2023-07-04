@@ -14,14 +14,13 @@ def draw(stars: int, spaces: int):
     Default "spaces" value should be 0.
     """
 
-    # Base case: Print n - 1 spaces followed by one star.
-    if stars <= 1:
-        for i in range(spaces):
-            print(" ", end="")
-        print("*")
+    # Base case: Print a row of all stars.
+    if spaces <= 1:
+        for i in range(stars):
+            print("*")
         return
 
-    draw(stars - 1, spaces + 1)
+    draw(stars + 1, spaces - 1)
 
     # Recursive case: Print previous row with one more space and one
     # fewer star.
