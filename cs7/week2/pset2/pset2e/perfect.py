@@ -9,7 +9,10 @@ def main():
     # For every int up to and including the input
 
     for i in range(1, user_int + 1):
-        
+
+
+    sqrt_user_int = 
+    for i in range()
 
 
 
