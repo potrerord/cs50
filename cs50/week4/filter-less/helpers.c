@@ -41,8 +41,11 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int green = image[i][j].rgbtGreen;
             int blue = image[i][j].rgbtBlue;
 
-            //
-            int
+            // Declare arrays to store sepia conversion factors for red,
+            // green and blue. Each factor is listed in R, G, B order.
+            float red_sepia_factors[3] = {0.393, 0.769, 0.189};
+            float green_sepia_factors[3] = {0.349, 0.686, 0.168};
+            float blue_sepia_factors[3] = {0.272, 0.534, 0.131};
 
             // Update pixel values in array.
             image[i][j].rgbtRed = ;
