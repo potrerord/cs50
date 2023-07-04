@@ -8,11 +8,17 @@ Prints evenly-spaced triangle of values with the following specs:
   100, starting with 100 and ending at 900.
 """
 
+# Define constant for this particular problem.
+N = 9
+
+
 def main():
-    asdf
+    print_grid(N)
 
+def print_grid(size):
+    for i in range(1, 9):
+        print("{:6d}".format(i * 100))
 
-for i 
 
 
 main()
