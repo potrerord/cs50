@@ -24,8 +24,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             b_orig = image[px_row][px_col].rgbtBlue;
 
             // Take average of R/G/B values, rounded to the nearest int.
-            gray_avg = (int) round(((r_orig + g_orig + b_orig) /
-                                        (float) RGB_VALUES));
+            gray_avg = (int) round(((r_orig + g_orig + b_orig) / 3.0));
 
             // Update pixel values in array.
             image[px_row][px_col].rgbtRed = gray_avg;
@@ -58,7 +57,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         for (int px_col = 0; px_col < width; px_col++)
         {
             // Store R/G/B values for the pixel in orig[].
-            orig[RGB_VALUES] = {
+            orig = {
                 image[px_row][px_col].rgbtRed,
                 image[px_row][px_col].rgbtGreen,
                 image[px_row][px_col].rgbtBlue
