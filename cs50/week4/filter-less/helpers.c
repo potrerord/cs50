@@ -104,6 +104,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             };
 
 
+            // Make a buffer variable for the entire pixel's 
+
+
 /*
             // Store sepia conversion factors. Multiply each original
             // R/G/B value by the factors in each row, respectively, to
