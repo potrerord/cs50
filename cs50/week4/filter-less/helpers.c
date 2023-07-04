@@ -77,9 +77,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Update pixel values in array.
-            image[i][j].rgbtRed = ;
-            image[i][j].rgbtGreen = ;
-            image[i][j].rgbtBlue = ;
+            image[i][j].rgbtRed = r_sepia;
+            image[i][j].rgbtGreen = g_sepia;
+            image[i][j].rgbtBlue = b_sepia;
         }
     }
 
