@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     // Create an array of size HEADER_SIZE containing unsigned 8-bit
     // integers.
     uint8_t header[HEADER_SIZE];
-    while(fread())
+    while (fread(output, sizeof(uint8_t, 1, )))
 
     for (int i = 0; i < HEADER_SIZE; i++)
     {
