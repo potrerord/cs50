@@ -5,14 +5,20 @@ Recreates drawing specified in #16 of Pset2 Part D.
 
 def main():
     hexagon()
+
     print()
+
     chain()
     hexagon()
+
     print()
     print()
+
     chain()
     bottom()
+
     print()
+    
     top()
     chain()
     bottom()
