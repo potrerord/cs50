@@ -40,13 +40,13 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia.
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Store constant sepia conversion factors. Multiply each original
-    // R/G/B value by the factors in each row, respectively, to
-    // get that row's sepia value.
+    // Create constant sepia conversion factors. Multiply each original
+    // R/G/B value by the respective factors in each row to get the
+    // corresponding sepia value for that row's color.
     float CONV_FACTORS[RGB_VALUES][RGB_VALUES] = {
-        {0.393, 0.769, 0.189},  // Row 0: R; Columns: R, G, B
-        {0.349, 0.686, 0.168},  // Row 1: G; Columns: R, G, B
-        {0.272, 0.534, 0.131}   // Row 2: B; Columns: R, G, B
+        {0.393, 0.769, 0.189},  // Row 0: RED;   Columns: R, G, B
+        {0.349, 0.686, 0.168},  // Row 1: GREEN; Columns: R, G, B
+        {0.272, 0.534, 0.131}   // Row 2: BLUE;  Columns: R, G, B
     };
 
     // Create variables to store color values
