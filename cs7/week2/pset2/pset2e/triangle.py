@@ -18,14 +18,15 @@ def main():
 def print_grid(size):
 
     # For each column
-    for i in range(1, 9):
+    for i in range(1, size):
 
         # Start with multiple of one hundred
         hundred_i = i * 100
 
         print("{:<6d}".format(i * 100))
 
-        for j in range(
+        for j in range(i - 1, size):
+            
 
 
 
