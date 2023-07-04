@@ -1,9 +1,10 @@
 #include "helpers.h"
 #include <math.h>
 
+// Global constant for number of RGB values.
 const int RGB_VALUES = 3;
 
-// Convert image to grayscale
+// Convert image to grayscale.
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     // Iterate over all pixels in row px_row and column px_col.
@@ -30,7 +31,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-// Convert image to sepia
+// Convert image to sepia.
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
 
@@ -49,7 +50,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             // Store sepia conversion factors. Multiply each original
             // R/G/B value by the factors in each row, respectively, to
             // get that row's sepia value.
-            float r_factors[RGB_VALUES][RGB_VALUES] = {
+            float sep_factors[RGB_VALUES][RGB_VALUES] = {
                 {0.393, 0.769, 0.189},  // Row 0: R; Columns: R, G, B
                 {0.349, 0.686, 0.168},  // Row 1: G; Columns: R, G, B
                 {0.272, 0.534, 0.131}   // Row 2: B; Columns: R, G, B
@@ -58,7 +59,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             // Convert R/G/B values to sepia, rounded to nearest int.
             float rgb_sep[RGB_VALUES] = {0.0};
 
-            for (int k = 0; k < RGB_VALUES; k++)
+            for (int sepia = 0; sepia < RGB_VALUES; sepia++)
             {
                 for (int l = 0; l < RGB_VALUES; l++)
                 {
