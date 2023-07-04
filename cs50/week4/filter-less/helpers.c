@@ -99,14 +99,22 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     // Make buffer variable to store pixels being moved.
     int buffer;
+    int reflected_col;
 
     // Iterate over all pixels in row px_row and column px_col.
     for (int px_row = 0; px_row < height; px_row++)
     {
         for (int px_col = 0; px_col < width; px_col++)
         {
-            // Store R/G/B values for the pixel in orig[].
-            buffer = image[px_row][px_col]
+            // Update reflected_col to
+            reflected_col = width - px_col - 1;
+
+            // Switch left pixel with corresponding right pixel
+
+            // stop at halfway?
+            buffer = image[px_row][px_col];
+            image[px_row][px_col] = image[px_row][reflected_col];
+            image[px_row][reflected_col] = buffer;
 
 
             // Make a buffer variable for the entire pixel's
