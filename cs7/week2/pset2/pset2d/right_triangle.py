@@ -11,7 +11,7 @@ def draw(spaces: int, stars=0):
     """Recursively print n rows with base case of no spaces and all
     stars.
 
-    Default "stars" value should be 0.
+    Keyword 
     """
 
     # Base case: Print a row of all stars.
@@ -22,7 +22,7 @@ def draw(spaces: int, stars=0):
         return
 
     # Draw previous row.
-    draw(stars + 1, spaces - 1)
+    draw(spaces - 1, stars + 1)
 
     # Recursive case: Print previous row with one more space and one
     # fewer star, stop if no stars left to print.
