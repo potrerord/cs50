@@ -2,6 +2,7 @@
 Prints x amount of na's followed by "... BATMAN!"
 """
 
+
 # Global variable for this particular problem's na count.
 NA = 16
 
@@ -15,7 +16,7 @@ def batman(na_count: int):
     """Print x amount of na's followed by "... BATMAN!"
 
     Keyword argument:
-    na_count -- The integer number of na's.
+    na_count -- The positive integer number of na's.
     """
 
     for i in range(na_count):
