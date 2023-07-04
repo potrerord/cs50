@@ -34,6 +34,15 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia.
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
+    // Store sepia conversion factors. Multiply each original
+    // R/G/B value by the factors in each row, respectively, to
+    // get that row's sepia value.
+    float CONV_FACTORS[RGB_VALUES][RGB_VALUES] = {
+        {0.393, 0.769, 0.189},  // Row 0: R; Columns: R, G, B
+        {0.349, 0.686, 0.168},  // Row 1: G; Columns: R, G, B
+        {0.272, 0.534, 0.131}   // Row 2: B; Columns: R, G, B
+    };
+
 
     // Iterate over all pixels in row px_row and column px_col.
     for (int px_row = 0; px_row < height; px_row++)
@@ -90,7 +99,8 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally.
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-
+    // Make buffer variable to store pixels being moved.
+    int buffer;
 
     // Iterate over all pixels in row px_row and column px_col.
     for (int px_row = 0; px_row < height; px_row++)
@@ -98,11 +108,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int px_col = 0; px_col < width; px_col++)
         {
             // Store R/G/B values for the pixel in orig[].
-            int orig[RGB_VALUES] = {
-                image[px_row][px_col].rgbtRed,
-                image[px_row][px_col].rgbtGreen,
-                image[px_row][px_col].rgbtBlue
-            };
+            buffer = image[px_row][px_col]
 
 
             // Make a buffer variable for the entire pixel's
