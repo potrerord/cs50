@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     uint8_t header[HEADER_SIZE];
     while (fread(&header[], sizeof(uint8_t), 1, input))
     {
-        printf("%uint8_t )
+        header[]
     }
 
     for (int i = 0; i < HEADER_SIZE; i++)
