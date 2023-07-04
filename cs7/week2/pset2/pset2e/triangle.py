@@ -25,8 +25,9 @@ def print_grid(size):
 
         print("{:<6d}".format(i_element), end="")
 
-        for j in range(i - 1, size + 1):
-
+        for j in range(1, size + 1):
+            if i == j:
+                break
             j_element = i_element + (2 * j * i)
             print("{:<6d}".format(j_element), end="")
         print()
