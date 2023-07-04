@@ -8,7 +8,7 @@ Prints evenly-spaced triangle of values with the following specs:
   100, starting with 100 and ending at 900.
 """
 
-# Define constant for this particular problem.
+# Define constant number of rows for this particular problem.
 N = 9
 
 
@@ -26,17 +26,23 @@ def print_grid(size):
         first_in_row = (row + 1) * 100
 
         # Format print to have 6 characters in each column.
-        print("{:<6d}".format(first_in_row), end="")
+        print("{:6d}".format(first_in_row), end="")
 
-        #
-        for column in range(size):
+        # Begin iterating column count at 1 since the first element was
+        # already printed.
+        for column in range(1, size + 1):
 
-            # Short circuit before the number of columns equals the
-            # number of rows. There 
-            if row == column:
+            # Short circuit before the number of columns exceeds the
+            # number of rows.
+            if column > row:
                 break
-            j_element = first_in_row + (2 * (column + 1) * (row))
-            print("{:<6d}".format(j_element), end="")
+
+            # Each successive element in the row will increase by double
+            # the product of the row and column indices.
+            next_in_row = first_in_row + (2 * row * column)
+            print("{:6d}".format(next_in_row), end="")
+
+        # Print newline after final element.
         print()
 
 
