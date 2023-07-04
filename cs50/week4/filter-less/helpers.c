@@ -31,8 +31,25 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
 
-    // change every pixel to... a shade of brown? like gray but with red?
+    // Iterate over all pixels in row i and column j.
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            // Declare variables to store R/G/B values for the pixel.
+            int red = image[i][j].rgbtRed;
+            int green = image[i][j].rgbtGreen;
+            int blue = image[i][j].rgbtBlue;
 
+            //
+            int
+
+            // Update pixel values in array.
+            image[i][j].rgbtRed = ;
+            image[i][j].rgbtGreen = ;
+            image[i][j].rgbtBlue = ;
+        }
+    }
 
     return;
 }
@@ -40,9 +57,25 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    // take every pixel, put into a buffer and then make a new file with the buffer where the width values are flipped?
+    // Iterate over all pixels in row i and column j.
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            // Declare variables to store R/G/B values for the pixel.
+            int red = image[i][j].rgbtRed;
+            int green = image[i][j].rgbtGreen;
+            int blue = image[i][j].rgbtBlue;
+
+            //
 
 
+            // Update pixel values in array.
+            image[i][j].rgbtRed = ;
+            image[i][j].rgbtGreen = ;
+            image[i][j].rgbtBlue = ;
+        }
+    }
 
     return;
 }
