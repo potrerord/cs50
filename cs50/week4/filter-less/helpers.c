@@ -59,9 +59,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             // Initialize all sepia values to 0.0 for conversion sum.
             float sepia[RGB_VALUES] = {0.0};
 
-            // Convert to sepia value by summing the product of all
-            // original values and their respective conversion factors
-            // for the color in question.
+            // Convert to sepia using conv_factors row/col structure.
             for (int rgb_row = 0; rgb_row < RGB_VALUES; rgb_row++)
             {
                 for (int rgb_col = 0; rgb_col < RGB_VALUES; rgb_col++)
@@ -79,9 +77,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Update pixel values in array.
-            image[i][j].rgbtRed = sepia[0];
-            image[i][j].rgbtGreen = sepia[1];
-            image[i][j].rgbtBlue = sepia[2];
+            image[px_row][px_col].rgbtRed = sepia[0];
+            image[px_row][px_col].rgbtGreen = sepia[1];
+            image[px_row][px_col].rgbtBlue = sepia[2];
         }
     }
 
