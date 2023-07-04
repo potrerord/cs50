@@ -43,13 +43,13 @@ int main(int argc, char *argv[])
     // Create buffer int to store each sample.
     int16_t buffer;
 
-    //
+    // 
     while (fread(&buffer, sizeof(int16_t), 1, input))
     {
         // Update each sample volume multiplied by factor.
         buffer *= factor;
 
-        // Write updated sample into output file.
+        // Write updated sample to output file.
         fwrite(&buffer, sizeof(int16_t), 1, output);
     }
 
