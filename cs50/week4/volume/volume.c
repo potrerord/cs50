@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     int16_t *sample = NULL;
     while(fread(sample, sizeof(int16_t), 1, input))
     {
-        sample[0] *= 2;
+        sample[0] *= factor;
         fwrite(sample, sizeof(int16_t), 1, output);
     }
 
