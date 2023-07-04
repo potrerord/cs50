@@ -35,8 +35,8 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
 
-    // Use the constant defined header byte size of 44
-    uint8_t
+    // Create an array of size HEADER_SIZE 
+    uint8_t header[HEADER_SIZE];
 
 
 
