@@ -7,7 +7,7 @@ Friends, or Cheapskates based on different donation tiers.
 def main():
     """Print result of donor function."""
 
-    print(donor(user_donation) + "!\n")
+    print(donor() + "!\n")
 
 
 def donor() -> str:
