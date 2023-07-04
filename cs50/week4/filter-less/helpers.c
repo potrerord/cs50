@@ -40,7 +40,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int px_col = 0; px_col < width; px_col++)
         {
-            // Store R/G/B values for the pixel.
+            // Store R/G/B values for the pixel in orig[].
             int orig[RGB_VALUES] = {
                 image[px_row][px_col].rgbtRed,
                 image[px_row][px_col].rgbtGreen,
@@ -56,18 +56,18 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 {0.272, 0.534, 0.131}   // Row 2: B; Columns: R, G, B
             };
 
-            // Convert R/G/B values to sepia, rounded to nearest int.
-
             // Initialize all sepia values to 0.0 for conversion sum.
             float sepia[RGB_VALUES] = {0.0};
 
+            // Convert the sepia value for R/G/B by summing the product
+            // of the original values with their respective conversion
+            // factors for the color in question.
             for (int rgb = 0; rgb < RGB_VALUES; rgb++)
             {
                 for (int conv = 0; conv < RGB_VALUES; conv++)
                 {
-                    // Calculate sepia values by adding respective
-                    // converted original values.
-                    sepia[rgb] += (orig[conv] * conv_factors[conv]);
+                    // Calculate sepia values by adding respective products.
+                    sepia[rgb] += (conv_factors[rgb][conv] * orig[conv]);
 
                     // Cap each converted sepia value at 255.
                     if (sepia[rgb] > 255)
