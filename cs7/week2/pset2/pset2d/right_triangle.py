@@ -15,12 +15,13 @@ def draw(stars: int, spaces: int):
     """
 
     # Base case: Print a row of all stars.
-    if spaces <= 1:
+    if spaces < 1:
         for i in range(stars):
-            print("*")
+            print("*", end="")
+        print()
         return
 
-    draw(stars + 1, spaces - 1)
+    draw(stars - 1, spaces + 1)
 
     # Recursive case: Print previous row with one more space and one
     # fewer star.
