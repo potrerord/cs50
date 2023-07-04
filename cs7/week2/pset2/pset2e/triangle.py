@@ -16,8 +16,16 @@ def main():
     print_grid(N)
 
 def print_grid(size):
+
+    # For each column
     for i in range(1, 9):
-        print("{:6d}".format(i * 100))
+
+        # Start with multiple of one hundred
+        hundred_i = i * 100
+
+        print("{:<6d}".format(i * 100))
+
+        for j in range(
 
 
 
