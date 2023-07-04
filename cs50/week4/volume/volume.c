@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     // Start reading samples from input file pointer's current position.
     while (fread(&buffer, sizeof(int16_t), 1, input))
     {
-        // Update each sample volume multiplied by factor.
+        // Multiply sample by factor and update sample to new value.
         buffer *= factor;
 
         // Write updated sample to output file.
