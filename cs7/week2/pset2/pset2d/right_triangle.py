@@ -12,7 +12,9 @@ def draw(spaces: int, stars=0):
     stars.
 
     Keyword arguments:
-    spaces -- This is the only necessary argument 
+    spaces -- This is the only necessary argument, and functions as the
+              recursion limit (and thus, the height of the triangle).
+    stars -- This argument defaults to 0 and is used during recursion.
     """
 
     # Base case: Print a row of all stars.
@@ -35,6 +37,6 @@ def draw(spaces: int, stars=0):
     for i in range(stars):
         print("*", end="")
     print()
-    return
+
 
 main()
