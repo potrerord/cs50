@@ -64,7 +64,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 for (int conv_index = 0; conv_index < RGB_VALUES; conv_index++)
                 {
                     rgb_sep[sep_index] += (rgb_orig[conv_index] *
-                                           r_factors[conv_index]);
+                                           sep_factors[conv_index]);
 
                 }
             }
