@@ -4,15 +4,16 @@ Prints a right triangle with base on top and point in bottom right.
 
 def main():
     height = int(input("Enter height: "))
-    draw(height, 0)
+    draw(height)
 
 
-def draw(stars: int, spaces: int):
+def draw(height):
     """Recursively print n rows with base case of no spaces and one
     star.
-
-    Default "spaces" value should be 0.
     """
+
+    stars = 1
+    spaces = height - 1
 
     # Base case: Print a row of all stars.
     if spaces < 1:
