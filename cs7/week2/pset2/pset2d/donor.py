@@ -8,6 +8,7 @@ def main():
     """Print result of donor function."""
 
     print(donor() + "!\n")
+    return
 
 
 def donor() -> str:
