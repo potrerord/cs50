@@ -3,8 +3,19 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    // change every pixel from BGR to be equal amounts with average intensity between the three of them
-    
+    // Iterate over all pixels in row i and column j.
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int red = image[i][j].rgbtRed;
+            int green = image[i][j].rgbtGreen;
+            int blue = image[i][j].rgbtBlue;
+
+            int gray_average = (float) (red + green + blue) / 3
+        }
+    }
+
 
 
 
