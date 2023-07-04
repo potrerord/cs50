@@ -3,6 +3,8 @@ Prompts the user for an integer and prints all perfect numbers up to
 that integer.
 """
 
+import math
+
 
 def main():
     user_int = int(input("Enter an integer: "))
@@ -27,14 +29,14 @@ def is_perfect_number(test_int) -> bool:
     # Store the int ceil of the sqrt of test_int (the square root of an
     # integer is the upper limit for where you'll stop finding new
     # factor pairs).
-    sqrt = int(test_int ** 0.5 + 1)
+    sqrt = test_int ** 0.5
 
     # Initiate sum variable at 1 to skip first factor pair, which would
     # contain test_int, which should not be included in the sum.
     sum = 1
 
     # If user_int is divisible by a number <= its square root,
-    for checked_divisor in range(2, sqrt + 1):
+    for checked_divisor in range(2, int(sqrt) + 1):
         if test_int % checked_divisor == 0:
             sum += checked_divisor
 
