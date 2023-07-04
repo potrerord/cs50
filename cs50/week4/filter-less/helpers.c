@@ -104,7 +104,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     // Iterate over all pixels in row px_row and column px_col.
     for (int px_row = 0; px_row < height; px_row++)
     {
-        for (int px_col = 0; px_col < width; px_col++)
+        for (int px_col = 0, int half_width = width / 2;
+             px_col < half_width; px_col++)
         {
             // Update reflected_col to
             reflected_col = width - px_col - 1;
