@@ -49,19 +49,32 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 
             // Convert R/G/B values to sepia, rounded to nearest int.
             int r_sepia = (int) round(((r_orig * r_factors[0]) +
-                          (g_orig * r_factors[1]) +
-                          (b_orig * r_factors[2])))
+                                       (g_orig * r_factors[1]) +
+                                       (b_orig * r_factors[2])))
 
             int g_sepia = (int) round(((r_orig * g_factors[0]) +
-                          (g_orig * g_factors[1]) +
-                          (b_orig * g_factors[2])))
+                                       (g_orig * g_factors[1]) +
+                                       (b_orig * g_factors[2])))
 
             int b_sepia = (int) round(((r_orig * b_factors[0]) +
-                          (g_orig * b_factors[1]) +
-                          (b_orig * b_factors[2])))
+                                       (g_orig * b_factors[1]) +
+                                       (b_orig * b_factors[2])))
 
             // Cap each converted sepia value at 255.
-            
+            if (r_sepia > 255)
+            {
+                r_sepia = 255;
+            }
+
+            if (g_sepia > 255)
+            {
+                g_sepia = 255;
+            }
+
+            if (b_sepia > 255)
+            {
+                b_sepia = 255;
+            }
 
             // Update pixel values in array.
             image[i][j].rgbtRed = ;
