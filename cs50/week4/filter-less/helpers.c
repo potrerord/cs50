@@ -42,13 +42,12 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                                image[i][j].rgbtBlue}
 
             // Store sepia conversion factors for red, green and blue.
-            // Each row and column is listed in R, G, B order - e.g.,
-            // the green conversion factor for red is found in
-            // r_factors[0][2].
+            // Multiply each original R/G/B value by the factors in each
+            // row, respectively, to get that row's sepia value.
             float r_factors[3][3] = {
-                {0.393, 0.769, 0.189},
-                {0.349, 0.686, 0.168},
-                {0.272, 0.534, 0.131}
+                {0.393, 0.769, 0.189},  // Row 0: R; Columns: R/G/B
+                {0.349, 0.686, 0.168},  // Row 1: G; Columns: R/G/B
+                {0.272, 0.534, 0.131}   // Row 2: B; Columns: R/G/B
             };
 
             // Convert R/G/B values to sepia, rounded to nearest int.
