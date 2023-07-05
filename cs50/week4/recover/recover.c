@@ -45,30 +45,23 @@ int main(int argc, char *argv[])
             continue;
         }
 
+        fopen()
+        // open a new file and write to it from the memory card
+            // The files you generate should each be named ###.jpg,
+            // where ### is a three-digit decimal number, starting
+            // with 000 for the first image and counting up.
+            // Use a loop for this
+            // printf("%03d" or i? d for decimal)
+            // Keep in mind your program should number the files it outputs
+            // by naming each ###.jpg, where ### is three-digit decimal
+            // number from 000 on up. Befriend sprintf and note that sprintf
+            //  stores a formatted string at a location in memory. Given the
+            //  prescribed ###.jpg format for a JPEG’s filename, how many
+            // bytes should you allocate for that string? (Don’t forget the
+            // NUL character!)
 
-        // If you use malloc() you need to use free()
 
 
-        // Scan the 1-3 bytes for 0xff 0xd8 0xff, or 11111111 11011000 11111111 in binary
-        // Also scan the 4th byte to see if it starts with 0xe, or 1110 in binary
-
-
-
-        // when you find a jpeg signature on the memory card
-            // open a new file and write to it from the memory card
-                // The files you generate should each be named ###.jpg,
-                // where ### is a three-digit decimal number, starting
-                // with 000 for the first image and counting up.
-                // Use a loop for this
-                // printf("%03d" or i? d for decimal)
-
-        // Keep in mind your program should number the files it outputs
-        // by naming each ###.jpg, where ### is three-digit decimal
-        // number from 000 on up. Befriend sprintf and note that sprintf
-        //  stores a formatted string at a location in memory. Given the
-        //  prescribed ###.jpg format for a JPEG’s filename, how many
-        // bytes should you allocate for that string? (Don’t forget the
-        // NUL character!)
 
 
 
@@ -80,13 +73,13 @@ int main(int argc, char *argv[])
 
 
         // Free the data you were using
+        // If you use malloc() you need to use free()
 
 
-        // Return 0 if successful
 
 
     }
-
+    return 0;
 }
 
 // Determine if beginning of BLOCK matches JPEG signature.
@@ -95,10 +88,10 @@ bool isjpeg(BLOCK subject)
     // Number of bytes in JPEG signature.
     const int SIG_SIZE = 4;
 
-    // First 3 bytes of hex JPEG signature.
+    // Bytes 0-2 of hex JPEG signature.
     const int SIG = {0xff, 0xd8, 0xff};
 
-    // First hex digit of fourth byte of JPEG signature.
+    // Byte 3 of hex JPEG signature (relevant first digit).
     const int SIG_3 = 0xe;
 
     // Base used in hex integers.
