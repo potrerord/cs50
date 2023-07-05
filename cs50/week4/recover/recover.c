@@ -35,8 +35,8 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data.
     FATBLOCK buffer;
 
-    // Loop while there is still data to be read on the memory card.
-    while (fread(buffer, 1, FATBLOCK, card) == 512)
+    // Read 1 byte from card file at a time until end of file.
+    while (fread(buffer, 1, FATBLOCK, card) == FATBLOCK_SIZE)
     {
 
 
