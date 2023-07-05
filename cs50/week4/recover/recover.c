@@ -47,11 +47,12 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
 
-        // Scan the first 3 bytes for JPEG signature.
+        // Skip if the buffer does not contain a JPEG.
         if (!isjpeg(buffer))
         {
             continue;
         }
+
 
         // If you use malloc() you need to use free()
 
@@ -107,6 +108,7 @@ bool isjpeg(BLOCK subject)
             }
         }
 
+    // Check if the fourth byte matches JPEG signature.
 
     return true;
 }
