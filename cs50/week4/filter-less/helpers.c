@@ -28,7 +28,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             // Take average of R/G/B values, rounded to the nearest int.
             gray_avg = (int)round(((r_orig + g_orig + b_orig) / 3.0));
 
-            // Update pixel values in array.
+            // Update image pixels with gray values.
             image[px_row][px_col].rgbtRed = gray_avg;
             image[px_row][px_col].rgbtGreen = gray_avg;
             image[px_row][px_col].rgbtBlue = gray_avg;
@@ -89,7 +89,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            // Update pixel values in array.
+            // Update image pixels with sepia values.
             image[px_row][px_col].rgbtRed = sepia[0];
             image[px_row][px_col].rgbtGreen = sepia[1];
             image[px_row][px_col].rgbtBlue = sepia[2];
@@ -143,17 +143,23 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 
     // Declare variables for loop.
-    int sum;
+    float r_sum;
+    float g_sum;
+    float b_sum;
     int count;
-    int blur_avg;
+    int r_blur;
+    int g_blur;
+    int b_blur;
 
     // Iterate over every pixel in row px_row and column px_col.
     for (int px_row = 0; px_row < height; px_row++)
     {
         for (int px_col = 0; px_col < width; px_col++)
         {
-            // Reset sum and count
-            sum = 0;
+            // Reset sums and count
+            r_sum = 0;
+            g_sum = 0;
+            b_sum = 0;
             count = 0;
 
             // Get values from surrounding pixels (3x3 square).
@@ -173,31 +179,25 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
 
-                    // Add value to sum and increment count variable.
-                    sum += copy[px_row + i][px_col + j];
+                    // Add values to sums and increment count variable.
+                    r_sum += (float)copy[px_row + i][px_col + j].rgbtRed;
+                    g_sum += (float)copy[px_row + i][px_col + j].rgbtGreen;
+                    b_sum += (float)copy[px_row + i][px_col + j].rgbtBlue;
                     count++;
                 }
             }
 
             // Calculate average of summed pixels.
-            blur_avg = (float)sum / count;
+            r_blur = (int)(r_sum / count);
+            g_blur = (int)(g_sum / count);
+            b_blur = (int)(b_sum / count);
 
-            image[px_row][px_col] = blur_avg;
+            // Update image pixels with blur values.
+            image[px_row][px_col].rgbtRed = r_blur;
+            image[px_row][px_col].rgbtGreen = g_blur;
+            image[px_row][px_col].rgbtBlue = b_blur;
         }
     }
-
-
-
-
-
-    // Get the values of the surrounding pixels (row +- 1, column +- 1,
-    // etc. making a 3x3 box including the center pixel, or whatever
-    // portion of the box is available if it's at an edge
-
-    // when you subtract make sure the result is >= 0
-    // when you add make sure the result is < height or width
-
-
 
     return;
 }
