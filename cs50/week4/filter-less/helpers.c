@@ -42,11 +42,12 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia.
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Store constant sepia conversion factors. Multiply each original
-    // R/G/B value by the respective factors in each row to get the
-    // corresponding sepia value for that row's color.
+    // Store constant sepia conversion factors.
     float CONV_FACTORS[RGB_VALUES][RGB_VALUES] = {
-        {0.393, 0.769, 0.189},  // Row 0: RED;   Columns: R, G, B
+
+        // Row 0: RED;   Columns: R, G, B
+        {0.393, 0.769, 0.189},
+        // Row 1: GREEN; Columns: R, G, B
         {0.349, 0.686, 0.168},  // Row 1: GREEN; Columns: R, G, B
         {0.272, 0.534, 0.131}   // Row 2: BLUE;  Columns: R, G, B
     };
@@ -73,8 +74,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int rgb_col = 0; rgb_col < RGB_VALUES; rgb_col++)
                 {
-                    // Compute sepia values by adding respective
-                    // conversion products.
+                    // Compute sepia values.
                     sepia[rgb_row] += (CONV_FACTORS[rgb_row][rgb_col] *
                                        orig[rgb_col]);
                 }
@@ -112,8 +112,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int left_px = 0, half_width = width / 2; left_px < half_width;
              left_px++)
         {
-            // Update the right_px value to match the left, subtracting
-            // 1 to account for zero-index.
+            // Update the right_px value to match the left (zero-index).
             right_px = width - left_px - 1;
 
             // Switch left pixel with corresponding right pixel
@@ -127,7 +126,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 }
 
 
-// Blur image
+// Blur image.
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // Make variables
