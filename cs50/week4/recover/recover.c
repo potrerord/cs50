@@ -4,18 +4,22 @@
 #include <stdlib.h>
 
 
-// Number of bytes per block in FAT file system.
-int FATBLOCK_SIZE = 512;
+// Constant: Number of bytes per block in FAT file system.
+const int BLOCK_SIZE = 512;
 
-// Define data type FATBLOCK as 512 unsigned integers.
-typedef uint8_t FATBLOCK[FATBLOCK_SIZE];
+// Define data type BLOCK as 512 unsigned integers.
+typedef uint8_t BLOCK[BLOCK_SIZE];
 typedef uint8_t BYTE;
 
-// Number of half-bytes in JPEG signature.
-const int JPEG_SIG_SIZE = 7;
+// Constant: Number of bytes in JPEG signature.
+const int SIG_SIZE = 3;
 
-// Define constant first 3 bytes of hex JPEG signature.
-const int JPEG_SIG = {0xff, 0xd8, 0xff};
+// Constant: first 3 bytes of hex JPEG signature.
+const int SIG = {0xff, 0xd8, 0xff};
+
+
+// Function prototypes.
+
 
 
 
@@ -37,19 +41,16 @@ int main(int argc, char *argv[])
     }
 
     // Create a buffer for a block of data.
-    FATBLOCK buffer;
+    BLOCK buffer;
 
-    // Read 1 byte from card file at a time until end of file.
-    while (fread(buffer, 1, FATBLOCK_SIZE, card) == FATBLOCK_SIZE)
+    // Iteratively read 1 block into buffer until end of file.
+    while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
 
-
-        // Scan the first 3 bytes
-        for (int i = 0; i < 3; i++)
+        // Scan the first 3 bytes for JPEG signature.
+        if (!isjpeg(buffer))
         {
-            // Scan the 1-3 bytes for 0xff 0xd8 0xff, or 11111111 11011000 11111111 in binary
-            if (buffer[i] ==
-
+            continue;
         }
 
         // If you use malloc() you need to use free()
@@ -93,4 +94,18 @@ int main(int argc, char *argv[])
 
     }
 
+}
+
+bool isjpeg(BLOCK)
+{
+    for (int i = 0; i < 3; i++)
+        {
+            if (buffer[i] != SIG[i])
+            {
+                return false;
+            }
+        }
+
+    
+    return true;
 }
