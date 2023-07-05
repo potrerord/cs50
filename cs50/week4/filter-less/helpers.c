@@ -142,8 +142,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    // Make variables
-    int sum = 0;
+    // Declare variables for loop.
+    int sum;
+    int count;
     int blur_avg;
 
     // Iterate over every pixel in row px_row and column px_col.
@@ -155,7 +156,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             sum = 0;
             count = 0;
 
-            // Scan the copy and get the 3x3 grid.
+            // Get values from surrounding pixels (3x3 square).
             for (int i = -1; i < 2; i++)
             {
                 // Skip calculation if row would go out of range.
@@ -172,13 +173,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                         continue;
                     }
 
-                    sum += copy[px_row + i][px_col + j]
+                    // Add value to sum and increment count variable.
+                    sum += copy[px_row + i][px_col + j];
                     count++;
-
                 }
             }
 
-            blur_avg = (float)sum / count
+            // Calculate average of summed pixels.
+            blur_avg = (float)sum / count;
+
+            image[px_row][px_col] = blur_avg;
         }
     }
 
