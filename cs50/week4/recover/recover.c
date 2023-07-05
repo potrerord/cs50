@@ -7,13 +7,12 @@ int main(int argc, char *argv[])
 
 
 
-    // Scan the 1-3 bytes for 0xff 0xd8 0xff
+    // Scan the 1-3 bytes for 0xff 0xd8 0xff, or 11111111 11011000 11111111 in binary
+    // Also scan the 4th byte to see if it starts with 0xe, or 1110 in binary
 
 
 
-    // Scan the 4th byte for 1110____ and then anything else
-
-
+    // Each FAT block is 512 bytes
 
     // when you find a jpeg signature on the memory card
 
@@ -31,5 +30,5 @@ int main(int argc, char *argv[])
 
     //
 
-    
+
 }
