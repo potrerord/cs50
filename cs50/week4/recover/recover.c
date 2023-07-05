@@ -41,16 +41,28 @@ int main(int argc, char *argv[])
         // Scan the 1-3 bytes for 0xff 0xd8 0xff, or 11111111 11011000 11111111 in binary
         // Also scan the 4th byte to see if it starts with 0xe, or 1110 in binary
 
-        
+
 
         // when you find a jpeg signature on the memory card
             // open a new file and write to it from the memory card
-                // The files you generate should each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
+                // The files you generate should each be named ###.jpg,
+                // where ### is a three-digit decimal number, starting
+                // with 000 for the first image and counting up.
                 // Use a loop for this
-                // printf("%03d" or i? d for demical)
+                // printf("%03d" or i? d for decimal)
+
+        // Keep in mind your program should number the files it outputs
+        // by naming each ###.jpg, where ### is three-digit decimal
+        // number from 000 on up. Befriend sprintf and note that sprintf
+        //  stores a formatted string at a location in memory. Given the
+        //  prescribed ###.jpg format for a JPEG’s filename, how many
+        // bytes should you allocate for that string? (Don’t forget the
+        // NUL character!)
 
 
-        // close the file when you encounter another signature
+
+
+        // fclose the file when you encounter another signature
 
 
         // Finish when there's no data left to read
