@@ -10,6 +10,10 @@ int FATBLOCK_SIZE = 512;
 // Define data type FATBLOCK as 512 unsigned integers.
 typedef uint8_t FATBLOCK[FATBLOCK_SIZE];
 
+// Constant
+Scan the 1-3 bytes for 0xff 0xd8 0xff, or 11111111 11011000 11111111 in binary
+
+
 
 int main(int argc, char *argv[])
 {
@@ -34,12 +38,12 @@ int main(int argc, char *argv[])
     // Loop while there is still data to be read on the memory card.
     while (fread(buffer, 1, FATBLOCK_SIZE, card) == 512)
     {
-        
+
 
         // Scan the first 3 bytes
         for (int i = 0; i < 3; i++)
         {
-
+            // Scan the 1-3 bytes for 0xff 0xd8 0xff, or 11111111 11011000 11111111 in binary
         }
 
         // If you use malloc() you need to use free()
