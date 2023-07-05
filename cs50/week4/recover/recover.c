@@ -27,7 +27,8 @@ int main(int argc, char *argv[])
     // when you find a jpeg signature on the memory card
         // open a new file and write to it from the memory card
             // The files you generate should each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
-            // Use a loop for this - find some way to make it 3 digits 
+            // Use a loop for this
+            // printf("%03d")
 
 
     // close the file when you encounter another signature
