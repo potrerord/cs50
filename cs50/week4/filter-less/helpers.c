@@ -159,7 +159,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int px_col = 0; px_col < width; px_col++)
         {
-            // Reset sums and count
+            // Reset sums and count.
             r_sum = 0;
             g_sum = 0;
             b_sum = 0;
