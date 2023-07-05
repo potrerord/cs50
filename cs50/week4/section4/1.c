@@ -9,5 +9,5 @@ int main(void)
 
 
     printf("The value of the int a is %i; \n", a);
-    printf("The value of the pointer b` is %p; \n", b);
+    printf("The value of the pointer b` is %i  ; \n", *b);
 }
