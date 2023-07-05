@@ -48,6 +48,9 @@ int main(int argc, char *argv[])
         // Initiate file number variable.
         int file_num = 0;
 
+        // Number of characters in a "###.jpg" filename string.
+        const int FILENAME_SIZE = 8;
+
         // Name file.
         while (true)
         {
@@ -57,14 +60,15 @@ int main(int argc, char *argv[])
                 return 1;
             }
 
-            char *filename
+            // Create buffer for filename.
+            char buffer2[FILENAME_SIZE];
+
+            // Create filename.
+            sprintf(buffer2, "###.jpg");
 
             // Open a new file and write to it from the memory card.
             fopen(filename, "w");
             file_num++;
-
-        // Open a new file and write to it from the memory card.
-        fopen(###.jpg, "w");
 
             // The files you generate should each be named ###.jpg,
             // where ### is a three-digit decimal number, starting
