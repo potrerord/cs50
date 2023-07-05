@@ -34,7 +34,7 @@ char *concatenate(char *s1, char *s2)
     char *result = malloc((total_length + 1) * sizeof(char));
     if (result == NULL)
     {
-        return result;
+        return NULL;
     }
 
     // Copy the first string into the combo string.
