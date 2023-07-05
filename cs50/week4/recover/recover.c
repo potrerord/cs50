@@ -51,17 +51,16 @@ int main(int argc, char *argv[])
         // Name file.
         while (true)
         {
-            
-            BLOCK *file = malloc(BLOCK_SIZE);
-
             // Return error 1 if memory was not successfully allocated.
             if (file == NULL)
             {
                 return 1;
             }
 
+            char *filename = "";
+
             // Open a new file and write to it from the memory card.
-            fopen(file_num.jpg, "w");
+            fopen(filename, "w");
             file_num++;
 
         // Open a new file and write to it from the memory card.
@@ -81,7 +80,6 @@ int main(int argc, char *argv[])
 
 
 
-            free()
         }
 
 
