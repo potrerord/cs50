@@ -7,7 +7,11 @@ int main(int argc, char *argv[])
 
 
 
-    // Scan the 1-3 for 
+    // Scan the 1-3 bytes for 0xff 0xd8 0xff
+
+
+
+    // Scan the 4th byte for 1110____ and then anything else
 
 
 
