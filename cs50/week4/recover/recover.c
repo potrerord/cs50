@@ -109,6 +109,7 @@ bool isjpeg(BLOCK subject)
         }
 
     // Check if the first half of the fourth byte is 0xe.
+    
 
     return true;
 }
