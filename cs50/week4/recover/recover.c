@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     FATBLOCK buffer;
 
     // Loop while there is still data to be read on the memory card.
-    while (fread(buffer, sizeof(FATBLOCK), , card) == 512)
+    while (fread(buffer, 1, FATBLOCK, card) == 512)
     {
 
 
@@ -44,6 +44,8 @@ int main(int argc, char *argv[])
         for (int i = 0; i < 3; i++)
         {
             // Scan the 1-3 bytes for 0xff 0xd8 0xff, or 11111111 11011000 11111111 in binary
+            if buffer[i]
+
         }
 
         // If you use malloc() you need to use free()
