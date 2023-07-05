@@ -134,7 +134,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     // etc. making a 3x3 box including the center pixel, or whatever
     // portion of the box is available if it's at an edge
 
-    
+    // when you subtract make sure the result is >= 0
+    // when you add make sure the result is < height or width
 
 
 
