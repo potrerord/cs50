@@ -5,6 +5,9 @@
 // Global constant for number of RGB values.
 const int RGB_VALUES = 3;
 
+// Global constant for maximum color value.
+const int MAX_COLOR = 255;
+
 
 // Convert image to grayscale.
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -86,9 +89,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 sepia[rgb_row] = round(sepia[rgb_row]);
 
                 // Cap each converted sepia value at 255.
-                if (sepia[rgb_row] > 255)
+                if (sepia[rgb_row] > MAX_COLOR)
                 {
-                    sepia[rgb_row] = 255;
+                    sepia[rgb_row] = MAX_COLOR;
                 }
             }
 
