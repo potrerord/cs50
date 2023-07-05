@@ -8,6 +8,11 @@ const int RGB_VALUES = 3;
 // Global constant for maximum color value.
 const int MAX_COLOR = 255;
 
+// Global constants for notating R/G/B iteratively.
+const int R = 0;
+const int G = 1;
+const int B = 2;
+
 
 // Convert image to grayscale.
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -68,9 +73,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         for (int px_col = 0; px_col < width; px_col++)
         {
             // Store R/G/B values for the pixel in orig array.
-            orig[0] = image[px_row][px_col].rgbtRed;
-            orig[1] = image[px_row][px_col].rgbtGreen;
-            orig[2] = image[px_row][px_col].rgbtBlue;
+            orig[R] = image[px_row][px_col].rgbtRed;
+            orig[B] = image[px_row][px_col].rgbtGreen;
+            orig[G] = image[px_row][px_col].rgbtBlue;
 
             // Initialize all sepia values to 0.0 for conversion sum.
             float sepia[RGB_VALUES] = {0.0};
@@ -96,9 +101,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // Update image pixels with sepia values.
-            image[px_row][px_col].rgbtRed = sepia[0];
-            image[px_row][px_col].rgbtGreen = sepia[1];
-            image[px_row][px_col].rgbtBlue = sepia[2];
+            image[px_row][px_col].rgbtRed = sepia[R];
+            image[px_row][px_col].rgbtGreen = sepia[G];
+            image[px_row][px_col].rgbtBlue = sepia[B];
         }
     }
 
