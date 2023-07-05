@@ -4,6 +4,18 @@
 int main(int argc, char *argv[])
 {
     // Define struct for FAT blocks
+    // Each FAT block is 512 bytes
+
+
+    // argv[1] is the name of a forensic image (memory card) from which to recover JPEGs
+        // If not executed with exactly one command line argument, remind user of correct usage and return 1
+
+
+    // Open the memory card
+        // If the forensic image cannot be opened for reading, program should inform user and return 1
+
+
+    // If you use malloc() you need to use free()
 
 
     // loop for each block of 512 bytes
@@ -12,15 +24,9 @@ int main(int argc, char *argv[])
 
 
 
-    // Each FAT block is 512 bytes
-
     // when you find a jpeg signature on the memory card
-
-
-
-    // open a new file and write to it from the memory card
-
-
+        // open a new file and write to it from the memory card
+            // The files you generate should each be named ###.jpg, where ### is a three-digit decimal number, starting with 000 for the first image and counting up.
 
 
     // close the file when you encounter another signature
