@@ -43,7 +43,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
     // Store constant sepia conversion factors.
-    float CONV_FACTORS[RGB_VALUES][RGB_VALUES] =
+    const float CONV_FACTORS[RGB_VALUES][RGB_VALUES] =
     {
         // Row 0: RED;   Columns: R, G, B
         {0.393, 0.769, 0.189},
