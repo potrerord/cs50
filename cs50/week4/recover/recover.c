@@ -9,9 +9,13 @@ int FATBLOCK_SIZE = 512;
 
 // Define data type FATBLOCK as 512 unsigned integers.
 typedef uint8_t FATBLOCK[FATBLOCK_SIZE];
+typedef 
 
-// Constant JPEG signature (11111111 11011000 11111111 in binary).
-const int JPEG_SIG = {0xff, 0xd8, 0xff}
+// Number of half-bytes in JPEG signature.
+const int JPEG_SIG_SIZE = 7
+
+// Define constant hex JPEG signature.
+const int JPEG_SIG = {0xf, 0xf, 0xd, 0x8, 0xf, 0xf, 0xe}
 
 
 
