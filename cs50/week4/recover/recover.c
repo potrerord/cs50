@@ -51,10 +51,19 @@ int main(int argc, char *argv[])
         // Name file.
         while (true)
         {
+            
+            BLOCK *file = malloc(BLOCK_SIZE);
+
+            // Return error 1 if memory was not successfully allocated.
+            if (file == NULL)
+            {
+                return 1;
+            }
+
             // Open a new file and write to it from the memory card.
             fopen(file_num.jpg, "w");
             file_num++;
-        }
+
         // Open a new file and write to it from the memory card.
         fopen(###.jpg, "w");
 
@@ -72,8 +81,8 @@ int main(int argc, char *argv[])
 
 
 
-
-
+            free()
+        }
 
 
         // fclose the file when you encounter another signature
