@@ -187,10 +187,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            // Calculate average of summed pixels.
-            r_blur = (int)(r_sum / count);
-            g_blur = (int)(g_sum / count);
-            b_blur = (int)(b_sum / count);
+            // Calculate avg of summed pixels rounded to nearest int.
+            r_blur = (int)round((r_sum / count));
+            g_blur = (int)round((g_sum / count));
+            b_blur = (int)round((b_sum / count));
 
             // Update image pixels with blur values.
             image[px_row][px_col].rgbtRed = r_blur;
