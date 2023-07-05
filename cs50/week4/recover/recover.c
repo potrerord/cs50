@@ -33,10 +33,10 @@ int main(int argc, char *argv[])
     }
 
     // Create a buffer for a block of data.
-    BLOCK buffer;
+    BLOCK buffer_block;
 
     // Iteratively read 1 block into buffer until end of file.
-    while (fread(buffer, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
+    while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
 
         // Skip if the buffer does not contain a JPEG.
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
                 return 1;
             }
 
-            char *filename = "";
+            char *filename
 
             // Open a new file and write to it from the memory card.
             fopen(filename, "w");
