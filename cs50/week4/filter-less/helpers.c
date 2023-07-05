@@ -130,6 +130,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    // Make variables
+    int sum = 0;
+
     // Make copy to reference pre-blur image data.
     RGBTRIPLE copy[height][width];
     for (int i = 0; i < height; i++)
@@ -144,12 +147,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int px_col = 0; px_col < width; px_col++)
         {
+            // Reset sum
+            sum = 0;
+
             // scan the copy and get the 3x3 grid
             for (int i = -1; i < 2; i++)
             {
+                // Watch out for if px_row + i is < 0 or > height
+
                 for (int j = -1; j < 2; j++)
                 {
-                    
+                    // Watch out for if px_col + j is < 0 or > width
+
+                    sum += copy[px_row + i][px_col + j]
+
                 }
             }
         }
