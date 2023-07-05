@@ -45,13 +45,23 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        fopen()
-        // open a new file and write to it from the memory card
+        // Initiate file number variable.
+        int file_num = 0;
+
+        // Name file.
+        while (true)
+        {
+            // Open a new file and write to it from the memory card.
+            fopen(file_num.jpg, "w");
+            file_num++;
+        }
+        // Open a new file and write to it from the memory card.
+        fopen(###.jpg, "w");
+
             // The files you generate should each be named ###.jpg,
             // where ### is a three-digit decimal number, starting
             // with 000 for the first image and counting up.
-            // Use a loop for this
-            // printf("%03d" or i? d for decimal)
+            // Use a loop for this - printf("%03d" or i? d for decimal)?
             // Keep in mind your program should number the files it outputs
             // by naming each ###.jpg, where ### is three-digit decimal
             // number from 000 on up. Befriend sprintf and note that sprintf
@@ -79,6 +89,8 @@ int main(int argc, char *argv[])
 
 
     }
+
+    // Return 0 when successful.
     return 0;
 }
 
