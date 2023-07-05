@@ -135,7 +135,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image.
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Make a copy to reference pre-blur image data.
+    // Make a copy of image file to reference pre-blur image data.
     RGBTRIPLE copy[height][width];
     for (int i = 0; i < height; i++)
     {
@@ -145,7 +145,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    // Declare variables for loop.
+    // Declare variables for loops.
     float r_sum;
     float g_sum;
     float b_sum;
@@ -176,7 +176,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
                 for (int j = -1; j < 2; j++)
                 {
-                    // Skip calculation if col would go out of range.
+                    // Skip calculation if column would go out of range.
                     if (px_col + j < 0 || px_col + j >= width)
                     {
                         continue;
