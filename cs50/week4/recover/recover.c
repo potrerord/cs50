@@ -15,9 +15,21 @@ int main(int argc, char *argv[])
 
 
 
-    // when you find one
+    // when you find a jpeg signature on the memory card
 
 
 
-    // open a file and write to it
+    // open a new file and write to it from the memory card
+
+
+
+
+    // close the file when you encounter another signature
+
+
+
+
+    //
+
+    
 }
