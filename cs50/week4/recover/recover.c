@@ -19,7 +19,7 @@ const int SIG = {0xff, 0xd8, 0xff};
 
 
 // Function prototypes.
-
+bool isjpeg(BLOCK subject);
 
 
 
@@ -96,16 +96,17 @@ int main(int argc, char *argv[])
 
 }
 
-bool isjpeg(BLOCK)
+bool isjpeg(BLOCK subject)
 {
+    // Check if the first three bytes match the JPEG signature.
     for (int i = 0; i < 3; i++)
         {
-            if (buffer[i] != SIG[i])
+            if (subject[i] != SIG[i])
             {
                 return false;
             }
         }
 
-    
+
     return true;
 }
