@@ -61,11 +61,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         for (int px_col = 0; px_col < width; px_col++)
         {
             // Store R/G/B values for the pixel in orig array.
-            orig = {
-                image[px_row][px_col].rgbtRed,
-                image[px_row][px_col].rgbtGreen,
-                image[px_row][px_col].rgbtBlue
-            };
+            orig = {image[px_row][px_col].rgbtRed,
+                    image[px_row][px_col].rgbtGreen,
+                    image[px_row][px_col].rgbtBlue};
 
             // Initialize all sepia values to 0.0 for conversion sum.
             float sepia[RGB_VALUES] = {0.0};
