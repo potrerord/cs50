@@ -1,13 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+// Define struct for FAT blocks?
+// Each FAT block is 512 bytes
+
+
+
 int main(int argc, char *argv[])
 {
-    // Define struct for FAT blocks
-    // Each FAT block is 512 bytes
+    // Accept command-line argument.
+    
 
-
-    // argv[1] is the name of a forensic image (memory card) from which to recover JPEGs
+        // argv[1] is the name of a forensic image (memory card) from which to recover JPEGs
         // If not executed with exactly one command line argument, remind user of correct usage and return 1
 
 
