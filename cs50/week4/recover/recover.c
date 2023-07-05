@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
             continue;
         }
 
-
+        
         // If you use malloc() you need to use free()
 
 
@@ -94,15 +94,19 @@ int main(int argc, char *argv[])
 bool isjpeg(BLOCK subject)
 {
     // Constant: Number of bytes in JPEG signature.
-    const int SIG_SIZE = 3;
+    const int SIG_SIZE = 4;
 
     // Constant: first 3 bytes of hex JPEG signature.
     const int SIG = {0xff, 0xd8, 0xff};
 
-    const int hex_base = 16;
+    // Constant: first hex digit of fourth byte of JPEG signature.
+    const int SIG_3 = 0xe;
+
+    // Constant: base used in hex integers.
+    const int HEX_BASE = 16;
 
     // Check if the first three bytes match the JPEG signature.
-    for (int i = 0; i < SIG_SIZE; i++)
+    for (int i = 0; i < SIG_SIZE - 1; i++)
         {
             if (subject[i] != SIG[i])
             {
@@ -110,8 +114,8 @@ bool isjpeg(BLOCK subject)
             }
         }
 
-    // Check if the first half of the fourth byte is 0xe.
-    if (subject[3] / hex_base) % hex_base != 0xe
+    // Check if the first hex digit of the final signature byte is 0xe.
+    if (subject[SIG_SIZE] / hex_base) % hex_base != SIG_3
     {
         return false;
     }
