@@ -174,7 +174,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            blur_avg = (float) sum / count
+            blur_avg = (float)sum / count
         }
     }
 
