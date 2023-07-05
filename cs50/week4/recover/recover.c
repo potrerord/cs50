@@ -1,14 +1,14 @@
+// Recovers JPEG data from command-line argument memory card file.
+
 #include <stdio.h>
 #include <stdlib.h>
 
 
-typedef uint8_t FATBLOCK[512];
+// Define block size in FAT file system.
+int FATBLOCK_SIZE = 512;
 
-typedef struct
-{
-    BYTE
-}
-FATBLOCK;
+// Define data type FATBLOCK as 512 unsigned integers.
+typedef uint8_t FATBLOCK[FATBLOCK_SIZE];
 
 
 int main(int argc, char *argv[])
@@ -30,8 +30,11 @@ int main(int argc, char *argv[])
 
 
     // Create a buffer for a block of data.
-    uint8_t buffer[512];
+    FATBLOCK buffer;
 
+
+    // Loop while there is still data to be read on the memory card.
+    while (fread(card, 1, FATBLOCK_SIZE, ))
 
     // If you use malloc() you need to use free()
 
