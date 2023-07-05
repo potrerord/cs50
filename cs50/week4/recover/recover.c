@@ -8,6 +8,7 @@ typedef struct
 {
     BYTE
 }
+FATBLOCK
 
 
 int main(int argc, char *argv[])
