@@ -103,7 +103,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     // Make buffer variable to store pixels being moved.
-    int buffer;
+    RGBTRIPLE buffer;
     int right_px;
 
     // Iterate over all rows.
