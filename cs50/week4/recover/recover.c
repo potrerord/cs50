@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 
-// Define block size in FAT file system.
+// Number of bytes per block in FAT file system.
 int FATBLOCK_SIZE = 512;
 
 // Define data type FATBLOCK as 512 unsigned integers.
