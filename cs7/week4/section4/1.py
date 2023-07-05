@@ -14,7 +14,7 @@ def main():
     dream_job("not chill", "short", "short")
     print()
 
-    isfactor(17, 100000001)
+    isfactor(100000001, 17)
     print()
 
 
@@ -55,11 +55,11 @@ def dream_job(manager, commute, workday):
 # not. (e.g.   6 is divisible by 2, so it would print factor)
 
 def isfactor(a: int, b: int) -> bool:
-    if b % a == 0:
-        print(str(a), "is a factor of", str(b) + ".")
+    if a % b == 0:
+        print(str(b), "is a factor of", str(a) + ".")
         return True
     else:
-        print(str(a), "is not a factor of", str(b) + ".")
+        print(str(b), "is not a factor of", str(a) + ".")
         return False
 
 
