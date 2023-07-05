@@ -118,7 +118,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             // Update the right_px value to match the left (zero-index).
             right_px = width - left_px - 1;
 
-            // Switch left pixel with corresponding right pixel
+            // Switch left pixel with corresponding right pixel.
             buffer = image[px_row][left_px];
             image[px_row][left_px] = image[px_row][right_px];
             image[px_row][right_px] = buffer;
