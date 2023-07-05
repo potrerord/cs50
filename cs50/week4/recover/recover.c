@@ -9,7 +9,6 @@ int FATBLOCK_SIZE = 512;
 
 // Define data type FATBLOCK as 512 unsigned integers.
 typedef uint8_t FATBLOCK[FATBLOCK_SIZE];
-typedef 
 
 // Number of half-bytes in JPEG signature.
 const int JPEG_SIG_SIZE = 7
