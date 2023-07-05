@@ -11,13 +11,6 @@ const int BLOCK_SIZE = 512;
 typedef uint8_t BLOCK[BLOCK_SIZE];
 typedef uint8_t BYTE;
 
-// Constant: Number of bytes in JPEG signature.
-const int SIG_SIZE = 3;
-
-// Constant: first 3 bytes of hex JPEG signature.
-const int SIG = {0xff, 0xd8, 0xff};
-
-
 // Function prototypes.
 bool isjpeg(BLOCK subject);
 
@@ -97,10 +90,19 @@ int main(int argc, char *argv[])
 
 }
 
+// Determine if beginning of BLOCK matches JPEG signature.
 bool isjpeg(BLOCK subject)
 {
+    // Constant: Number of bytes in JPEG signature.
+    const int SIG_SIZE = 3;
+
+    // Constant: first 3 bytes of hex JPEG signature.
+    const int SIG = {0xff, 0xd8, 0xff};
+
+    const int hex_base = 16;
+
     // Check if the first three bytes match the JPEG signature.
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < SIG_SIZE; i++)
         {
             if (subject[i] != SIG[i])
             {
@@ -109,7 +111,11 @@ bool isjpeg(BLOCK subject)
         }
 
     // Check if the first half of the fourth byte is 0xe.
-    
+    if (subject[3] / hex_base) % hex_base != 0xe
+    {
+        return false;
+    }
 
+    // Return true if first four bytes passed check.
     return true;
 }
