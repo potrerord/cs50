@@ -77,9 +77,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int rgb_col = 0; rgb_col < RGB_VALUES; rgb_col++)
                 {
-                    // Compute sepia values.
-                    sepia[rgb_row] += (CONV_FACTORS[rgb_row][rgb_col] *
-                                       orig[rgb_col]);
+                    // Compute sepia values, rounding each conversion.
+                    sepia[rgb_row] += round((CONV_FACTORS[rgb_row][rgb_col] *
+                                      orig[rgb_col]));
                 }
 
                 // Cap each converted sepia value at 255.
