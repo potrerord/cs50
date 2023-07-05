@@ -6,9 +6,9 @@ typedef uint8_t BYTE;
 
 typedef struct
 {
-    BYTE
+    BYTE 
 }
-FATBLOCK
+FATBLOCK;
 
 
 int main(int argc, char *argv[])
