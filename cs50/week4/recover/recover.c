@@ -4,12 +4,11 @@
 #include <stdlib.h>
 
 
-// Constant: Number of bytes per block in FAT file system.
+// Number of bytes per block in FAT file system.
 const int BLOCK_SIZE = 512;
 
-// Define data type BLOCK as 512 unsigned integers.
+// Data type definitions.
 typedef uint8_t BLOCK[BLOCK_SIZE];
-typedef uint8_t BYTE;
 
 // Function prototypes.
 bool isjpeg(BLOCK subject);
@@ -46,7 +45,7 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        
+
         // If you use malloc() you need to use free()
 
 
@@ -93,16 +92,16 @@ int main(int argc, char *argv[])
 // Determine if beginning of BLOCK matches JPEG signature.
 bool isjpeg(BLOCK subject)
 {
-    // Constant: Number of bytes in JPEG signature.
+    // Number of bytes in JPEG signature.
     const int SIG_SIZE = 4;
 
-    // Constant: first 3 bytes of hex JPEG signature.
+    // First 3 bytes of hex JPEG signature.
     const int SIG = {0xff, 0xd8, 0xff};
 
-    // Constant: first hex digit of fourth byte of JPEG signature.
+    // First hex digit of fourth byte of JPEG signature.
     const int SIG_3 = 0xe;
 
-    // Constant: base used in hex integers.
+    // Base used in hex integers.
     const int HEX_BASE = 16;
 
     // Check if the first three bytes match the JPEG signature.
