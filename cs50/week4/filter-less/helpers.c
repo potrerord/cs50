@@ -140,11 +140,18 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    for (int i = 0; i < height; i++)
+    for (int px_row = 0; px_row < height; px_row++)
     {
-        for (int j = 0; j < width; j++)
+        for (int px_col = 0; px_col < width; px_col++)
         {
-            
+            // scan the copy and get the 3x3 grid
+            for (int i = -1; i < 2; i++)
+            {
+                for (int j = -1; j < 2; j++)
+                {
+                    
+                }
+            }
         }
     }
 
