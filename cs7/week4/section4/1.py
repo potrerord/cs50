@@ -6,9 +6,16 @@ c. Write a function that takes two numbers, a and b, and prints("Factor!") if a 
 """
 
 def main():
+    print()
+
     keep_studying(18)
+    print()
+
     dream_job("not chill", "short", "short")
-    def isfactor(17, 100000001)
+    print()
+
+    isfactor(17, 100000001)
+    print()
 
 
 # a) Write an if statement that indicates the latest you’ll study (e.g.
@@ -19,7 +26,7 @@ def keep_studying(current_hr):
     latest = 22
     earliest = 6
 
-    print("It is currently hour " + current_hr + "of the day.")
+    print("It is currently hour " + str(current_hr) + " of the day.")
 
     if (current_hr % 24 < latest) and (current_hr % 24 > earliest):
         print("Let's keep going!")
@@ -34,10 +41,9 @@ def keep_studying(current_hr):
 
 
 def dream_job(manager, commute, workday):
-    print("The manager is", manager)
-    print("The commute is", commute)
-    print("The workday is", workday)
-    print()
+    print("The manager is", manager + ".")
+    print("The commute is", commute + ".")
+    print("The workday is", workday + ".")
 
     if (manager == "chill" and (commute == "short" or workday == "short")):
         print("Take the job.")
@@ -50,10 +56,10 @@ def dream_job(manager, commute, workday):
 
 def isfactor(a: int, b: int) -> bool:
     if b % a == 0:
-        print("Factor!")
+        print(str(a), "is a factor of", str(b) + ".")
         return True
     else:
-        print("Not a factor.")
+        print(str(a), "is not a factor of", str(b) + ".")
         return False
 
 
