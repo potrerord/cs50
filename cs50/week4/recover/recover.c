@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 
-typedef uint8_t BYTE;
+typedef uint8_t FATBLOCK[512];
 
 typedef struct
 {
-    BYTE 
+    BYTE
 }
 FATBLOCK;
 
