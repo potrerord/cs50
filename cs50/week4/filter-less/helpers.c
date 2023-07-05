@@ -130,6 +130,18 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    // Make copy to reference pre-blur image data.
+    RGBTRIPLE copy[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+
+
+
     // Get the values of the surrounding pixels (row +- 1, column +- 1,
     // etc. making a 3x3 box including the center pixel, or whatever
     // portion of the box is available if it's at an edge
