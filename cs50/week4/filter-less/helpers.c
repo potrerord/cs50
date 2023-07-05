@@ -56,7 +56,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     };
 
 
-    // Create variables to store color values
+    // Create array to store color values.
     int orig[RGB_VALUES];
 
     // Iterate over all pixels in row px_row and column px_col.
@@ -79,7 +79,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
                 {
                     // Compute sepia values.
                     sepia[rgb_row] += (CONV_FACTORS[rgb_row][rgb_col] *
-                                      orig[rgb_col]);
+                                       orig[rgb_col]);
                 }
 
                 // Round sepia value to the nearest int.
