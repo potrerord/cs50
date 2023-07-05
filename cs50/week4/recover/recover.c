@@ -2,22 +2,32 @@
 #include <stdlib.h>
 
 
-// Define struct for FAT blocks?
-// Each FAT block is 512 bytes
-
+def struct
+{
+    
+}
 
 
 int main(int argc, char *argv[])
 {
-    // Accept command-line argument.
-    
+    // Accept a single command-line argument.
+    if (argc != 2)
+    {
+        printf("Usage: ./ recover FILE\n");
+        return 1;
+    }
 
-        // argv[1] is the name of a forensic image (memory card) from which to recover JPEGs
-        // If not executed with exactly one command line argument, remind user of correct usage and return 1
+    // Open the memory card.
+    FILE *card = fopen(argv[1], "r");
+    if (card == NULL)
+    {
+        printf("error: card could not be opened\n");
+        return 1;
+    }
 
 
-    // Open the memory card
-        // If the forensic image cannot be opened for reading, program should inform user and return 1
+    // Create a buffer for a block of data.
+    uint8_t buffer[512];
 
 
     // If you use malloc() you need to use free()
