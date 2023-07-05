@@ -3,10 +3,10 @@
 
 int main(int argc, char *argv[])
 {
-    // Scan until you find 4 blocks of jpeg starter data
+    // Define struct for FAT blocks
 
 
-
+    // loop for each block of 512 bytes
     // Scan the 1-3 bytes for 0xff 0xd8 0xff, or 11111111 11011000 11111111 in binary
     // Also scan the 4th byte to see if it starts with 0xe, or 1110 in binary
 
