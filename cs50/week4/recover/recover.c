@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     FATBLOCK buffer;
 
     // Read 1 byte from card file at a time until end of file.
-    while (fread(buffer, 1, FATBLOCK, card) == FATBLOCK_SIZE)
+    while (fread(buffer, 1, FATBLOCK_SIZE, card) == FATBLOCK_SIZE)
     {
 
 
