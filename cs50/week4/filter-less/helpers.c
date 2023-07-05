@@ -111,7 +111,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
 
         // Stop iteration within each row at halfway point.
-        for (int left_px = 0, int half_width = width / 2; left_px < half_width; left_px++)
+        for (int left_px = 0, half_width = width / 2; left_px < half_width; left_px++)
         {
             // Update the right_px value to match the left, subtracting
             // 1 to account for zero-index.
