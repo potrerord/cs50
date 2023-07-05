@@ -81,9 +81,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             float sepia[RGB_VALUES] = {0.0};
 
             // Convert to sepia using conv_factors row/col structure.
-            for (int rgb_row = 0; rgb_row < RGB_VALUES; rgb_row++)
+            for (int rgb_row = R; rgb_row < RGB_VALUES; rgb_row++)
             {
-                for (int rgb_col = 0; rgb_col < RGB_VALUES; rgb_col++)
+                for (int rgb_col = R; rgb_col < RGB_VALUES; rgb_col++)
                 {
                     // Compute sepia values.
                     sepia[rgb_row] += (CONV_FACTORS[rgb_row][rgb_col] *
