@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
     // Loop while there is still data to be read on the memory card.
     while (fread(buffer, 1, FATBLOCK_SIZE, card) == 512)
     {
+        
 
         // Scan the first 3 bytes
         for (int i = 0; i < 3; i++)
