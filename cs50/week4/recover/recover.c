@@ -34,9 +34,13 @@ int main(int argc, char *argv[])
     // close the file when you encounter another signature
 
 
+    // Finish when there's no data left to read
 
 
-    //
+    // Free the data you were using
+
+
+    // Return 0 if successful
 
 
 }
