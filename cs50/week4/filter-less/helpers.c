@@ -147,22 +147,34 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int px_col = 0; px_col < width; px_col++)
         {
-            // Reset sum
+            // Reset sum and count
             sum = 0;
+            count = 0;
 
             // scan the copy and get the 3x3 grid
             for (int i = -1; i < 2; i++)
             {
                 // Watch out for if px_row + i is < 0 or > height
+                if (px_row + i < 0 || px_row + i >= height)
+                {
+                    continue;
+                }
 
                 for (int j = -1; j < 2; j++)
                 {
                     // Watch out for if px_col + j is < 0 or > width
+                    if (px_col + j < 0 || px_col + j >= width)
+                    {
+                        continue;
+                    }
 
                     sum += copy[px_row + i][px_col + j]
+                    count++;
 
                 }
             }
+
+            blur_avg = (float) sum / count
         }
     }
 
