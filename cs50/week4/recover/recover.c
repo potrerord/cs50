@@ -104,8 +104,8 @@ bool isjpeg(BLOCK subject)
     // Base used in hex integers.
     const int HEX_BASE = 16;
 
-    // Check if the first three bytes match the JPEG signature.
-    for (int i = 0; i < SIG_SIZE - 1; i++)
+    // Compare against all but the final byte in JPEG signature.
+    for (int i = 0; i < SIG_SIZE - 2; i++)
         {
             if (subject[i] != SIG[i])
             {
@@ -113,12 +113,12 @@ bool isjpeg(BLOCK subject)
             }
         }
 
-    // Check if the first hex digit of the final signature byte is 0xe.
-    if (subject[SIG_SIZE] / hex_base) % hex_base != SIG_3
+    // Compare against final byte in JPEG signature.
+    if (subject[SIG_SIZE - 1] / HEX_BASE) % HEX_BASE != SIG_3
     {
         return false;
     }
 
-    // Return true if first four bytes passed check.
+    // Return true if signature match.
     return true;
 }
