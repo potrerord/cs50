@@ -87,7 +87,7 @@ bool isjpeg(BLOCK subject)
     const int SIG_SIZE = 4;
 
     // Bytes 0-2 of hex JPEG signature.
-    const int SIG = {0xff, 0xd8, 0xff};
+    const int SIG[SIG_SIZE - 1] = {0xff, 0xd8, 0xff};
 
     // Byte 3 of hex JPEG signature (relevant first digit).
     const int SIG_3 = 0xe;
@@ -105,7 +105,7 @@ bool isjpeg(BLOCK subject)
         }
 
     // Compare against final byte in JPEG signature.
-    if (subject[SIG_SIZE - 1] / HEX_BASE) % HEX_BASE != SIG_3
+    if ((subject[SIG_SIZE - 1] / HEX_BASE) % HEX_BASE != SIG_3)
     {
         return false;
     }
