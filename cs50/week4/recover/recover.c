@@ -16,7 +16,6 @@ typedef uint8_t BLOCK[BLOCK_SIZE];
 bool jpegstart(BLOCK *subject);
 
 
-
 int main(int argc, char *argv[])
 {
     // Accept a single command-line argument.
@@ -86,7 +85,6 @@ int main(int argc, char *argv[])
     // Close final JPEG file and memory card when complete.
     fclose(file);
     fclose(card);
-    free(buffer_block);
 
     // Return 0 when successful.
     return 0;
