@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
         // Check if block contains start of new JPEG file.
-        if (jpegstart(buffer_block))
+        if (jpegstart(&buffer_block))
         {
             // If not the first JPEG file found, close current file.
             if (file_num != 0)
@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
 
 
 // Determine if beginning of BLOCK matches JPEG signature.
-bool jpegstart(BLOCK subject)
+bool jpegstart(BLOCK *subject)
 {
     // Number of bytes in JPEG signature.
     const int SIG_SIZE = 4;
