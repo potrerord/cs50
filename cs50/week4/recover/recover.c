@@ -95,12 +95,12 @@ bool isjpeg(BLOCK subject)
 
     // Compare against all but the final byte in JPEG signature.
     for (int i = 0; i < SIG_SIZE - 2; i++)
+    {
+        if (subject[i] != SIG[i])
         {
-            if (subject[i] != SIG[i])
-            {
-                return false;
-            }
+            return false;
         }
+    }
 
     // Compare against final byte in JPEG signature.
     if ((subject[SIG_SIZE - 1] / HEX_BASE) % HEX_BASE != SIG_3)
