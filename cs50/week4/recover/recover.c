@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
         // If file is the start of a new JPEG, close/create new file.
-        if (isjpeg(buffer_block))
+        if (isjpeg(buffer_block) && file_num == 0)
         {
             fclose(file);
 
