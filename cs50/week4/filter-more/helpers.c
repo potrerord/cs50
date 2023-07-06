@@ -34,88 +34,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-
-// Cap a double at a maximum.
-double cap(double num, double max)
-{
-    if (num > max)
-    {
-        return max;
-    }
-
-    return num;
-}
-
-
-// Convert image to sepia.
-void sepia(int height, int width, RGBTRIPLE image[height][width])
-{
-    // Number of RGB values.
-    const int RGB_VALUES = 3;
-
-    // Maximum color value.
-    const int MAX_COLOR = 255;
-
-    // Constants for notating R/G/B iteratively.
-    const int R = 0;
-    const int G = 1;
-    const int B = 2;
-
-    // Store constant sepia conversion factors.
-    const float CONV_FACTORS[RGB_VALUES][RGB_VALUES] =
-    {
-        // Row 0: RED;   Columns: R, G, B
-        {0.393, 0.769, 0.189},
-
-        // Row 1: GREEN; Columns: R, G, B
-        {0.349, 0.686, 0.168},
-
-        // Row 2: BLUE;  Columns: R, G, B
-        {0.272, 0.534, 0.131}
-    };
-
-
-    // Create array to store original color values.
-    int orig[RGB_VALUES];
-
-    // Iterate over all pixels in row px_row and column px_col.
-    for (int px_row = 0; px_row < height; px_row++)
-    {
-        for (int px_col = 0; px_col < width; px_col++)
-        {
-            // Store R/G/B values for the pixel in orig array.
-            orig[R] = image[px_row][px_col].rgbtRed;
-            orig[G] = image[px_row][px_col].rgbtGreen;
-            orig[B] = image[px_row][px_col].rgbtBlue;
-
-            // Initialize all sepia values to 0.0 for conversion sum.
-            float sepia[RGB_VALUES] = {0.0};
-
-            // Convert to sepia using conv_factors row/col structure.
-            for (int rgb_row = R; rgb_row < RGB_VALUES; rgb_row++)
-            {
-                for (int rgb_col = R; rgb_col < RGB_VALUES; rgb_col++)
-                {
-                    // Compute sepia values.
-                    sepia[rgb_row] += (CONV_FACTORS[rgb_row][rgb_col] *
-                                       orig[rgb_col]);
-                }
-
-                // Round sepia value to the nearest int, capped at 255.
-                sepia[rgb_row] = cap(round(sepia[rgb_row]), MAX_COLOR);
-            }
-
-            // Update image pixels with sepia values.
-            image[px_row][px_col].rgbtRed = sepia[R];
-            image[px_row][px_col].rgbtGreen = sepia[G];
-            image[px_row][px_col].rgbtBlue = sepia[B];
-        }
-    }
-
-    return;
-}
-
-
 // Reflect image horizontally.
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -143,7 +61,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
     return;
 }
-
 
 // Blur image.
 void blur(int height, int width, RGBTRIPLE image[height][width])
@@ -212,6 +129,145 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[px_row][px_col].rgbtRed = r_blur;
             image[px_row][px_col].rgbtGreen = g_blur;
             image[px_row][px_col].rgbtBlue = b_blur;
+        }
+    }
+
+    return;
+}
+
+
+// Cap a double at a maximum.
+double cap(double num, double max)
+{
+    if (num > max)
+    {
+        return max;
+    }
+
+    return num;
+}
+
+
+// Detect edges.
+void edges(int height, int width, RGBTRIPLE image[height][width])
+{
+    // Number of RGB values.
+    const int RGB_VALUES = 3;
+
+    // Number of squares in 3x3 grid.
+    const int GRID_VALUES = 3;
+
+    // Maximum color value.
+    const int MAX_COLOR = 255;
+
+    // Constants for notating R/G/B iteratively.
+    const int R = 0;
+    const int G = 1;
+    const int B = 2;
+
+    // Sobel operator kernels.
+    const float GX_KERNEL[3][3] =
+    {
+        {-1, 0, 1},
+        {-2, 0, 2},
+        {-1, 0, 1}
+    };
+
+    const float GY_KERNEL[3][3] =
+    {
+        {-1, -2, -1},
+        { 0,  0,  0},
+        { 1,  2,  1}
+    };
+
+    // Make a copy of image file to reference original image data.
+    RGBTRIPLE copy[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+
+    // Declare variables for loops.
+    float r_sum_gx;
+    float g_sum_gx;
+    float b_sum_gx;
+    float r_sum_gy;
+    float g_sum_gy;
+    float b_sum_gy;
+    int count;
+    double r_sobel_raw;
+    double g_sobel_raw;
+    double b_sobel_raw;
+    int r_sobel;
+    int g_sobel;
+    int b_sobel;
+
+    // Iterate over all pixels in row px_row and column px_col.
+    for (int px_row = 0; px_row < height; px_row++)
+    {
+        for (int px_col = 0; px_col < width; px_col++)
+        {
+            // Reset sums.
+            r_sum_gx = 0;
+            g_sum_gx = 0;
+            b_sum_gx = 0;
+            r_sum_gy = 0;
+            g_sum_gy = 0;
+            b_sum_gy = 0;
+
+            // Get values from surrounding pixels (3x3 square).
+            for (int i = -1; i < 2; i++)
+            {
+                // Skip calculation if row would go out of range.
+                if (px_row + i < 0 || px_row + i >= height)
+                {
+                    continue;
+                }
+
+                for (int j = -1; j < 2; j++)
+                {
+                    // Skip calculation if column would go out of range.
+                    if (px_col + j < 0 || px_col + j >= width)
+                    {
+                        continue;
+                    }
+
+                    // Gx: Add values to sums.
+                    r_sum_gx += (float)(copy[px_row + i][px_col + j].rgbtRed
+                                        * GX_KERNEL[i + 1][j + 1]);
+                    g_sum_gx += (float)(copy[px_row + i][px_col + j].rgbtGreen
+                                        * GX_KERNEL[i + 1][j + 1]);
+                    b_sum_gx += (float)(copy[px_row + i][px_col + j].rgbtBlue
+                                        * GX_KERNEL[i + 1][j + 1]);
+
+                    // Gy: Add values to sums.
+                    r_sum_gy += (float)(copy[px_row + i][px_col + j].rgbtRed
+                                        * GY_KERNEL[i + 1][j + 1]);
+                    g_sum_gy += (float)(copy[px_row + i][px_col + j].rgbtGreen
+                                        * GY_KERNEL[i + 1][j + 1]);
+                    b_sum_gy += (float)(copy[px_row + i][px_col + j].rgbtBlue
+                                        * GY_KERNEL[i + 1][j + 1]);
+                }
+            }
+
+            // Calculate raw Sobel values.
+            r_sobel_raw = sqrt(pow(r_sum_gx, 2) + pow(r_sum_gy, 2));
+            g_sobel_raw = sqrt(pow(g_sum_gx, 2) + pow(g_sum_gy, 2));
+            b_sobel_raw = sqrt(pow(b_sum_gx, 2) + pow(b_sum_gy, 2));
+
+
+            // Calculate Sobel values rounded to nearest int and capped.
+            r_sobel = (int)cap(round(r_sobel_raw), MAX_COLOR);
+            g_sobel = (int)cap(round(g_sobel_raw), MAX_COLOR);
+            b_sobel = (int)cap(round(b_sobel_raw), MAX_COLOR);
+
+            // Update image pixels with Sobel values.
+            image[px_row][px_col].rgbtRed = r_sobel;
+            image[px_row][px_col].rgbtGreen = g_sobel;
+            image[px_row][px_col].rgbtBlue = b_sobel;
         }
     }
 
