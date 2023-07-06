@@ -13,7 +13,7 @@ const int BLOCK_SIZE = 512;
 typedef uint8_t BLOCK[BLOCK_SIZE];
 
 // Function prototypes.
-bool jpegstart(BLOCK subject);
+bool jpegstart(BLOCK *subject);
 
 
 
@@ -110,14 +110,14 @@ bool jpegstart(BLOCK *subject)
     // Compare against all but the final byte in JPEG signature.
     for (int i = 0; i < SIG_SIZE - 2; i++)
     {
-        if (subject[i] != SIG[i])
+        if (*subject[i] != SIG[i])
         {
             return false;
         }
     }
 
     // Compare against final byte in JPEG signature.
-    if ((subject[SIG_SIZE - 1] / HEX_BASE) % HEX_BASE != SIG_3)
+    if ((*subject[SIG_SIZE - 1] / HEX_BASE) % HEX_BASE != SIG_3)
     {
         return false;
     }
