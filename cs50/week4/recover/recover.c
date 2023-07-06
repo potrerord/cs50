@@ -22,7 +22,6 @@ int main(int argc, char *argv[])
     // Number of chars in "###.jpg" filename string, including \\0'.
     const int FILENAME_SIZE = 8;
 
-
     // Accept a single command-line argument.
     if (argc != 2)
     {
