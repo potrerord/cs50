@@ -42,7 +42,6 @@ int main(int argc, char *argv[])
     // Iteratively read 1 block into buffer until end of file.
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
-
         // Skip if the buffer does not contain a JPEG.
         if (!isjpeg(buffer_block))
         {
@@ -56,20 +55,19 @@ int main(int argc, char *argv[])
         char filename[FILENAME_SIZE];
         sprintf(filename, "{%03d}.jpg", file_num);
 
-        // Open new file and write to it from the memory card.
+        // Write new JPEG file from the memory card.
         fopen(filename, "w");
 
         // Increment file number.
         file_num++;
 
         // fclose the file when you encounter another signature
-
+        fclose(filename)
 
         // Finish when there's no data left to read
 
 
         // Free the data you were using
-        // If you use malloc() you need to use free()
 
 
 
