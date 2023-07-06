@@ -19,9 +19,6 @@ bool isjpeg(BLOCK subject);
 
 int main(int argc, char *argv[])
 {
-    // Number of chars in "###.jpg" filename string, including \\0'.
-    const int FILENAME_SIZE = 8;
-
     // Accept a single command-line argument.
     if (argc != 2)
     {
@@ -51,6 +48,9 @@ int main(int argc, char *argv[])
         {
             continue;
         }
+
+        // Number of chars in "###.jpg" filename string, including \\0'.
+        const int FILENAME_SIZE = 8;
 
         // Create name for new JPEG file.
         char filename[FILENAME_SIZE];
