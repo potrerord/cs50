@@ -56,23 +56,18 @@ int main(int argc, char *argv[])
         sprintf(filename, "{%03d}.jpg", file_num);
 
         // Write new JPEG file from the memory card.
-        fopen(filename, "w");
-        if 
-
-        // Increment file number.
-        file_num++;
-
-        // fclose the file when you encounter another signature
-        fclose(filename)
-
-        // Finish when there's no data left to read
-
-
-        // Free the data you were using
-
-
-
-
+        FILE *file = fopen(filename, "w");
+        if (file != NULL)
+        {
+            fprintf(file, buffer_block);
+            fclose(file);
+            file_num++;
+        }
+        else
+        {
+            printf("error creating new jpeg file.\n")
+            return 2;
+        }
     }
 
     // Return 0 when successful.
