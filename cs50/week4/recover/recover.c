@@ -13,7 +13,7 @@ const int BLOCK_SIZE = 512;
 typedef uint8_t BLOCK[BLOCK_SIZE];
 
 // Function prototypes.
-bool jpegstart(BLOCK *subject);
+bool jpegstart(BLOCK subject);
 
 
 int main(int argc, char *argv[])
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     }
 
     // Create buffer for a block of data.
-    BLOCK *buffer_block = malloc(BLOCK_SIZE);
+    BLOCK buffer_block;
 
     // Variables to make "###.jpg" filenames.
     char filename[8];
@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 
 
 // Determine if beginning of BLOCK matches JPEG signature.
-bool jpegstart(BLOCK *subject)
+bool jpegstart(BLOCK subject)
 {
     // Number of bytes in JPEG signature.
     const int SIG_SIZE = 4;
