@@ -14,16 +14,26 @@ function. For example, print_longer(['chocolate', 'vanilla'],
 """
 
 def main():
+    """"""
     print_longer(arg1, arg2)
 
 
 def print_longer(list1, list2):
-    if len(list1) > len(list2):
-        return list1
-    elif len(list2) > len(list1):
-        return list2
+    """Return longer list from 2 arguments. Print longer list and final
+    element of longer list.
+    """
 
-    # i
+    if len(list1) == len(list2):
+        print("The lists are the same length!")
+        return None
+
+    elif len(list1) > len(list2):
+        longer = list1
+    elif len(list2) > len(list1):
+        longer = list2
+
+    print(f"{} is the longer list and its last element is {longer[len(longer)]}")
+    return longer
 
 
 main()
