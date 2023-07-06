@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     }
 
     // Create buffer for a block of data.
-    BLOCK buffer_block;
+    BLOCK *buffer_block = malloc(BLOCK_SIZE);
 
     // Variables to make "###.jpg" filenames.
     char filename[8];
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
         // Check if block contains start of new JPEG file.
-        if (jpegstart(&buffer_block))
+        if (jpegstart(buffer_block))
         {
             // If not the first JPEG file found, close current file.
             if (file_num != 0)
@@ -86,6 +86,7 @@ int main(int argc, char *argv[])
     // Close final JPEG file and memory card when complete.
     fclose(file);
     fclose(card);
+    free(buffer_block);
 
     // Return 0 when successful.
     return 0;
@@ -110,14 +111,14 @@ bool jpegstart(BLOCK *subject)
     // Compare against all but the final byte in JPEG signature.
     for (int i = 0; i < SIG_SIZE - 2; i++)
     {
-        if (*subject[i] != SIG[i])
+        if (subject[i] != SIG[i])
         {
             return false;
         }
     }
 
     // Compare against final byte in JPEG signature.
-    if ((*subject[SIG_SIZE - 1] / HEX_BASE) % HEX_BASE != SIG_3)
+    if ((subject[SIG_SIZE - 1] / HEX_BASE) % HEX_BASE != SIG_3)
     {
         return false;
     }
