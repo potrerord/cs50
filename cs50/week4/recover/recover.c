@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
             file_num++;
             if (file_num > 999)
             {
-                printf("error: filename exceeds \"999.jpg\"");
+                printf("error: filename exceeds \"999.jpg\"\n");
                 return 2;
             }
         }
