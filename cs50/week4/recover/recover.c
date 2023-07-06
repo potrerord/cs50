@@ -82,6 +82,11 @@ int main(int argc, char *argv[])
             return 3;
         }
     }
+
+    // Close final JPEG file and memory card when complete.
+    fclose(file);
+    fclose(card);
+
     // Return 0 when successful.
     return 0;
 }
