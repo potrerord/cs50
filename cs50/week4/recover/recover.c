@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
             char buffer2[FILENAME_SIZE];
 
             // Create filename.
-            sprintf(buffer2, "###.jpg");
+            sprintf(buffer2, "{%03d}.jpg", i);
 
             // Open a new file and write to it from the memory card.
             fopen(filename, "w");
