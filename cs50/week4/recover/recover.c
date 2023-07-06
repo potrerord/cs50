@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     {
         // If jpeg found
         if (isjpeg(buffer_block))
-
+        {
             // If not the first
             if (file_num != 0)
             {
@@ -55,7 +55,6 @@ int main(int argc, char *argv[])
 
                 // Create name for new JPEG file.
                 sprintf(filename, "%03d.jpg", file_num);
-
             }
 
             // If the first
@@ -63,30 +62,25 @@ int main(int argc, char *argv[])
             {
                 // Create name for new JPEG file.
                 sprintf(filename, "%03d.jpg", file_num);
-
             }
+
+        // Write new JPEG file from the memory card.
+        FILE *file = fopen(filename, "w");
+        if (file != NULL)
         {
-            fclose(file);
-
-
-            // Write new JPEG file from the memory card.
-            FILE *file = fopen(filename, "w");
-            if (file != NULL)
+            fwrite(buffer_block, 1, BLOCK_SIZE, file);
+            file_num++;
+            if (file_num > 999)
             {
-                fwrite(buffer_block, 1, BLOCK_SIZE, file);
-                file_num++;
-                if (file_num > 999)
-                {
-                    printf("error: filename exceeds \"999.jpg\"\n");
-                    return 2;
-                }
+                printf("error: filename exceeds \"999.jpg\"\n");
+                return 2;
             }
-            else
-            {
-                printf("error: could not create jpeg file.\n");
-                return 3;
-            }
-            ;
+        }
+        else
+        {
+            printf("error: could not create jpeg file.\n");
+            return 3;
+        }
         }
 
         // Write new JPEG file from the memory card.
