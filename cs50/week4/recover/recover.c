@@ -92,7 +92,7 @@ int main(int argc, char *argv[])
 }
 
 
-// Determine if beginning of BLOCK matches JPEG signature.                          don't pass the entire block, just do the first 4 bytes
+// Determine if beginning of BLOCK matches JPEG signature.
 bool jpegstart(BLOCK subject)
 {
     // Number of bytes in JPEG signature.
