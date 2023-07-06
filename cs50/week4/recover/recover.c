@@ -44,8 +44,20 @@ int main(int argc, char *argv[])
     // Iteratively read 1 block into buffer until end of file.
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
-        // First jpeg found
-        if (isjpeg(buffer_block) && file_num == 0)
+        // If jpeg found
+        if (isjpeg(buffer_block))
+
+            // If not the first
+            if (file_num != 0)
+            {
+
+            }
+
+            // If the first
+            else
+            {
+                
+            }
         {
             fclose(file);
 
