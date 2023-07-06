@@ -34,10 +34,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // Create a buffer for a block of data.
+    // Create buffer for a block of data.
     BLOCK buffer_block;
 
-    // Initiate file number variable.
+    // Variables to make "###.jpg" filenames.
+    char filename[8];
     int file_num = 0;
 
     // Iteratively read 1 block into buffer until end of file.
@@ -50,7 +51,6 @@ int main(int argc, char *argv[])
         }
 
         // Create name for new JPEG file.
-        char filename[8];
         sprintf(filename, "%03d.jpg", file_num);
 
         // Write new JPEG file from the memory card.
