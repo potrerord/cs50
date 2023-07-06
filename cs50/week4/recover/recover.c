@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 
         // Create name for new JPEG file.
         char filename[FILENAME_SIZE];
-        sprintf(filename, "{%03d}.jpg", file_num);
+        sprintf(filename, "%03d.jpg", file_num);
 
         // Write new JPEG file from the memory card.
         FILE *file = fopen(filename, "w");
