@@ -22,38 +22,24 @@ to print the table. You will get no credit for a solution that uses,
 say, 24 variables and/or 24 print statements instead of a loop.
 
 Time            Fraction Since Midnight
-12:00 AM        0.0000
-1:00 AM         0.0417
-2:00 AM         0.0833
-3:00 AM         0.1250
-4:00 AM         0.1667
-5:00 AM         0.2083
-6:00 AM         0.2500
-7:00 AM         0.2917
-
-CSCI-S7: Introduction to Computer Science with Python
-Problem Set 3
-Page 12
- 8:00 AM
- 9:00 AM
-10:00 AM
-11:00 AM
-12:00 PM
-0.3333
-0.3750
-0.4167
-0.4583
-0.5000
-0.5417
-0.5833
-0.6250
-0.6667
-0.7083
-1:00 PM
-2:00 PM
-3:00 PM
-4:00 PM
-5:00 PM
+ 12:00 AM       0.0000
+ 1:00 AM        0.0417
+ 2:00 AM        0.0833
+ 3:00 AM        0.1250
+ 4:00 AM        0.1667
+ 5:00 AM        0.2083
+ 6:00 AM        0.2500
+ 7:00 AM        0.2917
+ 8:00 AM        0.3333
+ 9:00 AM        0.3750
+10:00 AM        0.4167
+11:00 AM        0.4583
+12:00 PM        0.5000
+ 1:00 PM        0.5417
+ 2:00 PM        0.5833
+ 3:00 PM        0.6250
+ 4:00 PM        0.6667
+ 5:00 PM        0.7083
 ... (Your solution should continue to 11pm)
 """
 
