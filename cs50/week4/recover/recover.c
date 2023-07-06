@@ -35,6 +35,10 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data.
     BLOCK buffer_block;
 
+    // Initiate file number variable.
+    int file_num = 0;
+
+
     // Iteratively read 1 block into buffer until end of file.
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
@@ -45,22 +49,16 @@ int main(int argc, char *argv[])
             continue;
         }
 
-        // Initiate file number variable.
-        int file_num = 0;
-
         // Number of chars in "###.jpg" filename string, including \\0'.
         const int FILENAME_SIZE = 8;
+        
+        // Create name for new JPEG file.
+        char buffer_filename[FILENAME_SIZE];
+        sprintf(buffer_filename, "{%03d}.jpg", i);
 
-        // Increment file_num until .
-        while (true)
-        {
-            // Create name for new JPEG file.
-            char buffer_filename[FILENAME_SIZE];
-            sprintf(buffer_filename, "{%03d}.jpg", i);
-
-            // Open a new file and write to it from the memory card.
-            fopen(filename, "w");
-            file_num++;
+        // Open a new file and write to it from the memory card.
+        fopen(filename, "w");
+        file_num++;
         }
 
         // fclose the file when you encounter another signature
