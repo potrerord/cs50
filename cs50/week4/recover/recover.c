@@ -44,14 +44,32 @@ int main(int argc, char *argv[])
     // Iteratively read 1 block into buffer until end of file.
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
-        // Skip if the buffer does not contain a JPEG.
-        if (!isjpeg(buffer_block))
+        // If file is the start of a new JPEG, close/create new file.
+        if (isjpeg(buffer_block))
         {
-            continue;
-        }
+            // Create name for new JPEG file.
+            sprintf(filename, "%03d.jpg", file_num);
 
-        // Create name for new JPEG file.
-        sprintf(filename, "%03d.jpg", file_num);
+            // Write new JPEG file from the memory card.
+            FILE *file = fopen(filename, "w");
+            if (file != NULL)
+            {
+                fwrite(buffer_block, 1, BLOCK_SIZE, file);
+                fclose(file);
+                file_num++;
+                if (file_num > 999)
+                {
+                    printf("error: filename exceeds \"999.jpg\"\n");
+                    return 2;
+                }
+            }
+            else
+            {
+                printf("error: could not create jpeg file.\n");
+                return 3;
+            }
+            ;
+        }
 
         // Write new JPEG file from the memory card.
         FILE *file = fopen(filename, "w");
