@@ -53,15 +53,14 @@ int main(int argc, char *argv[])
         const int FILENAME_SIZE = 8;
 
         // Create name for new JPEG file.
-        char buffer_filename[FILENAME_SIZE];
-        sprintf(buffer_filename, "{%03d}.jpg", file_num);
+        char filename[FILENAME_SIZE];
+        sprintf(filename, "{%03d}.jpg", file_num);
 
-        // Open a new file and write to it from the memory card.
+        // Open new file and write to it from the memory card.
         fopen(filename, "w");
 
         // Increment file number.
         file_num++;
-        }
 
         // fclose the file when you encounter another signature
 
