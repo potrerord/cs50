@@ -1,5 +1,7 @@
 // Recovers JPEG data from command-line argument memory card file.
 
+#include <stdbool.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -38,7 +40,6 @@ int main(int argc, char *argv[])
     // Initiate file number variable.
     int file_num = 0;
 
-
     // Iteratively read 1 block into buffer until end of file.
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
@@ -62,11 +63,16 @@ int main(int argc, char *argv[])
             fprintf(file, buffer_block);
             fclose(file);
             file_num++;
+            if (file_num > 999)
+            {
+                printf("error: filename exceeds \"999.jpg\"")
+                return 2;
+            }
         }
         else
         {
             printf("error creating new jpeg file.\n")
-            return 2;
+            return 3;
         }
     }
 
