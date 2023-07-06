@@ -14,7 +14,7 @@ function. For example, print_longer(['chocolate', 'vanilla'],
 """
 
 def main():
-
+    print_longer(arg1, arg2)
 
 
 def print_longer():
