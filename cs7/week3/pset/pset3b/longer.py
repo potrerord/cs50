@@ -19,11 +19,15 @@ print_longer(['chocolate', 'vanilla'], [1, 5, 9, 7])
     [1, 5, 9, 7] is the longer list and its last element is 7
 """
 
+
+# Constants for main() test function.
+FLAVORS = ["chocolate", "vanilla"]
+NUMBERS = [1, 5, 9, 7]
+
+
 def main():
     """Call print_longer function with preset arguments."""
-
-
-    print_longer(arg1, arg2)
+    print_longer(FLAVORS, NUMBERS)
 
 
 def print_longer(list1, list2):
@@ -43,7 +47,6 @@ def print_longer(list1, list2):
 
     print(f"{longer} is the longer list and its last element is
            {longer[len(longer)]}")
-
     return longer
 
 
