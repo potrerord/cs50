@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("error: could not create %s\n", filename);
+            printf("error: could not create file %s\n", filename);
             return 3;
         }
     }
