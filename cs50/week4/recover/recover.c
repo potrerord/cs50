@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 // Number of bytes per block in FAT file system.
 const int BLOCK_SIZE = 512;
 
