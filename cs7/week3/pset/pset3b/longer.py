@@ -27,8 +27,9 @@ NUMBERS = [1, 5, 9, 7]
 
 def main():
     """Call print_longer function with preset arguments."""
+    print()
     print_longer(FLAVORS, NUMBERS)
-
+    print()
 
 def print_longer(list1, list2):
     """Return and print longer list from 2 arguments."""
@@ -45,8 +46,7 @@ def print_longer(list1, list2):
     elif len(list2) > len(list1):
         longer = list2
 
-    print(f"{longer} is the longer list and its last element is
-           {longer[len(longer)]}")
+    print(f"{longer} is the longer list and its last element is {longer[len(longer) - 1]}")
     return longer
 
 
