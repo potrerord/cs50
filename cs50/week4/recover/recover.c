@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
     // Iteratively read 1 block into buffer until end of file.
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
-        // If file is the start of a new JPEG, close/create new file.
+        // First jpeg found
         if (isjpeg(buffer_block) && file_num == 0)
         {
             fclose(file);
