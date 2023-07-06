@@ -60,18 +60,18 @@ int main(int argc, char *argv[])
         FILE *file = fopen(filename, "w");
         if (file != NULL)
         {
-            fprintf(file, buffer_block);
+            fwrite(buffer_block, 1, BLOCK_SIZE, file);
             fclose(file);
             file_num++;
             if (file_num > 999)
             {
-                printf("error: filename exceeds \"999.jpg\"")
+                printf("error: filename exceeds \"999.jpg\"");
                 return 2;
             }
         }
         else
         {
-            printf("error creating new jpeg file.\n")
+            printf("error creating new jpeg file.\n");
             return 3;
         }
     }
