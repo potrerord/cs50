@@ -54,16 +54,22 @@ int main(int argc, char *argv[])
                 fclose(file);
             }
 
-            // Create new JPEG file regardless.
+            // Create new JPEG file and increment file_num regardless.
             sprintf(filename, "%03d.jpg", file_num);
+            file_num++;
             file = fopen(filename, "w");
+        }
+
+        // Skip if no JPEG file has been found yet.
+        else if (file == NULL)
+        {
+            continue;
         }
 
         // Write to file from memory card.
         if (file != NULL)
         {
             fwrite(buffer_block, 1, BLOCK_SIZE, file);
-            file_num++;
             if (file_num > 999)
             {
                 printf("error: filename exceeds \"999.jpg\"\n");
