@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     {
 
         // Skip if the buffer does not contain a JPEG.
-        if (!isjpeg(buffer))
+        if (!isjpeg(buffer_block))
         {
             continue;
         }
@@ -61,10 +61,10 @@ int main(int argc, char *argv[])
             }
 
             // Create buffer for filename.
-            char buffer2[FILENAME_SIZE];
+            char buffer_filename[FILENAME_SIZE];
 
             // Create filename.
-            sprintf(buffer2, "{%03d}.jpg", i);
+            sprintf(buffer_filename, "{%03d}.jpg", i);
 
             // Open a new file and write to it from the memory card.
             fopen(filename, "w");
