@@ -51,15 +51,9 @@ int main(int argc, char *argv[])
         // Number of chars in "###.jpg" filename string, including \\0'.
         const int FILENAME_SIZE = 8;
 
-        // Name file.
+        // Increment file_num until .
         while (true)
         {
-            // Return error 1 if memory was not successfully allocated.
-            if (file == NULL)
-            {
-                return 1;
-            }
-
             // Create name for new JPEG file.
             char buffer_filename[FILENAME_SIZE];
             sprintf(buffer_filename, "{%03d}.jpg", i);
