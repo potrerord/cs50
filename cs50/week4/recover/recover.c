@@ -13,7 +13,7 @@ const int BLOCK_SIZE = 512;
 typedef uint8_t BLOCK[BLOCK_SIZE];
 
 // Function prototypes.
-bool isjpeg(BLOCK subject);
+bool jpegstart(BLOCK subject);
 
 
 
@@ -40,12 +40,13 @@ int main(int argc, char *argv[])
     // Variables to make "###.jpg" filenames.
     char filename[8];
     int file_num = 0;
+    FILE *file;
 
     // Iteratively read 1 block into buffer until end of file.
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
     {
         // Check if block contains start of new JPEG file.
-        if (isjpeg(buffer_block))
+        if (jpegstart(buffer_block))
         {
             // If not the first JPEG file found, close current file.
             if (file_num != 0)
@@ -55,7 +56,8 @@ int main(int argc, char *argv[])
 
             // Create new JPEG file regardless.
             sprintf(filename, "%03d.jpg", file_num);
-            FILE *file = fopen(filename, "w");
+            file = fopen(filename, "w");
+        }
 
         // Write to file from memory card.
         if (file != NULL)
@@ -73,35 +75,14 @@ int main(int argc, char *argv[])
             printf("error: could not create %s\n", filename);
             return 3;
         }
-        }
-
-        // Write new JPEG file from the memory card.
-        FILE *file = fopen(filename, "w");
-        if (file != NULL)
-        {
-            fwrite(buffer_block, 1, BLOCK_SIZE, file);
-            fclose(file);
-            file_num++;
-            if (file_num > 999)
-            {
-                printf("error: filename exceeds \"999.jpg\"\n");
-                return 2;
-            }
-        }
-        else
-        {
-            printf("error: could not create jpeg file.\n");
-            return 3;
-        }
     }
-
     // Return 0 when successful.
     return 0;
 }
 
 
-// Determine if beginning of BLOCK matches JPEG signature.
-bool isjpeg(BLOCK subject)
+// Determine if beginning of BLOCK matches JPEG signature.                          don't pass the entire block, just do the first 4 bytes
+bool jpegstart(BLOCK subject)
 {
     // Number of bytes in JPEG signature.
     const int SIG_SIZE = 4;
