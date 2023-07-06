@@ -51,10 +51,10 @@ int main(int argc, char *argv[])
 
         // Number of chars in "###.jpg" filename string, including \\0'.
         const int FILENAME_SIZE = 8;
-        
+
         // Create name for new JPEG file.
         char buffer_filename[FILENAME_SIZE];
-        sprintf(buffer_filename, "{%03d}.jpg", i);
+        sprintf(buffer_filename, "{%03d}.jpg", file_num);
 
         // Open a new file and write to it from the memory card.
         fopen(filename, "w");
