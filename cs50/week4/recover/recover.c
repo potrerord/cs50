@@ -50,19 +50,24 @@ int main(int argc, char *argv[])
             // If not the first
             if (file_num != 0)
             {
+                // Close current file
+                fclose(file);
+
+                // Create name for new JPEG file.
+                sprintf(filename, "%03d.jpg", file_num);
 
             }
 
             // If the first
             else
             {
-                
+                // Create name for new JPEG file.
+                sprintf(filename, "%03d.jpg", file_num);
+
             }
         {
             fclose(file);
 
-            // Create name for new JPEG file.
-            sprintf(filename, "%03d.jpg", file_num);
 
             // Write new JPEG file from the memory card.
             FILE *file = fopen(filename, "w");
