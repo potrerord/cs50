@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
 
         // Write new JPEG file from the memory card.
         fopen(filename, "w");
+        if 
 
         // Increment file number.
         file_num++;
