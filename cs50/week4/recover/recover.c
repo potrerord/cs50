@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
         // Initiate file number variable.
         int file_num = 0;
 
-        // Number of characters in a "###.jpg" filename string.
+        // Number of chars in "###.jpg" filename string, including \\0'.
         const int FILENAME_SIZE = 8;
 
         // Name file.
