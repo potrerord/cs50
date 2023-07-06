@@ -32,7 +32,8 @@ def print_longer(list1, list2):
     elif len(list2) > len(list1):
         longer = list2
 
-    print(f"{} is the longer list and its last element is {longer[len(longer)]}")
+    print(f"{} is the longer list and its last element is
+           {longer[len(longer)]}")
     return longer
 
 
