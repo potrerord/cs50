@@ -47,6 +47,8 @@ int main(int argc, char *argv[])
         // If file is the start of a new JPEG, close/create new file.
         if (isjpeg(buffer_block))
         {
+            fclose(file);
+
             // Create name for new JPEG file.
             sprintf(filename, "%03d.jpg", file_num);
 
@@ -55,7 +57,6 @@ int main(int argc, char *argv[])
             if (file != NULL)
             {
                 fwrite(buffer_block, 1, BLOCK_SIZE, file);
-                fclose(file);
                 file_num++;
                 if (file_num > 999)
                 {
