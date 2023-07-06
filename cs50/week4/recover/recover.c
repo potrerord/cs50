@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     // Create buffer for a block of data.
     BLOCK buffer_block;
 
-    // Variables to make "###.jpg" filenames.
+    // Variables to make "###.jpg" files.
     char filename[8];
     int file_num = 0;
     FILE *file = NULL;
