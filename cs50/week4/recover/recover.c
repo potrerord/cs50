@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     // Variables to make "###.jpg" filenames.
     char filename[8];
     int file_num = 0;
-    FILE *file;
+    FILE *file = NULL;
 
     // Iteratively read 1 block into buffer until end of file.
     while (fread(buffer_block, 1, BLOCK_SIZE, card) == BLOCK_SIZE)
