@@ -58,6 +58,8 @@ int main(int argc, char *argv[])
 
         // Open a new file and write to it from the memory card.
         fopen(filename, "w");
+
+        // Increment file number.
         file_num++;
         }
 
