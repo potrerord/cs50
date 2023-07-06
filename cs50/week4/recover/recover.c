@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("error: could not create jpeg file.\n");
+            printf("error: could not create %s\n", filename);
             return 3;
         }
         }
