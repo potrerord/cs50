@@ -60,10 +60,8 @@ int main(int argc, char *argv[])
                 return 1;
             }
 
-            // Create buffer for filename.
+            // Create name for new JPEG file.
             char buffer_filename[FILENAME_SIZE];
-
-            // Create filename.
             sprintf(buffer_filename, "{%03d}.jpg", i);
 
             // Open a new file and write to it from the memory card.
