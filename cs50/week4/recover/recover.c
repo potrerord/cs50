@@ -80,6 +80,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+
 // Determine if beginning of BLOCK matches JPEG signature.
 bool isjpeg(BLOCK subject)
 {
