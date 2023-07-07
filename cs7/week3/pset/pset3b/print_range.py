@@ -20,8 +20,8 @@ def main():
 
 
 def print_range(start: int, end: int):
-   """Print a sequential list of all integers between a defined start and end
-   (inclusive).
+   """Print a sequential list of all integers between a defined start
+   and end values (inclusive).
    """
 
    # Print error if start or end are not integers.
