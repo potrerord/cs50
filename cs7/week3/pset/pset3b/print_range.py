@@ -8,9 +8,14 @@ def main():
    """Take user input and call print_range function."""
 
    print()
+   
    user_start = (int(input("Enter a starting value: ")))
    user_range = (int(input("Enter an ending value:  ")))
+
+   print()
+
    print_range(user_start, user_range)
+
    print()
 
 
@@ -19,6 +24,7 @@ def print_range(start: int, end: int):
    (inclusive).
    """
 
+   # Print error if start or end are not integers.
    if not isinstance(start, int) or not isinstance(end, int):
       print("error: start and end must be integers")
       return
