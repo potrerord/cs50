@@ -73,5 +73,7 @@ def truncate(s: str):
     """Return first 10 characters of string argument."""
     return s[:10]
 
-# Run main()
-main()
+
+# Run the main function if script is run directly.
+if __name__ == "__main__":
+    main()
