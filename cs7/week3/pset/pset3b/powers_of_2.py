@@ -23,7 +23,8 @@ def main():
     print_powers_of_2(arg1, arg2)
 
 
-def print_powers_of_2():
+def print_powers_of_2(integer):
+    if integer <
 
 
 
