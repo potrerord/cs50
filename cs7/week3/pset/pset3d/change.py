@@ -46,6 +46,7 @@ stock during a 10-day period.
 from typing import List
 
 
+
 # Implement a main function that computes the largest change as
 # specified in problem 12, by using find_change to find the largest
 # change and print_change to print the final answer.
@@ -70,6 +71,11 @@ def find_change() -> List[int]:
     then the first day's number.
     """
 
+    # Constant: Number of days of price data to request from user.
+    DAY_COUNT = 10
+
+    
+    
 
 
     input()
