@@ -43,9 +43,11 @@ def print_range(start: int, end: int):
    # Print list of integers.
    for i in range(start, print_end):
 
-      if i == start:
+      # Print final value with no comma.
+      if i == print_end:
          print(f"{i}")
-      # Make sure it starts/ends with or without a comma
+      else:
+         print(f"{i}, ", end="")
 
 
       # Make sure it prints range + 1 to get end in there
