@@ -66,8 +66,8 @@ def main():
 
 def find_change() -> List[int]:
     """Prompt the user for the appropriate number of stock prices and
-    return a list respectively containing the first day's value, the
-    second day's value, and the first day's number.
+    return a list containing the values on the first and second days,
+    then the first day's number.
     """
 
 
