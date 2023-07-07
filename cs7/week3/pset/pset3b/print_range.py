@@ -19,7 +19,7 @@ def print_range(start: int, end: int):
    (inclusive).
    """
 
-   if isinstance(start, int) or isinstance(end, int):
+   if not isinstance(start, int) or not isinstance(end, int):
       print("error: start and end must be integers")
       return
 
