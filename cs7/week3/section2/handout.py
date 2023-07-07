@@ -1,6 +1,14 @@
-def main():
-    print_chars("cat")
 
+test = "cat"
+
+
+
+def main():
+    print_chars(test)
+
+    print(is_odd_len(test))
+    print(fourth_char(test))
+    print(truncate(test))
 
 
 
