@@ -35,11 +35,13 @@ def print_range(start: int, end: int):
    # Define the limit for the range of printed integers.
    if start <= end:
       print_end = end + 1
+      increment = 1
    else:
       print_end = end - 1
+      increment = -1
 
    # Print list of integers.
-   for i in range(start, print_end):
+   for i in range(start, print_end, increment):
 
       # Print final value without comma and with new line.
       if i == start:
