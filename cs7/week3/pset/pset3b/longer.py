@@ -37,7 +37,7 @@ def print_longer(list1, list2):
     # Check if lists are the same length as a special case.
     if len(list1) == len(list2):
         print("The lists are the same length!")
-        return None
+        return
 
     # Record longer list and print/return.
     elif len(list1) > len(list2):

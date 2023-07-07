@@ -24,7 +24,11 @@ def main():
 
 
 def print_powers_of_2(integer):
-    if integer <
+    if integer < 0:
+        print("error: arg for print_powers_of_2() must be >= 0")
+        return
+
+    
 
 
 
