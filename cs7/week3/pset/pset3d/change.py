@@ -74,7 +74,7 @@ def find_change() -> List[int]:
     # Constant: Number of days of price data to request from user.
     DAY_COUNT = 10
 
-    
+
     
 
 
