@@ -52,7 +52,7 @@ from typing import List
 def main():
     """Compute the largest change and print final answer."""
 
-    # Find largest change.
+    # Prompt user for prices and find largest change.
     find_change()
 
     # Print answer.
