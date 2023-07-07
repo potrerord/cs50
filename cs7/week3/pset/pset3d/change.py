@@ -56,6 +56,13 @@ def main():
     # Constant: Number of days of price data to request from user.
     DAY_COUNT = 10
 
+    #
+    largest_change = 0
+
+    for day in DAY_COUNT:
+        find_change()
+
+
 
     # Prompt user for prices and find largest change.
     find_change()
@@ -74,14 +81,7 @@ def find_change() -> List[int]:
     return a list containing the values on the first and second days,
     then the first day's number.
     """
-
-
-    for day in DAY_COUNT:
-
-
-
-
-
+    
     input()
     return list[]
 
