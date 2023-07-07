@@ -8,7 +8,7 @@ def main():
    """Take user input and call print_range function."""
 
    print()
-   
+
    user_start = (int(input("Enter a starting value: ")))
    user_range = (int(input("Enter an ending value:  ")))
 
@@ -42,10 +42,10 @@ def print_range(start: int, end: int):
    for i in range(start, print_end):
 
       # Print final value without comma and with new line.
-      if i == print_end:
-         print(f"{i}")
+      if i == start:
+         print(f"{i}", end="")
       else:
-         print(f"{i}, ", end="")
-
+         print(f", {i}", end="")
+   print()
 
 main()
