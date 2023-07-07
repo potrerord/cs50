@@ -4,10 +4,17 @@ test = "cat"
 
 
 def main():
+
+    # 1
     print_chars(test)
 
+    #2
     print(is_odd_len(test))
+
+    #3
     print(fourth_char(test))
+
+    #4
     print(truncate(test))
 
 
