@@ -1,6 +1,6 @@
 """
 Prints a sequential list of all integers between a defined start and end
-(inclusive).
+values (inclusive).
 """
 
 
@@ -20,8 +20,8 @@ def main():
 
 
 def print_range(start: int, end: int):
-   """Print a sequential list of all integers between a defined start
-   and end values (inclusive).
+   """Print a sequential list of all integers between start and end
+   arguments (inclusive).
    """
 
    # Print error if start or end are not integers.
@@ -43,11 +43,13 @@ def print_range(start: int, end: int):
    # Print list of integers.
    for i in range(start, print_end, increment):
 
-      # Print final value without comma and with new line.
+      # Print first value without preceding comma.
       if i == start:
          print(f"{i}", end="")
       else:
          print(f", {i}", end="")
+
+   # Print new line after final value.
    print()
 
 main()
