@@ -1,3 +1,9 @@
+def main():
+    print_chars("cat)
+
+
+
+
 """
 1)  Write a function print_chars(s) that takes a string s and prints out
     each character of a given string, each on its own line.
@@ -59,3 +65,5 @@ def fourth_char(s: str):
 def truncate(s: str):
     return s[:10]
 
+
+main()
