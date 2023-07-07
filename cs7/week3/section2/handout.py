@@ -70,7 +70,8 @@ def fourth_char(s: str):
 """
 
 def truncate(s: str):
+    """Return first 10 characters of string argument."""
     return s[:10]
 
-
+# Run main()
 main()
