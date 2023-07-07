@@ -11,14 +11,13 @@ def main():
     print(truncate(test))
 
 
-
 """
 1)  Write a function print_chars(s) that takes a string s and prints out
     each character of a given string, each on its own line.
 """
 
 def print_chars(s: str) -> None:
-    """Print out every character in string argument."""
+    """Print every character in string argument."""
 
     for i in range(len(s)):
         print(s[i])
@@ -31,7 +30,7 @@ def print_chars(s: str) -> None:
 """
 
 def is_odd_len(s: str):
-    """Check if """
+    """Return bool indicating whether string argument has odd length."""
 
     # Return False if even.
     if len(s) % 2 == 0:
@@ -41,7 +40,6 @@ def is_odd_len(s: str):
     return True
 
 
-
 """
 3)  Write a function fourth_char(s) that takes a string s and returns
     the fourth letter of a given string, or None if the string has fewer
@@ -49,6 +47,7 @@ def is_odd_len(s: str):
 """
 
 def fourth_char(s: str):
+    """Return the fourth letter of string argument."""
 
     # Return None if the string has fewer than 4 letters.
     if len(s) < 4:
