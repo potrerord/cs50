@@ -29,7 +29,7 @@ def print_powers_of_2(integer):
         return
 
     for i in range(10):
-        print()
+        two_exp *= 2
 
 
 
