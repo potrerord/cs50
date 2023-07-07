@@ -1,6 +1,6 @@
 """
 Write a function named print_powers_of_2 that accepts an integer >= 0
-and prints each power of 2 from 20 (which is equal to 1) up to that
+and prints each power of 2 from 2^0 (which is equal to 1) up to that
 maximum power, inclusive.
 
 For example, print_powers_of_2(10) should print
@@ -28,7 +28,11 @@ def print_powers_of_2(integer):
         print("error: arg for print_powers_of_2() must be >= 0")
         return
 
-    
+    for i in range(10):
+        print()
+
+
+
 
 
 
