@@ -34,15 +34,17 @@ def print_range(start: int, end: int):
    # Print opening tag.
    print(f"[{start},{end}]: ", end="")
 
-   if start < end:
+   # Define the limit for the range of printed integers.
+   if start <= end:
       print_end = end + 1
-   elif start > end:
+   else:
       print_end = end - 1
 
+   # Print list of integers.
+   for i in range(start, print_end):
 
-
-   for i in range(start, end):
-
+      if i == start:
+         print(f"{i}")
       # Make sure it starts/ends with or without a comma
 
 
