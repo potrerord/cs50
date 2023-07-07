@@ -26,7 +26,7 @@ def main():
     print_range()
 
 
-def print_range(start, end):
+def print_range(start: int, end: int):
    """Prints a sequential list of all integers between a defined start and end
    (inclusive).
    """

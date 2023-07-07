@@ -12,13 +12,13 @@ def main():
     print()
 
 
-def print_powers_of_2(integer):
+def print_powers_of_2(power: int):
     """Print the exponentiation of 2 and all integer powers up to/
     including argument.
     """
 
     # Return if argument is not a nonnegative integer.
-    if integer < 0 or (integer * 10) % 10 != 0:
+    if power < 0 or (power * 10) % 10 != 0:
         print("""error: arg for print_powers_of_2() must be a nonnegative
                  integer""")
         return
@@ -27,7 +27,7 @@ def print_powers_of_2(integer):
     power_of_2 = 1
 
     # Loop for all ints from 0 to argument in one line, then new line.
-    for i in range(integer + 1):
+    for i in range(power + 1):
         print(f"{power_of_2} ", end="")
         power_of_2 *= 2
     print()
