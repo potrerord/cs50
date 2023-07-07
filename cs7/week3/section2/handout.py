@@ -1,5 +1,5 @@
 def main():
-    print_chars("cat)
+    print_chars("cat")
 
 
 
@@ -12,8 +12,8 @@ def main():
 def print_chars(s: str) -> None:
     """Print out every character in string argument."""
 
-    for char in range(len(s)):
-        print(char)
+    for i in range(len(s)):
+        print(s[i])
 
 
 """
