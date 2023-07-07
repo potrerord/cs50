@@ -52,4 +52,7 @@ def print_range(start: int, end: int):
    # Print new line after final value.
    print()
 
-main()
+
+# Run the main function if script is run directly.
+if __name__ == "__main__":
+    main()

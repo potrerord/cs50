@@ -33,4 +33,6 @@ def print_longer(list1, list2):
     return longer
 
 
-main()
+# Run the main function if script is run directly.
+if __name__ == "__main__":
+    main()

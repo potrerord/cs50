@@ -33,4 +33,6 @@ def print_powers_of_2(power: int):
     print()
 
 
-main()
+# Run the main function if script is run directly.
+if __name__ == "__main__":
+    main()

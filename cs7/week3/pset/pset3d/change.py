@@ -37,8 +37,17 @@ variables to store the prices. You will get no credit for such a
 solution.
 """
 
+"""
+Computes and prints the largest absolute daily change in the price of a
+stock during a 10-day period.
+"""
 
+
+# Implement a main function that computes the largest change as specified in problem 12,
+# by using find_change to find the largest change and print_change to print the final answer.
 def main():
+
+
 
 
 # Implement a function print_change that takes in the results of your computation
@@ -61,11 +70,6 @@ def print_change(day1_price, day2_price, day1_num):
 def find_change():
     *** add your code here ***
     *** returns a list ***
-
-# Implement a main function that computes the largest change as specified in problem 12,
-# by using find_change to find the largest change and print_change to print the final answer.
-def main():
-    *** add your code here ***
 
 
 # Runs the main function. Leave as is.
