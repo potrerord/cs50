@@ -43,6 +43,9 @@ stock during a 10-day period.
 """
 
 
+from typing import List
+
+
 # Implement a main function that computes the largest change as
 # specified in problem 12, by using find_change to find the largest
 # change and print_change to print the final answer.
@@ -53,10 +56,10 @@ def main():
 
 # Implement a function print_change that takes in the results of your computation
 # and prints them out in a message for the user. For example:
-#
+
 # Largest change of 25 from  84  to  59
 # occurred between day #6 and day #7.
-#
+
 # Must not prompt the user for anything.
 def print_change(day1_price, day2_price, day1_num):
     *** add your code here ***
@@ -65,14 +68,14 @@ def print_change(day1_price, day2_price, day1_num):
 # appropriate number of stock prices and returns a list with the the
 # value on the first day, the value on the second day, and the number
 # of the first day, in that order.
-#
+
 # Takes no parameters.
 # Must return a list.
-def find_change():
+def find_change(arg: List[int]) -> List:
     *** add your code here ***
     *** returns a list ***
 
 
-# Runs the main function. Leave as is.
+# Run the main function if script is run directly.
 if __name__ == "__main__":
     main()
