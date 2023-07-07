@@ -34,12 +34,19 @@ def print_range(start, end):
    # Print opening tag.
    print(f"[{start},{end}]: ", end="")
 
+   if start < end:
+      print_end = end + 1
+   elif start > end:
+      print_end = end - 1
+
+
+
    for i in range(start, end):
 
       # Make sure it starts/ends with or without a comma
 
 
-      # Make sure it 
+      # Make sure it prints range + 1 to get end in there
 
       print(f"{i}, ", end="")
    print()
