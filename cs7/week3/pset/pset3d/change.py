@@ -75,7 +75,10 @@ def find_change() -> List[int]:
     DAY_COUNT = 10
 
 
-    
+    for day in DAY_COUNT:
+        
+
+
 
 
     input()
