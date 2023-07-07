@@ -43,8 +43,9 @@ stock during a 10-day period.
 """
 
 
-# Implement a main function that computes the largest change as specified in problem 12,
-# by using find_change to find the largest change and print_change to print the final answer.
+# Implement a main function that computes the largest change as
+# specified in problem 12, by using find_change to find the largest
+# change and print_change to print the final answer.
 def main():
 
 
