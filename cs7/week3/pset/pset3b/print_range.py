@@ -31,9 +31,17 @@ def print_range(start, end):
    (inclusive).
    """
 
-   print(f"{start},{end}")
-   for integer in range(start, end):
-      print(f"{integer}, ", end="")
+   # Print opening tag.
+   print(f"[{start},{end}]: ", end="")
+
+   for i in range(start, end):
+
+      # Make sure it starts/ends with or without a comma
+
+
+      # Make sure it 
+
+      print(f"{i}, ", end="")
    print()
 
 
