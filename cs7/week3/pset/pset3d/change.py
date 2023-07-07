@@ -53,16 +53,6 @@ from typing import List
 def main():
     """Compute the largest change and print final answer."""
 
-    # Constant: Number of days of price data to request from user.
-    DAY_COUNT = 10
-
-    #
-    largest_change = 0
-
-    for day in DAY_COUNT:
-        find_change()
-
-
 
     # Prompt user for prices and find largest change.
     find_change()
@@ -81,9 +71,22 @@ def find_change() -> List[int]:
     return a list containing the values on the first and second days,
     then the first day's number.
     """
-    
+
+    # Constant: Number of days of price data to request from user.
+    DAY_COUNT = 10
+
+    #
+    largest_change = 0
+
+    for day in range(DAY_COUNT):
+        user_price = int(input(f"Enter the Day {day + 1} price: "))
+        if user_price > largest_change:
+            
+            largest_change = user_price
+
+
     input()
-    return list[]
+    return list[start_price, end_price, start_day]
 
 
 # Implement a function print_change that takes in the results of your
