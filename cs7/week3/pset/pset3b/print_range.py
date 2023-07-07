@@ -1,4 +1,9 @@
 """
+Prints a sequential list of all integers between a defined start and end
+(inclusive).
+"""
+
+"""
 Write a function named print_range that accepts two integers i, j as
 arguments and prints the sequence of numbers between the two arguments,
 prefixed with the string "[i,j]:". Print an increasing sequence if the
@@ -16,11 +21,23 @@ The output produced from these calls should be the following sequences:
 Your function should be tested out using a main function of your own design.
 """
 
+
 def main():
     print_range()
 
 
-def print_range():
+def print_range(start, end):
+   """Prints a sequential list of all integers between a defined start and end
+   (inclusive).
+   """
+
+   print(f"{start},{end}")
+   for integer in range(start, end):
+      print(f"{integer}, ", end="")
+   print()
+
+
+
 
 
 

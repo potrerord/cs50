@@ -1,39 +1,36 @@
 """
-Write a function named print_powers_of_2 that accepts an integer >= 0
-and prints each power of 2 from 2^0 (which is equal to 1) up to that
-maximum power, inclusive.
-
-For example, print_powers_of_2(10) should print
-
-1 2 4 8 16 32 64 128 256 512 1024
-
-print_powers_of_2(31) should print
-
-        1 2 4 8 16 32 64 128 256 512 1024 2048 4096 8192
-        16384 32768 65536 131072 262144 524288 1048576 2097152
-        4194304 8388608 16777216 33554432 67108864 134217728
-        268435456 536870912 1073741824 2147483648
-
-You cannot make use of any Python functions or operators that compute
-powers, such as ** or math.pow(). Write and use a main function that
-demonstrates your function in action.
+Prints each power of 2 from 2^0 up to maximum power, inclusive.
 """
 
+
 def main():
-    print_powers_of_2(arg1, arg2)
+    """Take user input and call print_powers_of_2 function."""
+
+    print()
+    num = int(input("Enter an integer greater than or equal to 0: "))
+    print_powers_of_2(num)
+    print()
 
 
 def print_powers_of_2(integer):
-    if integer < 0:
-        print("error: arg for print_powers_of_2() must be >= 0")
+    """Print the exponentiation of 2 and all integer powers up to/
+    including argument.
+    """
+
+    # Return if argument is not a nonnegative integer.
+    if integer < 0 or (integer * 10) % 10 != 0:
+        print("""error: arg for print_powers_of_2() must be a nonnegative
+                 integer""")
         return
 
-    for i in range(10):
-        two_exp *= 2
+    # Initialize first iteration of 2^integer as 2^0.
+    power_of_2 = 1
 
-
-
-
+    # Loop for all ints from 0 to argument in one line, then new line.
+    for i in range(integer + 1):
+        print(f"{power_of_2} ", end="")
+        power_of_2 *= 2
+    print()
 
 
 main()
