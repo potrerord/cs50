@@ -44,17 +44,13 @@ int main(void)
 // Create a new individual with `generations`
 person *create_family(int generations)
 {
-    // TODO: Allocate memory for new person
-    person *new_person = malloc(person, 1, sizeof(person), )
+    // Allocate memory for new person.
+    person *new_person = malloc(sizeof(person));
 
-
-
-
-
-    // If there are still generations left to create
+    // While there are still generations left to create,
     if (generations > 1)
     {
-        // Create two new parents for current person by recursively calling create_family
+        // Recursively call create_family() to create two new parents.
         person *parent0 = create_family(generations - 1);
         person *parent1 = create_family(generations - 1);
 
@@ -77,7 +73,7 @@ person *create_family(int generations)
 
     }
 
-    // If there are no generations left to create
+    // When there are no generations left to create,
     else
     {
         // TODO: Set parent pointers to NULL
