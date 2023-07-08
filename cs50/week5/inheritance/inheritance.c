@@ -61,11 +61,11 @@ person *create_family(int generations)
             // Recursively call create_family() to create new parents.
             parent[parent_num] = create_family(generations - 1);
 
-            // Set parent pointers for current person.
+            // Assign new_person's parent pointers.
             new_person->parents[parent_num] = parent[parent_num];
         }
 
-        // TODO: Randomly assign current person's alleles based on the alleles of their parents
+        // Randomly assign current person's alleles based on the alleles of their parents
 
 
 
