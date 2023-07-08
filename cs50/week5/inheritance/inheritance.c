@@ -48,11 +48,11 @@ person *create_family(int generations)
     int PARENT_TOTAL = 2;
 
 
-    // Create person pointer array for parents.
-    person *parent[PARENT_TOTAL];
-
     // Allocate memory for new person.
     person *new_person = malloc(sizeof(person));
+
+    // Create person pointer array for parents.
+    person *new_parent[PARENT_TOTAL];
 
     // Recursive case: While there are still generations left to create,
     if (generations > 1)
@@ -63,7 +63,7 @@ person *create_family(int generations)
         for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
         {
             // Recursively call create_family() to create new parents.
-            parent[parent_num] = create_family(generations - 1);
+            new_parent[parent_num] = create_family(generations - 1);
 
             // Assign new_person's parent pointers.
             new_person->parents[parent_num] = parent[parent_num];
