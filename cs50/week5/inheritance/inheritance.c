@@ -47,14 +47,12 @@ person *create_family(int generations)
     // Allocate new person memory for use after function call.
     person *new_person = malloc(sizeof(person));
 
-    // Create person pointer array for new parents.
-    person *new_parent[PARENT_TOTAL];
-
     // Recursive case: If there are still generations left to create,
     if (generations > 1)
     {
-        // Create variable for randomly inherited allele per parent.
-        int inherited_allele;
+        // Create variables for each parent and each inherited allele.
+        person *new_parent[PARENT_TOTAL];
+        int inherited;
 
         // For each parent,
         for (int i = 0; i < PARENT_TOTAL; i++)
@@ -78,7 +76,7 @@ person *create_family(int generations)
         for (int i = 0; i < PARENT_TOTAL; i++)
         {
             // Set parent pointer to NULL.
-            new_parent[i] = NULL;
+            new_person->parents[i] = NULL;
 
             // Randomly assign allele.
             new_person->alleles[i] = random_allele();
@@ -93,7 +91,14 @@ person *create_family(int generations)
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
-    // TODO: Handle base case
+    // Base case: If both parents = NULL, free person
+    if ()
+    {
+        
+    }
+
+
+
 
 
 
