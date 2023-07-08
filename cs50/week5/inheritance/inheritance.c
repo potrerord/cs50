@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 // Each person has two parents and two alleles
 typedef struct person
 {
@@ -14,10 +13,8 @@ typedef struct person
 }
 person;
 
-
 const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
-
 
 person *create_family(int generations);
 void print_family(person *p, int generation);
@@ -47,8 +44,10 @@ person *create_family(int generations)
     // Constant: Number of parents.
     int PARENT_TOTAL = 2;
 
-    // Allocate memory for new person.
+    // Allocate new person memory for use after function call.
     person *new_person = malloc(sizeof(person));
+
+    // Create pointer array for new parents.
     person *new_parent[PARENT_TOTAL];
 
     // Recursive case: While there are still generations left to create,
