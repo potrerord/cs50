@@ -5,16 +5,19 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+// Note: Added constant for magic number of parents.
+const int PARENT_TOTAL = 2;
+const int GENERATIONS = 3;
+const int INDENT_LENGTH = 4;
+
 // Each person has two parents and two alleles
 typedef struct person
 {
-    struct person *parents[2];
-    char alleles[2];
+    struct person *parents[PARENT_TOTAL];
+    char alleles[PARENT_TOTAL];
 }
 person;
-
-const int GENERATIONS = 3;
-const int INDENT_LENGTH = 4;
 
 person *create_family(int generations);
 void print_family(person *p, int generation);
@@ -41,9 +44,6 @@ int main(void)
 // Create a new individual with `generations`
 person *create_family(int generations)
 {
-    // Constant: Number of parents.
-    int PARENT_TOTAL = 2;
-
     // Allocate "new person" memory for use after function execution.
     person *new_person = malloc(sizeof(person));
 
@@ -92,7 +92,8 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // Base case: If both parents = NULL, free person
-    if ()
+    for (i = )
+    if (p->parents)
     {
 
     }
