@@ -2,7 +2,6 @@
 Compares two lists, then prints out the longer one and its last element.
 """
 
-
 # Constants for main() test function.
 FLAVORS = ["chocolate", "vanilla"]
 NUMBERS = [1, 5, 9, 7]
