@@ -56,6 +56,9 @@ person *create_family(int generations)
     // Recursive case: While there are still generations left to create,
     if (generations > 1)
     {
+        // Create variable for randomly inherited allele per parent.
+        int inherited_allele;
+
         for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
         {
             // Recursively call create_family() to create new parents.
@@ -65,7 +68,7 @@ person *create_family(int generations)
             new_person->parents[parent_num] = parent[parent_num];
 
             // Randomly assign new_person alleles from parent alleles.
-            int inherited_allele = rand() % 2;
+            inherited_allele = rand() % 2;
             new_person->alleles[parent_num] = parent[parent_num]->
                                               alleles[inherited_allele];
         }
