@@ -56,31 +56,30 @@ person *create_family(int generations)
         // Create variable for randomly inherited allele per parent.
         int inherited_allele;
 
-        for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
+        for (int i = 0; i < PARENT_TOTAL; i++)
         {
             // Recursively call create_family() to create new parents.
-            new_parent[parent_num] = create_family(generations - 1);
+            new_parent[i] = create_family(generations - 1);
 
             // Assign new_person's parent pointers.
-            new_person->parents[parent_num] = new_parent[parent_num];
+            new_person->parents[i] = new_parent[i];
 
             // Randomly assign new_person alleles from parent alleles.
             inherited_allele = rand() % 2;
-            new_person->alleles[parent_num] = new_parent[parent_num]->
-                                              alleles[inherited_allele];
+            new_person->alleles[i] = new_parent[i]->alleles[inherited_allele];
         }
     }
 
     // Base case: When there are no additional generations to create,
     else
     {
-        for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
+        for (int i = 0; i < PARENT_TOTAL; i++)
         {
             // Set parent pointers to NULL.
-            new_parent[parent_num] = NULL;
+            new_parent[i] = NULL;
 
             // Randomly assign alleles.
-            new_person->alleles[parent_num] = random_allele();
+            new_person->alleles[i] = random_allele();
         }
     }
 
