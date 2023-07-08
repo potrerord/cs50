@@ -59,7 +59,7 @@ person *create_family(int generations)
         for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
         {
             // Recursively call create_family() to create new parents.
-            person *parent[parent_num] = create_family(generations - 1);
+            parent[parent_num] = create_family(generations - 1);
 
             // Set parent pointers for current person.
             new_person->parents[parent_num] = parent[parent_num];
@@ -77,7 +77,7 @@ person *create_family(int generations)
         for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
         {
             // Set parent pointers to NULL.
-            person *parent[parent_num] = NULL;
+            parent[parent_num] = NULL;
 
             // Randomly assign alleles.
             new_person->alleles[parent_num] = random_allele();
