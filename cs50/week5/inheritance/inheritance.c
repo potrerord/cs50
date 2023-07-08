@@ -54,10 +54,10 @@ person *create_family(int generations)
         person *new_parent[PARENT_TOTAL];
         int inherited;
 
-        // For each parent,
+        // For each new parent,
         for (int i = 0; i < PARENT_TOTAL; i++)
         {
-            // Recursively call create_family() to create new parent.
+            // Recursively call create_family() to create previous generation.
             new_parent[i] = create_family(generations - 1);
 
             // Assign parent to new_person.
@@ -72,7 +72,7 @@ person *create_family(int generations)
     // Base case: When there are no additional generations to create,
     else
     {
-        // For each parent,
+        // For each new parent,
         for (int i = 0; i < PARENT_TOTAL; i++)
         {
             // Set parent pointer to NULL.
