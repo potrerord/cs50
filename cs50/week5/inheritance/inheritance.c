@@ -45,7 +45,7 @@ int main(void)
 person *create_family(int generations)
 {
     // TODO: Allocate memory for new person
-
+    person *new_person = malloc(person, 1, sizeof(person), )
 
 
 
