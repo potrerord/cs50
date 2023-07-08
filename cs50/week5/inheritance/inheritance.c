@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 // Note: Added constant for magic number of parents.
 const int PARENT_TOTAL = 2;
 const int GENERATIONS = 3;
