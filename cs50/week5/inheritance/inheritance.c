@@ -94,7 +94,7 @@ void free_family(person *p)
     // Base case: If both parents = NULL, free person
     for (int i = 0; i < PARENT_TOTAL; i++)
     {
-        if (p->parents)
+        if (p->parents[i] = )
         {
 
         }
