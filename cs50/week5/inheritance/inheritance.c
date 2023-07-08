@@ -73,39 +73,20 @@ person *create_family(int generations)
 
     }
 
-    // When there are no generations left to create,
+    // Base case: When there are no generations left to create,
     else
     {
-        // TODO: Set parent pointers to NULL
+        // Set parent pointers to NULL.
+        person *parent0 = NULL;
+        person *parent1 = NULL;
 
-
-
-
-
-
-
-
-        // TODO: Randomly assign alleles
-
-
-
-
-
-
-
-
+        // Randomly assign alleles.
+        new_person->alleles[0] = random_allele();
+        new_person->alleles[1] = random_allele();
     }
 
-    // TODO: Return newly created person
-
-
-
-
-
-
-
-
-    return NULL;
+    // Return newly created person.
+    return new_person;
 }
 
 
