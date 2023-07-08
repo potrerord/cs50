@@ -78,7 +78,7 @@ person *create_family(int generations)
             // Set parent pointer to NULL.
             new_person->parents[i] = NULL;
 
-            // Randomly assign allele.
+            // Since parent is NULL, randomly assign "inherited" allele.
             new_person->alleles[i] = random_allele();
         }
     }
@@ -94,7 +94,7 @@ void free_family(person *p)
     // Base case: If both parents = NULL, free person
     if ()
     {
-        
+
     }
 
 
