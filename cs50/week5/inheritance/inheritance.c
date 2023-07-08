@@ -47,6 +47,7 @@ person *create_family(int generations)
     // Constant: Number of parents.
     int PARENT_TOTAL = 2;
 
+
     // Create person pointer array for parents.
     person *parent[PARENT_TOTAL];
 
@@ -74,7 +75,7 @@ person *create_family(int generations)
         }
     }
 
-    // Base case: When there are no generations left to create,
+    // Base case: When there are no additional generations to create,
     else
     {
         for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
