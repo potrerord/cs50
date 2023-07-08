@@ -47,10 +47,10 @@ person *create_family(int generations)
     // Allocate "new person" memory for use after function execution.
     person *new_person = malloc(sizeof(person));
 
-    // Recursive case: If there are still generations left to create,
+    // Recursive case: If there are older generations left to create,
     if (generations > 1)
     {
-        // Hold each parent and inherited allele in variables.
+        // Hold each parent pointer and inherited allele in variables.
         person *new_parent[PARENT_TOTAL];
         int inherited;
 
@@ -69,7 +69,7 @@ person *create_family(int generations)
         }
     }
 
-    // Base case: When there are no additional generations to create,
+    // Base case: When there are no older generations left to create,
     else
     {
         // For each parent,
