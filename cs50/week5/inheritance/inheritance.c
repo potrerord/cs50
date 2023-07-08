@@ -44,18 +44,26 @@ int main(void)
 // Create a new individual with `generations`
 person *create_family(int generations)
 {
+    // Constant: Number of parents.
+    int PARENT_TOTAL = 2;
+
+    // Create variable array for parents.
+    person *parent[PARENT_TOTAL];
+
     // Allocate memory for new person.
     person *new_person = malloc(sizeof(person));
 
-    // While there are still generations left to create,
+    // Recursive case: While there are still generations left to create,
     if (generations > 1)
     {
         // Recursively call create_family() to create two new parents.
-        person *parent0 = create_family(generations - 1);
-        person *parent1 = create_family(generations - 1);
+        for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
+        {
+            person *parent[parent_num] = create_family(generations - 1);
+        }
 
         // TODO: Set parent pointers for current person
-
+        new_person->
 
 
 
@@ -81,8 +89,10 @@ person *create_family(int generations)
         person *parent1 = NULL;
 
         // Randomly assign alleles.
-        new_person->alleles[0] = random_allele();
-        new_person->alleles[1] = random_allele();
+        for (int parent_num = 0; parent_num < PARENT_TOTAL; parent_num++)
+        {
+            new_person->alleles[parent_num] = random_allele();
+        }
     }
 
     // Return newly created person.
