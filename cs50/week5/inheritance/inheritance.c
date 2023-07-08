@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 // Each person has two parents and two alleles
 typedef struct person
 {
@@ -13,13 +14,16 @@ typedef struct person
 }
 person;
 
+
 const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
+
 
 person *create_family(int generations);
 void print_family(person *p, int generation);
 void free_family(person *p);
 char random_allele();
+
 
 int main(void)
 {
@@ -36,10 +40,16 @@ int main(void)
     free_family(p);
 }
 
+
 // Create a new individual with `generations`
 person *create_family(int generations)
 {
     // TODO: Allocate memory for new person
+
+
+
+
+
 
     // If there are still generations left to create
     if (generations > 1)
@@ -50,7 +60,20 @@ person *create_family(int generations)
 
         // TODO: Set parent pointers for current person
 
+
+
+
+
+
+
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
+
+
+
+
+
+
+
 
     }
 
@@ -59,24 +82,83 @@ person *create_family(int generations)
     {
         // TODO: Set parent pointers to NULL
 
+
+
+
+
+
+
+
         // TODO: Randomly assign alleles
+
+
+
+
+
+
+
 
     }
 
     // TODO: Return newly created person
+
+
+
+
+
+
+
+
     return NULL;
 }
+
 
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
     // TODO: Handle base case
 
+
+
+
+
+
+
+
+
+
+
+
     // TODO: Free parents recursively
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // TODO: Free child
 
+
+
+
+
+
+
+
+
+
+
+
 }
+
 
 // Print each family member and their alleles.
 void print_family(person *p, int generation)
@@ -115,6 +197,7 @@ void print_family(person *p, int generation)
     print_family(p->parents[0], generation + 1);
     print_family(p->parents[1], generation + 1);
 }
+
 
 // Randomly chooses a blood type allele.
 char random_allele()
