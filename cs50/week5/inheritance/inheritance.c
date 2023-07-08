@@ -63,7 +63,7 @@ person *create_family(int generations)
             new_person->parents[i] = new_parent[i];
 
             // Randomly assign an allele from parent to current person.
-            inherited = rand() % 2;
+            inherited = rand() % PARENT_TOTAL;
             new_person->alleles[i] = new_parent[i]->alleles[inherited];
         }
     }
