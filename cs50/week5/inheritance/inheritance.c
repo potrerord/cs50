@@ -50,7 +50,7 @@ person *create_family(int generations)
     // Recursive case: If there are still generations left to create,
     if (generations > 1)
     {
-        // Create variables for each parent and each inherited allele.
+        // Create variables for each new parent and inherited allele.
         person *new_parent[PARENT_TOTAL];
         int inherited;
 
