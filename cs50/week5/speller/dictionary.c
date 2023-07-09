@@ -70,7 +70,9 @@ bool load(const char *dictionary)
     // Make optimized text frequency dictionary thing
     char optimized_alphabet[26] =
 
-    float letter frequencies = {
+
+    // Array for letter frequencies, from A to Z.
+    float LET_FREQS = {
         8.2,   1.5,   2.8,   4.3,   12.7,  2.2,   2,
         6.1,   7,     0.15,  0.77,  4,     2.4,   6.7,
         7.5,   1.9,   0.095, 6,     6.3,   9.1,   2.8,
