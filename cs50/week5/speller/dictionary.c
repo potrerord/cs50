@@ -22,9 +22,15 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // Hash the word to obtain its hash value.
+    // Hash the word to obtain its hash value (case-insensitively - foo
+    // and FOO should have the same value. use strcasecmp.)
 
 
+    // Search the hash table at the location specified by the word's
+    // hash value.
+        // Return true if the word is found
+
+    // Return false if the word is not found.
 
 
 
@@ -141,10 +147,16 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
+    // Use valgrind with test input for the program like:
+    // valrgind ./speller texts/cat.txt
+
+
+    // Use free() for any allocated memory in load()
 
 
 
-
+    // Use a temp "next" variable to store each node's next value like
+    // in lecture.
 
 
 
