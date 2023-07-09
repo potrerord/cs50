@@ -22,22 +22,15 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // Hash the word to obtain its hash value (case-insensitively - foo
-    // and FOO should have the same value. use strcasecmp.)
-
+    // Use hash(word) to get a hash value
 
     // Search the hash table at the location specified by the word's
     // hash value.
         // Return true if the word is found
 
+
+
     // Return false if the word is not found.
-
-
-
-
-
-
-
 
 
 
@@ -47,14 +40,24 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
+    // Hash the word to obtain its hash value (case-insensitively - foo
+    // and FOO should have the same value. use strcasecmp.)
+
+    /* The hash function given to you returns an int between 0 and 25,
+    inclusive, based on the first character of word. However, there are
+    many ways to implement a hash function beyond using the first
+    character (or characters) of a word. Consider a hash function that
+    uses a sum of ASCII values or the length of a word. A good hash
+    function reduces “collisions” and has a (mostly!) even distribution
+    across hash table “buckets”.
+    */
 
 
 
 
 
 
-
-
+    // return a positive unsigned int for the hash value
 
 
 
