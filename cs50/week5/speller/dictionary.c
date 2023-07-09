@@ -67,8 +67,27 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Create space for a new hash table node.
-    
+    // Create a pointer for a linked list..
+    node *list = NULL;
+
+    // Read each word in the file.
+    char c;
+    while (fread(&c, sizeof(char), 1, source))
+    {
+        // Create space for a new hash table node.
+        node *n = malloc(sizeof(node));
+        n->number = x;
+        n->next = NULL;
+
+    }
+
+    // TODO: Add new node to head (front) of linked list.
+    n->next = list;
+    list->next = n;
+
+    // Update the total number of nodes
+    totalNodes++;
+
 
 
     // Copy the word into the new node.
@@ -85,15 +104,6 @@ bool load(const char *dictionary)
 
 
     // Return false if unsuccessful (again, at any other point)
-
-
-
-    // Read each word in the file.
-    char c;
-    while (fread(&c, sizeof(char), 1, source))
-    {
-
-    }
 
 
 
