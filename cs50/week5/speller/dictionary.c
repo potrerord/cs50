@@ -67,6 +67,9 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    // Classify optimized text frequency dictionary thing
+    char optimized_alphabet[26] = 
+
     // Open dictionary
     FILE *source = fopen(dictionary, "r");
 
