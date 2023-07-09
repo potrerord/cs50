@@ -22,7 +22,7 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-
+    // Hash the word to obtain its hash value.
 
 
 
