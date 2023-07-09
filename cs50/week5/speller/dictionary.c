@@ -59,14 +59,25 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // Open dictionary
-    FILE *file = fopen(dictionary, "r");
+    FILE *source = fopen(dictionary, "r");
 
-    // Return false if unsuccessful, else true.
-    if (file == NULL)
+    // Return false if unsuccessful.
+    if (source == NULL)
     {
         return false;
     }
 
+    // Read each word in the file.
+    char c;
+    while (fread(&c, sizeof(char), 1, source))
+    {
+        
+    }
+
+
+
+    // Close file and return true for successful load.
+    fclose(source);
     return true;
 }
 
