@@ -9,13 +9,18 @@
 typedef struct Node
 {
     char word[LENGTH + 1];
-    struct node *next;
+    struct Node *next;
 }
 node;
 
-
-typedef struct 
-
+// Represents a letter's alpha position, symbol, and frequency of usage.
+typedef struct Letter
+{
+    char symbol;
+    int position;
+    float frequency;
+}
+letter;
 
 
 
@@ -84,7 +89,7 @@ bool load(const char *dictionary)
 
 
     // Array for letter frequencies, from A to Z.
-    float LET_FREQS = {
+    const float LET_FREQS = {
         8.2,   1.5,   2.8,   4.3,   12.7,  2.2,   2,
         6.1,   7,     0.15,  0.77,  4,     2.4,   6.7,
         7.5,   1.9,   0.095, 6,     6.3,   9.1,   2.8,
