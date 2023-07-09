@@ -68,12 +68,12 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // Classify optimized text frequency dictionary thing
-    char optimized_alphabet[26] = 
+    char optimized_alphabet[26] =
 
     // Open dictionary
     FILE *source = fopen(dictionary, "r");
 
-    // Return false if unsuccessful.
+    // Return false if file was not opened.
     if (source == NULL)
     {
         return false;
