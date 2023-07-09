@@ -6,7 +6,7 @@
 #include "dictionary.h"
 
 // Represents a node in a hash table
-typedef struct node
+typedef struct Node
 {
     char word[LENGTH + 1];
     struct node *next;
