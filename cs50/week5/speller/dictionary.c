@@ -67,11 +67,32 @@ bool load(const char *dictionary)
         return false;
     }
 
+    // Create space for a new hash table node.
+
+
+
+    // Copy the word into the new node.
+
+
+
+    // Hash the word to obtain its hash value.
+
+
+
+    // Insert the new node into the hash table (using the index
+    // specified by its hash value)
+
+
+
+    // Return false if unsuccessful (again, at any other point)
+
+
+
     // Read each word in the file.
     char c;
     while (fread(&c, sizeof(char), 1, source))
     {
-        
+
     }
 
 
