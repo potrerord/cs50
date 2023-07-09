@@ -68,7 +68,7 @@ bool load(const char *dictionary)
     }
 
     // Create space for a new hash table node.
-
+    
 
 
     // Copy the word into the new node.
