@@ -67,8 +67,22 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // Classify optimized text frequency dictionary thing
+    // Make optimized text frequency dictionary thing
     char optimized_alphabet[26] =
+
+    float letter frequencies = {
+        8.2,   1.5,   2.8,   4.3,   12.7,  2.2,   2,
+        6.1,   7,     0.15,  0.77,  4,     2.4,   6.7,
+        7.5,   1.9,   0.095, 6,     6.3,   9.1,   2.8,
+        0.98,  2.4,   0.15,  2,     0.074
+    }
+
+
+
+
+
+
+
 
     // Open dictionary
     FILE *source = fopen(dictionary, "r");
