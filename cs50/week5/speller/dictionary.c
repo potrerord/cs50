@@ -142,26 +142,6 @@ bool load(const char *dictionary)
             // Append character to word
             word[index] = c;
             index++;
-
-            // Ignore alphabetical strings too long to be words
-            if (index > LENGTH)
-            {
-                // Consume remainder of alphabetical string
-                while (fread(&c, sizeof(char), 1, file) && isalpha(c));
-
-                // Prepare for new word
-                index = 0;
-            }
-        }
-
-        // Ignore words with numbers (like MS Word can)
-        else if (isdigit(c))
-        {
-            // Consume remainder of alphanumeric string
-            while (fread(&c, sizeof(char), 1, file) && isalnum(c));
-
-            // Prepare for new word
-            index = 0;
         }
 
         // We must have found a whole word
