@@ -94,8 +94,6 @@ void insert_to_trie(node *trie, char *word)
         return;
     }
 
-    // Recursive case: If not the end, insert letter and create next.
-
     // Create temp node and exit if failed.
     node *temp = malloc(sizeof(node));
     if (temp == NULL)
@@ -129,16 +127,6 @@ bool load(const char *dictionary)
     {
         return false;
     }
-
-    // Allocate and initialize a pointer for a trie root.
-    node *root = malloc(sizeof(node));
-    for (int i = 0; i < N; i++)
-    {
-        root->letters[i] = NULL;
-    }
-    root->islast = false;
-
-    // Did you free this?
 
     // Variable for holding the converted ASCII -> letter index value.
     int letter;
