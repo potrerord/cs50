@@ -26,17 +26,8 @@ bool check(const char *word)
     // For each character in word:
     for (int i = 0, wordlen = strlen(word); i < wordlen; i++)
     {
-        // Convert alpha letters to index.
-        if (word[i] != '\'')
-        {
-            letter = tolower(word[i]) - 'a';
-        }
-
-        // Convert apostrophe to final index.
-        else
-        {
-            letter = LETTERS - 1;
-        }
+        // Convert characters to letter index.
+        letter = convert_ascii(word[i]);
 
         // If there is no child for that letter, return false.
         if (ptr->children[letter] == NULL)
