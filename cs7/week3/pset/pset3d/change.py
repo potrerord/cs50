@@ -36,7 +36,7 @@ def find_change() -> List[int]:
 
     for day in range(1, DAY_COUNT + 1):
 
-        # Assign user_price to start price before overwriting.
+        # Assign end price to start price before overwriting.
         start_price = int(end_price)
 
         # Get user input for new end price.
