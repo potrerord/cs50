@@ -75,9 +75,13 @@ unsigned int hash(const char *word)
 
 void insert_to_trie(node *trie, char *word)
 {
+    // Base case:
+    
+
+    // Recursive case:
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-        
+
     }
 }
 
