@@ -78,20 +78,33 @@ void initialize_node(node *argnode)
 
 void insert_to_trie(node *trie, char *word)
 {
-    // Create temp node and exit program if failed.
-    node *ptr = malloc(sizeof(node));
-    if (ptr == NULL)
+    // Convert first char in word to letter index.
+    int letter = tolower(*word) - 'a';
+
+    // If a node doesn't already exist at that letter,
+    if (trie->children[letter] == NULL)
     {
-        printf("error: memory allocation failed\n");
-        exit(1);
+        // Create temp node and exit program if failed.
+        node *ptr = malloc(sizeof(node));
+        if (ptr == NULL)
+        {
+            printf("error: memory allocation failed\n");
+            exit(1);
+        }
+
+        // Initialize temp node.
+        initialize_node(ptr);
+
+        // Point current trie's child for this letter at new node.
+        trie->children[letter] = ptr;
     }
 
-    // Initialize temp node.
-    initialize_node(ptr);
+    // Else, if a node exists, then follow it.
+    else
+    {
+        trie = trie->children[letter];
+    }
 
-    // Point current trie's child for this letter at new node.
-    int letter = tolower(*word) - 'a';
-    trie->children[letter] = ptr;
 
     // Base case: If next character is '\0', mark current as last.
     if (word[1] == '\0')
