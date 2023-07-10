@@ -73,6 +73,15 @@ unsigned int hash(const char *word)
 }
 
 
+void insert_to_trie(node *trie, char *word)
+{
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        
+    }
+}
+
+
 // Load dictionary into memory, return true if successful/false if not.
 bool load(const char *dictionary)
 {
@@ -116,7 +125,7 @@ bool load(const char *dictionary)
             }
 
             root->children[letter] = temp;
-            
+
         }
 
         // Create space for a new trie node.
