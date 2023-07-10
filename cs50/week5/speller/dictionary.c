@@ -19,24 +19,13 @@ node *root;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-/*     // Create temp node and exit program if failed.
-    node *ptr = malloc(sizeof(node));
-    if (ptr == NULL)
-    {
-        printf("error: memory allocation failed\n");
-        exit(1);
-    }
-
-    // Initialize temp node.
-    initialize_node(ptr);
-
-    // Assign allocated memory for node to root pointer.*/
+    // Initialize looped pointer variable at root pointer.
     node *ptr = root;
 
     // Prepare to convert letter indices.
     int letter;
 
-    // for each character in word:
+    // For each character in word:
     for (int i = 0, wordlen = strlen(word); i < wordlen; i++)
     {
         // Convert letter to index.
