@@ -51,6 +51,7 @@ bool check(const char *word)
     return false;
 }
 
+
 /*
 // Hashes word to a number
 unsigned int hash(const char *word)
@@ -58,6 +59,7 @@ unsigned int hash(const char *word)
     return toupper(word[0]) - 'A';
 }
 */
+
 
 void initialize_node(node *argnode)
 {
@@ -87,10 +89,11 @@ void insert_to_trie(node *trie, char *word)
         exit(1);
     }
 
-    temp = root;
-
     // Initialize temp node.
     initialize_node(temp);
+
+    // Assign allocated memory for node to root pointer.
+    trie = temp;
 
     // Point current trie's child for this letter at new node.
     int letter = tolower(*word) - 'a';
