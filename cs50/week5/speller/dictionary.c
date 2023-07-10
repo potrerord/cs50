@@ -99,13 +99,6 @@ void insert_to_trie(node *trie, char *word)
         trie->children[letter] = ptr;
     }
 
-    // Else, if a node exists, then follow it.
-    else
-    {
-        trie = trie->children[letter];
-    }
-
-
     // Base case: If next character is '\0', mark current as last.
     if (word[1] == '\0')
     {
@@ -113,7 +106,7 @@ void insert_to_trie(node *trie, char *word)
         return;
     }
 
-    // Recursive case: If more letters, insert next node.
+    // Recursive case: If more letters to insert, insert next node.
     insert_to_trie(trie->children[letter], word + 1);
 
     return;
