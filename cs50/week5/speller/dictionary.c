@@ -47,7 +47,7 @@ void initialize_node(node *argnode)
 {
     for (int i = 0; i < LENGTH + 1; i++)
     {
-        argnode->word[i] = '\0'';
+        argnode->word[i] = '\0';
     }
 
     argnode->next = NULL;
