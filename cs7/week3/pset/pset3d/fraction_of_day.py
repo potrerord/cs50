@@ -59,7 +59,7 @@ def main():
         if hour == 0:
             print_hour = 12
 
-        print(f"")
+        print(f"{}")
 
 
 
