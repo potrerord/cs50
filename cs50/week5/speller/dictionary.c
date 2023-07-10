@@ -31,7 +31,13 @@ bool check(const char *word)
         // Convert letter to index.
         letter = tolower(word[i]) - 'a';
 
-        // Move ptr from root to first letter.
+        // If there is no child for that letter, return false
+        if (ptr->children[letter] == NULL)
+        {
+            return false;
+        }
+
+        // If there is, move ptr to child.
         ptr = ptr->children[letter];
 
         // If ptr is at the last letter of the word,
@@ -45,15 +51,13 @@ bool check(const char *word)
         }
 
         // If not at the last letter, follow the child and repeat.
-        else if (ptr->children[letter] != NULL)
+        else
         {
             ptr = ptr->children[letter];
-            continue;
         }
-
     }
 
-    // If word is not in dictionary, return false.
+    // If word is not in trie, return false.
     return false;
 }
 
