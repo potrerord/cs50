@@ -62,25 +62,26 @@ bool check(const char *word)
     return false;
 }
 
-// Convert ascii chars for letters and apostrophe to letter index 0-26.
+
+// Convert ascii letters and apostrophe to letter index values.
 int convert_ascii(char character)
 {
     // Create variable to store converted index value.
-    int converted;
+    int index;
 
-    // Convert letter chars.
+    // Convert non-apostrophe letter chars.
     if (character != '\'')
     {
-        converted = tolower(character) - 'a';
+        index = tolower(character) - 'a';
     }
 
     // Put apostrophe char at final index.
     else
     {
-        converted = LETTERS - 1;
+        index = LETTERS - 1;
     }
 
-    return converted;
+    return index;
 }
 
 
@@ -129,7 +130,7 @@ void initialize_node(node *argnode)
 void insert_to_trie(node *trie, char *word)
 {
     // Create variable to store letter index.
-    int letter = ;
+    int letter = convert_ascii(*word);
 
     // If a node doesn't already exist at that letter,
     if (trie->children[letter] == NULL)

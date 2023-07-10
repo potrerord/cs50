@@ -22,6 +22,7 @@ node;
 
 // Prototypes
 bool check(const char *word);
+int convert_ascii(char character)
 bool free_trie(node *trie);
 unsigned int hash(const char *word);
 void initialize_node(node *argnode);
