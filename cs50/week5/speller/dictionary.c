@@ -117,8 +117,8 @@ bool load(const char *dictionary)
     char c;
     while (fread(&c, sizeof(char), 1, source))
     {
-        // Create space for a new hash table node.
-        node *n = malloc(sizeof(node));
+        // Create space for a new trie node.
+        trie *n = malloc(sizeof(trie));
         n->number = x;
         n->next = NULL;
 
