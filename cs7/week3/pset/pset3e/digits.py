@@ -19,7 +19,9 @@ that finds and returns (and doesn't print!) the number.
 def main():
     """Call five_digits() and print result."""
 
+    print()
     print(five_digits())
+    print()
 
 
 # Finds and returns the 5-digit number that when multiplied by 4 is the
@@ -27,31 +29,22 @@ def main():
 #
 # Must not print anything out.
 def five_digits():
-    for num in range(1000, 10000):
+    for num in range(10000, 100000):
         ones = num % 10
-        tens = (num / 10) % 10
-        hund = (num / 100) % 10
-        thou = (num / 1000) % 10
+        tens = int(num / 10) % 10
+        hund = int(num / 100) % 10
+        thou = int(num / 1000) % 10
+        tenthou = int(num / 10000) % 10
 
-        print(ones)
-        print(tens)
-        print(hund)
-        print(thou)
+        rev_ones = tenthou
+        rev_tens = thou * 10
+        rev_hund = hund * 100
+        rev_thou = tens * 1000
+        rev_tenthou = ones * 10000
 
-        rev_ones = thou
-        rev_tens = hund * 10
-        rev_hund = tens * 100
-        rev_thou = ones * 1000
-
-        rev_num = rev_thou + rev_hund + rev_tens + rev_ones
-
-        print()
-        print(num)
-        print(rev_num)
-        print()
+        rev_num = rev_tenthou + rev_thou + rev_hund + rev_tens + rev_ones
 
         if num * 4 == rev_num:
-            print("HERE")
             return num
 
 # Runs the main function. Leave as is.
