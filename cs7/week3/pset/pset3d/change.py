@@ -41,13 +41,14 @@ def find_change() -> List[int]:
 
         # Get user input for new end price.
         end_price = int(input(f"Enter the Day {day} price: "))
+        change = int(abs(end_price - start_price))
 
         # If current change is largest, update variables.
-        if abs(end_price - start_price) > largest_change:
-            largest_change = int(end_price)
-            start_day = int(day - 1)
+        if change > largest_change:
+            largest_change = change
+            start_day = day - 1
 
-    change_info = [start_price, end_price, start_day]
+    change_info = [int(start_price), int(end_price), int(start_day)]
     return change_info
 
 
@@ -55,7 +56,7 @@ def print_change(day1_price: int, day2_price: int, day1_num: int) -> None:
     """Print report to terminal."""
 
     print(f"The largest change was ${abs(day2_price - day1_price)} from "
-          f"${day2_price} to ${day1_price}, occurring between Day #{day1_num} "
+          f"${day1_price} to ${day2_price}, occurring between Day #{day1_num} "
           f"and Day #{day1_num + 1}.""")
 
 
