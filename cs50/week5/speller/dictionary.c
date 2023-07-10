@@ -5,7 +5,7 @@
 
 #include "dictionary.h"
 
-// Represents a node in a hash table
+// Represents a node in a trie.
 typedef struct Trie
 {
     char word[LENGTH + 1];
