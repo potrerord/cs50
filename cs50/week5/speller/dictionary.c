@@ -113,7 +113,7 @@ bool load(const char *dictionary)
     }
 
     // Create a pointer for a trie.
-    node *trie = NULL;
+    node *root = malloc(sizeof(node));
 
     // Read each word in the file.
     char c;
