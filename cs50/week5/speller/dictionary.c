@@ -41,22 +41,15 @@ bool check(const char *word)
             }
         }
 
-        // Else, return false if node has no child for this character.
-        else if (ptr->children[letter] == NULL)
+        // Else, if there is a child, follow it and repeat.
+        else if (ptr->children[letter] != NULL)
         {
-            return false;
-        }
-
-        // Else, if there is a child and it's not the last letter,
-        else
-        {
-            // Move to child and repeat.
             ptr = ptr->children[letter];
             continue;
         }
     }
 
-    // Else, return false.
+    // If no child for the letter, return false.
     return false;
 }
 
