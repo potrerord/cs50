@@ -109,12 +109,13 @@ bool load(const char *dictionary)
         if (root->children[letter] == NULL)
         {
             // Create space for a new trie node.
-            node *n = malloc(sizeof(node));
-            if (n == NULL)
+            node *temp = malloc(sizeof(node));
+            if (temp == NULL)
             {
                 return 1;
             }
 
+            root->children[letter] = temp;
             
         }
 
