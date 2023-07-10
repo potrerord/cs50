@@ -42,6 +42,17 @@ unsigned int hash(const char *word)
     return toupper(word[0]) - 'A';
 }
 
+// Initialize all values in node to '\0' or NULL.
+void initialize_node(node *argnode)
+{
+    for (int i = 0; i < LENGTH + 1; i++)
+    {
+        argnode->children[i] = NULL;
+    }
+
+    argnode->islast = false;
+}
+
 
 // Load dictionary into memory, return true if successful/false if not.
 bool load(const char *dictionary)

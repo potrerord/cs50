@@ -1,6 +1,5 @@
 // Implements a dictionary's functionality.
 
-
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -8,7 +7,6 @@
 #include <string.h>
 
 #include "dictionary.h"
-
 
 // Global variable for dictionary word count.
 unsigned int word_count = 0;
@@ -95,7 +93,7 @@ unsigned int hash(const char *word)
 }
 */
 
-
+// Initialize all values in node to NULL/false.
 void initialize_node(node *argnode)
 {
     for (int i = 0; i < LETTERS; i++)
@@ -106,7 +104,7 @@ void initialize_node(node *argnode)
     argnode->islast = false;
 }
 
-
+// Insert a string into the trie.
 void insert_to_trie(node *trie, char *word)
 {
     int letter;
