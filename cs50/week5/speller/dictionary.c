@@ -6,12 +6,12 @@
 #include "dictionary.h"
 
 // Represents a node in a hash table
-typedef struct Node
+typedef struct Trie
 {
     char word[LENGTH + 1];
-    struct Node *next;
+    struct Trie *letters[26];
 }
-node;
+trie;
 
 // Represents a letter's alpha position, symbol, and frequency of usage.
 typedef struct Letter
