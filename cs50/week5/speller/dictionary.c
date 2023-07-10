@@ -111,7 +111,7 @@ void insert_to_trie(node *trie, char *word)
     trie->children[letter] = temp;
 
     // Insert next node.
-    insert_to_trie(trie, word + 1);
+    insert_to_trie(trie->children[letter], word + 1);
 
     return;
 }
