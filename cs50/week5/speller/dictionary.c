@@ -109,9 +109,10 @@ void insert_to_trie(node *trie, char *word)
     int letter = tolower(*word) - 'a';
     trie->children[letter] = ptr;
 
-    // Base case: If on the letter before '\0', mark as a last letter.
+    // Base case: If child is the letter before '\0', mark child as a last letter.
     if (word[1] == '\0')
     {
+        trie = trie->children[letter]
         trie->islast = true;
         return;
     }
