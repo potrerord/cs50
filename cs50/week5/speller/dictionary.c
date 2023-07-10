@@ -66,17 +66,6 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Create temp node and exit program if failed.
-    node *temp = malloc(sizeof(node));
-    if (temp == NULL)
-    {
-        printf("error: memory allocation failed\n");
-        exit(1);
-    }
-
-    // Initialize temp node.
-    initialize_node(temp);
-
     // Assign allocated memory for node to root pointer.
     root = temp;
 
@@ -88,6 +77,18 @@ bool load(const char *dictionary)
     while (fscanf(source, %s, word) != EOF)
     {
         {
+            // Create temp node and exit program if failed.
+            node *temp = malloc(sizeof(node));
+            if (temp == NULL)
+    {
+        printf("error: memory allocation failed\n");
+        exit(1);
+    }
+
+    // Initialize temp node.
+    initialize_node(temp);
+
+
         }
     }
 
