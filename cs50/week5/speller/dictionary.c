@@ -91,10 +91,6 @@ void insert_to_trie(node *trie, char *word)
     if (word == '\0')
     {
         trie->islast = true;
-
-        // Increment global word count.
-        word_count++;
-
         return;
     }
 
@@ -132,29 +128,37 @@ bool load(const char *dictionary)
         return false;
     }
 
+    // Prepare to assemble words.
+    int index = 0;
     char word[LENGTH + 1];
 
     // Assemble words from dictionary.
     char c;
     while (fread(&c, sizeof(char), 1, source))
     {
-        // Allow only alphabetical characters and apostrophes.
-        if (isalpha(c) || (c == '\'' && index > 0))
+        // Assume all lowercase/apostrophes and separated by \n.
+        while (c != '\n')
         {
             // Append character to word.
             word[index] = c;
             index++;
         }
 
-        // We must have found a whole word.
+        // New line means the word is over.
         else if (index > 0)
         {
             // Terminate current word.
             word[index] = '\0';
+
+            // Increment global word count.
+            word_count++;
+
+            // Prepare for next word.
+            index = 0;
         }
     }
 
-    // Insert word to trie for later check.
+    // Insert word to trie.
     insert_to_trie(root, word);
 
     // Close file and return true for successful load.
