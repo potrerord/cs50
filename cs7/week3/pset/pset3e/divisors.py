@@ -57,7 +57,7 @@ def divisors(num):
     sum = 0
 
     # If num is divisible by a number <= its square root,
-    for potential_div in range(1, sqrt + 1):
+    for potential_div in range(1, int(sqrt) + 1):
         if num % potential_div == 0:
             sum += potential_div
 
