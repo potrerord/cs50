@@ -13,7 +13,7 @@
 // Global variable for dictionary word count.
 unsigned int word_count = 0;
 
-// Root for trie.
+// Global root for trie.
 node *root;
 void initialize_node(node *argnode);
 
