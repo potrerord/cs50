@@ -53,13 +53,17 @@ def main():
 
     for hour in range(24):
 
-        print_hour = hour
+        if hour < 12:
+            ampm = "AM"
+        else:
+            ampm = "PM"
 
         # Convert the "0th hour" to be "12".
+        print_hour = hour
         if hour == 0:
             print_hour = 12
 
-        print(f"{}")
+        print(f"{print_hour:>5} {ampm}        ")
 
 
 
