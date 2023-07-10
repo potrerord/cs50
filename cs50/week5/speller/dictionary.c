@@ -95,21 +95,21 @@ void initialize_node(node *argnode)
 void insert_to_trie(node *trie, char *word)
 {
     // Create temp node and exit program if failed.
-    node *temp = malloc(sizeof(node));
-    if (temp == NULL)
+    node *ptr = malloc(sizeof(node));
+    if (ptr == NULL)
     {
         printf("error: memory allocation failed\n");
         exit(1);
     }
 
     // Initialize temp node.
-    initialize_node(temp);
+    initialize_node(ptr);
 
     // Point current trie's child for this letter at new node.
     int letter = tolower(*word) - 'a';
-    trie->children[letter] = temp;
+    trie->children[letter] = ptr;
 
-    // Base case: Mark letter before '\0' as a last letter.
+    // Base case: If on the letter before '\0', mark as a last letter.
     if (word[1] == '\0')
     {
         trie->islast = true;
