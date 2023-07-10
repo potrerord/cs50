@@ -87,6 +87,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
+    /*
     const ASCII_A = 65;
 
     // Make optimized text frequency dictionary thing
@@ -100,6 +101,7 @@ bool load(const char *dictionary)
         7.5,   1.9,   0.095, 6,     6.3,   9.1,   2.8,
         0.98,  2.4,   0.15,  2,     0.074
     }
+    */
 
     // Open dictionary
     FILE *source = fopen(dictionary, "r");
