@@ -79,22 +79,28 @@ void insert_to_trie(node *trie, char *word)
     // Base case: At end of word, mark node as a last letter in a word.
     if (word == '\0')
     {
-        node->islast = true;
+        trie->islast = true;
 
         // Return true for successful word insertion.
         return true;
     }
 
     // Recursive case: If not the end, insert letter and create next.
+
+    // Create temp node and exit if failed.
     node *temp = malloc(sizeof(node));
     if (temp == NULL)
+    {
+        printf("error: memory allocation failed\n");
+        exit(1);
+    }
 
 
     letter = tolower(word) - 'a';
-    node->children[letter] = malloc(sizeof(node));
+    trie->children[letter] = temp;
 
-    if
-    node->islast = false;
+
+    trie->islast = false;
     insert_to_trie(node, word + 1;)
 
 
