@@ -78,8 +78,20 @@ void initialize_node(node *argnode)
 
 void insert_to_trie(node *trie, char *word)
 {
-    // Convert char to letter index.
-    int letter = tolower(*word) - 'a';
+    int letter;
+
+    // Convert letter chars to letter index.
+    if (*word != '\'')
+    {
+        letter = tolower(*word) - 'a';
+
+    }
+
+    // Put apostrophe char at index 26.
+    else
+    {
+        letter = 26;
+    }
 
     // If a node doesn't already exist at that letter,
     if (trie->children[letter] == NULL)

@@ -9,8 +9,8 @@
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 #define LENGTH 45
 
-// Number of letters in the alphabet.
-#define LETTERS 26
+// Number of letters in the alphabet, plus apostrophe.
+#define LETTERS 27
 
 // Represents a node in a trie.
 typedef struct Node
