@@ -110,9 +110,8 @@ bool load(const char *dictionary)
     // Create a pointer for a linked list.
     node *list = NULL;
 
-    // Create a word count variable?
-
-
+    // Create a word count variable.
+    int word_count;
 
     // Read each word in the file.
     char c;
@@ -126,6 +125,8 @@ bool load(const char *dictionary)
 
         // Count each word and save in malloc so it exists after load().
 
+
+        word_count++;
     }
 
     // TODO: Add new node to head (front) of linked list.
