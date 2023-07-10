@@ -91,10 +91,12 @@ bool insert_to_trie(node *trie, char *word)
     if (word == '\0')
     {
         trie->islast = true;
+
+        // Return true for success.
         return true;
     }
 
-    // Create temp node and exit if failed.
+    // Create temp node and exit program if failed.
     node *temp = malloc(sizeof(node));
     if (temp == NULL)
     {
@@ -112,6 +114,7 @@ bool insert_to_trie(node *trie, char *word)
     // Insert next node.
     insert_to_trie(node, word + 1;)
 
+    // Return true for success.
     return true;
 }
 
