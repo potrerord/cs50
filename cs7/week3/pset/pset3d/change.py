@@ -46,13 +46,8 @@ stock during a 10-day period.
 from typing import List
 
 
-
-# Implement a main function that computes the largest change as
-# specified in problem 12, by using find_change to find the largest
-# change and print_change to print the final answer.
 def main():
     """Compute the largest change and print final answer."""
-
 
     # Prompt user for prices and find largest change.
     find_change()
@@ -60,11 +55,6 @@ def main():
     # Print answer.
     print_change()
 
-
-# Implement a function find_change that prompts the user for the
-# appropriate number of stock prices and returns a list with the the
-# value on the first day, the value on the second day, and the number
-# of the first day, in that order.
 
 def find_change() -> List[int]:
     """Prompt the user for the appropriate number of stock prices and
@@ -75,13 +65,12 @@ def find_change() -> List[int]:
     # Constant: Number of days of price data to request from user.
     DAY_COUNT = 10
 
-    #
+    # Create tracker variable for the largest change.
     largest_change = 0
 
     for day in range(DAY_COUNT):
         user_price = int(input(f"Enter the Day {day + 1} price: "))
         if user_price > largest_change:
-            
             largest_change = user_price
 
 
@@ -97,7 +86,7 @@ def find_change() -> List[int]:
 
 # Must not prompt the user for anything.
 def print_change(day1_price, day2_price, day1_num):
-    *** add your code here ***
+
 
 
 # Run the main function if script is run directly.
