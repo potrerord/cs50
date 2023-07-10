@@ -85,8 +85,14 @@ void insert_to_trie(node *node, char *word)
     }
 
     // Recursive case: If not the end, insert letter and create next.
+    node *temp = malloc(sizeof(node));
+    if (temp == NULL)
+    
+
     letter = tolower(word) - 'a';
-    node->children[*word]
+    node->children[letter] = malloc(sizeof(node));
+
+    if
     node->islast = false;
     insert_to_trie(node, word + 1;)
 
