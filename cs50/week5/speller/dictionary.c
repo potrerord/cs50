@@ -121,6 +121,12 @@ bool load(const char *dictionary)
     {
         // Create space for a new trie node.
         node *n = malloc(sizeof(node));
+
+        if (n == NULL)
+        {
+            return 1;
+        }
+
         n->number = x;
         n->next = NULL;
 
