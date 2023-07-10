@@ -86,7 +86,7 @@ bool load(const char *dictionary)
     char c;
 
     // Assemble words from dictionary.
-    while (fread(&c, sizeof(char), 1, source))
+    while (fscanf(source, %s, ))
     {
         // Assume all lowercase/apostrophes and separated by \n.
         if (c != '\n')
