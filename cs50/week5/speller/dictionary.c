@@ -16,6 +16,8 @@ unsigned int word_count = 0;
 node *root;
 void initialize_node(node *argnode);
 
+// Constant: Number of letters.
+const unsigned int LETTERS = 26;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -45,7 +47,7 @@ unsigned int hash(const char *word)
 
 void initialize_node(node *argnode)
 {
-    for (int i = 0; i < LETTERS; i++)
+    for (int i = 0; i < 26; i++)
     {
         argnode->children[i] = NULL;
     }

@@ -9,13 +9,10 @@
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 #define LENGTH 45
 
-// Constant: Number of letters.
-const unsigned int LETTERS = 26;
-
 // Represents a node in a trie.
 typedef struct Node
 {
-    struct Node *children[LETTERS];
+    struct Node *children[26];
     bool islast;
 }
 node;
