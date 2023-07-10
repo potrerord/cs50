@@ -110,6 +110,7 @@ bool load(const char *dictionary)
     char c;
     while (fread(&c, sizeof(char), 1, source))
     {
+
         // Create space for a new trie node.
         node *n = malloc(sizeof(node));
 
