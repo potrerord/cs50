@@ -65,16 +65,24 @@ def find_change() -> List[int]:
     # Constant: Number of days of price data to request from user.
     DAY_COUNT = 10
 
-    # Create tracker variable for the largest change.
+    # Create tracker variables.
     largest_change = 0
+    start_price = 0
+    end_price = 0
 
     for day in range(DAY_COUNT):
-        user_price = int(input(f"Enter the Day {day + 1} price: "))
-        if user_price > largest_change:
-            largest_change = user_price
 
+        # Assign user_price to start price before overwriting.
+        start_price = end_price
 
-    input()
+        # Get user input for new end price.
+        end_price = int(input(f"Enter the Day {day + 1} price: "))
+
+        # If current change is largest, update variables.
+        if abs(end_price - start_price) > largest_change:
+            largest_change = end_price
+            start_day = day - 1
+
     return list[start_price, end_price, start_day]
 
 
