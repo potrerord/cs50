@@ -46,8 +46,6 @@ bool check(const char *word)
         if (i == wordlen - 1)
         {
             // Return true if the current node is a last letter.
-            
-
             if (ptr->islast == true)
             {
                 return true;
