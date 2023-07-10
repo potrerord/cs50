@@ -14,7 +14,7 @@ unsigned int word_count = 0;
 
 // Root for trie.
 node *root;
-initialize_node(root);
+void initialize_node(node *argnode);
 
 
 // Returns true if word is in dictionary, else false
@@ -57,7 +57,7 @@ void initialize_node(node *argnode)
 void insert_to_trie(node *trie, char *word)
 {
     // Base case: At end of word, mark node as a last letter.
-    if (word == '\0')
+    if (*word == '\0')
     {
         trie->islast = true;
         return;
@@ -75,11 +75,11 @@ void insert_to_trie(node *trie, char *word)
     initialize_node(temp);
 
     // Point current trie's child for this letter at new node.
-    int letter = tolower(word) - 'a';
+    int letter = tolower(*word) - 'a';
     trie->children[letter] = temp;
 
     // Insert next node.
-    insert_to_trie(trie, word + 1;)
+    insert_to_trie(trie, word + 1);
 
     return;
 }
@@ -114,7 +114,7 @@ bool load(const char *dictionary)
         }
 
         // New line means the word is over.
-        else if (index > 0)
+        if (index > 0)
         {
             // Terminate current word.
             word[index] = '\0';
