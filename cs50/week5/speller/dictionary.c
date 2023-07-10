@@ -197,8 +197,6 @@ bool unload(void)
             // Unload child.
             free(root->children[i]);
         }
-
-        free(root->children[i]);
     }
 
 
