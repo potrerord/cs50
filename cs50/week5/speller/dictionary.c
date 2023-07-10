@@ -76,12 +76,16 @@ unsigned int hash(const char *word)
 void insert_to_trie(node *trie, char *word)
 {
     // Base case: end of string
-    if 
+    if (word == '\0')
+    {
+        trie->islast = true;
+        return
+    }
 
     // Recursive case:
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-
+        insert_to_trie(trie, word + 1;)
     }
 }
 
