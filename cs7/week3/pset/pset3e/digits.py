@@ -1,21 +1,8 @@
 """
-If you take the number 2178, multiply it by four, and reverse the digits
-— you will get 2178 again. This is the only four-digit number that has
-this property. There is also a five- digit number that has the same
-property. Write a program to find it! Note: you may not use any
-functions we haven't yet covered, such as reversed(). As well, you
-cannot use any strings to solve this.
-
-Your program must implement a function
-   def five_digits():
-       ...
-
-that finds and returns (and doesn't print!) the number.
+Prints 5-digit number that matches its reverse when multiplied by four.
 """
 
 
-# Add a main function that calls five_digits and prints out the
-# results of five_digits.
 def main():
     """Call five_digits() and print result."""
 
@@ -24,11 +11,10 @@ def main():
     print()
 
 
-# Finds and returns the 5-digit number that when multiplied by 4 is the
-# original number with the digits reversed.
-#
-# Must not print anything out.
 def five_digits():
+    """Find and return 5-digit integer that when multiplied by 4 matches
+    its reverse.
+    """
     for num in range(10000, 100000):
         ones = num % 10
         tens = int(num / 10) % 10
@@ -46,6 +32,7 @@ def five_digits():
 
         if num * 4 == rev_num:
             return num
+
 
 # Runs the main function. Leave as is.
 if __name__ == "__main__":
