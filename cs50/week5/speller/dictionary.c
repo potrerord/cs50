@@ -31,7 +31,7 @@ bool check(const char *word)
         // Convert letter to index.
         letter = tolower(word[i]) - 'a';
 
-        // If ptr is at the last letter,
+        // If ptr is at the last letter of the word,
         if (i == wordlen - 1)
         {
             // Return true if the current node is a last letter.
