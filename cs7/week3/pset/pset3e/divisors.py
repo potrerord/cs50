@@ -50,18 +50,14 @@ def main():
 def divisors(num):
     """Return "deficient", "perfect", or "abundant" for an integer n."""
 
-    # Special case: 1 is not a perfect number.
-    if num == 1:
-        return False
-
     # Limit search for factor pairs to be <= the square root of num.
     factor_ceil = int(num ** 0.5)
 
-    # Initiate sum variable at 1 to skip first factor pair.
-    sum = 1
+    # Initiate sum variable.
+    sum = 0
 
     # If num is divisible by a number <= its square root,
-    for potential_div in range(2, factor_ceil + 1):
+    for potential_div in range(1, factor_ceil + 1):
         if num % potential_div == 0:
             sum += potential_div
 
@@ -70,6 +66,9 @@ def divisors(num):
 
                 # Add the other member of the divisor's factor pair.
                 sum += num / potential_div
+
+            # Subtract num from its own sum.
+            sum -= num
 
     # Classify number according to the sum of its divisors.
     if sum < num:
