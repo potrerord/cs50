@@ -33,17 +33,62 @@ Now input an integer value for n that is greater than or equal to 5: 31
 ...
 
 """
-# Returns 'deficient', 'perfect', or 'abundant' for
-# for the number n, as specified in the problem set.
-#
-# Must not print anything out.
-def divisors(n):
-    *** add your code here ***
 
-# Add a main function that prompts the user for two numbers and
-# calls divisors as instructed in the problem description.
+
 def main():
-    *** add your code here ***
+    """Prompt the user for two numbers and call divisors."""
+
+    # Prompt user for range.
+    start = int(input("Enter start value: "))
+    end = int(input("Enter end value:   "))
+
+    # Iterate up to and including end value.
+    for i in range(start, end + 1):
+        divisors(i)
+
+
+def divisors(n):
+    """Return "deficient", "perfect", or "abundant" for an integer n."""
+
+
+def is_perfect_number(num) -> bool:
+    """Return true if test_int is a perfect number.
+
+    An integer is perfect if it is equal to the sum of its divisors,
+    except itself.
+    """
+
+    # Special case: 1 is not a perfect number.
+    if num == 1:
+        return False
+
+    # Limit the search for factor pairs at the square root of num.
+    sqrt = num ** 0.5
+
+    # Initiate sum variable at 1 to skip first factor pair.
+    sum = 1
+
+    # If num is divisible by a number <= its square root,
+    for poss_divisor in range(2, int(num ** 0.5) + 1):
+        if num % poss_divisor == 0:
+            sum += poss_divisor
+
+            # Avoid adding square root twice.
+            if poss_divisor < sqrt:
+
+                # Add the other member of the divisor's factor pair.
+                sum += num / poss_divisor
+
+    # Return true if test_int is a perfect number.
+    if num == sum:
+        return True
+
+    # Return false if not.
+    return False
+
+
+
+
 
 # Runs the main function. Leave as is.
 if __name__ == "__main__":
