@@ -14,12 +14,7 @@
 unsigned int word_count = 0;
 
 // Global root for trie.
-node *root = malloc(sizeof(node));
-if (root == NULL)
-{
-    printf("error: memory allocation failed.");
-    exit(1);
-}
+node *root;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -91,6 +86,8 @@ void insert_to_trie(node *trie, char *word)
         printf("error: memory allocation failed\n");
         exit(1);
     }
+
+    temp = root;
 
     // Initialize temp node.
     initialize_node(temp);
