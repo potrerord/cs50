@@ -192,10 +192,10 @@ bool free_trie(node *trie)
     for (int i = 0; i < LETTERS; i++)
     {
         // If child is not NULL,
-        if (root->children[i] != NULL)
+        if (trie->children[i] != NULL)
         {
             // Free child.
-            free_trie(root->children[i]);
+            free_trie(trie->children[i]);
         }
     }
 
