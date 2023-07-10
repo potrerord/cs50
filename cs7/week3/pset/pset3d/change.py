@@ -87,7 +87,8 @@ def find_change() -> List[int]:
             largest_change = int(end_price)
             start_day = int(day - 1)
 
-    return list[start_price, end_price, start_day]
+    change_info = [start_price, end_price, start_day]
+    return change_info
 
 
 # Implement a function print_change that takes in the results of your
