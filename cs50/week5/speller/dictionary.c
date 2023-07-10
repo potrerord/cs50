@@ -95,7 +95,7 @@ void insert_to_trie(node *trie, char *word)
     // Base case: If next character is '\0', mark current as last.
     if (word[1] == '\0')
     {
-        trie->islast = true;
+        trie->children[letter]->islast = true;
         return;
     }
 
