@@ -87,7 +87,7 @@ void insert_to_trie(node *trie, char *word)
 
     }
 
-    // Put apostrophe char at index 26.
+    // Put apostrophe char after letters at index 26.
     else
     {
         letter = 26;
