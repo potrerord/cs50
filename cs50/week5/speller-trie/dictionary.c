@@ -107,6 +107,7 @@ void initialize_node(node *argnode)
 // Insert a string into the trie.
 void insert_to_trie(node *trie, char *word)
 {
+    // Create variable to store letter index.
     int letter;
 
     // Convert letter chars to letter index.
