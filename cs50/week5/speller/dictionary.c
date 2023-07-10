@@ -56,7 +56,7 @@ bool check(const char *word)
             continue;
         }
 
-        // If there is a node and ptr is at the last letter,
+        // If there is a child and ptr is at the last letter,
         else
         {
             // Check if the current node is the last letter of a word.
