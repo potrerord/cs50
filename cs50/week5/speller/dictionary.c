@@ -78,7 +78,7 @@ void initialize_node(node *argnode)
 
 void insert_to_trie(node *trie, char *word)
 {
-    // Convert first char in word to letter index.
+    // Convert char to letter index.
     int letter = tolower(*word) - 'a';
 
     // If a node doesn't already exist at that letter,
