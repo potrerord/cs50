@@ -51,18 +51,18 @@ def divisors(num):
     """Return "deficient", "perfect", or "abundant" for an integer n."""
 
     # Limit search for factor pairs to be <= the square root of num.
-    factor_ceil = num ** 0.5
+    sqrt = num ** 0.5
 
     # Initiate sum variable.
     sum = 0
 
     # If num is divisible by a number <= its square root,
-    for potential_div in range(1, factor_ceil + 1):
+    for potential_div in range(1, sqrt + 1):
         if num % potential_div == 0:
             sum += potential_div
 
             # Avoid adding square root twice.
-            if potential_div < factor_ceil:
+            if potential_div < sqrt:
 
                 # Add the other member of the divisor's factor pair.
                 sum += num / potential_div
