@@ -63,7 +63,7 @@ def main():
         if hour == 0:
             print_hour = 12
 
-        print(f"{print_hour:>5} {ampm}        ")
+        print(f"{print_hour:>5} {ampm}        {fraction_of_day(hour):.4f}")
 
 
 
