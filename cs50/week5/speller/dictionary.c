@@ -94,8 +94,8 @@ void initialize_node(node *argnode)
 
 void insert_to_trie(node *trie, char *word)
 {
-    // Base case: At end of word, mark node as a last letter.
-    if (*word == '\0')
+    // Base case: Mark node before '\0' as a last letter.
+    if (word[1] == '\0')
     {
         trie->islast = true;
         return;
