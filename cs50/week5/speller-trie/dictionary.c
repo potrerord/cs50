@@ -113,7 +113,6 @@ void insert_to_trie(node *trie, char *word)
     if (*word != '\'')
     {
         letter = tolower(*word) - 'a';
-
     }
 
     // Put apostrophe char at final index.
