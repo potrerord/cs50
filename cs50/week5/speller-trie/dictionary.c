@@ -62,6 +62,27 @@ bool check(const char *word)
     return false;
 }
 
+// Convert ascii chars for letters and apostrophe to letter index 0-26.
+int convert_ascii(char character)
+{
+    // Create variable to store converted index value.
+    int converted;
+
+    // Convert letter chars.
+    if (character != '\'')
+    {
+        converted = tolower(character) - 'a';
+    }
+
+    // Put apostrophe char at final index.
+    else
+    {
+        converted = LETTERS - 1;
+    }
+
+    return converted;
+}
+
 
 // Recursively free trie.
 bool free_trie(node *trie)
@@ -108,19 +129,7 @@ void initialize_node(node *argnode)
 void insert_to_trie(node *trie, char *word)
 {
     // Create variable to store letter index.
-    int letter;
-
-    // Convert letter chars to letter index.
-    if (*word != '\'')
-    {
-        letter = tolower(*word) - 'a';
-    }
-
-    // Put apostrophe char at final index.
-    else
-    {
-        letter = LETTERS - 1;
-    }
+    int letter = ;
 
     // If a node doesn't already exist at that letter,
     if (trie->children[letter] == NULL)
