@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -73,7 +74,7 @@ unsigned int hash(const char *word)
 }
 
 
-void insert_to_trie(node *node, char *word)
+void insert_to_trie(node *trie, char *word)
 {
     // Base case: At end of word, mark node as a last letter in a word.
     if (word == '\0')
@@ -87,7 +88,7 @@ void insert_to_trie(node *node, char *word)
     // Recursive case: If not the end, insert letter and create next.
     node *temp = malloc(sizeof(node));
     if (temp == NULL)
-    
+
 
     letter = tolower(word) - 'a';
     node->children[letter] = malloc(sizeof(node));
