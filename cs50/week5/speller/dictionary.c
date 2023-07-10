@@ -49,12 +49,6 @@ bool check(const char *word)
                 return true;
             }
         }
-
-        // If not at the last letter, follow the child and repeat.
-        else
-        {
-            ptr = ptr->children[letter];
-        }
     }
 
     // If word is not in trie, return false.
