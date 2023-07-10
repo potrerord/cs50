@@ -44,50 +44,40 @@ def main():
 
     # Iterate up to and including end value.
     for i in range(start, end + 1):
-        divisors(i)
+        print(f"{i} is {divisors(i)}.")
 
 
-def divisors(n):
+def divisors(num):
     """Return "deficient", "perfect", or "abundant" for an integer n."""
-
-
-def is_perfect_number(num) -> bool:
-    """Return true if test_int is a perfect number.
-
-    An integer is perfect if it is equal to the sum of its divisors,
-    except itself.
-    """
 
     # Special case: 1 is not a perfect number.
     if num == 1:
         return False
 
-    # Limit the search for factor pairs at the square root of num.
-    sqrt = num ** 0.5
+    # Limit search for factor pairs to be <= the square root of num.
+    factor_ceil = int(num ** 0.5)
 
     # Initiate sum variable at 1 to skip first factor pair.
     sum = 1
 
     # If num is divisible by a number <= its square root,
-    for poss_divisor in range(2, int(num ** 0.5) + 1):
-        if num % poss_divisor == 0:
-            sum += poss_divisor
+    for potential_div in range(2, factor_ceil + 1):
+        if num % potential_div == 0:
+            sum += potential_div
 
             # Avoid adding square root twice.
-            if poss_divisor < sqrt:
+            if potential_div < factor_ceil:
 
                 # Add the other member of the divisor's factor pair.
-                sum += num / poss_divisor
+                sum += num / potential_div
 
-    # Return true if test_int is a perfect number.
-    if num == sum:
-        return True
-
-    # Return false if not.
-    return False
-
-
-
+    # Classify number according to the sum of its divisors.
+    if sum < num:
+        return "deficient"
+    elif sum > num:
+        return "abundant"
+    else:
+        return "perfect"
 
 
 # Runs the main function. Leave as is.
