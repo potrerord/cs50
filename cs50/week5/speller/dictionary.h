@@ -9,10 +9,12 @@
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 #define LENGTH 45
 
+extern const unsigned int LETTERS;
+
 // Represents a node in a trie.
 typedef struct Node
 {
-    struct Node *children[26];
+    struct Node *children[LETTERS];
     bool islast;
 }
 node;
