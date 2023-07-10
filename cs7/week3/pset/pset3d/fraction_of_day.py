@@ -22,7 +22,7 @@ to print the table. You will get no credit for a solution that uses,
 say, 24 variables and/or 24 print statements instead of a loop.
 
 Time            Fraction Since Midnight
- 12:00 AM       0.0000
+12:00 AM        0.0000
  1:00 AM        0.0417
  2:00 AM        0.0833
  3:00 AM        0.1250
@@ -55,11 +55,11 @@ def main():
 
         print_hour = hour
 
-        # Convert "0th hour" to say "12".
+        # Convert the "0th hour" to be "12".
         if hour == 0:
             print_hour = 12
 
-        
+        print(f"")
 
 
 
