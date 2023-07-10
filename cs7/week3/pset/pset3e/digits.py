@@ -33,6 +33,11 @@ def five_digits():
         hund = (num / 100) % 10
         thou = (num / 1000) % 10
 
+        print(ones)
+        print(tens)
+        print(hund)
+        print(thou)
+
         rev_ones = thou
         rev_tens = hund * 10
         rev_hund = tens * 100
