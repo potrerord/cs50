@@ -42,28 +42,28 @@ bool check(const char *word)
         // Convert letter to index.
         letter = tolower(word[i]) - 'a';
 
-        // if current node has no child for this character:
-        if (ptr->children[letter] == NULL)
-        {
-            return false;
-        }
-
-        // Else, if not at the last letter yet,
-        else if (i != wordlen - 1)
-        {
-            // Move to child and repeat.
-            ptr = ptr->children[letter];
-            continue;
-        }
-
-        // If there is a child and ptr is at the last letter,
-        else
+        // If ptr is at the last letter,
+        if (i == wordlen - 1)
         {
             // Check if the current node is the last letter of a word.
             if (ptr->islast == true)
             {
                 return true;
             }
+        }
+
+        // Else, if current node has no child for this character,
+        else if (ptr->children[letter] == NULL)
+        {
+            return false;
+        }
+
+        // Else, if there is a child and it's not the last letter,
+        else
+        {
+            // Move to child and repeat.
+            ptr = ptr->children[letter];
+            continue;
         }
     }
 
