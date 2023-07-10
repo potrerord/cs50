@@ -20,8 +20,12 @@ void initialize_node(node *argnode);
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+    // Base case: letter pointer is NULL.
+    if 
+
+
     // set current node to root
-    
+
 
     // for each character in word:
         // if current node has no child for this character:
