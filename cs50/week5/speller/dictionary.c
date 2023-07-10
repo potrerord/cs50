@@ -185,9 +185,15 @@ unsigned int size(void)
 }
 
 
+
+
+
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
+    // Initialize temporary pointer at root.
+    node *temp = root;
+
     // For each child in node,
     for (int i = 0; i < LETTERS; i++)
     {
@@ -198,6 +204,8 @@ bool unload(void)
             free(root->children[i]);
         }
     }
+
+    free
 
 
 
