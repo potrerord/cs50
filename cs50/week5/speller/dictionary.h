@@ -9,7 +9,8 @@
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 #define LENGTH 45
 
-extern const unsigned int LETTERS;
+// Number of letters in the alphabet.
+#define LETTERS 26
 
 // Represents a node in a trie.
 typedef struct Node
