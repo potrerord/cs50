@@ -84,7 +84,7 @@ unsigned int hash(const char *word)
     return toupper(word[0]) - 'A';
 }
 
-// Loads dictionary into memory, returning true if successful, else false
+// Load dictionary into memory, return true if successful/false if not.
 bool load(const char *dictionary)
 {
     // Open dictionary
@@ -122,9 +122,8 @@ bool load(const char *dictionary)
         n->next = NULL;
 
 
-        // Count each word and save in malloc so it exists after load().
 
-
+        // Count words for size() function.
         word_count++;
     }
 
@@ -159,10 +158,9 @@ bool load(const char *dictionary)
     return true;
 }
 
-// Returns number of words in dictionary if loaded, else 0 if not yet loaded
+// Return number of words in dictionary if loaded, else 0.
 unsigned int size(void)
 {
-    if word_count
     return word_count;
 }
 
