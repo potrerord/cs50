@@ -53,13 +53,13 @@ bool check(const char *word)
     return false;
 }
 
-
+/*
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
     return toupper(word[0]) - 'A';
 }
-
+*/
 
 void initialize_node(node *argnode)
 {
@@ -164,6 +164,9 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
+    
+
+
     // Use valgrind with test input for the program like:
     // valgrind ./speller texts/cat.txt
 
