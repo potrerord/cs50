@@ -85,15 +85,17 @@ void initialize_node(node *argnode)
 }
 
 
-bool insert_to_trie(node *trie, char *word)
+void insert_to_trie(node *trie, char *word)
 {
-    // Base case: At end of word, mark node as a last letter in a word.
+    // Base case: At end of word, mark node as a last letter.
     if (word == '\0')
     {
         trie->islast = true;
 
-        // Return true for success.
-        return true;
+        // Increment global word count.
+        word_count++;
+
+        return;
     }
 
     // Create temp node and exit program if failed.
@@ -114,8 +116,7 @@ bool insert_to_trie(node *trie, char *word)
     // Insert next node.
     insert_to_trie(node, word + 1;)
 
-    // Return true for success.
-    return true;
+    return;
 }
 
 
@@ -130,8 +131,6 @@ bool load(const char *dictionary)
     {
         return false;
     }
-
-
 
     char word[LENGTH + 1];
 
@@ -155,11 +154,8 @@ bool load(const char *dictionary)
         }
     }
 
+    // Insert word to trie for later check.
     insert_to_trie(root, word);
-
-    // Update the total number of nodes
-    totalNodes++;
-
 
     // Close file and return true for successful load.
     fclose(source);
