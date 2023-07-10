@@ -45,14 +45,14 @@ bool check(const char *word)
         // If ptr is at the last letter,
         if (i == wordlen - 1)
         {
-            // Check if the current node is the last letter of a word.
+            // Return true if the current node is a last letter.
             if (ptr->islast == true)
             {
                 return true;
             }
         }
 
-        // Else, if current node has no child for this character,
+        // Else, return false if node has no child for this character.
         else if (ptr->children[letter] == NULL)
         {
             return false;
