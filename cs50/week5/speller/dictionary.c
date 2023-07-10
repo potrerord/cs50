@@ -23,6 +23,9 @@ typedef struct Letter
 letter;
 
 
+// Global variable for dictionary word count.
+unsigned int word_count = 0;
+
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
@@ -110,9 +113,6 @@ bool load(const char *dictionary)
     // Create a pointer for a linked list.
     node *list = NULL;
 
-    // Create a word count variable.
-    int word_count;
-
     // Read each word in the file.
     char c;
     while (fread(&c, sizeof(char), 1, source))
@@ -163,20 +163,8 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-
-
-
-
-
-
-
-
-
-
-
-
-
-    return 0;
+    if word_count
+    return word_count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
