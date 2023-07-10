@@ -40,7 +40,7 @@ bool check(const char *word)
             letter = LETTERS - 1;
         }
 
-        // If there is no child for that letter, return false
+        // If there is no child for that letter, return false.
         if (ptr->children[letter] == NULL)
         {
             return false;
@@ -65,8 +65,30 @@ bool check(const char *word)
 }
 
 
+// Recursively free trie.
+bool free_trie(node *trie)
+{
+    // Recursive case: For each child in node,
+    for (int i = 0; i < LETTERS; i++)
+    {
+        // If child is not NULL,
+        if (trie->children[i] != NULL)
+        {
+            // Free child.
+            free_trie(trie->children[i]);
+        }
+    }
+
+    // Base case: If all children are NULL, free current node.
+    free(trie);
+    return true;
+}
+
+
 /*
-// Hashes word to a number
+Note: hash() did not end up being necessary for the trie method,
+but I am leaving it here as an acknowledgement of its existence.
+
 unsigned int hash(const char *word)
 {
     return toupper(word[0]) - 'A';
@@ -203,26 +225,6 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     return word_count;
-}
-
-
-// Recursively free trie.
-bool free_trie(node *trie)
-{
-    // Recursive case: For each child in node,
-    for (int i = 0; i < LETTERS; i++)
-    {
-        // If child is not NULL,
-        if (trie->children[i] != NULL)
-        {
-            // Free child.
-            free_trie(trie->children[i]);
-        }
-    }
-
-    // Base case: If all children are NULL, free current node.
-    free(trie);
-    return true;
 }
 
 
