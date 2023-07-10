@@ -31,11 +31,14 @@ bool check(const char *word)
         // Convert letter to index.
         letter = tolower(word[i]) - 'a';
 
+        // Move ptr from root to first letter.
+        ptr = ptr->children[letter];
+
         // If ptr is at the last letter of the word,
         if (i == wordlen - 1)
         {
             // Return true if the current node is a last letter.
-            if (ptr->children[letter]->islast == true)
+            if (ptr->islast == true)
             {
                 return true;
             }
