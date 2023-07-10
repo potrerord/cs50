@@ -62,12 +62,13 @@ def main():
             ampm = "P"
 
         # Convert the "0th hour" to be "12".
-        print_hour = hour % 12
-        if hour == 0:
+        if hour == 0 or hour == 12:
             print_hour = 12
+        else:
+            print_hour = hour % 12
 
         print(f"{print_hour:>2}:00 {ampm}M        "
-              f"{fraction_of_day(hour, 0, 0, ampm):.4f}")
+              f"{fraction_of_day(print_hour, 0, 0, ampm):.4f}")
     print()
 
 def fraction_of_day(hour: int, min: int, sec: int, ampm: str) -> float:

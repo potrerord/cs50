@@ -42,7 +42,7 @@ def main():
 
 # Implement eligible_for_sentate here.
 #
-# Returns true if the candidate is eligibe to run for senate.
+# Returns true if the candidate is eligible to run for senate.
 # Does not print anything out.
 def eligible_for_sentate(*** replace with your parameters ***):
 
