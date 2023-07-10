@@ -47,10 +47,10 @@ void initialize_node(node *argnode)
 {
     for (int i = 0; i < LENGTH + 1; i++)
     {
-        argnode->children[i] = NULL;
+        argnode->word[i] = '\0'';
     }
 
-    argnode->islast = false;
+    argnode->next = NULL;
 }
 
 
