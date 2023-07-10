@@ -47,7 +47,7 @@ unsigned int hash(const char *word)
 
 void initialize_node(node *argnode)
 {
-    for (int i = 0; i < 26; i++)
+    for (int i = 0; i < LETTERS; i++)
     {
         argnode->children[i] = NULL;
     }
