@@ -124,7 +124,7 @@ bool load(const char *dictionary)
     while (fread(&c, sizeof(char), 1, source))
     {
         // Assume all lowercase/apostrophes and separated by \n.
-        while (c != '\n')
+        if (c != '\n')
         {
             // Append character to word.
             word[index] = c;
@@ -132,7 +132,7 @@ bool load(const char *dictionary)
         }
 
         // New line means the word is over.
-        if (index > 0)
+        else if (index > 0)
         {
             // Terminate current word.
             word[index] = '\0';
@@ -164,7 +164,7 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    
+
 
 
     // Use valgrind with test input for the program like:
