@@ -73,13 +73,13 @@ unsigned int hash(const char *word)
 }
 
 
-void insert_to_trie(node *trie, char *word)
+bool insert_to_trie(node *trie, char *word)
 {
     // Base case: end of string
     if (word == '\0')
     {
         trie->islast = true;
-        return
+        return true;
     }
 
     // Recursive case:
