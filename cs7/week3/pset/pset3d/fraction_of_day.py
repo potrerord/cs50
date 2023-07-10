@@ -51,22 +51,24 @@ def main():
     corresponding fractions of a day.
     """
 
+    print()
+    print(" Time           Fraction Since Midnight")
+
     for hour in range(24):
 
         if hour < 12:
-            ampm = "AM"
+            ampm = "A"
         else:
-            ampm = "PM"
+            ampm = "P"
 
         # Convert the "0th hour" to be "12".
-        print_hour = hour
+        print_hour = hour % 12
         if hour == 0:
             print_hour = 12
 
-        print(f"{print_hour:>5} {ampm}        {fraction_of_day(hour):.4f}")
-
-
-
+        print(f"{print_hour:>2}:00 {ampm}M        "
+              f"{fraction_of_day(hour, 0, 0, ampm):.4f}")
+    print()
 
 def fraction_of_day(hour: int, min: int, sec: int, ampm: str) -> float:
     """Return the fraction of a day elapsed since midnight."""
