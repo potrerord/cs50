@@ -8,8 +8,8 @@
 // Represents a node in a trie.
 typedef struct Trie
 {
-    char word[LENGTH + 1];
     struct Trie *letters[26];
+    bool last;
 }
 trie;
 
