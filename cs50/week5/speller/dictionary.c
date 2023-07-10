@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -20,25 +21,35 @@ void initialize_node(node *argnode);
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // Base case: letter pointer is NULL.
-    if 
-
-
     // set current node to root
+    node *ptr = root;
 
+    // Prepare to convert letter indices.
+    int letter;
 
     // for each character in word:
+    for (int i = 0, wordlen = strlen(word); i < wordlen, i++)
+    {
+        // Convert letter to index.
+        letter = tolower(word[i]) - 'a';
+
         // if current node has no child for this character:
-            // return false (word not found)
-        // else:
-            // move to child node corresponding to this character
-    // if current node is marked as a word:
-        // return true (word found)
-    // else:
-        // return false (word not found)
+        if (ptr->children[letter] == NULL)
+        {
+            return false;
+        }
 
+        // Else, move to child code and repeat.
+        ptr = ptr->children[letter];
+    }
 
+    // If current node is marked as word, return true.
+    if (ptr->islast == true)
+    {
+        return true;
+    }
 
+    // Else, return false.
     return false;
 }
 
