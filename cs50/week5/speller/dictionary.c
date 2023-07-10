@@ -74,12 +74,14 @@ bool load(const char *dictionary)
     char word[LENGTH + 1];
 
     // Assemble words from dictionary.
-    while (fscanf(source, %s, word) != EOF)
+    while (true)
     {
-        {
-            // Create temp node and exit program if failed.
-            node *temp = malloc(sizeof(node));
-            if (temp == NULL)
+        fscanf(source, %s, word) != EOF
+
+
+        // Create temp node and exit program if failed.
+        node *temp = malloc(sizeof(node));
+        if (temp == NULL)
     {
         printf("error: memory allocation failed\n");
         exit(1);
