@@ -17,8 +17,8 @@ that finds and returns (and doesn't print!) the number.
 # Add a main function that calls five_digits and prints out the
 # results of five_digits.
 def main():
-    """Call five_digits() and print result.
-    """
+    """Call five_digits() and print result."""
+    
     print(five_digits())
 
 
@@ -27,21 +27,21 @@ def main():
 #
 # Must not print anything out.
 def five_digits():
-    for number in range(1000, 10000):
-        ones = number % 10
-        tens = (number / 10) % 10
-        hund = (number / 100) % 10
-        thou = (number / 1000) % 10
+    for num in range(1000, 10000):
+        ones = num % 10
+        tens = (num / 10) % 10
+        hund = (num / 100) % 10
+        thou = (num / 1000) % 10
 
-        conv_ones = thou
-        conv_tens = hund * 10
-        conv_hund = tens * 100
-        conv_thou = ones * 1000
+        rev_ones = thou
+        rev_tens = hund * 10
+        rev_hund = tens * 100
+        rev_thou = ones * 1000
 
-        conv_number = conv_thou + conv_hund + conv_tens + conv_ones
+        rev_num = rev_thou + rev_hund + rev_tens + rev_ones
 
-        if number * 4 == conv_number:
-            return number
+        if num * 4 == rev_num:
+            return num
 
 # Runs the main function. Leave as is.
 if __name__ == "__main__":
