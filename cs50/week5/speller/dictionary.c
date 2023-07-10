@@ -37,7 +37,7 @@ bool check(const char *word)
     int letter;
 
     // for each character in word:
-    for (int i = 0, wordlen = strlen(word); i < wordlen + 1; i++)
+    for (int i = 0, wordlen = strlen(word); i < wordlen; i++)
     {
         // Convert letter to index.
         letter = tolower(word[i]) - 'a';
@@ -48,7 +48,7 @@ bool check(const char *word)
             return false;
         }
 
-        // Else, move to child code and repeat.
+        // Else, move to child and repeat.
         ptr = ptr->children[letter];
     }
 
