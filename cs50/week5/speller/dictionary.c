@@ -188,6 +188,10 @@ unsigned int size(void)
 // Recursively free trie.
 bool free_trie(node *trie)
 {
+    // Base case:
+    if 
+
+
     // Recursive case: For each child in node,
     for (int i = 0; i < LETTERS; i++)
     {
