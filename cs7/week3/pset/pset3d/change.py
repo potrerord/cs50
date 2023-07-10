@@ -62,7 +62,7 @@ def find_change() -> List[int]:
 def print_change(day1_price: int, day2_price: int, day1_num: int) -> None:
     """Print report to terminal."""
 
-    print(f"The largest change was ${abs(day2_price - day1_price)} from "
+    print(f"The largest change was of ${abs(day2_price - day1_price)} from "
           f"${day1_price} to ${day2_price}, occurring between Day #{day1_num} "
           f"and Day #{day1_num + 1}.""")
 
