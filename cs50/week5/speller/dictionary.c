@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -66,29 +67,27 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Assign allocated memory for node to root pointer.
-    root = temp;
-
     // Prepare to assemble words.
-    int index = 0;
-    char word[LENGTH + 1];
+    char current_word[LENGTH + 1];
 
     // Assemble words from dictionary.
-    while (fscanf(source, %s, word) != EOF)
+    while (fscanf(source, %s, current_word) != EOF)
     {
         // Create temp node and exit program if failed.
-        node *temp = malloc(sizeof(node));
-        if (temp == NULL)
-    {
-        printf("error: memory allocation failed\n");
-        exit(1);
-    }
-
-    // Initialize temp node.
-    initialize_node(temp);
-
-
+        node *tmp = malloc(sizeof(node));
+        if (tmp == NULL)
+        {
+            printf("error: memory allocation failed\n");
+            exit(1);
         }
+
+        // Initialize temp node.
+        initialize_node(tmp);
+
+        // Copy word into node.
+        strcpy(tmp->word, current_word);
+
+
     }
 
     // Close file and return true for successful load.
