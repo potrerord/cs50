@@ -1,43 +1,30 @@
-// Implements a dictionary's functionality
+// Implements a dictionary's functionality.
 
 #include <ctype.h>
 #include <stdbool.h>
 
 #include "dictionary.h"
 
+
+// Constant: Number of letters.
+const unsigned int LETTERS = 26;
+
 // Represents a node in a trie.
 typedef struct Node
 {
-    struct Node *letters[26];
+    struct Node *children[LETTERS];
     bool islast;
 }
 node;
 
-// Represents a letter's alpha position, symbol, and frequency of usage.
-typedef struct Letter
-{
-    char symbol;
-    int position;
-    float frequency;
-}
-letter;
-
-
 // Global variable for dictionary word count.
 unsigned int word_count = 0;
 
-
-// TODO: Choose number of buckets in hash table
-const unsigned int N = 26;
-
-
-
-
-
-
-
+/*
 // Hash table
 node *table[N];
+*/
+
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -56,6 +43,7 @@ bool check(const char *word)
 
     return false;
 }
+
 
 // Hashes word to a number
 unsigned int hash(const char *word)
@@ -84,6 +72,7 @@ unsigned int hash(const char *word)
     return toupper(word[0]) - 'A';
 }
 
+
 // Load dictionary into memory, return true if successful/false if not.
 bool load(const char *dictionary)
 {
@@ -96,7 +85,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Create and initialize a pointer for a trie.
+    // Allocate and initialize a pointer for a trie root.
     node *root = malloc(sizeof(node));
     for (int i = 0; i < N; i++)
     {
@@ -110,6 +99,7 @@ bool load(const char *dictionary)
     char c;
     while (fread(&c, sizeof(char), 1, source))
     {
+        if 
 
         // Create space for a new trie node.
         node *n = malloc(sizeof(node));
@@ -159,11 +149,13 @@ bool load(const char *dictionary)
     return true;
 }
 
+
 // Return number of words in dictionary if loaded, else 0.
 unsigned int size(void)
 {
     return word_count;
 }
+
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
