@@ -143,10 +143,10 @@ bool load(const char *dictionary)
             // Prepare for next word.
             index = 0;
         }
-    }
 
-    // Insert word to trie.
-    insert_to_trie(root, word);
+        // Insert word to trie.
+        insert_to_trie(root, word);
+    }
 
     // Close file and return true for successful load.
     fclose(source);
