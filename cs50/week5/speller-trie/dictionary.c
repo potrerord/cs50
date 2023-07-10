@@ -180,36 +180,17 @@ bool load(const char *dictionary)
     root = temp;
 
     // Prepare to assemble words.
-    int index = 0;
     char word[LENGTH + 1];
     char c;
 
     // Assemble words from dictionary.
-    while (fread(&c, sizeof(char), 1, source))
+    while (fscanf(source, %s, word) != EOF)
     {
-        // Assume all lowercase/apostrophes and separated by \n.
-        if (c != '\n')
-        {
-            // Append character to word.
-            word[index] = c;
-            index++;
-        }
+        // Insert word to trie.
+        insert_to_trie(root, word);
 
-        // New line means the word is over.
-        else if (index > 0)
-        {
-            // Terminate current word.
-            word[index] = '\0';
-
-            // Insert word to trie.
-            insert_to_trie(root, word);
-
-            // Increment global word count.
-            word_count++;
-
-            // Prepare for next word.
-            index = 0;
-        }
+        // Increment global word count.
+        word_count++;
     }
 
     // Close file and return true for successful load.

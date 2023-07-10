@@ -86,8 +86,6 @@ bool load(const char *dictionary)
 
         // Copy word into node.
         strcpy(tmp->word, current_word);
-
-
     }
 
     // Close file and return true for successful load.
