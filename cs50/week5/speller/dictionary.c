@@ -21,14 +21,14 @@ bool check(const char *word)
 {
     // Create temp node and exit program if failed.
     node *ptr = malloc(sizeof(node));
-    if (temp == NULL)
+    if (ptr == NULL)
     {
         printf("error: memory allocation failed\n");
         exit(1);
     }
 
     // Initialize temp node.
-    initialize_node(temp);
+    initialize_node(ptr);
 
     // Assign allocated memory for node to root pointer.
     root = ptr;
