@@ -61,6 +61,6 @@ def main():
     *** add your code here ***
 
 
-# Runs the main function. Leave as is.
+# Run the main function if script is run directly.
 if __name__ == "__main__":
     main()

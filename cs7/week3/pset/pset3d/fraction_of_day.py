@@ -43,19 +43,23 @@ Time            Fraction Since Midnight
 ... (Your solution should continue to 11pm)
 """
 
-# Returns the fraction of the day elapsed since midnight.
-#
-# Must not print anything out.
-def fraction_of_day(*** replace with your parameters ***)
-    *** add your code here ***
-
 
 # Add a main function that prints out a formated table with
 # f-strings, as described in the problem set.
 def main():
-    *** add your code here ***
+    """Print out a formatted table of the hours of the day with their
+    corresponding fractions of a day.
+    """
 
 
-# Runs the main function. Leave as is.
+
+
+def fraction_of_day(hour: int, min: int, sec: int, ampm: str) -> float:
+    """Return the fraction of a day elapsed since midnight."""
+
+    
+
+
+# Run the main function if script is run directly.
 if __name__ == "__main__":
     main()
