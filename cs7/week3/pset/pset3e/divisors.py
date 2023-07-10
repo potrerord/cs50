@@ -51,7 +51,7 @@ def divisors(num):
     """Return "deficient", "perfect", or "abundant" for an integer n."""
 
     # Limit search for factor pairs to be <= the square root of num.
-    factor_ceil = int(num ** 0.5)
+    factor_ceil = num ** 0.5
 
     # Initiate sum variable.
     sum = 0
