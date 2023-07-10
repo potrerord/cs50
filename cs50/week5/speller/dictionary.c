@@ -6,12 +6,12 @@
 #include "dictionary.h"
 
 // Represents a node in a trie.
-typedef struct Trie
+typedef struct Node
 {
-    struct Trie *letters[26];
+    struct Node *letters[26];
     bool last;
 }
-trie;
+node;
 
 // Represents a letter's alpha position, symbol, and frequency of usage.
 typedef struct Letter
@@ -110,8 +110,8 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Create a pointer for a linked list.
-    node *list = NULL;
+    // Create a pointer for a trie.
+    node *trie = NULL;
 
     // Read each word in the file.
     char c;
