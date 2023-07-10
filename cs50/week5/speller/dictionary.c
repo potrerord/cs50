@@ -49,7 +49,7 @@ bool check(const char *word)
         }
 
         // Else, if not at the last letter yet,
-        else if (i != wordlen)
+        else if (i != wordlen - 1)
         {
             // Move to child and repeat.
             ptr = ptr->children[letter];
