@@ -52,12 +52,15 @@ def main():
     # Prompt user for prices and find largest change.
     change_info = find_change()
 
+    # 
     start_price = change_info[0]
     end_price = change_info[1]
     start_day = change_info[2]
 
     # Print answer.
+    print()
     print_change(start_price, end_price, start_day)
+    print()
 
 
 def find_change() -> List[int]:
@@ -91,16 +94,12 @@ def find_change() -> List[int]:
     return change_info
 
 
-# Implement a function print_change that takes in the results of your
-# computation and prints them out in a message for the user.
-
-# For example:
-# Largest change of 25 from 84 to 59 occurred between day #6 and day #7.
-
-# Must not prompt the user for anything.
 def print_change(day1_price, day2_price, day1_num):
-    print(f"The largest change was ${day2_price - day1_price)},
-            occurring between Day #{day1_num} and Day #{day1_num + 1}.")
+    """Print report to terminal."""
+
+    print(f"The largest change was ${abs(day2_price - day1_price)} from "
+          f"${day2_price} to ${day1_price}, occurring between Day #{day1_num} "
+          f"and Day #{day1_num + 1}.""")
 
 
 
