@@ -33,6 +33,9 @@ def find_change() -> List[int]:
     largest_change = 0
     start_price = 0
     end_price = 0
+    saved_start = 0
+    saved_end = 0
+    start_day = 0
 
     for day in range(1, DAY_COUNT + 1):
 
@@ -41,14 +44,16 @@ def find_change() -> List[int]:
 
         # Get user input for new end price.
         end_price = int(input(f"Enter the Day {day} price: "))
-        change = int(abs(end_price - start_price))
 
-        # If current change is largest, update variables.
-        if change > largest_change:
-            saved_start = start_price
-            saved_end = end_price
-            largest_change = change
-            start_day = day - 1
+        if day > 1:
+            change = int(abs(end_price - start_price))
+
+            # If current change is largest, update variables.
+            if change > largest_change:
+                saved_start = start_price
+                saved_end = end_price
+                largest_change = change
+                start_day = day - 1
 
     change_info = [int(saved_start), int(saved_end), int(start_day)]
     return change_info
