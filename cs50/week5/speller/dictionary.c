@@ -96,22 +96,35 @@ bool load(const char *dictionary)
     // Did you free this?
 
     // Variable for holding the converted ASCII -> letter index value.
-    int letter_index;
+    int letter;
 
     // Read each word in the file.
     char c;
     while (fread(&c, sizeof(char), 1, source))
     {
         // Convert ASCII letter character to lowercase 0-25 index.
-        letter_index = tolower(c) - 'a';
+        letter = tolower(c) - 'a';
+
+        // If trie has NULL child for that letter,
+        if (root->children[letter] == NULL)
+        {
+            // Create space for a new trie node.
+            node *n = malloc(sizeof(node));
+            if (n == NULL)
+            {
+                return 1;
+            }
+
+            
+        }
 
         // Create space for a new trie node.
         node *n = malloc(sizeof(node));
-
         if (n == NULL)
         {
             return 1;
         }
+
 
         n->number = x;
         n->next = NULL;
