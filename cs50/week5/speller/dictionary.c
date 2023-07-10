@@ -16,7 +16,7 @@ unsigned int word_count = 0;
 // Global root for trie.
 node *root;
 
-// Returns true if word is in dictionary, else false
+// Returns true if word is in dictionary, else false.
 bool check(const char *word)
 {
     // Initialize looped pointer variable at root pointer.
@@ -28,8 +28,17 @@ bool check(const char *word)
     // For each character in word:
     for (int i = 0, wordlen = strlen(word); i < wordlen; i++)
     {
-        // Convert letter to index.
-        letter = tolower(word[i]) - 'a';
+        // Convert alpha letters to index.
+        if (word[i] != '\'')
+        {
+            letter = tolower(word[i]) - 'a';
+        }
+
+        // Convert apostrophe to final index.
+        else
+        {
+            letter = LETTERS - 1;
+        }
 
         // If there is no child for that letter, return false
         if (ptr->children[letter] == NULL)
@@ -87,10 +96,10 @@ void insert_to_trie(node *trie, char *word)
 
     }
 
-    // Put apostrophe char after letters at index 26.
+    // Put apostrophe char at final index.
     else
     {
-        letter = 26;
+        letter = LETTERS - 1;
     }
 
     // If a node doesn't already exist at that letter,
