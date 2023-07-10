@@ -74,10 +74,8 @@ bool load(const char *dictionary)
     char word[LENGTH + 1];
 
     // Assemble words from dictionary.
-    while (true)
+    while (fscanf(source, %s, word) != EOF)
     {
-        fscanf(source, %s, word)
-
         // Create temp node and exit program if failed.
         node *temp = malloc(sizeof(node));
         if (temp == NULL)
