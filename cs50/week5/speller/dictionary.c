@@ -74,15 +74,24 @@ unsigned int hash(const char *word)
 }
 
 
+void initialize_node(node *argnode)
+{
+    for (int i = 0; i < LETTERS; i++)
+    {
+        argnode->children[i] = NULL;
+    }
+
+    argnode->islast = false;
+}
+
+
 void insert_to_trie(node *trie, char *word)
 {
     // Base case: At end of word, mark node as a last letter in a word.
     if (word == '\0')
     {
         trie->islast = true;
-
-        // Return true for successful word insertion.
-        return true;
+        return;
     }
 
     // Recursive case: If not the end, insert letter and create next.
@@ -95,15 +104,17 @@ void insert_to_trie(node *trie, char *word)
         exit(1);
     }
 
+    // Initialize temp node.
+    initialize_node(temp);
 
+    // Point current trie's child for this letter at new node.
     letter = tolower(word) - 'a';
     trie->children[letter] = temp;
 
-
-    trie->islast = false;
+    // Insert next node.
     insert_to_trie(node, word + 1;)
 
-
+    return;
 }
 
 
