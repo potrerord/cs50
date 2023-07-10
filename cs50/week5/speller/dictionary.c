@@ -94,13 +94,6 @@ void initialize_node(node *argnode)
 
 void insert_to_trie(node *trie, char *word)
 {
-    // Base case: Mark node before '\0' as a last letter.
-    if (word[1] == '\0')
-    {
-        trie->islast = true;
-        return;
-    }
-
     // Create temp node and exit program if failed.
     node *temp = malloc(sizeof(node));
     if (temp == NULL)
@@ -116,6 +109,12 @@ void insert_to_trie(node *trie, char *word)
     int letter = tolower(*word) - 'a';
     trie->children[letter] = temp;
 
+    // Base case: Mark letter before '\0' as a last letter.
+    if (word[1] == '\0')
+    {
+        trie->islast = true;
+        return;
+    }
     // Insert next node.
     insert_to_trie(trie->children[letter], word + 1);
 
