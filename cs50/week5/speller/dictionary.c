@@ -189,7 +189,6 @@ unsigned int size(void)
 bool free_trie(node *trie)
 {
     // Base case:
-    if 
 
 
     // Recursive case: For each child in node,
