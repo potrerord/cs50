@@ -185,7 +185,7 @@ unsigned int size(void)
 }
 
 
-
+// Recursively free trie.
 
 
 // Unloads dictionary from memory, returning true if successful, else false
