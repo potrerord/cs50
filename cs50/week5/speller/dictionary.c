@@ -16,18 +16,22 @@ unsigned int word_count = 0;
 node *root;
 void initialize_node(node *argnode);
 
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // Use hash(word) to get a hash value
+    // set current node to root
+    
 
-    // Search the hash table at the location specified by the word's
-    // hash value.
-        // Return true if the word is found
-
-
-
-    // Return false if the word is not found.
+    // for each character in word:
+        // if current node has no child for this character:
+            // return false (word not found)
+        // else:
+            // move to child node corresponding to this character
+    // if current node is marked as a word:
+        // return true (word found)
+    // else:
+        // return false (word not found)
 
 
 
