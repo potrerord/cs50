@@ -9,11 +9,22 @@
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 #define LENGTH 45
 
+// Constant: Number of letters.
+const unsigned int LETTERS = 26;
+
+// Represents a node in a trie.
+typedef struct Node
+{
+    struct Node *children[LETTERS];
+    bool islast;
+}
+node;
+
 // Prototypes
 bool check(const char *word);
 unsigned int hash(const char *word);
-void initialize_node(node *argnode)
-void insert_to_trie(node *trie, char *word)
+void initialize_node(node *argnode);
+void insert_to_trie(node *trie, char *word);
 bool load(const char *dictionary);
 unsigned int size(void);
 bool unload(void);

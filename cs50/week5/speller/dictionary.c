@@ -4,20 +4,10 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
-
-// Constant: Number of letters.
-const unsigned int LETTERS = 26;
-
-// Represents a node in a trie.
-typedef struct Node
-{
-    struct Node *children[LETTERS];
-    bool islast;
-}
-node;
 
 // Global variable for dictionary word count.
 unsigned int word_count = 0;
@@ -49,27 +39,6 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // Hash the word to obtain its hash value (case-insensitively - foo
-    // and FOO should have the same value. use strcasecmp.)
-
-    /* The hash function given to you returns an int between 0 and 25,
-    inclusive, based on the first character of word. However, there are
-    many ways to implement a hash function beyond using the first
-    character (or characters) of a word. Consider a hash function that
-    uses a sum of ASCII values or the length of a word. A good hash
-    function reduces “collisions” and has a (mostly!) even distribution
-    across hash table “buckets”.
-    */
-
-
-
-
-
-
-    // return a positive unsigned int for the hash value
-
-
-
     return toupper(word[0]) - 'A';
 }
 
@@ -106,11 +75,11 @@ void insert_to_trie(node *trie, char *word)
     initialize_node(temp);
 
     // Point current trie's child for this letter at new node.
-    letter = tolower(word) - 'a';
+    int letter = tolower(word) - 'a';
     trie->children[letter] = temp;
 
     // Insert next node.
-    insert_to_trie(node, word + 1;)
+    insert_to_trie(trie, word + 1;)
 
     return;
 }
