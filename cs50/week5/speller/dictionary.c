@@ -41,15 +41,16 @@ bool check(const char *word)
             }
         }
 
-        // Else, if there is a child, follow it and repeat.
+        // If not at the last letter, follow the child and repeat.
         else if (ptr->children[letter] != NULL)
         {
             ptr = ptr->children[letter];
             continue;
         }
+
     }
 
-    // If no child for the letter, return false.
+    // If word is not in dictionary, return false.
     return false;
 }
 
