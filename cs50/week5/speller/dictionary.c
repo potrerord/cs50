@@ -115,6 +115,8 @@ bool load(const char *dictionary)
     // Create a pointer for a trie.
     node *root = malloc(sizeof(node));
 
+    // Did you free this?
+
     // Read each word in the file.
     char c;
     while (fread(&c, sizeof(char), 1, source))
@@ -179,7 +181,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // Use valgrind with test input for the program like:
-    // valrgind ./speller texts/cat.txt
+    // valgrind ./speller texts/cat.txt
 
 
     // Use free() for any allocated memory in load()
