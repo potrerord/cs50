@@ -48,14 +48,23 @@ bool check(const char *word)
             return false;
         }
 
-        // Else, move to child and repeat.
-        ptr = ptr->children[letter];
-    }
+        // Else, if not at the last letter yet,
+        else if (i != wordlen)
+        {
+            // Move to child and repeat.
+            ptr = ptr->children[letter];
+            continue;
+        }
 
-    // If current node is marked as word, return true.
-    if (ptr->islast == true)
-    {
-        return true;
+        // If there is a node and ptr is at the last letter,
+        else
+        {
+            // Check if the current node is the last letter of a word.
+            if (ptr->islast == true)
+            {
+                return true;
+            }
+        }
     }
 
     // Else, return false.
