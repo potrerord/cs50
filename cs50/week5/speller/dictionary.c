@@ -170,12 +170,12 @@ bool unload(void)
         // If child is not null,
         if (root->children[i] != NULL)
         {
-            
+            // Unload child.
+            free(root->children[i]);
         }
+
+        free(root->children[i]);
     }
-        // if child is not null:
-            // unload(child)
-    // free(node)
 
 
 
