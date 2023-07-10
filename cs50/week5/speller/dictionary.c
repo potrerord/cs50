@@ -66,7 +66,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Create temp node for root and exit program if failed.
+    // Create temp node and exit program if failed.
     node *temp = malloc(sizeof(node));
     if (temp == NULL)
     {
