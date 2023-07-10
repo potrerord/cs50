@@ -50,10 +50,12 @@ def main():
     """Compute the largest change and print final answer."""
 
     # Prompt user for prices and find largest change.
-    find_change()
+    change_info = find_change()
+
+    
 
     # Print answer.
-    print_change()
+    print_change(change_info[0], change_info[1], change_info[2])
 
 
 def find_change() -> List[int]:
