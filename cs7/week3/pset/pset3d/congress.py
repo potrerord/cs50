@@ -1,5 +1,5 @@
 """
-The following requirement for membership in the Congress of the United
+The following requirements for membership in the Congress of the United
 States are quoted from Article I of the Constitution of the United
 States:
 
@@ -24,7 +24,7 @@ the appropriate function calls in main:
 a)  Someone of age 37 and 3 years of citizenship is not eligible for
     election to either the House or the Senate, so the functions should
     both return False.
-    
+
 b)  Someone of age 47 and 8 years of citizenship is eligible for
     election to the House but not the Senate, so
     eligible_for_house(47, 8) should return True, but
