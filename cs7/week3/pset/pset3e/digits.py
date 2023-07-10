@@ -18,7 +18,7 @@ that finds and returns (and doesn't print!) the number.
 # results of five_digits.
 def main():
     """Call five_digits() and print result."""
-    
+
     print(five_digits())
 
 
@@ -40,7 +40,13 @@ def five_digits():
 
         rev_num = rev_thou + rev_hund + rev_tens + rev_ones
 
+        print()
+        print(num)
+        print(rev_num)
+        print()
+
         if num * 4 == rev_num:
+            print("HERE")
             return num
 
 # Runs the main function. Leave as is.
