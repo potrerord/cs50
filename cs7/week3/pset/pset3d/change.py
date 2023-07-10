@@ -34,13 +34,13 @@ def find_change() -> List[int]:
     start_price = 0
     end_price = 0
 
-    for day in range(DAY_COUNT):
+    for day in range(1, DAY_COUNT + 1):
 
         # Assign user_price to start price before overwriting.
         start_price = int(end_price)
 
         # Get user input for new end price.
-        end_price = int(input(f"Enter the Day {day + 1} price: "))
+        end_price = int(input(f"Enter the Day {day} price: "))
 
         # If current change is largest, update variables.
         if abs(end_price - start_price) > largest_change:
