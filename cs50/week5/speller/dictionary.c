@@ -128,15 +128,25 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Variable for holding the converted ASCII -> letter index value.
-    int letter;
-
     // Read each word in the file.
     char c;
     while (fread(&c, sizeof(char), 1, source))
     {
-        // Convert ASCII letter character to lowercase 0-25 index.
-        letter = tolower(c) - 'a';
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // If trie has NULL child for that letter,
         if (root->children[letter] == NULL)
