@@ -31,7 +31,7 @@ bool check(const char *word)
     initialize_node(ptr);
 
     // Assign allocated memory for node to root pointer.
-    root = ptr;
+    ptr = root;
 
     // Prepare to convert letter indices.
     int letter;
