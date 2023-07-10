@@ -84,9 +84,10 @@ bool insert_to_trie(node *node, char *word)
         return true;
     }
 
-    // Recursive case: If not end of word, 
+    // Recursive case: If not the end, insert letter and create next.
     insert_to_trie(node, word + 1;)
 
+    
     node-islast = false;
 
 }
