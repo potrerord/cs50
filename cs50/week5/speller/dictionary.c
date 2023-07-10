@@ -1,5 +1,6 @@
 // Implements a dictionary's functionality.
 
+
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -20,7 +21,6 @@ node;
 
 // Global variable for dictionary word count.
 unsigned int word_count = 0;
-
 
 // Root for trie.
 node *root;
