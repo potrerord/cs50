@@ -1,6 +1,6 @@
 """
-Write a Python program to compute the largest absolute change that
-occurred in the price of a stock during a 10-day period. The program
+Computes the largest absolute change that occurred in the price of a
+stock during a 10-day period. The program
 should prompt the user 10 times for integers representing the stock
 price on 10 consecutive days. If the integers input were
 
@@ -50,9 +50,11 @@ def main():
     """Compute the largest change and print final answer."""
 
     # Prompt user for prices and find largest change.
+    print()
     change_info = find_change()
+    print()
 
-    # 
+    # Store change_info values.
     start_price = change_info[0]
     end_price = change_info[1]
     start_day = change_info[2]
