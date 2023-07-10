@@ -78,7 +78,6 @@ bool load(const char *dictionary)
     {
         fscanf(source, %s, word) != EOF
 
-
         // Create temp node and exit program if failed.
         node *temp = malloc(sizeof(node));
         if (temp == NULL)
