@@ -28,10 +28,10 @@ def main():
 # Must not print anything out.
 def five_digits():
     for number in range(1000, 10000):
-        ones = number / 10
-        tens = number // 10
-        hund = number // 100
-        thou = number // 1000
+        ones = number % 10
+        tens = (number / 10) % 10
+        hund = (number / 100) % 10
+        thou = (number / 1000) % 10
 
         conv_ones = thou
         conv_tens = hund * 10
