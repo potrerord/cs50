@@ -73,20 +73,22 @@ unsigned int hash(const char *word)
 }
 
 
-bool insert_to_trie(node *trie, char *word)
+bool insert_to_trie(node *node, char *word)
 {
-    // Base case: end of string
+    // Base case: At end of word, mark node as a last letter in a word.
     if (word == '\0')
     {
-        trie->islast = true;
+        node->islast = true;
+
+        // Return true for successful word insertion.
         return true;
     }
 
-    // Recursive case:
-    for (int i = 0, n = strlen(word); i < n; i++)
-    {
-        insert_to_trie(trie, word + 1;)
-    }
+    // Recursive case: If not end of word, 
+    insert_to_trie(node, word + 1;)
+
+    node-islast = false;
+
 }
 
 
