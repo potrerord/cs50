@@ -128,11 +128,13 @@ bool load(const char *dictionary)
         return false;
     }
 
+    char word[LENGTH + 1]
+
     // Read each word in the file.
     char c;
     while (fread(&c, sizeof(char), 1, source))
     {
-        
+
 
 
 
