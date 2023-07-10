@@ -46,7 +46,7 @@ def find_change() -> List[int]:
         # If current change is largest, update variables.
         if change > largest_change:
             largest_change = change
-            start_day = day - 1
+            start_day = day
 
     change_info = [int(start_price), int(end_price), int(start_day)]
     return change_info
