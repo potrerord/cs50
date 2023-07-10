@@ -9,7 +9,7 @@
 typedef struct Node
 {
     struct Node *letters[26];
-    bool last;
+    bool islast;
 }
 node;
 
@@ -118,6 +118,7 @@ bool load(const char *dictionary)
     {
         root->letters[i] = NULL;
     }
+    root->islast = false;
 
     // Did you free this?
 
