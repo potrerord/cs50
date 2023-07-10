@@ -186,50 +186,29 @@ unsigned int size(void)
 
 
 // Recursively free trie.
+bool free_trie(node *trie)
+{
+    // Recursive case: For each child in node,
+    for (int i = 0; i < LETTERS; i++)
+    {
+        // If child is not NULL,
+        if (root->children[i] != NULL)
+        {
+            // Free child.
+            free_trie(root->children[i]);
+        }
+    }
+
+    // Base case: If all children are NULL, free current node.
+    free(trie);
+    return true;
+}
 
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // Initialize temporary pointers at root.
-    node *tmp = root;
-    node *cursor = root;
-
-    // For each child in node,
-    for (int i = 0; i < LETTERS; i++)
-    {
-        // If child is not null,
-        if (root->children[i] != NULL)
-        {
-            // Unload child.
-            free(root->children[i]);
-        }
-    }
-
-    free
-
-
-
-    // Use valgrind with test input for the program like:
-    // valgrind ./speller texts/cat.txt
-
-
-    // Use free() for any allocated memory in load()
-
-
-
-    // Use a temp "next" variable to store each node's next value like
-    // in lecture.
-
-
-
-
-
-
-
-
-
-
-
-    return false;
+    bool freed = false;
+    freed = free_trie(root);
+    return freed;
 }
