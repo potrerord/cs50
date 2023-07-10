@@ -14,9 +14,12 @@
 unsigned int word_count = 0;
 
 // Global root for trie.
-node *root;
-void initialize_node(node *argnode);
-
+node *root = malloc(sizeof(node));
+if (root == NULL)
+{
+    printf("error: memory allocation failed.");
+    exit(1);
+}
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
