@@ -21,10 +21,10 @@ node;
 // Global variable for dictionary word count.
 unsigned int word_count = 0;
 
-/*
-// Hash table
-node *table[N];
-*/
+
+// Root for trie.
+node *root;
+initialize_node(root);
 
 
 // Returns true if word is in dictionary, else false
@@ -85,13 +85,13 @@ void initialize_node(node *argnode)
 }
 
 
-void insert_to_trie(node *trie, char *word)
+bool insert_to_trie(node *trie, char *word)
 {
     // Base case: At end of word, mark node as a last letter in a word.
     if (word == '\0')
     {
         trie->islast = true;
-        return;
+        return true;
     }
 
     // Create temp node and exit if failed.
@@ -112,7 +112,7 @@ void insert_to_trie(node *trie, char *word)
     // Insert next node.
     insert_to_trie(node, word + 1;)
 
-    return;
+    return true;
 }
 
 
@@ -132,111 +132,30 @@ bool load(const char *dictionary)
 
     char word[LENGTH + 1];
 
-    // Spell-check each word in text
+    // Assemble words from dictionary.
     char c;
-    while (fread(&c, sizeof(char), 1, file))
+    while (fread(&c, sizeof(char), 1, source))
     {
-        // Allow only alphabetical characters and apostrophes
+        // Allow only alphabetical characters and apostrophes.
         if (isalpha(c) || (c == '\'' && index > 0))
         {
-            // Append character to word
+            // Append character to word.
             word[index] = c;
             index++;
         }
 
-        // We must have found a whole word
+        // We must have found a whole word.
         else if (index > 0)
         {
-            // Terminate current word
+            // Terminate current word.
             word[index] = '\0';
-
-
-
-
-
-
-
-
-
-
-
-    char word[LENGTH + 1]
-
-    // Read each word in the file.
-    char c;
-    while (fread(&c, sizeof(char), 1, source))
-    {
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // If trie has NULL child for that letter,
-        if (root->children[letter] == NULL)
-        {
-            // Create space for a new trie node.
-            node *temp = malloc(sizeof(node));
-            if (temp == NULL)
-            {
-                return 1;
-            }
-
-            root->children[letter] = temp;
-
         }
-
-        // Create space for a new trie node.
-        node *n = malloc(sizeof(node));
-        if (n == NULL)
-        {
-            return 1;
-        }
-
-
-        n->number = x;
-        n->next = NULL;
-
-
-
-        // Count words for size() function.
-        word_count++;
     }
 
-    // TODO: Add new node to head (front) of linked list.
-    n->next = list;
-    list->next = n;
+    insert_to_trie(root, word);
 
     // Update the total number of nodes
     totalNodes++;
-
-
-
-    // Copy the word into the new node.
-
-
-
-    // Hash the word to obtain its hash value.
-
-
-
-    // Insert the new node into the hash table (using the index
-    // specified by its hash value)
-
-
-
-    // Return false if unsuccessful (again, at any other point)
-
 
 
     // Close file and return true for successful load.
