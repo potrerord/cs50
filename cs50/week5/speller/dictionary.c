@@ -73,7 +73,7 @@ unsigned int hash(const char *word)
 }
 
 
-bool insert_to_trie(node *node, char *word)
+void insert_to_trie(node *node, char *word)
 {
     // Base case: At end of word, mark node as a last letter in a word.
     if (word == '\0')
@@ -85,6 +85,8 @@ bool insert_to_trie(node *node, char *word)
     }
 
     // Recursive case: If not the end, insert letter and create next.
+    letter = tolower(word) - 'a';
+    node->children[*word]
     node->islast = false;
     insert_to_trie(node, word + 1;)
 
