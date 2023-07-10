@@ -184,7 +184,7 @@ bool load(const char *dictionary)
     char c;
 
     // Assemble words from dictionary.
-    while (fscanf(source, %s, word) != EOF)
+    while (fscanf(source, "%s", word) != EOF)
     {
         // Insert word to trie.
         insert_to_trie(root, word);
@@ -206,7 +206,7 @@ unsigned int size(void)
 }
 
 
-// Unloads dictionary from memory, returning true if successful, else false
+// Unloads dictionary from memory, returning true if successful, else false.
 bool unload(void)
 {
     bool freed = false;
