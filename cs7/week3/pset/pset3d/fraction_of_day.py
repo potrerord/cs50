@@ -51,13 +51,44 @@ def main():
     corresponding fractions of a day.
     """
 
+    for hour in range(24):
+
+        print_hour = hour
+
+        # Convert "0th hour" to say "12".
+        if hour == 0:
+            print_hour = 12
+
+        
+
 
 
 
 def fraction_of_day(hour: int, min: int, sec: int, ampm: str) -> float:
     """Return the fraction of a day elapsed since midnight."""
 
-    
+    # Constant for number of seconds in a day.
+    DAILY_SECS = 86400
+
+    # Convert 12 to mean 0 hours.
+    if hour == 12:
+        hour = 0
+
+    # Convert hours/minutes to seconds.
+    hour_to_sec = hour * 3600
+    min_to_sec = min * 60
+
+    # If PM, add half the day's seconds.
+    pm_sec = 0
+    if ampm == "P":
+        pm_sec = 43200
+
+    secs_elapsed = hour_to_sec + min_to_sec + sec + pm_sec
+
+    fraction = secs_elapsed / DAILY_SECS
+
+    return fraction
+
 
 
 # Run the main function if script is run directly.
