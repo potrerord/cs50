@@ -28,7 +28,7 @@ bool check(const char *word)
     int letter;
 
     // for each character in word:
-    for (int i = 0, wordlen = strlen(word); i < wordlen, i++)
+    for (int i = 0, wordlen = strlen(word); i < wordlen; i++)
     {
         // Convert letter to index.
         letter = tolower(word[i]) - 'a';
