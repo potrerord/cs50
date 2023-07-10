@@ -112,8 +112,12 @@ bool load(const char *dictionary)
         return false;
     }
 
-    // Create a pointer for a trie.
+    // Create and initialize a pointer for a trie.
     node *root = malloc(sizeof(node));
+    for (int i = 0; i < N; i++)
+    {
+        root->letters[i] = NULL;
+    }
 
     // Did you free this?
 
