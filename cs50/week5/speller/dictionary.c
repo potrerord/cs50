@@ -118,9 +118,9 @@ bool load(const char *dictionary)
     // Prepare to assemble words.
     int index = 0;
     char word[LENGTH + 1];
+    char c;
 
     // Assemble words from dictionary.
-    char c;
     while (fread(&c, sizeof(char), 1, source))
     {
         // Assume all lowercase/apostrophes and separated by \n.
@@ -137,15 +137,15 @@ bool load(const char *dictionary)
             // Terminate current word.
             word[index] = '\0';
 
+            // Insert word to trie.
+            insert_to_trie(root, word);
+
             // Increment global word count.
             word_count++;
 
             // Prepare for next word.
             index = 0;
         }
-
-        // Insert word to trie.
-        insert_to_trie(root, word);
     }
 
     // Close file and return true for successful load.
