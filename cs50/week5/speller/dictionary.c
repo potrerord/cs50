@@ -164,7 +164,15 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // for each child in node:
+    // For each child in node,
+    for (int i = 0; i < LETTERS; i++)
+    {
+        // If child is not null,
+        if (root->children[i] != NULL)
+        {
+            
+        }
+    }
         // if child is not null:
             // unload(child)
     // free(node)
