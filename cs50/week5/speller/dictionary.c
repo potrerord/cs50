@@ -2,14 +2,21 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 #include "dictionary.h"
 
-// Represents a node in a hash table
-typedef struct node
+
+// Global variable for dictionary word count.
+unsigned int word_count = 0;
+
+// Represents a node in a hash table.
+typedef struct Node
 {
     char word[LENGTH + 1];
-    struct node *next;
+    struct Node *next;
 }
 node;
 
