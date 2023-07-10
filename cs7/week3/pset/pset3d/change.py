@@ -99,7 +99,8 @@ def find_change() -> List[int]:
 
 # Must not prompt the user for anything.
 def print_change(day1_price, day2_price, day1_num):
-    butt
+    print(f"The largest change was ${day2_price - day1_price)},
+            occurring between Day #{day1_num} and Day #{day1_num + 1}.")
 
 
 
