@@ -52,10 +52,12 @@ def main():
     # Prompt user for prices and find largest change.
     change_info = find_change()
 
-    
+    start_price = change_info[0]
+    end_price = change_info[1]
+    start_day = change_info[2]
 
     # Print answer.
-    print_change(change_info[0], change_info[1], change_info[2])
+    print_change(start_price, end_price, start_day)
 
 
 def find_change() -> List[int]:
