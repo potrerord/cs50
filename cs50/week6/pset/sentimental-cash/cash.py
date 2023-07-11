@@ -43,7 +43,6 @@ def main():
     printf("%i\n", n)
 
 
-
 def get_change(prompt: str):
     """Return user-input positive int amount of change in dollars."""
 
@@ -59,7 +58,7 @@ def get_change(prompt: str):
 
 
 int lower_coin(int coin)
- """Lowers coin value to next highest coin
+ """Lowers coin value to next highest coin."""
 
     int lower = 0;
     if (coin == 25)
