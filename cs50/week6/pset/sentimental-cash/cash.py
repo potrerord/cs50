@@ -7,6 +7,9 @@ amount of change owed in cents.
 def main():
     """Call other functions."""
 
+    # List of coin values from quarters down.
+    COIN_VALUES = [25, 10, 5, 1]
+
     # Get change owed.
     change = get_change()
 
@@ -14,7 +17,7 @@ def main():
     count = 0
 
     # Subtract largest possible coin and increment n by 1, starting with quarter
-    int coin = 25;
+    coin = 25;
     while (change > 0)
     {
         // Compare change value to highest coin value and subtract/increment if possible
