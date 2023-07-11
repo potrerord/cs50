@@ -22,10 +22,13 @@ def get_height(prompt: str) -> int:
         try:
             h = int(input(prompt))
         except ValueError:
-            print('error: height must be between 1 and 8, inclusive')
+            print('error: height must be integer')
         else:
             if 1 <= h and h <= 8:
                 return h
+
+        # Reprompt user if height is not between 1 and 8.
+        print('error: height must be between 1 and 8, inclusive')
 
 
 def print_hpyramid(height: int):
