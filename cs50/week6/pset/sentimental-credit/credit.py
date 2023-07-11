@@ -19,71 +19,68 @@ def main():
     # Check if cc number is valid.
     if not(is_valid_cc(card)):
         print('INVALID')
+        return 1
 
-        # Classify length of 13 as Visa.
-        if
+    # Classify length of 13 as Visa.
+    if len(card) == 13
 
 
-        int length = get_length(cc);
+    int length = get_length(cc);
 
-        // 15 digits is Amex if first two digits are 34 or 37
-        if (length == 15)
-        {
-            if ((int)(cc / 10000000000000) == 34 || (int)(cc / 10000000000000) == 37)
-            {
-                printf("AMEX\n");
-            }
-            else
-            {
-                printf("INVALID\n");
-            }
-        }
+    // 15 digits is Amex if first two digits are 34 or 37
+    if (length == 15)
 
-        // 13 digits is Visa if first digit is 4
-        else if (length == 13)
-        {
-            if ((int)(cc / 1000000000000) == 4)
-            {
-                printf("VISA\n");
-            }
-            else
-            {
-                printf("INVALID\n");
-            }
-        }
+        if ((int)(cc / 10000000000000) == 34 || (int)(cc / 10000000000000) == 37)
 
-        // 16 digits is Visa if first digit is 4, Mastercard if first digits are 51-55 inclusive
-        else if (length == 16)
-        {
-            if (cc / 1000000000000000 == 4)
-            {
-                printf("VISA\n");
-            }
-            else
-            {
-                if ((int)(cc / 100000000000000) < 51 || (int)(cc / 100000000000000) > 55)
-                {
-                    printf("INVALID\n");
-                }
-                else
-                {
-                    printf("MASTERCARD\n");
-                }
-            }
-        }
+            printf("AMEX\n");
 
-        // Any number of digits besides 13 15 16 is invalid
         else
-        {
+
             printf("INVALID\n");
-        }
-    }
+
+
+    // 13 digits is Visa if first digit is 4
+    else if (length == 13)
+
+        if ((int)(cc / 1000000000000) == 4)
+
+            printf("VISA\n");
+
+        else
+
+            printf("INVALID\n");
+
+
+    // 16 digits is Visa if first digit is 4, Mastercard if first digits are 51-55 inclusive
+    else if (length == 16)
+
+        if (cc / 1000000000000000 == 4)
+
+            printf("VISA\n");
+
+        else
+
+            if ((int)(cc / 100000000000000) < 51 || (int)(cc / 100000000000000) > 55)
+
+                printf("INVALID\n");
+
+            else
+
+                printf("MASTERCARD\n");
+
+
+    // Any number of digits besides 13 15 16 is invalid
+    else
+
+        printf("INVALID\n");
+
+
 
     // Invalid sum prints invalid
     else if (validsum == false)
-    {
+
         printf("INVALID\n");
-    }
+
 
     print()
 
@@ -103,18 +100,18 @@ def get_cc(prompt: str) -> int:
 
             # Check if number is positive.
             if cc <= 0:
-                raise ValueError('cc must be positive')
+                raise ValueError
 
             # Check number length.
             elif len(str(cc)) not in LENGTHS:
-                raise ValueError('cc is incorrect length')
+                raise ValueError
 
             # Check first two digits.
             elif int((str(cc)[0] + str(cc)[1])) not in FIRST_DIGITS:
-                raise ValueError('cc has incorrect leading digits')
+                raise ValueError
 
         except ValueError as e:
-            print('caught exception:', e, '\n')
+            print('INVALID\n')
 
         else:
             return cc
