@@ -2,16 +2,8 @@
 Prints the Coleman-Liau index reading grade level for input text.
 """
 
-#include <cs50.h>
-#include <ctype.h>
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
 
-// Calculates Coleman-Liau index given # of letters, words, and sentences
-float cole_liau(int lets, int wrds, int snts);
-
-int main(void)
+def main():
 {
     // Prompt user for text to analyze
     string text = get_string("Text: ");
@@ -102,3 +94,7 @@ Better to use the actual formula here, as it makes this line easier to understan
 
     return score;
 }
+
+
+if __name__ == "__main__":
+    main()
