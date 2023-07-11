@@ -28,10 +28,13 @@ def main():
     print()
 
 
-def classify(cc: int) -> str:
+def classify(cc_num: int) -> str:
     """Return the cc type based on the length and leading digits of the
     int argument.
     """
+
+    # Convert number to string.
+    cc = str(cc_num)
 
     # Classify 13 digits as Visa.
     if len(cc) == 13:
@@ -45,11 +48,11 @@ def classify(cc: int) -> str:
     elif len(cc) == 16:
 
         # Visa begins with 4.
-        if str(cc)[0] == 4:
+        if cc[0] == 4:
             return 'VISA'
 
         # Mastercard begins with 5.
-        elif str(cc)[0] == 5:
+        elif cc[0] == 5:
             return 'MASTERCARD'
 
 
@@ -109,10 +112,10 @@ def is_valid_cc(cc) -> bool:
             doubled_digits.append(int(str(number)[i]))
 
     # Add all digits.
-    sum = sum(doubled_digits) + sum(eodigit_0)
+    total_sum = sum(doubled_digits) + sum(eodigit_0)
 
     # Return True if sum ends in 0.
-    if sum % 10 == 0:
+    if total_sum % 10 == 0:
         return True
 
     # If not, return False.
