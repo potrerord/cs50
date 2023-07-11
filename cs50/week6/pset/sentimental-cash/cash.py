@@ -4,11 +4,14 @@ amount of change owed in cents.
 """
 
 
+from cs50 import get_float
+
+
 def main():
     """Call other functions."""
 
     # List of coin values from quarters down.
-    COIN_VALUES = [25, 10, 5, 1]
+    COIN_VALUES = [0.25, 0.10, 0.05, 0.01]
 
     # Get change owed.
     change = get_change()
