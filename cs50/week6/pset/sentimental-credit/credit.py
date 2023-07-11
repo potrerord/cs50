@@ -92,10 +92,12 @@ def is_valid_cc(cc) -> bool:
     cc_reversed = str(cc)[::-1]
 
     # Make list of ints for every other digit starting from index 0.
-    eodigit_0 = list(int(cc_reversed[::2]))
+    eodigit_0 = list(cc_reversed[::2])
+    eodigit_0 = [int(n) for n in eodigit_0]
 
     # Make list of ints for every other digit starting from index 1.
-    eodigit_1 = list(int(cc_reversed[1::2]))
+    eodigit_1 = list(cc_reversed[1::2])
+    eodigit_1 = [int(n) for n in eodigit_1]
 
     # Double every digit in the second list.
     eodigit_1_doubled = [digit * 2 for digit in eodigit_1]
