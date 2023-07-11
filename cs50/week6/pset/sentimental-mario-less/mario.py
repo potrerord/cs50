@@ -11,18 +11,18 @@ def main():
     """Take user input and print pyramid."""
 
     # Get height of half-pyramid
-    height = get_height()
+    height = get_height('Height: ')
 
     # Print half-pyramid
     print_hpyramid(height)
 
 
-def get_height() -> int:
+def get_height(prompt: str) -> int:
     """Return user-input positive integer pyramid height."""
 
     # Continually re-prompt if height is not between 1 and 8, inclusive.
     while True:
-        h = get_int('Height: ')
+        h = get_int(prompt)
         if 1 <= h and h <= 8:
             break
 
@@ -35,16 +35,14 @@ def get_height() -> int:
 def print_hpyramid(height: int):
     """Print half-pyramid with height input."""
 
-    # Print input number of rows.
-    for row in range(height):
+    # Print input number of rows, starting with row 1 to simplify calc.
+    for row in range(1, height + 1):
 
-        # In each row, print decreasing spaces starting with height - 1.
-        for space in range(height - 1 - row):
-            print(' ', end='')
+        # Print decreasing spaces.
+        print(' ' * (height - row), end='')
 
         # Then print increasing # starting with 1.
-        for block in range(row + 1):
-            print('#', end='')
+        print('#' * row, end='')
 
         # Print new line after each row
         print()
