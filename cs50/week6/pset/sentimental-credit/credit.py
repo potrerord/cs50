@@ -3,9 +3,9 @@ Prompts user for credit card number and reports whether it is a valid
 American Express, MasterCard, or Visa.
 """
 
+import re
 
 from cs50 import get_int
-import re
 
 
 def main():
@@ -13,11 +13,12 @@ def main():
 
     print()
 
-    // Prompt user for cc number
-    long cc = get_cc();
+    # Prompt user for cc number
+    card = get_cc('Enter a credit card number: ')
 
-    // Calculate checksum
-    bool validsum = checksum(cc);
+    # Check if cc number is valid.
+    if is_valid_cc(card):
+        ...
 
     // If valid, check card length and starting digits
     if (validsum == true)
@@ -87,31 +88,22 @@ def main():
     print()
 
 
-def get_cc(prompt: str):
+def get_cc(prompt: str) -> int:
     """Get positive user credit card number."""
 
     while True:
         try:
-            cc = get_int(prompt)
-            if cc <= 0:
+            user_cc = get_int(prompt)
+            if user_cc <= 0:
                 raise ValueError('cc number must be positive')
         except ValueError as e:
             print('caught exception:', e, '\n')
+        else:
+            return user_cc
 
 
-// Gets number length
-int get_length(long cc)
-{
-    int length = floor(log10(cc) + 1);
-    return length;
-}
-
-
-// Checks credit card number input for validity and returns boolean value
-bool checksum(long cc)
-{
-    // Get length
-    int length = get_length(cc);
+bool is_valid_cc(long cc)
+    """Return boolean value indicating credit card number validity."""
 
     // Cut length in half to get every other number
     int k = (length + 1) / 2;
