@@ -113,13 +113,12 @@ def get_cc(prompt: str) -> int:
 bool is_valid_cc(cc)
     """Return boolean value indicating credit card number validity."""
 
-    // Cut length in half to get every other number
-    int k = (length + 1) / 2;
+    # Cut length in half to get every other number
 
-    // Initialize sum and tempsump/tempsum length variables
-    int sum = 0;
-    int tempsum = 0;
-    int ts_length = 0;
+    # Initialize sum and tempsump/tempsum length variables
+    sum = 0;
+    tempsum = 0;
+    ts_length = 0;
 
     // If even length, get sum
     if (length % 2 == 0)
