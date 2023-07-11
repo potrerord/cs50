@@ -14,14 +14,14 @@ def main():
     COIN_VALUES = [0.25, 0.10, 0.05, 0.01]
 
     # Get change owed.
-    change = get_change()
+    change = get_change('Enter change (in dollars): ')
 
     # Initialize counter variable.
     count = 0
 
     # Subtract largest possible coin and count.
     while True:
-        
+
 
 
 
@@ -45,10 +45,17 @@ def main():
     printf("%i\n", n);
 }
 
-// Continually prompts user for positive int amount of change in cents
-int get_change(void)
-{
-    int change;
+
+def get_change(prompt: str):
+    """Return user-input positive int amount of change in dollars."""
+
+    while True:
+        try:
+            change = get_float(prompt)
+        except:
+            TypeError:
+            
+
     do
     {
         change = get_int("Change owed: ");
