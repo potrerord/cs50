@@ -4,6 +4,9 @@ with # characters.
 """
 
 
+from cs50 import get_int
+
+
 def main():
     """Take user input and print pyramid."""
 
@@ -19,12 +22,12 @@ def get_height() -> int:
 
     # Continually re-prompt if height is not between 1 and 8, inclusive.
     while True:
-        h = int(input('Height: '))
+        h = get_int('Height: ')
         if 1 <= h and h <= 8:
             break
 
         # Prompt user to reenter height.
-        print('error: height must be positive integer')
+        print('error: height must be between 1 and 8, inclusive')
 
     return h
 
