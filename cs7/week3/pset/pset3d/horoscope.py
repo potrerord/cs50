@@ -86,10 +86,12 @@ def sign(month, day) -> str:
     the date is not valid.
     """
 
-    signs = [Aquarius, Pisces, Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn]
+    signs = [Aquarius, Pisces, Aries, Taurus, Gemini, Cancer, Leo,
+             Virgo, Libra, Scorpio, Sagittarius, Capricorn]
 
+    if month == 
 
-    for i in range(12):
+    for i in range(1, 13):
 
 
 
