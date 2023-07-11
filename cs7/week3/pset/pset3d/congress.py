@@ -40,24 +40,15 @@ def main():
 
 
 
-# Implement eligible_for_sentate here.
-#
-# Returns true if the candidate is eligible to run for senate.
-# Does not print anything out.
-def eligible_for_sentate(*** replace with your parameters ***):
+def eligible_for_senate(age: int, length_of_citizenship: int) -> bool:
+    """Return true if the candidate is eligible to run for senate."""
+
+    if age
 
 
 
-
-
-
-
-
-# Implement eligible_for_house here.
-#
-# Returns true if the candidate is eligible for the house.
-# Does not print anything out.
-def eligible_for_house(*** replace with your parameters ***):
+def eligible_for_house(age: int, length_of_citizenship: int) -> bool:
+    """Returns true if the candidate is eligible for the house."""
 
 
 
