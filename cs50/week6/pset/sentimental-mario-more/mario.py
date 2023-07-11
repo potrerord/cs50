@@ -1,6 +1,6 @@
 """
-Prompts user for an int height and creates a Mario-style half-pyramid
-with # characters.
+Prompts user for an int height and creates a Mario-style pyramid with
+# characters.
 """
 
 
@@ -11,7 +11,7 @@ def main():
     height = get_height('Height: ')
 
     # Print half-pyramid
-    print_hpyramid(height)
+    print_pyramid(height)
 
 
 def get_height(prompt: str) -> int:
@@ -21,14 +21,18 @@ def get_height(prompt: str) -> int:
     while True:
         try:
             h = int(input(prompt))
+        except ValueError:
+            print('error: height must be integer')
+        else:
             if 1 <= h and h <= 8:
                 return h
-        except ValueError:
-            print('error: height must be between 1 and 8, inclusive')
+
+        # Reprompt user if height is not between 1 and 8.
+        print('error: height must be between 1 and 8, inclusive')
 
 
-def print_hpyramid(height: int):
-    """Print half-pyramid with height input."""
+def print_pyramid(height: int):
+    """Print pyramid with height input."""
 
     # Print input number of rows, starting with row 1 to simplify calc.
     for row in range(1, height + 1):
@@ -37,6 +41,13 @@ def print_hpyramid(height: int):
         print(' ' * (height - row), end='')
 
         # Then print increasing # starting with 1.
+        print('#' * row, end='')
+
+        # Then print a double space.
+        print('  ', end='')
+
+        # Then print the same amount of # as before.
+
         print('#' * row, end='')
 
         # Print new line after each row
