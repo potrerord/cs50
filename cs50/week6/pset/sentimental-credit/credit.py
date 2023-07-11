@@ -1,21 +1,17 @@
-// Prompts user for credit card number and reports whether it is a valid American Express, MasterCard, or Visa
+"""
+Prompts user for credit card number and reports whether it is a valid
+American Express, MasterCard, or Visa.
+"""
 
-#include <cs50.h>
-#include <math.h>
-#include <stdbool.h>
-#include <stdio.h>
 
-// Gets user credit card number
-long get_cc(void);
+from cs50 import get_int
 
-// Gets number length
-int get_length(long cc);
 
-// Checks credit card number input for validity and returns boolean value
-bool checksum(long cc);
+def main():
+    """Get change, count coins, then print count."""
 
-int main(void)
-{
+    print()
+
     // Prompt user for cc number
     long cc = get_cc();
 
@@ -85,19 +81,22 @@ int main(void)
     {
         printf("INVALID\n");
     }
-}
 
-// Gets user credit card number
-long get_cc(void)
-{
-    long cc;
-    do
-    {
-        cc = get_long("Number: ");
-    }
-    while (cc < 0);
-    return cc;
-}
+
+    print()
+
+
+def get_cc(prompt: str):
+    """Get positive user credit card number."""
+
+    while True:
+        try:
+            cc = get_int(prompt)
+            if cc <= 0:
+                raise ValueError('cc number must be positive')
+        except ValueError as e:
+            print('caught exception:', e, '\n')
+
 
 // Gets number length
 int get_length(long cc)
@@ -203,3 +202,9 @@ bool checksum(long cc)
         return false;
     }
 }
+
+
+
+# Run the main function if script is run directly.
+if __name__ == "__main__":
+    main()
