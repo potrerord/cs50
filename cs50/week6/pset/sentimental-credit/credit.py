@@ -4,8 +4,6 @@ American Express, MasterCard, or Visa.
 """
 
 
-import re
-
 from cs50 import get_int
 
 
@@ -15,11 +13,11 @@ def main():
     print()
 
     # Prompt user for cc number
-    card = get_cc('Enter a credit card number: ')
+    card = get_cc("Enter a credit card number: ")
 
     # Return if cc number is invalid.
-    if not(is_valid_cc(card)):
-        print('INVALID\n')
+    if not (is_valid_cc(card)):
+        print("INVALID\n")
         return 1
 
     # Print card type.
@@ -38,22 +36,21 @@ def classify(cc_num: int) -> str:
 
     # Classify 13 digits as Visa.
     if len(cc) == 13:
-        return 'VISA'
+        return "VISA"
 
     # Classify 15 digits as American Express.
     elif len(cc) == 15:
-        return 'AMEX'
+        return "AMEX"
 
     # Classify 16 digits as either Visa or Mastercard.
     elif len(cc) == 16:
-
         # Visa begins with 4.
-        if cc[0] == '4':
-            return 'VISA'
+        if cc[0] == "4":
+            return "VISA"
 
         # Mastercard begins with 5.
-        elif cc[0] == '5':
-            return 'MASTERCARD'
+        elif cc[0] == "5":
+            return "MASTERCARD"
 
 
 def get_cc(prompt: str) -> int:
@@ -61,8 +58,7 @@ def get_cc(prompt: str) -> int:
 
     # Define constants for immediate validation checks.
     LENGTHS = [13, 15, 16]
-    FIRST_DIGITS = [34, 37, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53,
-                    54, 55]
+    FIRST_DIGITS = [34, 37, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55]
 
     # Reprompt until cc with valid length and first digits is entered.
     while True:
@@ -82,7 +78,7 @@ def get_cc(prompt: str) -> int:
                 raise ValueError
 
         except ValueError:
-            print('INVALID\n')
+            print("INVALID\n")
             exit(1)
 
         else:
