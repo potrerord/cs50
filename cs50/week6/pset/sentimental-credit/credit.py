@@ -96,6 +96,7 @@ def get_cc(prompt: str) -> int:
             user_cc = get_int(prompt)
             if user_cc <= 0:
                 raise ValueError('cc number must be positive')
+            elif len(str(user_cc)) != 
         except ValueError as e:
             print('caught exception:', e, '\n')
         else:
