@@ -125,6 +125,8 @@ def is_valid_cc(cc):
     cc_reversed = str(cc)[::-1]
     every_other = list(cc_reversed[1::2])
     every_other_doubled = [digit * 2 for digit in every_other]
+    doubled_digits = [[int(digit) for digit in str(number)] for number in
+                      every_other_doubled]
     
 
 
