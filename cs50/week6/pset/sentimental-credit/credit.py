@@ -123,9 +123,12 @@ def get_cc(prompt: str) -> int:
 bool is_valid_cc(cc)
     """Return boolean value indicating credit card number validity."""
 
-    # Cut length in half to get every other number
+   
 
-    # Initialize sum and tempsump/tempsum length variables
+
+
+
+"""
     sum = 0;
     tempsum = 0;
     ts_length = 0;
@@ -212,7 +215,7 @@ bool is_valid_cc(cc)
         return false;
     }
 }
-
+"""
 
 
 # Run the main function if script is run directly.
