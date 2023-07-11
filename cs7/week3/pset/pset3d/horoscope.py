@@ -50,20 +50,43 @@ def main():
     sign function.
     """
 
-    ...
+    print()
+    month = int(input("Enter a month (integer): "))
+    day = int(input("Enter a day (integer): "))
+    print(f"Your chosen date is {month}/{day}.")
+    print()
+    print(sign(month, day))
 
 
-def before(month1, day1, month2, day2):
-    """"""
+def before(month1, day1, month2, day2) -> bool:
+    """Return true if month1/day1 is before month2/day2."""
 
-    ...
+    # If month1 is after month2, immediately return False.
+    if month1 > month2:
+        return False
 
-def sign(month, day):
+    # If month1 is before month2, immediately return True.
+    elif month1 < month2:
+        return True
+
+    # If months are equal, check days.
+    else:
+
+        # If day1 is before day2, return True.
+        if day1 < day2:
+            return True
+
+        # If day1 is not strictly before day2, return False.
+        else:
+            return False
+
+
+def sign(month, day) -> str:
     """Return the sign for the given month and day, or "INVALID_DATE" if
     the date is not valid.
     """
 
-    ...
+    
 
 
 # Run the main function if script is run directly.
