@@ -86,24 +86,29 @@ def sign(month, day) -> str:
     the date is not valid.
     """
 
-    signs = [Aquarius, Pisces, Aries, Taurus, Gemini, Cancer, Leo,
-             Virgo, Libra, Scorpio, Sagittarius, Capricorn]
+    # The signs in chronological order by end date.
+    signs = ["Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer",
+             "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius"]
 
-    month_days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]]
+    # The maximum days in each month.
+    month_max = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     # Check date validity.
     for i in range(12):
-        if month == i and day > month_days[i]:
+        if month == i and day > month_max[i]:
             return "INVALID_DATE"
 
-    for month2 in range(12):
-        for day2 in range(31):
-            if before(month, day, month2 + 1, day2 + 1):
-                
+    # The first date of each sign.
+    sign_starts = [20, 19, 21, 20, 21, 21, 23, 23, 23, 23, 22, 22]
 
+    # Special case: Capricorn is in December and January.
+    if before(month, day, 12, 32) or before(month, day, 1, 20):
+        return signs[0]
 
-
-
+    for i in range(12):
+        if before(month, day, i + 1, sign_starts[i]) \
+        and not(before(month, day, i, sign_starts[i])):
+            return signs[i]
 
 
 # Run the main function if script is run directly.
