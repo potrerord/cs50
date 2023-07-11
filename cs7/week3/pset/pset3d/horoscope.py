@@ -91,12 +91,17 @@ def sign(month, day) -> str:
 
     month_days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]]
 
-
+    # Check date validity.
     for i in range(12):
         if month == i and day > month_days[i]:
             return "INVALID_DATE"
 
-    if 
+    for month2 in range(12):
+        for day2 in range(31):
+            if before(month, day, month2 + 1, day2 + 1):
+                
+
+
 
 
 
