@@ -33,7 +33,7 @@ def get_change(prompt: str):
             if change < 0:
                 raise ValueError('change must be positive')
         except ValueError as e:
-            print('caught an exception:', e)
+            print('caught an exception:', e, '\n')
         else:
             return change
 
