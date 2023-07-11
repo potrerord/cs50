@@ -29,25 +29,19 @@ def main():
 
 
 
-    coin = 25;
+    coin = 25
     while (change > 0)
-    {
         // Compare change value to highest coin value and subtract/increment if possible
         if (change >= coin)
-        {
-            change -= coin;
-            n++;
-        }
+            change -= coin
+            n++
         else
-        {
             // Lower coin value to next highest and loop until change is 0
-            coin = lower_coin(coin);
-        }
-    }
+            coin = lower_coin(coin)
 
     // Print final number of coins
-    printf("%i\n", n);
-}
+    printf("%i\n", n)
+
 
 
 def get_change(prompt: str):
@@ -56,22 +50,12 @@ def get_change(prompt: str):
     while True:
         try:
             change = get_float(prompt)
+            if change < 0:
+                raise ValueError
         except ValueError:
-            print("error: change must be a float")
-            
-        if change < 0:
-            print("error: change must be positive")
-        except
-
-
-
-
-    do
-    {
-        change = get_int("Change owed: ");
-    }
-    while (change < 0);
-    return change;
+            print("error: change must be a positive float")
+        else:
+            return change
 }
 
 // Lowers coin value to next highest coin
