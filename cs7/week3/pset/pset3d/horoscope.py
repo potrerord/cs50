@@ -89,9 +89,15 @@ def sign(month, day) -> str:
     signs = [Aquarius, Pisces, Aries, Taurus, Gemini, Cancer, Leo,
              Virgo, Libra, Scorpio, Sagittarius, Capricorn]
 
-    if month == 
+    month_days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]]
 
-    for i in range(1, 13):
+
+    for i in range(12):
+        if month == i and day > month_days[i]:
+            return "INVALID_DATE"
+
+    if 
+
 
 
 
