@@ -16,10 +16,15 @@ def main():
     # Get change owed.
     change = get_change()
 
-    # Count number of coins.
+    # Initialize counter variable.
     count = 0
 
-    # Subtract largest possible coin and increment n by 1, starting with quarter
+    # Subtract largest possible coin and count.
+    while True:
+        
+
+
+
     coin = 25;
     while (change > 0)
     {
