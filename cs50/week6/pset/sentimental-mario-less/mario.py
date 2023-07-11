@@ -17,10 +17,10 @@ def main():
 def get_height() -> int:
     """Return user-input positive integer pyramid height."""
 
-    # Continually re-prompt if height is not a positive integer.
+    # Continually re-prompt if height is not between 1 and 8, inclusive.
     while True:
         h = int(input('Height: '))
-        if h > 1:
+        if 1 <= h and h <= 9:
             break
 
         # Prompt user to reenter height.
