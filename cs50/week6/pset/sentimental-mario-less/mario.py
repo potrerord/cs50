@@ -8,43 +8,43 @@ def main():
     """Take user input and print pyramid."""
 
     # Get height of half-pyramid
-    height = get_height();
+    height = get_height()
 
     # Print half-pyramid
-    print_hpyramid(height);
+    print_hpyramid(height)
 
 
 def get_height() -> int:
-"""Return user-input positive integer pyramid height."""
+    """Return user-input positive integer pyramid height."""
 
+    # Continually re-prompt if height is not a positive integer.
     while True:
-        h = get_int("Height: ")
-
-        if not(h > 0):
+        h = int(input('Height: '))
+        if h > 1:
             break
+
+        # Prompt user to reenter height.
+        print('error: height must be positive integer')
 
     return h
 
-// Prints half-pyramid with height input
-void print_hpyramid(int height)
-{
-    // Print input number of rows
-    for (int i = 0; i < height; i++)
-    {
-        // In each row, print decreasing spaces starting with height - 1
-        for (int j = 0; j < height - 1 - i; j++)
-        {
-            printf(" ");
-        }
 
-        // Then print increasing # starting with 1
-        for (int k = 0; k < i + 1; k++)
-        {
-            printf("#");
-        }
+def print_hpyramid(height: int):
+    """Print half-pyramid with height input."""
 
-        // Print new line after each row
-        printf("\n");
+    # Print input number of rows.
+    for row in range(height):
+
+        # In each row, print decreasing spaces starting with height - 1.
+        for space in range(height - 1 - row):
+            print(' ', end='')
+
+        # Then print increasing # starting with 1.
+        for block in range(row + 1):
+            print('#', end='')
+
+        # Print new line after each row
+        print()
 
 
 if __name__ == "__main__":
