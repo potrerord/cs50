@@ -45,13 +45,13 @@ def count_coins(change: float) -> int:
     for coin in COIN_VALUES:
         while True:
 
-            # Subtract value of each coin; count the coin.
-            change -= coin
-            count += 1
-
             # Switch to smaller coin..
             if change < coin:
                 break
+            
+            # Subtract value of each coin; count the coin.
+            change -= coin
+            count += 1
 
     # Return count when done subtracting coins.
     return count
