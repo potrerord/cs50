@@ -93,24 +93,24 @@ def get_cc(prompt: str) -> int:
 
     while True:
         try:
-            user_cc = get_int(prompt)
+            cc = get_int(prompt)
 
             # Check if number is positive.
-            if user_cc <= 0:
+            if cc <= 0:
                 raise ValueError('cc number must be positive')
 
             # Check number length.
-            elif len(str(user_cc)) not in (13, 15, 16):
-                raise ValueError('cc number must have 13, 15, or 16 digits')
+            elif len(str(cc)) not in (13, 15, 16):
+                raise ValueError('cc number must have 13/15/16 digits')
 
         except ValueError as e:
             print('caught exception:', e, '\n')
 
         else:
-            return user_cc
+            return cc
 
 
-bool is_valid_cc(long cc)
+bool is_valid_cc(cc)
     """Return boolean value indicating credit card number validity."""
 
     // Cut length in half to get every other number
