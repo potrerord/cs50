@@ -17,8 +17,12 @@ def main():
     card = get_cc('Enter a credit card number: ')
 
     # Check if cc number is valid.
-    if is_valid_cc(card):
-        
+    if not(is_valid_cc(card)):
+        print('INVALID')
+
+        # Classify length of 13 as Visa.
+        if
+
 
         int length = get_length(cc);
 
@@ -81,7 +85,6 @@ def main():
         printf("INVALID\n");
     }
 
-
     print()
 
 
@@ -100,18 +103,18 @@ def get_cc(prompt: str) -> int:
 
             # Check if number is positive.
             if cc <= 0:
-                raise ValueError
+                raise ValueError('cc must be positive')
 
             # Check number length.
             elif len(str(cc)) not in LENGTHS:
-                raise ValueError
+                raise ValueError('cc is incorrect length')
 
             # Check first two digits.
             elif int((str(cc)[0] + str(cc)[1])) not in FIRST_DIGITS:
-                raise ValueError
+                raise ValueError('cc has incorrect leading digits')
 
-        except ValueError:
-            print('INVALID\n')
+        except ValueError as e:
+            print('caught exception:', e, '\n')
 
         else:
             return cc
