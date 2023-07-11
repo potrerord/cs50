@@ -3,6 +3,7 @@ Prompts user for credit card number and reports whether it is a valid
 American Express, MasterCard, or Visa.
 """
 
+
 import re
 
 from cs50 import get_int
@@ -16,73 +17,40 @@ def main():
     # Prompt user for cc number
     card = get_cc('Enter a credit card number: ')
 
-    # Check if cc number is valid.
+    # Return if cc number is invalid.
     if not(is_valid_cc(card)):
-        print('INVALID')
+        print('INVALID\n')
         return 1
 
-    # Classify length of 13 as Visa.
-    if len(card) == 13
-
-
-    int length = get_length(cc);
-
-    // 15 digits is Amex if first two digits are 34 or 37
-    if (length == 15)
-
-        if ((int)(cc / 10000000000000) == 34 || (int)(cc / 10000000000000) == 37)
-
-            printf("AMEX\n");
-
-        else
-
-            printf("INVALID\n");
-
-
-    // 13 digits is Visa if first digit is 4
-    else if (length == 13)
-
-        if ((int)(cc / 1000000000000) == 4)
-
-            printf("VISA\n");
-
-        else
-
-            printf("INVALID\n");
-
-
-    // 16 digits is Visa if first digit is 4, Mastercard if first digits are 51-55 inclusive
-    else if (length == 16)
-
-        if (cc / 1000000000000000 == 4)
-
-            printf("VISA\n");
-
-        else
-
-            if ((int)(cc / 100000000000000) < 51 || (int)(cc / 100000000000000) > 55)
-
-                printf("INVALID\n");
-
-            else
-
-                printf("MASTERCARD\n");
-
-
-    // Any number of digits besides 13 15 16 is invalid
-    else
-
-        printf("INVALID\n");
-
-
-
-    // Invalid sum prints invalid
-    else if (validsum == false)
-
-        printf("INVALID\n");
-
+    # Print card type.
+    print(classify(card))
 
     print()
+
+
+def classify(cc: int) -> str:
+    """Return the cc type based on the length and leading digits of the
+    int argument.
+    """
+
+    # Classify 13 digits as Visa.
+    if len(cc) == 13:
+        return 'VISA'
+
+    # Classify 15 digits as American Express.
+    elif len(cc) == 15:
+        return 'AMEX'
+
+    # Classify 16 digits as either Visa or Mastercard.
+    elif len(cc) == 16:
+
+        # Visa begins with 4.
+        if str(cc)[0] == 4:
+            return 'VISA'
+
+        # Mastercard begins with 5.
+        elif str(cc)[0] == 5:
+            return 'MASTERCARD'
 
 
 def get_cc(prompt: str) -> int:
