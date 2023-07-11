@@ -4,16 +4,21 @@ Prints the Coleman-Liau index reading grade level for input text.
 
 
 def main():
-{
+
     """butt"""
 
     # Prompt user for text to analyze
     s = input("Enter text: ")
 
     # Scan each character in string
-        # If char is alpha, count letter
+    for char in s:
+        if char.isalpha():
+            letters += 1
+        elif char.isspace():
+            words += 1
+        elif char in 
 
-        # If char is not alpha check if it ends word
+
 
 """Problem spec says to assume a word is a sequence of chars separated
 by a space. You should just be counting spaces here, you don't need to
