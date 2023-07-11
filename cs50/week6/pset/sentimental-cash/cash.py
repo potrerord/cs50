@@ -42,7 +42,7 @@ def count_coins(change: float) -> int:
     count = 0
 
     # Iterate through list of coins.
-    for coin in range(COIN_VALUES):
+    for coin in COIN_VALUES:
         while True:
 
             # Subtract value of each coin; count the coin.
