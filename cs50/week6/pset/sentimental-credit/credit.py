@@ -81,7 +81,7 @@ def get_cc(prompt: str) -> int:
             elif int((str(cc)[0] + str(cc)[1])) not in FIRST_DIGITS:
                 raise ValueError
 
-        except ValueError as e:
+        except ValueError:
             print('INVALID\n')
             exit
 
