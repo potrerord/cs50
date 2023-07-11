@@ -1,4 +1,6 @@
-// Prints the Coleman-Liau index reading grade level for input text
+"""
+Prints the Coleman-Liau index reading grade level for input text.
+"""
 
 #include <cs50.h>
 #include <ctype.h>
