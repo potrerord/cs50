@@ -94,11 +94,18 @@ def get_cc(prompt: str) -> int:
     while True:
         try:
             user_cc = get_int(prompt)
+
+            # Check if number is positive.
             if user_cc <= 0:
                 raise ValueError('cc number must be positive')
-            elif len(str(user_cc)) not in (13, )
+
+            # Check number length.
+            elif len(str(user_cc)) not in (13, 15, 16):
+                raise ValueError('cc number must have 13, 15, or 16 digits')
+
         except ValueError as e:
             print('caught exception:', e, '\n')
+
         else:
             return user_cc
 
