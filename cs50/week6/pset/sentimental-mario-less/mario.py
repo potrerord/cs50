@@ -20,7 +20,7 @@ def get_height() -> int:
     # Continually re-prompt if height is not between 1 and 8, inclusive.
     while True:
         h = int(input('Height: '))
-        if 1 <= h and h <= 9:
+        if 1 <= h and h <= 8:
             break
 
         # Prompt user to reenter height.
