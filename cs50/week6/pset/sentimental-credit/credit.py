@@ -136,11 +136,11 @@ def is_valid_cc(cc):
     eodigit_1_doubled = [digit * 2 for digit in eodigit_1]
 
     # Make new list of digits from the doubled list.
-    doubled_eo1 = [[int(digit) for digit in str(number)] for number in
+    doubled_digits = [[int(digit) for digit in str(number)] for number in
                       eodigit_1_doubled]
 
     # Add all digits.
-    total_sum = sum(doubled_eo1) + sum(ev_oth_0)
+    total_sum = sum(doubled_digits) + sum(ev_oth_0)
 
 
 
