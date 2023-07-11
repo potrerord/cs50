@@ -96,14 +96,14 @@ def sign(month, day) -> str:
 
     # Check date validity.
     for i in range(12):
-        if month == i and day > month_max[i]:
+        if month == i + 1 and day > month_max[i]:
             return "INVALID_DATE"
 
     # The first date of each sign.
     sign_starts = [20, 19, 21, 20, 21, 21, 23, 23, 23, 23, 22, 22]
 
     # Special case: Capricorn is in December and January.
-    if before(month, day, 12, 32) or before(month, day, 1, 20):
+    if not(before(month, day, 12, 22)):
         return signs[0]
 
     for i in range(12):
