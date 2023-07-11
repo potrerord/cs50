@@ -11,7 +11,7 @@ def main():
         file_reader = csv.DictReader(file)
         for row in file_reader:
             if min_tempo < tempo or tempo < max_tempo:
-                playlist.append(tempo)
+                playlist.append(name)
 
     # TODO: Print song titles from playlist
 
