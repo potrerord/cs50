@@ -18,11 +18,8 @@ def main():
 
     # Check if cc number is valid.
     if is_valid_cc(card):
-        ...
+        
 
-    // If valid, check card length and starting digits
-    if (validsum == true)
-    {
         int length = get_length(cc);
 
         // 15 digits is Amex if first two digits are 34 or 37
@@ -148,102 +145,6 @@ def is_valid_cc(cc) -> bool:
 
     # If not, return False.
     return False
-
-
-
-
-
-
-
-
-"""
-    sum = 0;
-    tempsum = 0;
-    ts_length = 0;
-
-    // If even length, get sum
-    if (length % 2 == 0)
-    {
-        // Sum twice every other digit starting from second to last
-        for (int i = 0; i < k; i++)
-        {
-            tempsum = 2 * ((long)(cc / (long)pow(10, (2 * i) + 1)) % 10);
-
-            // Get length of tempsum
-            do
-            {
-                ts_length = get_length(tempsum);
-
-                // If single digit, add to sum
-                if (ts_length == 1)
-                {
-                    sum += tempsum;
-                }
-
-                // If not single digit, add ones digit and divide by ten, then recheck
-                else
-                {
-                    sum += tempsum % 10;
-                    tempsum /= 10;
-                }
-            }
-            while (ts_length > 1);
-        }
-
-        // Sum every other digit starting from last
-        for (int j = 0; j < k; j++)
-        {
-            sum += (long)(cc / (long)pow(10, 2 * j)) % 10;
-        }
-    }
-
-    // If odd length, get sum
-    else
-    {
-        // Sum twice  every other digit starting from second to last
-        for (int i = 0; i < k - 1; i++)
-        {
-            tempsum = 2 * ((long)(cc / (long)pow(10, (2 * i) + 1)) % 10);
-
-            // Get length of tempsum
-            do
-            {
-                ts_length = get_length(tempsum);
-
-                // If single digit, add to sum
-                if (ts_length == 1)
-                {
-                    sum += tempsum;
-                }
-
-                // If not single digit, add ones digit and divide by ten, then recheck
-                else
-                {
-                    sum += tempsum % 10;
-                    tempsum /= 10;
-                }
-            }
-            while (ts_length > 1);
-        }
-
-        // Sum every other digit starting from last
-        for (int j = 0; j < k; j++)
-        {
-            sum += (long)(cc / (long)pow(10, 2 * j)) % 10;
-        }
-    }
-
-    // Return truth value
-    if (sum % 10 == 0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
-"""
 
 
 # Run the main function if script is run directly.
