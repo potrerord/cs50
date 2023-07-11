@@ -10,6 +10,8 @@ from cs50 import get_float
 def main():
     """Get change, count coins, then print count."""
 
+    print()
+
     # Get change owed.
     user_change = get_change('Enter change (in dollars): ')
 
@@ -18,6 +20,8 @@ def main():
 
     # Print number of coins (as an integer and a newline).
     print(coins)
+
+    print()
 
 
 def get_change(prompt: str):
@@ -34,9 +38,12 @@ def get_change(prompt: str):
             return change
 
 
-def count_coins(change: float) -> int:
+def count_coins(dollars: float) -> int:
     # List of coin values from quarters down.
-    COIN_VALUES = [0.25, 0.10, 0.05, 0.01]
+    COIN_VALUES = [25, 10, 5, 1]
+
+    # Convert float into integer coin value for calculations.
+    cents = int(dollars * 100)
 
     # Initialize counter variable.
     count = 0
@@ -46,11 +53,11 @@ def count_coins(change: float) -> int:
         while True:
 
             # Switch to smaller coin..
-            if change < coin:
+            if cents < coin:
                 break
-            
+
             # Subtract value of each coin; count the coin.
-            change -= coin
+            cents -= coin
             count += 1
 
     # Return count when done subtracting coins.
