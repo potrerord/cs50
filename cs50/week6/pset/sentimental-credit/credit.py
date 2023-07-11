@@ -92,8 +92,8 @@ def get_cc(prompt: str) -> int:
     """Get positive user credit card number."""
 
     LENGTHS = [13, 15, 16]
-    FIRST_DIGITS = [3, 4, 5]
-    FIRST_TWO = [34, 37, 51, 52, 53, 54, 55]
+    FIRST_DIGITS = [34, 37, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53,
+                 54, 55]
 
     while True:
         try:
@@ -107,10 +107,10 @@ def get_cc(prompt: str) -> int:
             elif len(str(cc)) not in LENGTHS:
                 raise ValueError('cc number must have 13/15/16 digits')
 
-            elif str(cc)[0] not in FIRST_DIGITS:
-                raise ValueError('cc number must begin with 3, 4, or 5')
+            # Check first two digits.
+            elif (str(cc)[0] + str(cc)[1]) not in FIRST_DIGITS:
+                raise ValueError('invalid leading digits')
 
-            elif str(cc)[0] +  == 3 and
 
         except ValueError as e:
             print('caught exception:', e, '\n')
