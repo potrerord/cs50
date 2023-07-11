@@ -5,6 +5,7 @@ American Express, MasterCard, or Visa.
 
 
 from cs50 import get_int
+import re
 
 
 def main():
