@@ -103,7 +103,10 @@ def is_valid_cc(cc) -> bool:
     eodigit_1_doubled = [digit * 2 for digit in eodigit_1]
 
     # Make new list of digits from the doubled list.
-    doubled_digits = [for number in eodigit_1_doubled]
+    doubled_digits = []
+    for number in eodigit_1_doubled:
+        for i in range(len(str(number))):
+            doubled_digits.append(int(str(number)[i]))
 
     # Add all digits.
     sum = sum(doubled_digits) + sum(eodigit_0)
