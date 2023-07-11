@@ -10,25 +10,14 @@ def main():
     # Prompt user for text to analyze
     s = input("Enter text: ")
 
-    # Scan each character in string
+    # Scan each character in string to count letters/words/sentences.
     for char in s:
         if char.isalpha():
             letters += 1
         elif char.isspace():
             words += 1
-        elif char in 
-
-
-
-"""Problem spec says to assume a word is a sequence of chars separated
-by a space. You should just be counting spaces here, you don't need to
-have all of these complex checks.
-"""
-
-"""
-This condition is not necessary, just count the periods, exclamations
-and question marks.
-"""
+        elif char in {'.', '!', '?'}:
+            sentences += 1
 
     # Store rounded Coleman-Liau index
     int gradeLevel = round(cole_liau(letCount, wordCount, sentCount));
