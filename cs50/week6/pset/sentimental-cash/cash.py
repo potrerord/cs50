@@ -58,9 +58,10 @@ def get_change(prompt: str):
             change = get_float(prompt)
         except ValueError:
             print("error: change must be a float")
-        except change < 0:
+            
+        if change < 0:
             print("error: change must be positive")
-        except 
+        except
 
 
 
