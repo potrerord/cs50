@@ -24,12 +24,10 @@ def get_height(prompt: str) -> int:
     while True:
         h = get_int(prompt)
         if 1 <= h and h <= 8:
-            break
+            return h
 
         # Prompt user to reenter height.
         print('error: height must be between 1 and 8, inclusive')
-
-    return h
 
 
 def print_hpyramid(height: int):
