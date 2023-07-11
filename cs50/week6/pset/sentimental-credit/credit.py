@@ -91,7 +91,7 @@ def main():
 def get_cc(prompt: str) -> int:
     """Get positive user credit card number."""
 
-    FIRST_DIGITS = [3, 4, 5]
+    FIRST_DIGITS = [[34, 37], [4], [51, 52, 53, 54, 55]]
 
     while True:
         try:
