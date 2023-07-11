@@ -120,10 +120,13 @@ def get_cc(prompt: str) -> int:
             return cc
 
 
-bool is_valid_cc(cc)
+def is_valid_cc(cc):
     """Return boolean value indicating credit card number validity."""
+    cc_reversed = str(cc)[::-1]
+    
 
-   
+
+
 
 
 
