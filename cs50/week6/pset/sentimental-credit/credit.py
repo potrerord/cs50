@@ -120,7 +120,7 @@ def get_cc(prompt: str) -> int:
             return cc
 
 
-def is_valid_cc(cc):
+def is_valid_cc(cc) -> bool:
     """Return boolean value indicating credit card number validity."""
 
     # Reverse the cc number for ease of manipulation.
@@ -129,7 +129,7 @@ def is_valid_cc(cc):
     # Make list of ints for every other digit starting from index 0.
     eodigit_0 = list(int(cc_reversed[::2]))
 
-    # Make list of ints for every other digits starting from index 1.
+    # Make list of ints for every other digit starting from index 1.
     eodigit_1 = list(int(cc_reversed[1::2]))
 
     # Double every digit in the second list.
@@ -140,7 +140,14 @@ def is_valid_cc(cc):
                       eodigit_1_doubled]
 
     # Add all digits.
-    total_sum = sum(doubled_digits) + sum(ev_oth_0)
+    sum = sum(doubled_digits) + sum(eodigit_0)
+
+    # Return True if sum ends in 0.
+    if sum % 10 == 0:
+        return True
+
+    # If not, return False.
+    return False
 
 
 
