@@ -91,12 +91,12 @@ def main():
 def get_cc(prompt: str) -> int:
     """Get positive user credit card number."""
 
-    # Constants for immediate validation checks.
+    # Define constants for immediate validation checks.
     LENGTHS = [13, 15, 16]
     FIRST_DIGITS = [34, 37, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53,
                     54, 55]
 
-    # Reprompt until number with valid length and first digits is entered.
+    # Reprompt until cc with valid length and first digits is entered.
     while True:
         try:
             cc = get_int(prompt)
