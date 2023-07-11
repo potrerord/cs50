@@ -53,6 +53,7 @@ def main():
     print()
     month = int(input("Enter a month (integer): "))
     day = int(input("Enter a day (integer): "))
+    print()
     print(f"Your chosen date is {month}/{day}.")
     print()
     print(sign(month, day))
@@ -97,6 +98,10 @@ def sign(month, day) -> str:
     # Check date validity.
     for i in range(12):
         if month == i + 1 and day > month_max[i]:
+            return "INVALID_DATE"
+        if day < 1:
+            return "INVALID_DATE"
+        if month > 12 or month < 1:
             return "INVALID_DATE"
 
     # The first date of each sign.
