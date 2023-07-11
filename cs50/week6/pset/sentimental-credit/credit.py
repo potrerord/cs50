@@ -83,7 +83,7 @@ def get_cc(prompt: str) -> int:
 
         except ValueError:
             print('INVALID\n')
-            exit
+            exit(1)
 
         else:
             return cc
