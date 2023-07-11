@@ -8,39 +8,16 @@ from cs50 import get_float
 
 
 def main():
-    """Call other functions."""
-
-    # List of coin values from quarters down.
-    COIN_VALUES = [0.25, 0.10, 0.05, 0.01]
+    """Get change, count coins, then print count."""
 
     # Get change owed.
-    change = get_change('Enter change (in dollars): ')
+    user_change = get_change('Enter change (in dollars): ')
 
-    # Initialize counter variable.
-    count = 0
+    # Count coins necessary for user's change.
+    coins = count_coins(user_change)
 
-    # Subtract largest possible coin and count.
-    while True:
-
-
-    # Print change (as an integer and a newline).
-    print(change)
-
-
-
-
-    coin = 25
-    while (change > 0)
-        // Compare change value to highest coin value and subtract/increment if possible
-        if (change >= coin)
-            change -= coin
-            n++
-        else
-            // Lower coin value to next highest and loop until change is 0
-            coin = lower_coin(coin)
-
-    // Print final number of coins
-    printf("%i\n", n)
+    # Print number of coins (as an integer and a newline).
+    print(coins)
 
 
 def get_change(prompt: str):
@@ -57,27 +34,27 @@ def get_change(prompt: str):
             return change
 
 
-int lower_coin(int coin)
- """Lowers coin value to next highest coin."""
+def count_coins(change: float) -> int:
+    # List of coin values from quarters down.
+    COIN_VALUES = [0.25, 0.10, 0.05, 0.01]
 
-    int lower = 0;
-    if (coin == 25)
-    {
-        lower = 10;
-    }
-    else if (coin == 10)
-    {
-        lower = 5;
-    }
-    else if (coin == 5)
-    {
-        lower = 1;
-    }
-    else
-    {
-        printf("Error: invalid coin value\n");
-    }
-    return lower;
+    # Initialize counter variable.
+    count = 0
+
+    # Iterate through list of coins.
+    for coin in range(COIN_VALUES):
+        while True:
+
+            # Subtract value of each coin; count the coin.
+            change -= coin
+            count += 1
+
+            # Switch to smaller coin..
+            if change < coin:
+                break
+
+    # Return count when done subtracting coins.
+    return count
 
 
 # Run the main function if script is run directly.
