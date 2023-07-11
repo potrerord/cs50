@@ -51,16 +51,16 @@ def get_change(prompt: str):
         try:
             change = get_float(prompt)
             if change < 0:
-                raise ValueError('Change must be positive')
+                raise ValueError('change must be positive')
         except ValueError as e:
-            print('Caught an exception:', e)
+            print('caught an exception:', e)
         else:
             return change
-}
 
-// Lowers coin value to next highest coin
+
 int lower_coin(int coin)
-{
+ """Lowers coin value to next highest coin
+
     int lower = 0;
     if (coin == 25)
     {
