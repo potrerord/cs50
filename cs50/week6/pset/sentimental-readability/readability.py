@@ -10,9 +10,6 @@ def main():
     # Prompt user for text to analyze
     s = input("Enter text: ")
 
-    # Declare count variables for input text: letters, words, sentences.
-    
-
     # Scan each character in string
         # If char is alpha, count letter
 
