@@ -51,7 +51,7 @@ def get_change(prompt: str):
         try:
             change = get_float(prompt)
             if change < 0:
-                raise ValueError
+                raise ValueError('Change must be positive')
         except ValueError as e:
             print('Caught an exception:', e)
         else:
