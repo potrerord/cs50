@@ -101,19 +101,18 @@ def get_cc(prompt: str) -> int:
 
             # Check if number is positive.
             if cc <= 0:
-                raise ValueError('cc number must be positive')
+                raise ValueError
 
             # Check number length.
             elif len(str(cc)) not in LENGTHS:
-                raise ValueError('cc number must have 13/15/16 digits')
+                raise ValueError
 
             # Check first two digits.
-            elif (str(cc)[0] + str(cc)[1]) not in FIRST_DIGITS:
-                raise ValueError('invalid leading digits')
+            elif int((str(cc)[0] + str(cc)[1])) not in FIRST_DIGITS:
+                raise ValueError
 
-
-        except ValueError as e:
-            print('caught exception:', e, '\n')
+        except ValueError:
+            print('INVALID\n')
 
         else:
             return cc
