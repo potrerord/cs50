@@ -48,11 +48,11 @@ def classify(cc_num: int) -> str:
     elif len(cc) == 16:
 
         # Visa begins with 4.
-        if cc[0] == 4:
+        if cc[0] == '4':
             return 'VISA'
 
         # Mastercard begins with 5.
-        elif cc[0] == 5:
+        elif cc[0] == '5':
             return 'MASTERCARD'
 
 
