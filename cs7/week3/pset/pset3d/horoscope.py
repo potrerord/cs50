@@ -56,6 +56,7 @@ def main():
     print(f"Your chosen date is {month}/{day}.")
     print()
     print(sign(month, day))
+    print()
 
 
 def before(month1, day1, month2, day2) -> bool:
