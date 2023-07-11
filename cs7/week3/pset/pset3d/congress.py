@@ -1,59 +1,61 @@
 """
-The following requirements for membership in the Congress of the United
-States are quoted from Article I of the Constitution of the United
-States:
-
-a)  No Person shall be a Representative who shall not have attained to
-    the Age of twenty-five Years, and been seven Years a Citizen of the
-    United States, and who shall not, when elected, be an Inhabitant of
-    that State in which he shall be chosen.
-b)  No Person shall be a senator who shall not have attained to the Age
-    of thirty Years, and been nine Years a Citizen of the United States,
-    and who shall not, when elected, be an Inhabitant of that State for
-    which he shall be chosen.
-
-Write a function named eligible_for_senate that returns a boolean value,
-and another function named eligible_for_house that also returns a
-boolean value. Both functions accept two integer arguments (via
-parameters named age and length_of_citizenship), and each returns the
-corresponding congressional eligibility as a boolean value.
-
-You should show that these examples work with your functions by making
-the appropriate function calls in main:
-
-a)  Someone of age 37 and 3 years of citizenship is not eligible for
-    election to either the House or the Senate, so the functions should
-    both return False.
-
-b)  Someone of age 47 and 8 years of citizenship is eligible for
-    election to the House but not the Senate, so
-    eligible_for_house(47, 8) should return True, but
-    eligible_for_senate(47, 8) should return False.
+Prints the congressional eligibility of a person based on their age and
+length of U.S. citizenship.
 """
-
-
 
 
 def main():
     """Test functions."""
 
+    #
+    AGE1 = 37
+    LENGTH1 = 3
+    AGE2 = 47
+    LENGTH2 = 8
 
+    print()
+
+    # Scenario A
+    print("a)")
+    print(eligible_for_house(AGE1, LENGTH1))
+    print(eligible_for_senate(AGE1, LENGTH1))
+    print()
+
+    # Scenario B
+    print("b)")
+    print(eligible_for_house(AGE2, LENGTH2))
+    print(eligible_for_senate(AGE2, LENGTH2))
+    print()
 
 
 def eligible_for_senate(age: int, length_of_citizenship: int) -> bool:
     """Return true if the candidate is eligible to run for senate."""
 
-    if age
+    # Return false if candidate is younger than 30.
+    if age < 30:
+        return False
 
+    # Return False if candidate has not been a citizen for >= 9 years.
+    if length_of_citizenship < 9:
+        return False
+
+    # Return True if neither are the case.
+    return True
 
 
 def eligible_for_house(age: int, length_of_citizenship: int) -> bool:
     """Returns true if the candidate is eligible for the house."""
 
+    # Return false if candidate is younger than 25.
+    if age < 25:
+        return False
 
+    # Return False if candidate has not been a citizen for >= 9 years.
+    if length_of_citizenship < 7:
+        return False
 
-
-
+    # Return True if neither are the case.
+    return True
 
 
 # Run the main function if script is run directly.
