@@ -23,18 +23,22 @@ def main():
         for subsequence in reader.fieldnames[1:]:
             subsequences.append(subsequence)
 
-        #
+        # For every person in the database,
         for row in reader:
+            break_loop = False
             str_counts = list(row.items())[1:]
+
+            # Compare STR count data with result of
+            # longest_match call for every subsequence.
             for fieldname, value in str_counts:
+                # Break if any comparison is not a match.
                 if value != longest_match(sequence, fieldname):
-                    break_loop
+                    break_loop = True
+                    break
 
+            if break_loop = True:
 
-
-
-        for subsequence in reader.fieldnames[1:]:
-            if longest_match(sequence, subsequence) ==
+            # If every STR count is a match,
 
 
 
