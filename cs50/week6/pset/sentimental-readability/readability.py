@@ -4,11 +4,15 @@ Prints the Coleman-Liau index reading grade level for input text.
 
 
 def main():
-
     """butt"""
 
     # Prompt user for text to analyze
     s = input("Enter text: ")
+
+    # Initiate counter variables.
+    letters = 0
+    words = 0
+    sentences = 0
 
     # Scan each character in string to count letters/words/sentences.
     for char in s:
@@ -20,20 +24,14 @@ def main():
             sentences += 1
 
     # Store rounded Coleman-Liau index
-    level = round(cole_liau(letCount, wordCount, sentCount));
+    level = round(cole_liau(letCount, wordCount, sentCount))
 
     # Print Grade X
-    dictionary = {1}
+    dictionary = {1: 3}
 
-    if level in dictionary:
-         
 
-"""
-Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words) - 15.8
-Better to use the actual formula here, as it makes this line easier to understand.
-"""
 
-def cole_liau(letters: int, words: int, sentences: int):
+def cole_liau(letters: int, words: int, sentences: int) -> float:
     """Return the Coleman-Liau index given the arguments."""
 
     score = (0.0588 * letters / (100 * words)) -
