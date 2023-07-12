@@ -8,13 +8,14 @@ import sys
 
 
 def main():
+    """butt"""
 
     # Check for command-line usage.
     if len(sys.argv) != 3:
         sys.exit("usage: python dna.py data.csv sequences.txt")
 
     # Read database file into a variable.
-    with open(sys.argv[1], "r") as database, 
+    with open(sys.argv[1], "r") as database,
         reader = csv.DictReader(database)
         for row in reader:
 
@@ -30,6 +31,7 @@ def main():
 
 
     # TODO: Find longest match of each STR in DNA sequence
+    butt = longest_match(sequence, subsequence)
 
 
 
@@ -45,7 +47,7 @@ def main():
 
 
 def longest_match(sequence: str, subsequence: str) -> int:
-    """Returns length of longest run of subsequence in sequence."""
+    """Return length of longest run of subsequence in sequence."""
 
     # Initialize variables.
     longest_run = 0
