@@ -2,7 +2,9 @@
 
 
 def main():
-    ...
+    print()
+    a()
+    print()
 
 
 """
@@ -13,15 +15,18 @@ a.  Write a program that asks for the user to enter in a number between
 
 
 def a():
-    while True
+    LOW = 1
+    HIGH = 9
+
+    while True:
         try:
-            user_int = int(input("Enter a number between 1 and 9: "))
+            user_int = int(input(f"Enter a number between {LOW} and {HIGH}: "))
+            if user_int < LOW or user_int > HIGH:
+                raise ValueError
         except ValueError:
-            print("caught exception: number must be int between 1 and 9")
+            print(f"error: number must be int between {LOW} and {HIGH}\n")
         else:
-            
-
-
+            return
 
 
 """
@@ -31,7 +36,12 @@ b.  Write a program that asks a user to enter a password, until their
 
 
 def b():
-    ...
+    PASSWORD = DouDou
+
+    while True:
+        try:
+            user_password = input("Enter password: ")
+        except 
 
 
 """
