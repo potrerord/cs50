@@ -57,10 +57,10 @@ def main():
 
 
 def find_match(row: List[str], sequence: str) -> bool:
-    """Return True if
+    """Return True if all longest STRs found in the sequence
 
-    Keyword arguments:
-    row -- DictReader row with Name column followed by subsequences
+    Arguments:
+    row -- DictReader row with Name followed by subsequence STR counts
     sequence -- the DNA sequence to search for STRs
     """
 
