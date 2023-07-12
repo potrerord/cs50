@@ -8,7 +8,9 @@ import sys
 
 
 def main():
-    """butt"""
+    """Load files from cmd-line argument and report if a DNA match is
+    present.
+    """
 
     # Check for command-line usage.
     if len(sys.argv) != 3:
