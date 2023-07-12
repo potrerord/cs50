@@ -39,7 +39,7 @@ def main():
     return 1
 
 
-def find_match(data: Dict[str, int], sequence: str) -> bool:
+def find_match(data: Dict[str, str], sequence: str) -> bool:
     """Return bool indicating if data and sequence STR counts match.
 
     Arguments:
