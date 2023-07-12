@@ -33,8 +33,8 @@ def main():
             # Create dictionary of STR counts.
             str_counts = list(row.items())[1:]
 
-            # Compare STR count data with the return value of
-            # longest_match for every subsequence for this person.
+            # Compare this person's STR count data with the longest
+            # subsequence match found in the sequence.
             for subsequence, str_count in str_counts:
                 # Break if any comparison is not a match.
                 if int(str_count) != longest_match(sequence, subsequence):
