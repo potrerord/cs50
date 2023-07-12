@@ -46,9 +46,11 @@ def main():
 
             # If every STR count is a match, print the person's name.
             print(row["name"])
-            
+            return
 
-
+        # If no match was found, print the result and return 1.
+        print("No match")
+        return 1
 
 
 def longest_match(sequence: str, subsequence: str) -> int:
