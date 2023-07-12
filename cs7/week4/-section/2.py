@@ -55,9 +55,14 @@ c.  You've decided not to drink coffee for 10 days straight, write a
 
 def c():
     day = 1
+    
 
     while True:
+        if day > 30:
+            return True
         coffee = input("Did you drink coffee today? (y/n): ")
+
+
 
         return False
     return True
