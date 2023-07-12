@@ -34,14 +34,14 @@ def main():
     else:
         for grade in range(1, 16):
             if grade == level:
-                print("Grade {level}")
+                print(f"Grade {level}")
 
 
 def cole_liau(letters: int, words: int, sentences: int) -> float:
     """Return the Coleman-Liau index given the arguments."""
 
     score = (
-        (0.0588 * (100 * (letters / words)) - (0.296 * (100 * sentences / words)) - 15.8
+        (0.0588 * (100 * (letters / words)) - (0.296 * (100 * sentences / words))) - 15.8
     )
 
     return score
