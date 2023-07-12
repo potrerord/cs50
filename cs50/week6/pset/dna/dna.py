@@ -17,7 +17,10 @@ def main():
     # Read database file into a variable.
     with open(sys.argv[1], "r") as database, \
             open(sys.argv[2], "r") as sequence_file:
+
+        # Load database and sequence into memory.
         reader = csv.DictReader(database)
+        sequence = sequence_file.read()
 
         # Create list of subsequences.
         subsequences = []
