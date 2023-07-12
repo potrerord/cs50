@@ -6,6 +6,8 @@ Identifies the likely source of a sequence of DNA.
 import csv
 import sys
 
+from typing import List
+
 
 def main():
     """Load files from cmd-line argument and report if a DNA match is
@@ -55,17 +57,7 @@ def main():
 
 
 
-def find_matches(data_file: file, sequence: str) -> bool:
-
-
-
-    # Open database file.
-    with open(data_file, "r") as database:
-        # Load database into memory.
-        reader = csv.DictReader(database)
-
-        # For every person in the database,
-        for row in reader:
+def find_matches(line: List[str], sequence: str) -> bool:
             # Create dictionary of STR counts.
             str_counts = list(row.items())[1:]
 
