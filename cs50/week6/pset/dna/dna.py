@@ -15,9 +15,11 @@ def main():
         sys.exit("usage: python dna.py data.csv sequences.txt")
 
     # Read database file into a variable.
-    with open(sys.argv[1], "r") as database, open(sys.argv[2], "r") as sequence:
-            reader = csv.DictReader(database)
-            for row in reader:
+    with open(sys.argv[1], "r") as database, \
+            open(sys.argv[2], "r") as sequence:
+        reader = csv.DictReader(database)
+        for row in reader:
+            for 
 
 
 
