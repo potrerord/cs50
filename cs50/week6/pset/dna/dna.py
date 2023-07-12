@@ -18,36 +18,19 @@ def main():
     with open(sys.argv[1], "r") as database, \
             open(sys.argv[2], "r") as sequence:
         reader = csv.DictReader(database)
-        for row in reader:
-            for str_count in range(1, len(row)):
-                
+
+        for subsequence in reader.fieldnames[1:]:
+            if longest_match(sequence, subsequence)
 
 
 
+            for row in reader:
+                if
 
+        # TODO: Find longest match of each STR in DNA sequence
+        butt = longest_match(sequence, subsequence)
 
-
-
-    # TODO: Read DNA sequence file into a variable
-
-
-
-
-
-    # TODO: Find longest match of each STR in DNA sequence
-    butt = longest_match(sequence, subsequence)
-
-
-
-
-
-    # TODO: Check database for matching profiles
-
-
-
-
-
-    return
+        # TODO: Check database for matching profiles
 
 
 def longest_match(sequence: str, subsequence: str) -> int:
