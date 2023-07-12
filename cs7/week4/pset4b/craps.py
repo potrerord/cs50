@@ -12,13 +12,13 @@ def main():
     print("Implement me!")
 
 
-def do_roll():
+def do_roll() -> int:
     """Return the sum of two simulated dice rolls."""
 
     die1 = random.randint(1, 6)
     die2 = random.randint(1, 6)
+    return die1 + die2
 
-    
 
 
 def get_point():
