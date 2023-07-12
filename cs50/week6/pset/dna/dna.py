@@ -19,7 +19,11 @@ def main():
             open(sys.argv[2], "r") as sequence:
         reader = csv.DictReader(database)
 
+
+        subsequences = []
         for subsequence in reader.fieldnames[1:]:
+            subsequences.append(subsequence)
+
             for row in reader:
 
 
