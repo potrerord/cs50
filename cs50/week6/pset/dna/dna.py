@@ -25,7 +25,11 @@ def main():
 
         # For every person in the database,
         for row in reader:
+
+            # Initialize flag to break both loops if no match is found.
             break_loop = False
+
+            # Create list of STR counts.
             str_counts = list(row.items())[1:]
 
             # Compare STR count data with result of
@@ -36,10 +40,12 @@ def main():
                     break_loop = True
                     break
 
-            if break_loop = True:
+            # Flag outer loop break if no match was found.
+            if break_loop:
+                break
 
-            # If every STR count is a match,
-
+            # If every STR count is a match, print the person's name.
+            
 
 
             for row in reader:
