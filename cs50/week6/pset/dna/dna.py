@@ -19,8 +19,13 @@ def main():
             open(sys.argv[2], "r") as sequence:
         reader = csv.DictReader(database)
 
+        for row in reader:
+            
+
+
+
         for subsequence in reader.fieldnames[1:]:
-            if longest_match(sequence, subsequence) == 
+            if longest_match(sequence, subsequence) ==
 
 
 
