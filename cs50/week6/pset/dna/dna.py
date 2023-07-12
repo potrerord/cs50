@@ -27,7 +27,8 @@ def main():
         for row in reader:
             str_counts = list(row.items())[1:]
             for fieldname, value in str_counts:
-                if value == 
+                if value != longest_match(sequence, fieldname):
+                    break_loop
 
 
 
