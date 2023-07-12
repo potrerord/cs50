@@ -19,7 +19,7 @@ def main():
 
     # Read sequence file into a variable, then close file.
     with open(sys.argv[2], "r") as sequence_file:
-        sequence = sequence_file.read()
+        arg_sequence = sequence_file.read()
 
     # Open database file.
     with open(sys.argv[1], "r") as database:
@@ -28,63 +28,37 @@ def main():
 
         # For every person in the database,
         for row in reader:
-            # Initialize flag to break both loops if no match is found.
-            break_loop = False
-
-            # Create dictionary of STR counts.
-            str_counts = list(row.items())[1:]
-
-            # Compare this person's STR count data with the longest
-            # subsequence match found in the sequence.
-            for subsequence, str_count in str_counts:
-                # Break if any comparison is not a match.
-                if int(str_count) != longest_match(sequence, subsequence):
-                    break_loop = True
-                    break
-
-            # Flag outer loop reset if no match was found.
-            if break_loop:
-                continue
-
             # If every STR run count is a match, print the person's name.
-            print(row["name"])
-            return
+            if find_match(row, arg_sequence):
+                print(row["name"])
+                return
 
         # If no match was found, print the result and return 1.
         print("No match")
         return 1
 
 
-
-def find_match(row: List[str], sequence: str) -> bool:
-    """Return True if all longest STR runs found in the sequence
+def find_match(data: List[str], sequence: str) -> bool:
+    """Return True if all of the longest STR runs found in the sequence
+    match with the person represented in the entered list.
 
     Arguments:
-    row -- DictReader row with Name followed by longest STR run counts
+    data -- DictReader row with Name followed by person's STR counts
     sequence -- the DNA sequence to analyze
     """
 
     # Create dictionary of STR counts by omitting name.
-    str_counts = list(row.items())[1:]
+    str_counts = list(data.items())[1:]
 
     # Compare the dictionary STR count data with the sequence STR count
     # for each subsequence.
-    for subsequence, str_count in str_counts:
+    for subsequence, count in str_counts:
         # Return False if any comparison is not a match.
-        if int(str_count) != longest_match(sequence, subsequence):
+        if int(count) != longest_match(sequence, subsequence):
             return False
 
     # Return True if all STR counts match.
     return True
-
-    # If every STR count is a match, print the person's name.
-    print(row["name"])
-    return
-
-
-
-
-
 
 
 def longest_match(sequence: str, subsequence: str) -> int:
