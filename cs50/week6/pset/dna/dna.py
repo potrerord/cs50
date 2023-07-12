@@ -76,10 +76,10 @@ def longest_match(sequence: str, subsequence: str) -> int:
             else:
                 break
 
-        # Update most consecutive matches found
+        # Update most consecutive matches found.
         longest_run = max(longest_run, count)
 
-    # Return fter checking for runs at each character in seqeuence, return longest run found
+    # Return longest run found after all characters are checked.
     return longest_run
 
 
