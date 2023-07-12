@@ -15,15 +15,15 @@ def main():
         sys.exit("usage: python dna.py data.csv sequences.txt")
 
     # Read database file into a variable.
-    with open(sys.argv[1], "r") as database, \
-            open(sys.argv[2], "r") as sequence:
-        reader = csv.DictReader(database)
+    with open(sys.argv[1], "r") as data, open(sys.argv[2], "r") as sequence:
+        reader = csv.DictReader(data)
 
         # Create list of subsequences.
         subsequences = []
         for subsequence in reader.fieldnames[1:]:
             subsequences.append(subsequence)
 
+        #
         for row in reader:
 
 
