@@ -16,11 +16,14 @@ def main():
     if len(sys.argv) != 3:
         sys.exit("usage: python dna.py data.csv sequences.txt")
 
-    # Read database file into a variable.
-    with open(sys.argv[1], "r") as database, open(sys.argv[2], "r") as sequence_file:
+    # Read sequence file into a variable, then close file.
+    with open(sys.argv[2], "r") as sequence_file:
+        sequence = sequence_file.read()
+
+    # Open database file into DictReader.
+    with open(sys.argv[1], "r")::
         # Load database and sequence into memory.
         reader = csv.DictReader(database)
-        sequence = sequence_file.read()
 
         # For every person in the database,
         for row in reader:
