@@ -49,7 +49,7 @@ def find_match(data: Dict[str, str], sequence: str) -> bool:
 
     # Compare the dictionary STR count data with the sequence STR count
     # for each subsequence. Omit name column.
-    for subsequence, count in list(data.items())[1:]:
+    for subsequence, count in data.items()[1:]:
         # Return False if any comparison is not a match.
         if int(count) != longest_match(sequence, subsequence):
             return False
