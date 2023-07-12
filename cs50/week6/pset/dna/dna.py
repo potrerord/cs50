@@ -27,11 +27,11 @@ def main():
             # Initialize flag to break both loops if no match is found.
             break_loop = False
 
-            # Create list of STR counts.
+            # Create dictionary of STR counts.
             str_counts = list(row.items())[1:]
 
-            # Compare STR count data with result of
-            # longest_match call for every subsequence.
+            # Compare STR count data with the return value of
+            # longest_match for every subsequence for this person.
             for subsequence, str_count in str_counts:
                 # Break if any comparison is not a match.
                 if int(str_count) != longest_match(sequence, subsequence):
