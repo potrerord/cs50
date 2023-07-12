@@ -1,5 +1,6 @@
 """
-Identifies the likely source of a sequence of DNA.
+Identifies a likely match for a sequence of DNA from a database of names
+and STR counts, if a match exists.
 """
 
 
@@ -21,7 +22,7 @@ def main():
     with open(sys.argv[2], "r") as sequence_file:
         arg_sequence = sequence_file.read()
 
-    # Open database file.
+    # Open database file, close when check is complete.
     with open(sys.argv[1], "r") as database:
         # Create iterator object to read file row by row.
         reader = csv.DictReader(database)
@@ -33,18 +34,17 @@ def main():
                 print(row["name"])
                 return
 
-        # If no match was found, print the result and return 1.
-        print("No match")
-        return 1
+    # If no match was found, print the result and return 1.
+    print("No match")
+    return 1
 
 
 def find_match(data: List[str], sequence: str) -> bool:
-    """Return True if all of the longest STR runs found in the sequence
-    match with the person represented in the entered list.
+    """Return bool indicating if data and sequence STR counts match.
 
     Arguments:
-    data -- Dictionary list with Name followed by person's STR counts
-    sequence -- the DNA string to analyze
+    data -- Dictionary list with "name" followed by longest STR counts
+    sequence -- The DNA string to analyze and compare longest STR counts
     """
 
     # Compare the dictionary STR count data with the sequence STR count
