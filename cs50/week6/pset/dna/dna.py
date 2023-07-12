@@ -47,12 +47,9 @@ def find_match(data: List[str], sequence: str) -> bool:
     sequence -- the DNA sequence to analyze
     """
 
-    # Create dictionary of STR counts by omitting name.
-    str_counts = list(data.items())[1:]
-
     # Compare the dictionary STR count data with the sequence STR count
-    # for each subsequence.
-    for subsequence, count in str_counts:
+    # for each subsequence. Omit name column.
+    for subsequence, count in list(data.items())[1:]:
         # Return False if any comparison is not a match.
         if int(count) != longest_match(sequence, subsequence):
             return False
