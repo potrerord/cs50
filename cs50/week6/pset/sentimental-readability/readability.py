@@ -11,8 +11,10 @@ def main():
 
     # Initiate counter variables.
     letters = 0
-    words = 0
     sentences = 0
+
+    # Special case: Words will be one more than the amount of spaces.
+    words = 1
 
     # Scan each character in string to count letters/words/sentences.
     for char in s:
