@@ -17,8 +17,9 @@ def do_roll() -> int:
 
     die1 = random.randint(1, 6)
     die2 = random.randint(1, 6)
-    return die1 + die2
+    dice_sum = die1 + die2
 
+    return dice_sum
 
 
 def get_point():
