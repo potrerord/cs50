@@ -51,7 +51,8 @@ def find_match(data: Dict[str, str], sequence: str) -> bool:
     # for each subsequence.
     for subsequence, count in data.items():
         # Skip the "name" column.
-        if 
+        if subsequence == "name":
+            continue
 
         # Return False if any comparison is not a match.
         if int(count) != longest_match(sequence, subsequence):
