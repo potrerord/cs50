@@ -38,10 +38,10 @@ b.  Write a program that asks a user to enter a password, until their
 def b():
     PASSWORD = DouDou
 
-    user_password = input("Enter password: ")
-
-    while user_password != PASSWORD:
+    while TRUE:
         user_password = input("Enter password: ")
+        if user_password == PASSWORD:
+            return
 
 
 """
@@ -54,6 +54,7 @@ c.  You've decided not to drink coffee for 10 days straight, write a
 
 
 def c():
+    
 
 
 
