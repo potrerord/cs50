@@ -24,11 +24,6 @@ def main():
         reader = csv.DictReader(database)
         sequence = sequence_file.read()
 
-        # Create list of subsequences.
-        subsequences = []
-        for subsequence in reader.fieldnames[1:]:
-            subsequences.append(subsequence)
-
         # For every person in the database,
         for row in reader:
 
@@ -40,9 +35,9 @@ def main():
 
             # Compare STR count data with result of
             # longest_match call for every subsequence.
-            for fieldname, value in str_counts:
+            for subsequence, value in str_counts:
                 # Break if any comparison is not a match.
-                if value != longest_match(sequence, fieldname):
+                if int(value) != longest_match(sequence, subsequence):
                     break_loop = True
                     break
 
