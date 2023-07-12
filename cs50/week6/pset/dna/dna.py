@@ -5,10 +5,8 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    if len(argv) != 
-
-
-
+    if len(argv) != 3:
+        sys.exit("usage: python dna.py file.csv file.txt")
 
     # TODO: Read database file into a variable
 
