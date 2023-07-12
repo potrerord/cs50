@@ -43,13 +43,16 @@ def find_match(data: Dict[str, str], sequence: str) -> bool:
     """Return bool indicating if data and sequence STR counts match.
 
     Arguments:
-    data -- Dictionary with "name" followed by longest STR counts
+    data -- Dictionary with "name" and longest STR counts
     sequence -- The DNA string to analyze and compare longest STR counts
     """
 
     # Compare the dictionary STR count data with the sequence STR count
-    # for each subsequence. Omit name column.
-    for subsequence, count in data.items()[1:]:
+    # for each subsequence.
+    for subsequence, count in data.items():
+        # Skip the "name" column.
+        if 
+
         # Return False if any comparison is not a match.
         if int(count) != longest_match(sequence, subsequence):
             return False
