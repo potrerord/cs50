@@ -35,9 +35,9 @@ def main():
 
             # Compare STR count data with result of
             # longest_match call for every subsequence.
-            for subsequence, value in str_counts:
+            for subsequence, str_count in str_counts:
                 # Break if any comparison is not a match.
-                if int(value) != longest_match(sequence, subsequence):
+                if int(str_count) != longest_match(sequence, subsequence):
                     break_loop = True
                     break
 
