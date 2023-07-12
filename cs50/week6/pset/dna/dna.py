@@ -24,8 +24,10 @@ def main():
             subsequences.append(subsequence)
 
         #
-        for fieldname, value in row.items:
-            
+        for row in reader:
+            str_counts = list(row.items())[1:]
+            for fieldname, value in str_counts:
+                if value == 
 
 
 
