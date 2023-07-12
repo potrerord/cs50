@@ -14,11 +14,8 @@ def main():
         sys.exit("usage: python dna.py data.csv sequences.txt")
 
     # Read database file into a variable.
-    f = open(argv[1])
-    close(f)
-
-
-
+    database = open(argv[1])
+    close(database)
 
     # TODO: Read DNA sequence file into a variable
 
