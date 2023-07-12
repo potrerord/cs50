@@ -24,8 +24,8 @@ def main():
             subsequences.append(subsequence)
 
         #
-        for row in reader:
-            row["name"]
+        for fieldname, value in row.items:
+            
 
 
 
