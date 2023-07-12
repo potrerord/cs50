@@ -24,17 +24,19 @@ def main():
             sentences += 1
 
     # Store rounded Coleman-Liau index
-    level = round(cole_liau(letCount, wordCount, sentCount))
+    level = round(cole_liau(letters, words, sentences))
 
     # Print Grade X
-    dictionary = {1: 3}
+    for grade in range()
+
+
 
 
 
 def cole_liau(letters: int, words: int, sentences: int) -> float:
     """Return the Coleman-Liau index given the arguments."""
 
-    score = (0.0588 * letters / (100 * words)) -
+    score = (0.0588 * letters / (100 * words)) - \
             (0.296 * sentences / (100 * words)) - 15.8
 
     return score
