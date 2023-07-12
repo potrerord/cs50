@@ -52,26 +52,27 @@ def longest_match(sequence: str, subsequence: str) -> int:
     subsequence_length = len(subsequence)
     sequence_length = len(sequence)
 
-    # Check each char in sequence for most consecutive runs of subsequence
+    # Check each char in sequence to count the highest number of
+    # consecutive runs of subsequence.
     for i in range(sequence_length):
 
-        # Initialize count of consecutive runs
+        # Initialize count of consecutive runs.
         count = 0
 
-        # Check for a subsequence match in a "substring" (a subset of characters) within sequence
-        # If a match, move substring to next potential match in sequence
-        # Continue moving substring and checking for matches until out of consecutive matches
+        # Check sequence substrings for a match with subsequence, move
+        # substring to next potential match in sequence if successful,
+        # and repeat until out of consecutive matches.
         while True:
 
-            # Adjust substring start and end
+            # Adjust substring start and end.
             start = i + count * subsequence_length
             end = start + subsequence_length
 
-            # If there is a match in the substring
+            # Increment if there is a match in the substring.
             if sequence[start:end] == subsequence:
                 count += 1
 
-            # If there is no match in the substring
+            # Break if there is no match in the entire substring.
             else:
                 break
 
