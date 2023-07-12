@@ -21,7 +21,7 @@ def main():
         sequence = sequence_file.read()
 
     # Open database file.
-    with open(sys.argv[1], "r"):
+    with open(sys.argv[1], "r") as database:
         # Load database into memory.
         reader = csv.DictReader(database)
 
