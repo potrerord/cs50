@@ -39,9 +39,9 @@ def b():
     PASSWORD = DouDou
 
     while True:
-        try:
-            user_password = input("Enter password: ")
-        except 
+        user_password = input("Enter password: ")
+        if user_password == PASSWORD:
+            return
 
 
 """
@@ -54,7 +54,7 @@ c.  You've decided not to drink coffee for 10 days straight, write a
 
 
 def c():
-    ...
+    
 
 
 if __name__ == "__main__":
