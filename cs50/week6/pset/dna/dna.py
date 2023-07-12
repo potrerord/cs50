@@ -17,16 +17,13 @@ def main():
         sys.exit("usage: python dna.py data.csv sequences.txt")
 
     # Read database file into a variable.
-    with open(sys.argv[1], "r") as database, \
-            open(sys.argv[2], "r") as sequence_file:
-
+    with open(sys.argv[1], "r") as database, open(sys.argv[2], "r") as sequence_file:
         # Load database and sequence into memory.
         reader = csv.DictReader(database)
         sequence = sequence_file.read()
 
         # For every person in the database,
         for row in reader:
-
             # Initialize flag to break both loops if no match is found.
             break_loop = False
 
@@ -65,7 +62,6 @@ def longest_match(sequence: str, subsequence: str) -> int:
     # Check each char in sequence to count the highest number of
     # consecutive runs of subsequence.
     for i in range(sequence_length):
-
         # Initialize count of consecutive runs.
         count = 0
 
@@ -73,7 +69,6 @@ def longest_match(sequence: str, subsequence: str) -> int:
         # move substring to next potential match in sequence if success,
         # and repeat until out of consecutive matches.
         while True:
-
             # Adjust substring start and end.
             start = i + count * subsequence_length
             end = start + subsequence_length
