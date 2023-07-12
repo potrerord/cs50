@@ -20,7 +20,7 @@ def main():
         reader = csv.DictReader(database)
 
         for subsequence in reader.fieldnames[1:]:
-            if longest_match(sequence, subsequence)
+            if longest_match(sequence, subsequence) == 
 
 
 
