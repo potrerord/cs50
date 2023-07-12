@@ -20,6 +20,7 @@ def main():
         reader = csv.DictReader(database)
         for row in reader:
             for str_count in range(1, len(row)):
+                
 
 
 
