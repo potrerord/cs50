@@ -46,7 +46,7 @@ def main():
             if break_loop:
                 continue
 
-            # If every STR count is a match, print the person's name.
+            # If every STR run count is a match, print the person's name.
             print(row["name"])
             return
 
@@ -57,14 +57,14 @@ def main():
 
 
 def find_match(row: List[str], sequence: str) -> bool:
-    """Return True if all longest STRs found in the sequence
+    """Return True if all longest STR runs found in the sequence
 
     Arguments:
-    row -- DictReader row with Name followed by subsequence STR counts
-    sequence -- the DNA sequence to search for STRs
+    row -- DictReader row with Name followed by longest STR run counts
+    sequence -- the DNA sequence to analyze
     """
 
-    # Create dictionary of STR counts.
+    # Create dictionary of STR counts by omitting name.
     str_counts = list(row.items())[1:]
 
     # Compare the dictionary STR count data with the sequence STR count
