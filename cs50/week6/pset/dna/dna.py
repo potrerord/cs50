@@ -17,7 +17,7 @@ def main():
     with open(sys.argv[1], "r") as database:
         reader = csv.DictReader(database)
         for row in reader:
-            
+
 
 
 
@@ -44,15 +44,15 @@ def main():
     return
 
 
-def longest_match(sequence, subsequence):
+def longest_match(sequence: str, subsequence: str) -> int:
     """Returns length of longest run of subsequence in sequence."""
 
-    # Initialize variables
+    # Initialize variables.
     longest_run = 0
     subsequence_length = len(subsequence)
     sequence_length = len(sequence)
 
-    # Check each character in sequence for most consecutive runs of subsequence
+    # Check each char in sequence for most consecutive runs of subsequence
     for i in range(sequence_length):
 
         # Initialize count of consecutive runs
