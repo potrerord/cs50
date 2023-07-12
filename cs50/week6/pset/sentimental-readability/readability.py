@@ -20,7 +20,7 @@ def main():
             sentences += 1
 
     # Store rounded Coleman-Liau index
-    int gradeLevel = round(cole_liau(letCount, wordCount, sentCount));
+    level = round(cole_liau(letCount, wordCount, sentCount));
 
     # Print Grade X
 
@@ -30,11 +30,14 @@ Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words
 Better to use the actual formula here, as it makes this line easier to understand.
 """
 
-float cole_liau(int lets, int wrds, int snts)
-{
-    float score = (05.88 * lets / wrds) - (29.6 * snts / wrds) - 15.8;
-    return score;
-}
+def cole_liau(letters: int, words: int, sentences: int):
+    """Return the Coleman-Liau index given the arguments."""
+
+    score = (0.0588 * letters / (100 * words)) -
+            (0.296 * sentences / (100 * words)) - 15.8
+
+    return score
+
 
 
 if __name__ == "__main__":
