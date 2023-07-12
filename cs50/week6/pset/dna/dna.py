@@ -3,9 +3,9 @@ Identifies the likely source of a sequence of DNA.
 """
 
 
-from typing import List
 import csv
 import sys
+from typing import List
 
 
 def main():
