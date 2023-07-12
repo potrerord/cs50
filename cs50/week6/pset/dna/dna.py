@@ -56,19 +56,26 @@ def main():
 
 
 
-def find_matches(row: List[str], sequence: str) -> bool:
+def find_match(row: List[str], sequence: str) -> bool:
+    """Return True if
+
+    Keyword arguments:
+    row -- DictReader row with Name column followed by subsequences
+    sequence -- the DNA sequence to search for STRs
+    """
+
     # Create dictionary of STR counts.
     str_counts = list(row.items())[1:]
 
-    # Compare this person's STR count data with the sequence STR count.
+    # Compare the dictionary STR count data with the sequence STR count
+    # for each subsequence.
     for subsequence, str_count in str_counts:
-        # Break if any comparison is not a match.
+        # Return False if any comparison is not a match.
         if int(str_count) != longest_match(sequence, subsequence):
-            break
+            return False
 
-    # Flag outer loop reset if no match was found.
-    if break_loop:
-        continue
+    # Return True if all STR counts match.
+    return True
 
     # If every STR count is a match, print the person's name.
     print(row["name"])
