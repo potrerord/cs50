@@ -23,7 +23,7 @@ def main():
     level = round(cole_liau(letCount, wordCount, sentCount));
 
     # Print Grade X
-    
+    my_dict = {}
 
 
 """
