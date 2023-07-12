@@ -55,20 +55,17 @@ def main():
 
 
 
-def find_matches():
-    
+def find_matches(data_file: file, sequence: str) -> bool:
+
 
 
     # Open database file.
-    with open(sys.argv[1], "r") as database:
+    with open(data_file, "r") as database:
         # Load database into memory.
         reader = csv.DictReader(database)
 
         # For every person in the database,
         for row in reader:
-            # Initialize flag to break both loops if no match is found.
-            break_loop = False
-
             # Create dictionary of STR counts.
             str_counts = list(row.items())[1:]
 
@@ -77,7 +74,6 @@ def find_matches():
             for subsequence, str_count in str_counts:
                 # Break if any comparison is not a match.
                 if int(str_count) != longest_match(sequence, subsequence):
-                    break_loop = True
                     break
 
             # Flag outer loop reset if no match was found.
