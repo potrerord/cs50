@@ -19,8 +19,8 @@ def main():
             open(sys.argv[2], "r") as sequence:
         reader = csv.DictReader(database)
         for row in reader:
-            for subsequence in range(1, len(row)):
-                
+            for STR_count in range(1, len(row)):
+
 
 
 
