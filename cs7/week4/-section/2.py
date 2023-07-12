@@ -6,6 +6,14 @@ def main():
     a()
     print()
 
+    print()
+    b()
+    print()
+
+    print()
+    c()
+    print()
+
 
 """
 a.  Write a program that asks for the user to enter in a number between
@@ -36,9 +44,9 @@ b.  Write a program that asks a user to enter a password, until their
 
 
 def b():
-    PASSWORD = DouDou
+    PASSWORD = "DouDou"
 
-    while TRUE:
+    while True:
         user_password = input("Enter password: ")
         if user_password == PASSWORD:
             return
@@ -55,17 +63,32 @@ c.  You've decided not to drink coffee for 10 days straight, write a
 
 def c():
     day = 1
-    
+    count = 0
 
     while True:
+        # Return False if they made it to Day 31 without
         if day > 30:
+            print("LMAOOOOO nope")
+            return False
+
+        coffee = input(f"Day {day}: Did you drink coffee today? (y/n) ")
+
+        # Reset count if they drank coffee.
+        if coffee == "y":
+            count = 0
+        # Add a day if they did not drink coffee.
+        elif coffee == "n":
+            count += 1
+
+        # Report day count.
+        print(f"Consecutive days without coffee: {count}\n")
+
+        # Return True if they got 10 consecutive days without coffee.
+        if count == 10:
+            print("You did it!")
             return True
-        coffee = input("Did you drink coffee today? (y/n): ")
 
-
-
-        return False
-    return True
+        day += 1
 
 
 
