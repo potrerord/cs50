@@ -23,7 +23,7 @@ def main():
 
     # Open database file.
     with open(sys.argv[1], "r") as database:
-        # Load database into memory.
+        # Create iterator object to read file row by row.
         reader = csv.DictReader(database)
 
         # For every person in the database,
