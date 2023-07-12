@@ -20,9 +20,9 @@ def main():
     with open(sys.argv[2], "r") as sequence_file:
         sequence = sequence_file.read()
 
-    # Open database file into DictReader.
+    # Open database file.
     with open(sys.argv[1], "r")::
-        # Load database and sequence into memory.
+        # Load database into memory.
         reader = csv.DictReader(database)
 
         # For every person in the database,
