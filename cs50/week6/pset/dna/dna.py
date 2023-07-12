@@ -10,12 +10,17 @@ import sys
 def main():
 
     # Check for command-line usage.
-    if len(argv) != 3:
+    if len(sys.argv) != 3:
         sys.exit("usage: python dna.py data.csv sequences.txt")
 
     # Read database file into a variable.
-    with open(argv[1], "r") as database:
-        for line in database:
+    with open(sys.argv[1], "r") as database:
+        reader = csv.DictReader(database)
+        for row in reader:
+            
+
+
+
 
 
     # TODO: Read DNA sequence file into a variable
