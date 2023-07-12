@@ -26,9 +26,9 @@ def main():
         # Create iterator object to read file row by row.
         reader = csv.DictReader(database)
 
-        # For every person in the database,
+        # Check each person in the database until a match is found.
         for row in reader:
-            # If every STR run count is a match, print the person's name.
+            # If every STR run count matches, print the name and return.
             if find_match(row, arg_sequence):
                 print(row["name"])
                 return
@@ -43,8 +43,8 @@ def find_match(data: List[str], sequence: str) -> bool:
     match with the person represented in the entered list.
 
     Arguments:
-    data -- DictReader row with Name followed by person's STR counts
-    sequence -- the DNA sequence to analyze
+    data -- Dictionary list with Name followed by person's STR counts
+    sequence -- the DNA string to analyze
     """
 
     # Compare the dictionary STR count data with the sequence STR count
