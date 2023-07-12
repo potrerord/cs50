@@ -46,9 +46,9 @@ def main():
                     break_loop = True
                     break
 
-            # Flag outer loop break if no match was found.
+            # Flag outer loop reset if no match was found.
             if break_loop:
-                break
+                continue
 
             # If every STR count is a match, print the person's name.
             print(row["name"])
