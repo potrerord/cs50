@@ -56,24 +56,23 @@ def main():
 
 
 
-def find_matches(line: List[str], sequence: str) -> bool:
-            # Create dictionary of STR counts.
-            str_counts = list(row.items())[1:]
+def find_matches(row: List[str], sequence: str) -> bool:
+    # Create dictionary of STR counts.
+    str_counts = list(row.items())[1:]
 
-            # Compare this person's STR count data with the longest
-            # subsequence match found in the sequence.
-            for subsequence, str_count in str_counts:
-                # Break if any comparison is not a match.
-                if int(str_count) != longest_match(sequence, subsequence):
-                    break
+    # Compare this person's STR count data with the sequence STR count.
+    for subsequence, str_count in str_counts:
+        # Break if any comparison is not a match.
+        if int(str_count) != longest_match(sequence, subsequence):
+            break
 
-            # Flag outer loop reset if no match was found.
-            if break_loop:
-                continue
+    # Flag outer loop reset if no match was found.
+    if break_loop:
+        continue
 
-            # If every STR count is a match, print the person's name.
-            print(row["name"])
-            return
+    # If every STR count is a match, print the person's name.
+    print(row["name"])
+    return
 
 
 
