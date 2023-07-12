@@ -45,16 +45,10 @@ def main():
                 break
 
             # If every STR count is a match, print the person's name.
+            print(row["name"])
             
 
 
-            for row in reader:
-                if
-
-        # TODO: Find longest match of each STR in DNA sequence
-        butt = longest_match(sequence, subsequence)
-
-        # TODO: Check database for matching profiles
 
 
 def longest_match(sequence: str, subsequence: str) -> int:
