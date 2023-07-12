@@ -23,8 +23,10 @@ def main():
     level = round(cole_liau(letCount, wordCount, sentCount));
 
     # Print Grade X
-    my_dict = {}
+    dictionary = {1}
 
+    if level in dictionary:
+         
 
 """
 Calculates Coleman-Liau index = (0.0588 * let/100words) - (0.296 * sent/100words) - 15.8
