@@ -6,7 +6,7 @@ and STR counts, if a match exists.
 
 import csv
 import sys
-from typing import List
+from typing import Dict
 
 
 def main():
@@ -39,7 +39,7 @@ def main():
     return 1
 
 
-def find_match(data: List[str], sequence: str) -> bool:
+def find_match(data: Dict[str, int], sequence: str) -> bool:
     """Return bool indicating if data and sequence STR counts match.
 
     Arguments:
