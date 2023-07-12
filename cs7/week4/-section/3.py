@@ -2,9 +2,11 @@
 
 
 def main():
-    s = input("Enter: ")
-    s = s.partition()
-    print(s)
+    print()
+    s = input("Enter:  ")
+    s = s.replace("a", "z")
+    print(f"Result: {s}")
+    print()
 
 
 if __name__ == "__main__":
