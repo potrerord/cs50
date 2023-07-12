@@ -1,15 +1,21 @@
+"""
+Identifies the likely source of a sequence of DNA.
+"""
+
+
 import csv
 import sys
 
 
 def main():
 
-    # TODO: Check for command-line usage
+    # Check for command-line usage.
     if len(argv) != 3:
-        sys.exit("usage: python dna.py file.csv file.txt")
+        sys.exit("usage: python dna.py data.csv sequences.txt")
 
-    # TODO: Read database file into a variable
-
+    # Read database file into a variable.
+    f = open(argv[1])
+    close(f)
 
 
 
