@@ -15,7 +15,10 @@ def main():
 def do_roll():
     """Return the sum of two simulated dice rolls."""
 
-    ...
+    die1 = random.randint(1, 6)
+    die2 = random.randint(1, 6)
+
+    
 
 
 def get_point():
