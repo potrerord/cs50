@@ -23,12 +23,12 @@ def main():
             if favorite in counts:
                 counts[favorite] += 1
             else:
-                counts += favorite
+                counts[favorite] = 1
 
 
     # Print.
-    print(f"{scratch>7}: {scratch}")
-    print()
+    for favorite in counts:
+        favorite[count]
 
 
 if __name__ == "__main__":
