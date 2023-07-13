@@ -13,10 +13,9 @@ def main():
     """Mess with the data of favorite CS50 problems."""
 
     with open("favorites.csv", "r") as file:
-        reader = csv.Dictreader(file)
-        next(reader)
+        reader = csv.DictReader(file)
         for row in reader:
-            favorite = row[1]
+            favorite = row["language"]
             print(favorite)
 
 
