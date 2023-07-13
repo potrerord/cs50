@@ -15,7 +15,8 @@ def main():
     with open("favorites.csv", "r") as file:
         reader = csv.reader(file)
         for row in reader:
-            print(row[1])
+            favorite = row[1]
+            print(favorite)
 
 
 if __name__ == "__main__":
