@@ -15,15 +15,15 @@ def main():
     # Open/close file.
     with open("favorites.csv", "r") as file:
         reader = csv.DictReader(file)
-        scratch, c, python = 0, 0, 0
+
+        counts = {}
+
         for row in reader:
             favorite = row["language"]
-            if favorite == "scratch":
-                scratch += 1
-            elif favorite == "c":
-                c += 1
-            elif favorite == "python":
-                python += 1
+            if favorite in counts:
+                counts[favorite] += 1
+            else:
+                counts += favorite
 
 
     # Print.
