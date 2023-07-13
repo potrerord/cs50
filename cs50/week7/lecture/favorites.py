@@ -12,6 +12,9 @@ import csv
 def main():
     """Mess with the data of favorite CS50 problems."""
 
+    # Open with newline.
+    print()
+
     # Open/close file.
     with open("favorites.csv", "r") as file:
         reader = csv.DictReader(file)
@@ -27,8 +30,12 @@ def main():
 
 
     # Print.
-    for favorite in counts:
-        print(f"{favorite}: {counts[favorite]}")
+    for favorite in sorted(counts, key=lambda favorite: counts[favorite],
+                            reverse=True):
+        print(f"{favorite:>7}: {counts[favorite]}")
+
+    # Close with newline.
+    print()
 
 
 if __name__ == "__main__":
