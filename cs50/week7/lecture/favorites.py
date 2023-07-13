@@ -28,7 +28,7 @@ def main():
 
     # Print.
     for favorite in counts:
-        favorite[count]
+        print(f"{favorite}: {counts[favorite]}")
 
 
 if __name__ == "__main__":
