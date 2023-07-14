@@ -1,6 +1,6 @@
 /* The average energy of songs that are by Drake. */
 SELECT AVG(energy)
   FROM songs AS s
-       JOIN 
- WHERE s.artist_id = artists.id
-   AND artists.name = 'Drake';
+       JOIN artists AS a
+       ON s.artist_id = a.id
+ WHERE a.name = 'Drake';
