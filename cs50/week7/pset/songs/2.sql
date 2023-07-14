@@ -1,4 +1,4 @@
 /* All songs in increasing order by tempo. */
-SELECT names
+SELECT name
   FROM songs
  ORDER BY tempo;
