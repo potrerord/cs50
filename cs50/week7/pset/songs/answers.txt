@@ -9,17 +9,16 @@ answers.txt, reflect on the following questions:
 1) If songs.db contains the top 100 songs of one listener from 2018, how
 would you characterize their audio aura?
 
-    I might start by using the following query:
+    I might start by using the following query to find the values in
+    question:
 
         SELECT AVG(energy),
                AVG(valence),
                AVG(danceability)
           FROM songs;
 
-    to find the values in question.
-
-    With some quick Google research, it looks like Spotify uses the
-    following definitions for the three terms:
+    Then, with some quick Google research, it looks like Spotify uses
+    the following definitions for the three terms:
 
     Danceability:
         Numerical, danceability describes how suitable a track is for
@@ -43,6 +42,10 @@ would you characterize their audio aura?
         with low valence sound more negative (e.g. sad, depressed,
         angry).
 
+                                  (credit to Peter Dola on rpubs.com)
+
+
+    
 
 
 
