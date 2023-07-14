@@ -18,7 +18,11 @@ would you characterize their audio aura?
 
     to find the values in question.
 
-    
+    With some quick Google research, it looks like Spotify uses the
+    following definitions for the three terms:
+
+    Danceability: Numerical, danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
+
 
 
 
