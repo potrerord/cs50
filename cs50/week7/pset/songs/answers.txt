@@ -11,7 +11,11 @@ would you characterize their audio aura?
 
     I might use the following query:
 
-    SELECT 
+    SELECT AVG(energy),
+           AVG(valence),
+           AVG(danceability)
+      FROM songs;
+
 
 
 
