@@ -56,6 +56,8 @@ def do_roll() -> int:
     # Roll each die.
     die1 = randint(1, 6)
     die2 = randint(1, 6)
+
+    # Calculate sum of die rolls.
     dice_sum = die1 + die2
 
     # Print results of roll.
