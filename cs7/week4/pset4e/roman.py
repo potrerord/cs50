@@ -51,20 +51,19 @@ it is not.
 
 
 def main():
-    # Add your solution to the problem that makes use of the above.
-    print("Implement me!")
-
+    """"""
 
 def to_arabic(roman_numeral):
-    """Takes a valid roman numeral and returns an integer that is
-    the corresponding the decimal number"""
-    # Add your code here.
+    """Return a converted decimal integer value for a roman numeral."""
+
+    
+
 
 
 def is_valid(roman_numeral):
-    """Bonus EC problem: takes a roman numeral and returns a boolean
-    that is True if the numeral is valid and False if it is not"""
-    # Add your code here.
+    """Return a bool value indicating if arg is valid roman numeral."""
+
+
 
 
 if __name__ == "__main__":
