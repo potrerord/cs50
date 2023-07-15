@@ -51,6 +51,7 @@ from typing import Tuple
 def main():
     """asdf."""
 
+    
 
     if drunk_walk():
         landing = "HOME"
