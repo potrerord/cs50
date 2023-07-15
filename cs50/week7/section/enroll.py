@@ -20,22 +20,22 @@ def main():
 
     database = SQL("sqlite:///students.db")
 
-    #add a person
+    # Add a person.
     name = get_string("Name: ")
     student_id = database.execute("INSERT INTO people (name) VALUES (?)", name)
 
-    #prompt for courses to enroll in
+    # Prompt for courses to enroll in.
     while True:
         code = get_string("Course code: ")
 
-        #if no input, then stop adding - TODO
+        # If no input, then stop adding.
         if code == "":
             sys.exit(1)
 
-        #query for course - TODO
+        # Query for course.
         course = database.execute("SELECT id, code FROM courses;")
 
-        #check to make sure course exists - TODO
+        # Check to make sure course exists.
         flag = False
         for course_info in course:
             if course_info[code] == code:
@@ -43,7 +43,7 @@ def main():
         if not(flag):
             sys.exit(1)
 
-        #enroll student - TODO
+        # Enroll student.
         database.execute("INSERT INTO students (person_id, course_id) \
                          VALUES(SELECT id FROM people WHERE name = ?", name))
 
