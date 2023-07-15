@@ -70,7 +70,10 @@ def drunk_walk() -> Tuple[int, bool]:
     Take no input parameters. Do not print anything.
     """
 
+    # Constant starting position.
     START = 6
+
+    
 
 
 if __name__ == "__main__":
