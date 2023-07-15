@@ -26,14 +26,7 @@
 
 """2.1"""
 foobar = [1, 4, 9, 16, 25]
-length = len(foobar)
-foobar_shifted = []
-
-
-for i in range(length):
-    foobar_shifted.append(foobar[(i - 1) % length])
-
-foobar = foobar_shifted
+foobar = foobar[-1:] + foobar[:-1]
 print(foobar)
 
 
