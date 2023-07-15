@@ -31,7 +31,7 @@ foobar_shifted = []
 
 
 for i in range(length):
-    foobar_shifted[i] = [foobar[(i + 1) % length]]
+    foobar_shifted.append(foobar[(i - 1) % length])
 
 foobar = foobar_shifted
 print(foobar)
