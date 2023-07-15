@@ -73,7 +73,8 @@ def drunk_walk() -> Tuple[int, bool]:
     # Constant starting position.
     START = 6
 
-    
+    # random 
+    randint(0, 1)
 
 
 if __name__ == "__main__":
