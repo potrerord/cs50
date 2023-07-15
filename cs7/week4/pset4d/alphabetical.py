@@ -9,17 +9,36 @@ For example, the call alphabetical(['apple', 'pumpkin', 'log', 'River',
 """
 
 
+from typing import List
+
+
 def main():
     """Call alphabetical."""
 
+    test = ['apple', 'pumpkin', 'log', 'River', 'fox', 'pond']
 
-def alphabetical(words):
+    print()
+    print("TEST: ['apple', 'pumpkin', 'log', 'River', 'fox', 'pond']")
+    print("GOAL: ['aelpp', 'ikmnppu', 'glo', 'eiRrv', 'fox', 'dnop']")
+    print(f"REAL: {alphabetical(test)}")
+    print()
+
+
+def alphabetical(words: List[str]) -> List[str]:
     """Return a converted list of words with each letter of each word
     sorted in alphabetical order, preserving case.
     """
 
-    
+    # Initialize empty sorted list.
+    sorted_words = []
 
+    # Iterate through every word in the argument list.
+    for word in words:
+        sorted_word = list(word).sort()
+
+        sorted_words += sorted_word
+
+    return sorted_words
 
 if __name__ == "__main__":
     main()
