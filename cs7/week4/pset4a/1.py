@@ -14,8 +14,10 @@ def main():
 
     s = "Your Friend Is Stuck. You Give Me Money, I Make Him Unstuck."
 
+    print("'", end="")
     question = s[0:5].upper()
-    print(question)
+    print(question, end="")
+    print("'")
 
 if __name__ == "__main__":
     main()
