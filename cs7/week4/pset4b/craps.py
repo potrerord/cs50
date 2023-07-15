@@ -37,11 +37,6 @@ def main():
     # Computer rolls a 6 and a 5, for a total of 11.
     # Computer rolls a 1 and a 2, for a total of 3.
     # Computer rolls a 5 and a 1, for a total of 6.
-    while True:
-        print_roll(arg1, arg2)
-        if point == 6:
-            break
-
     # 6 is now the established POINT.
 
 
@@ -78,7 +73,7 @@ def get_point():
             return point
 
 
-def play_from_point(point: int) -> bool:
+def play_from_point(player_point: int) -> bool:
     """
     Continue the craps game until a winner is decided. Return a Boolean
     value indicating if the player won.
@@ -88,25 +83,12 @@ def play_from_point(point: int) -> bool:
     """
 
     # Continue the game from the point.
-
-    # If total value of the dice is 7,
-    # You lose.
-
-
-
-
-    # If total value of the dice is the point that was previously
-    # established,
-    # You win.
-
-
-
-    # If the player won,
-    return True
-
-    # If the player lost,
-    return False
-
+    while True:
+        new_point = do_roll()
+        if new_point == player_point:
+            return True
+        elif new_point == 7:
+            return False
 
 
 def print_roll(roll1, roll2) -> None:
@@ -117,8 +99,8 @@ def print_roll(roll1, roll2) -> None:
     roll1, roll2 -- integers representing the rolls.
     """
 
-    print(f"Computer rolls a {roll1} and a {roll2}, \
-          for a total of {roll1 + roll2}.")
+    print(f"Computer rolls a {roll1} and a {roll2}, " +
+          "for a total of {roll1 + roll2}.")
 
 if __name__ == "__main__":
     main()
