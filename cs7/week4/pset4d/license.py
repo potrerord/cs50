@@ -21,17 +21,19 @@ def main():
 def random_capital() -> str:
     """Return a randomly selected upper-case letter."""
 
+    
+
 
 def random_plate() -> str:
     """Return one randomly selected license plate."""
 
     # Generate random 3-digit integer with leading zeroes. Leading digit
     # will not be 0.
-    rand_num = f"{randint(100, 999):>3}"
+    numbers = f"{randint(100, 999):>3}"
 
-    random_capital()
+    letters = (random_capital() for _ in range(3))
 
-
+    return f"{numbers} {letters}"
 
 if __name__ == "__main__":
     main()
