@@ -51,6 +51,16 @@ def main():
     """asdf."""
 
 
+    if drunk_walk():
+        landing = "HOME"
+    else:
+        landing = "JAIL"
+
+    print("\nHere we go again... Time for a walk!")
+    print(f"Walked {} blocks, and")
+    print(f"Landed in {landing}")
+
+
 def drunk_walk():
     """Simulate a random walk. Return the number blocks walked as well
     as a boolean that is True if ended up at home and False ended up in
