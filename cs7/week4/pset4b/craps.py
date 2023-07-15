@@ -99,8 +99,8 @@ def print_roll(roll1, roll2) -> None:
     roll1, roll2 -- integers representing the rolls.
     """
 
-    print(f"Computer rolls a {roll1} and a {roll2}, " +
-          "for a total of {roll1 + roll2}.")
+    print(f"Computer rolls a {roll1} and a {roll2}, "
+          f"for a total of {roll1 + roll2}.")
 
 if __name__ == "__main__":
     main()
