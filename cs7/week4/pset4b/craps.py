@@ -23,6 +23,8 @@ from random import randint
 def main():
     """Execute game by rolling dice and comparing points."""
 
+    print()
+
     # Roll two dice until the total value is 4-10, which becomes the
     # player's point.
     player_point = get_point()
@@ -33,17 +35,8 @@ def main():
     else:
         print("YOU LOSE")
 
-
-    # Computer rolls a 6 and a 5, for a total of 11.
-    # Computer rolls a 1 and a 2, for a total of 3.
-    # Computer rolls a 5 and a 1, for a total of 6.
-    # 6 is now the established POINT.
-
-
-    # Computer rolls a 4 and a 4, for a total of 8.
-    # Computer rolls a 2 and a 5, for a total of 7.
-    # YOU LOSE
-
+    print()
+    
 
 def do_roll() -> int:
     """Take no input, roll two dice and return the sum of the roll."""
@@ -70,6 +63,7 @@ def get_point():
     while True:
         point = do_roll()
         if 4 <= point <= 10:
+            print(f"{point} is now the established POINT.")
             return point
 
 
