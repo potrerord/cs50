@@ -2,19 +2,6 @@
 Plays a simplified version of the casino game Craps between the user and
 the program.
 """
-"""
-Note: it is recommended that there are two separate while loops in your
-implementation of this game. Here's what the program should look like in
-action:
-    $ python craps.py
-    Computer rolls a 6 and a 5, for a total of 11.
-    Computer rolls a 1 and a 2, for a total of 3.
-    Computer rolls a 5 and a 1, for a total of 6.
-    6 is now the established POINT.
-    Computer rolls a 4 and a 4, for a total of 8.
-    Computer rolls a 2 and a 5, for a total of 7.
-    YOU LOSE
-"""
 
 
 from random import randint
@@ -31,9 +18,9 @@ def main():
 
     # Continue to roll the dice until winner is decided.
     if play_from_point(player_point):
-        print("YOU WIN")
+        print("\nYOU WIN")
     else:
-        print("YOU LOSE")
+        print("\nYOU LOSE")
 
     print()
 
