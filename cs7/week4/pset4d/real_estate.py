@@ -5,7 +5,7 @@ estate-style" advertisement with all non-inital vowels removed.
 
 
 def main():
-    """butt"""
+    """Take user input and print result."""
 
     print()
 

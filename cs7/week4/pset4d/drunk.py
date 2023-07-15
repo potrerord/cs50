@@ -48,7 +48,7 @@ from random import randint
 
 
 def main():
-    """Add your solution to the problem that makes use of the above."""
+    """asdf."""
 
 
 def drunk_walk():
@@ -58,7 +58,8 @@ def drunk_walk():
 
     Take no input parameters. Do not print anything.
     """
-    # Add your code here
+
+    START = 6
 
 
 if __name__ == "__main__":
