@@ -43,9 +43,22 @@ def main():
     """Run remove_lowest with test input."""
 
     # Constant test grades.
-    GRADES = [23, 90, 47, 55, 88]
+    TEST1 = [23, 90, 47, 55, 88]
+    TEST2 = [85]
+    TEST3 = []
+    TEST4 = [59, 92, 93, 47, 88, 47]
 
+    # Test code.
+    a = remove_lowest(TEST1)
+    b = remove_lowest(TEST2)
+    c = remove_lowest(TEST3)
+    d = remove_lowest(TEST4)
 
+    # Print tests.
+    print("a =", a)
+    print("b =", b)
+    print("c =", c)
+    print("d =", d)
 
 
 def remove_lowest(grade_list: List[int]) -> List[int]:
