@@ -12,10 +12,18 @@ from random import randint
 
 
 def main():
-    """asdf"""
+    """Print license plates."""
 
     # Constant number of license plate numbers to generate.
     AMOUNT = 20
+
+    print()
+
+    #
+    for i in range(AMOUNT):
+        print(f"Plate {i:>2}: {random_plate()}")
+
+    print()
 
 
 def random_capital() -> str:
@@ -36,8 +44,12 @@ def random_plate() -> str:
     # will not be 0.
     numbers = f"{randint(100, 999):>3}"
 
-    letters = (random_capital() for _ in range(3))
+    # Generate string of 3 randomly generated capital letters.
+    letters = ""
+    for _ in range(3):
+        letters += random_capital()
 
+    # Return in the format "999 AAA"
     return f"{numbers} {letters}"
 
 if __name__ == "__main__":
