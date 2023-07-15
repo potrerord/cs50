@@ -21,7 +21,7 @@ def main():
 
     #
     for i in range(AMOUNT):
-        print(f"Plate {i:>2}: {random_plate()}")
+        print(f"{'Plate #' + str(i):>2}: {random_plate()}")
 
     print()
 
