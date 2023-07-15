@@ -85,11 +85,11 @@ def drunk_walk() -> Tuple[int, bool]:
 
         # If student arrives at 1st St, return True.
         if position == HOME:
-            return (count, True)
+            return count, True
 
         # If student arrives at 11th St, return False.
         elif position == JAIL:
-            return (count, False)
+            return count, False
 
 
 if __name__ == "__main__":
