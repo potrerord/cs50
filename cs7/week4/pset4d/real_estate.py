@@ -24,6 +24,22 @@ You may assume that y is not a vowel."""
 def main():
     """butt"""
 
+    print()
+
+    print("  TEST: Desirable unfurnished flat in quiet residential area")
+    print("  GOAL: Dsrbl unfrnshd flt in qt rsdntl ar\n")
+    print("RESULT: ", end="")
+
+    # Take user input.
+    #########################user_ad = input("Enter ad text: ")
+
+    user_ad = "Desirable unfurnished flat in quiet residential area"
+
+    # Print the devoweled version of user input.
+    print(devowel(user_ad))
+
+    print()
+
 
 def is_vowel(c: str) -> bool:
     """Return True if c is vowel (case insensitive)."""
@@ -45,8 +61,14 @@ def devowel(ad: str) -> str:
     removed.
     """
 
-    
+    result = ""
 
+    for c in ad:
+        if 
+        elif not(is_vowel(c)):
+            result += c
+
+    return result
 
 
 if __name__ == "__main__":
