@@ -63,10 +63,22 @@ def devowel(ad: str) -> str:
 
     result = ""
 
-    for c in ad:
-        if 
-        elif not(is_vowel(c)):
-            result += c
+    # Separate words in ad.
+    words = ad.split()
+
+    # Iterate through each word.
+    for word in words:
+
+        # Keep the first letter of every word.
+        result += word[0]
+
+        # Drop the non-vowels in the rest of the word.
+        for c in word[1:]:
+            if not(is_vowel(c)):
+                result += c
+
+        # Add a space.
+        result += " "
 
     return result
 
