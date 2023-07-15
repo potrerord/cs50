@@ -25,28 +25,13 @@ def main():
 
     # Roll two dice until the total value is 4-10, which becomes the
     # player's point.
-
-    while True:
-        player_point = do_roll()
-        if 4 <= player_point <= 10:
-            break
+    player_point = get_point()
 
     # Continue to roll the dice until winner is decided.
     if play_from_point(player_point):
         print("YOU WIN")
     else:
         print("YOU LOSE")
-
-    # If total value of the dice is 7,
-    # You lose.
-
-
-
-
-    # If total value of the dice is the point that was previously
-    # established,
-    # You win.
-
 
 
     # Computer rolls a 6 and a 5, for a total of 11.
@@ -68,18 +53,27 @@ def main():
 def do_roll() -> int:
     """Take no input, roll two dice and return the sum of the roll."""
 
+    # Roll each die.
     die1 = randint(1, 6)
     die2 = randint(1, 6)
     dice_sum = die1 + die2
+
+    # Print results of roll.
+    print_roll(die1, die2)
 
     return dice_sum
 
 
 def get_point():
-    """Roll until a point is established, then return point value."""
+    """Roll until a point between 4 and 10 (inclusive) is established,
+    then return point value.
+    """
 
+    # Repeat do_roll until return value is valid.
     while True:
-        do_roll()
+        point = do_roll()
+        if 4 <= point <= 10:
+            return point
 
 
 def play_from_point(point: int) -> bool:
@@ -92,6 +86,17 @@ def play_from_point(point: int) -> bool:
     """
 
     # Continue the game from the point.
+
+    # If total value of the dice is 7,
+    # You lose.
+
+
+
+
+    # If total value of the dice is the point that was previously
+    # established,
+    # You win.
+
 
 
     # If the player won,
