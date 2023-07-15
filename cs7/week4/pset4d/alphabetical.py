@@ -34,7 +34,7 @@ def alphabetical(words: List[str]) -> List[str]:
 
     # Iterate through every word in the argument list.
     for word in words:
-        sorted_word = list(word).sort()
+        sorted_word = "".join(list(word).sort())
         sorted_words.append(sorted_word)
 
     return sorted_words
