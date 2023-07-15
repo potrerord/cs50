@@ -40,7 +40,10 @@ from typing import List
 
 
 def main():
-    """Do the program."""
+    """Run remove_lowest with test input."""
+
+    # Constant test grades.
+    GRADES = [23, 90, 47, 55, 88]
 
 
 
@@ -50,11 +53,18 @@ def remove_lowest(grade_list: List[int]) -> List[int]:
     least two grades in the original list.
     """
 
-    # Return original list if it is not long enough.
+    # Immediately return original list if it is not long enough.
     if len(grade_list) < 2:
         return grade_list
 
-    #
+    # Copy list into new list.
+    new_list = grade_list
+
+    # Remove lowest value from new list.
+    lowest_grade = min(new_list)
+    new_list.remove(lowest_grade)
+
+    return new_list
 
 
 
