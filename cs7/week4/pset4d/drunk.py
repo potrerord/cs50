@@ -51,16 +51,21 @@ from typing import Tuple
 def main():
     """asdf."""
 
-    blocks, success = drunk_walk()
+    print()
 
+    # Take int and bool from drunk_walk().
+    block_count, success = drunk_walk()
+
+    # Define landing location depending on bool from drunk_walk().
     if success:
         landing = "HOME"
     else:
         landing = "JAIL"
 
-    print("\nHere we go again... Time for a walk!")
-    print(f"Walked {} blocks, and")
-    print(f"Landed in {landing}")
+    # Print report for user.
+    print("Here we go again... Time for a walk!")
+    print(f"Walked {block_count} blocks, and")
+    print(f"Landed in {landing}\n")
 
 
 def drunk_walk() -> Tuple[int, bool]:
