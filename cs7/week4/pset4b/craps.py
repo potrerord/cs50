@@ -31,10 +31,11 @@ def main():
         if 4 <= player_point <= 10:
             break
 
-    # Continue to roll the dice.
-
-
-
+    # Continue to roll the dice until winner is decided.
+    if play_from_point(player_point):
+        print("YOU WIN")
+    else:
+        print("YOU LOSE")
 
     # If total value of the dice is 7,
     # You lose.
@@ -64,7 +65,6 @@ def main():
     # YOU LOSE
 
 
-
 def do_roll() -> int:
     """Take no input, roll two dice and return the sum of the roll."""
 
@@ -88,7 +88,7 @@ def play_from_point(point: int) -> bool:
     value indicating if the player won.
 
     Arguments:
-    point -- Integer value of computer's point for player to play from.
+    point -- Integer value of player's point for computer to play from.
     """
 
     # Continue the game from the point.
