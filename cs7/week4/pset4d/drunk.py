@@ -45,6 +45,7 @@ N equal to 5:
 
 
 from random import randint
+from typing import Tuple
 
 
 def main():
@@ -61,7 +62,7 @@ def main():
     print(f"Landed in {landing}")
 
 
-def drunk_walk():
+def drunk_walk() -> Tuple[int, bool]:
     """Simulate a random walk. Return the number blocks walked as well
     as a boolean that is True if ended up at home and False ended up in
     jail.
