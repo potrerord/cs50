@@ -14,7 +14,7 @@ def main():
 
     s = "Your Friend Is Stuck. You Give Me Money, I Make Him Unstuck."
 
-    question = s.find('enemy', 4)
+    question = s[0:5].upper()
     print(question)
 
 if __name__ == "__main__":
