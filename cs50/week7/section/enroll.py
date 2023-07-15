@@ -33,19 +33,14 @@ def main():
             sys.exit(1)
 
         # Query for course.
-        course = database.execute("SELECT id, code FROM courses;")
+        course_codes = database.execute("SELECT code FROM courses;")
 
         # Check to make sure course exists.
-        flag = False
-        for course_info in course:
-            if course_info[code] == code:
-                flag = True
-        if not(flag):
+        if code not in course_codes:
             sys.exit(1)
 
         # Enroll student.
-        database.execute("INSERT INTO students (person_id, course_id) \
-                         VALUES(SELECT id FROM people WHERE name = ?)", name)
+        database.execute("INSERT INTO students (person_id) JOIN VALUES(SELECT id FROM people WHERE name = ?)", name)
 
 if __name__ == "__main__":
     main()
