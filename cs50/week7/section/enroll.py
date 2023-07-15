@@ -34,7 +34,7 @@ def main():
             sys.exit(1)
 
         #query for course - TODO
-        count = db.execute("SELECT COUNT * FROM ")
+        count = db.execute("SELECT course_id FROM ")
 
 
 
