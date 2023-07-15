@@ -36,7 +36,7 @@ def main():
         print("YOU LOSE")
 
     print()
-    
+
 
 def do_roll() -> int:
     """Take no input, roll two dice and return the sum of the roll."""
@@ -62,8 +62,8 @@ def get_point():
     # Repeat do_roll until point value is valid.
     while True:
         point = do_roll()
-        if 4 <= point <= 10:
-            print(f"{point} is now the established POINT.")
+        if 4 <= point <= 10 and point != 7:
+            print(f"\n{point} is now the established POINT.\n")
             return point
 
 
