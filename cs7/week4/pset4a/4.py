@@ -25,8 +25,8 @@
 #
 
 """2.1"""
-foobar = [1, 4, 9, 16, 25]
-foobar[0], foobar[-1] = foobar[-1], foobar[0]
+foobar = [-1, 4, -9, 16, -25]
+foobar = [abs(element) for element in foobar]
 print(foobar)
 
 
