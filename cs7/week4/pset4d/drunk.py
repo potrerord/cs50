@@ -44,7 +44,7 @@ N equal to 5:
 """
 
 
-from random import randint
+import random
 from typing import Tuple
 
 
@@ -73,8 +73,11 @@ def drunk_walk() -> Tuple[int, bool]:
     # Constant starting position.
     START = 6
 
-    # random 
-    randint(0, 1)
+    while True:
+        # Randomly pick whether the student advances forward or backward.
+        random.choice([-1, 1])
+        
+
 
 
 if __name__ == "__main__":
