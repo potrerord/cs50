@@ -21,7 +21,7 @@ def main():
 def random_capital() -> str:
     """Return a randomly selected upper-case letter."""
 
-    
+    randint(65, 90)
 
 
 def random_plate() -> str:
