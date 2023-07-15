@@ -2,9 +2,6 @@
 Prints 20 random license plate numbers, each one consisting of three
 randomly-chosen digits followed by three randomly chosen upper-case
 letters. The first digit will not be zero.
-
-Sample output might look like:
-382 HGK 819 YEU ...
 """
 
 
@@ -19,9 +16,9 @@ def main():
 
     print()
 
-    #
-    for i in range(AMOUNT):
-        print(f"{'Plate #' + str(i):>2}: {random_plate()}")
+    # Print plates.
+    for i in range(1, AMOUNT + 1):
+        print(f"{'Plate #' + str(i):>9}: {random_plate()}")
 
     print()
 
