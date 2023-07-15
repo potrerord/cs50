@@ -8,23 +8,29 @@ Sample output might look like:
 """
 
 
+from random import randint
+
+
 def main():
     """asdf"""
 
     # Constant number of license plate numbers to generate.
-
-    print("Implement me!")
+    AMOUNT = 20
 
 
 def random_capital() -> str:
     """Return a randomly selected upper-case letter."""
 
 
-
-
 def random_plate() -> str:
     """Return one randomly selected license plate."""
-    # Add your code here
+
+    # Generate random 3-digit integer with leading zeroes. Leading digit
+    # will not be 0.
+    rand_num = f"{randint(100, 999):>3}"
+
+    random_capital()
+
 
 
 if __name__ == "__main__":
