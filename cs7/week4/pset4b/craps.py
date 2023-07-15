@@ -69,7 +69,7 @@ def get_point():
     then return point value.
     """
 
-    # Repeat do_roll until return value is valid.
+    # Repeat do_roll until point value is valid.
     while True:
         point = do_roll()
         if 4 <= point <= 10:
