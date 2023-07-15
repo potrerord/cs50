@@ -51,9 +51,9 @@ from typing import Tuple
 def main():
     """asdf."""
 
-    
+    blocks, success = drunk_walk()
 
-    if drunk_walk():
+    if success:
         landing = "HOME"
     else:
         landing = "JAIL"
