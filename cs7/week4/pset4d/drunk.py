@@ -11,9 +11,8 @@ intersection, the drunk student has a 50-50 probability of staggering a
 block one way or the other, to the next higher-numbered or next lower-
 numbered street.
 
-
 Write a function named drunk_walk() using a while loop that simulates
-the drunk student's walk; your function should return an list or a tuple
+the drunk student's walk; your function should return a list or a tuple
 with an integer that indicates how many blocks were walked as well as a
 Boolean that indicates whether they ended up at home or in jail. The
 function drunk_walk should not print out anything. Your program should
@@ -43,6 +42,9 @@ N equal to 5:
        Landed at HOME
        Average # of blocks equals 21.8
 """
+
+
+from random import randint
 
 
 def main():
