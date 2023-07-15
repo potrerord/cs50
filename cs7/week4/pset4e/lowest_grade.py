@@ -31,12 +31,6 @@ The correct output would be
 
 Note that in the case of a, the lowest score, 23, was removed.
 
-In the case of b, nothing was removed because it would be cruel to
-eliminate the ONLY grade that a student had obtained (this is a special
-case).
-
-The third case, c, is also special: when no values are passed.
-
 The fourth case, d, shows what happens when the lowest score appears
 twice: it is removed only once from the list that is constructed.
 """
@@ -60,7 +54,7 @@ def remove_lowest(grade_list: List[int]) -> List[int]:
     if len(grade_list) < 2:
         return grade_list
 
-    # 
+    #
 
 
 
