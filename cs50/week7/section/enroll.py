@@ -24,7 +24,6 @@ def main():
     name = get_string("Name: ")
     student_id = database.execute("INSERT INTO people (name) VALUES (?)", name)
 
-
     #prompt for courses to enroll in
     while True:
         code = get_string("Course code: ")
@@ -34,17 +33,18 @@ def main():
             sys.exit(1)
 
         #query for course - TODO
-        count = db.execute("SELECT course_id FROM ")
-
-
+        course = database.execute("SELECT id, code FROM courses;")
 
         #check to make sure course exists - TODO
-
-
-
+        flag = False
+        for course_info in course:
+            if course_info[code] == code:
+                flag = True
+        if not(flag):
+            sys.exit(1)
 
         #enroll student - TODO
-
+        database.execute("INSERT INTO )
 
 
 
