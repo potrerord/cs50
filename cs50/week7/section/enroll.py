@@ -42,5 +42,6 @@ def main():
         # Enroll student.
         database.execute("INSERT INTO students (person_id, course_id) VALUES(?, ?);", student_id, code)
 
+
 if __name__ == "__main__":
     main()
