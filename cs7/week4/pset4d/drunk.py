@@ -1,46 +1,11 @@
 """
-A Harvard student has decided to celebrate just graduating by getting a
-bit smashed.
+Simulates drunk walk(s) from a student walking from 6th Street randomly
+up or down to adjacent streets toward HOME at 1st street or JAIL at 11th
+street.
 
-Their home is at 1st Street and Main Street, and the jail is at 11th
-Street and Main Street. The student starts at 6th Street and Main Street
-and randomly chooses to wander one block up or down Main Street with
-equal probability, 0.5. At each intersection they repeat the process
-until arriving safely at home or landing in jail. That is, at each
-intersection, the drunk student has a 50-50 probability of staggering a
-block one way or the other, to the next higher-numbered or next lower-
-numbered street.
-
-Write a function named drunk_walk() using a while loop that simulates
-the drunk student's walk; your function should return a list or a tuple
-with an integer that indicates how many blocks were walked as well as a
-Boolean that indicates whether they ended up at home or in jail. The
-function drunk_walk should not print out anything. Your program should
-print out how many blocks were walked and where the student landed. You
-should not print out each step taken in your final version of the
-function, though you might want to do this while you are debugging.
-
-Once you have your function working, have your main program call upon
-your drunk_walk() function N times. Finally, have it calculate and print
-the average number of blocks that the student took for one trip, to one
-decimal place. Here's what your program might look like in action, with
-N equal to 5:
-       Here we go again... time for a walk!
-       Walked 37 blocks, and
-       Landed at HOME
-       Here we go again... time for a walk!
-       Walked 19 blocks, and
-       Landed in JAIL
-       Here we go again... time for a walk!
-       Walked 13 blocks, and
-       Landed in JAIL
-       Here we go again... time for a walk!
-       Walked 25 blocks, and
-       Landed in JAIL
-       Here we go again... time for a walk!
-       Walked 15 blocks, and
-       Landed at HOME
-       Average # of blocks equals 21.8
+Prints out a report containing the number of blocks per walked, the
+student's final landing location, and the overall average number of
+blocks walked per iteration.
 """
 
 
@@ -49,23 +14,38 @@ from typing import Tuple
 
 
 def main():
-    """asdf."""
+    """Run one or multiple drunk walks and print report."""
 
+    # Constant number of drunk walks.
+    WALK_COUNT = 5
+
+    # Initialize total_block count.
+    total_blocks = 0
+
+    # Start program with new line.
     print()
 
-    # Take int and bool from drunk_walk().
-    block_count, success = drunk_walk()
+    # Run WALK_COUNT drunk walks.
+    for walk_number in range(1, WALK_COUNT + 1):
+        # Take int and bool from drunk_walk().
+        block_count, success = drunk_walk()
 
-    # Define landing location depending on bool from drunk_walk().
-    if success:
-        landing = "HOME"
-    else:
-        landing = "JAIL"
+        total_blocks += block_count
 
-    # Print report for user.
-    print("Here we go again... Time for a walk!")
-    print(f"Walked {block_count} blocks, and")
-    print(f"Landed in {landing}\n")
+        # Define landing location depending on bool from drunk_walk().
+        if success:
+            landing = "HOME"
+        else:
+            landing = "JAIL"
+
+        # Print report for user.
+        print(f"Here we go again... Time for walk #{walk_number}!")
+        print(f"Walked {block_count} blocks, and")
+        print(f"Landed in {landing}\n")
+
+    # Print average number of blocks.
+    avg_blocks = total_blocks / WALK_COUNT
+    print(f"Average number of blocks: {avg_blocks}\n")
 
 
 def drunk_walk() -> Tuple[int, bool]:

@@ -1,21 +1,24 @@
-"""Add your solution to the problem 'alphabetical' here."""
+"""
+Define a function named alphabetical that accepts a list of words as its
+only parameter and constructs/returns a list of strings with each
+of the letters in each word sorted in alphabetical, not unicode, order.
+
+For example, the call alphabetical(['apple', 'pumpkin', 'log', 'River',
+'fox', 'pond']) should return the list ['aelpp', 'ikmnppu', 'glo',
+'eiRrv', 'fox', 'dnop'].
+"""
 
 
 def main():
-    # Add your solution to the problem that makes use of the above.
-    print("Implement me and remove this print!")
+    """Call alphabetical."""
 
 
 def alphabetical(words):
-    """Takes the a list of words and returns a list of strings
-    with each of the letters in each word sorted in alphabetical
-    (not unicode!) order.
-    For example, the for the parameter
-    ['apple', 'pumpkin', 'log', 'River', 'fox', 'pond']
-    the return value should be
-    ['aelpp', 'ikmnppu', 'glo', 'eiRrv', 'fox', 'dnop']
+    """Return a converted list of words with each letter of each word
+    sorted in alphabetical order, preserving case.
     """
-    # Add your code here.
+
+    
 
 
 if __name__ == "__main__":
