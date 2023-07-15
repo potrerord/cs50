@@ -63,21 +63,33 @@ def main():
 
 
 def drunk_walk() -> Tuple[int, bool]:
-    """Simulate a random walk. Return the number blocks walked as well
-    as a boolean that is True if ended up at home and False ended up in
-    jail.
-
-    Take no input parameters. Do not print anything.
+    """Simulate a random walk. Return a tuple containing int number of
+    blocks walked and bool True if landed at home or False if jail.
     """
 
-    # Constant starting position.
+    # Constant position definitions.
     START = 6
+    HOME = 1
+    JAIL = 11
+
+    # Initialize variables.
+    position = START
+    count = 0
 
     while True:
-        # Randomly pick whether the student advances forward or backward.
-        random.choice([-1, 1])
-        
+        # Randomly pick whether the student moves up or down one block.
+        position += random.choice([-1, 1])
 
+        # Count block movement.
+        count += 1
+
+        # If student arrives at 1st St, return True.
+        if position == HOME:
+            return (count, True)
+
+        # If student arrives at 11th St, return False.
+        elif position == JAIL:
+            return (count, False)
 
 
 if __name__ == "__main__":
