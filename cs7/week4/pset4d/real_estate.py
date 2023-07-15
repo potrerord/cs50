@@ -25,18 +25,27 @@ def main():
     """butt"""
 
 
-def is_vowel(c):
-    """Returns true if c is an upper- or lower-case vowel character"""
+def is_vowel(c: str) -> bool:
+    """Return True if c is vowel (case insensitive)."""
+
+    # Constant reference list for single lowercase vowel characters.
+    # Note that 'y' is not considered a vowel in this program.
+    LOWER_VOWELS = ['a', 'e', 'i', 'o', 'u']
+
+    # Convert c to lowercase for comparison, return True if vowel.
+    if c.lower() in LOWER_VOWELS:
+        return True
+
+    # Else, return False.
+    return False
 
 
-
-
-def devowel(ad):
-    """Take the text ad and returns a string with non-initial vowels
+def devowel(ad: str) -> str:
+    """Take the text ad and return a string with non-initial vowels
     removed.
-
-    The letter 'y' is not considered a vowel in this function.
     """
+
+    
 
 
 
