@@ -44,11 +44,8 @@ def main():
             sys.exit(1)
 
         #enroll student - TODO
-        database.execute("INSERT INTO )
-
-
-
-
+        database.execute("INSERT INTO students (person_id, course_id) \
+                         VALUES(SELECT id FROM people WHERE name = ?", name))
 
 if __name__ == "__main__":
     main()
