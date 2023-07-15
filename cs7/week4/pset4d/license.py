@@ -1,18 +1,26 @@
-"""Add your solution to the problem 'license' here."""
+"""
+Prints 20 random license plate numbers, each one consisting of three
+randomly-chosen digits followed by three randomly chosen upper-case
+letters. The first digit will not be zero.
+
+Sample output might look like:
+382 HGK 819 YEU ...
+
+"""
 
 
 def main():
-    # Add your solution to the problem that makes use of the above.
+    """asdf"""
     print("Implement me!")
 
 
 def random_capital():
-    """Returns a randomly selected upper-case letter. Takes no input."""
+    """Return a randomly selected upper-case letter."""
     # Add your code here
 
 
 def random_plate():
-    """Returns one randomly selected license plate. Takes no input."""
+    """Return one randomly selected license plate."""
     # Add your code here
 
 
