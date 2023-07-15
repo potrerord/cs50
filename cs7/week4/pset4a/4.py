@@ -26,8 +26,7 @@
 
 """2.1"""
 foobar = [1, 4, 9, 16, 25]
-for element in foobar:
-    element = 5
+foobar = [5 for _ in foobar]
 print(foobar)
 
 
