@@ -5,21 +5,24 @@ letters. The first digit will not be zero.
 
 Sample output might look like:
 382 HGK 819 YEU ...
-
 """
 
 
 def main():
     """asdf"""
+
+    # Constant number of license plate numbers to generate.
+
     print("Implement me!")
 
 
-def random_capital():
+def random_capital() -> str:
     """Return a randomly selected upper-case letter."""
-    # Add your code here
 
 
-def random_plate():
+
+
+def random_plate() -> str:
     """Return one randomly selected license plate."""
     # Add your code here
 
