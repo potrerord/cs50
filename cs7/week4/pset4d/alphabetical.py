@@ -48,5 +48,6 @@ def alphabetical(words: List[str]) -> List[str]:
 
     return sorted_words
 
+
 if __name__ == "__main__":
     main()
