@@ -1,11 +1,6 @@
 """
-Define a function named alphabetical that accepts a list of words as its
-only parameter and constructs/returns a list of strings with each
-of the letters in each word sorted in alphabetical, not unicode, order.
-
-For example, the call alphabetical(['apple', 'pumpkin', 'log', 'River',
-'fox', 'pond']) should return the list ['aelpp', 'ikmnppu', 'glo',
-'eiRrv', 'fox', 'dnop'].
+Prints a list of strings with each letter of each string sorted in case-
+insensitive alphabetical order.
 """
 
 
@@ -13,14 +8,17 @@ from typing import List
 
 
 def main():
-    """Call alphabetical."""
+    """Call alphabetical with test values."""
 
-    test = ['apple', 'pumpkin', 'log', 'River', 'fox', 'pond']
+    # Constant test value.
+    TEST = ['apple', 'pumpkin', 'log', 'River', 'fox', 'pond']
 
+    # Get user input (test value currently).
+    user_list = TEST
+
+    # Print result.
     print()
-    print("TEST: ['apple', 'pumpkin', 'log', 'River', 'fox', 'pond']")
-    print("GOAL: ['aelpp', 'ikmnppu', 'glo', 'eiRrv', 'fox', 'dnop']")
-    print(f"REAL: {alphabetical(test)}")
+    print(alphabetical(user_list))
     print()
 
 
@@ -37,11 +35,11 @@ def alphabetical(words: List[str]) -> List[str]:
         # Convert word to list.
         list_word = list(word)
 
-        # Sort list.
-        list_word.sort()
+        # Sort list case-insensitively.
+        sorted_list = sorted(list_word, key=str.lower)
 
         # Convert list to string.
-        sorted_word = "".join(list_word)
+        sorted_word = "".join(sorted_list)
 
         # Add string to sorted_words list.
         sorted_words.append(sorted_word)
