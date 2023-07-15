@@ -21,7 +21,12 @@ def main():
 def random_capital() -> str:
     """Return a randomly selected upper-case letter."""
 
-    randint(65, 90)
+    # ASCII values for characters A and Z.
+    A = 65
+    Z = 90
+
+    # Randomly select and convert back into capital letter to return.
+    return chr(randint(A, Z))
 
 
 def random_plate() -> str:
