@@ -26,17 +26,11 @@ def main():
 
     print()
 
-    print("  TEST: Desirable unfurnished flat in quiet residential area")
-    print("  GOAL: Dsrbl unfrnshd flt in qt rsdntl ar\n")
-    print("RESULT: ", end="")
-
     # Take user input.
-    #########################user_ad = input("Enter ad text: ")
-
-    user_ad = "Desirable unfurnished flat in quiet residential area"
+    user_ad = input("Enter ad: ")
 
     # Print the devoweled version of user input.
-    print(devowel(user_ad))
+    print(f"  Result: {devowel(user_ad)}")
 
     print()
 
@@ -61,10 +55,11 @@ def devowel(ad: str) -> str:
     removed.
     """
 
-    result = ""
-
     # Separate words in ad.
     words = ad.split()
+
+    # Initialize empty result string.
+    result = ""
 
     # Iterate through each word.
     for word in words:
@@ -77,8 +72,9 @@ def devowel(ad: str) -> str:
             if not(is_vowel(c)):
                 result += c
 
-        # Add a space.
-        result += " "
+        # Add a space after each word except the last.
+        if word != words[-1]:
+            result += " "
 
     return result
 
