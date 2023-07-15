@@ -29,7 +29,7 @@ def main():
         code = get_string("Course code: ")
 
         # If no input, then stop adding.
-        if code == "":
+        if not code:
             sys.exit(1)
 
         # Query for course.
@@ -45,7 +45,7 @@ def main():
 
         # Enroll student.
         database.execute("INSERT INTO students (person_id, course_id) \
-                         VALUES(SELECT id FROM people WHERE name = ?", name))
+                         VALUES(SELECT id FROM people WHERE name = ?)", name)
 
 if __name__ == "__main__":
     main()
