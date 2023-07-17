@@ -197,14 +197,14 @@ bakery. |
 -   okay so it looks like the theft of the duck actually took place *at*
     the bakery
 -   10:15am
--   so 10:05am <= x <= 10:25am for that one thing from above
--
-
+-   so 10:15am <= x <= 10:25am for the getaway car
 */
 
 SELECT *
   FROM bakery_logs_28th
- WHERE 
+ WHERE hour = 10
+   AND minute >= 15
+   AND minute <= 25;
 
 
 
