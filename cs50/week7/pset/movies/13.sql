@@ -17,7 +17,7 @@ SELECT p1.name
                   FROM stars AS s2
                  WHERE s2.person_id =
                        -- Kevin Bacon's ID
-                       (SELECT p2.id
+                       (SELECT p2.id AS kb_id
                           FROM people AS p2
                          WHERE p2.name = 'Kevin Bacon'
                            AND p2.birth = 1958  -- Avoid other Kevin Bacons
