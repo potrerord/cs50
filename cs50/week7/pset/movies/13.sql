@@ -5,10 +5,10 @@ also starred.
 
 SELECT p.name
   FROM (people AS p
-       JOIN stars AS s
+       INNER JOIN stars AS s
        ON p.id = s.person_id
 
-       JOIN movies AS m
+       INNER JOIN movies AS m
        ON s.movie_id = m.id
        ) AS psm
  WHERE
