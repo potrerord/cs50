@@ -9,5 +9,7 @@ SELECT name
        ON p.id = s.person_id
 
        JOIN movies AS m
-       ON 
+       ON s.movie_id = m.id
+
+ WHERE 
        ;
