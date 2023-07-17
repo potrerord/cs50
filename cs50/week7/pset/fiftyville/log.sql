@@ -280,10 +280,10 @@ SELECT *
 SELECT *
   FROM people AS p
        INNER JOIN suspect_cars AS cars
-       ON cars.license_plate = p.license_plate
+       ON p.license_plate = cars.license_plate
 
        INNER JOIN suspect_calls AS calls
-       ON calls.caller = p.phone_number;
+       ON p.phone_number = calls.caller;
 
 -- not able to narrow it down fully so i'll look for the passport info
 
@@ -296,10 +296,37 @@ SELECT *
   FROM passengers AS p
        INNER JOIN flights AS f
        ON f.id = p.flight_id
-WHERE day = 29
- ORDER BY hour, minute;
+ WHERE f.day = 29
+   AND hour = 8
+   AND minute = 20
+ ORDER BY f.hour, f.minute;
 
+-- okay now i have 8 suspect passports, making view
 
+CREATE VIEW suspect_passports AS
+SELECT passport_number
+  FROM passengers AS p
+       INNER JOIN flights AS f
+       ON f.id = p.flight_id
+ WHERE f.day = 29
+   AND hour = 8
+   AND minute = 20
+ ORDER BY f.hour, f.minute;
+
+-- gonna check people again
+
+SELECT *
+  FROM people AS p
+       INNER JOIN suspect_cars AS cars
+       ON p.license_plate = cars.license_plate
+
+       INNER JOIN suspect_calls AS calls
+       ON p.phone_number = calls.caller
+
+       INNER JOIN suspect_passports AS pass
+       ON p.passport_number = pass.passport_number;
+
+-- now it's down to sofia, bruce, and kelsey (2 calls)
 
 
 
