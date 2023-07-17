@@ -51,8 +51,12 @@ answers.txt, reflect on the following questions:
                                   (credit to Peter Dola on rpubs.com)
 
 
-    Referencing the Spotify article about how they determin color
-    gradients for the "aura", I would
+    Referencing the Spotify article about how they determine color
+    gradients for the "aura", I would look for the color combination
+    that matches up with the mood of moderate-high energy, just-below-
+    middle valence, and moderate-high danceability.
+
+    
 
 
 
