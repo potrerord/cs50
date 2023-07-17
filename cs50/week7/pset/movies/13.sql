@@ -17,5 +17,10 @@ SELECT p1.name
          WHERE p2.name = 'Kevin Bacon'
            AND p2.birth = 1958  -- Avoid other Kevin Bacons
        )
--- Exclude Kevin Bacon from list
-   AND p1.name <> 'Kevin Bacon';
+-- Exclude our Kevin Bacon from list (via id, not name)
+   AND p1.id <>
+       (SELECT p3.id
+          FROM people AS p3
+         WHERE p3.name = 'Kevin Bacon'
+           AND p3.birth = 1958
+       );
