@@ -143,8 +143,17 @@ SELECT *
 
 SELECT *
   FROM bakery_security_logs
- WHERE day  = 28;
+ WHERE day = 28;
 
+-- this looks useful and i don't want to have to run this again so i'll
+-- make a view
+
+CREATE VIEW bakery_logs_28th AS
+SELECT b.id, b.hour, b.minute, b.activity, b.license_plate
+  FROM bakery_security_logs AS b
+ WHERE day = 28;
+
+-- so now i should be able to use bakery_logs_28th when i need it again
 
 
 
