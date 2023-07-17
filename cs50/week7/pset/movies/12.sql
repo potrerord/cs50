@@ -22,3 +22,14 @@ SELECT title
           FROM people AS p
          WHERE p.name = 'Jennifer Lawrence'
        );
+
+
+-- List of movies where bcoop starred
+SELECT id
+  FROM movies AS m
+       JOIN stars AS s
+       ON m.id = s.movie_id
+
+       JOIN people AS p
+       ON s.person_id = p.id
+ WHERE s.person_id 
