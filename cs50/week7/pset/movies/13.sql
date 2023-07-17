@@ -3,7 +3,6 @@ List the names of all people who starred in a movie in which Kevin Bacon
 also starred.
 */
 
-
 -- Movie star names and IDs with matching movie IDs
 SELECT p1.name
   FROM people AS p1
@@ -18,4 +17,5 @@ SELECT p1.name
          WHERE p2.name = 'Kevin Bacon'
            AND p2.birth = 1958  -- Avoid other Kevin Bacons
        )
-   AND p1.name <> 'Kevin Bacon';  -- Exclude Kevin Bacon from list
+-- Exclude Kevin Bacon from list
+   AND p1.name <> 'Kevin Bacon';
