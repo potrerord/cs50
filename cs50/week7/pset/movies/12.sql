@@ -36,3 +36,9 @@ SELECT DISTINCT(title)
               ON s.person_id = p.id
         WHERE p.name = 'Jennifer Lawrence'
        );
+
+
+-- inner join for bcoop and jlaw movies
+SELECT  AS ,  AS
+FROM 
+INNER JOIN employees e2 ON e1.manager_id = e2.employee_id;
