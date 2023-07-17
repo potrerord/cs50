@@ -3,7 +3,7 @@ List the names of all people who have directed a movie that received a
 rating of at least 9.0.
 */
 
-SELECT people.name
+SELECT DISTINCT(people.name)  -- no duplicates
   FROM people AS p
        INNER JOIN directors AS d
        ON p.id = d.person_id
