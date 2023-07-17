@@ -279,19 +279,16 @@ SELECT *
 
 SELECT *
   FROM people AS p
-       INNER JOIN suspect_calls AS calls
-       ON calls.caller = p.phone_number;
-
-
        INNER JOIN suspect_cars AS cars
-       ON cars.license_plate = p.license_plate;
-
-
+       ON cars.license_plate = p.license_plate
 
        INNER JOIN suspect_calls AS calls
        ON calls.caller = p.phone_number;
 
+-- not able to narrow it down fully so i'll look for the passport info
 
+SELECT *
+  FROM passengers;
 
 
 
