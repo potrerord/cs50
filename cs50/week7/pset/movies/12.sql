@@ -11,5 +11,6 @@ SELECT title
        JOIN people AS p
        ON s.person_id = p.id
  WHERE (SELECT id
-         WHERE
+          FROM movies AS m
+         WHERE 
        )
