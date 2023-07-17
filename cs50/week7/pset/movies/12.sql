@@ -50,6 +50,8 @@ SELECT movies.id
 
        INNER JOIN people AS p2
        ON s2.person_id = p2.id
+ WHERE p2.name IN ('Bradley Cooper', 'Jennifer Lawrence')
+ GROUP BY m2.id
 
 
 
