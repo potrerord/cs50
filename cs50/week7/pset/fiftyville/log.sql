@@ -180,6 +180,27 @@ SELECT *
 
 -- short list now of possible cars
 
+-- I think i need the crime time so i'll check reports
+
+SELECT *
+  FROM crime_scene_reports;
+
+/*
+Found something:
+
+| 295 | 2021 | 7     | 28  | Humphrey Street      |
+Theft of the CS50 duck took place at 10:15am at the Humphrey Street
+bakery. Interviews were conducted today with three witnesses who were
+present at the time – each of their interview transcripts mentions the
+bakery. |
+
+-   okay so it looks like the theft of the duck actually took place *at*
+    the bakery
+-   10:15am
+
+
+*/
+
 
 
 
