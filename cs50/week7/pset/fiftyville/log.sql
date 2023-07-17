@@ -290,6 +290,14 @@ SELECT *
 SELECT *
   FROM passengers;
 
+-- not useful, i'll try joining with flights
+
+SELECT *
+  FROM passengers AS p
+       INNER JOIN flights AS f
+       ON f.id = p.flight_id
+WHERE day = 29
+ ORDER BY hour, minute;
 
 
 
