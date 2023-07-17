@@ -21,7 +21,8 @@ SELECT p1.name
                           FROM people AS p2
                          WHERE p2.name = 'Kevin Bacon'
                            AND p2.birth = 1958  -- Avoid other Kevin Bacons
-                       )
+                       ) AS kb_id
                )
+           AND s1.person_id <> kb_id  -- Skip our Kevin Bacon's id
        )
    AND p1.name <> 'Kevin Bacon';  -- Exclude Kevin Bacon from list
