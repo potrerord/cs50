@@ -16,7 +16,7 @@ SELECT DISTINCT(title)
  -- Movie matches with both of the following:
  WHERE m.id IN
        -- Movies starring Bradley Cooper
-       (SELECT id
+       (SELECT m.id
          FROM movies AS m
               JOIN stars AS s
               ON m.id = s.movie_id
@@ -27,7 +27,7 @@ SELECT DISTINCT(title)
        )
    AND m.id IN
        -- Movies starring Jennifer Lawrence
-       (SELECT id
+       (SELECT m.id
          FROM movies AS m
               JOIN stars AS s
               ON m.id = s.movie_id
