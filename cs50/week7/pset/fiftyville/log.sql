@@ -198,10 +198,13 @@ bakery. |
     the bakery
 -   10:15am
 -   so 10:05am <= x <= 10:25am for that one thing from above
--   
+-
 
 */
 
+SELECT *
+  FROM bakery_logs_28th
+ WHERE 
 
 
 
