@@ -206,6 +206,9 @@ SELECT *
    AND minute >= 15
    AND minute <= 25;
 
+-- this gives me 8 suspect cars, id 260-267 no gaps
+
+
 
 
 
