@@ -10,7 +10,13 @@ SELECT title
 
        JOIN people AS p
        ON s.person_id = p.id
- WHERE (SELECT id
-          FROM movies AS m
-         WHERE 
+ WHERE m.id =
+       (SELECT id
+          FROM people AS p
+         WHERE p.name = 'Bradley Cooper'
        )
+   AND m.id =
+       (SELECT id
+          FROM people AS p
+         WHERE p.name = 'Jennifer Lawrence'
+       );
