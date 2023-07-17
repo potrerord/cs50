@@ -4,7 +4,7 @@ also starred.
 */
 
 
--- Movie star names and IDs
+-- Movie star names and IDs with matching movie IDs
 SELECT p1.name
   FROM people AS p1
        INNER JOIN stars AS s1
