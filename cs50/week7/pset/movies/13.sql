@@ -12,11 +12,8 @@ SELECT name
        ON s.movie_id = m.id
  WHERE m.id IN
        -- Movies starring Kevin Bacon
-       (SELECT m.id
-          FROM movies AS m
-               JOIN stars AS s
-               ON m.id = s.movie_id
-
+       (SELECT s.movie_id
+          FROM stars AS s
                JOIN people AS p
                ON s.person_id = p.id
          WHERE p.name = 'Kevin Bacon'
