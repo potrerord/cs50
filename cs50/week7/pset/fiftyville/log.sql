@@ -241,6 +241,17 @@ SELECT p.id, p.caller, p.receiver, p.duration
  WHERE day = 28
    AND duration < 60;
 
+-- let's find the earliest flight from fiftyville the day after theft
+
+SELECT *
+  FROM flights;
+
+-- looks like airports are in id form, let's check airport data
+
+SELECT *
+  FROM airports;
+
+
 
 
 
