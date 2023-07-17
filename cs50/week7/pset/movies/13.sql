@@ -11,6 +11,8 @@ SELECT p.name
        INNER JOIN movies AS m
        ON s.movie_id = m.id
        ) AS psm
+
+       INNER JOIN 
  WHERE
        -- Movies starring Kevin Bacon
        (SELECT s.movie_id
