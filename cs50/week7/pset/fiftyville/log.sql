@@ -161,8 +161,14 @@ SELECT *
 
 -- much easier to look at now
 -- looks like it has logs from 8am to 6pm
--- 
+-- looking back at my notes it looks like only the exits are relevant,
+-- so i'll redefine the view
 
+CREATE OR REPLACE VIEW bakery_logs_28th AS
+SELECT b.id, b.hour, b.minute, b.activity, b.license_plate
+  FROM bakery_security_logs AS b
+ WHERE day = 28
+   AND activity = exit;
 
 
 
