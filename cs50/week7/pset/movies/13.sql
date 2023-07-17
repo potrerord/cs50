@@ -8,5 +8,6 @@ SELECT name
        JOIN stars AS s
        ON p.id = s.person_id
 
-       JOIN
+       JOIN movies AS m
+       ON 
        ;
