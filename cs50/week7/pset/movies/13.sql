@@ -22,4 +22,5 @@ SELECT p1.name
                          WHERE p2.name = 'Kevin Bacon'
                        )
                )
-       );
+       )
+   AND p1.name <> 'Kevin Bacon';  -- Exclude Kevin Bacon from list
