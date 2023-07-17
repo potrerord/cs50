@@ -4,13 +4,14 @@ also starred.
 */
 
 SELECT p.name
-  FROM people AS p
+  FROM (people AS p
        JOIN stars AS s
        ON p.id = s.person_id
 
        JOIN movies AS m
        ON s.movie_id = m.id
- WHERE 
+       ) AS psm
+ WHERE
        -- Movies starring Kevin Bacon
        (SELECT s.movie_id
           FROM stars AS s
