@@ -154,6 +154,14 @@ SELECT b.id, b.hour, b.minute, b.activity, b.license_plate
  WHERE day = 28;
 
 -- so now i should be able to use bakery_logs_28th when i need it again
+-- gonna check it
+
+SELECT *
+  FROM bakery_logs_28th;
+
+-- much easier to look at now
+-- looks like it has logs from 8am to 6pm
+-- 
 
 
 
