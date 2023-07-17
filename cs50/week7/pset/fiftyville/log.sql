@@ -95,6 +95,43 @@ that left the parking lot in that time frame."
 Gonna go back and glance at the interview transcripts around #161 Ruth
 to see if there's anything interesting.
 
+Found a couple others - gonna consolidate below with ruth:
+
+| 161 | Ruth        | 2021 | 7     | 28  |
+Sometime within ten minutes of the theft, I saw the thief get into a car
+in the bakery parking lot and drive away. If you have security footage
+from the bakery parking lot, you might want to look for cars that left
+the parking lot in that time frame.
+
+    -   find security footage from the bakery parking lot within 10
+        minutes of the theft
+        -   need to figure out the time of the theft
+        -   would be looking for the car/license plate, specifically
+            leaving
+
+| 162 | Eugene      | 2021 | 7     | 28  |
+I don't know the thief's name, but it was someone I recognized. Earlier
+this morning, before I arrived at Emma's bakery, I was walking by the
+ATM on Leggett Street and saw the thief there withdrawing some money.
+
+    -   ATM withdrawal from Leggett St morning of the theft
+    -   "before i arrived at emma's bakery" probably relevant - bet i
+        can find eugene in a transaction or something to figure out the
+        time he got there
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| 163 | Raymond     | 2021 | 7     | 28  |
+As the thief was leaving the bakery, they called someone who talked to
+them for less than a minute. In the call, I heard the thief say that
+they were planning to take the earliest flight out of Fiftyville
+tomorrow. The thief then asked the person on the other end of the phone
+to purchase the flight ticket.
+
+    -   call duration < 1min
+    -   call time when leaving bakery
+    -   earliest flight from Fiftyville july 29 2021
+    -   accomplice purchased flight ticket, would be under their name
+*/
+
 
 
 
