@@ -10,7 +10,7 @@ SELECT name
 
        JOIN movies AS m
        ON s.movie_id = m.id
- WHERE m.id =
+ WHERE m.id IN
        -- Movies starring Kevin Bacon
        (SELECT m.id
           FROM movies AS m
