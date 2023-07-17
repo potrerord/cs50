@@ -4,7 +4,7 @@ also starred.
 */
 
 
--- Names of stars of movies starring Kevin Bacon
+-- Movie star names and IDs
 SELECT p1.name
   FROM people AS p1
        INNER JOIN stars AS s1
