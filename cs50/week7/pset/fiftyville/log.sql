@@ -151,7 +151,7 @@ SELECT *
 CREATE VIEW bakery_logs_28th AS
 SELECT b.id, b.hour, b.minute, b.activity, b.license_plate
   FROM bakery_security_logs AS b
- WHERE day = 28;
+ WHERE b.day = 28;
 
 -- so now i should be able to use bakery_logs_28th when i need it again
 -- gonna check it
@@ -164,11 +164,19 @@ SELECT *
 -- looking back at my notes it looks like only the exits are relevant,
 -- so i'll redefine the view
 
-CREATE OR REPLACE VIEW bakery_logs_28th AS
+-- deleting view
+DROP VIEW bakery_logs_28th;
+
+-- making new one
+CREATE VIEW bakery_logs_28th AS
 SELECT b.id, b.hour, b.minute, b.activity, b.license_plate
   FROM bakery_security_logs AS b
- WHERE day = 28
-   AND activity = exit;
+ WHERE b.day = 28
+   AND b.activity = 'exit';
+
+-- checking it
+SELECT *
+  FROM bakery_logs_28th;
 
 
 
