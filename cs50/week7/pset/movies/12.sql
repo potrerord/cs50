@@ -10,4 +10,5 @@ SELECT title
 
        JOIN people AS p
        ON s.person_id = p.id
- WHERE p.name IN ('Bradley Cooper', 'Jennifer Lawrence');
+ WHERE 'Bradley Cooper' = p.name
+   AND 'Jennifer Lawrence' = p.name;
