@@ -178,6 +178,8 @@ SELECT b.id, b.hour, b.minute, b.activity, b.license_plate
 SELECT *
   FROM bakery_logs_28th;
 
+-- short list now of possible cars
+
 
 
 
