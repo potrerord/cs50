@@ -17,6 +17,11 @@ answers.txt, reflect on the following questions:
                AVG(danceability)
           FROM songs;
 
+    RESULTS:
+    AVG(energy) = 0.65906
+    AVE(valence) = 0.484443
+    AVG(danceability) = 0.71646
+
     Then, with some quick Google research, it looks like Spotify might
     use the following definitions for its calculation of the three
     values:
@@ -47,7 +52,7 @@ answers.txt, reflect on the following questions:
 
 
     Referencing the Spotify article about how they determin color
-    gradients for the "aura", I would 
+    gradients for the "aura", I would
 
 
 
