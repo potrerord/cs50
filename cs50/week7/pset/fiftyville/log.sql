@@ -132,6 +132,12 @@ to purchase the flight ticket.
     -   accomplice purchased flight ticket, would be under their name
 */
 
+-- let's look at the bakery info
+
+SELECT *
+  FROM bakery_security_logs;
+
+
 
 
 
