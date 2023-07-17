@@ -11,3 +11,6 @@ SELECT title
        JOIN ratings AS r
        ON m.id = r.movie_id
  WHERE s.person_id =
+       SELECT id
+         FROM people
+        WHERE name = 'Chadwick Boseman'
