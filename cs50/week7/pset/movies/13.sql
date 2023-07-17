@@ -18,4 +18,4 @@ SELECT name
                ON s.person_id = p.id
          WHERE p.name = 'Kevin Bacon'
        )
-   AND p.name != 'Kevin Bacon';
+   AND p.name <> 'Kevin Bacon';
