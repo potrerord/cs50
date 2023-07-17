@@ -8,7 +8,7 @@ SELECT p1.name
   FROM people AS p1
        INNER JOIN stars AS s1
        ON p1.id = s1.person_id
- WHERE s1.movie_id =
+ WHERE s1.movie_id IN
        -- Movie IDs of movies starring Kevin Bacon
        (SELECT s2.movie_id
           FROM stars AS s2
