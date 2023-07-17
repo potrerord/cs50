@@ -9,4 +9,4 @@ SELECT title
        JOIN ratings AS r
        ON m.id = r.movie_id
  WHERE m.year = 2010
- ORDER BY rating, title;
+ ORDER BY rating DESC, title;
