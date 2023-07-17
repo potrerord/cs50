@@ -279,14 +279,17 @@ SELECT *
 
 SELECT *
   FROM people AS p
-       INNER JOIN suspect_cars AS cars
-       ON cars.license_plate = p.license_plate
-
        INNER JOIN suspect_calls AS calls
        ON calls.caller = p.phone_number;
 
 
+       INNER JOIN suspect_cars AS cars
+       ON cars.license_plate = p.license_plate;
 
+
+
+       INNER JOIN suspect_calls AS calls
+       ON calls.caller = p.phone_number;
 
 
 
