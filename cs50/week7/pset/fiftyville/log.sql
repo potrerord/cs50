@@ -59,20 +59,41 @@ took place on Humphrey Street.
     -   WILL CONTAIN ITEM #3: NAME OF ACCOMPLICE
     -   this has the primary key id thing too so maybe it connects to
         the other tables? seems crazy to associate a crime id with a
-        person
+        person with a phone call etc though
 
 10) bakery_security_logs
-    -
-
+    -   idk what the bakery's relevance is, maybe getaway car? license
+        plate number is one of the things in here, activity could be
+        useful too maybe
 */
 
+-- Gonna look at the transcripts.
+SELECT *
+  FROM interviews;
 
+-- Too much info lol god there's so many of them
+-- 191 in total, looks like they're chronological
+-- don't wanna read all these maybe i'll find the word duck or something
+SELECT *
+  FROM interviews
+ WHERE transcript LIKE '%duck%';
 
+-- Literally not a single one that uses the word "duck"?
+-- I'll try "theft"
 
+SELECT *
+  FROM interviews
+ WHERE transcript LIKE '%theft%';
 
+/* Perfect, looks like #161 Ruth 2021 07/28 says this:
 
+"Sometime within ten minutes of the theft, I saw the thief get into a
+car in the bakery parking lot and drive away. If you have security
+footage from the bakery parking lot, you might want to look for cars
+that left the parking lot in that time frame."
 
-
+Gonna go back and glance at the interview transcripts around #161 Ruth
+to see if there's anything interesting.
 
 
 
