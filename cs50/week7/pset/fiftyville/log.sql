@@ -137,6 +137,14 @@ to purchase the flight ticket.
 SELECT *
   FROM bakery_security_logs;
 
+-- okay there's 468 of these, gives time, entrance/exit, license plate
+-- date 25 - 31, all july 2021, military time
+-- gonna consolidate this to only the relevant day
+
+SELECT *
+  FROM bakery_security_logs
+ WHERE day  = 28;
+
 
 
 
