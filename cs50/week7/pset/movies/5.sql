@@ -6,5 +6,5 @@ chronological order.
 SELECT title,
        year
   FROM movies
- WHERE title LIKE 'Harry Potter and the %'
+ WHERE title LIKE '%Harry Potter%'
  ORDER BY year;
