@@ -8,7 +8,7 @@ SELECT title
        JOIN stars AS s
        ON m.id = s.movie_id
 
-       RIGHT JOIN people AS p
+       JOIN people AS p
        ON s.person_id = p.id
-       AND p.name = 'Bradley Cooper'
-       AND p.name = 'Jennifer Lawrence';
+          AND (p.name = 'Bradley Cooper'
+          OR  p.name = 'Jennifer Lawrence';
