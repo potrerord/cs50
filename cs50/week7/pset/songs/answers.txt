@@ -56,15 +56,27 @@ answers.txt, reflect on the following questions:
     that matches up with the mood of moderate-high energy, just-below-
     middle valence, and moderate-high danceability.
 
-    
-
+    Orange and yellow would be my selections, since the descriptions for
+    these two colors matches up the most with high-energy music that is
+    not particularly emotionally extreme.
 
 
 2.  Hypothesize about why the way you’ve calculated this aura might not
     be very representative of the listener.  What better ways of
     calculating this aura would you propose?
 
-    asdfsadfasdfasdf
+    On a personal level, I don't think two adjectives or two colors is a
+    sufficient palette size to describe a person's music tastes. I know
+    my own music listening occupies a tremendous range of purposes -
+    from emotional connection to productivity to sleep to socializing.
+    None of these contexts would define me as a person in whole, and I
+    think it's silly to try and condense something as complex as a
+    personality into something so concise. At the very least, I would
+    want to take dozens of times more averages from the data and assign
+    values to a color spectrum that is interpretively meaningful from
+    a layperson's eye. Realistically, the usefulness of these types of
+    displays comes from data visualization. It's like a word cloud but
+    for colors. I would want vastly more data to be represented.
 
 
 
