@@ -2,7 +2,7 @@
 
 SELECT name
   FROM people AS p
-       RIGHT JOIN stars AS s
+       JOIN stars AS s
        ON p.id = s.person_id
 
        JOIN movies AS m

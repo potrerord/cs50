@@ -3,3 +3,11 @@ List the titles of the five highest rated movies (in order) that
 Chadwick Boseman starred in, starting with the highest rated.
 */
 
+SELECT title
+  FROM movies AS m
+       JOIN stars AS s
+       ON m.id = s.movie_id
+
+       JOIN ratings AS r
+       ON m.id = r.movie_id
+ WHERE s.person_id =
