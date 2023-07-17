@@ -327,6 +327,24 @@ SELECT *
        ON p.passport_number = pass.passport_number;
 
 -- now it's down to sofia, bruce, and kelsey (2 calls)
+-- i have a hunch it's kelsey
+-- need more info
+-- i'll check atm data
+
+SELECT *
+  FROM atm_transactions;
+
+-- okay it looks like there's a connection from atm_transactions to bank
+-- accounts through account number, then to person_id which should give
+-- me names.
+
+SELECT *
+  FROM people AS p
+       JOIN bank_accounts AS b
+       ON p.id = b.person_id
+
+       JOIN atm_transactions AS a
+       ON b.account_number = a.account_number;
 
 
 
