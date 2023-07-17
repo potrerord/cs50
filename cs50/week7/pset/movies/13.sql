@@ -9,3 +9,4 @@ SELECT name
        ON p.id = s.person_id
 
        JOIN
+       ;
