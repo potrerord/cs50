@@ -206,7 +206,40 @@ SELECT *
    AND minute >= 15
    AND minute <= 25;
 
--- this gives me 8 suspect cars, id 260-267 no gaps
+-- this gives me 8 suspect cars, id 260-267 no gaps - creating view
+
+CREATE VIEW suspect_cars AS
+SELECT b.id, b.hour, b.minute, b.license_plate
+  FROM bakery_logs_28th AS b
+ WHERE hour = 10
+   AND minute >= 15
+   AND minute <= 25;
+
+-- gonna check phone records
+
+SELECT *
+  FROM phone_calls;
+
+-- narrowing it down
+
+SELECT *
+  FROM phone_calls
+ WHERE day = 28;
+
+-- duration looks like it's in seconds so narrowing it down further
+
+SELECT *
+  FROM phone_calls
+ WHERE day = 28
+   AND duration < 60;
+
+-- 9 suspect calls, i'll make a view
+
+CREATE VIEW suspect_calls AS
+SELECT p.id, p.caller, p.receiver, p.duration
+  FROM phone_calls AS p
+ WHERE day = 28
+   AND duration < 60;
 
 
 
