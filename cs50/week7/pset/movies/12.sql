@@ -12,23 +12,27 @@ SELECT DISTINCT(title)
        ON s.person_id = p.id
           AND (p.name = 'Bradley Cooper'
                OR p.name = 'Jennifer Lawrence')
+
+ -- Movie matches with both of the following:
  WHERE m.id IN
-       (SELECT m.id
+       -- Movies starring Bradley Cooper
+       (SELECT id
          FROM movies AS m
               JOIN stars AS s
               ON m.id = s.movie_id
 
               JOIN people AS p
               ON s.person_id = p.id
-              WHERE p.name = 'Bradley Cooper'
+        WHERE p.name = 'Bradley Cooper'
        )
    AND m.id IN
-       (SELECT m.id
+       -- Movies starring Jennifer Lawrence
+       (SELECT id
          FROM movies AS m
               JOIN stars AS s
               ON m.id = s.movie_id
 
               JOIN people AS p
               ON s.person_id = p.id
-              WHERE p.name = 'Jennifer Lawrence'
+        WHERE p.name = 'Jennifer Lawrence'
        );
