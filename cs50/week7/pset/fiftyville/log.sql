@@ -253,10 +253,8 @@ SELECT *
 
 SELECT *
   FROM flights AS f
-       FULL JOIN airports AS a1
-       ON f.origin_airport_id = a1.id
-          AND f.destination_airport_id = a1.id
- GROUP BY f.id;
+       JOIN airports AS a1
+       ON f.origin_airport_id = a1.id;
 
 
 
