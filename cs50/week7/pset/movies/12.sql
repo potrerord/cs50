@@ -10,7 +10,7 @@ SELECT title
 
        JOIN people AS p
        ON s.person_id = p.id
- WHERE m.id =
+ WHERE .id =
        (SELECT id
           FROM people AS p
          WHERE p.name = 'Bradley Cooper'
