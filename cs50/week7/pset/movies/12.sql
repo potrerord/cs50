@@ -10,6 +10,8 @@ SELECT title
 
        JOIN people AS p
        ON s.person_id = p.id
+          AND (p.name = 'Bradley Cooper'
+               OR p.name = 'Jennifer Lawrence')
  WHERE .id =
        (SELECT id
           FROM people AS p
