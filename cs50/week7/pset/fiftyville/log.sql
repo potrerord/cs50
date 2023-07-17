@@ -197,6 +197,8 @@ bakery. |
 -   okay so it looks like the theft of the duck actually took place *at*
     the bakery
 -   10:15am
+-   so 10:05am <= x <= 10:25am for that one thing from above
+-   
 
 */
 
