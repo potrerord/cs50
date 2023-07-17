@@ -4,5 +4,5 @@ chronological order.
 */
 SELECT movies.title, movies.year
   FROM movies AS m
- WHERE m.title LIKE '%Harry Potter%'
+ WHERE m.title LIKE 'Harry Potter%'
  ORDER BY m.year;

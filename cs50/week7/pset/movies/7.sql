@@ -3,7 +3,7 @@ List all movies released in 2010 and their ratings, in descending order
 by rating. For movies with the same rating, order them alphabetically by
 title.
 */
-SELECT title, rating
+SELECT movies.title, ratings.rating
   FROM movies AS m
        INNER JOIN ratings AS r
        ON m.id = r.movie_id
