@@ -4,10 +4,10 @@ Chadwick Boseman starred in, starting with the highest rated.
 */
 SELECT movies.title
   FROM movies AS m
-       JOIN stars AS s
+       INNER JOIN stars AS s
        ON m.id = s.movie_id
 
-       JOIN ratings AS r
+       INNER JOIN ratings AS r
        ON m.id = r.movie_id
  WHERE s.person_id =
        (SELECT id
