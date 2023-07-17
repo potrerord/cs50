@@ -20,6 +20,7 @@ SELECT p1.name
                        (SELECT p2.id
                           FROM people AS p2
                          WHERE p2.name = 'Kevin Bacon'
+                           AND p2.birth = 1958  -- Avoid other Kevin Bacons
                        )
                )
        )
