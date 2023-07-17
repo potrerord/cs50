@@ -11,5 +11,5 @@ SELECT name
        JOIN movies AS m
        ON s.movie_id = m.id
 
- WHERE 
+ WHERE s
        ;
