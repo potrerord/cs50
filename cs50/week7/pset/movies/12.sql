@@ -2,7 +2,7 @@
 List the titles of all movies in which both Bradley Cooper and Jennifer
 Lawrence starred.
 */
-SELECT movies.title
+SELECT m.title
   FROM movies AS m
        INNER JOIN stars AS s
        ON m.id = s.movie_id
