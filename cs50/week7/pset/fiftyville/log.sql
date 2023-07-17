@@ -251,10 +251,41 @@ SELECT *
 SELECT *
   FROM airports;
 
+-- okay back to flights
+
 SELECT *
-  FROM flights AS f
-       JOIN airports AS a1
-       ON f.origin_airport_id = a1.id;
+  FROM flights
+ WHERE day = 29
+ ORDER BY hour, minute;
+
+/*
+looks like the earliest flight on 7/29 is this:
+
+| id | origin_airport_id | destination_airport_id | year | month | day | hour | minute |
++----+-------------------+------------------------+------+-------+-----+------+--------+
+| 36 | 8                 | 4                      | 2021 | 7     | 29  | 8    | 20
+*/
+
+-- that's departing from fiftyville and heading to laguardia, so that's
+-- one piece of the puzzle down! NYC
+
+-- let's check the people data
+
+SELECT *
+  FROM people;
+
+-- ooooh we have license plates and phone numbers, excellent. passports
+-- will be useful too. let's cross check the phone/license info
+
+SELECT *
+  FROM people AS p
+       INNER JOIN suspect_cars AS cars
+       ON cars.license_plate = p.license_plate
+
+       INNER JOIN suspect_calls AS calls
+       ON calls.caller = p.phone_number;
+
+
 
 
 
