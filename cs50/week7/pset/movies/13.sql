@@ -5,5 +5,7 @@ also starred.
 
 SELECT name
   FROM people AS p
-       JOIN movies AS m
-       ON person_id = m.id
+       JOIN stars AS s
+       ON p.id = s.person_id
+
+       JOIN
