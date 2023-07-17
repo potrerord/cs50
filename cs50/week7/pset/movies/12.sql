@@ -11,3 +11,4 @@ SELECT DISTINCT(title)
        ON s.person_id = p.id
  WHERE p.name IN ('Bradley Cooper', 'Jennifer Lawrence')
  GROUP BY m.id;
+ 
