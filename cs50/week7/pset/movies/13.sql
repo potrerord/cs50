@@ -15,13 +15,10 @@ SELECT p1.name
                -- Movie IDs starring Kevin Bacon
                (SELECT s2.movie_id
                   FROM stars AS s2
-                 WHERE s2.person_id =
-                       -- Kevin Bacon's ID
-                       (SELECT p2.id AS kb_id
-                          FROM people AS p2
-                         WHERE p2.name = 'Kevin Bacon'
-                           AND p2.birth = 1958  -- Avoid other Kevin Bacons
-                       )
+                       INNER JOIN people AS p2
+                       ON s2.person_id = p2.id
+                 WHERE p2.name = 'Kevin Bacon'
+                   AND p2.birth = 1958  -- Avoid other Kevin Bacons
                )
        )
    AND p1.name <> 'Kevin Bacon';  -- Exclude Kevin Bacon from list
