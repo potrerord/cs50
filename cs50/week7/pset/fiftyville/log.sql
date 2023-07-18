@@ -410,17 +410,23 @@ SELECT p.name, p.phone_number, p.passport_number, p.license_plate
 SELECT *
   FROM people AS p
        INNER JOIN suspect_cars AS cars
-       ON p.license_plate IN cars.license_plate
+       ON p.license_plate = cars.license_plate
 
        INNER JOIN suspect_calls AS calls
-       ON p.phone_number IN calls.caller
+       ON p.phone_number = calls.caller
 
        INNER JOIN suspect_passports AS pass
-       ON p.passport_number IN pass.passport_number
+       ON p.passport_number = pass.passport_number
 
        INNER JOIN suspect_atms AS a
-       ON p.name IN a.name;
+       ON p.name = a.name;
 
+-- omg it's bruce
+-- and it looks like his call was to (375) 555-8161 let's get em
 
+SELECT *
+  FROM people AS p
+ WHERE p.phone_number = '(375) 555-8161';
 
-
+-- boom it's robin
+-- case closed
