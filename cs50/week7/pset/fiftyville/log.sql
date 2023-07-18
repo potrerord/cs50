@@ -297,20 +297,20 @@ SELECT *
        INNER JOIN flights AS f
        ON f.id = p.flight_id
  WHERE f.day = 29
-   AND hour = 8
-   AND minute = 20
+   AND f.hour = 8
+   AND f.minute = 20
  ORDER BY f.hour, f.minute;
 
 -- okay now i have 8 suspect passports, making view
 
 CREATE VIEW suspect_passports AS
-SELECT passport_number
+SELECT p.passport_number
   FROM passengers AS p
        INNER JOIN flights AS f
        ON f.id = p.flight_id
  WHERE f.day = 29
-   AND hour = 8
-   AND minute = 20
+   AND f.hour = 8
+   AND f.minute = 20
  ORDER BY f.hour, f.minute;
 
 -- gonna check people again
