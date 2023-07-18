@@ -360,6 +360,21 @@ SELECT *
 
 -- that looks good, i only need certain columns though
 
+SELECT p.name, p.phone_number, p.passport_number, p.license_plate,
+       a.year, a.month, a.day, a.atm_location, a.transaction_type
+  FROM people AS p
+       JOIN bank_accounts AS b
+       ON p.id = b.person_id
+
+       JOIN atm_transactions AS a
+       ON b.account_number = a.account_number
+ WHERE a.year = 2021
+   AND a.month = 7
+   AND a.day = 28;
+
+-- okay now i remember the atm was at a specific location, i'll check
+-- leggett st and it was a withdrawal
+
 SELECT p.name, p.phone_number, p.passport_number, p.license_plate
   FROM people AS p
        JOIN bank_accounts AS b
@@ -367,11 +382,44 @@ SELECT p.name, p.phone_number, p.passport_number, p.license_plate
 
        JOIN atm_transactions AS a
        ON b.account_number = a.account_number
- WHERE a.month = 7
-   AND a.day = 28;
+ WHERE a.year = 2021
+   AND a.month = 7
+   AND a.day = 28
+   AND a.atm_location = 'Leggett Street'
+   AND transaction_type = 'withdraw';
 
+-- 8 suspect atm users, making view
 
+CREATE VIEW suspect_atms AS
+SELECT p.name, p.phone_number, p.passport_number, p.license_plate
+  FROM people AS p
+       JOIN bank_accounts AS b
+       ON p.id = b.person_id
 
+       JOIN atm_transactions AS a
+       ON b.account_number = a.account_number
+ WHERE a.year = 2021
+   AND a.month = 7
+   AND a.day = 28
+   AND a.atm_location = 'Leggett Street'
+   AND transaction_type = 'withdraw';
+
+-- going back to my main suspects now with the additional list to cross
+-- check
+
+SELECT *
+  FROM people AS p
+       INNER JOIN suspect_cars AS cars
+       ON p.license_plate IN cars.license_plate
+
+       INNER JOIN suspect_calls AS calls
+       ON p.phone_number IN calls.caller
+
+       INNER JOIN suspect_passports AS pass
+       ON p.passport_number IN pass.passport_number
+
+       INNER JOIN suspect_atms AS a
+       ON p.name IN a.name;
 
 
 
