@@ -346,7 +346,29 @@ SELECT *
        JOIN atm_transactions AS a
        ON b.account_number = a.account_number;
 
+-- way too much info, narrowing it down by date:
 
+SELECT *
+  FROM people AS p
+       JOIN bank_accounts AS b
+       ON p.id = b.person_id
+
+       JOIN atm_transactions AS a
+       ON b.account_number = a.account_number
+ WHERE a.month = 7
+   AND a.day = 28;
+
+-- that looks good, i only need certain columns though
+
+SELECT p.name, p.phone_number, p.passport_number, p.license_plate
+  FROM people AS p
+       JOIN bank_accounts AS b
+       ON p.id = b.person_id
+
+       JOIN atm_transactions AS a
+       ON b.account_number = a.account_number
+ WHERE a.month = 7
+   AND a.day = 28;
 
 
 
