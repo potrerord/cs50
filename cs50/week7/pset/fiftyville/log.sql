@@ -211,9 +211,9 @@ SELECT *
 CREATE VIEW suspect_cars AS
 SELECT b.id, b.hour, b.minute, b.license_plate
   FROM bakery_logs_28th AS b
- WHERE hour = 10
-   AND minute >= 15
-   AND minute <= 25;
+ WHERE b.hour = 10
+   AND b.minute >= 15
+   AND b.minute <= 25;
 
 -- gonna check phone records
 
@@ -238,8 +238,8 @@ SELECT *
 CREATE VIEW suspect_calls AS
 SELECT p.id, p.caller, p.receiver, p.duration
   FROM phone_calls AS p
- WHERE day = 28
-   AND duration < 60;
+ WHERE p.day = 28
+   AND p.duration < 60;
 
 -- let's find the earliest flight from fiftyville the day after theft
 
@@ -350,10 +350,10 @@ SELECT *
 
 SELECT *
   FROM people AS p
-       JOIN bank_accounts AS b
+       INNER JOIN bank_accounts AS b
        ON p.id = b.person_id
 
-       JOIN atm_transactions AS a
+       INNER JOIN atm_transactions AS a
        ON b.account_number = a.account_number
  WHERE a.month = 7
    AND a.day = 28;
@@ -363,10 +363,10 @@ SELECT *
 SELECT p.name, p.phone_number, p.passport_number, p.license_plate,
        a.year, a.month, a.day, a.atm_location, a.transaction_type
   FROM people AS p
-       JOIN bank_accounts AS b
+       INNER JOIN bank_accounts AS b
        ON p.id = b.person_id
 
-       JOIN atm_transactions AS a
+       INNER JOIN atm_transactions AS a
        ON b.account_number = a.account_number
  WHERE a.year = 2021
    AND a.month = 7
@@ -377,32 +377,32 @@ SELECT p.name, p.phone_number, p.passport_number, p.license_plate,
 
 SELECT p.name, p.phone_number, p.passport_number, p.license_plate
   FROM people AS p
-       JOIN bank_accounts AS b
+       INNER JOIN bank_accounts AS b
        ON p.id = b.person_id
 
-       JOIN atm_transactions AS a
+       INNER JOIN atm_transactions AS a
        ON b.account_number = a.account_number
  WHERE a.year = 2021
    AND a.month = 7
    AND a.day = 28
    AND a.atm_location = 'Leggett Street'
-   AND transaction_type = 'withdraw';
+   AND a.transaction_type = 'withdraw';
 
 -- 8 suspect atm users, making view
 
 CREATE VIEW suspect_atms AS
 SELECT p.name, p.phone_number, p.passport_number, p.license_plate
   FROM people AS p
-       JOIN bank_accounts AS b
+       INNER JOIN bank_accounts AS b
        ON p.id = b.person_id
 
-       JOIN atm_transactions AS a
+       INNER JOIN atm_transactions AS a
        ON b.account_number = a.account_number
  WHERE a.year = 2021
    AND a.month = 7
    AND a.day = 28
    AND a.atm_location = 'Leggett Street'
-   AND transaction_type = 'withdraw';
+   AND a.transaction_type = 'withdraw';
 
 -- going back to my main suspects now with the additional list to cross
 -- check
