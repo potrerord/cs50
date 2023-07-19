@@ -28,17 +28,20 @@
                             // Change button color to red.
                             buttonsPart1[i].style.backgroundColor = 'red';
 
+                            // Display text result.
                             document.querySelector('#feedback1').innerHTML = 'Incorrect.';
                         } else {
 
                             // Change button color to non-default full green.
                             buttonsPart1[i].style.backgroundColor = 'rgb(0, 255, 0)';
+
+                            // Display text result.
                             document.querySelector('#feedback1').innerHTML = 'Correct!';
                         }
                     });
                 }
 
-                // Check free response submission.
+                // Check Part 2 free response submission.
                 document.querySelector('button.part2').addEventListener('click', function() {
                     let input = document.querySelector('input');
                     if (input.value.toLowerCase() === 'kodiak') {
@@ -49,6 +52,37 @@
                         document.querySelector('#feedback2').innerHTML = 'Incorrect.';
                     }
                 });
+
+                // Get all buttons in part 3.
+                let buttonsPart3 = document.querySelectorAll('button.part3');
+
+                // Add event listeners to each button.
+                for (let i = 0; i < buttonsPart3.length; i++) {
+                    buttonsPart3[i].addEventListener('click', function() {
+
+                        // Reset all part1 button colors when any button is clicked.
+                        for (let i = 0; i < buttonsPart3.length; i++) {
+                            buttonsPart3[i].style.backgroundColor = '';
+                        }
+
+                        // If incorrect button is clicked,
+                        if (buttonsPart3[i].classList.contains('incorrect')) {
+
+                            // Change button color to red.
+                            buttonsPart3[i].style.backgroundColor = 'red';
+
+                            // Display text result.
+                            document.querySelector('#feedback3').innerHTML = 'Incorrect.';
+                        } else {
+
+                            // Change button color to non-default full green.
+                            buttonsPart3[i].style.backgroundColor = 'rgb(0, 255, 0)';
+
+                            // Display text result.
+                            document.querySelector('#feedback3').innerHTML = 'Correct!';
+                        }
+                    });
+                }
             });
         </script>
     </head>
@@ -83,11 +117,11 @@
             <div class="section">
                 <h2>Part 3: True or False</h2>
                 <hr>
-                <h3>Select TRUE or FALSE: The </h3>
-                <input autocomplete="off" autofocus name="q" placeholder="Enter your response." type="search">
-                <button class="part2" type="submit">Submit</button>
+                <h3>Select TRUE or FALSE: El Capitan is the final Apple desktop OS to feature the "OS X" naming convention.</h3>
+                <button class="part3 correct">TRUE</button>
+                <button class="part3 incorrect">FALSE</button>
 
-                <p id="feedback2"></p>
+                <p id="feedback3"></p>
             </div>
         </div>
     </body>
