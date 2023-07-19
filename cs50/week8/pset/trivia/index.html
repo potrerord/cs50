@@ -26,9 +26,13 @@
             // Wait for DOM content to load.
             document.addEventListener('DOMContentLoaded', function() {
                 for (let i = 0; i < buttonsPart1.length; i++) {
-                    .addEventListener('click', function() {
+                    buttons[i].addEventListener('click', function() {
+
+                        // Reset all part1 button colors when any button is clicked.
                         buttonColorReset('part1')
-                        if document.querySelector('.' + ) {
+
+
+                        if buttons[i].querySelector('.' + ) {
 
                             // Change button color to non-default full green.
                             button.style.backgroundColor = 'rgb(0, 255, 0)';
