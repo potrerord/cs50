@@ -7,9 +7,11 @@
         <title>Trivia!</title>
         <script>
 
-            // Define color reset function.
-            function colorResetButtons(className) {
-                let elements = document.querySelectorAll(".button", "." + className)
+            // Define color reset function that takes any number of parameters.
+            function colorReset(...classNames) {
+                classNames.forEach(className => {
+                    let elements = document.querySelectorAll(".button", "." + className);
+                })
             }
 
             // Wait for DOM content to load.
