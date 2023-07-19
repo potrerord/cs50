@@ -26,21 +26,21 @@
             // Wait for DOM content to load.
             document.addEventListener('DOMContentLoaded', function() {
                 for (let i = 0; i < buttonsPart1.length; i++) {
-                    buttons[i].addEventListener('click', function() {
+                    buttonsPart1[i].addEventListener('click', function() {
 
                         // Reset all part1 button colors when any button is clicked.
                         buttonColorReset('part1')
 
                         // If incorrect button is clicked,
-                        if (buttons[i].classList.contains('incorrect')) {
+                        if (buttonsPart1[i].classList.contains('incorrect')) {
                             // Change button color to red.
-                            buttons[i].style.backgroundColor = 'Red';
+                            buttonsPart1[i].style.backgroundColor = 'Red';
                         }
 
                         // If incorrect button is clicked,
                         else {
                             // Change button color to non-default full green.
-                            buttons[i].style.backgroundColor = 'rgb(0, 255, 0)';
+                            buttonsPart1[i].style.backgroundColor = 'rgb(0, 255, 0)';
                         }
                     });
                 };
