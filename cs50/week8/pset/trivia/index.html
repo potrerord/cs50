@@ -11,6 +11,9 @@
             function colorReset(...classNames) {
                 let selectorArgs = classNames.map(name => "." + name.join(", "));
                 let elements = document.querySelectorAll(selectorArgs);
+                for (let i = 0; i < elements.length; i++) {
+                    
+                }
             }
 
             // Wait for DOM content to load.
