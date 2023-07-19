@@ -7,7 +7,7 @@
         <title>Trivia!</title>
         <script>
 
-            // Define color reset function that takes any number of class name parameters.
+            // Color reset function for buttons that accepts any number of parameters.
             function buttonColorReset(...classNames) {
                 let selectorArgs = classNames.map(name => '.' + name.join(', '));
                 let elements = document.querySelectorAll('.button', selectorArgs);
@@ -20,7 +20,8 @@
             document.addEventListener('DOMContentLoaded', function() {
                 for (let i = 0; i < buttons.length; i++) {
                     .addEventListener('click', function() {
-
+                        buttonColorReset('part1')
+                        for 
 
 
                     });
