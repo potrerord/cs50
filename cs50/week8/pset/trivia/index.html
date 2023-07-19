@@ -28,10 +28,7 @@
                             buttonsPart1[i].style.backgroundColor = 'red';
 
                             document.querySelector('#feedback1').innerHTML = 'Incorrect.';
-                        }
-
-                        // If incorrect button is clicked,
-                        else {
+                        } else {
 
                             // Change button color to non-default full green.
                             buttonsPart1[i].style.backgroundColor = 'rgb(0, 255, 0)';
@@ -41,8 +38,16 @@
                 }
 
                 // Check free response submission.
-                document.querySelector()
-
+                document.querySelector().addEventListener('click', function() {
+                    let input = document.querySelector('input');
+                    if (input.value.toLowerCase() === 'kodiak') {
+                        input.style.backgroundColor = 'rgb(0, 255, 0)';
+                        document.querySelector('#feedback2').innerHTML = 'Correct!';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#feedback2').innerHTML = 'Incorrect.';
+                    }
+                });
             });
         </script>
     </head>
