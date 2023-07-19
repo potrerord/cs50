@@ -10,10 +10,12 @@
             // Color reset function for buttons that accepts any number of parameters.
             function buttonColorReset(...classNames) {
 
-                // Concatenate className
-                let selectorArgs = classNames.map(name => '.' + name.join(', '));
-                let elements = document.querySelectorAll('.button', selectorArgs);
-                for (let i = 0; i < elements.length; i++) {
+                // Concatenate classNames for querySelectorAll parameters.
+                let selectorParams = classNames.map(name => '.' + name.join(', '));
+
+                // Get buttons specified by function arguments.
+                let buttons = document.querySelectorAll('.button', selectorParams);
+                for (let i = 0; i < buttons.length; i++) {
                     button.style.backgroundColor = '';
                 }
             }
