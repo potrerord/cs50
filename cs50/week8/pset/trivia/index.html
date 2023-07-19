@@ -6,6 +6,7 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
+
             // Wait for DOM content to load.
             document.addEventListener('DOMContentLoaded', function() {
 
@@ -39,7 +40,14 @@
 
                 // Check free response submission.
                 document.querySelector('button.part2').addEventListener('click', function() {
-                    
+                    let input = document.querySelector('input');
+                    if (input.value.toLowerCase() === 'kodiak') {
+                        input.style.backgroundColor = 'rgb(0, 255, 0)';
+                        document.querySelector('#feedback2').innerHTML = 'Correct!';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#feedback2').innerHTML = 'Incorrect.';
+                    }
                 });
             });
         </script>
