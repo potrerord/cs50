@@ -6,39 +6,31 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-
-            // Color reset function for buttons that accepts any number of parameters.
-            function buttonColorReset(...classNames) {
-
-                // Concatenate classNames for querySelectorAll parameters.
-                let selectorParams = classNames.map(name => '.' + name.join(', '));
-
-                // Get buttons specified by function arguments.
-                let buttons = document.querySelectorAll('.button', selectorParams);
-                for (let i = 0; i < buttons.length; i++) {
-                    button.style.backgroundColor = '';
-                }
-            }
-
             // Wait for DOM content to load.
             document.addEventListener('DOMContentLoaded', function() {
+
                 // Get all buttons in part 1.
                 let buttonsPart1 = document.querySelectorAll('button.part1');
 
                 // Add event listeners to each button.
                 for (let i = 0; i < buttonsPart1.length; i++) {
                     buttonsPart1[i].addEventListener('click', function() {
+
                         // Reset all part1 button colors when any button is clicked.
-                        buttonColorReset('part1');
+                        for (let i = 0; i < buttonsPart1.length; i++) {
+                            buttonsPart1[i].style.backgroundColor = '';
+                        }
 
                         // If incorrect button is clicked,
                         if (buttonsPart1[i].classList.contains('incorrect')) {
+
                             // Change button color to red.
                             buttonsPart1[i].style.backgroundColor = 'Red';
                         }
 
                         // If incorrect button is clicked,
                         else {
+                            
                             // Change button color to non-default full green.
                             buttonsPart1[i].style.backgroundColor = 'rgb(0, 255, 0)';
                         }
