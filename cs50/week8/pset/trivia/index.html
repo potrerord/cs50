@@ -25,7 +25,9 @@
                         if (buttonsPart1[i].classList.contains('incorrect')) {
 
                             // Change button color to red.
-                            buttonsPart1[i].style.backgroundColor = 'Red';
+                            buttonsPart1[i].style.backgroundColor = 'red';
+
+                            document.querySelector('#feedback1').innerHTML = 'Incorrect';
                         }
 
                         // If incorrect button is clicked,
@@ -33,6 +35,7 @@
 
                             // Change button color to non-default full green.
                             buttonsPart1[i].style.backgroundColor = 'rgb(0, 255, 0)';
+                            document.querySelector('#feedback1').innerHTML = 'Correct!';
                         }
                     });
                 };
