@@ -7,11 +7,10 @@
         <title>Trivia!</title>
         <script>
 
-            // Define color reset function that takes any number of parameters.
+            // Define color reset function that takes any number of class name parameters.
             function colorReset(...classNames) {
-                classNames.forEach(className => {
-                    let elements = document.querySelectorAll(".button", "." + className);
-                })
+                let selectorArgs = classNames.map(name => "." + name.join(", "));
+                let elements = document.querySelectorAll(selectorArgs);
             }
 
             // Wait for DOM content to load.
@@ -19,9 +18,10 @@
 
                 // Store all elements with class "correct".
                 let corrects = document.querySelectorAll('.correct');
+                let
 
                 for (let i = 0; i < corrects.length; i++) {
-                    corrects[i].addEventListener('click', function() {
+                    .addEventListener('click', function() {
 
 
 
@@ -47,7 +47,7 @@
         </div>
 
         <div class="container">
-            <div class="section">
+            <div class="part1 section">
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <h3>Which of the following MacOS versions does NOT share a name with a California county?</h3>
@@ -57,7 +57,7 @@
                 <button class="part1 correct">Catalina</button>
             </div>
 
-            <div class="section">
+            <div class="part2 section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
                 <h3>What is the name of the first publicly available OS released by Apple?</h3>
