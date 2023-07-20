@@ -8,10 +8,6 @@ body {
     text-align: left;
 }
 
-button:hover {
-    background-color: #B0B3B8;
-}
-
 button[type="submit"] {
     background-color: #d9edff;
     border: 1px solid transparent;
