@@ -79,6 +79,11 @@ h3 {
     text-align: center;
 }
 
+h6 {
+    margin-top: 40rem;
+    text-align: right;
+}
+
 
 input[type="text"] {
     line-height: 1.8;
