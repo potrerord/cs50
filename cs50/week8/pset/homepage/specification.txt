@@ -2,10 +2,10 @@
 10 HTML tags:
 
     1) <meta> - used for mobile responsiveness
-    2)
-    3)
-    4)
-    5)
+    2) <ul> - unordered list for nav bars
+    3) <li> - list items for nav bars
+    4) <a> - anchor tag for links to other pages
+    5) <h1> - formatted title
     6)
     7)
     8)
