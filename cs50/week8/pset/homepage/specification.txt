@@ -1,5 +1,5 @@
 
-10 HTML tags:
+10+ HTML tags:
 
     1) <meta> - used for mobile responsiveness
     2) <ul> - unordered list for nav bars
@@ -7,18 +7,18 @@
     4) <a> - anchor tag for links to other pages
     5) <h1> - formatted title
     6) <div> - containers for grouping sections
-    7)
-    8)
-    9)
-   10)
+    7) <input> - email input for contact form
+    8) <label> - label for contact form
+    9) <button> - button for contact form
+   10) <textarea> - text for contact form
 
-5 CSS properties:
+5+ CSS properties:
 
     1) background-color: a common one in my site - I opted for dark mode!
     2) color: used this a lot as well to adjust text color for the dark theme
     3) margin: this was very helpful to center and space certain elements
-    4) 
-    5)
+    4) width: was useful to keep elements from taking up the entire page
+    5) text-align: helped with centering text (obviously) and other elements
 
 Usage of Javascript and Bootstrap:
 
