@@ -79,7 +79,7 @@ input[type="text"]:hover {
 }
 
 div {
-    margin: 1rem;
+    margin-top: 1rem;
 }
 
 div[class="form"] {
