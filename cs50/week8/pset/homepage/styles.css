@@ -80,3 +80,11 @@ div[class=mb-3] {
     width: 50%;
     margin: auto;
 }
+
+nav {
+    
+}
+
+nav:hover {
+    background-color: #B0B3B8;
+}
