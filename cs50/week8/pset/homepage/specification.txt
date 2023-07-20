@@ -6,7 +6,7 @@
     3) <li> - list items for nav bars
     4) <a> - anchor tag for links to other pages
     5) <h1> - formatted title
-    6)
+    6) <div> - containers for grouping sections
     7)
     8)
     9)
