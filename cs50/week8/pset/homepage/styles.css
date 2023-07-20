@@ -56,18 +56,21 @@ div[class="submit"] {
 }
 
 h1 {
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
     text-align: center;
 }
 
 h2 {
+    color: #fff;
     font-family: 'Montserrat', serif;
     text-align: center;
     margin: 2rem;
 }
 
 h3 {
+    color: #fff;
     text-align: center;
 }
 
