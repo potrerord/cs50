@@ -15,6 +15,42 @@
         <title>Home | Anthony Narag</title>
     </head>
     <body>
-        hello, homepage
+        <div class="header">
+            <h1>Anthony Narag</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which of the following MacOS versions does NOT share a name with a California county?</h3>
+                <button class="part1 incorrect">Ventura</button>
+                <button class="part1 incorrect">Sonoma</button>
+                <button class="part1 incorrect">Monterey</button>
+                <button class="part1 correct">Catalina</button>
+
+                <p id="feedback1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the name of the first publicly available OS released by Apple?</h3>
+                <input autocomplete="off" autofocus name="q" placeholder="Enter your response." type="search">
+                <button class="part2" type="submit">Submit</button>
+
+                <p id="feedback2"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 3: True or False</h2>
+                <hr>
+                <h3>Select TRUE or FALSE: El Capitan is the final Apple desktop OS to feature the "OS X" naming convention.</h3>
+                <button class="part3 correct">TRUE</button>
+                <button class="part3 incorrect">FALSE</button>
+
+                <p id="feedback3"></p>
+            </div>
+        </div>
     </body>
 </html>
