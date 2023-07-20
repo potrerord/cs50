@@ -14,12 +14,16 @@
 
 5 CSS properties:
 
-    1)
-    2)
-    3)
-    4)
+    1) background-color: a common one in my site - I opted for dark mode!
+    2) color: used this a lot as well to adjust text color for the dark theme
+    3) margin: this was very helpful to center and space certain elements
+    4) 
     5)
 
-Usage of Java and Bootstrap:
+Usage of Javascript and Bootstrap:
 
-    asdf
+    I used the Bootstrap styling sheets and some of their components to
+    add some cool little features to my site like the cards on the main
+    page or the contact form, and Javascript to make the site more
+    interactive like in Trivia, displaying "Thank you!" on the contact
+    form for example when the Submit button is clicked.
