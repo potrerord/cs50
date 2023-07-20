@@ -1,0 +1,25 @@
+
+10 HTML tags:
+
+    1) <meta> - used for mobile responsiveness
+    2)
+    3)
+    4)
+    5)
+    6)
+    7)
+    8)
+    9)
+   10)
+
+5 CSS properties:
+
+    1)
+    2)
+    3)
+    4)
+    5)
+
+Usage of Java and Bootstrap:
+
+    asdf
