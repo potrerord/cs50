@@ -85,6 +85,10 @@ input[type="text"]:hover {
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
 
+label {
+    color: #fff;
+}
+
 li[class='nav-item']:hover {
     background-color: #B0B3B8;
 }
