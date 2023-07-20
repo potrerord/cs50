@@ -42,6 +42,7 @@ h1 {
 h2 {
     font-family: 'Montserrat', serif;
     text-align: center;
+    margin: 2rem;
 }
 
 h3 {
@@ -81,10 +82,7 @@ div[class=mb-3] {
     margin: auto;
 }
 
-nav {
-    
-}
-
-nav:hover {
+li[class='nav-item']:hover {
     background-color: #B0B3B8;
 }
+
