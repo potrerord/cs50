@@ -37,6 +37,10 @@ div {
     margin-top: 1rem;
 }
 
+div[class="card-body"] {
+    margin: 4rem;
+}
+
 div[class="form"] {
     width: 50%;
     margin: auto;
