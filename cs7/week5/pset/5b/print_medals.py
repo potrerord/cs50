@@ -67,7 +67,7 @@ def print_medals(medal_counts):
 
         # Print Gold/Silver/Bronze/Total data.
         for medal in medal_counts:
-            print(f"", end="")
+            print(f"{medal_counts[medal]}:>{column_widths[]}", end="")
         print()
 
 
