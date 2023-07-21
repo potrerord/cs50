@@ -16,17 +16,19 @@ def missing_letters(word_list):
     that do not appear in the list.
     """
 
-    # Initialize letters list.
-    letters = ['A', 'B', 'C', 'D', 'E', 'F',
+    # Initialize letters set.
+    letters = {'A', 'B', 'C', 'D', 'E', 'F',
                'G', 'H', 'I', 'J', 'K', 'L',
                'M', 'N', 'O', 'P', 'Q', 'R',
                'S', 'T', 'U', 'V', 'W', 'X',
-               'Y', 'Z']
+               'Y', 'Z'}
 
     # Remove all matches.
     for word in word_list:
         for char in word:
             letters.discard(char.upper())
+
+    
 
     return letters
 
