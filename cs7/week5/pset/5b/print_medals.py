@@ -72,12 +72,12 @@ def print_medals(medal_counts):
 
             # Print medal data.
             elif 0 < i < len(COLUMN_HEADERS):
-                print(f"{medal_counts[country][i - 1]:{column_widths[i]}}",
+                print(f"{medal_counts[country][i - 1]:{column_widths[COLUMN_HEADERS[i]]}}",
                       end="")
 
             # Print final column (Total) with newline.
             else:
-                print(f"{sum(medal_counts[country]):>{column_widths[i]}}", end="")
+                print(f"{sum(medal_counts[country]):>{column_widths[COLUMN_HEADERS[i]]}}", end="")
                 print()
 
 
