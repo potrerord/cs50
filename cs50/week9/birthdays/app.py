@@ -33,16 +33,16 @@ def after_request(response):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    if request.method == "POST":
+    if flask.request.method == "POST":
 
         # TODO: Add the user's entry into the database
 
-        return redirect("/")
+        return flask.redirect("/")
 
     else:
 
         # TODO: Display the entries in the database on index.html
 
-        return render_template("index.html")
+        return flask.render_template("index.html")
 
 
