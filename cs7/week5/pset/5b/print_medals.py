@@ -66,7 +66,9 @@ def print_medals(medal_counts):
         print(f"{country:>{max_country_len + SPACING}}")
 
         # Print Gold/Silver/Bronze/Total data.
-        
+        for medal in medal_counts:
+            print(f"", end="")
+        print()
 
 
 
