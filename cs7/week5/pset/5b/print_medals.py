@@ -68,10 +68,13 @@ def print_medals(medal_counts):
         # Print first column in each row.
         print(f"{country:>{max_country_len + SPACING}}", end="")
 
-        # Print Gold/Silver/Bronze/Total data.
+        # Print Gold/Silver/Bronze data.
         for i in range(MEDAL_AMOUNT):
             print(f"{medal_counts[country][i]:>5}", end="")
-        print
+
+        # Print total.
+        total = sum(medal_counts[country])
+        print(f"{total:>{column_widths['Total']}}")
         print()
 
 
