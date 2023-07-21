@@ -25,13 +25,20 @@ print(y)
 print('ab' in {'a', 'b', 'c'})
 """
 
-
+"""
 # Q2.1
 y = {}
 y['a'] = 2
 y['b'] = 3
 y['a'] = 4
 print(y['a'])
+print(y)
+"""
+
+
+# Q2.2
+y = {'a': 6, 'b': 1, 'c': 7}
+y.pop('b')
 print(y)
 
 
