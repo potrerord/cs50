@@ -35,10 +35,26 @@ print(y['a'])
 print(y)
 """
 
-
+"""
 # Q2.2
 y = {'a': 6, 'b': 1, 'c': 7}
 y.pop('b')
 print(y)
+"""
+
+"""
+# Q2.3
+y = {'a': 6, 'b': 7, 'c': 7}
+y.pop('d')
+print(y)
+"""
+
+# Q2.4
+
+y = {'a': 6, 'b': 7, 'c': 7}
+for foo in y:
+    print(foo)
+
+
 
 
