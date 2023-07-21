@@ -61,8 +61,13 @@ def print_medals(medal_counts):
 
     # Print remaining rows with data.
     for country in sorted_countries:
+
+        # Print first column in each row.
+        print(f"{country:>{max_country_len + SPACING}}")
+
+
         for header in COLUMN_HEADERS:
-            print(f"country:>{column_widths[header]}", end="")
+            print(f"{medal_counts[country]:>{column_widths[header]}}", end="")
             print()
 
 
