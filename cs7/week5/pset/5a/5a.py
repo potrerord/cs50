@@ -20,7 +20,18 @@ y.remove('c')
 print(y)
 """
 
+"""
 # Q1.4
 print('ab' in {'a', 'b', 'c'})
+"""
+
+
+# Q2.1
+y = {}
+y['a'] = 2
+y['b'] = 3
+y['a'] = 4
+print(y['a'])
+print(y)
 
 
