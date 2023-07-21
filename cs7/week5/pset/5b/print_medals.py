@@ -71,9 +71,8 @@ def print_medals(medal_counts):
                 print(f"{country:>{max_country_len + SPACING}}", end="")
 
             # Print medal data.
-            elif 0 < i < len(COLUMN_HEADERS):
-                print(f"{medal_counts[country][i - 1]:{column_widths[COLUMN_HEADERS[i]]}}",
-                      end="")
+            elif 0 < i < len(COLUMN_HEADERS) - 1:
+                print(f"{medal_counts[country][i - 1]:>{column_widths[COLUMN_HEADERS[i]]}}", end="")
 
             # Print final column (Total) with newline.
             else:
