@@ -35,11 +35,8 @@ def print_medals(medal_counts):
     # Constant spacing between columns.
     SPACING = 2
 
-    # Number of medals.
-    MEDAL_AMOUNT = 3
-
     # Predetermined ordered list of column headers.
-    COLUMN_HEADERS = ["", "Gold", "Silver", "Bronze", "Total"]
+    HEADERS = ["", "Gold", "Silver", "Bronze", "Total"]
 
     # Get maximum country length
     max_country_len = 0
@@ -48,35 +45,38 @@ def print_medals(medal_counts):
             max_country_len = len(country)
 
     # Initialize column_lengths dictionary with length of country column.
-    column_widths = {"": max_country_len + SPACING}
+    widths = {"": max_country_len + SPACING}
 
     # Add other column widths to dictionary.
-    for column in COLUMN_HEADERS[1:]:
-        column_widths[column] = len(column) + SPACING
+    for column in HEADERS[1:]:
+        widths[column] = len(column) + SPACING
 
     # Alphabetize country keys from argument dictionary.
     sorted_countries = sorted(medal_counts)
 
     # Print first row with headers.
-    for header in COLUMN_HEADERS:
-        print(f"{header:>{column_widths[header]}}", end="")
+    for header in HEADERS:
+        print(f"{header:>{widths[header]}}", end="")
     print()
 
     # Print remaining rows with data.
     for country in sorted_countries:
-        for i in range(len(COLUMN_HEADERS)):
+        for col in range(len(HEADERS)):
+            column_width = widths[HEADERS[col]]
 
             # Print first column (country names).
-            if i == 0:
-                print(f"{country:>{max_country_len + SPACING}}", end="")
+            if col == 0:
+                print(f"{country:>{column_width}}", end="")
 
-            # Print medal data.
-            elif 0 < i < len(COLUMN_HEADERS) - 1:
-                print(f"{medal_counts[country][i - 1]:>{column_widths[COLUMN_HEADERS[i]]}}", end="")
+            # Print medal data in order starting at second column.
+            elif 0 < col < len(HEADERS) - 1:
+                print(f"{medal_counts[country][col - 1]:>{column_width}}",
+                      end="")
 
             # Print final column (Total) with newline.
             else:
-                print(f"{sum(medal_counts[country]):>{column_widths[COLUMN_HEADERS[i]]}}", end="")
+                print(f"{sum(medal_counts[country]):>{column_width}}",
+                      end="")
                 print()
 
 
