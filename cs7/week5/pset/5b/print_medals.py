@@ -71,6 +71,7 @@ def print_medals(medal_counts):
         # Print Gold/Silver/Bronze/Total data.
         for i in range(MEDAL_AMOUNT):
             print(f"{medal_counts[country][i]:>5}", end="")
+        print
         print()
 
 
