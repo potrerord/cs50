@@ -1,8 +1,16 @@
 """
-Add your solution to the problem 'print_medals' here."""
+Prints a table of the number of medals won in the recent Winter Olympics
+by country.
+"""
 
 
 def main():
+    """Call functions."""
+
+    # Predetermined list of columns.
+    COLUMNS = ["Gold", "Silver", "Bronze", "Total"]
+
+    # Dictionary of Gold/Silver/Bronze medals by country.
     MEDAL_COUNTS = {
         "Canada": [0, 3, 0],
         "Italy": [0, 0, 1],
@@ -13,7 +21,9 @@ def main():
         "South Korea": [0, 1, 0],
         "United States": [1, 0, 1],
     }
-    print(list(MEDAL_COUNTS))
+
+    
+
 
 
 def print_medals(medal_counts):
