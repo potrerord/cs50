@@ -68,11 +68,17 @@ y = {'a': 6, 'b': 7, 'c': 7}
 print(6 in y)
 """
 
+"""
 # Q3.1
 snacks = ["apple", "orange", "chocolate"]
 mystery = [x + "s" for x in snacks]
 print(mystery)
+"""
 
+# Q3.2
+snacks = ['apple', 'orange', 'chocolate']
+mystery = {x: len(x) for x in snacks}
+print(mystery)
 
 
 
