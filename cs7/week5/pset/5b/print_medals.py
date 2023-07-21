@@ -30,17 +30,30 @@ def print_medals(medal_counts):
     as described in the pset 5 problem.
     """
 
+    # Constant spacing between columns.
+    SPACING = 3
+
     # Predetermined ordered list of column headers.
     COLUMN_HEADERS = ["", "Gold", "Silver", "Bronze", "Total"]
 
+    # Get maximum country length
     max_country_len = 0
     for country in medal_counts:
-        max_country_len = len(country) if len(country) > max_country_len
+        if len(country) > max_country_len:
+            max_country_len = len(country)
 
+    # Initialize column_lengths dictionary with length of country column.
+    column_widths = {"": max_country_len + SPACING}
+
+    # Add other column widths to dictionary.
+    for column in COLUMN_HEADERS[1:]:
+        column_widths[column] = len(column) + SPACING
+
+    # Alphabetize country keys from argument dictionary.
     sorted_countries = sorted(medal_counts)
 
     for header in COLUMN_HEADERS:
-        print(f"{header:>10}", end="")
+        print(f"{column_widths[header]}", end="")
     print()
 
 
