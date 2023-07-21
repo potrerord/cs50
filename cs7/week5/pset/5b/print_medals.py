@@ -19,7 +19,9 @@ def main():
         "United States": [1, 0, 1],
     }
 
+    print()
     print_medals(MEDAL_COUNTS)
+    print()
 
 
 
@@ -31,7 +33,7 @@ def print_medals(medal_counts):
     """
 
     # Constant spacing between columns.
-    SPACING = 3
+    SPACING = 2
 
     # Predetermined ordered list of column headers.
     COLUMN_HEADERS = ["", "Gold", "Silver", "Bronze", "Total"]
@@ -52,10 +54,13 @@ def print_medals(medal_counts):
     # Alphabetize country keys from argument dictionary.
     sorted_countries = sorted(medal_counts)
 
+    # Print first row with headers.
     for header in COLUMN_HEADERS:
-        print(f"{column_widths[header]}", end="")
+        print(f"{header:>{column_widths[header]}}", end="")
     print()
 
+    # Print remaining rows with data.
+    
 
 
 
