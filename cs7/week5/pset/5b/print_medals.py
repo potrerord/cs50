@@ -64,25 +64,21 @@ def print_medals(medal_counts):
 
     # Print remaining rows with data.
     for country in sorted_countries:
+        for i in range(len(COLUMN_HEADERS)):
 
-        # Print first column in each row.
-        print(f"{country:>{max_country_len + SPACING}}", end="")
+            # Print first column (country names).
+            if i == 0:
+                print(f"{country:>{max_country_len + SPACING}}", end="")
 
-        # Print Gold.
-        print(f"{medal_counts[country][0]:{column_widths['Gold']}}", end="")
+            # Print medal data.
+            elif 0 < i < len(COLUMN_HEADERS):
+                print(f"{medal_counts[country][i - 1]:{column_widths[i]}}",
+                      end="")
 
-        # Print Silver.
-        print(f"{medal_counts[country][1]:{column_widths['Silver']}}", end="")
-
-        # Print Bronze.
-        print(f"{medal_counts[country][2]:{column_widths['Bronze']}}", end="")
-
-        # Print total.
-        total = sum(medal_counts[country])
-        print(f"{total:>{column_widths['Total']}}", end="")
-        print()
-
-
+            # Print final column (Total) with newline.
+            else:
+                print(f"{sum(medal_counts[country]):>{column_widths[i]}}", end="")
+                print()
 
 
 if __name__ == "__main__":
