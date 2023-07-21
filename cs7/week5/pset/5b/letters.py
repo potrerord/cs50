@@ -16,12 +16,35 @@ def missing_letters(word_list):
     that do not appear in the list.
     """
 
-    # Initialize letters set.
-    letters_set = {'A', 'B', 'C', 'D', 'E', 'F',
-                   'G', 'H', 'I', 'J', 'K', 'L',
-                   'M', 'N', 'O', 'P', 'Q', 'R',
-                   'S', 'T', 'U', 'V', 'W', 'X',
-                   'Y', 'Z'}
+    # Initialize letters set (layout recommended by style50).
+    letters_set = {
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+    }
 
     # Remove all matches.
     for word in word_list:

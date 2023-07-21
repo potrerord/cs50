@@ -24,8 +24,6 @@ def main():
     print()
 
 
-
-
 def print_medals(medal_counts):
     """Take the a dictionary of medal counts and prints
     a nicely formatted table with totals for each country
@@ -62,7 +60,6 @@ def print_medals(medal_counts):
     # Print remaining rows with data.
     for country in sorted_countries:
         for col in range(len(HEADERS)):
-
             # Define column width for this column.
             column_width = widths[HEADERS[col]]
 
@@ -72,13 +69,11 @@ def print_medals(medal_counts):
 
             # Print medal data in order starting at second column.
             elif 0 < col < len(HEADERS) - 1:
-                print(f"{medal_counts[country][col - 1]:>{column_width}}",
-                      end="")
+                print(f"{medal_counts[country][col - 1]:>{column_width}}", end="")
 
             # Print final column (Total) with newline.
             else:
-                print(f"{sum(medal_counts[country]):>{column_width}}",
-                      end="")
+                print(f"{sum(medal_counts[country]):>{column_width}}", end="")
                 print()
 
 
