@@ -65,10 +65,8 @@ def print_medals(medal_counts):
         # Print first column in each row.
         print(f"{country:>{max_country_len + SPACING}}")
 
-
-        for header in COLUMN_HEADERS:
-            print(f"{medal_counts[country]:>{column_widths[header]}}", end="")
-            print()
+        # Print Gold/Silver/Bronze/Total data.
+        
 
 
 
