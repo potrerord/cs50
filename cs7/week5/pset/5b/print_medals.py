@@ -33,9 +33,16 @@ def print_medals(medal_counts):
     # Predetermined ordered list of column headers.
     COLUMN_HEADERS = ["", "Gold", "Silver", "Bronze", "Total"]
 
+    max_country_len = 0
+    for country in medal_counts:
+        max_country_len = len(country) if len(country) > max_country_len
+
     sorted_countries = sorted(medal_counts)
 
-    for country in sorted_countries:
+    for header in COLUMN_HEADERS:
+        print(f"{header:>10}", end="")
+    print()
+
 
 
 
