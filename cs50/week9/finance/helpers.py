@@ -6,8 +6,12 @@ import subprocess
 import urllib
 import uuid
 
+import flask
+import functools
+"""
 from flask import redirect, render_template, session
 from functools import wraps
+"""
 
 
 def apology(message, code=400):
@@ -22,7 +26,7 @@ def apology(message, code=400):
                          ("%", "~p"), ("#", "~h"), ("/", "~s"), ("\"", "''")]:
             s = s.replace(old, new)
         return s
-    return render_template("apology.html", top=code, bottom=escape(message)), code
+    return flask.render_template("apology.html", top=code, bottom=escape(message)), code
 
 
 def login_required(f):
@@ -31,10 +35,10 @@ def login_required(f):
 
     http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
     """
-    @wraps(f)
+    @functools.wraps(f)
     def decorated_function(*args, **kwargs):
-        if session.get("user_id") is None:
-            return redirect("/login")
+        if flask.session.get("user_id") is None:
+            return flask.redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
 
