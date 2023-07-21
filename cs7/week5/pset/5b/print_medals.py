@@ -5,10 +5,7 @@ by country.
 
 
 def main():
-    """Call functions."""
-
-    # Predetermined list of columns.
-    COLUMNS = ["Gold", "Silver", "Bronze", "Total"]
+    """Call function."""
 
     # Dictionary of Gold/Silver/Bronze medals by country.
     MEDAL_COUNTS = {
@@ -22,7 +19,8 @@ def main():
         "United States": [1, 0, 1],
     }
 
-    
+    print_medals(MEDAL_COUNTS)
+
 
 
 
@@ -31,7 +29,15 @@ def print_medals(medal_counts):
     a nicely formatted table with totals for each country
     as described in the pset 5 problem.
     """
-    # Add your code here.
+
+    # Predetermined ordered list of column headers.
+    COLUMN_HEADERS = ["", "Gold", "Silver", "Bronze", "Total"]
+
+    sorted_countries = sorted(medal_counts)
+
+    for country in sorted_countries:
+
+
 
 
 if __name__ == "__main__":
