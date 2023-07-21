@@ -62,6 +62,8 @@ def print_medals(medal_counts):
     # Print remaining rows with data.
     for country in sorted_countries:
         for col in range(len(HEADERS)):
+
+            # Define column width for this column.
             column_width = widths[HEADERS[col]]
 
             # Print first column (country names).
