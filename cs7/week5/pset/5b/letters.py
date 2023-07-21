@@ -17,20 +17,21 @@ def missing_letters(word_list):
     """
 
     # Initialize letters set.
-    letters = {'A', 'B', 'C', 'D', 'E', 'F',
-               'G', 'H', 'I', 'J', 'K', 'L',
-               'M', 'N', 'O', 'P', 'Q', 'R',
-               'S', 'T', 'U', 'V', 'W', 'X',
-               'Y', 'Z'}
+    letters_set = {'A', 'B', 'C', 'D', 'E', 'F',
+                   'G', 'H', 'I', 'J', 'K', 'L',
+                   'M', 'N', 'O', 'P', 'Q', 'R',
+                   'S', 'T', 'U', 'V', 'W', 'X',
+                   'Y', 'Z'}
 
     # Remove all matches.
     for word in word_list:
         for char in word:
-            letters.discard(char.upper())
+            letters_set.discard(char.upper())
 
-    
+    # Create sorted list of remaining letters.
+    remaining_letters = sorted(list(letters_set))
 
-    return letters
+    return remaining_letters
 
 
 if __name__ == "__main__":
