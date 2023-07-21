@@ -56,7 +56,24 @@ for foo in y:
     print(foo)
 """
 
+"""
 # Q2.5
 y = {'a': 6, 'b': 7, 'c': 7}
+print('a' in y)
+"""
+
+"""
+# Q2.6
+y = {'a': 6, 'b': 7, 'c': 7}
 print(6 in y)
+"""
+
+# Q3.1
+snacks = ["apple", "orange", "chocolate"]
+mystery = [x + "s" for x in snacks]
+print(mystery)
+
+
+
+
 
