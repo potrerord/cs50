@@ -49,12 +49,14 @@ y.pop('d')
 print(y)
 """
 
+"""
 # Q2.4
-
 y = {'a': 6, 'b': 7, 'c': 7}
 for foo in y:
     print(foo)
+"""
 
-
-
+# Q2.5
+y = {'a': 6, 'b': 7, 'c': 7}
+print(6 in y)
 
