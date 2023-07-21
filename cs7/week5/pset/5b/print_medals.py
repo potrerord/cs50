@@ -60,7 +60,10 @@ def print_medals(medal_counts):
     print()
 
     # Print remaining rows with data.
-    
+    for country in sorted_countries:
+        for header in COLUMN_HEADERS:
+            print(f"country:>{column_widths[header]}", end="")
+            print()
 
 
 
