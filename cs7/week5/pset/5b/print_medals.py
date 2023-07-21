@@ -35,6 +35,9 @@ def print_medals(medal_counts):
     # Constant spacing between columns.
     SPACING = 2
 
+    # Number of medals.
+    MEDAL_AMOUNT = 3
+
     # Predetermined ordered list of column headers.
     COLUMN_HEADERS = ["", "Gold", "Silver", "Bronze", "Total"]
 
@@ -63,11 +66,11 @@ def print_medals(medal_counts):
     for country in sorted_countries:
 
         # Print first column in each row.
-        print(f"{country:>{max_country_len + SPACING}}")
+        print(f"{country:>{max_country_len + SPACING}}", end="")
 
         # Print Gold/Silver/Bronze/Total data.
-        for medal in medal_counts:
-            print(f"{medal_counts[medal]}:>{column_widths[]}", end="")
+        for i in range(MEDAL_AMOUNT):
+            print(f"{medal_counts[country][i]:>5}", end="")
         print()
 
 
