@@ -111,15 +111,17 @@ def login():
     if flask.request.method == "POST":
 
         # Ensure username was submitted.
-        if not flask.request.form.get("username"):
+        user_username = flask.request.form.get("username")
+        if not user_username:
             return helpers.apology("must provide username", 403)
 
         # Ensure password was submitted.
-        elif not flask.request.form.get("password"):
+        user_password = flask.request.form.get("password")
+        if not user_password:
             return helpers.apology("must provide password", 403)
 
         # Query finance.db database for username.
-        rows = db.execute("SELECT * FROM users WHERE username = ?", flask.request.form.get("username"))
+        rows = db.execute("SELECT * FROM users WHERE username = ?", user_username)
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not werkzeug.security.check_password_hash(rows[0]["hash"], flask.request.form.get("password")):
