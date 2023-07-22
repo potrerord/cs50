@@ -67,15 +67,17 @@ def index():
         # TODO: Add the user's entry into the database
         name = flask.request.form.get("name")
         if not flask.request.form.get("name"):
-            flask.redirect("/")
+            flask.redirect("/failure.html")
 
         month = flask.request.form.get("month")
         if not flask.request.form.get("month"):
-            flask.redirect("/")
+            flask.redirect("/failure.html")
 
         day = flask.request.form.get("day")
         if not flask.request.form.get("day"):
-            flask.redirect("/")
+            flask.redirect("/failure.html")
+
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
 
         return flask.redirect("/")
 
@@ -83,6 +85,6 @@ def index():
         # When the / route is requested via GET, your web application
         # should display, in a table, all of the people in your database
         # along with their birthdays.
-        db.execute("SELECT * FROM birthdays")
-        return flask.render_template("index.html", months=MONTHS)
+        birthdays = db.execute("SELECT * FROM birthdays")
+        return flask.render_template("index.html", birthdays=birthdays)
 
