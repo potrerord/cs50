@@ -71,6 +71,9 @@ def index():
         # If any part of the form is empty, return failure page.
         if not name or not month or not day:
             return flask.render_template("failure.html")
+        elif not 1 <= month <= 12 or not 1 <= day <= 31:
+            return flask.render_template("failure.html")
+
 
         # If all fields are present, update database and redirect home.
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
