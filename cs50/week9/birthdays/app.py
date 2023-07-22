@@ -67,7 +67,7 @@ def index():
         # TODO: Add the user's entry into the database
         name = flask.request.form.get("name")
         if not flask.request.form.get("name"):
-            flask.redirect(flask.url_for(''))
+            flask.redirect("/"failure.html")
 
         month = flask.request.form.get("month")
         if not flask.request.form.get("month"):
