@@ -3,13 +3,13 @@
 """
 
 
-import os
+import os  # contains functions to interact with operating system
 
-import cs50
-import flask
+import cs50  # contains SQL setup
+import flask  # micro web framework including tools/libraries/tech to build web apps with python
 import flask_session  # allows you to store session data on server side
 import tempfile  # python standard library module to create temporary files during exec
-import werkzeug.security  # module in werkzeug library that 
+import werkzeug.security  # module in werkzeug library that provides various security functions like password hashing
 
 import helpers
 """
