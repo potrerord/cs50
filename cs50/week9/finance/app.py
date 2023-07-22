@@ -49,7 +49,7 @@ def after_request(response: flask.Response) -> flask.Response:
 
 @app.route("/")
 @helpers.login_required
-def index():
+def index() -> None:
     """Show portfolio of stocks."""
 
     """Complete the implementation of index in such a way that it displays an HTML table summarizing, for the user currently logged in, which stocks the user owns, the numbers of shares owned, the current price of each stock, and the total value of each holding (i.e., shares times price). Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
@@ -69,7 +69,7 @@ def index():
 
 @app.route("/buy", methods=["GET", "POST"])
 @helpers.login_required
-def buy():
+def buy() -> None:
     """Buy shares of stock."""
 
     """Complete the implementation of buy in such a way that it enables a user to buy stocks.
@@ -103,7 +103,7 @@ def buy():
 
 @app.route("/history")
 @helpers.login_required
-def history():
+def history() -> None:
     """Show history of transactions."""
 
 
@@ -126,7 +126,7 @@ def history():
 
 
 @app.route("/login", methods=["GET", "POST"])
-def login():
+def login() -> None:
     """Log user in."""
 
     # Clear all session data from session directory.
@@ -165,7 +165,7 @@ def login():
 
 
 @app.route("/logout")
-def logout():
+def logout() -> None:
     """Log user out."""
 
     # Clear all session data from session directory.
@@ -177,7 +177,7 @@ def logout():
 
 @app.route("/quote", methods=["GET", "POST"])
 @helpers.login_required
-def quote():
+def quote() -> None:
     """Get stock quote."""
 
     """Complete the implementation of quote in such a way that it allows a user to look up a stock’s current price.
