@@ -13,18 +13,18 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 """
 
 MONTH_DAYS = {
-     1: 31,
-     2: 29,
-     3: 31,
-     4: 30,
-     5: 31,
-     6: 30,
-     7: 31,
-     8: 31,
-     9: 30,
-    10: 31,
-    11: 31,
-    12: 31
+     '1': 31,
+     '2': 29,
+     '3': 31,
+     '4': 30,
+     '5': 31,
+     '6': 30,
+     '7': 31,
+     '8': 31,
+     '9': 30,
+    '10': 31,
+    '11': 31,
+    '12': 31
 }
 """
 First, in app.py, add logic in your GET request handling to query the birthdays.db database for all birthdays. Pass all of that data to your index.html template.
@@ -73,7 +73,7 @@ def index():
             return flask.render_template("failure.html")
 
         # If month or day is an invalid value, render failure page.
-        elif not 1 <= user_month <= 12 or not 1 <= user_day <= MONTH_DAYS[user_month]:
+        elif not 1 <= int(user_month) <= 12 or not 1 <= int(user_day) <= MONTH_DAYS[user_month]:
             return flask.render_template("failure.html")
 
         # If all fields are valid, update database and redirect home.
