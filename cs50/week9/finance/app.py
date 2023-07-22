@@ -155,17 +155,47 @@ def logout():
 @helpers.login_required
 def quote():
     """Get stock quote."""
+
+
+
+
+
+
+
+
+
+
     return helpers.apology("TODO")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
-    """Register user"""
+    """Register user."""
+
+
+
+
+
+
+
+
+
+
     return helpers.apology("TODO")
 
 
 @app.route("/sell", methods=["GET", "POST"])
 @helpers.login_required
 def sell():
-    """Sell shares of stock"""
+    """Sell shares of stock."""
+
+
+
+
+
+
+
+
+
+
     return helpers.apology("TODO")
