@@ -69,5 +69,5 @@ def index():
 
     else:
         db.execute("SELECT * FROM birthdays;")
-        return flask.render_template("index.html")
+        return flask.render_template("index.html", months=MONTHS)
 
