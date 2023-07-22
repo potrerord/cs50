@@ -49,7 +49,7 @@ def after_request(response: flask.Response) -> flask.Response:
 
 @app.route("/")
 @helpers.login_required
-def index() -> None:
+def index() -> flask.Response:
     """Show portfolio of stocks."""
 
     """Complete the implementation of index in such a way that it displays an HTML table summarizing, for the user currently logged in, which stocks the user owns, the numbers of shares owned, the current price of each stock, and the total value of each holding (i.e., shares times price). Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
@@ -69,7 +69,7 @@ def index() -> None:
 
 @app.route("/buy", methods=["GET", "POST"])
 @helpers.login_required
-def buy() -> None:
+def buy() -> flask.Response:
     """Buy shares of stock."""
 
     """Complete the implementation of buy in such a way that it enables a user to buy stocks.
@@ -103,7 +103,7 @@ def buy() -> None:
 
 @app.route("/history")
 @helpers.login_required
-def history() -> None:
+def history() -> flask.Response:
     """Show history of transactions."""
 
 
@@ -177,7 +177,7 @@ def logout() -> flask.Response:
 
 @app.route("/quote", methods=["GET", "POST"])
 @helpers.login_required
-def quote() -> None:
+def quote() -> flask.Response:
     """Get stock quote."""
 
     """Complete the implementation of quote in such a way that it allows a user to look up a stock’s current price.
@@ -198,7 +198,7 @@ def quote() -> None:
 
 
 @app.route("/register", methods=["GET", "POST"])
-def register():
+def register() -> flask.Response:
     """Register user."""
 
     """Complete the implementation of register in such a way that it allows a user to register for an account via a form.
@@ -223,7 +223,7 @@ def register():
 
 @app.route("/sell", methods=["GET", "POST"])
 @helpers.login_required
-def sell():
+def sell() -> flask.Response:
     """Sell shares of stock."""
 
     """Complete the implementation of sell in such a way that it enables a user to sell shares of a stock (that he or she owns).
