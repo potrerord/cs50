@@ -58,9 +58,9 @@ def login_required(f):
 
 
 def lookup(symbol):
-    """Look up quote for symbol argument."""
+    """Look up quote for stock symbol argument."""
 
-    # Prepare API request
+    # Prepare API request with stock symbol, current time, and start time.
     symbol = symbol.upper()
     end = datetime.datetime.now(pytz.timezone("US/Eastern"))
     start = end - datetime.timedelta(days=7)
