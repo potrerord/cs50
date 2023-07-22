@@ -13,18 +13,18 @@ from flask import Flask, flash, jsonify, redirect, render_template, request, ses
 """
 
 MONTH_DAYS = {
-    "january":   31,
-    "february":  29,
-    "march":     31,
-    "april":     30,
-    "may":       31,
-    "june":      30,
-    "july":      31,
-    "august":    31,
-    "september": 30,
-    "october":   31,
-    "november":  31,
-    "december":  31
+     1: 31,
+     2: 29,
+     3: 31,
+     4: 30,
+     5: 31,
+     6: 30,
+     7: 31,
+     8: 31,
+     9: 30,
+    10: 31,
+    11: 31,
+    12: 31
 }
 """
 First, in app.py, add logic in your GET request handling to query the birthdays.db database for all birthdays. Pass all of that data to your index.html template.
@@ -62,34 +62,28 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if flask.request.method == "POST":
+
         # Retrieve data from user's form fill.
         user_name = flask.request.form.get("name")
         user_month = flask.request.form.get("month")
         user_day = flask.request.form.get("day")
 
-        # If any part of the form is empty, return failure page.
+        # If any part of the form is empty, render failure page.
         if not user_name or not user_month or not user_day:
             return flask.render_template("failure.html")
 
-        for month in MONTH_DAYS:
-            if user_month.lower() == month:
-                break
-        
-
-
-        # If month or day is an invalid value, return failure page.
-        elif not 1 <= user_month <= 12 or not 1 <= user_day <= MONTH_DAYS[]:
+        # If month or day is an invalid value, render failure page.
+        elif not 1 <= user_month <= 12 or not 1 <= user_day <= MONTH_DAYS[user_month]:
             return flask.render_template("failure.html")
 
-
-        # If all fields are present, update database and redirect home.
+        # If all fields are valid, update database and redirect home.
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", user_name, user_month, user_day)
         return flask.redirect("/")
 
     else:
-        # When the / route is requested via GET, your web application
-        # should display, in a table, all of the people in your database
-        # along with their birthdays.
+        # Query for all birthdays.
         birthdays = db.execute("SELECT * FROM birthdays")
+
+        # Render birthdays page.
         return flask.render_template("index.html", birthdays=birthdays)
 
