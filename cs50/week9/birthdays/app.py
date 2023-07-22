@@ -64,16 +64,17 @@ def after_request(response):
 def index():
     if flask.request.method == "POST":
 
-        # TODO: Add the user's entry into the database
+        # Retrieve data from user's form fill.
         name = flask.request.form.get("name")
         month = flask.request.form.get("month")
         day = flask.request.form.get("day")
 
+        # If any part of the form is empty, return failure page.
         if not name or not month or not day:
             return flask.render_template("failure.html")
 
+        # If all fields are present, update database and redirect home.
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
-
         return flask.redirect("/")
 
     else:
