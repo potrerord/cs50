@@ -123,7 +123,7 @@ def login():
         # Query finance.db database for username.
         rows = db.execute("SELECT * FROM users WHERE username = ?", form_username)
 
-        # Ensure username exists and password is correct
+        # Ensure username exists in database query and password is correct.
         if len(rows) != 1 or not werkzeug.security.check_password_hash(rows[0]["hash"], form_password):
             return helpers.apology("invalid username and/or password", 403)
 
