@@ -65,18 +65,12 @@ def index():
     if flask.request.method == "POST":
 
         # TODO: Add the user's entry into the database
-        if flask.request.form.get("name"):
-            name = flask.request.form.get("name")
-        else:
-            flask.redirect("/failure.html")
-
+        name = flask.request.form.get("name")
         month = flask.request.form.get("month")
-        if not flask.request.form.get("month"):
-            flask.redirect("/failure.html")
-
         day = flask.request.form.get("day")
-        if not flask.request.form.get("day"):
-            flask.redirect("/failure.html")
+
+        if not name or not month or not day:
+            return flask.render_template("failure.html")
 
         db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
 
