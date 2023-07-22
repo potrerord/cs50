@@ -48,7 +48,7 @@ def login_required(f: Callable) -> Callable:
     """
 
     @functools.wraps(f)
-    def decorated_function(*args: Any, **kwargs) -> Callable:
+    def decorated_function(*args: Any, **kwargs: Any) -> Callable:
         """Redirect user to login if current session has no user_id."""
 
         if flask.session.get("user_id") is None:
