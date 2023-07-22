@@ -3,7 +3,7 @@ import datetime
 import pytz
 import requests
 import subprocess
-from typing import Callable, Dict, Union
+from typing import Any, Callable, Dict, Union
 import urllib
 import uuid
 
@@ -48,7 +48,7 @@ def login_required(f: Callable) -> Callable:
     """
 
     @functools.wraps(f)
-    def decorated_function(*args, **kwargs) -> Callable:
+    def decorated_function(*args: Any, **kwargs) -> Callable:
         """Redirect user to login if current session has no user_id."""
 
         if flask.session.get("user_id") is None:
