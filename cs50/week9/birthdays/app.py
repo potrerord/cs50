@@ -65,8 +65,9 @@ def index():
     if flask.request.method == "POST":
 
         # TODO: Add the user's entry into the database
-        name = flask.request.form.get("name")
-        if not flask.request.form.get("name"):
+        if flask.request.form.get("name"):
+            name = flask.request.form.get("name")
+        else:
             flask.redirect("/failure.html")
 
         month = flask.request.form.get("month")
