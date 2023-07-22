@@ -63,25 +63,27 @@ def after_request(response):
 def index():
     if flask.request.method == "POST":
         # Retrieve data from user's form fill.
-        name = flask.request.form.get("name")
-        month = flask.request.form.get("month")
-        day = flask.request.form.get("day")
+        user_name = flask.request.form.get("name")
+        user_month = flask.request.form.get("month")
+        user_day = flask.request.form.get("day")
 
         # If any part of the form is empty, return failure page.
-        if not name or not month or not day:
+        if not user_name or not user_month or not user_day:
             return flask.render_template("failure.html")
 
-        if month.lower() not in month[0] for month in MONTH_DAYS:
-            return flask.render_template("failure.html")
+        for month in MONTH_DAYS:
+            if user_month.lower() == month:
+                break
+        
 
 
         # If month or day is an invalid value, return failure page.
-        elif not 1 <= month <= 12 or not 1 <= day <= MONTH_DAYS[]:
+        elif not 1 <= user_month <= 12 or not 1 <= user_day <= MONTH_DAYS[]:
             return flask.render_template("failure.html")
 
 
         # If all fields are present, update database and redirect home.
-        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+        db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", user_name, user_month, user_day)
         return flask.redirect("/")
 
     else:
