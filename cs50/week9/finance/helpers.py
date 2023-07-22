@@ -3,7 +3,7 @@ import datetime
 import pytz
 import requests
 import subprocess
-from typing import Callable, Dict
+from typing import Callable, Dict, Union
 import urllib
 import uuid
 
@@ -16,10 +16,10 @@ from functools import wraps
 """
 
 
-def apology(message: str, code: int = 400):
+def apology(message: str, code: int = 400) -> flask.Response:
     """Render message as an apology to the user."""
 
-    def escape(s: str):
+    def escape(s: str) -> str:
         """Escape special characters.
 
         https://github.com/jacebrowning/memegen#special-characters
@@ -48,7 +48,7 @@ def login_required(f: Callable) -> Callable:
     """
 
     @functools.wraps(f)
-    def decorated_function(*args, **kwargs):
+    def decorated_function(*args, **kwargs) -> Callable:
         """Redirect user to login if current session has no user_id."""
 
         if flask.session.get("user_id") is None:
@@ -58,7 +58,7 @@ def login_required(f: Callable) -> Callable:
     return decorated_function
 
 
-def lookup(symbol: str) -> Dict[str, float, str]:
+def lookup(symbol: str) -> Dict[str, Union[str, float]]:
     """Look up quote for stock symbol argument."""
 
     # Prepare API request with stock symbol, current time, and start time.
