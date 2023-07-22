@@ -12,6 +12,7 @@ import tempfile  # python standard library module to create temporary files duri
 import werkzeug.security  # module in werkzeug library that provides various security functions like password hashing
 
 import helpers
+
 """
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -109,7 +110,6 @@ def login():
 
     # If user reached login route via POST (e.g. submitting a POST form)
     if flask.request.method == "POST":
-
         # Ensure username was submitted.
         form_username = flask.request.form.get("username")
         if not form_username:
@@ -124,7 +124,9 @@ def login():
         rows = db.execute("SELECT * FROM users WHERE username = ?", form_username)
 
         # Ensure username exists in database query and password is correct.
-        if len(rows) != 1 or not werkzeug.security.check_password_hash(rows[0]["hash"], form_password):
+        if len(rows) != 1 or not werkzeug.security.check_password_hash(
+            rows[0]["hash"], form_password
+        ):
             return helpers.apology("invalid username and/or password", 403)
 
         # Assign user's finance.db id to their current session user_id.
