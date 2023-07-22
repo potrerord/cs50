@@ -126,7 +126,7 @@ def history() -> None:
 
 
 @app.route("/login", methods=["GET", "POST"])
-def login() -> None:
+def login() -> flask.Response:
     """Log user in."""
 
     # Clear all session data from session directory.
@@ -165,7 +165,7 @@ def login() -> None:
 
 
 @app.route("/logout")
-def logout() -> None:
+def logout() -> flask.Response:
     """Log user out."""
 
     # Clear all session data from session directory.
