@@ -127,7 +127,7 @@ def login():
         if len(rows) != 1 or not werkzeug.security.check_password_hash(rows[0]["hash"], form_password):
             return helpers.apology("invalid username and/or password", 403)
 
-        # Assign database id for the user to their login session.
+        # Assign user's finance.db id to their current session user_id.
         flask.session["user_id"] = rows[0]["id"]
 
         # Redirect the user to the homepage.
@@ -140,12 +140,12 @@ def login():
 
 @app.route("/logout")
 def logout():
-    """Log user out"""
+    """Log user out."""
 
-    # Forget any user_id
+    # Clear all session data from session directory.
     flask.session.clear()
 
-    # Redirect user to login form
+    # Redirect user to the login form.
     return flask.redirect("/")
 
 
