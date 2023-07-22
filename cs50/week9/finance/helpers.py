@@ -3,7 +3,7 @@ import datetime
 import pytz
 import requests
 import subprocess
-from typing import Dict
+from typing import Callable, Dict
 import urllib
 import uuid
 
@@ -41,7 +41,7 @@ def apology(message, code=400):
     return flask.render_template("apology.html", top=code, bottom=escape(message)), code
 
 
-def login_required(f):
+def login_required(f: Callable) -> Callable:
     """Decorate functions to require login before accessing routes.
 
     https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
@@ -58,7 +58,7 @@ def login_required(f):
     return decorated_function
 
 
-def lookup(symbol: str) -> Dict:
+def lookup(symbol: str) -> Dict[str, float, str]:
     """Look up quote for stock symbol argument."""
 
     # Prepare API request with stock symbol, current time, and start time.
