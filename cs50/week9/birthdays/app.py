@@ -40,9 +40,6 @@ def index():
         return flask.redirect("/")
 
     else:
-        db.execute("SELECT FROM birthdays ")
-
+        db.execute("SELECT * FROM birthdays;")
         return flask.render_template("index.html")
-
-
 
