@@ -63,7 +63,6 @@ def after_request(response):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if flask.request.method == "POST":
-
         # Retrieve data from user's form fill.
         name = flask.request.form.get("name")
         month = flask.request.form.get("month")
