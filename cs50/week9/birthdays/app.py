@@ -71,8 +71,13 @@ def index():
         if not name or not month or not day:
             return flask.render_template("failure.html")
 
+
+        if name.lower() not in MONTH_MAX_DAYS[0]:
+            return flask.render_template("failure.html")
+
+
         # If month or day is an invalid value, return failure page.
-        elif not 1 <= month <= 12 or not 1 <= day <= :
+        elif not 1 <= month <= 12 or not 1 <= day <= MONTH_MAX_DAYS[]:
             return flask.render_template("failure.html")
 
 
