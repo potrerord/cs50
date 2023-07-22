@@ -83,6 +83,7 @@ def index():
     else:
         # Query for all birthdays.
         birthdays = db.execute("SELECT * FROM birthdays")
+        print(f"\n{birthdays}\n")
 
         # Render birthdays page.
         return flask.render_template("index.html", birthdays=birthdays)
