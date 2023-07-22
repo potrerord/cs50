@@ -19,8 +19,7 @@ def apology(message, code=400):
     """Render message as an apology to the user."""
 
     def escape(s):
-        """
-        Escape special characters.
+        """Escape special characters.
 
         https://github.com/jacebrowning/memegen#special-characters
         """
@@ -42,10 +41,9 @@ def apology(message, code=400):
 
 
 def login_required(f):
-    """
-    Decorate routes to require login.
+    """Decorate routes to require login.
 
-    http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
+    https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
     """
 
     @functools.wraps(f)
