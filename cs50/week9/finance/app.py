@@ -104,21 +104,21 @@ def history():
 def login():
     """Log user in."""
 
-    # Forget any user_id
+    # Clear all session data from session directory.
     flask.session.clear()
 
-    # User reached route via POST (as by submitting a form via POST)
+    # If user reached route via POST (as by submitting a form via POST)
     if flask.request.method == "POST":
 
-        # Ensure username was submitted
+        # Ensure username was submitted.
         if not flask.request.form.get("username"):
             return helpers.apology("must provide username", 403)
 
-        # Ensure password was submitted
+        # Ensure password was submitted.
         elif not flask.request.form.get("password"):
             return helpers.apology("must provide password", 403)
 
-        # Query database for username
+        # Query finance.db database for username.
         rows = db.execute("SELECT * FROM users WHERE username = ?", flask.request.form.get("username"))
 
         # Ensure username exists and password is correct
