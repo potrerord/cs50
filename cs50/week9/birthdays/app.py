@@ -72,7 +72,7 @@ def index():
         if not user_name or not user_month or not user_day:
             return flask.render_template("failure.html")
 
-        # If month or day is an invalid value, render failure page.
+        # If invalid date, render failure page.
         elif not 1 <= int(user_month) <= 12 or not 1 <= int(user_day) <= MONTH_DAYS[user_month]:
             return flask.render_template("failure.html")
 
