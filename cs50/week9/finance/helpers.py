@@ -19,7 +19,7 @@ from functools import wraps
 def apology(message: str, code: int = 400):
     """Render message as an apology to the user."""
 
-    def escape(s):
+    def escape(s: str):
         """Escape special characters.
 
         https://github.com/jacebrowning/memegen#special-characters
