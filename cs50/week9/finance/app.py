@@ -127,7 +127,7 @@ def login():
         if len(rows) != 1 or not werkzeug.security.check_password_hash(rows[0]["hash"], form_password):
             return helpers.apology("invalid username and/or password", 403)
 
-        # Remember which user has logged in
+        # Assign database id for the user to their login session.
         flask.session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
