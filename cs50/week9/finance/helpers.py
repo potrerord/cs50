@@ -3,6 +3,7 @@ import datetime
 import pytz
 import requests
 import subprocess
+from typing import Dict
 import urllib
 import uuid
 
@@ -57,7 +58,7 @@ def login_required(f):
     return decorated_function
 
 
-def lookup(symbol):
+def lookup(symbol: str) -> Dict:
     """Look up quote for stock symbol argument."""
 
     # Prepare API request with stock symbol, current time, and start time.
@@ -86,6 +87,8 @@ def lookup(symbol):
         quotes = list(csv.DictReader(response.content.decode("utf-8").splitlines()))
         quotes.reverse()
         price = round(float(quotes[0]["Adj Close"]), 2)
+
+        # Return dictionary
         return {"name": symbol, "price": price, "symbol": symbol}
     except (requests.RequestException, ValueError, KeyError, IndexError):
         return None
