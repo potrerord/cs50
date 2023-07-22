@@ -22,18 +22,18 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import apology, login_required, lookup, usd
 """
 
-# Configure application
+# Configure Flask application in current file.
 app = flask.Flask(__name__)
 
-# Custom filter
+# Configure Jinja environment with custom USD formatting filter.
 app.jinja_env.filters["usd"] = helpers.usd
 
-# Configure session to use filesystem (instead of signed cookies)
+# Configure Flask to store sessions on local disk (not signed cookies).
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 flask_session.Session(app)
 
-# Configure CS50 Library to use SQLite database
+# Configure CS50 Library's SQL module to use SQLite finance.db database.
 db = cs50.SQL("sqlite:///finance.db")
 
 
