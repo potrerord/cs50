@@ -10,6 +10,6 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def now():
+def current():
     time = datetime.now()
     return render_template("index.html", time=time)
