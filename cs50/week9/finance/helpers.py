@@ -94,6 +94,6 @@ def lookup(symbol: str) -> Dict[str, Union[str, float]]:
         return None
 
 
-def usd(value):
+def usd(value: float) -> str:
     """Format value as USD."""
     return f"${value:,.2f}"
