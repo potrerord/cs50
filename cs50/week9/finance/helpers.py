@@ -41,7 +41,7 @@ def apology(message, code=400):
 
 
 def login_required(f):
-    """Decorate routes to require login.
+    """Decorate functions to require login before accessing routes.
 
     https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
     """
@@ -58,7 +58,7 @@ def login_required(f):
 
 
 def lookup(symbol):
-    """Look up quote for symbol."""
+    """Look up quote for symbol argument."""
 
     # Prepare API request
     symbol = symbol.upper()
