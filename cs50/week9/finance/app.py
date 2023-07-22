@@ -107,7 +107,7 @@ def login():
     # Clear all session data from session directory.
     flask.session.clear()
 
-    # If user reached route via POST (as by submitting a form via POST)
+    # If user reached login route via POST (e.g. submitting a POST form)
     if flask.request.method == "POST":
 
         # Ensure username was submitted.
@@ -130,10 +130,10 @@ def login():
         # Assign database id for the user to their login session.
         flask.session["user_id"] = rows[0]["id"]
 
-        # Redirect user to home page
+        # Redirect the user to the homepage.
         return flask.redirect("/")
 
-    # User reached route via GET (as by clicking a link or via redirect)
+    # If user reached login route via GET (e.g. clicking link; redirect)
     else:
         return flask.render_template("login.html")
 
