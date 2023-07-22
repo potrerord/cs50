@@ -12,20 +12,19 @@ from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 """
 
-# Dictionary -- "Month": [month_number, max days]
-MONTHS = {
-    "January":   [1, 31],
-    "February":  [2, 29],
-    "March":     [3, 31],
-    "April":     [4, 30],
-    "May":       [5, 31],
-    "June":      [6, 30],
-    "July":      [7, 31],
-    "August":    [8, 31],
-    "September": [9, 30],
-    "October":   [10, 31],
-    "November":  [11, 31],
-    "December":  [12, 31]
+MONTH_MAX_DAYS = {
+    "january":   31,
+    "february":  29,
+    "march":     31,
+    "april":     30,
+    "may":       31,
+    "june":      30,
+    "july":      31,
+    "august":    31,
+    "september": 30,
+    "october":   31,
+    "november":  31,
+    "december":  31
 }
 """
 First, in app.py, add logic in your GET request handling to query the birthdays.db database for all birthdays. Pass all of that data to your index.html template.
@@ -73,7 +72,7 @@ def index():
             return flask.render_template("failure.html")
 
         # If month or day is an invalid value, return failure page.
-        elif not 1 <= month <= 12 or not 1 <= day <= 31:
+        elif not 1 <= month <= 12 or not 1 <= day <= :
             return flask.render_template("failure.html")
 
 
