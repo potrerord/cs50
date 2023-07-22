@@ -71,6 +71,8 @@ def index():
         # If any part of the form is empty, return failure page.
         if not name or not month or not day:
             return flask.render_template("failure.html")
+
+        # If month or day is an invalid value, return failure page.
         elif not 1 <= month <= 12 or not 1 <= day <= 31:
             return flask.render_template("failure.html")
 
