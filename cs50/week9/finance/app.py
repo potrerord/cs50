@@ -7,9 +7,9 @@ import os
 
 import cs50
 import flask
-import flask_session
-import tempfile
-import werkzeug.security
+import flask_session  # allows you to store session data on server side
+import tempfile  # python standard library module to create temporary files during exec
+import werkzeug.security  # module in 
 
 import helpers
 """
