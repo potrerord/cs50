@@ -12,20 +12,20 @@ from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 """
 
-
+# Dictionary -- "Month": [month_number, max days]
 MONTHS = {
-    "January": 1,
-    "February": 2,
-    "March": 3,
-    "April": 4,
-    "May": 5,
-    "June": 6,
-    "July": 7,
-    "August": 8,
-    "September": 9,
-    "October": 10,
-    "November": 11,
-    "December": 12
+    "January":   [1, 31],
+    "February":  [2, 29],
+    "March":     [3, 31],
+    "April":     [4, 30],
+    "May":       [5, 31],
+    "June":      [6, 30],
+    "July":      [7, 31],
+    "August":    [8, 31],
+    "September": [9, 30],
+    "October":   [10, 31],
+    "November":  [11, 31],
+    "December":  [12, 31]
 }
 """
 First, in app.py, add logic in your GET request handling to query the birthdays.db database for all birthdays. Pass all of that data to your index.html template.
