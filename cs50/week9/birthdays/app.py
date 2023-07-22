@@ -12,7 +12,7 @@ from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 """
 
-MONTH_MAX_DAYS = {
+MONTH_DAYS = {
     "january":   31,
     "february":  29,
     "march":     31,
@@ -71,13 +71,12 @@ def index():
         if not name or not month or not day:
             return flask.render_template("failure.html")
 
-
-        if name.lower() not in MONTH_MAX_DAYS[0]:
+        if month.lower() not in month[0] for month in MONTH_DAYS:
             return flask.render_template("failure.html")
 
 
         # If month or day is an invalid value, return failure page.
-        elif not 1 <= month <= 12 or not 1 <= day <= MONTH_MAX_DAYS[]:
+        elif not 1 <= month <= 12 or not 1 <= day <= MONTH_DAYS[]:
             return flask.render_template("failure.html")
 
 
