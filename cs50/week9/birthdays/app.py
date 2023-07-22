@@ -83,6 +83,6 @@ def index():
         # When the / route is requested via GET, your web application
         # should display, in a table, all of the people in your database
         # along with their birthdays.
-        db.execute("SELECT * FROM birthdays;")
+        db.execute("SELECT * FROM birthdays")
         return flask.render_template("index.html", months=MONTHS)
 
