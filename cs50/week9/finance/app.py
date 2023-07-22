@@ -33,7 +33,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 flask_session.Session(app)
 
-# Configure CS50 Library's SQL module to use SQLite finance.db database.
+# Create SQL class object from CS50 library with finance.db database.
 db = cs50.SQL("sqlite:///finance.db")
 
 
