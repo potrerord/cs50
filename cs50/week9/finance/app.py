@@ -39,7 +39,7 @@ db = cs50.SQL("sqlite:///finance.db")
 
 @app.after_request
 def after_request(response):
-    """Ensure responses aren't cached"""
+    """Ensure responses aren't cached."""
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
@@ -49,27 +49,60 @@ def after_request(response):
 @app.route("/")
 @helpers.login_required
 def index():
-    """Show portfolio of stocks"""
+    """Show portfolio of stocks."""
+
+
+
+
+
+
+
+
+
     return helpers.apology("TODO")
 
 
 @app.route("/buy", methods=["GET", "POST"])
 @helpers.login_required
 def buy():
-    """Buy shares of stock"""
+    """Buy shares of stock."""
+
+
+
+
+
+
+
+
+
+
+
     return helpers.apology("TODO")
 
 
 @app.route("/history")
 @helpers.login_required
 def history():
-    """Show history of transactions"""
+    """Show history of transactions."""
+
+
+
+
+
+
+
+
+
+
+
+
+
     return helpers.apology("TODO")
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    """Log user in"""
+    """Log user in."""
 
     # Forget any user_id
     flask.session.clear()
