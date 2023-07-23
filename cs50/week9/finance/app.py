@@ -207,14 +207,15 @@ def register() -> flask.Response:
     def validate_password(pw: str, username: str):
         # Check if password fails to match requirements.
         reqs = [
-            {"check" = "lower", regex = "[a-z]", "valid": True, "message": "Password does not contain lowercase character."},
-            {"check" = "upper", regex = "[A-Z]", "valid": True, "message": "Password does not contain uppercase character."},
-            {"check" = "numeral", regex = "\d", "valid": True, "message": "Password does not contain numeral 0-9."}
-            {"check" = "special", regex = "\W", "valid": True, "message": "Password does not contain special character."}
-            {"check" = "no username", regex = username, "valid": True, "message": "Password contains username."}
+            {"check" = "lower", "regex" = "[a-z]", "valid": True, "message": "Password does not contain lowercase character."},
+            {"check" = "upper", "regex" = "[A-Z]", "valid": True, "message": "Password does not contain uppercase character."},
+            {"check" = "numeral", "regex" = "\d", "valid": True, "message": "Password does not contain numeral 0-9."}
+            {"check" = "special", "regex" = "\W", "valid": True, "message": "Password does not contain special character."}
+            {"check" = "no username", "regex" = username, "valid": True, "message": "Password contains username."}
         ]
 
-        for 
+        for req in reqs:
+            if re.search(rf"{req["regex"]}")
 
 
         if not re.search(r"[a-z]", pw):
