@@ -260,8 +260,12 @@ def register() -> flask.Response:
                 if requirement["check"] == "no username":
                     requirement["valid"] = False
 
+        # If password is valid, move on.
+        else:
+
+
         # If password fails to match requirements, provide specified error.
-        
+
         for requirement in requirements:
             if requirement["valid"] == False:
 
