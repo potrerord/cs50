@@ -62,7 +62,7 @@ def index() -> flask.Response:
     # current price of each stock, and the total value of each holding
     # (i.e., shares times price).
 
-    
+    # Get data of current user's transactions.
     user_transactions = db.execute("""
                             SELECT *
                               FROM transactions
