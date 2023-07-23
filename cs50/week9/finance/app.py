@@ -189,7 +189,7 @@ def buy() -> flask.Response:
              WHERE id = ?
             """,
             post_trans_cash,
-            flask.session("user_id")
+            flask.session["user_id"]
         )
 
         # Redirect to homepage after successful transaction.
