@@ -216,7 +216,7 @@ def register() -> flask.Response:
         for user in users:
             if user["username"] == form_username:
                 username_exists = True
-        if username_exists == False:
+        if username_exists == True:
             return helpers.apology("Username already exists.")
 
         # Apologize if no password was entered.
