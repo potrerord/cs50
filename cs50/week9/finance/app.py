@@ -203,7 +203,7 @@ def register() -> flask.Response:
 
     if flask.request.method == "POST":
 
-
+        
 
         # Require that a user input a username, implemented as a text field
         # whose name is username. Render an apology if the user’s input is
@@ -215,7 +215,7 @@ def register() -> flask.Response:
         form_username = flask.request.form.get("username")
         if not form_username:
             return helpers.apology("must enter a username")
-        elif 
+        elif
 
 
 
