@@ -274,7 +274,7 @@ def register() -> flask.Response:
 
 
 
-        # Hash password and clear form_password variable.
+        # Hash password and clear reference to form_password variable data.
         hashed_form_password = werkzeug.security.generate_password_hash(form_password)
         form_password = None
 
