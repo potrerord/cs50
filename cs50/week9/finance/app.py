@@ -137,14 +137,13 @@ def buy() -> flask.Response:
         # Create transaction history table if it does not already exist.
         db.execute("""
             CREATE TABLE IF NOT EXISTS transactions (
-                id          INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                user_id     INTEGER NOT NULL,
-                type        TEXT    NOT NULL,
-                symbol      TEXT    NOT NULL,
-                shares      INTEGER NOT NULL,
-                shareprice  NUMERIC NOT NULL,
-                date        DATE    NOT NULL,
-                time        TIME    NOT NULL,
+                id          INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+                user_id     INTEGER  NOT NULL,
+                type        TEXT     NOT NULL,
+                symbol      TEXT     NOT NULL,
+                shares      INTEGER  NOT NULL,
+                shareprice  NUMERIC  NOT NULL,
+                datetime    DATETIME NOT NULL,
                 FOREIGN KEY (user_id) REFERENCES users(id)
             )
         """)
@@ -155,10 +154,10 @@ def buy() -> flask.Response:
                 ON transactions (user_id)
         """)
 
-        # Create index on date field for searchability.
+        # Create index on datetime field for searchability.
         db.execute("""
-            CREATE INDEX IF NOT EXISTS transactions_date_idx
-                ON transactions (date)
+            CREATE INDEX IF NOT EXISTS transactions_datetime_idx
+                ON transactions (datetime)
         """)
 
         # Execute transaction by updating transactions table.
