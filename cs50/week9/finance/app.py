@@ -232,22 +232,28 @@ def register() -> flask.Response:
             return helpers.apology("Passwords do not match.")
 
         # Check if password fails to match requirements.
-        invalid_lower = False
-        invalid_upper = False
-        invalid_number = False
-        invalid_special = False
+        invalid = {
+            no_lower: [False
+            no_upper: [False
+            no_num: [False
+            no_spec: [False
+            contains_user: [False
+        }
         if not re.search(r"[a-z]", form_password):
-            invalid_lower = True
+            no_lower = True
         elif not re.search(r"[A-Z]", form_password):
-            invalid_upper = True
+            no_upper = True
         elif not re.search(r"\d", form_password):
-            invalid_number = True
+            no_num = True
         elif not re.search(r"\W", form_password):
-            invalid_special = True
+            no_spec = True
+        elif re.search(form_username, form_password):
+            contains_user = True
 
         # If password fails to match requirements, provide specified error.
-        if invalid_lower or invalid_upper or invalid_number or invalid_special:
-            
+        if no_lower or no_upper or no_num or no_spec or contains_user:
+
+
 
 
         # Hash password before saving it into database.
