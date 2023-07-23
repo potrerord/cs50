@@ -118,13 +118,20 @@ def buy() -> flask.Response:
         symbol = symbol_data["symbol"]
         price = symbol_data["price"]
 
+        # Calculate total transaction amount.
+        trans_amount = price * form_shares
+
         # Get user's pre- and post-transaction cash balance.
         user_data = db.execute("SELECT * FROM users WHERE id = ?",
                                     flask.session["user_id"])
         if not user_data:
             return helpers.apology("Unknown error.")
         pre_trans_cash = user_data[0]["cash"]
-        post_trans_cash = pre_trans_cash - price
+
+        # Determine if user can afford transaction.
+        post_trans_cash = pre_trans_cash - trans_amount
+        if post_trans_cash < 0:
+            return helpers.apology("Insufficient funds.")
 
         # Create transaction history table if it does not already exist.
         db.execute("""
@@ -141,38 +148,19 @@ def buy() -> flask.Response:
         """)
 
         # Create unique index on foreign key.
-        db.execute("CREATE INDEX IF NOT EXISTS history_userid)
+        db.execute("""
+            CREATE UNIQUE INDEX IF NOT EXISTS history_userid_idx
+            ON history (user_id)
+        """)
 
         # Create index on time field for searchability.
         db.execute(
             "CREATE INDEX IF NOT EXISTS history_time_idx ON history (time)"
         )
 
+        
 
-
-
-        # Define (non-UNIQUE) indexes on any fields via which you will
-        # search (as via SELECT with WHERE).
-
-
-
-        # Render an apology, without completing a purchase, if the user
-        # cannot afford the number of shares at the current price.
-
-
-
-        # You don’t need to worry about race conditions (or use
-        # transactions).
-
-
-
-        # Once you’ve implemented buy correctly, you should be able to see
-        # users’ purchases in your new table(s) via phpLiteAdmin or sqlite3.
-
-
-
-
-        # Redirect to homepage with updated info.
+        # Redirect to homepage after successful transaction.
         return flask.redirect("/")
 
     # If user arrived to /buy via GET, render buy form.
