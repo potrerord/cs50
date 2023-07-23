@@ -201,11 +201,42 @@ def quote() -> flask.Response:
 def register() -> flask.Response:
     """Register user into finance.db database via a form."""
 
-    # Require that a user input a username, implemented as a text field whose name is username. Render an apology if the user’s input is blank or the username already exists.
-    # Require that a user input a password, implemented as a text field whose name is password, and then that same password again, implemented as a text field whose name is confirmation. Render an apology if either input is blank or the passwords do not match.
+    # Require that a user input a username, implemented as a text field
+    # whose name is username. Render an apology if the user’s input is
+    # blank or the username already exists.
+
+    
+
+
+
+    # Require that a user input a password, implemented as a text field
+    # whose name is password, and then that same password again,
+    # implemented as a text field whose name is confirmation. Render an
+    # apology if either input is blank or the passwords do not match.
+
+
+
+
+
     # Submit the user’s input via POST to /register.
-    # INSERT the new user into users, storing a hash of the user’s password, not the password itself. Hash the user’s password with generate_password_hash Odds are you’ll want to create a new template (e.g., register.html) that’s quite similar to login.html.
-    # Once you’ve implemented register correctly, you should be able to register for an account and log in (since login and logout already work)! And you should be able to see your rows via phpLiteAdmin or sqlite3.
+
+
+
+
+
+    # INSERT the new user into users, storing a hash of the user’s
+    # password, not the password itself. Hash the user’s password with
+    # generate_password_hash Odds are you’ll want to create a new
+    # template (e.g., register.html) that’s quite similar to login.html.
+
+
+
+
+
+    # Once you’ve implemented register correctly, you should be able to
+    # register for an account and log in (since login and logout already
+    # work)! And you should be able to see your rows via phpLiteAdmin or
+    # sqlite3.
 
 
 
