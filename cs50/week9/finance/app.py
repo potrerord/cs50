@@ -214,7 +214,7 @@ def register() -> flask.Response:
         # Apologize if username already exists.
         username_exists = False
         for user in users:
-            if user["username"] == form_username:
+            if user.username == form_username:
                 username_exists = True
         if username_exists == True:
             return helpers.apology("Username already exists.")
@@ -233,13 +233,13 @@ def register() -> flask.Response:
         hashed_form_password = werkzeug.security.generate_password_hash(form_password)
 
         # Save new user into database; let id autoincrement in database.
-        db.execute("INSERT INTO users (username, hash) VALUES (form_username, hashed_form_password)")
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", form_username, hashed_form_password)
 
-        # After successful registration,
+        # After successful registration, log user in and redirect home.
+        flask.session["user_id"] =
 
     # Render page if user did not arrive via POST.
-    else:
-        return flask.render_template("/register.html")
+    return flask.render_template("/register.html")
 
 
 
