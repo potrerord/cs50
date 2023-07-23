@@ -232,7 +232,7 @@ def register() -> flask.Response:
             return helpers.apology("Passwords do not match.")
 
         # Apologize if password does not match requirements.
-        if re.search(r"[A-Z]", )
+        if re.search(r"(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)", form_password)
 
         # Hash password before saving it into database.
         hashed_form_password = werkzeug.security.generate_password_hash(form_password)
