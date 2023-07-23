@@ -215,29 +215,8 @@ def register() -> flask.Response:
         ]
 
         for req in reqs:
-            if re.search(rf"{req["regex"]}")
-
-
-        if not re.search(r"[a-z]", pw):
-            for req in reqs:
-                if req["check"] == "lower":
-                    req["valid"] = False
-        elif not re.search(r"[A-Z]", pw):
-            for req in reqs:
-                if req["check"] == "upper":
-                    req["valid"] = False
-        elif not re.search(r"\d", pw):
-            for req in reqs:
-                if rqe["check"] == "numeral":
-                    req["valid"] = False
-        elif not re.search(r"\W", pw):
-            for req in reqs:
-                if req["check"] == "special":
-                    req["valid"] = False
-        elif form_username in pw:
-            for req in reqs:
-                if req["check"] == "no username":
-                    req["valid"] = False
+            if not re.search(rf"{req["regex"]}", pw):
+                req["valid"] = False
 
 
     # If user navs to /register via POST (e.g. through form submission)
