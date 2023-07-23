@@ -203,34 +203,8 @@ def quote() -> flask.Response:
 def register() -> flask.Response:
     """Register user into finance.db database via a form."""
 
-    # If user navs to /register via POST (e.g. through form submission)
-    if flask.request.method == "POST":
-        # Retrieve user data from database.
-        users = db.execute("SELECT * FROM users")
 
-        # Apologize if no username was entered.
-        form_username = flask.request.form.get("username")
-        if not form_username:
-            return helpers.apology("Must enter a username.")
-
-        # Apologize if username already exists.
-        username_exists = False
-        for user in users:
-            if user["username"] == form_username:
-                username_exists = True
-        if username_exists == True:
-            return helpers.apology("Username already exists.")
-
-        # Apologize if no password was entered.
-        form_password = flask.request.form.get("password")
-        form_password_confirm = flask.request.form.get("password-confirm")
-        if not form_password or not form_password_confirm:
-            return helpers.apology("Must enter a password and password confirmation.")
-
-        # Apologize if passwords do not match.
-        if form_password != form_password_confirm:
-            return helpers.apology("Passwords do not match.")
-
+    def validate_password():
         # Check if password fails to match requirements.
         requirements = [
             {"check" = "lower", "valid": True, "message": "Password does not contain lowercase character."},
@@ -259,6 +233,37 @@ def register() -> flask.Response:
             for requirement in requirements:
                 if requirement["check"] == "no username":
                     requirement["valid"] = False
+
+
+    # If user navs to /register via POST (e.g. through form submission)
+    if flask.request.method == "POST":
+        # Retrieve user data from database.
+        users = db.execute("SELECT * FROM users")
+
+        # Apologize if no username was entered.
+        form_username = flask.request.form.get("username")
+        if not form_username:
+            return helpers.apology("Must enter a username.")
+
+        # Apologize if username already exists.
+        username_exists = False
+        for user in users:
+            if user["username"] == form_username:
+                username_exists = True
+        if username_exists == True:
+            return helpers.apology("Username already exists.")
+
+        # Apologize if no password was entered.
+        form_password = flask.request.form.get("password")
+        form_password_confirm = flask.request.form.get("password-confirm")
+        if not form_password or not form_password_confirm:
+            return helpers.apology("Must enter a password and password confirmation.")
+
+        # Apologize if passwords do not match.
+        if form_password != form_password_confirm:
+            return helpers.apology("Passwords do not match.")
+
+
 
         # If password is valid, move on.
         else:
