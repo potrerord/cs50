@@ -205,7 +205,7 @@ def register() -> flask.Response:
     # whose name is username. Render an apology if the user’s input is
     # blank or the username already exists.
 
-
+    form_username = flask.session.get("username")
 
 
 
