@@ -142,6 +142,7 @@ def buy() -> flask.Response:
                 type TEXT NOT NULL,
                 shareprice NUMERIC NOT NULL,
                 symbol TEXT NOT NULL,
+                date DATE NOT NULL,
                 time TIME NOT NULL
                 FOREIGN KEY (user_id) REFERENCES users(id)
             )
@@ -153,15 +154,17 @@ def buy() -> flask.Response:
             ON transactions (user_id)
         """)
 
-        # Create index on time field for searchability.
-        db.execute("""
-            CREATE INDEX IF NOT EXISTS transactions_time_idx
-            ON transactions (time)
+        # Create index on date field for searchability.
+         db.execute("""
+            CREATE INDEX IF NOT EXISTS transactions_date_idx
+            ON transactions (date)
         """)
 
         # Execute transaction by updating transactions table.
         db.execute("""
-            INSERT INTO transactions (id)
+            INSERT INTO transactions (
+                   id, user_id, shares, type, shareprice, symbol, date, time
+                   )
         """)
 
         # Redirect to homepage after successful transaction.
