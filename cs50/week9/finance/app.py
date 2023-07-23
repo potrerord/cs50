@@ -232,13 +232,13 @@ def register() -> flask.Response:
             return helpers.apology("Passwords do not match.")
 
         # Check if password fails to match requirements.
-        invalid = {
-            no_lower: [False
+        invalid = [
+            {"no_lower": False, 
             no_upper: [False
             no_num: [False
             no_spec: [False
             contains_user: [False
-        }
+        ]
         if not re.search(r"[a-z]", form_password):
             no_lower = True
         elif not re.search(r"[A-Z]", form_password):
