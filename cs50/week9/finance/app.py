@@ -62,12 +62,14 @@ def index() -> flask.Response:
     # current price of each stock, and the total value of each holding
     # (i.e., shares times price).
 
-    user = db.execute("""
-               SELECT *
-                 FROM user AS u
-                 JOIN transactions AS t
-                   ON u.id = t.user_id
-           """)
+    
+    user_transactions = db.execute("""
+                            SELECT *
+                              FROM transactions
+                             WHERE transactions.user_id = ?
+                        """,
+                        flask.session["user_id"]
+                        )
 
 
 
