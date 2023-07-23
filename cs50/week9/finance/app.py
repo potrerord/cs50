@@ -232,26 +232,40 @@ def register() -> flask.Response:
             return helpers.apology("Passwords do not match.")
 
         # Check if password fails to match requirements.
-        invalid = [
-            {"no_lower": False, 
-            no_upper: [False
-            no_num: [False
-            no_spec: [False
-            contains_user: [False
+        requirements = [
+            {"check" = "lower", "valid": True, "message": "Password does not contain lowercase character."},
+            {"check" = "upper", "valid": True, "message": "Password does not contain uppercase character."},
+            {"check" = "numeral", "valid": True, "message": "Password does not contain numeral 0-9."}
+            {"check" = "special", "valid": True, "message": "Password does not contain special character."}
+            {"check" = "no username", "valid": True, "message": "Password contains username."}
         ]
         if not re.search(r"[a-z]", form_password):
-            no_lower = True
+            for requirement in requirements:
+                if requirement["check"] == "lower":
+                    requirement["valid"] = False
         elif not re.search(r"[A-Z]", form_password):
-            no_upper = True
+            for requirement in requirements:
+                if requirement["check"] == "upper":
+                    requirement["valid"] = False
         elif not re.search(r"\d", form_password):
-            no_num = True
+            for requirement in requirements:
+                if requirement["check"] == "numeral":
+                    requirement["valid"] = False
         elif not re.search(r"\W", form_password):
-            no_spec = True
+            for requirement in requirements:
+                if requirement["check"] == "special":
+                    requirement["valid"] = False
         elif re.search(form_username, form_password):
-            contains_user = True
+            for requirement in requirements:
+                if requirement["check"] == "no username":
+                    requirement["valid"] = False
 
         # If password fails to match requirements, provide specified error.
-        if no_lower or no_upper or no_num or no_spec or contains_user:
+        
+        for requirement in requirements:
+            if requirement["valid"] == False:
+
+
 
 
 
