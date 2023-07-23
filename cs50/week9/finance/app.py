@@ -236,10 +236,10 @@ def register() -> flask.Response:
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", form_username, hashed_form_password)
 
         # Query database for user id.
-        user_id = db.execute("SELECT * FROM users WHERE username = ?, )
-
-        # After successful registration, log user in and redirect home.
-        flask.session["user_id"] = users[]
+        new_user = db.execute("SELECT * FROM users WHERE username = ?", form_username)
+        if new_user:
+            # After successful registration, log user in and redirect home.
+            flask.session["user_id"] = new_user
 
     # Render page if user did not arrive via POST.
     return flask.render_template("/register.html")
