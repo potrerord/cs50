@@ -215,12 +215,23 @@ def register() -> flask.Response:
         # Apologize if no username was entered.
         form_username = flask.request.form.get("username")
         if not form_username:
-            return helpers.apology("must enter a username")
+            return helpers.apology("Must enter a username.")
 
         # Apologize if username already exists.
-        
+        username_exists = False
         for user in users:
-            if
+            if user["username"] == form_username:
+                username_exists = True
+        if username_exists == False:
+            return helpers.apology("Username already exists.")
+
+        # Apologize if no password was entered.
+        form_password = flask.request.form.get("password")
+        form_password_confirm = flask.request.form.get("password_confirm")
+        if not form_password:
+            return helpers.apology("Must enter a password.")
+
+
 
 
 
