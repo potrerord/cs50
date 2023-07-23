@@ -245,7 +245,7 @@ def register() -> flask.Response:
 
 
 
-    return
+    return helpers.apology("TODO")
 
 
 @app.route("/sell", methods=["GET", "POST"])
