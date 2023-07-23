@@ -202,13 +202,6 @@ def register() -> flask.Response:
     """Register user into finance.db database via a form."""
 
     if flask.request.method == "POST":
-
-
-
-        # Require that a user input a username, implemented as a text field
-        # whose name is username. Render an apology if the user’s input is
-        # blank or the username already exists.
-
         # Retrieve user data from database.
         users = db.execute("SELECT * FROM users")
 
@@ -240,6 +233,7 @@ def register() -> flask.Response:
 
         # Save the new user info into user database.
         db.execute("INSERT INTO users (username, hash) VALUES (form_username, hashed_form_password)")
+
     return helpers.apology("TODO")
 
 
