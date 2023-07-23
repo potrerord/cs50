@@ -160,10 +160,10 @@ def buy() -> flask.Response:
                 ON transactions (datetime)
         """)
 
-        # Execute transaction by updating transactions table.
+        # Execute transaction by updating table at current datetime.
         db.execute("""
             INSERT INTO transactions (user_id, shares, type, shareprice,
-                                      symbol, date, time)
+                                      symbol, datetime)
             VALUES (?, ?, ?, ?, ?, ?, ?)
             """,
             flask.session["user_id"],
@@ -171,8 +171,7 @@ def buy() -> flask.Response:
             "buy",
             price,
             symbol,
-            datetime.date.today(),
-            datetime.now()
+            datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         )
 
         # Redirect to homepage after successful transaction.
