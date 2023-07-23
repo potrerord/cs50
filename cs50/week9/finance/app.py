@@ -235,27 +235,11 @@ def register() -> flask.Response:
         if form_password != form_password_confirm:
             return helpers.apology("Passwords do not match.")
 
-        # INSERT the new user into users, storing a hash of the user’s
-        # password, not the password itself. Hash the user’s password with
-        # generate_password_hash Odds are you’ll want to create a new
-        # template (e.g., register.html) that’s quite similar to login.html.
+        # Hash password before saving it into database.
+        hashed_form_password = werkzeug.security.generate_password_hash(form_password)
 
-        db.execute("INSERT INTO users ")
-
-
-
-        # Once you’ve implemented register correctly, you should be able to
-        # register for an account and log in (since login and logout already
-        # work)! And you should be able to see your rows via phpLiteAdmin or
-        # sqlite3.
-
-
-
-
-
-
-
-
+        # Save the new user info into user database.
+        db.execute("INSERT INTO users (username, hash) VALUES (form_username, hashed_form_password)")
     return helpers.apology("TODO")
 
 
