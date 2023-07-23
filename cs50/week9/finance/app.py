@@ -62,7 +62,8 @@ def index() -> flask.Response:
     # current price of each stock, and the total value of each holding
     # (i.e., shares times price).
 
-    symbol = db.execute("SELECT symbol FROM user")
+    user = db.execute("SELECT * FROM user JOIN transactions")
+
 
     # Also display the user’s current cash balance along with a grand
     # total (i.e., stocks’ total value plus cash).
