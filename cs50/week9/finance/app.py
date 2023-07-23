@@ -229,6 +229,8 @@ def register() -> flask.Response:
         if form_password != form_password_confirm:
             return helpers.apology("Passwords do not match.")
 
+        elif
+
         # Hash password before saving it into database.
         hashed_form_password = werkzeug.security.generate_password_hash(form_password)
 
