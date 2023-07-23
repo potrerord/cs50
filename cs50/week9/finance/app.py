@@ -205,7 +205,7 @@ def register() -> flask.Response:
     # whose name is username. Render an apology if the user’s input is
     # blank or the username already exists.
 
-    
+
 
 
 
@@ -245,7 +245,7 @@ def register() -> flask.Response:
 
 
 
-    return helpers.apology("TODO")
+    return
 
 
 @app.route("/sell", methods=["GET", "POST"])
