@@ -163,7 +163,14 @@ def buy() -> flask.Response:
         # Execute transaction by updating transactions table.
         db.execute("""
             INSERT INTO transactions (
-                   id, user_id, shares, type, shareprice, symbol, date, time
+                   id,
+                   user_id,
+                   shares,
+                   type,
+                   shareprice,
+                   symbol,
+                   date,
+                   time
                    )
         """)
 
