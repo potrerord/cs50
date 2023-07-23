@@ -236,7 +236,7 @@ def register() -> flask.Response:
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", form_username, hashed_form_password)
 
         # After successful registration, log user in and redirect home.
-        flask.session["user_id"] = 
+        flask.session["user_id"] = users[]
 
     # Render page if user did not arrive via POST.
     return flask.render_template("/register.html")
