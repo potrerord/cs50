@@ -140,10 +140,6 @@ def buy() -> flask.Response:
             )
         """)
 
-        # Define UNIQUE on time column to ensure .
-        db.execute("CREATE UNIQUE INDEX IF NOT EXISTS time ON history (time)")
-
-
         # Define (non-UNIQUE) indexes on any fields via which you will
         # search (as via SELECT with WHERE).
 
