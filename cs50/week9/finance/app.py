@@ -118,7 +118,6 @@ def buy() -> flask.Response:
             return helpers.apology("Not enough shares.")
 
         # Get data from lookup() return.
-        name = symbol_data["name"]
         symbol = symbol_data["symbol"]
         price = symbol_data["price"]
 
@@ -175,6 +174,15 @@ def buy() -> flask.Response:
             price,
             symbol,
             datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        )
+
+        # Update user's cash balance.
+        db.execute("""
+            UPDATE users
+               SET cash = ?
+             WHERE id = ?
+            """,
+            
         )
 
         # Redirect to homepage after successful transaction.
