@@ -234,7 +234,9 @@ def register() -> flask.Response:
         # Save new user into database; let id autoincrement in database.
         db.execute("INSERT INTO users (username, hash) VALUES (form_username, hashed_form_password)")
 
-        # After successful registration, 
+        # After successful registration,
+
+        
     return helpers.apology("TODO")
 
 
