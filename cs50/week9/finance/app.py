@@ -172,9 +172,8 @@ def buy() -> flask.Response:
             "buy",
             price,
             symbol,
-
-
-
+            datetime.date.today(),
+            datetime.now()
         )
 
         # Redirect to homepage after successful transaction.
