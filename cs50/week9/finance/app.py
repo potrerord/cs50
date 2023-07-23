@@ -227,36 +227,20 @@ def register() -> flask.Response:
 
         # Apologize if no password was entered.
         form_password = flask.request.form.get("password")
-        form_password_confirm = flask.request.form.get("password_confirm")
-        if not form_password:
-            return helpers.apology("Must enter a password.")
+        form_password_confirm = flask.request.form.get("password-confirm")
+        if not form_password or not form_password_confirm:
+            return helpers.apology("Must enter a password and password confirmation.")
 
-
-
-
-
-
-        # Require that a user input a password, implemented as a text field
-        # whose name is password, and then that same password again,
-        # implemented as a text field whose name is confirmation. Render an
-        # apology if either input is blank or the passwords do not match.
-
-
-
-
-
-        # Submit the user’s input via POST to /register.
-
-
-
-
+        # Apologize if passwords do not match.
+        if form_password != form_password_confirm:
+            return helpers.apology("Passwords do not match.")
 
         # INSERT the new user into users, storing a hash of the user’s
         # password, not the password itself. Hash the user’s password with
         # generate_password_hash Odds are you’ll want to create a new
         # template (e.g., register.html) that’s quite similar to login.html.
 
-
+        db.execute("INSERT INTO users ")
 
 
 
