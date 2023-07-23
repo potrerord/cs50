@@ -8,8 +8,10 @@ import os  # contains functions to interact with operating system
 import cs50  # contains SQL setup
 import flask  # micro web framework including tools/libraries/tech to build web apps with python
 import flask_session  # allows you to store session data on server side
+import re
 import tempfile  # python standard library module to create temporary files during exec
 import werkzeug.security  # module in werkzeug library that provides various security functions like password hashing
+
 
 import helpers
 
@@ -229,7 +231,7 @@ def register() -> flask.Response:
         if form_password != form_password_confirm:
             return helpers.apology("Passwords do not match.")
 
-        elif
+        if
 
         # Hash password before saving it into database.
         hashed_form_password = werkzeug.security.generate_password_hash(form_password)
