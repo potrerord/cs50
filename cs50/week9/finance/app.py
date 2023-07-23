@@ -235,6 +235,9 @@ def register() -> flask.Response:
         # Save new user into database; let id autoincrement in database.
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", form_username, hashed_form_password)
 
+        # Query database for user id.
+        user_id = db.execute("SELECT * FROM users WHERE username = ?, )
+
         # After successful registration, log user in and redirect home.
         flask.session["user_id"] = users[]
 
