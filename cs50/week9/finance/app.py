@@ -268,6 +268,7 @@ def register() -> flask.Response:
         invalid_pw_message = "The password contained the following errors:"
         for requirement in requirements:
             if requirement["valid"] == False:
+                invalid_pw_message += f"\n{requirement["message"]}"
 
 
 
