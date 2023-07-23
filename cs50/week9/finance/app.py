@@ -140,7 +140,7 @@ def buy() -> flask.Response:
         """)
 
         # Define UNIQUE indexes on any fields that should be unique.
-
+        db.execute("CREATE UNIQUE INDEX IF NOT EXISTS ON history ()")
 
 
         # Define (non-UNIQUE) indexes on any fields via which you will
