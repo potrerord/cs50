@@ -129,11 +129,13 @@ def buy() -> flask.Response:
         # Create transaction history table if it does not already exist.
         db.execute("""
             CREATE TABLE IF NOT EXISTS history (
-                id INTEGER PRIMARY KEY,
+                id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                user_id INTEGER NOT NULL,
+                amount INTEGER NOT NULL,
                 type TEXT NOT NULL,
                 symbol TEXT NOT NULL,
                 price NUMERIC NOT NULL,
-                FOREIGN KEY (id) REFERENCES users(id)
+                FOREIGN KEY (user_id) REFERENCES users(id)
             )
         """)
 
