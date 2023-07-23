@@ -10,6 +10,7 @@ import flask  # micro web framework including tools/libraries/tech to build web 
 import flask_session  # allows you to store session data on server side
 import re
 import tempfile  # python standard library module to create temporary files during exec
+from typing import Dict, Union
 import werkzeug.security  # module in werkzeug library that provides various security functions like password hashing
 
 
@@ -54,11 +55,26 @@ def after_request(response: flask.Response) -> flask.Response:
 def index() -> flask.Response:
     """Show portfolio of stocks."""
 
-    """Complete the implementation of index in such a way that it displays an HTML table summarizing, for the user currently logged in, which stocks the user owns, the numbers of shares owned, the current price of each stock, and the total value of each holding (i.e., shares times price). Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
+    # Complete the implementation of index in such a way that it
+    # displays an HTML table summarizing, for the user currently logged
+    # in, which stocks the user owns, the numbers of shares owned, the
+    # current price of each stock, and the total value of each holding
+    # (i.e., shares times price).
 
-    Odds are you’ll want to execute multiple SELECTs. Depending on how you implement your table(s), you might find GROUP BY HAVING SUM and/or WHERE of interest.
-    Odds are you’ll want to call lookup for each stock.
-    """
+
+
+    # Also display the user’s current cash balance along with a grand
+    # total (i.e., stocks’ total value plus cash).
+
+
+
+    # Odds are you’ll want to execute multiple SELECTs. Depending on how
+    # you implement your table(s), you might find GROUP BY HAVING SUM
+    # and/or WHERE of interest.
+
+
+
+    # Odds are you’ll want to call lookup for each stock.
 
 
 
@@ -72,35 +88,95 @@ def index() -> flask.Response:
 @app.route("/buy", methods=["GET", "POST"])
 @helpers.login_required
 def buy() -> flask.Response:
-    """Buy shares of stock."""
+    """Buy shares of stock on behalf of user request."""
 
-    """Complete the implementation of buy in such a way that it enables a user to buy stocks.
+    # If user arrived to /buy via POST,
+    if flask.request.method == "POST":
+        # Verify that symbol form has input.
+        form_symbol = flask.request.form.get("symbol")
+        if not form_symbol:
+            return helpers.apology("Missing symbol.")
 
-    Require that a user input a stock’s symbol, implemented as a text field whose name is symbol. Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
-    Require that a user input a number of shares, implemented as a text field whose name is shares. Render an apology if the input is not a positive integer.
-    Submit the user’s input via POST to /buy.
-    Upon completion, redirect the user to the home page.
-    Odds are you’ll want to call lookup to look up a stock’s current price.
-    Odds are you’ll want to SELECT how much cash the user currently has in users.
-    Add one or more new tables to finance.db via which to keep track of the purchase. Store enough information so that you know who bought what at what price and when.
-    Use appropriate SQLite types.
-    Define UNIQUE indexes on any fields that should be unique.
-    Define (non-UNIQUE) indexes on any fields via which you will search (as via SELECT with WHERE).
-    Render an apology, without completing a purchase, if the user cannot afford the number of shares at the current price.
-    You don’t need to worry about race conditions (or use transactions).
-    Once you’ve implemented buy correctly, you should be able to see users’ purchases in your new table(s) via phpLiteAdmin or sqlite3.
+        # Verify that symbol exists.
+        symbol_data = helpers.lookup(form_symbol)
+        if not symbol_data:
+            return helpers.apology("Invalid symbol.")
 
-    """
+        # Verify that shares has input.
+        form_shares = flask.request.form.get("shares")
+        if not form_shares:
+            return helpers.apology("Missing shares.")
+
+        # Verify that shares is positive integer.
+        if not isinstance(form_shares, int):
+            return helpers.apology("Enter valid integer.")
+        elif form_shares < 1:
+            return helpers.apology("Not enough shares.")
+
+        # Get data from lookup() return.
+        name = symbol_data["name"]
+        symbol = symbol_data["symbol"]
+        price = symbol_data["price"]
+
+        # Get user's pre- and post-transaction cash balance.
+        user_data = db.execute("SELECT * FROM users WHERE id = ?",
+                                    flask.session["user_id"])
+        if not user_data:
+            return helpers.apology("Unknown error.")
+        pre_trans_cash = user_data[0]["cash"]
+        post_trans_cash = pre_trans_cash - price
+
+        # Create transaction history table if it does not already exist.
+        db.execute("""
+            CREATE TABLE IF NOT EXISTS history (
+                id INTEGER PRIMARY KEY,
+                type TEXT NOT NULL,
+                symbol TEXT NOT NULL,
+                price NUMERIC NOT NULL,
+            )
+        """)
+
+        # Add one or more new tables to finance.db via which to keep
+        # track of the purchase. Store enough information so that you
+        # know who bought what at what price and when.
+
+
+
+        # Use appropriate SQLite types.
+
+
+
+        # Define UNIQUE indexes on any fields that should be unique.
+
+
+
+        # Define (non-UNIQUE) indexes on any fields via which you will
+        # search (as via SELECT with WHERE).
+
+
+
+        # Render an apology, without completing a purchase, if the user
+        # cannot afford the number of shares at the current price.
+
+
+
+        # You don’t need to worry about race conditions (or use
+        # transactions).
+
+
+
+        # Once you’ve implemented buy correctly, you should be able to see
+        # users’ purchases in your new table(s) via phpLiteAdmin or sqlite3.
 
 
 
 
+        # Redirect to homepage with updated info.
+        return flask.redirect("/")
 
-
-
-
-
-    return helpers.apology("TODO")
+    # If user arrived to /buy via GET, render buy form.
+    else:
+        return flask.render_template("buy.html")
 
 
 @app.route("/history")
@@ -180,44 +256,39 @@ def logout() -> flask.Response:
 @app.route("/quote", methods=["GET", "POST"])
 @helpers.login_required
 def quote() -> flask.Response:
-    """Get stock quote."""
+    """Look up stock's current price per user request."""
 
-    """Complete the implementation of quote in such a way that it allows a user to look up a stock’s current price.
+    # If user arrived to /quote via POST,
+    if flask.request.method == "POST":
+        # Verify that symbol form has input.
+        form_symbol = flask.request.form.get("symbol")
+        if not form_symbol:
+            return helpers.apology("Missing symbol.")
 
-    Require that a user input a stock’s symbol, implemented as a text field whose name is symbol.
-    Submit the user’s input via POST to /quote.
-    Odds are you’ll want to create two new templates (e.g., quote.html and quoted.html). When a user visits /quote via GET, render one of those templates, inside of which should be an HTML form that submits to /quote via POST. In response to a POST, quote can render that second template, embedding within it one or more values from lookup.
-    """
+        # Verify that symbol exists.
+        symbol_data = helpers.lookup(form_symbol)
+        if not symbol_data:
+            return helpers.apology("Invalid symbol.")
 
+        # Get data from lookup() return.
+        name = symbol_data["name"]
+        symbol = symbol_data["symbol"]
 
+        # Format price with usd().
+        fprice = helpers.usd(symbol_data["price"])
 
+        # Render result template embedded with values from lookup().
+        return flask.render_template("quoted.html",
+                                     name=name, symbol=symbol, fprice=fprice)
 
-
-
-
-
-    return helpers.apology("TODO")
+    # If user arrived to /quote via GET, render quote form.
+    else:
+        return flask.render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register() -> flask.Response:
     """Register user into finance.db database via a form."""
-
-
-    def validate_password(pw: str, username: str):
-        # Check if password fails to match requirements.
-        reqs = [
-            {"check" = "lower", "regex" = "[a-z]", "valid": True, "message": "Password does not contain lowercase character."},
-            {"check" = "upper", "regex" = "[A-Z]", "valid": True, "message": "Password does not contain uppercase character."},
-            {"check" = "numeral", "regex" = "\d", "valid": True, "message": "Password does not contain numeral 0-9."}
-            {"check" = "special", "regex" = "\W", "valid": True, "message": "Password does not contain special character."}
-            {"check" = "no username", "regex" = username, "valid": True, "message": "Password contains username."}
-        ]
-
-        for req in reqs:
-            if not re.search(rf"{req["regex"]}", pw):
-                req["valid"] = False
-
 
     # If user navs to /register via POST (e.g. through form submission)
     if flask.request.method == "POST":
@@ -237,42 +308,103 @@ def register() -> flask.Response:
         if username_exists == True:
             return helpers.apology("Username already exists.")
 
+        # Apologize if username has forbidden characters or length.
+        if (re.search("[^a-zA-Z0-9_-]", form_username) or
+            not 3 <= len(form_username) <= 16):
+            return helpers.apology(
+                "Username must only contain alphanumeric characters/"
+                "underscores/hyphens and have a length of 3-16 characters."
+            )
+
         # Apologize if no password was entered.
         form_password = flask.request.form.get("password")
         form_password_confirm = flask.request.form.get("password-confirm")
         if not form_password or not form_password_confirm:
-            return helpers.apology("Must enter a password and password confirmation.")
+            return helpers.apology(
+                "Must enter a password and password confirmation."
+            )
 
         # Apologize if passwords do not match.
         if form_password != form_password_confirm:
             return helpers.apology("Passwords do not match.")
 
+        # Apologize if password is incorrect length.
+        if not 8 <= len(form_password) <= 20:
+            return helpers.apology(
+                "Password must have a length of 8-20 characters."
+            )
 
 
-        # If password is valid, move on.
-        else:
+        # Initialize list of dicts for password requirements.
+        password_reqs = [
+            {
+                "id": "lower",
+                "check": "[a-z]",
+                "met": True,
+                "message": "Password does not contain lowercase character."
+                },
+            {
+                "id": "upper",
+                "check": "[A-Z]",
+                "met": True,
+                "message": "Password does not contain uppercase character."
+            },
+            {
+                "id": "numeral",
+                "check": "\d",
+                "met": True,
+                "message": "Password does not contain numeral 0-9."
+            },
+            {
+                "id": "special",
+                "check": "\W",
+                "met": True,
+                "message": "Password does not contain special character."
+            },
+            {
+                "id": "no_username",
+                "check": form_username,
+                "met": True,
+                "message": "Password contains username."
+            },
+        ]
 
+        # Check if password fails to match requirements.
+        valid_password = True
+        for req in password_reqs:
+            # Mark password invalid if requisite char is not found.
+            if not re.search(rf"{req['check']}", form_password):
+                if req["id"] != "no_username":
+                    req["met"] = False
+                    valid_password = False
 
-        # If password fails to match reqs, provide specified error.
-        invalid_pw_message = "The password contained the following errors:"
-        for requirement in reqs:
-            if requirement["valid"] == False:
-                invalid_pw_message += f"\n{requirement["message"]}"
+            # Mark password invalid if username is found.
+            else:
+                if req["id"] == "no_username":
+                    req["met"] = False
+                    valid_password = False
 
-
-
-
-
+        # If password fails to match reqs, apologize with specific error.
+        if not valid_password:
+            invalid_pw_message = "Password contained the following errors:"
+            for req in password_reqs:
+                if not req["met"]:
+                    invalid_pw_message += f"\n{req['message']}"
+            return helpers.apology(invalid_pw_message)
 
         # Hash password and clear reference to form_password variable data.
-        hashed_form_password = werkzeug.security.generate_password_hash(form_password)
+        hashed_form_password = (
+            werkzeug.security.generate_password_hash(form_password)
+        )
         form_password = None
 
         # Save new user into database; let id autoincrement in database.
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", form_username, hashed_form_password)
+        db.execute("INSERT INTO users (username, hash) "
+                   "VALUES (?, ?)", form_username, hashed_form_password)
 
         # Query database for user id.
-        new_user = db.execute("SELECT * FROM users WHERE username = ?", form_username)
+        new_user = db.execute("SELECT * FROM users "
+                              "WHERE username = ?", form_username)
 
         # After successful registration, log user in and redirect home.
         if new_user:
