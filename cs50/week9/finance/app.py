@@ -131,11 +131,11 @@ def buy() -> flask.Response:
             CREATE TABLE IF NOT EXISTS history (
                 id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 user_id INTEGER NOT NULL,
-                amount INTEGER NOT NULL,
+                shares INTEGER NOT NULL,
                 type TEXT NOT NULL,
-                price NUMERIC NOT NULL,
+                shareprice NUMERIC NOT NULL,
                 symbol TEXT NOT NULL,
-                time
+                time TIME NOT NULL
                 FOREIGN KEY (user_id) REFERENCES users(id)
             )
         """)
