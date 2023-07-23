@@ -201,6 +201,7 @@ def quote() -> flask.Response:
 def register() -> flask.Response:
     """Register user into finance.db database via a form."""
 
+    # If user navs to /register via POST (e.g. through form submission)
     if flask.request.method == "POST":
         # Retrieve user data from database.
         users = db.execute("SELECT * FROM users")
@@ -236,8 +237,10 @@ def register() -> flask.Response:
 
         # After successful registration,
 
-        
-    return helpers.apology("TODO")
+    # Render page if user did not arrive via POST.
+    else:
+        return flask.render_template("/register.html")
+
 
 
 @app.route("/sell", methods=["GET", "POST"])
