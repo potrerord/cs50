@@ -135,7 +135,7 @@ def buy() -> flask.Response:
 
         # Create transaction history table if it does not already exist.
         db.execute("""
-            CREATE TABLE IF NOT EXISTS history (
+            CREATE TABLE IF NOT EXISTS transactions (
                 id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 user_id INTEGER NOT NULL,
                 shares INTEGER NOT NULL,
@@ -149,16 +149,20 @@ def buy() -> flask.Response:
 
         # Create unique index on foreign key.
         db.execute("""
-            CREATE UNIQUE INDEX IF NOT EXISTS history_userid_idx
-            ON history (user_id)
+            CREATE UNIQUE INDEX IF NOT EXISTS transactions_userid_idx
+            ON transactions (user_id)
         """)
 
         # Create index on time field for searchability.
-        db.execute(
-            "CREATE INDEX IF NOT EXISTS history_time_idx ON history (time)"
-        )
+        db.execute("""
+            CREATE INDEX IF NOT EXISTS transactions_time_idx
+            ON transactions (time)
+        """)
 
-        
+        # Execute transaction by updating transactions table.
+        db.execute("""
+            INSERT INTO transactions (id)
+        """)
 
         # Redirect to homepage after successful transaction.
         return flask.redirect("/")
