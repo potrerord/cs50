@@ -140,7 +140,7 @@ def buy() -> flask.Response:
             )
         """)
 
-        db.execute("CREATE INDEX IF NOT EXISTS )
+        db.execute("CREATE INDEX IF NOT EXISTS history_time_idx ON history (time)")
         # Define (non-UNIQUE) indexes on any fields via which you will
         # search (as via SELECT with WHERE).
 
