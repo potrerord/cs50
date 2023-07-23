@@ -276,7 +276,7 @@ def register() -> flask.Response:
 
         # Hash password and clear form_password variable.
         hashed_form_password = werkzeug.security.generate_password_hash(form_password)
-        form_password = 0
+        form_password = None
 
         # Save new user into database; let id autoincrement in database.
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", form_username, hashed_form_password)
