@@ -133,6 +133,7 @@ def buy() -> flask.Response:
                 type TEXT NOT NULL,
                 symbol TEXT NOT NULL,
                 price NUMERIC NOT NULL,
+                FOREIGN KEY (id) REFERENCES users(id)
             )
         """)
 
