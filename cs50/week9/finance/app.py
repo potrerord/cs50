@@ -6,6 +6,7 @@
 import os  # contains functions to interact with operating system
 
 import cs50  # contains SQL setup
+import datetime
 import flask  # micro web framework including tools/libraries/tech to build web apps with python
 import flask_session  # allows you to store session data on server side
 import re
@@ -163,10 +164,15 @@ def buy() -> flask.Response:
         # Execute transaction by updating transactions table.
         db.execute("""
             INSERT INTO transactions (user_id, shares, type, shareprice,
-                                      symbol, date, time
-                                     )
+                                      symbol, date, time)
             VALUES (?, ?, ?, ?, ?, ?, ?)
             """,
+            flask.session["user_id"],
+            form_shares,
+            "buy",
+            price,
+            symbol,
+
 
 
         )
