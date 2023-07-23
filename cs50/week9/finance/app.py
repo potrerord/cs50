@@ -62,7 +62,13 @@ def index() -> flask.Response:
     # current price of each stock, and the total value of each holding
     # (i.e., shares times price).
 
-    user = db.execute("SELECT * FROM user JOIN transactions")
+    user = db.execute("""
+               SELECT *
+                 FROM user AS u
+                 JOIN transactions AS t
+                   ON u.id = t.user_id
+           """)
+
 
 
     # Also display the user’s current cash balance along with a grand
@@ -182,7 +188,8 @@ def buy() -> flask.Response:
                SET cash = ?
              WHERE id = ?
             """,
-            
+            post_trans_cash,
+            flask.session("user_id")
         )
 
         # Redirect to homepage after successful transaction.
