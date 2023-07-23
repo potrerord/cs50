@@ -204,35 +204,35 @@ def register() -> flask.Response:
     """Register user into finance.db database via a form."""
 
 
-    def validate_password():
+    def validate_password(pw: str):
         # Check if password fails to match requirements.
-        requirements = [
+        reqs = [
             {"check" = "lower", "valid": True, "message": "Password does not contain lowercase character."},
             {"check" = "upper", "valid": True, "message": "Password does not contain uppercase character."},
             {"check" = "numeral", "valid": True, "message": "Password does not contain numeral 0-9."}
             {"check" = "special", "valid": True, "message": "Password does not contain special character."}
             {"check" = "no username", "valid": True, "message": "Password contains username."}
         ]
-        if not re.search(r"[a-z]", form_password):
-            for requirement in requirements:
-                if requirement["check"] == "lower":
-                    requirement["valid"] = False
-        elif not re.search(r"[A-Z]", form_password):
-            for requirement in requirements:
-                if requirement["check"] == "upper":
-                    requirement["valid"] = False
-        elif not re.search(r"\d", form_password):
-            for requirement in requirements:
-                if requirement["check"] == "numeral":
-                    requirement["valid"] = False
-        elif not re.search(r"\W", form_password):
-            for requirement in requirements:
-                if requirement["check"] == "special":
-                    requirement["valid"] = False
-        elif form_username in form_password:
-            for requirement in requirements:
-                if requirement["check"] == "no username":
-                    requirement["valid"] = False
+        if not re.search(r"[a-z]", pw):
+            for req in reqs:
+                if req["check"] == "lower":
+                    req["valid"] = False
+        elif not re.search(r"[A-Z]", pw):
+            for req in reqs:
+                if req["check"] == "upper":
+                    req["valid"] = False
+        elif not re.search(r"\d", pw):
+            for req in reqs:
+                if rqe["check"] == "numeral":
+                    req["valid"] = False
+        elif not re.search(r"\W", pw):
+            for req in reqs:
+                if req["check"] == "special":
+                    req["valid"] = False
+        elif form_username in pw:
+            for req in reqs:
+                if req["check"] == "no username":
+                    req["valid"] = False
 
 
     # If user navs to /register via POST (e.g. through form submission)
@@ -269,9 +269,9 @@ def register() -> flask.Response:
         else:
 
 
-        # If password fails to match requirements, provide specified error.
+        # If password fails to match reqs, provide specified error.
         invalid_pw_message = "The password contained the following errors:"
-        for requirement in requirements:
+        for requirement in reqs:
             if requirement["valid"] == False:
                 invalid_pw_message += f"\n{requirement["message"]}"
 
