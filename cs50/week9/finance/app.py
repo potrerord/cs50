@@ -135,13 +135,13 @@ def buy() -> flask.Response:
                 type TEXT NOT NULL,
                 price NUMERIC NOT NULL,
                 symbol TEXT NOT NULL,
-                time 
+                time
                 FOREIGN KEY (user_id) REFERENCES users(id)
             )
         """)
 
-        # Define UNIQUE indexes on any fields that should be unique.
-        db.execute("CREATE UNIQUE INDEX IF NOT EXISTS ON history ()")
+        # Define UNIQUE on time column to ensure .
+        db.execute("CREATE UNIQUE INDEX IF NOT EXISTS time ON history (time)")
 
 
         # Define (non-UNIQUE) indexes on any fields via which you will
