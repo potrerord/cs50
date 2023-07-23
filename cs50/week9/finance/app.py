@@ -139,16 +139,6 @@ def buy() -> flask.Response:
             )
         """)
 
-        # Add one or more new tables to finance.db via which to keep
-        # track of the purchase. Store enough information so that you
-        # know who bought what at what price and when.
-
-
-
-        # Use appropriate SQLite types.
-
-
-
         # Define UNIQUE indexes on any fields that should be unique.
 
 
