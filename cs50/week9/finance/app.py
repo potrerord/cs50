@@ -255,7 +255,7 @@ def register() -> flask.Response:
             for requirement in requirements:
                 if requirement["check"] == "special":
                     requirement["valid"] = False
-        elif re.search(form_username, form_password):
+        elif form_username in form_password:
             for requirement in requirements:
                 if requirement["check"] == "no username":
                     requirement["valid"] = False
@@ -265,7 +265,7 @@ def register() -> flask.Response:
 
 
         # If password fails to match requirements, provide specified error.
-
+        invalid_pw_message = "The password contained the following errors:"
         for requirement in requirements:
             if requirement["valid"] == False:
 
