@@ -237,13 +237,18 @@ def register() -> flask.Response:
 
         # Query database for user id.
         new_user = db.execute("SELECT * FROM users WHERE username = ?", form_username)
+
+        # After successful registration, log user in and redirect home.
         if new_user:
-            # After successful registration, log user in and redirect home.
-            flask.session["user_id"] = new_user
+            flask.session["user_id"] = new_user[0]["id"]
+            return flask.redirect("/")
+
+        # If new user does not exist, apologize for unknown error.
+        else:
+            return helpers.apology("Unknown error occurred.")
 
     # Render page if user did not arrive via POST.
     return flask.render_template("/register.html")
-
 
 
 @app.route("/sell", methods=["GET", "POST"])
