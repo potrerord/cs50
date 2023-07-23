@@ -109,9 +109,11 @@ def buy() -> flask.Response:
             return helpers.apology("Missing shares.")
 
         # Verify that shares is positive integer.
-        if not isinstance(form_shares, int):
+        try:
+            form_shares = int(form_shares)
+        except ValueError:
             return helpers.apology("Enter valid integer.")
-        elif form_shares < 1:
+        if form_shares < 1:
             return helpers.apology("Not enough shares.")
 
         # Get data from lookup() return.
