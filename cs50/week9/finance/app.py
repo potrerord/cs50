@@ -140,6 +140,9 @@ def buy() -> flask.Response:
             )
         """)
 
+        # Create unique index on foreign key.
+        db.execute("CREATE INDEX IF NOT EXISTS history_userid)
+
         # Create index on time field for searchability.
         db.execute(
             "CREATE INDEX IF NOT EXISTS history_time_idx ON history (time)"
