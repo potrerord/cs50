@@ -231,9 +231,10 @@ def register() -> flask.Response:
         # Hash password before saving it into database.
         hashed_form_password = werkzeug.security.generate_password_hash(form_password)
 
-        # Save the new user info into user database.
+        # Save new user into database; let id autoincrement in database.
         db.execute("INSERT INTO users (username, hash) VALUES (form_username, hashed_form_password)")
 
+        # After successful registration, 
     return helpers.apology("TODO")
 
 
