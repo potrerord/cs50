@@ -214,7 +214,7 @@ def register() -> flask.Response:
         # Apologize if username already exists.
         username_exists = False
         for user in users:
-            if user.username == form_username:
+            if user["username"] == form_username:
                 username_exists = True
         if username_exists == True:
             return helpers.apology("Username already exists.")
@@ -236,7 +236,7 @@ def register() -> flask.Response:
         db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", form_username, hashed_form_password)
 
         # After successful registration, log user in and redirect home.
-        flask.session["user_id"] =
+        flask.session["user_id"] = 
 
     # Render page if user did not arrive via POST.
     return flask.render_template("/register.html")
