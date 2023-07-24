@@ -106,6 +106,7 @@ def index() -> flask.Response:
                     SELECT symbol, owned
                       FROM portfolios
                      WHERE portfolios.user_id = ?
+                       AND owned > 0
                     """,
                     flask.session["user_id"]
                 )
