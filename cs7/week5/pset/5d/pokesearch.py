@@ -1,5 +1,16 @@
+
+
+import pokedex
+
+
 # Valid traits for Pokemon
 TRAITS = ["HP", "Attack", "Sp. Attack", "Sp. Defense", "Speed"]
+
+
+def main():
+    # Add your solution to the problem that makes use of the above to
+    # print out the results of your pokemon search.
+    print("Remove me and add your code!")
 
 
 def english_name(pokemon):
@@ -15,12 +26,6 @@ def pokesearch(trait, minimum, maximum):
     have a value of trait between minimum and maximum
     """
     # Add your code here
-
-
-def main():
-    # Add your solution to the problem that makes use of the above to
-    # print out the results of your pokemon search.
-    print("Remove me and add your code!")
 
 
 if __name__ == "__main__":
