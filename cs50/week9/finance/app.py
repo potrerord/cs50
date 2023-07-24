@@ -4,14 +4,14 @@ Runs Flask app for C$50.
 
 
 import os  # contains functions to interact with operating system
+from datetime import datetime
+from tempfile import mkdtemp  # create temporary files during exec
+from typing import Dict, Union
 
 from cs50 import SQL  # contains SQL setup
-from datetime import datetime
 import flask  # micro web framework to build web apps with python
 from flask_session import Session  # store session data on server side
 import re
-from tempfile import mkdtemp  # create temporary files during exec
-from typing import Dict, Union
 import pytz
 from werkzeug.security import check_password_hash, generate_password_hash
 
