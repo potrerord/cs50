@@ -1,8 +1,21 @@
-/* Formatting for date info */
+/* "Last updated" date info */
 .last-updated
 {
     color: gray;
     font-size: small;
+}
+
+/* Information for new username/password */
+.register-info
+{
+    color: gray;
+    font-size: small;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    text-align: center;
+    width: 50%;
 }
 
 /* Size for brand */
