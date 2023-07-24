@@ -1,5 +1,5 @@
 """
-
+Runs Flask app for C$50.
 """
 
 
@@ -17,9 +17,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 import helpers  # local file with helper functions
 
-"""
-from flask import Flask, flash, redirect, render_template, request, session
-"""
 
 # Configure Flask application in current file.
 app = flask.Flask(__name__)
