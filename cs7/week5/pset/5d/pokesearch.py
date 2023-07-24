@@ -41,8 +41,8 @@ def pokesearch(trait, minimum, maximum):
     matches = {}
     name_length = 0
     for pokemon in pokedex.data:
-        if minimum <= pokemon["base"][trait] <= maximum:
-            matches[english_name(pokemon)] = pokemon["base"][trait]
+        if minimum <= pokemon["base"][trait.capitalize()] <= maximum:
+            matches[english_name(pokemon)] = pokemon["base"][trait.capitalize()]
             if len(english_name(pokemon)) > name_length:
                 name_length = len(english_name(pokemon))
 
