@@ -228,8 +228,8 @@ def buy() -> flask.Response:
         # Update user's cash balance.
         db.execute("""
             UPDATE users AS u
-               SET u.cash = ?
-             WHERE u.id = ?
+               SET cash = ?
+             WHERE id = ?
             """,
             post_trans_cash,
             flask.session["user_id"]
