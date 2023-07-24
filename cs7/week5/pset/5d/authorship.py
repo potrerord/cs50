@@ -25,7 +25,7 @@ def main():
         proportion = f"{round(proportion, 2):.2f}"
 
         # Print report for user.
-        print(f"Proportion of {word_length}-letter words: {proportion}% "
+        print(f"Proportion of {word_length:>2}-letter words: {proportion:>5}% "
               f"({rj_histogram[word_length]} words)")
 
     print()
