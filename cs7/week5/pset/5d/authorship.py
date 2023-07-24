@@ -8,7 +8,9 @@ def main():
     # Add your solution to the problem that makes use of the above to
     # print out the word length frequency table described in the pset.
 
-    word_length_histogram(romeo_and_juliet_data.lines)
+    rj_histogram, rj_total_words = word_length_histogram(romeo_and_juliet_data.lines)
+
+    for 
 
 
 def word_length_histogram(text):
@@ -24,11 +26,20 @@ def word_length_histogram(text):
 
     # Eliminate apostrophes.
     text = text.replace("'", "")
-    
+
+    histogram = {}
+    total_words = 0
     for line in text:
-        for char in line:
+        for word in line.split():
+            # Initialize new word length if it doesn't exist.
+            if not histogram[len(word)]:
+                histogram[len(word)] = 0
 
+            # Increment word count.
+            histogram[len(word)] += 1
+            total_words += 1
 
+    return histogram, total_words
 
 
 if __name__ == "__main__":
