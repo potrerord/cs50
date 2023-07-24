@@ -22,7 +22,7 @@
                 <td class="text-start">{{ stock["symbol"] }}</td>
                 <td class="text-end">{{ stock["owned"] }}</td>
                 <td class="text-end">{{ prices[stock["symbol"]] }}</td>
-                <td class="text-end">${{ stock["owned"] * prices[stock["symbol"]] }}</td>
+                <td class="text-end">${{ (stock["owned"] * prices[stock["symbol"]]) | round(2)}}</td>
             </tr>
         {% endfor %}
     </tbody>
