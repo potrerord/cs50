@@ -8,6 +8,7 @@ def main():
     # Add your solution to the problem that makes use of the above to
     # print out the word length frequency table described in the pset.
 
+    word_length_histogram(romeo_and_juliet_data.lines)
 
 
 def word_length_histogram(text_list):
@@ -21,7 +22,11 @@ def word_length_histogram(text_list):
         { 6 : 3, 2 : 1, 4 : 1 }
     """
 
-    
+    for line in text_list:
+        for char in line:
+            replace("'", "")
+        
+
 
 if __name__ == "__main__":
     main()
