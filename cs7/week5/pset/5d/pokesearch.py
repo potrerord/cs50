@@ -17,12 +17,12 @@ def main():
     user_min = int(input(f"What is the minimum value for {user_trait}? "))
     user_max = int(input(f"What is the maximum value for {user_trait}? "))
 
-    user_matches = pokesearch(user_trait, user_min, user_max)
-    sorted_user_matches = sort(list(user_matches.keys()))
+    user_matches, width = pokesearch(user_trait, user_min, user_max)
+    sorted_user_matches = sorted(list(user_matches.keys()))
 
     print("The Pokemon that match are:")
     for pokemon in sorted_user_matches:
-        print(f"{pokemon:<20}{user_matches[pokemon]}")
+        print(f"{pokemon:<{width + 1}}{user_matches[pokemon]}")
 
 
 def english_name(pokemon):
@@ -39,11 +39,15 @@ def pokesearch(trait, minimum, maximum):
     """
 
     matches = {}
+    name_length = 0
     for pokemon in pokedex.data:
         if minimum <= pokemon["base"][trait] <= maximum:
-            matches[pokemon] = pokemon["base"][trait]
+            matches[english_name(pokemon)] = pokemon["base"][trait]
+            if len(english_name(pokemon)) > name_length:
+                name_length = len(english_name(pokemon))
 
-    return matches
+
+    return matches, name_length
 
 
 if __name__ == "__main__":
