@@ -32,7 +32,6 @@ b = [
 0.4524,
 ]
 
-plt.plot(x, y)
 plt.plot(a, b)
 plt.show()
 
