@@ -40,8 +40,8 @@ def pokesearch(trait, minimum, maximum):
 
     matches = {}
     for pokemon in pokedex.data:
-        if minimum <= pokedex.data[pokemon]["base"][trait] <= maximum:
-            matches[pokemon] = pokedex.data[pokemon]["base"][trait]
+        if minimum <= pokemon["base"][trait] <= maximum:
+            matches[pokemon] = pokemon["base"][trait]
 
     return matches
 
