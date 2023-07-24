@@ -25,8 +25,15 @@ def pokesearch(trait, minimum, maximum):
     as shown in the pset problem description) that
     have a value of trait between minimum and maximum
     """
-    # Add your code here
 
+    print("What Pokemon trait would you like to search on?")
+    trait = input("Valid traits are HP, Attack, Sp. Attack, Sp. Defense, Speed: ")
+
+    min = int(input(f"What is the minimum value for {trait}? "))
+    max = int(input(f"What is the maximum value for {trait}? "))
+
+    print("The Pokemon that match are:")
+    
 
 if __name__ == "__main__":
     main()
