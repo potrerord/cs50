@@ -33,6 +33,8 @@ b = [
 ]
 
 plt.plot(a, b)
+plt.xscale("linear")
+plt.yscale("linear")
 plt.show()
 
 
