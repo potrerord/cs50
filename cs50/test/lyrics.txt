@@ -1,11 +1,11 @@
-\a:"Row\c\c your boat
-Gently down the st\d
-M\b m\b, m\b, m\b
-Life is but a d\d"
-\b:"errily"
-\c:", row"
-\d:"ream"
-\a
-\a
-\a
-\a
+!:"Row## your boat
+Gently down the st$
+M@ m@, m@, m@
+Life is but a d$"
+@:"errily"
+#:", row"
+$:"ream"
+!
+!
+!
+!
