@@ -10,7 +10,10 @@ def main():
 
     rj_histogram, rj_total_words = word_length_histogram(romeo_and_juliet_data.lines)
 
-    for 
+    sorted_rj_histogram = 
+
+    for length in rj_histogram:
+
 
 
 def word_length_histogram(text):
