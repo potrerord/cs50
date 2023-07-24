@@ -22,11 +22,12 @@ def word_length_histogram(text):
         { 6 : 3, 2 : 1, 4 : 1 }
     """
 
+    # Eliminate apostrophes.
+    text = text.replace("'", "")
+    
     for line in text:
         for char in line:
-            replace("'", "")
-        for char in line:
-            
+
 
 
 
