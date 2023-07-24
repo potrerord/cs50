@@ -26,7 +26,7 @@ def main():
 
         # Print report for user.
         print(f"Proportion of {word_length:>2}-letter words: {proportion:>5}% "
-              f"({rj_histogram[word_length]} words)")
+              f"({rj_histogram[word_length]:>4} words)")
 
     print()
 
