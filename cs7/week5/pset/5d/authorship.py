@@ -11,7 +11,7 @@ def main():
     word_length_histogram(romeo_and_juliet_data.lines)
 
 
-def word_length_histogram(text_list):
+def word_length_histogram(text):
     """Takes the a list of multiword lines and returns
     a dictionary where the keys are word lengths and the
     values are how many words there are of that length.
@@ -22,10 +22,12 @@ def word_length_histogram(text_list):
         { 6 : 3, 2 : 1, 4 : 1 }
     """
 
-    for line in text_list:
+    for line in text:
         for char in line:
             replace("'", "")
-        
+        for char in line:
+            
+
 
 
 if __name__ == "__main__":
