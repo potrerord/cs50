@@ -300,15 +300,7 @@ def history() -> flask.Response:
         # Format stock price as USD.
         transaction["shareprice"] = helpers.usd(transaction["shareprice"])
 
-    # Complete the implementation of history in such a way that it
-    # displays an HTML table summarizing all of a user’s transactions
-    # ever, listing row by row each and every buy and every sell.
-
-    # For each row, make clear whether a stock was bought or sold and
-    # include the stock’s symbol, the (purchase or sale) price, the
-    # number of shares bought or sold, and the date and time at which
-    # the transaction occurred.
-
+    # Render history page.
     return flask.render_template("history.html", user_history=user_history)
 
 
@@ -537,7 +529,8 @@ def register() -> flask.Response:
             return helpers.apology("Unknown error occurred.")
 
     # Render page if user did not arrive via POST.
-    return flask.render_template("/register.html")
+    else:
+        return flask.render_template("/register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
