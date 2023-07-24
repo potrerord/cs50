@@ -93,7 +93,7 @@ db.execute(
 @app.after_request
 def after_request(response: flask.Response) -> flask.Response:
     """Ensure responses aren't cached."""
-    
+
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
@@ -566,10 +566,10 @@ def sell() -> flask.Response:
         # Verify that user owns at least one share of stock.
         user_stocks = db.execute(
             """
-                          SELECT symbol
-                            FROM portfolios
-                           WHERE portfolios.user_id = ?
-                          """,
+            SELECT symbol
+              FROM portfolios
+             WHERE portfolios.user_id = ?
+            """,
             flask.session["user_id"],
         )
         if not user_stocks or form_symbol not in user_stocks[0]["symbol"]:
