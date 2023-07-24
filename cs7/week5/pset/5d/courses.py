@@ -32,7 +32,7 @@ def total_homeworks(courses):
 
     sum = 0
     for course in courses:
-        sum += course["num_homeworks"]
+        sum += courses[course]["num_homeworks"]
     return sum
 
 
@@ -42,7 +42,7 @@ def total_homeworks2(courses):
     Must use a list comprehension and sum.
     """
 
-    return sum([course["num_homeworks"] for course in courses])
+    return sum([courses[course]["num_homeworks"] for course in courses])
 
 
 if __name__ == "__main__":
