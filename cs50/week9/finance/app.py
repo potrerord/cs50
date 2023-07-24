@@ -68,11 +68,11 @@ db.execute("""
 # Create portfolios table if it does not already exist.
 db.execute("""
     CREATE TABLE IF NOT EXISTS portfolios (
-        PRIMARY KEY (user_id, symbol),
         user_id     INTEGER  NOT NULL,
         symbol      TEXT     NOT NULL,
         owned       INTEGER  NOT NULL,
-        FOREIGN KEY (user_id) REFERENCES users(id)
+        FOREIGN KEY (user_id) REFERENCES users(id),
+        PRIMARY KEY (user_id, symbol)
     )
 """)
 
