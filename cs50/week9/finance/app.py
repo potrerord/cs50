@@ -389,7 +389,7 @@ def register() -> flask.Response:
 
         # Apologize if no password was entered.
         form_password = flask.request.form.get("password")
-        form_password_confirm = flask.request.form.get("password-confirm")
+        form_password_confirm = flask.request.form.get("confirmation")
         if not form_password or not form_password_confirm:
             return helpers.apology(
                 "Must enter a password and password confirmation."
