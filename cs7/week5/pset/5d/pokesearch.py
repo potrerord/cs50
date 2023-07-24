@@ -1,5 +1,7 @@
 
 
+import sys
+
 import pokedex
 
 
@@ -11,12 +13,11 @@ def main():
     # Add your solution to the problem that makes use of the above to
     # print out the results of your pokemon search.
 
+    print()
     print("What Pokemon trait would you like to search on?")
-    try:
-        user_trait = input("Valid traits are HP, Attack, Sp. Attack, Sp. Defense, Speed: ")
-    except:
-        if user_trait not in TRAITS:
-            raise ValueError
+    user_trait = input("Valid traits are HP, Attack, Sp. Attack, Sp. Defense, Speed: ")
+    if user_trait not in TRAITS:
+        sys.exit(f"\nInvalid trait.\n")
 
     user_min = int(input(f"What is the minimum value for {user_trait}? "))
     user_max = int(input(f"What is the maximum value for {user_trait}? "))
