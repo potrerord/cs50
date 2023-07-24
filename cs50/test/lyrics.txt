@@ -1,9 +1,10 @@
-\a:"Row, row, row your boat
-Gently down the st\c
+\a:"Row\c\c your boat
+Gently down the st\d
 M\b m\b, m\b, m\b
-Life is but a d\c"
-\b: "errily"
-\c: "ream"
+Life is but a d\d"
+\b:"errily"
+\c:", row"
+\d:"ream"
 \a
 \a
 \a
