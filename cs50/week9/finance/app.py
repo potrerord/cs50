@@ -6,13 +6,13 @@ Runs Flask app for C$50.
 import os  # contains functions to interact with operating system
 from datetime import datetime
 from tempfile import mkdtemp  # create temporary files during exec
-from typing import Dict, Union
+from typing import Dict, Union  # used in type hints
 
 from cs50 import SQL  # contains SQL setup
 import flask  # micro web framework to build web apps with python
 from flask_session import Session  # store session data on server side
-import re
-import pytz
+import re  # regex searches
+import pytz  # timezone functionality
 from werkzeug.security import check_password_hash, generate_password_hash
 
 import helpers  # local file with helper functions
@@ -93,6 +93,7 @@ db.execute(
 @app.after_request
 def after_request(response: flask.Response) -> flask.Response:
     """Ensure responses aren't cached."""
+    
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
