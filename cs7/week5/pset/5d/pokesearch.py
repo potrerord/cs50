@@ -46,7 +46,6 @@ def pokesearch(trait, minimum, maximum):
             if len(english_name(pokemon)) > name_length:
                 name_length = len(english_name(pokemon))
 
-
     return matches, name_length
 
 
