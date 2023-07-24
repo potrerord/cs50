@@ -12,7 +12,7 @@ def main():
     # print out the results of your pokemon search.
 
     print("What Pokemon trait would you like to search on?")
-    user_trait = input("Valid traits are HP, Attack, Sp. Attack, Sp. Defense, Speed: ")
+    user_trait = input("Valid traits are HP, Attack, Sp. Attack, Sp. Defense, Speed: ").lower()
 
     user_min = int(input(f"What is the minimum value for {user_trait}? "))
     user_max = int(input(f"What is the maximum value for {user_trait}? "))
