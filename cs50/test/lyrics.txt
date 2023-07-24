@@ -1,9 +1,12 @@
-\a =
-Row, row, row your boat
-Gently down the stream
-Merrily merrily, merrily, merrily
-Life is but a dream
+{
+    "\a": "Row, row, row your boat
+          Gently down the stream
+          M\b m\b, m\b, m\b
+          Life is but a dream"
 
+    "\b": "errily"
+
+}
 --------
 
 \a
