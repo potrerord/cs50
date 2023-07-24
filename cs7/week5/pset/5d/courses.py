@@ -14,7 +14,8 @@ def total_homeworks2(courses):
     and returns the total number of homeworks they have.
     Must use a list comprehension and sum.
     """
-    # Add your code here.
+    sum = 0
+    for 
 
 
 def main():
