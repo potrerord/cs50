@@ -2,7 +2,13 @@ import json
 import requests
 
 # Uncomment this and add your own key for the pset:
-# KEY =
+KEY = ZPTEVGH1DYQAZ1R6
+
+
+def main():
+    # Add your solution to the problem that makes use of the above to
+    # print out the date and price table described in the pset.
+    print("Remove me and add your code!")
 
 
 # Call this with your API url to get your data from the service
@@ -22,7 +28,7 @@ def build_url(symbol):
     url = "https://www.alphavantage.co/query?"
     url += "function=???"
     url += "&symbol=???"
-    url += "&apikey=???"    
+    url += "&apikey=???"
     return url
 
 # Use this API url with your key and symbol
@@ -33,12 +39,6 @@ def get_quotes(symbol):
     [ ('2022-07-15', '256.7200'), ('2021-07-15', '254.0800'), ... ]
     """
     # Add your code here
-
-
-def main():
-    # Add your solution to the problem that makes use of the above to
-    # print out the date and price table described in the pset.
-    print("Remove me and add your code!")
 
 
 if __name__ == "__main__":
