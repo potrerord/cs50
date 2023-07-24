@@ -6,17 +6,19 @@ def total_homeworks(courses):
     and returns the total number of homeworks they have.
     Must use a for loop
     """
-    # Add your code here.
 
+    sum = 0
+    for course in courses:
+        sum += course["num_homeworks"]
+    return sum
 
 def total_homeworks2(courses):
     """Takes the a dictionary of courses as students is taking
     and returns the total number of homeworks they have.
     Must use a list comprehension and sum.
     """
-    sum = 0
-    for 
 
+    return sum([course["num_homeworks"] for course in courses])
 
 def main():
     # Add your solution to the problem that makes use of the above.
