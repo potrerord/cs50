@@ -12,7 +12,7 @@ def main():
     # print out the results of your pokemon search.
 
     print("What Pokemon trait would you like to search on?")
-    user_trait = input("Valid traits are HP, Attack, Sp. Attack, Sp. Defense, Speed: ").lower()
+    user_trait = input("Valid traits are HP, Attack, Sp. Attack, Sp. Defense, Speed: ")
 
     user_min = int(input(f"What is the minimum value for {user_trait}? "))
     user_max = int(input(f"What is the maximum value for {user_trait}? "))
@@ -41,8 +41,8 @@ def pokesearch(trait, minimum, maximum):
     matches = {}
     name_length = 0
     for pokemon in pokedex.data:
-        if minimum <= pokemon["base"][trait.capitalize()] <= maximum:
-            matches[english_name(pokemon)] = pokemon["base"][trait.capitalize()]
+        if minimum <= pokemon["base"][trait] <= maximum:
+            matches[english_name(pokemon)] = pokemon["base"][trait]
             if len(english_name(pokemon)) > name_length:
                 name_length = len(english_name(pokemon))
 
