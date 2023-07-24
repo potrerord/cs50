@@ -1,14 +1,9 @@
-{
-    "\a": "Row, row, row your boat
-          Gently down the stream
-          M\b m\b, m\b, m\b
-          Life is but a dream"
-
-    "\b": "errily"
-
-}
---------
-
+\a:"Row, row, row your boat
+Gently down the st\c
+M\b m\b, m\b, m\b
+Life is but a d\c"
+\b: "errily"
+\c: "ream"
 \a
 \a
 \a
