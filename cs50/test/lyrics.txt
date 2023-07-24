@@ -1,12 +1,7 @@
-%:" m@"
-$:"ream"
-#:", row"
-@:"errily"
-!:"Row## your boat
+@:"errily"%:" m@"$:"ream"#:", row"!:"Row## your boat
 Gently down the st$
 M@%,%,%
-Life is but a d$"
-!
+Life is but a d$"!
 !
 !
 !
