@@ -10,10 +10,9 @@ def main():
 
     rj_histogram, rj_total_words = word_length_histogram(romeo_and_juliet_data.lines)
 
-    sorted_rj_histogram = 
-
-    for length in rj_histogram:
-
+    sorted_rj_histogram = sorted(rj_histogram.keys())
+    for word_length in sorted_rj_histogram:
+        print(f"Proportion of {word_length}-letter words: {rj_histogram[word_length] / rj_total_words}% ({rj_histogram[word_length]} words)")
 
 
 def word_length_histogram(text):
@@ -27,12 +26,12 @@ def word_length_histogram(text):
         { 6 : 3, 2 : 1, 4 : 1 }
     """
 
-    # Eliminate apostrophes.
-    text = text.replace("'", "")
-
     histogram = {}
     total_words = 0
     for line in text:
+        # Eliminate apostrophes.
+        line = line.replace("'", "")
+
         for word in line.split():
             # Initialize new word length if it doesn't exist.
             if not histogram[len(word)]:
