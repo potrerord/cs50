@@ -1,10 +1,11 @@
+%:" m@"
+$:"ream"
+#:", row"
+@:"errily"
 !:"Row## your boat
 Gently down the st$
-M@ m@, m@, m@
+M@%,%,%
 Life is but a d$"
-@:"errily"
-#:", row"
-$:"ream"
 !
 !
 !
