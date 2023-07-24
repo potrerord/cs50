@@ -282,6 +282,7 @@ def buy() -> flask.Response:
 def history() -> flask.Response:
     """Show user's entire transaction history."""
 
+    # Get user's transaction history from database.
     user_history = db.execute(
         """
         SELECT *
