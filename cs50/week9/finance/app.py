@@ -5,26 +5,20 @@
 
 import os  # contains functions to interact with operating system
 
-import cs50  # contains SQL setup
+from cs50 import SQL  # contains SQL setup
 from datetime import datetime
-import flask  # micro web framework including tools/libraries/tech to build web apps with python
-import flask_session  # allows you to store session data on server side
+import flask  # micro web framework to build web apps with python
+from flask_session import Session  # store session data on server side
 import re
-import tempfile  # python standard library module to create temporary files during exec
+from tempfile import mkdtemp  # create temporary files during exec
 from typing import Dict, Union
-import werkzeug.security  # module in werkzeug library that provides various security functions like password hashing
-
-
-import helpers
-
-"""
-from cs50 import SQL
-from flask import Flask, flash, redirect, render_template, request, session
-from flask_session import Session
-from tempfile import mkdtemp
+import pytz
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+import helpers  # local file with helper functions
+
+"""
+from flask import Flask, flash, redirect, render_template, request, session
 """
 
 # Configure Flask application in current file.
@@ -36,37 +30,44 @@ app.jinja_env.filters["usd"] = helpers.usd
 # Configure Flask to store sessions on local disk (not signed cookies).
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
-flask_session.Session(app)
+Session(app)
 
 # Create SQL class object from CS50 library with finance.db database.
-db = cs50.SQL("sqlite:///finance.db")
+db = SQL("sqlite:///finance.db")
 
 # Create transaction history table if it does not already exist.
-db.execute("""
+db.execute(
+    """
     CREATE TABLE IF NOT EXISTS transactions (
-        id          INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
-        user_id     INTEGER  NOT NULL,
-        type        TEXT     NOT NULL,
-        symbol      TEXT     NOT NULL,
-        shares      INTEGER  NOT NULL,
-        shareprice  NUMERIC  NOT NULL,
-        datetime    DATETIME NOT NULL,
+        id           INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+        user_id      INTEGER  NOT NULL,
+        type         TEXT     NOT NULL,
+        symbol       TEXT     NOT NULL,
+        shares       INTEGER  NOT NULL,
+        shareprice   NUMERIC  NOT NULL,
+        datetime_utc DATETIME NOT NULL,
         FOREIGN KEY (user_id) REFERENCES users(id)
     )
-""")
+    """
+)
 
 # Create index on foreign key and datetime for searchability.
-db.execute("""
+db.execute(
+    """
     CREATE INDEX IF NOT EXISTS transactions_userid_idx
         ON transactions (user_id)
-""")
-db.execute("""
-    CREATE INDEX IF NOT EXISTS transactions_datetime_idx
-        ON transactions (datetime)
-""")
+    """
+)
+db.execute(
+    """
+    CREATE INDEX IF NOT EXISTS transactions_datetimeutc_idx
+        ON transactions (datetime_utc)
+    """
+)
 
 # Create portfolios table if it does not already exist.
-db.execute("""
+db.execute(
+    """
     CREATE TABLE IF NOT EXISTS portfolios (
         user_id     INTEGER  NOT NULL,
         symbol      TEXT     NOT NULL,
@@ -74,17 +75,22 @@ db.execute("""
         FOREIGN KEY (user_id) REFERENCES users(id),
         PRIMARY KEY (user_id, symbol)
     )
-""")
+    """
+)
 
 # Create index on foreign key and symbol for searchability.
-db.execute("""
+db.execute(
+    """
     CREATE INDEX IF NOT EXISTS portfolios_userid_idx
         ON portfolios (user_id)
-""")
-db.execute("""
+    """
+)
+db.execute(
+    """
     CREATE INDEX IF NOT EXISTS portfolios_symbol_idx
         ON portfolios (symbol)
-""")
+    """
+)
 
 
 @app.after_request
@@ -101,39 +107,58 @@ def after_request(response: flask.Response) -> flask.Response:
 def index() -> flask.Response:
     """Show portfolio of stocks."""
 
-    # Get current user's portfolio data.
-    portfolio = db.execute("""
-                    SELECT symbol, owned
-                      FROM portfolios
-                     WHERE portfolios.user_id = ?
-                       AND owned > 0
-                    """,
-                    flask.session["user_id"]
-                )
-
-    # Create dicts for user's current portfolio and their prices.
-    prices = {}
-
-    # Iterate through all stocks in user's history.
-    for stock in portfolio:
-        # Update price dictionary with current price data.
-        prices[stock["symbol"]] = helpers.lookup(stock["symbol"])["price"]
-
     # Get user's current cash.
-    cash = db.execute("""
-               SELECT cash
-                 FROM users
-                WHERE users.id = ?
-               """,
-               flask.session["user_id"]
-           )
+    cash = db.execute(
+        """
+        SELECT cash
+          FROM users
+         WHERE users.id = ?
+        """,
+        flask.session["user_id"],
+    )
 
-    # Convert from list of dicts to single value.
-    cash = cash[0]["cash"]
+    # Initialize variable for total portfolio value starting with cash.
+    portfolio_value = cash[0]["cash"]
+
+    # Get current user's portfolio data.
+    portfolio = db.execute(
+        """
+        SELECT symbol, owned
+          FROM portfolios
+         WHERE portfolios.user_id = ?
+           AND owned > 0
+        """,
+        flask.session["user_id"],
+    )
+
+    # Iterate through all stocks in user's portfolio.
+    for stock in portfolio:
+        # Update portfolio for this stock's current price data.
+        stock["price"] = helpers.lookup(stock["symbol"])["price"]
+        stock["shares_value"] = stock["price"] * stock["owned"]
+
+        # Add the total value of shares to the portfolio value.
+        portfolio_value += stock["shares_value"]
+
+        # After precise calc, round if necessary and format strings.
+        stock["price"] = helpers.usd(round(stock["price"], 2))
+        stock["shares_value"] = helpers.usd(round(stock["shares_value"], 2))
+
+    # Get UTC datetime of quote lookup.
+    quote_time = datetime.now(pytz.timezone("UTC"))
+
+    # Round and format remaining variables.
+    cash = helpers.usd(cash[0]["cash"])
+    portfolio_value = helpers.usd(round(portfolio_value, 2))
 
     # Render index with relevant variables for Jinja templating.
-    return flask.render_template("index.html", portfolio=portfolio,
-                                 prices=prices, cash=cash)
+    return flask.render_template(
+        "index.html",
+        portfolio=portfolio,
+        cash=cash,
+        portfolio_value=portfolio_value,
+        quote_time=quote_time,
+    )
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -174,8 +199,14 @@ def buy() -> flask.Response:
         trans_amount = price * form_shares
 
         # Get user's pre- and post-transaction cash balance.
-        user_cash = db.execute("SELECT cash FROM users WHERE users.id = ?",
-                                    flask.session["user_id"])
+        user_cash = db.execute(
+            """
+            SELECT cash
+              FROM users
+             WHERE users.id = ?
+            """,
+            flask.session["user_id"],
+        )
         if not user_cash[0]["cash"]:
             return helpers.apology("Unknown error.")
         pre_trans_cash = user_cash[0]["cash"]
@@ -185,10 +216,11 @@ def buy() -> flask.Response:
         if post_trans_cash < 0:
             return helpers.apology("Insufficient funds.")
 
-        # Execute transaction by updating table at current datetime.
-        db.execute("""
+        # Execute transaction by updating table at current UTC datetime.
+        db.execute(
+            """
             INSERT INTO transactions (user_id, shares, type, shareprice,
-                                      symbol, datetime)
+                                      symbol, datetime_utc)
             VALUES (?, ?, ?, ?, ?, ?)
             """,
             flask.session["user_id"],
@@ -196,19 +228,20 @@ def buy() -> flask.Response:
             "buy",
             price,
             symbol,
-            datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
         )
 
         # Get user's current shares of this stock.
-        current_shares = db.execute("""
-                             SELECT owned
-                               FROM portfolios AS p
-                              WHERE p.user_id = ?
-                                AND p.symbol = ?
-                             """,
-                             flask.session["user_id"],
-                             symbol
-                         )
+        current_shares = db.execute(
+            """
+            SELECT owned
+              FROM portfolios AS p
+             WHERE p.user_id = ?
+               AND p.symbol = ?
+            """,
+            flask.session["user_id"],
+            symbol,
+        )
 
         # Convert from list of dicts to single value.
         if not current_shares:
@@ -217,23 +250,25 @@ def buy() -> flask.Response:
             current_shares = current_shares[0]["owned"]
 
         # Update user's portfolio.
-        db.execute("""
+        db.execute(
+            """
             INSERT OR REPLACE INTO portfolios (user_id, symbol, owned)
             VALUES (?, ?, ?)
             """,
             flask.session["user_id"],
             symbol,
-            current_shares + form_shares
+            current_shares + form_shares,
         )
 
         # Update user's cash balance.
-        db.execute("""
+        db.execute(
+            """
             UPDATE users AS u
                SET cash = ?
              WHERE id = ?
             """,
             post_trans_cash,
-            flask.session["user_id"]
+            flask.session["user_id"],
         )
 
         # Redirect to homepage after successful transaction.
@@ -247,25 +282,36 @@ def buy() -> flask.Response:
 @app.route("/history")
 @helpers.login_required
 def history() -> flask.Response:
-    """Show history of transactions."""
+    """Show user's entire transaction history."""
 
+    user_history = db.execute(
+        """
+        SELECT *
+          FROM transactions
+         WHERE user_id = ?
+        """,
+        flask.session["user_id"],
+    )
 
-    """Complete the implementation of history in such a way that it displays an HTML table summarizing all of a user’s transactions ever, listing row by row each and every buy and every sell.
+    # Reformat data to display to user.
+    for transaction in user_history:
+        # Format sells as negative shares.
+        if transaction["type"] == "sell":
+            transaction["shares"] = transaction["shares"] * -1
 
-    For each row, make clear whether a stock was bought or sold and include the stock’s symbol, the (purchase or sale) price, the number of shares bought or sold, and the date and time at which the transaction occurred.
-    You might need to alter the table you created for buy or supplement it with an additional table. Try to minimize redundancies.
-    """
+        # Format stock price as USD.
+        transaction["shareprice"] = helpers.usd(transaction["shareprice"])
 
+    # Complete the implementation of history in such a way that it
+    # displays an HTML table summarizing all of a user’s transactions
+    # ever, listing row by row each and every buy and every sell.
 
+    # For each row, make clear whether a stock was bought or sold and
+    # include the stock’s symbol, the (purchase or sale) price, the
+    # number of shares bought or sold, and the date and time at which
+    # the transaction occurred.
 
-
-
-
-
-
-
-
-    return helpers.apology("TODO")
+    return flask.render_template("history.html", user_history=user_history)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -288,18 +334,17 @@ def login() -> flask.Response:
             return helpers.apology("must provide password", 403)
 
         # Query finance.db database for username.
-        rows = db.execute("""
-                   SELECT *
-                     FROM users
-                    WHERE users.username = ?
-                   """,
-                   form_username
-               )
+        rows = db.execute(
+            """
+            SELECT *
+              FROM users
+             WHERE users.username = ?
+            """,
+            form_username,
+        )
 
-        # Ensure username exists in database query and password is correct.
-        if len(rows) != 1 or not werkzeug.security.check_password_hash(
-            rows[0]["hash"], form_password
-        ):
+        # Ensure username exists in database and password is correct.
+        if len(rows) != 1 or not check_password_hash(rows[0]["hash"], form_password):
             return helpers.apology("invalid username and/or password", 403)
 
         # Assign user's finance.db id to their current session user_id.
@@ -341,6 +386,9 @@ def quote() -> flask.Response:
         if not symbol_data:
             return helpers.apology("Invalid symbol.")
 
+        # Get UTC datetime of quote.
+        quote_time = datetime.now(pytz.timezone("UTC"))
+
         # Get data from lookup() return.
         name = symbol_data["name"]
         symbol = symbol_data["symbol"]
@@ -349,8 +397,13 @@ def quote() -> flask.Response:
         fprice = helpers.usd(symbol_data["price"])
 
         # Render result template embedded with values from lookup().
-        return flask.render_template("quoted.html",
-                                     name=name, symbol=symbol, fprice=fprice)
+        return flask.render_template(
+            "quoted.html",
+            name=name,
+            symbol=symbol,
+            fprice=fprice,
+            quote_time=quote_time,
+        )
 
     # If user arrived to /quote via GET, render quote form.
     else:
@@ -380,8 +433,10 @@ def register() -> flask.Response:
             return helpers.apology("Username already exists.")
 
         # Apologize if username has forbidden characters or length.
-        if (re.search("[^a-zA-Z0-9_-]", form_username) or
-            not 3 <= len(form_username) <= 16):
+        if (
+            re.search("[^a-zA-Z0-9_-]", form_username)
+            or not 3 <= len(form_username) <= 16
+        ):
             return helpers.apology(
                 "Username must only contain alphanumeric characters/"
                 "underscores/hyphens and have a length of 3-16 characters."
@@ -391,9 +446,7 @@ def register() -> flask.Response:
         form_password = flask.request.form.get("password")
         form_password_confirm = flask.request.form.get("confirmation")
         if not form_password or not form_password_confirm:
-            return helpers.apology(
-                "Must enter a password and password confirmation."
-            )
+            return helpers.apology("Must enter a password and password confirmation.")
 
         # Apologize if passwords do not match.
         if form_password != form_password_confirm:
@@ -401,10 +454,7 @@ def register() -> flask.Response:
 
         # Apologize if password is incorrect length.
         if not 8 <= len(form_password) <= 20:
-            return helpers.apology(
-                "Password must have a length of 8-20 characters."
-            )
-
+            return helpers.apology("Password must have a length of 8-20 characters.")
 
         # Initialize list of dicts for password requirements.
         password_reqs = [
@@ -412,31 +462,31 @@ def register() -> flask.Response:
                 "id": "lower",
                 "check": "[a-z]",
                 "met": True,
-                "message": "Password does not contain lowercase character."
-                },
+                "message": "Password does not contain lowercase character.",
+            },
             {
                 "id": "upper",
                 "check": "[A-Z]",
                 "met": True,
-                "message": "Password does not contain uppercase character."
+                "message": "Password does not contain uppercase character.",
             },
             {
                 "id": "numeral",
                 "check": "\d",
                 "met": True,
-                "message": "Password does not contain numeral 0-9."
+                "message": "Password does not contain numeral 0-9.",
             },
             {
                 "id": "special",
                 "check": "\W",
                 "met": True,
-                "message": "Password does not contain special character."
+                "message": "Password does not contain special character.",
             },
             {
                 "id": "no_username",
                 "check": form_username,
                 "met": True,
-                "message": "Password contains username."
+                "message": "Password contains username.",
             },
         ]
 
@@ -464,18 +514,20 @@ def register() -> flask.Response:
             return helpers.apology(invalid_pw_message)
 
         # Hash password and clear reference to form_password variable data.
-        hashed_form_password = (
-            werkzeug.security.generate_password_hash(form_password)
-        )
+        hashed_form_password = generate_password_hash(form_password)
         form_password = None
 
         # Save new user into database; let id autoincrement in database.
-        db.execute("INSERT INTO users (username, hash) "
-                   "VALUES (?, ?)", form_username, hashed_form_password)
+        db.execute(
+            "INSERT INTO users (username, hash) " "VALUES (?, ?)",
+            form_username,
+            hashed_form_password,
+        )
 
         # Query database for user id.
-        new_user = db.execute("SELECT * FROM users "
-                              "WHERE username = ?", form_username)
+        new_user = db.execute(
+            "SELECT * FROM users " "WHERE username = ?", form_username
+        )
 
         # After successful registration, log user in and redirect home.
         if new_user:
@@ -514,13 +566,14 @@ def sell() -> flask.Response:
             return helpers.apology("Invalid symbol.")
 
         # Verify that user owns at least one share of stock.
-        user_stocks = db.execute("""
+        user_stocks = db.execute(
+            """
                           SELECT symbol
                             FROM portfolios
                            WHERE portfolios.user_id = ?
                           """,
-                          flask.session["user_id"]
-                      )
+            flask.session["user_id"],
+        )
         if not user_stocks or form_symbol not in user_stocks[0]["symbol"]:
             return helpers.apology("Must own shares to sell stock.")
 
@@ -538,15 +591,16 @@ def sell() -> flask.Response:
             return helpers.apology("Sold shares must be positive.")
 
         # Verify that user has enough shares to sell.
-        user_shares = db.execute("""
-                          SELECT owned
-                            FROM portfolios AS p
-                           WHERE p.user_id = ?
-                             AND p.symbol = ?
-                          """,
-                          flask.session["user_id"],
-                          form_symbol
-                      )
+        user_shares = db.execute(
+            """
+            SELECT owned
+              FROM portfolios AS p
+             WHERE p.user_id = ?
+               AND p.symbol = ?
+            """,
+            flask.session["user_id"],
+            form_symbol,
+        )
         if form_shares > user_shares[0]["owned"]:
             return helpers.apology("Insufficient shares to sell.")
 
@@ -558,17 +612,24 @@ def sell() -> flask.Response:
         trans_amount = price * form_shares
 
         # Get user's pre- and post-transaction cash balance.
-        user_cash = db.execute("SELECT cash FROM users WHERE users.id = ?",
-                                    flask.session["user_id"])
+        user_cash = db.execute(
+            """
+            SELECT cash
+              FROM users
+             WHERE users.id = ?
+            """,
+            flask.session["user_id"],
+        )
         if not user_cash[0]["cash"]:
             return helpers.apology("Unknown error.")
         pre_trans_cash = user_cash[0]["cash"]
         post_trans_cash = round(pre_trans_cash + trans_amount, 2)
 
         # Execute transaction by updating table at current datetime.
-        db.execute("""
+        db.execute(
+            """
             INSERT INTO transactions (user_id, shares, type, shareprice,
-                                      symbol, datetime)
+                                      symbol, datetime_utc)
             VALUES (?, ?, ?, ?, ?, ?)
             """,
             flask.session["user_id"],
@@ -576,19 +637,20 @@ def sell() -> flask.Response:
             "sell",
             price,
             symbol,
-            datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
         )
 
         # Get user's current shares of this stock.
-        current_shares = db.execute("""
-                             SELECT owned
-                               FROM portfolios AS p
-                              WHERE p.user_id = ?
-                                AND p.symbol = ?
-                             """,
-                             flask.session["user_id"],
-                             symbol
-                         )
+        current_shares = db.execute(
+            """
+            SELECT owned
+              FROM portfolios AS p
+             WHERE p.user_id = ?
+               AND p.symbol = ?
+            """,
+            flask.session["user_id"],
+            symbol,
+        )
 
         # Convert from list of dicts to single value.
         if not current_shares:
@@ -597,23 +659,25 @@ def sell() -> flask.Response:
             current_shares = current_shares[0]["owned"]
 
         # Update user's portfolio.
-        db.execute("""
+        db.execute(
+            """
             INSERT OR REPLACE INTO portfolios (user_id, symbol, owned)
             VALUES (?, ?, ?)
             """,
             flask.session["user_id"],
             symbol,
-            current_shares - form_shares
+            current_shares - form_shares,
         )
 
         # Update user's cash balance.
-        db.execute("""
+        db.execute(
+            """
             UPDATE users
                SET cash = ?
              WHERE id = ?
             """,
             post_trans_cash,
-            flask.session["user_id"]
+            flask.session["user_id"],
         )
 
         # Redirect to homepage after successful transaction.
@@ -621,4 +685,15 @@ def sell() -> flask.Response:
 
     # If user arrived to /sell via GET, render sell form.
     else:
-        return flask.render_template("sell.html")
+        # Get current user's portfolio data.
+        portfolio = db.execute(
+            """
+            SELECT symbol
+              FROM portfolios
+             WHERE portfolios.user_id = ?
+               AND owned > 0
+            """,
+            flask.session["user_id"],
+        )
+
+        return flask.render_template("sell.html", portfolio=portfolio)

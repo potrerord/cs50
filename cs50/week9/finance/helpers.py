@@ -8,12 +8,7 @@ import urllib
 import uuid
 
 import flask
-import functools
-
-"""
-from flask import redirect, render_template, session
 from functools import wraps
-"""
 
 
 def apology(message: str, code: int = 400) -> flask.Response:
@@ -47,7 +42,7 @@ def login_required(f: Callable) -> Callable:
     https://flask.palletsprojects.com/en/1.1.x/patterns/viewdecorators/
     """
 
-    @functools.wraps(f)
+    @wraps(f)
     def decorated_function(*args: Any, **kwargs: Any) -> Callable:
         """Redirect user to login if current session has no user_id."""
 

@@ -1,3 +1,10 @@
+/* Formatting for date info */
+.last-updated
+{
+    color: gray;
+    font-size: small;
+}
+
 /* Size for brand */
 nav .navbar-brand
 {

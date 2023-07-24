@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-center">Transaction Type</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in user_history %}
+                <tr>
+                    <td class="text-start">{{ transaction["symbol"] }}</td>
+                    <td class="text-center">{{ transaction["type"] }}</td>
+                    <td class="text-end">{{ transaction["shares"] }}</td>
+                    <td class="text-end">{{ transaction["shareprice"] }}</td>
+                    <td class="text-end">{{ transaction["datetime_utc"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr></tr>
+        </tfoot>
+    </table>
+    <div class="last-updated" id="last-updated"></div>
+{% endblock %}

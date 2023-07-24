@@ -5,36 +5,66 @@
 {% endblock %}
 
 {% block main %}
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th class="text-start">Symbol</th>
-            <th class="text-start">Name</th>
-            <th class="text-end">Shares</th>
-            <th class="text-end">Price</th>
-            <th class="text-end">TOTAL</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for stock in portfolio %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get the user's timezone and language.
+            var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            var language = navigator.language;
+
+            // Define datetime formatting.
+            var options = {
+                year:     'numeric',
+                month:    'long',
+                day:      'numeric',
+                hour:     '2-digit',
+                minute:   '2-digit',
+                second:   '2-digit',
+                timeZone: timezone,
+                timeZoneName: 'short',
+            };
+
+            // Create Date object with price update datetime.
+            var quote_time = new Date("{{ quote_time }}")
+
+            // Format price update datetime for user's locale.
+            var f_datetime = quote_time.toLocaleString(language, options);
+
+            // Display update time on page.
+            document.getElementById('last-updated').textContent = "Stock price data as of " + f_datetime;
+            }
+        )
+    </script>
+    <table class="table table-striped">
+        <thead>
             <tr>
-                <td class="text-start">{{ stock["symbol"] }}</td>
-                <td class="text-start">{{ stock["symbol"] }}</td>
-                <td class="text-end">{{ stock["owned"] }}</td>
-                <td class="text-end">{{ prices[stock["symbol"]] }}</td>
-                <td class="text-end">${{ (stock["owned"] * prices[stock["symbol"]]) | round(2) }}</td>
+                <th class="text-start">Symbol</th>
+                <th class="text-start">Name</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
             </tr>
-        {% endfor %}
-    </tbody>
-    <tfoot>
-        <tr>
-            <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
-            <td class="border-0 text-end">${{ cash }}</td>
-        </tr>
-        <tr>
-            <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
-            <td class="border-0 w-bold text-end">$</td>
-        </tr>
-    </tfoot>
-</table>
+        </thead>
+        <tbody>
+            {% for stock in portfolio %}
+                <tr>
+                    <td class="text-start">{{ stock["symbol"] }}</td>
+                    <td class="text-start">{{ stock["symbol"] }}</td>
+                    <td class="text-end">{{ stock["owned"] }}</td>
+                    <td class="text-end">{{ stock["price"] }}</td>
+                    <td class="text-end">{{ stock["shares_value"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end">{{ cash }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 w-bold text-end">{{ portfolio_value }}</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="last-updated" id="last-updated"></div>
 {% endblock %}
