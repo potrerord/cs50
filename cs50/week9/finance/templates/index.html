@@ -16,24 +16,24 @@
         </tr>
     </thead>
     <tbody>
-        {% for stock in stocks %}
+        {% for stock in portfolio %}
             <tr>
                 <td class="text-start">{{ stock["symbol"] }}</td>
-                <td class="text-start">{{ stock["name"] }}</td>
-                <td class="text-end">{{ stock["shares"] }}</td>
-                <td class="text-end">{{ stock["price"] }}</td>
-                <td class="text-end">${{ stock["shares"] * stock["price"] }}</td>
+                <td class="text-start">{{ stock["symbol"] }}</td>
+                <td class="text-end">{{ stock["owned"] }}</td>
+                <td class="text-end">{{ prices[stock["symbol"]] }}</td>
+                <td class="text-end">${{ stock["owned"] * prices[stock["symbol"]] }}</td>
             </tr>
-
+        {% endfor %}
     </tbody>
     <tfoot>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
-            <td class="border-0 text-end">${{ stock["cash"] }}</td>
+            <td class="border-0 text-end">$</td>
         </tr>
         <tr>
             <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
-            <td class="border-0 w-bold text-end">${{ sum of the total column above }}</td>
+            <td class="border-0 w-bold text-end">$</td>
         </tr>
     </tfoot>
 </table>
