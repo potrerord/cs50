@@ -14,11 +14,15 @@ def main():
     print("What Pokemon trait would you like to search on?")
     user_trait = input("Valid traits are HP, Attack, Sp. Attack, Sp. Defense, Speed: ")
 
-    user_min = int(input(f"What is the minimum value for {trait}? "))
-    user_max = int(input(f"What is the maximum value for {trait}? "))
+    user_min = int(input(f"What is the minimum value for {user_trait}? "))
+    user_max = int(input(f"What is the maximum value for {user_trait}? "))
 
-    result = pokesearch(user_trait, user_min, user_max)
+    user_matches = pokesearch(user_trait, user_min, user_max)
+    sorted_user_matches = sort(list(user_matches.keys()))
 
+    print("The Pokemon that match are:")
+    for pokemon in sorted_user_matches:
+        print(f"{pokemon:<20}{user_matches[pokemon]}")
 
 
 def english_name(pokemon):
@@ -34,14 +38,12 @@ def pokesearch(trait, minimum, maximum):
     have a value of trait between minimum and maximum
     """
 
-    found_pokemon = {}
+    matches = {}
     for pokemon in pokedex.data:
         if minimum <= pokedex.data[pokemon]["base"][trait] <= maximum:
-            found_pokemon[pokemon] = pokedex.data[pokemon]["base"][trait]
+            matches[pokemon] = pokedex.data[pokemon]["base"][trait]
 
-
-
-    print("The Pokemon that match are:")
+    return matches
 
 
 if __name__ == "__main__":
