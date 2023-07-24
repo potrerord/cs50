@@ -32,7 +32,7 @@ b = [
 0.4524,
 ]
 
-plt.plot(a, b)
+plt.plot(x, y)
 plt.xscale("linear")
 plt.yscale("linear")
 plt.show()
