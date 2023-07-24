@@ -1,6 +1,13 @@
 """Add your solution to the problem 'authorship' here."""
 
-# make sure to import your data file here
+
+import romeo_and_juliet_data
+
+
+def main():
+    # Add your solution to the problem that makes use of the above to
+    # print out the word length frequency table described in the pset.
+
 
 
 def word_length_histogram(text_list):
@@ -13,14 +20,8 @@ def word_length_histogram(text_list):
     should return the dictionary
         { 6 : 3, 2 : 1, 4 : 1 }
     """
-    # Add your code here.
 
-
-def main():
-    # Add your solution to the problem that makes use of the above to
-    # print out the word length frequency table described in the pset.
-    print("Remove me and add your code!")
-
+    
 
 if __name__ == "__main__":
     main()
