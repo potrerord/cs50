@@ -20,7 +20,7 @@ def main():
     # Print report.
     print(f"Last hundred days price data for {symbol}:")
     for day in data:
-        date
+        date =
         close = day-
         print(f"{date} {price}")
 
@@ -29,8 +29,10 @@ def main():
 # do decide what values to add for the parameters.
 def build_url(symbol):
     url = "https://www.alphavantage.co/query?"
-    url += f"function={TIME_SERIES_DAILY}"
+    url += f"function=TIME_SERIES_DAILY"
     url += f"&symbol={symbol}"
+    url += f"&outputsize=compact"
+    url += f"&datatype=json"
     url += f"&apikey={KEY}"
     return url
 
