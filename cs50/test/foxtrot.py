@@ -14,5 +14,5 @@ def main():
     return 0
 
 
-if __name__ == "__main__":
-    main()
+# Begin executing program directly from the main function, like C.
+main()
