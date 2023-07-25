@@ -5,11 +5,12 @@ function getrandomnumberbetween1and10() {
     let rand_float = Math.random();
 
     // Scale rand_float to 0 <= rand_float < 10, floor it, then add 1.
-    let number = Math.floor(rand_float * 10) + 1
+    let number = Math.floor(rand_float * 10) + 1;
 
-    return number
+    return number;
 }
 
-let n = 1000
+let n = 1000;
+
 
 console.log(getrandomnumberbetween1and10())
