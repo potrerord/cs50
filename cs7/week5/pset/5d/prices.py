@@ -45,15 +45,14 @@ def get_quotes(symbol):
 
     # Make API request to Alpha Vantage.
     data = requests.get(url).json()
-    print(data)
 
     # Make list of tuples with date and closing price of each day.
+    days = data["Time Series (Daily)"]
     dates_prices = []
-    for day in data:
-        dates_prices.append((data[day], data[day]["close"]))
+    for day in days:
+        dates_prices.append((day, day["4. close"]))
 
     return dates_prices
-
 
 if __name__ == "__main__":
     main()
