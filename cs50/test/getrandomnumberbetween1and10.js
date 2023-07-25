@@ -11,6 +11,8 @@ function getrandomnumberbetween1and10() {
 }
 
 let n = 1000;
-
+for (let i = 0; i < n; i++) {
+    
+}
 
 console.log(getrandomnumberbetween1and10())
