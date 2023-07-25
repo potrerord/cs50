@@ -20,7 +20,7 @@ def main():
     # Print report.
     print(f"Last hundred days price data for {symbol}:")
     for day in data:
-        date =
+        date = 
         close = day-
         print(f"{date} {price}")
 
