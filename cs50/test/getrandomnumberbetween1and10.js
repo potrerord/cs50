@@ -11,6 +11,7 @@ function getrandomnumberbetween1and10() {
 }
 
 let n = 1000;
+let dict = {};
 for (let i = 0; i < n; i++) {
     
 }
