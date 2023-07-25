@@ -1,14 +1,19 @@
-def selection_sort(data):
-    """
-    Sorts the list data using selection sort. Returns Nothing.
-    """
-    # Add your code here
+
+from typing import List
 
 
 def main():
-    # Add your solution to the problem that makes use of
-    # the above to sort a list.
-    print("Remove me and add your code!")
+    """Test selection sort with two lists."""
+
+    nums1 = []
+    nums2 = []
+
+
+
+def selection_sort(data: List[int]):
+    """Sort a list using the selection sort algorithm."""
+
+    
 
 
 if __name__ == "__main__":
