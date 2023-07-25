@@ -19,6 +19,7 @@ def selection_sort(data: List[int], start=0) -> None:
 
     # Scan each data point to find the smallest value.
     lowest = data[start]
+    lowest_index = start
     for element in data[start:]:
         if element < lowest:
             lowest = i
