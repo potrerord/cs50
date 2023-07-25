@@ -20,14 +20,14 @@ def main():
     # Print report.
     print(f"Last hundred days price data for {symbol}:")
     for day in data:
-        date = 
+        date =
         close = day-
         print(f"{date} {price}")
 
-# Build your api url here. See
-# https://www.alphavantage.co/documentation/#dailyadj
-# do decide what values to add for the parameters.
+
 def build_url(symbol):
+    """Build URL for Alpha Vantage API."""
+
     url = "https://www.alphavantage.co/query?"
     url += f"function=TIME_SERIES_DAILY"
     url += f"&symbol={symbol}"
@@ -36,14 +36,18 @@ def build_url(symbol):
     url += f"&apikey={KEY}"
     return url
 
-# Use this API url with your key and symbol
+
 def get_quotes(symbol):
     """
-    Takes a stock symbol and returns a list of tuples with the date
-    and closing price for the last hundred days, for example,
+    Take a stock symbol and return a list of tuples with the date and
+    closing price for the last hundred days, for example,
     [ ('2022-07-15', '256.7200'), ('2021-07-15', '254.0800'), ... ]
     """
-    # Add your code here
+
+    date =
+    close_price = 
+
+    return
 
 
 if __name__ == "__main__":
