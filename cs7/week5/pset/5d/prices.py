@@ -10,6 +10,7 @@ def main():
     # print out the date and price table described in the pset.
 
     symbol = input("Enter a stock symbol: ")
+    requests.get(url).json()
 
     print(f"Last hundred days price data for {symbol}:")
     for i in thing:
