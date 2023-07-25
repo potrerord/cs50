@@ -11,10 +11,10 @@ def main():
 
     symbol = input("Enter a stock symbol: ")
 
+    # Build URL for API request.
+    url = build_url(f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey={KEY}")
 
-    # replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
-    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey={KEY}"
-
+    # Make API request to Alpha Vantage.
     data = requests.get(url).json()
 
     print(data)
@@ -26,16 +26,6 @@ def main():
     print(f"Last hundred days price data for {symbol}:")
     for i in thing:
         print(f"{date} {price}")
-
-# Call this with your API url to get your data from the service
-# You don't have to add anything to this.
-def make_api_call(url):
-    """
-    Makes a request to a url endpoint that responds in json and returns
-    the result as a python data structure (a list or dictionary).
-    This is a very optimistic function and doesn't check for errors.
-    """
-    return requests.get(url).json()
 
 # Build your api url here. See
 # https://www.alphavantage.co/documentation/#dailyadj
