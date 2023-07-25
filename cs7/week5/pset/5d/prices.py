@@ -9,20 +9,16 @@ def main():
     # Add your solution to the problem that makes use of the above to
     # print out the date and price table described in the pset.
 
+    # Get user input.
     symbol = input("Enter a stock symbol: ")
 
-    # Build URL for API request.
-    url = build_url(symbol)
-
-    # Make API request to Alpha Vantage.
-    data = requests.get(url).json()
+    # Get list of daily close prices for past hundred days.
+    dates_prices = get_quotes(symbol)
 
     # Print report.
     print(f"Last hundred days price data for {symbol}:")
-    for day in data:
-        date =
-        close = day-
-        print(f"{date} {price}")
+    for day in dates_prices:
+        print(f"{day[0]} {day[1]}")
 
 
 def build_url(symbol):
@@ -44,10 +40,19 @@ def get_quotes(symbol):
     [ ('2022-07-15', '256.7200'), ('2021-07-15', '254.0800'), ... ]
     """
 
-    date =
-    close_price = 
+    # Build URL for API request.
+    url = build_url(symbol)
 
-    return
+    # Make API request to Alpha Vantage.
+    data = requests.get(url).json()
+    print(data)
+
+    # Make list of tuples with date and closing price of each day.
+    dates_prices = []
+    for day in data:
+        dates_prices.append((data[day], data[day]["close"]))
+
+    return dates_prices
 
 
 if __name__ == "__main__":
