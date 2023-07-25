@@ -8,8 +8,12 @@ KEY = ZPTEVGH1DYQAZ1R6
 def main():
     # Add your solution to the problem that makes use of the above to
     # print out the date and price table described in the pset.
-    print("Remove me and add your code!")
 
+    symbol = input("Enter a stock symbol: ")
+
+    print(f"Last hundred days price data for {symbol}:")
+    for i in thing:
+        print(f"{date} {price}")
 
 # Call this with your API url to get your data from the service
 # You don't have to add anything to this.
