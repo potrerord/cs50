@@ -9,3 +9,7 @@ function getrandomnumberbetween1and10() {
 
     return number
 }
+
+let n = 1000
+
+console.log(getrandomnumberbetween1and10())
