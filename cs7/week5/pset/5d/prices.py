@@ -50,7 +50,8 @@ def get_quotes(symbol):
     days = data["Time Series (Daily)"]
     dates_prices = []
     for day in days:
-        dates_prices.append((day, day["4. close"]))
+        price = f"${round(float(days[day]['4. close']), 2):.2f}"
+        dates_prices.append((day, price))
 
     return dates_prices
 
