@@ -10,6 +10,17 @@ def main():
     # print out the date and price table described in the pset.
 
     symbol = input("Enter a stock symbol: ")
+
+
+    # replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
+url = 'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo'
+r = requests.get(url)
+data = r.json()
+
+print(data)
+
+
+
     requests.get(url).json()
 
     print(f"Last hundred days price data for {symbol}:")
