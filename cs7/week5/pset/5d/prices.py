@@ -9,16 +9,21 @@ def main():
     # Add your solution to the problem that makes use of the above to
     # print out the date and price table described in the pset.
 
+    print()
+
     # Get user input.
     symbol = input("Enter a stock symbol: ")
+    print()
 
     # Get list of daily close prices for past hundred days.
     dates_prices = get_quotes(symbol)
 
     # Print report.
-    print(f"Last hundred days price data for {symbol}:")
+    print(f"Last hundred days price data for {symbol.upper()}:")
     for day in dates_prices:
         print(f"{day[0]} {day[1]}")
+
+    print()
 
 
 def build_url(symbol):
