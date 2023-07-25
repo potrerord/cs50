@@ -2,7 +2,7 @@ import json
 import requests
 
 # Uncomment this and add your own key for the pset:
-KEY = ZPTEVGH1DYQAZ1R6
+KEY = "ZPTEVGH1DYQAZ1R6"
 
 
 def main():
