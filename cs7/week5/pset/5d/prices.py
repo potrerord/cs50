@@ -12,19 +12,16 @@ def main():
     symbol = input("Enter a stock symbol: ")
 
     # Build URL for API request.
-    url = build_url(f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey={KEY}")
+    url = build_url(symbol)
 
     # Make API request to Alpha Vantage.
     data = requests.get(url).json()
 
-    print(data)
-
-
-
-    requests.get(url).json()
-
+    # Print report.
     print(f"Last hundred days price data for {symbol}:")
-    for i in thing:
+    for day in data:
+        date
+        close = day-
         print(f"{date} {price}")
 
 # Build your api url here. See
@@ -32,9 +29,9 @@ def main():
 # do decide what values to add for the parameters.
 def build_url(symbol):
     url = "https://www.alphavantage.co/query?"
-    url += f"function={}"
-    url += f"&symbol={}"
-    url += f"&apikey={}"
+    url += f"function={TIME_SERIES_DAILY}"
+    url += f"&symbol={symbol}"
+    url += f"&apikey={KEY}"
     return url
 
 # Use this API url with your key and symbol
