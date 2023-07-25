@@ -5,9 +5,13 @@ from typing import List
 def main():
     """Test selection sort with two lists."""
 
-    nums1 = [3, 1, 4, 1, 5, 9]
-    nums2 = []
+    nums1 = [5, 9, 17, 11, 12]
+    selection_sort(nums1)
+    print(nums1)
 
+    nums2 = [3, 1, 4, 1, 5, 9]
+    selection_sort(nums2)
+    print(nums2)
 
 
 def selection_sort(data: List[int], start_idx=0) -> None:
