@@ -32,9 +32,9 @@ def main():
 # do decide what values to add for the parameters.
 def build_url(symbol):
     url = "https://www.alphavantage.co/query?"
-    url += "function=???"
-    url += "&symbol=???"
-    url += "&apikey=???"
+    url += f"function={}"
+    url += f"&symbol={}"
+    url += f"&apikey={}"
     return url
 
 # Use this API url with your key and symbol
