@@ -10,10 +10,15 @@ function getrandomnumberbetween1and10() {
     return number;
 }
 
-let n = 1000;
+let n = 1000000000;
 let dictionary = {};
 for (let i = 0; i < n; i++) {
-    dictionary["]
+    num = getrandomnumberbetween1and10();
+    if (!dictionary.hasOwnProperty(num)) {
+        dictionary[num] = 0;
+    }
+
+    dictionary[num] += 1;
 }
 
 console.log(dictionary)
