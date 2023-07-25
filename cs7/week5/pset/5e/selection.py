@@ -29,7 +29,7 @@ def selection_sort(data: List[int], start_idx=0) -> None:
     for index, value in enumerate(data[start_idx:]):
         if value < lowest_val:
             lowest_val = value
-            lowest_idx = index
+            lowest_idx = start_idx + index
 
     # Compare first data point with lowest data point.
     if lowest_idx != start_idx:
