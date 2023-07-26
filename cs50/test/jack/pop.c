@@ -1,4 +1,5 @@
 bool pop(int *n)
 {
-    int popped = 
+    int popped = s[0];
+
 }
