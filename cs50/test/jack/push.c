@@ -7,7 +7,7 @@ bool push(int n)
     }
 
     // Iterate from last index to the second.
-    for (int i = CAPACITY - 1; i > 0; i--)
+    for (int i = s.size; i > 0; i--)
     {
         //
         s.numbers[i] = s.numbers[i - 1];
