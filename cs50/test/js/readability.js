@@ -32,7 +32,7 @@ const main = function mainFunction () {
   });
 
   // Store rounded Coleman-Liau index
-  let level = round(cole_liau(letters, words, sentences))
+  let level = Math.round(coleLiau(userLetters, userWords, userSentences))
 
   // Print Grade X
   if level < 1:
