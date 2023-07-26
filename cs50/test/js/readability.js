@@ -35,14 +35,16 @@ const main = function mainFunction () {
   let level = Math.round(coleLiau(userLetters, userWords, userSentences))
 
   // Print Grade X
-  if level < 1:
-    print("Before Grade 1.")
-  elif level > 15:
-    print("Grade 16+")
-  else:
-    for grade in range(1, 16):
-      if grade == level:
-        print(f"Grade {level}")
+  if (level < 1) {
+    console.log('Before Grade 1.');
+  } elif (level > 15) {
+    console.log('Grade 16+');
+  } else:
+    for (grade in range(1, 16)) {
+      if (grade === level) {
+        console.log(f"Grade {level}");
+      }
+    }
 }
 
 // Return the Coleman-Liau index given the arguments.
