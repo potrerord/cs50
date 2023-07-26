@@ -1,10 +1,12 @@
 bool push(int n)
 {
-    if (s.size >= CAPACITY) {
+    if (s.size >= CAPACITY)
+    {
         return false;
     }
 
-    for (int i = s.size - 1; i > 0; i--) {
+    for (int i = s.size - 1; i > 0; i--)
+    {
         s.numbers[i + 1] = s.numbers[i];
     }
 
