@@ -19,5 +19,5 @@ bool push(int n)
     // Increment the size of the stack.
     s.size += 1;
 
-    return true;
+    sys.exit(0);
 }
