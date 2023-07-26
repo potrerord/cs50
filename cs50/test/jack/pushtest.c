@@ -17,9 +17,6 @@ bool push(int n);
 int main(void)
 {
     s.size = 0;
-    push(4);
-    push(5);
-    push(7);
     for (int i = 0; i < s.size; i++)
     {
         printf("%i\n", s.numbers[i]);
