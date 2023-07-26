@@ -17,24 +17,34 @@ bool push(int n);
 int main(void)
 {
     s.size = 0;
-    for (int i = 0; i < CAPACITY; i++)
+    for (int i = 0; i < CAPACITY + 1; i++)
     {
         push(1);
+        printf("%i is: %i\n", i, s.numbers[i]);
     }
 }
 
 
 bool push(int n)
 {
-    if (s.size >= CAPACITY) {
+    // If size is already maxed out, return false.
+    if (s.size >= CAPACITY)
+    {
         return false;
     }
 
-    for (int i = s.size - 1; i > 0; i--) {
+    // Iterate from last index to the second.
+    for (int i = s.size; i > 0; i--)
+    {
+        //
         s.numbers[i] = s.numbers[i - 1];
     }
 
+    // Change the value at the first index to n.
     s.numbers[0] = n;
+
+    // Increment the size of the stack.
     s.size += 1;
+
     return true;
 }
