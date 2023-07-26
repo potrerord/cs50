@@ -36,7 +36,8 @@ const getChange = function getChangeFunction (prompt) {
 
     // Check if input is empty.
     if (change === "") {
-      console.log('error: enter change in dollars');
+      console.log('error: no change entered\n');
+      continue;
     }
 
     // Convert change to a number.
