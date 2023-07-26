@@ -32,7 +32,7 @@ int main(void)
 bool push(int n)
 {
     // Reallocate memory for new element.
-    t.numbers = realloc(t.numbers, t.size + 1);
+    t.numbers = realloc(t.numbers, sizeof(int) * (t.size + 1));
 
     // If realloc failed, return false.
     if (t.numbers == NULL)
