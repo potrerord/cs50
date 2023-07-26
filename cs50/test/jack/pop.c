@@ -4,10 +4,10 @@ bool pop(int *n)
         return false;
     }
 
-    n = s[0];
+    *n = s.numbers[0];
 
     for (int i = 0, len = s.size; i < len - 1; i++) {
-        s[i] = s[i + 1]
+        s.numbers[i] = s.numbers[i + 1];
     }
 
     s.size--;
