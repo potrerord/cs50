@@ -2,13 +2,15 @@
 
 // Prints the Coleman-Liau index reading grade level for input text.
 
+const test = "In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since...."
+
 // Import the readline-sync module to interact with user via console.
 const readlineSync = require('readline-sync');
 
 // Main function.
 const main = function mainFunction () {
   // Prompt user for text to analyze
-  let userString = readlineSync.question("Enter text: ");
+  let userString = test // readlineSync.question("Enter text: ");
 
   // Initiate counter variables.
   let userLetters = 0;
