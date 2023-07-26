@@ -8,7 +8,6 @@ bool push(int n)
         s.numbers[i] = s.numbers[i - 1];
     }
 
-    free(s.numbers[s.size]);
     s.numbers[0] = n;
     s.size += 1;
     return true;
