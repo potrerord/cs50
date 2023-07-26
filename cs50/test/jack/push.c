@@ -5,7 +5,7 @@ bool push(int n)
         return false;
     }
 
-    for (int i = s.size - 1; i > 0; i--)
+    for (int i = s.size - 1; i > -1; i--)
     {
         s.numbers[i + 1] = s.numbers[i];
     }
