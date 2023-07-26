@@ -1,15 +1,14 @@
 bool pop(int *n)
 {
+    // If there is nothing to pop, return false.
     if (s.size == 0) {
         return false;
     }
 
-    *n = s.numbers[0];
+    // Store the value at the last index in the arg pointer.
+    *n = s.numbers[s.size - 1];
 
-    for (int i = 0, len = s.size; i < len - 1; i++) {
-        s.numbers[i] = s.numbers[i + 1];
-    }
-
+    // Decrement the size of the stack.
     s.size--;
     return true;
 }
