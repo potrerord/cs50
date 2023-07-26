@@ -1,10 +1,9 @@
 bool push(int n)
 {
-    // If size is already maxed out, return false.
+    // If size is already maxed out, reallocate memory.
     if (s.size >= CAPACITY)
     {
-        s.size += 1;
-        numbers = realloc(numbers, s.size)
+        numbers = realloc(numbers, s.size + 1)
     }
 
     // Change the value at the next available index to n.
