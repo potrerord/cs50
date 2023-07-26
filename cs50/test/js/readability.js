@@ -31,18 +31,18 @@ const main = function mainFunction () {
     }
   });
 
-  // Store rounded Coleman-Liau index
+  // Store rounded Coleman-Liau index.
   let level = Math.round(coleLiau(userLetters, userWords, userSentences))
 
-  // Print Grade X
+  // Print Grade X.
   if (level < 1) {
-    console.log('Before Grade 1.');
-  } elif (level > 15) {
+    console.log('Before Grade 1');
+  } else if (level >= 16) {
     console.log('Grade 16+');
   } else {
-    for (let grade = 1; grade < in range(1, 16)) {
+    for (let grade = 1; grade < 16; grade++) {
       if (grade === level) {
-        console.log(f"Grade {level}");
+        console.log(`Grade {level}`);
       }
     }
   }
