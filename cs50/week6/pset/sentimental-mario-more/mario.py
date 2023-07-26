@@ -7,10 +7,10 @@ Prompts user for an int height and creates a Mario-style pyramid with
 def main():
     """Take user input and print pyramid."""
 
-    # Get height of half-pyramid
+    # Get height of pyramid.
     height = get_height('Height: ')
 
-    # Print half-pyramid
+    # Print pyramid.
     print_pyramid(height)
 
 
