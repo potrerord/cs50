@@ -6,7 +6,7 @@ bool push(int n)
         return false;
     }
 
-    // Change the value at the first index to n.
+    // Change the value at the next available index to n.
     s.numbers[s.size] = n;
 
     // Increment the size of the stack.
