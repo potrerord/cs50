@@ -4,7 +4,7 @@ bool push(int n)
     if (s.size >= CAPACITY)
     {
         s.size += 1;
-        ptr = realloc(ptr, s.size)
+        numbers = realloc(numbers, s.size)
     }
 
     // Change the value at the next available index to n.
