@@ -1,32 +1,3 @@
-#include <stdio.h>
-#include <stdbool.h>
-
-const int CAPACITY = 50;
-
-typedef struct
-{
-    int numbers[CAPACITY];
-    int size;
-}
-stack;
-
-stack s;
-
-bool push(int n);
-
-int main(void)
-{
-    s.size = 0;
-    push(4);
-    push(5);
-    push(7);
-    for (int i = 0; i < s.size; i++)
-    {
-        printf("%i\n", s.numbers[i]);
-    }
-}
-
-
 bool push(int n)
 {
     if (s.size == CAPACITY) {
