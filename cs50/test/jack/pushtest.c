@@ -17,9 +17,9 @@ bool push(int n);
 int main(void)
 {
     s.size = 0;
-    for (int i = 0; i < s.size; i++)
+    for (int i = 0; i < CAPACITY; i++)
     {
-        printf("%i\n", s.numbers[i]);
+        push(1);
     }
 }
 
