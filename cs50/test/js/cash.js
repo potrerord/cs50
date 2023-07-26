@@ -34,6 +34,11 @@ const getChange = function getChangeFunction (prompt) {
     // Get user input.
     change = Number(readlineSync.question(prompt));
 
+    // Check if input is empty.
+    if (change === "") {
+      console.log('error: enter change in dollars');
+    }
+
     // Check if input is in dollars.2d format.
     if (!Number.isInteger(change * 100)) {
       console.log('error: invalid dollars and cents\n');
