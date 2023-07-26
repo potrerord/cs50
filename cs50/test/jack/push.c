@@ -9,5 +9,6 @@ bool push(int n)
     }
 
     s[0] = n;
+    s.size += 1;
     return true;
 }
