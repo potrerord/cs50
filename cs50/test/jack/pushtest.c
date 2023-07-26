@@ -19,7 +19,11 @@ int main(void)
     s.size = 0;
     for (int i = 0; i < CAPACITY + 20; i++)
     {
-        int butt[CAPACITY] = s.numbers;
+        int butt[CAPACITY];
+        for (int j = 0; j < CAPACITY; j++)
+        {
+            butt[j] = s.numbers[j];
+        }
         push(1);
         printf("%i is: %i\n", i, s.numbers[i]);
     }
