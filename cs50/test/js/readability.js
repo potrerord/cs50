@@ -39,12 +39,13 @@ const main = function mainFunction () {
     console.log('Before Grade 1.');
   } elif (level > 15) {
     console.log('Grade 16+');
-  } else:
-    for (grade in range(1, 16)) {
+  } else {
+    for (let grade = 1; grade < in range(1, 16)) {
       if (grade === level) {
         console.log(f"Grade {level}");
       }
     }
+  }
 }
 
 // Return the Coleman-Liau index given the arguments.
