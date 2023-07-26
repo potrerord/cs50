@@ -25,7 +25,7 @@ int main(void)
             butt[j] = s.numbers[j];
         }
         push(i);
-        printf("%i is: %i\n", i, s.numbers[i - 2]);
+        printf("%i is: %i\n", i, s.numbers[0]);
     }
 }
 
