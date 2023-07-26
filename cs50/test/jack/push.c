@@ -6,10 +6,10 @@ bool push(int n)
         return false;
     }
 
-    // Iterate from last index to the second.
+    // Iterate from the index after the last one in s to its second.
     for (int i = s.size; i > 0; i--)
     {
-        //
+        // From right to left, move all values to their right.
         s.numbers[i] = s.numbers[i - 1];
     }
 
