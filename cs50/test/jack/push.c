@@ -4,12 +4,10 @@ bool push(int n)
         return false;
     }
 
-    int temp, temp2;
-    
-    for (int i = 0, size = s.size; i < size; i++) {
-        temp = s[i];
-        temp2 = s[i + 1]
-        s[i] = n;
-        s[i + 1] = s[i]
+    for (int i = s.size; i > 0; i--) {
+        s[i] = s[i - 1];
     }
+
+    s[0] = n;
+    return true;
 }
