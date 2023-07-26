@@ -17,7 +17,7 @@ bool push(int n);
 int main(void)
 {
     s.size = 0;
-    for (int i = 0; i < CAPACITY + 20; i++)
+    for (int i = 1; i < CAPACITY + 20; i++)
     {
         int butt[CAPACITY];
         for (int j = 0; j < CAPACITY; j++)
@@ -25,7 +25,7 @@ int main(void)
             butt[j] = s.numbers[j];
         }
         push(i);
-        printf("%i is: %i\n", i, s.numbers[i]);
+        printf("%i is: %i\n", i, s.numbers[i - 2]);
     }
 }
 
