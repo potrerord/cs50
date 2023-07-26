@@ -16,10 +16,10 @@ bool push(int n);
 int main(void)
 {
     t.size = 0;
-    for (int i = 1; i < 50; i++)
+    for (int i = 1; i < 5042; i++)
     {
-        int butt[50];
-        for (int j = 0; j < 50; j++)
+        int butt[5042];
+        for (int j = 0; j < t.size; j++)
         {
             butt[j] = t.numbers[j];
         }
