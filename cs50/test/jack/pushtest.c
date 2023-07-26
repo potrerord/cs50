@@ -30,7 +30,7 @@ bool push(int n)
         return false;
     }
 
-    for (int i = s.size; i > 0; i--) {
+    for (int i = s.size - 1; i > 0; i--) {
         s.numbers[i] = s.numbers[i - 1];
     }
 
