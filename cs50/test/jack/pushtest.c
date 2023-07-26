@@ -26,7 +26,7 @@ int main(void)
 
 bool push(int n)
 {
-    if (s.size == CAPACITY) {
+    if (s.size >= CAPACITY) {
         return false;
     }
 
