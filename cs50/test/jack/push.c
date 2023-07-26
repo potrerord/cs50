@@ -1,3 +1,20 @@
+const int CAPACITY = 50;
+
+typedef struct
+{
+    int numbers[CAPACITY];
+    int size;
+}
+stack;
+
+stack s;
+
+int main(void)
+{
+    s.size = 0;
+    push(4)
+}
+
 bool push(int n)
 {
     if (s.size == s.CAPACITY) {
