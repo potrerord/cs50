@@ -38,15 +38,8 @@ bool push(int n)
         return false;
     }
 
-    // Iterate from last index to the second.
-    for (int i = CAPACITY - 1; i > 0; i--)
-    {
-        //
-        s.numbers[i] = s.numbers[i - 1];
-    }
-
     // Change the value at the first index to n.
-    s.numbers[0] = n;
+    s.numbers[s.size] = n;
 
     // Increment the size of the stack.
     s.size += 1;
