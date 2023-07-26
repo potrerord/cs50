@@ -10,16 +10,12 @@ const readlineSync = require('readline-sync');
 
 // Main function.
 const main = function mainFunction () {
-  console.log();
-
   // Get height of half-pyramid.
   let userHeight = getHeight('Height: ');
 
   // Print pyramid.
   console.log();
   printPyramid(userHeight);
-
-  console.log();
 }
 
 // Return user-input positive integer pyramid height.
