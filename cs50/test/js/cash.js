@@ -32,12 +32,15 @@ const getChange = function getChangeFunction (prompt) {
   // Continually reprompt if change input is not valid.
   while (true) {
     // Get user input.
-    change = Number(readlineSync.question(prompt));
+    change = readlineSync.question(prompt);
 
     // Check if input is empty.
     if (change === "") {
       console.log('error: enter change in dollars');
     }
+
+    // Convert change to a number.
+    change = Number(change)
 
     // Check if input is in dollars.2d format.
     if (!Number.isInteger(change * 100)) {
