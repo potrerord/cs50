@@ -1,9 +1,9 @@
 bool push(int n)
 {
     // If size is already maxed out, reallocate memory.
-    if (s.size >= CAPACITY)
+    if (t.size >= CAPACITY)
     {
-        numbers = realloc(numbers, s.size + 1)
+        numbers = realloc(numbers, t.size + 1)
 
         // If realloc failed, return false.
         if (numbers == NULL)
@@ -13,10 +13,10 @@ bool push(int n)
     }
 
     // Change the value at the next available index to n.
-    s->numbers[s.size] = n;
+    t->numbers[t.size] = n;
 
     // Increment the size of the stack.
-    s.size += 1;
+    t.size += 1;
 
     return true;
 }
