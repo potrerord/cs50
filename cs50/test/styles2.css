@@ -9,7 +9,8 @@
   }
 }
 
-.check-blue {
+@mixin check-blue {
+  @include check
   background-color: #1EA0F3;
 }
 
