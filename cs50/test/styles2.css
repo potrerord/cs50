@@ -9,11 +9,12 @@
   }
 }
 
-@mixin check-blue {
+.check-blue {
   @include check;
   background-color: #1EA0F3;
 }
 
 .check-official {
+  @include check;
   background-color: #D6D9DB;
 }
