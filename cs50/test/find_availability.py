@@ -12,15 +12,15 @@ def find_availability(item_id: int) -> List[Dict[int, Union[int, float]]]:
     """Return a list of warehouses in which an item with `item_id` is in
     stock."""
 
+    # Get the id and location of relevant warehouses in database.
     available_warehouses = db.execute(
         """
         SELECT w.id, w.latitude, w.longitude
           FROM warehouses AS w
-               INNER JOIN inventories AS i
-               ON w.id = i.warehouse_id
-         WHERE ? IN
-               (SELECT )
-           AND quantity > 0
+               INNER JOIN inventories AS inv
+               ON w.id = inv.warehouse_id
+         WHERE inv.item_id = ?
+           AND inv.quantity > 0
         """,
         item_id
     )
