@@ -2,5 +2,6 @@
 
 CREATE TABLE warehouses (
     id      INTEGER PRIMARY KEY AUTOINCREMENT,
-    name    TEXT
+    name    TEXT,
+    
 );
