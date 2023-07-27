@@ -14,9 +14,35 @@ def find_availability(item_id: int) -> List[Dict[int, Union[int, float]]]:
 
     available_warehouses = db.execute(
         """
-        SELECT *
+        SELECT w.id, w.latitude, w.longitude
           FROM warehouses AS w
-               JOIN 
-        """
+               INNER JOIN inventories AS i
+               ON w.id = i.warehouse_id
+         WHERE ? IN
+               (SELECT )
+           AND quantity > 0
+        """,
+        item_id
     )
-
+"""
+-- Movie star names and IDs with matching movie IDs
+SELECT p1.name
+  FROM people AS p1
+       INNER JOIN stars AS s1
+       ON p1.id = s1.person_id
+ WHERE s1.movie_id IN
+       -- Movie IDs of movies starring Kevin Bacon
+       (SELECT s2.movie_id
+          FROM stars AS s2
+               INNER JOIN people AS p2
+               ON s2.person_id = p2.id
+         WHERE p2.name = 'Kevin Bacon'
+           AND p2.birth = 1958  -- Avoid other Kevin Bacons
+       )
+-- Exclude our Kevin Bacon from list (via id, not name)
+   AND p1.id <>
+       (SELECT p3.id
+          FROM people AS p3
+         WHERE p3.name = 'Kevin Bacon'
+           AND p3.birth = 1958
+       );"""
