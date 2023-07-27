@@ -1,0 +1,19 @@
+:root {
+    --check-size: 50px;
+}
+
+.check {
+    border-radius: calc(var(--check-size) * 0.5);
+    color: white;
+    font-size: calc(var(--check-size) * 0.5);
+    height: var(--check-size);
+    width: var(--check-size);
+}
+
+.check-blue {
+    background-color: #1EA0F3;
+}
+
+.check-official {
+    background-color: #D6D9DB;
+}
