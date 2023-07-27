@@ -1,23 +1,30 @@
 :root {
-    --check-size: 50px;
+  --check-size: 50px;
 }
 
 @mixin check($size: 50px) {
-    width:
+  width: $size;
+  height: $size;
+  border-radius: $size * 0.5;
+
+  i {
+    color: white;
+    font-size: $size * 0.5;
+  }
 }
 
 .check {
-    border-radius: calc(var(--check-size) * 0.5);
-    color: white;
-    font-size: calc(var(--check-size) * 0.5);
-    height: var(--check-size);
-    width: var(--check-size);
+  border-radius: calc(var(--check-size) * 0.5);
+  color: white;
+  font-size: calc(var(--check-size) * 0.5);
+  height: var(--check-size);
+  width: var(--check-size);
 }
 
 .check-blue {
-    background-color: #1EA0F3;
+  background-color: #1EA0F3;
 }
 
 .check-official {
-    background-color: #D6D9DB;
+  background-color: #D6D9DB;
 }
