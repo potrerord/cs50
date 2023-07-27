@@ -14,6 +14,6 @@ CREATE TABLE items (
     quantity     INTEGER NOT NULL,
     warehouse_id INTEGER NOT NULL,
     FOREIGN KEY (warehouse_id) REFERENCES warehouses(id),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id, warehouse_id)
 );
 
